@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://md2rich.com/sitemap.xml

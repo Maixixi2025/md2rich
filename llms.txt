@@ -1,0 +1,45 @@
+# md2rich
+
+> Markdown to rich text converter for X Articles, LinkedIn, Medium, and any rich-text platform.
+> 100% client-side, zero upload, free, no signup.
+
+## What it is
+md2rich is a single-page web app that:
+1. Lets you write Markdown on the left
+2. Previews the rendered HTML on the right
+3. Converts the Markdown into platform-specific rich text
+4. Copies the rich text to your clipboard with one click
+5. Optionally downloads the result as a standalone HTML file
+
+## Key features
+- 100% client-side JavaScript (no backend, no server)
+- Zero tracking, zero cookies, zero analytics
+- No signup, no account, no limits
+- Supports X Articles, LinkedIn, Medium, plain HTML, raw Markdown
+- Code blocks, tables, lists, blockquotes, links, images
+- Open source (MIT, github.com/Maixixi2025/md2rich)
+
+## Tech stack
+- HTML/CSS/vanilla JS (no build step)
+- EasyMDE (CodeMirror 5 wrapper) for the editor
+- marked.js for Markdown parsing
+- DOMPurify for HTML sanitization
+- Tailwind CSS for styling
+- Cloudflare Pages for hosting
+
+## Target users
+- Technical content creators (developers, bloggers, dev rels)
+- Marketing and social media managers
+- Indie hackers and KOLs
+
+## Use cases
+- Write a Twitter/X Article in Markdown, paste as rich text
+- Draft a LinkedIn post in Markdown, copy as plain text with formatting hints
+- Convert a README to a Medium draft
+- Batch-convert technical docs to HTML
+
+## Pricing
+Free, supported by unobtrusive ads (coming soon).
+
+## Contact
+- GitHub: https://github.com/Maixixi2025/md2rich

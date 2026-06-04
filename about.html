@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — md2rich</title>
+  <meta name="description" content="md2rich is a free, open-source Markdown to rich text converter. Learn about the project, privacy, and tech stack.">
+  <link rel="canonical" href="https://md2rich.com/about.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <svg class="w-7 h-7 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span class="font-bold text-lg">md2rich</span>
+      </a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="https://github.com/Maixixi2025/md2rich" class="text-gray-600 hover:text-indigo-600" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold mb-6">About md2rich</h1>
+
+    <section class="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">What is md2rich?</h2>
+      <p class="text-gray-700 leading-relaxed mb-3">
+        md2rich converts Markdown text into rich text format suitable for pasting into <strong>X Articles</strong>, <strong>LinkedIn</strong>, <strong>Medium</strong>, and other publishing platforms. It runs entirely in your browser — no signup, no upload, no tracking.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Built for developers, technical writers, and content creators who want to write in Markdown once and publish across multiple platforms with consistent formatting.
+      </p>
+    </section>
+
+    <section class="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">🔒 Privacy</h2>
+      <p class="text-gray-700 leading-relaxed mb-3">
+        <strong>md2rich is 100% client-side.</strong> Your text never leaves your browser. There is no backend, no analytics, no logging, no cookies, no tracking pixels.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-3">
+        Open your browser's DevTools Network tab and use md2rich — you'll see zero outbound requests containing your content. The only network requests are the initial page load (HTML, CSS, JS) from the CDN.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        We don't know who you are, what you write, or how often you visit.
+      </p>
+    </section>
+
+    <section class="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">⚙️ Tech Stack</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li><strong>Frontend:</strong> Vanilla HTML/CSS/JS (no build step, no framework)</li>
+        <li><strong>Editor:</strong> <a href="https://github.com/Ionaru/easy-markdown-editor" class="text-indigo-600 hover:underline">EasyMDE</a> (CodeMirror 5 wrapper)</li>
+        <li><strong>Markdown parser:</strong> <a href="https://marked.js.org/" class="text-indigo-600 hover:underline">marked.js</a></li>
+        <li><strong>HTML sanitizer:</strong> <a href="https://github.com/cure53/DOMPurify" class="text-indigo-600 hover:underline">DOMPurify</a></li>
+        <li><strong>Hosting:</strong> <a href="https://pages.cloudflare.com/" class="text-indigo-600 hover:underline">Cloudflare Pages</a> (free, global CDN)</li>
+        <li><strong>Source:</strong> <a href="https://github.com/Maixixi2025/md2rich" class="text-indigo-600 hover:underline">github.com/Maixixi2025/md2rich</a></li>
+      </ul>
+    </section>
+
+    <section class="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-3">❓ FAQ</h2>
+
+      <details class="mb-3">
+        <summary class="font-semibold cursor-pointer">Is md2rich really free?</summary>
+        <p class="mt-2 text-gray-700">Yes, 100% free with no signup. The site is supported by unobtrusive ads (coming soon).</p>
+      </details>
+
+      <details class="mb-3">
+        <summary class="font-semibold cursor-pointer">Does my content get uploaded to a server?</summary>
+        <p class="mt-2 text-gray-700">No. md2rich runs entirely in your browser. Your text never leaves your device.</p>
+      </details>
+
+      <details class="mb-3">
+        <summary class="font-semibold cursor-pointer">Why doesn't LinkedIn work as well as X Articles?</summary>
+        <p class="mt-2 text-gray-700">LinkedIn's rich text paste support is unreliable. We output Markdown as plain text with a tip — use a browser extension like "Markdown Here" to render formatting inside LinkedIn's editor.</p>
+      </details>
+
+      <details class="mb-3">
+        <summary class="font-semibold cursor-pointer">Can I use md2rich offline?</summary>
+        <p class="mt-2 text-gray-700">After the first load, the page is cached by your browser. You can use it offline for the duration of your browser cache.</p>
+      </details>
+
+      <details class="mb-3">
+        <summary class="font-semibold cursor-pointer">Does md2rich support tables?</summary>
+        <p class="mt-2 text-gray-700">Tables render in the preview, but most platforms (X Articles especially) strip table tags on paste. For X Articles, use bullet lists as a workaround.</p>
+      </details>
+    </section>
+
+    <section class="bg-white border border-gray-200 rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-3">Contact</h2>
+      <p class="text-gray-700">
+        Issues or suggestions? Open an issue on <a href="https://github.com/Maixixi2025/md2rich/issues" class="text-indigo-600 hover:underline">GitHub</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-12 py-6 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      <p>© 2026 md2rich · <a href="/about.html" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy.html" class="hover:text-indigo-600">Privacy</a></p>
+    </div>
+  </footer>
+</body>
+</html>

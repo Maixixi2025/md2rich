@@ -1,0 +1,42 @@
+/* md2rich — supplementary styles (Tailwind does most of the work) */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* EasyMDE overrides for cleaner look */
+.EasyMDEContainer .CodeMirror {
+  border: none;
+  min-height: 400px;
+  font-size: 14px;
+}
+
+.EasyMDEContainer .CodeMirror.CodeMirror-focused {
+  box-shadow: none;
+}
+
+.editor-toolbar {
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+/* Preview prose */
+.prose h1 { font-size: 1.875rem; font-weight: 700; margin: 1.5rem 0 0.75rem; }
+.prose h2 { font-size: 1.5rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
+.prose h3 { font-size: 1.25rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+.prose p { margin: 0.75rem 0; line-height: 1.7; }
+.prose ul, .prose ol { margin: 0.75rem 0; padding-left: 1.5rem; }
+.prose li { margin: 0.25rem 0; }
+.prose blockquote { border-left: 4px solid #d1d5db; padding-left: 1rem; color: #4b5563; font-style: italic; margin: 1rem 0; }
+.prose code { background: #f3f4f6; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.prose pre { background: #1f2937; color: #f9fafb; padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 1rem 0; }
+.prose pre code { background: none; color: inherit; padding: 0; }
+.prose a { color: #4f46e5; text-decoration: underline; }
+.prose table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
+.prose th, .prose td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; }
+.prose th { background: #f9fafb; font-weight: 600; }
+.prose hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+
+/* EasyMDE editor text */
+.CodeMirror { line-height: 1.6; }
