@@ -3,21 +3,12 @@
 
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked@11.1.1/+esm';
 
-// Platform tag whitelists (X Articles spec — adjust based on real-world testing)
+// Platform tag whitelists — based on platform docs / open-source specs. Adjust based on real-world testing.
 const PLATFORMS = {
-  'x-articles': {
-    name: 'X Articles',
-    allowedTags: ['h2', 'h3', 'h4', 'p', 'strong', 'b', 'em', 'i', 's', 'del',
-                  'a', 'blockquote', 'ul', 'ol', 'li', 'br', 'pre', 'code', 'hr',
-                  'figure', 'figcaption'],
-    stripTags: ['h1', 'img', 'table', 'thead', 'tbody', 'tr', 'td', 'th'],
-    imagePolicy: 'placeholder',  // X Articles doesn't support direct image embed via paste
-    note: 'Images will be replaced with [Image] placeholder. Upload separately in X Articles composer.'
-  },
   'linkedin': {
     name: 'LinkedIn',
     mode: 'markdown-hint',  // LinkedIn doesn't support rich paste reliably
-    note: 'LinkedIn does not support rich text paste. Output as Markdown-hint text — use a LinkedIn formatting tool to convert.'
+    note: 'LinkedIn does not support rich text paste. Output as Markdown-hint text — use a tool like Markdown Here to render in LinkedIn.'
   },
   'medium': {
     name: 'Medium',
@@ -33,6 +24,15 @@ const PLATFORMS = {
     allowedTags: ['*'],  // No restriction
     imagePolicy: 'passthrough',
     note: 'Pure HTML — works anywhere that accepts rich text.'
+  },
+  'x-articles': {
+    name: 'X Articles (X Premium)',
+    allowedTags: ['h2', 'h3', 'h4', 'p', 'strong', 'b', 'em', 'i', 's', 'del',
+                  'a', 'blockquote', 'ul', 'ol', 'li', 'br', 'pre', 'code', 'hr',
+                  'figure', 'figcaption'],
+    stripTags: ['h1', 'img', 'table', 'thead', 'tbody', 'tr', 'td', 'th'],
+    imagePolicy: 'placeholder',  // X Articles doesn't support direct image embed via paste
+    note: 'X Premium only. Whitelist based on mdpress spec — may need calibration with real X Premium account. Images replaced with [Image] placeholder.'
   },
   'markdown': {
     name: 'Raw Markdown',

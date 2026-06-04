@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>md2rich — Markdown to Rich Text for X Articles, LinkedIn, Medium</title>
-  <meta name="description" content="Convert Markdown to rich text format for X Articles, LinkedIn, and Medium. 100% client-side, zero upload, free, no signup.">
-  <meta name="keywords" content="markdown to html, markdown to twitter, markdown to linkedin, markdown to medium, x articles, rich text converter">
+  <title>md2rich — Markdown to Rich Text for LinkedIn, Medium, Any Editor</title>
+  <meta name="description" content="Convert Markdown to rich text format for LinkedIn, Medium, X Articles, Notion, and any rich text editor. 100% client-side, zero upload, free, no signup.">
+  <meta name="keywords" content="markdown to html, markdown to linkedin, markdown to medium, markdown to notion, rich text converter, markdown to x articles">
   <meta property="og:title" content="md2rich — Markdown to Rich Text Converter">
-  <meta property="og:description" content="Copy-paste ready. Write once, publish everywhere with perfect formatting.">
+  <meta property="og:description" content="Copy-paste ready. Write once, publish everywhere with perfect formatting. 100% client-side, zero upload.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://md2rich.com/">
   <link rel="canonical" href="https://md2rich.com/">
@@ -27,14 +27,15 @@
     "@type": "WebApplication",
     "name": "md2rich",
     "url": "https://md2rich.com",
-    "description": "Convert Markdown to rich text format for X Articles, LinkedIn, and Medium. 100% client-side, zero upload.",
+    "description": "Convert Markdown to rich text format for LinkedIn, Medium, X Articles, and any rich text editor. 100% client-side, zero upload.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
     "featureList": [
-      "Markdown to X Articles HTML",
       "Markdown to LinkedIn",
       "Markdown to Medium",
+      "Markdown to X Articles (X Premium)",
+      "Markdown to plain HTML for any rich text editor",
       "Privacy-first client-side processing",
       "No signup required"
     ]
@@ -75,7 +76,7 @@
     <!-- Hero -->
     <section class="text-center mb-6">
       <h1 class="text-3xl sm:text-4xl font-bold mb-2">Write Markdown. Publish Everywhere.</h1>
-      <p class="text-gray-600">Convert Markdown to rich text for <strong>X Articles</strong>, <strong>LinkedIn</strong>, <strong>Medium</strong>, and more — with one click.</p>
+      <p class="text-gray-600">Convert Markdown to rich text for <strong>LinkedIn</strong>, <strong>Medium</strong>, <strong>Notion</strong>, and any rich text editor — with one click.</p>
     </section>
 
     <!-- Editor + Preview split -->
@@ -131,10 +132,10 @@ function hello() {
         <div class="flex items-center gap-2 flex-1">
           <label for="platform" class="text-sm font-medium text-gray-700 whitespace-nowrap">Platform:</label>
           <select id="platform" class="flex-1 sm:flex-none sm:w-auto border border-gray-300 rounded px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <option value="x-articles">X Articles (Twitter long-form)</option>
             <option value="linkedin">LinkedIn (Markdown hint)</option>
-            <option value="medium">Medium (HTML)</option>
-            <option value="html">Plain HTML (any platform)</option>
+            <option value="medium">Medium (HTML with images)</option>
+            <option value="html">Plain HTML (any rich text editor)</option>
+            <option value="x-articles">X Articles — Twitter long-form (X Premium)</option>
             <option value="markdown">Raw Markdown (for GitHub etc.)</option>
           </select>
         </div>
@@ -160,8 +161,8 @@ function hello() {
     <!-- SEO content -->
     <section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
       <div>
-        <h3 class="font-semibold text-gray-900 mb-2">🎯 Built for X Articles</h3>
-        <p class="text-gray-600">Optimized tag whitelist for Twitter's long-form Articles editor. H2, bold, italic, lists, blockquotes, links — all preserved.</p>
+        <h3 class="font-semibold text-gray-900 mb-2">🌐 Works Everywhere</h3>
+        <p class="text-gray-600">LinkedIn, Medium, Notion, Substack, Ghost, WordPress, any rich text editor — paste with one click and keep your formatting.</p>
       </div>
       <div>
         <h3 class="font-semibold text-gray-900 mb-2">🔒 Privacy First</h3>
