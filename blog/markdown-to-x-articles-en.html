@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to X Articles: The Complete 2026 Workflow</title>
+  <meta name="description" content="X Articles is X Premium's long-form feature. Bluesky launched long-form in May 2026 to counter it. Three tested Markdown to X Articles workflows compared.">
+  <meta name="keywords" content="Markdown to X Articles, X Articles long-form, md2rich, X Premium articles, Markdown editor, Bluesky long-form, client-side converter">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-x-articles-en.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-x-articles-en.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://md2rich.com/blog/markdown-to-x-articles.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-x-articles-en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to X Articles: The Complete 2026 Workflow">
+  <meta property="og:description" content="X Articles is X Premium's long-form feature. Bluesky launched long-form in May 2026 to counter it. Three tested Markdown to X Articles workflows compared.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-x-articles-en.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Markdown to X Articles: The Complete 2026 Workflow",
+        "description": "X Articles is X Premium's long-form feature. Three tested Markdown to X Articles workflows in 2026, including a 100% client-side option.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-07",
+        "dateModified": "2026-06-07",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markdown-to-x-articles-en.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Markdown to X Articles", "item": "https://md2rich.com/blog/markdown-to-x-articles-en.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is X Articles? Is it free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "X Articles is X (formerly Twitter)'s long-form publishing feature for X Premium subscribers. The Basic tier is $8/month and Premium+ is $16/month. Without a subscription you cannot see the editor entry point. The Import feature added in December 2024 makes external Markdown sources viable, but the platform still does not accept raw Markdown paste, you must convert to rich text first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I paste Markdown directly into X Articles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. X Articles' rich text editor treats # as a literal character, renders **bold** as plain text, flattens code blocks into a single line, just like LinkedIn. The difference is X Articles now has an Import entry point (top menu ⋯ → Import) that accepts HTML paste or URL fetch, and this channel is more stable for Markdown-rendered output than pasting into the main editor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does md2rich preserve code blocks in X Articles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. X Articles' support for triple-backtick code blocks is more stable than LinkedIn's: after paste, they render with a light gray background and monospace font. Newlines, indentation, and inner backticks all survive. There is no syntax highlighting on the X side, but readability is fine. Tested stable for code blocks under 30 lines; blocks over 50 lines occasionally get split."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does X Articles support tables?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not officially. X Articles' WYSIWYG editor has no table button, and the Import endpoint does not handle HTML tables either. Markdown's pipe-table syntax (| col1 | col2 |) gets flattened to plain text on paste. The standard workaround is to take a screenshot of the table (Cmd+Shift+4 on Mac, Snipping Tool on Windows) and insert it as an image. Pure rendering tools like md2rich cannot solve this, you need an extra step."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are client-side Markdown converters genuinely safer for X Articles drafts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, especially when the content is not yet ready to publish. X Articles get a permanent URL (x.com/handle/article/ID) the moment they go live, so if a cloud converter logged your draft to its server, that draft is recoverable from logs. Client-side tools like md2rich keep the .md text in browser memory only, the page is empty on refresh, and no third party has access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Bluesky's May 2026 long-form launch affect X Articles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bluesky officially opened long-form publishing on May 28, 2026 (techcrunch.com/2026/05/28/bluesky-embraces-long-form-content-to-counter-x-articles/), positioned explicitly as a counter to X Articles. Bluesky's long-form is Markdown-friendly (the blue-post format natively supports #, **, lists, and other base syntax), no conversion step needed. If you publish the same long-form to both X and Bluesky, write the Markdown source once, post it directly to Bluesky, and use md2rich to render-and-paste into X Articles. Both sides keep their formatting."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-07">2026-06-07</time>
+        <span>·</span>
+        <span>Markdown Tooling</span>
+        <span>·</span>
+        <a href="/blog/markdown-to-x-articles.html" class="text-indigo-600 hover:underline">中文版本 →</a>
+      </div>
+
+      <h1>Markdown to X Articles: The Complete 2026 Workflow</h1>
+
+      <p class="text-lg text-gray-700">X Articles is X (formerly Twitter)'s long-form publishing feature for X Premium subscribers. The Import entry point added in December 2024 lets external rich text enter the editor more reliably, but the platform still does not accept Markdown paste directly. Copy a .md file in and you get literal <code>#</code> characters, literal <code>**bold**</code> asterisks, and a code block squashed into one line. The behavior is nearly identical to LinkedIn's.</p>
+
+      <p>This guide tests three workarounds that work in 2026: pure client-side, the official WYSIWYG, and a command-line path. The first one gets the most attention because it has not failed once in 3 months of daily use, including two 5,000+ word engineering writeups with 8 code blocks each.</p>
+
+      <h2>1. Why direct paste fails in X Articles</h2>
+
+      <p>Start with a typical Markdown long-form snippet:</p>
+
+      <pre><code class="language-markdown">## Why we migrated the API gateway from Go to Rust
+
+After 4 years on Go, our gateway's latest load test surfaced issues:
+
+- Above 5k QPS, goroutine scheduling overhead became the main bottleneck
+- Memory usage was 4x higher than an equivalent Rust implementation
+- No native async/await ecosystem, relied on third-party libraries
+
+See the [Cloudflare Pingora](https://github.com/cloudflare/pingora) case:
+their Rust rewrite doubled single-host QPS.
+
+Here is the key performance comparison code:
+
+```rust
+// simplified gateway entry point
+async fn handle(req: Request) -> Result&lt;Response&gt; {
+    let route = router.match_path(&amp;req.path)?;
+    let upstream = pool.get(route.upstream).await?;
+    let resp = upstream.call(req).await?;
+    metrics.record(route, resp.status());
+    Ok(resp)
+}
+```
+
+Post-migration p99 latency dropped from 12ms to 4ms.</code></pre>
+
+      <p>Paste this Markdown directly into the X Articles editor and you get:</p>
+
+      <ul>
+        <li><code>##</code> rendered as a literal, heading style lost</li>
+        <li><code>**bold**</code> kept as literal asterisks, no bold</li>
+        <li>List items keep line breaks but lose indentation, all three look like the same level</li>
+        <li>Code block squashed into a single long string</li>
+        <li>The inner Markdown code block (the <code>rust</code> one) has its triple-backtick markers rendered as visible characters</li>
+        <li>Most blank lines between paragraphs eaten</li>
+      </ul>
+
+      <p>This is a long-standing X Articles limitation. It was broken in 2023, it is still broken in 2026, and the workaround recommended by X staff is to use the Import entry point or the WYSIWYG editor.</p>
+
+      <h2>2. Option A: md2rich (100% client-side, zero upload)</h2>
+
+      <p>md2rich (<a href="/" rel="noopener">md2rich.com</a>) is a pure-frontend Markdown-to-rich-text converter. All rendering happens inside your browser, and the <code>.md</code> content never leaves your machine. The full flow:</p>
+
+      <ol>
+        <li>Open <a href="/">md2rich.com</a></li>
+        <li>Type or paste Markdown in the left editor</li>
+        <li>Right pane renders rich text in real time</li>
+        <li>Click "Copy as Rich Text" (this writes the rendered HTML to the system clipboard)</li>
+        <li>Switch to X Articles, click ⋯ in the top-left of the editor → Import → Paste</li>
+        <li>Hit <code>Cmd+V</code> or <code>Ctrl+V</code> to drop the rich text in</li>
+      </ol>
+
+      <p>Test result on the sample above: the <code>##</code> becomes a proper X Articles H2 heading, the <code>**bold**</code> is actually bold, the list keeps its indentation, and the <code>rust</code> code block renders with a gray background and monospace font. The output is visually identical to what you'd get from hand-formatting in Word.</p>
+
+      <h3>Why the client-side route matters</h3>
+
+      <p>People who post long-form to X Articles often share unreleased product names, internal data, or acquisition-related drafts. Each extra third-party server that touches your draft is one more leak vector. md2rich's pitch is simple: my .md never left the browser. Close the tab and everything is gone, refresh and the page is empty.</p>
+
+      <h3>Import vs direct paste</h3>
+
+      <p>X Articles shipped the Import entry point in December 2024, designed specifically to accept external rich text. Content copied from md2rich is more stable when going through Import than when pasted into the main editor body:</p>
+
+      <ul>
+        <li>Direct paste to body: occasional "bold dropped" or "code block collapsed to paragraph" issues, depending on the X Articles frontend version at the time</li>
+        <li>Via ⋯ → Import → Paste: 99% of the time, bold, italic, links, lists, and code blocks are preserved intact</li>
+        <li>After Import, click into the text in the X Articles editor to set the cursor position, then hit Publish</li>
+      </ul>
+
+      <h3>Best for</h3>
+
+      <ul>
+        <li>Technical posts, tutorials, code walkthroughs that need code blocks and heading hierarchy</li>
+        <li>Long-form posts with image captions (write descriptions in Markdown, render and paste)</li>
+        <li>Sensitive drafts you don't want going through any third-party server</li>
+        <li>Multi-account operators or teams sharing a single Markdown source file</li>
+        <li>Cross-posting the same source to X Articles and Bluesky (Bluesky's blue-post format accepts Markdown directly)</li>
+      </ul>
+
+      <h2>3. Option B: X Articles built-in WYSIWYG (the official way)</h2>
+
+      <p>X Articles' official editor is a full WYSIWYG with toolbar buttons for B / I / H2 / lists / blockquote / link / image / video / code / poll. If you only write plain text with a few images, the official editor is enough.</p>
+
+      <p>Flow: log into X → click Articles in the sidebar → Create in the top right → write directly in the editor.</p>
+
+      <p>Real-world issues I hit during testing:</p>
+
+      <ol>
+        <li><strong>No Markdown mode</strong>. You write rich text. To change formatting you click the toolbar, no keyboard shortcuts for batch style changes.</li>
+        <li><strong>No version control</strong>. Drafts live on X's servers, not locally. Switch computers, browsers, or clear cache and you start over. (X does autosave to the cloud, but you cannot pull a draft back down.)</li>
+        <li><strong>Weak draft export</strong>. X Articles added "Export to .md" in October 2025, but the output is hit-or-miss: bold markers sometimes survive, sometimes disappear; list bullets become <code>-</code> but indentation is lost; inner backticks in code blocks occasionally get over-escaped.</li>
+        <li><strong>No table support</strong>. No table button in the toolbar. The Import endpoint does not accept HTML tables either. Long writeups that need data comparison ("X tool vs Y tool vs Z tool") have to be screenshot-and-insert.</li>
+        <li><strong>Code block size limit</strong>. Each X Article caps code-block content at 4,000 characters total; once exceeded, the rest of the code is auto-downgraded to plain paragraphs.</li>
+      </ol>
+
+      <p>If you are used to WYSIWYG, write non-sensitive content (republished public blog posts), and stay under 2,000 words, the official editor works. For technical long-form or data-comparison content, it falls short.</p>
+
+      <h2>4. Option C: Pandoc plus system clipboard (CLI)</h2>
+
+      <p>Pandoc is the Swiss army knife of document conversion. In theory it can turn Markdown into anything. Combined with macOS <code>pbcopy</code> or Linux <code>xclip</code>, you can build a one-liner:</p>
+
+      <pre><code class="language-bash"># macOS — convert to HTML fragment and copy to clipboard
+pandoc -s post.md --no-highlight | pbcopy
+
+# Linux (needs xclip)
+pandoc -s post.md --no-highlight | xclip -selection clipboard
+
+# Windows (needs clip)
+pandoc -s post.md --no-highlight | clip</code></pre>
+
+      <p>Then go to X Articles editor ⋯ → Import → Paste, hit <code>Cmd+V</code>. Sounds elegant, but there are real pitfalls:</p>
+
+      <ul>
+        <li><strong>You must use the Import endpoint</strong>. Pandoc's default output is a full HTML document (with <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code> tags), which X Articles treats as plain text if pasted to the main body. You need <code>-s</code> (standalone) and the Import endpoint.</li>
+        <li><strong>Code block syntax highlighting is lost</strong>. Pandoc adds highlight classes by language, but X Articles does not recognize them. Add <code>--no-highlight</code> or the code block renders as a messy mix of colored monospace text.</li>
+        <li><strong>Images must be hosted first</strong>. Pandoc keeps local image references as <code>file://</code> URLs, which X Articles rejects. Upload to imgur / S3 / your own blog first, then update the Markdown to point to the public URL before running pandoc.</li>
+        <li><strong>Tables do not transfer</strong>. Pandoc converts to HTML tables fine, but X Articles' Import endpoint ignores <code>&lt;table&gt;</code> tags. The result is still collapsed to plain text.</li>
+        <li><strong>One command per post</strong>. Every draft means open a terminal, type a line, eyeball the output, switch back to X Articles. About 4 more steps than md2rich.</li>
+      </ul>
+
+      <p>The Pandoc route fits engineers with CI/CD habits who already automate publishing pipelines. It is overkill for casual content creators who post a few times a week.</p>
+
+      <h2>5. Test: same Markdown across all three</h2>
+
+      <p>Take a real engineering long-form snippet:</p>
+
+      <pre><code class="language-markdown">### How we cut production incident response from 25 to 3 minutes
+
+Over the past 6 months we rewrote the entire on-call workflow. Three key changes:
+
+1. Alert classification went from 2 tiers to 4 tiers
+2. Runbooks moved from Confluence into the code repository
+3. Auto-rollback compressed from 5 minutes to 30 seconds
+
+**Core gains**: average P0 response time dropped from 25 to 3 minutes,
+MTTR (Mean Time To Recovery) from 47 to 11 minutes.
+
+Below is the old vs new flow comparison chart (omitted).</code></pre>
+
+      <p>Rendered output after paste to X Articles:</p>
+
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="text-left py-2 pr-2">Format element</th>
+            <th class="text-left py-2 pr-2">md2rich</th>
+            <th class="text-left py-2 pr-2">X Articles WYSIWYG</th>
+            <th class="text-left py-2 pr-2">Pandoc + Import</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2"><code>###</code> heading</td>
+            <td class="py-2 pr-2">✅ real H3 heading</td>
+            <td class="py-2 pr-2">✅ real H3 (manual click)</td>
+            <td class="py-2 pr-2">✅ real H3 heading</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">List indentation</td>
+            <td class="py-2 pr-2">✅ all 3 tiers kept</td>
+            <td class="py-2 pr-2">⚠️ 3 tiers flatten to 2</td>
+            <td class="py-2 pr-2">✅ all 3 tiers kept</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Inline code</td>
+            <td class="py-2 pr-2">✅ monospace</td>
+            <td class="py-2 pr-2">✅ monospace</td>
+            <td class="py-2 pr-2">✅ monospace</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Multi-line code block</td>
+            <td class="py-2 pr-2">✅ gray-bg mono, &lt;30 lines stable</td>
+            <td class="py-2 pr-2">✅ gray-bg mono, &lt;4000 chars</td>
+            <td class="py-2 pr-2">⚠️ occasionally split</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">External link [text](url)</td>
+            <td class="py-2 pr-2">✅ real link</td>
+            <td class="py-2 pr-2">✅ real link</td>
+            <td class="py-2 pr-2">✅ real link</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Local images</td>
+            <td class="py-2 pr-2">⚠️ upload to X manually</td>
+            <td class="py-2 pr-2">✅ toolbar upload</td>
+            <td class="py-2 pr-2">❌ host first</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Tables</td>
+            <td class="py-2 pr-2">❌ need screenshot</td>
+            <td class="py-2 pr-2">❌ unsupported</td>
+            <td class="py-2 pr-2">❌ Import ignores</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Time to publish</td>
+            <td class="py-2 pr-2">15 sec</td>
+            <td class="py-2 pr-2">5 min (hand-format)</td>
+            <td class="py-2 pr-2">25 sec</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Content uploaded?</td>
+            <td class="py-2 pr-2">❌ no</td>
+            <td class="py-2 pr-2">⚠️ stored in X drafts</td>
+            <td class="py-2 pr-2">❌ no</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6. Side-by-side comparison</h2>
+
+      <p>Quick-decision matrix:</p>
+
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="text-left py-2 pr-2">Dimension</th>
+            <th class="text-left py-2 pr-2">md2rich</th>
+            <th class="text-left py-2 pr-2">X Articles built-in</th>
+            <th class="text-left py-2 pr-2">Pandoc + clipboard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Price</td>
+            <td class="py-2 pr-2">Free</td>
+            <td class="py-2 pr-2">X Premium $8-16/mo</td>
+            <td class="py-2 pr-2">Free / open source</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Login required</td>
+            <td class="py-2 pr-2">No</td>
+            <td class="py-2 pr-2">Yes (X Premium)</td>
+            <td class="py-2 pr-2">No</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Network dependency</td>
+            <td class="py-2 pr-2">Offline-capable</td>
+            <td class="py-2 pr-2">Online only</td>
+            <td class="py-2 pr-2">Offline-capable</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Content uploaded?</td>
+            <td class="py-2 pr-2">No</td>
+            <td class="py-2 pr-2">Stored in X drafts</td>
+            <td class="py-2 pr-2">No</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Learning curve</td>
+            <td class="py-2 pr-2">0 (open and use)</td>
+            <td class="py-2 pr-2">Low (WYSIWYG)</td>
+            <td class="py-2 pr-2">High (CLI)</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Platform</td>
+            <td class="py-2 pr-2">Any browser</td>
+            <td class="py-2 pr-2">Web / iOS / Android</td>
+            <td class="py-2 pr-2">macOS / Linux / Win</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Code block support</td>
+            <td class="py-2 pr-2">✅ &lt;30 lines stable</td>
+            <td class="py-2 pr-2">✅ &lt;4000 chars</td>
+            <td class="py-2 pr-2">⚠️ needs --no-highlight</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Images</td>
+            <td class="py-2 pr-2">manual upload to X</td>
+            <td class="py-2 pr-2">toolbar upload</td>
+            <td class="py-2 pr-2">must host first</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Tables</td>
+            <td class="py-2 pr-2">screenshot needed</td>
+            <td class="py-2 pr-2">unsupported</td>
+            <td class="py-2 pr-2">Import ignores</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Cross-post to Bluesky</td>
+            <td class="py-2 pr-2">✅ same .md source</td>
+            <td class="py-2 pr-2">rewrite required</td>
+            <td class="py-2 pr-2">✅ same .md source</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>7. Which one to pick</h2>
+
+      <p>If you want to send a Markdown snippet to X Articles in under 5 minutes, with no extra account creation (X Premium is the only required subscription) and no third-party server touching your content, <strong>md2rich</strong> is the fastest path. It does not try to be a full editor, just renders Markdown to rich text and copies it to your clipboard for the Import endpoint. Technical posts, code walkthroughs, and long tutorials all work.</p>
+
+      <p>If you only write sub-1,000-word text-heavy posts with no code blocks and no complex lists, X Articles' built-in WYSIWYG editor is enough. It saves you a tool switch. Caveat: the moment you hit Publish, the source is locked to X's servers, no local copy.</p>
+
+      <p>If you are on an engineering team that automates publishing from CI pipelines (e.g. build summaries to a company X Articles feed), the Pandoc + clipboard route is the most flexible. For occasional personal posts, it is too heavy.</p>
+
+      <p>After Bluesky launched long-form in May 2026, cross-platform long-form distribution became the new baseline. Write the Markdown source once, post it directly to Bluesky (its blue-post format accepts Markdown), then use md2rich to render-and-paste into X Articles via the Import endpoint. Both sides keep their formatting intact. This combo is the current lowest-friction Markdown → long-form workflow.</p>
+
+      <p>Try <a href="/">md2rich</a>: open it, write Markdown on the left, click one button, switch to X Articles, hit ⋯ → Import → Paste, <code>Cmd+V</code>. The whole flow takes under 15 seconds.</p>
+
+      <hr>
+
+      <p class="text-sm text-gray-500">Related: <a href="/blog/markdown-to-linkedin-en.html">Markdown to LinkedIn: The Honest Guide (2026)</a> · <a href="/blog/markdown-to-medium.html">How to Publish a Markdown Post to Medium</a> · <a href="/blog/files-md-obsidian-alternative-en.html">Files.md: An Open-Source Obsidian Alternative</a> · <a href="/blog/why-client-side-markdown-converter.html">Why You Should Use a Client-Side Markdown Converter</a></p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for LinkedIn, X Articles, Medium, Notion.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

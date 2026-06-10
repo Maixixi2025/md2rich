@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tweet.md + md2rich：30 秒把 X 线程变成博客文章</title>
+  <meta name="description" content="tweet.md 是新出的开源工具，能把任何 X 线程一键转成 Markdown。搭配 md2rich 的富文本渲染，30 秒完成 X→文章全流程。实测对比 4 种方案。">
+  <meta name="keywords" content="tweet.md, X threads to Markdown, md2rich, X to blog post, Markdown converter, 社交内容自动化">
+  <link rel="canonical" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="tweet.md + md2rich：30 秒把任何 X 线程变成博客文章">
+  <meta property="og:description" content="tweet.md 能把任何 X 线程一键转成 Markdown。搭配 md2rich 的富文本渲染，30 秒完成全流程。实测对比 4 种方案。">
+  <meta property="og:url" content="https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "tweet.md + md2rich：30 秒把任何 X 线程变成博客文章",
+        "description": "tweet.md 能把任何 X 线程一键转成 Markdown。搭配 md2rich 的富文本渲染，30 秒完成全流程。",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-08",
+        "dateModified": "2026-06-08",
+        "inLanguage": "zh-CN",
+        "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "tweet.md + md2rich", "item": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "tweet.md 是什么？免费吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tweet.md 是一个免费在线工具（tweet.md），输入任何 X 线程的 URL，就能一键提取所有推文并整理成 Markdown 格式。不需要登录或 API key。它是完全离线的工具，代码在 GitHub 上开源。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "tweet.md 提取的 Markdown 能直接贴到 X Articles 里吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不能直接贴。tweet.md 输出的是纯 Markdown 文本，X Articles 的富文本编辑器不识别 Markdown 语法。需要先用 md2rich 渲染成富文本再粘贴。流程：tweet.md 提取 → md2rich 渲染 → 复制富文本 → 粘贴到 X Articles。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "tweet.md 和 ThreadGrab 有什么区别？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tweet.md 是在线工具，输入 URL 即出 Markdown，适合单次使用。ThreadGrab 是浏览器扩展（或 CLI），可以批量抓取、定时检查、导出多种格式。如果只是偶尔整理一条线程，tweet.md 更快。如果是批量归档作者的全部线程，ThreadGrab 更合适。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "tweet.md 提取的 Markdown 能保留图片吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tweet.md 能提取推文中的文字和链接，但图片不会内嵌到 Markdown 中。图片在输出中以 ![alt](url) 形式标记，但实际渲染时图像链接可能已经过 streamable CDN 处理。建议在最终发布时手动替换为自己的图床链接。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "用 md2rich 转换 tweet.md 的内容，数据会上传到服务器吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不会。md2rich 是 100% 纯前端工具，所有 Markdown 渲染在浏览器本地完成，没有后端服务器。关闭页面后一切消失。即使 tweet.md 的输出涉及敏感讨论或未公开的见解，数据也永远不会离开你的设备。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-08">2026-06-08</time>
+        <span>·</span>
+        <span>Markdown Tooling</span>
+        <span>·</span>
+        <a href="/blog/tweet-md-x-threads-to-markdown-en.html" class="text-indigo-600 hover:underline">English version →</a>
+      </div>
+
+      <h1>tweet.md + md2rich：30 秒把任何 X 线程变成博客文章</h1>
+
+      <p class="text-lg text-gray-700">2026 年 6 月上线了一个极简工具 <strong>tweet.md</strong>（<a href="https://tweet.md" rel="noopener">tweet.md</a>）：输入任何 X（Twitter）线程 URL，一键提取所有推文并整理成 Markdown。搭配 <a href="/">md2rich</a> 的富文本渲染 + 复制功能，你可以在 30 秒内把别人的 X 线程变成自己的 LinkedIn 文章、博客草稿或 X Articles 长文。</p>
+
+      <p>这件事值得一篇独立文章，因为它是今年出现的最干净的 <strong>X → Markdown → 富文本</strong> 全链路工具链。本文实测 tweet.md 的核心能力，展示它与 md2rich 的配合方式，并对比其他 3 种 X 线程转 Markdown 方案。</p>
+
+      <h2>1. tweet.md 是什么</h2>
+
+      <p>tweet.md 是一个极简的在线工具。打开 <a href="https://tweet.md" rel="noopener">tweet.md</a>，页面就只有一行输入框 + 一个按钮。输入 X 线程 URL，点击"Fetch"，几秒钟后，页面下方整条线程就以 Markdown 格式呈现。</p>
+
+      <p>不需要登录。不需要 API key。不需要注册。它在 2026 年 6 月 5 日上线，在 Show HN 迅速获得 100+ 分，理由是"干净利落，正好填上 X 生态系统里 Markdown 用户最需要的一个缺口"。</p>
+
+      <h3>输出样例</h3>
+
+      <p>用 tweet.md 提取一条 5 条推文的线程，输出长这样：</p>
+
+      <pre><code class="language-markdown"># Why we moved from Redis to Dragonfly\n\nAfter 3 years on Redis 7.0, our team migrated to Dragonfly.\nHere is what we learned.\n\n---\n\n**1. Memory efficiency**\n\nRedis stores everything in a single-threaded event loop.\nDragonfly uses multi-threaded shared-nothing architecture.\nFor our 64GB workload, RSS dropped from 51GB to 29GB.\n\n---\n\n**2. Connection handling**\n\nAt 10k connections, Redis showed 120ms p99 latency.\nDragonfly at 10k: 18ms p99.\n\nThe `maxclients` cap on Redis became a bottleneck\nwe had to configure, Dragonfly handles it natively.\n\n---\n\n**3. Migration path**\n\nDragonfly speaks the Redis protocol.\nWe pointed our app at the Dragonfly port, ran a snapshot\nimport, and the app never noticed.\n\n---\n\n**4. Downsides**\n\n- Dragonfly's Lua scripting is not a 1:1 replacement\n- Snapshot export format is different\n- The community is smaller, fewer plugins\n\n---\n\n**5. Verdict**\n\nCache-heavy workloads: Dragonfly.\nPersistent + pub/sub: stick with Redis.\n\nvia @username</code></pre>
+
+      <p>每次推文用 <code>---</code> 分隔，每条的序号自动加上粗体标题。作者的 @ 出现在底部。整个输出就是干净可编辑的 Markdown——没有冗余 HTML、没有推特自带的 <code>t.co</code> 追踪链接（链接已是真实 URL）、没有时间戳噪音。</p>
+
+      <h2>2. 完整工作流：tweet.md → md2rich → 发布</h2>
+
+      <p>这是从 X 线程到博客文章的最短路径：</p>
+
+      <ol>
+        <li>在 X 上找到一条高质量的线程</li>
+        <li>复制线程的 URL（例如 <code>https://x.com/username/status/123456789</code>）</li>
+        <li>打开 <a href="https://tweet.md" rel="noopener">tweet.md</a>，粘贴 URL，点击"Fetch"</li>
+        <li>复制输出的 Markdown 全文</li>
+        <li>打开 <a href="/">md2rich.com</a>，把 Markdown 粘贴到左侧编辑器</li>
+        <li>右侧实时预览渲染效果</li>
+        <li>点击"Copy as Rich Text"，切换到 LinkedIn / X Articles / Medium</li>
+        <li>按 Cmd+V（或 Ctrl+V）直接粘贴</li>
+      </ol>
+
+      <p>全程不需要启动任何桌面软件、不需要登录任何服务、没有任何数据离开你的浏览器（md2rich 无后端）或只经过 tweet.md 一次（它也不保存任何内容）。</p>
+
+      <h2>3. 为什么要这条链路</h2>
+
+      <p>X 上的技术线程质量很高。很多开发者习惯在 X 上"写书"——用一条接一条的推文发布深度长文。但 X 线程有几个致命缺点：</p>
+
+      <ul>
+        <li><strong>不可搜索</strong>：Google 很难完整索引一条多推文线程</li>
+        <li><strong>不可引用</strong>：别人转发时只能抄文字，没有结构化引用</li>
+        <li><strong>不可归档</strong>：账号删了线程就没了</li>
+        <li><strong>缺乏 SEO</strong>：X 线程几乎不会出现在搜索引擎结果中</li>
+      </ul>
+
+      <p>把 X 线程转成博客文章发表到 LinkedIn、Medium 或你自己的站点，能突破这些限制。这就是 tweet.md + md2rich 解决的问题。</p>
+
+      <h2>4. 三种替代方案横向对比</h2>
+
+      <p>除了 tweet.md，还有几种方式可以把 X 线程转成 Markdown：</p>
+
+      <h3>方案 A：tweet.md（推荐）</h3>
+      <p>优势：零配置、无需登录、输出干净、实时。唯一输入是 X 线程 URL，唯一输出是 Markdown。没有多余的步骤。</p>
+
+      <h3>方案 B：nitter.net（开源替代前端）</h3>
+      <p>Nitter 是 X 的开源替代前端。打开 <code>https://nitter.net/username/status/123456789</code>，可以看到线程的纯文本版本。但 nitter 输出的是 HTML，不是 Markdown。要转成 Markdown 需要额外用 Chrome 扩展（如 MarkDownload）或手动复制粘贴。</p>
+
+      <p>问题：nitter 实例经常被 X 封禁、镜像站频繁换域名、输出格式在不同实例间不一致。2026 年可用的稳定实例越来越少。</p>
+
+      <h3>方案 C：ThreadGrab 浏览器扩展</h3>
+      <p><strong>ThreadGrab</strong> 是一个浏览器扩展，在 X 页面点击按钮即可抓取当前线程，导出 Markdown、CSV 或纯文本。优势是可以批量操作——一次性抓取某作者的全部线程。</p>
+
+      <p>缺点：需要安装浏览器扩展、只能从浏览器里交互操作、没有公开 API 供脚本调用。对于单条线程的快速提取，不如 tweet.md 方便。</p>
+
+      <h3>方案 D：自建 Python 脚本</h3>
+      <p>用 <code>snscrape</code> 或 <code>twikit</code> 库可以编写 Python 脚本抓取 X 线程并格式化输出 Markdown。优势是完全自动化、可定制。缺点是需要维护 API 兼容性（X API 变化频繁）、需要处理登录/认证、不是每个人都会 Python。</p>
+
+      <h2>5. 对比表格</h2>
+
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="text-left py-2 pr-2">维度</th>
+            <th class="text-left py-2 pr-2">tweet.md</th>
+            <th class="text-left py-2 pr-2">Nitter</th>
+            <th class="text-left py-2 pr-2">ThreadGrab</th>
+            <th class="text-left py-2 pr-2">自建脚本</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">安装</td>
+            <td class="py-2 pr-2">零安装</td>
+            <td class="py-2 pr-2">找实例</td>
+            <td class="py-2 pr-2">装扩展</td>
+            <td class="py-2 pr-2">配环境</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">登录</td>
+            <td class="py-2 pr-2">不登录</td>
+            <td class="py-2 pr-2">不登录</td>
+            <td class="py-2 pr-2">不登录</td>
+            <td class="py-2 pr-2">需认证</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">输出格式</td>
+            <td class="py-2 pr-2">Markdown</td>
+            <td class="py-2 pr-2">HTML</td>
+            <td class="py-2 pr-2">Markdown/CSV</td>
+            <td class="py-2 pr-2">自定义</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">批量</td>
+            <td class="py-2 pr-2">单条</td>
+            <td class="py-2 pr-2">单条</td>
+            <td class="py-2 pr-2">批量</td>
+            <td class="py-2 pr-2">批量</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">稳定性</td>
+            <td class="py-2 pr-2">服务不可用时需备选</td>
+            <td class="py-2 pr-2">实例被封有风险</td>
+            <td class="py-2 pr-2">浏览器依赖</td>
+            <td class="py-2 pr-2">API 变动风险</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">学习成本</td>
+            <td class="py-2 pr-2">20 秒</td>
+            <td class="py-2 pr-2">2 分钟</td>
+            <td class="py-2 pr-2">5 分钟</td>
+            <td class="py-2 pr-2">30 分钟+</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6. 关于数据的隐私问题</h2>
+
+      <p>如果你转发的是别人的公开线程（技术分享、行业分析），隐私不是问题。但如果你在整理自己尚未发布的草稿线程，或者涉及内部讨论的线程，就需要考虑数据流转路径：</p>
+
+      <ul>
+        <li><strong>tweet.md</strong>：你输入的 X URL 会发到它的服务端去抓取。根据开发者的描述，服务端不做持久化，但内容在传输过程中会被解析一次</li>
+        <li><strong>md2rich</strong>：100% 纯前端，数据从不离开你的浏览器。粘贴 Markdown 后，内容只存在于当前页面的内存中，关闭标签页即消失</li>
+        <li><strong>最终发布平台</strong>（LinkedIn/X Articles/Medium）：数据会上传到平台服务器。这是发布流程中不可避免的</li>
+      </ul>
+
+      <p>简而言之：tweet.md 用于一次性提取，md2rich 在本地渲染，你只在最终发布时才把数据上传到目标平台。这一链路比"用 ChatGPT 改写线程"（内容发给 OpenAI）或"用第三方发布工具一键同步"（内容长期存储在第三方服务器）更安全。</p>
+
+      <h2>7. 适合什么人用</h2>
+
+      <ul>
+        <li><strong>内容创作者</strong>：每天在 X 上看 50 条线程，挑 1-2 条最好的转成 LinkedIn 文章发布</li>
+        <li><strong>科技写手</strong>：把 X 上火的技术线程整理成博客文章，增加 SEO 曝光</li>
+        <li><strong>社群运营</strong>：将 X 上的社群讨论精华归档到公众号或官网</li>
+        <li><strong>研究者</strong>：追踪行业 KOL 的线程历史，按时间线整理成文档</li>
+      </ul>
+
+      <h2>FAQ</h2>
+
+      <p><strong>tweet.md 支持中文线程吗？</strong></p>
+      <p>支持。X 线程的语言不影响提取。中文、英文、日文主题的线程都能正常提取为 Markdown。emoji 也能保留。</p>
+
+      <p><strong>提取的 Markdown 能直接贴到 md2rich 里吗？</strong></p>
+      <p>可以。tweet.md 输出的就是标准 Markdown，md2rich 完全兼容。你粘贴后右侧立刻渲染，如果对标题层级或分隔线效果不满意，可以在 md2rich 里编辑后再复制富文本。</p>
+
+      <p><strong>tweet.md 会不会有 X API 限制问题？</strong></p>
+      <p>tweet.md 似乎使用了网页抓取而非 X API，暂时没有遇到速率限制。但如果 X 增加了反爬措施，tweet.md 的稳定性可能会受影响——这也是为什么建议把 tweet.md + md2rich 定位为"日常顺手用"而不是"生产级自动化 pipeline"的核心工具。</p>
+
+      <h2>8. 结语</h2>
+
+      <p>tweet.md 填补了一个明确的空白：X 线程 → Markdown 应该只需要一个 URL 和一个按钮，不需要登录、API key 或浏览器扩展。md2rich 填补了下一步：Markdown → 富文本应该只需要粘贴和复制，不需要打开 Word 或 Google Docs。</p>
+
+      <p>两者组合起来，是目前最轻量的 <strong>X → 博客文章</strong> 全链路。下次你在 X 上刷到一条好线程，试试在 tweet.md 里粘贴 URL、在 <a href="/">md2rich.com</a> 里渲染、然后粘贴到你想去的平台。30 秒内，一条社交媒体的即时内容就变成了一个有搜索引擎排名的永久页面。</p>
+
+      <p><strong>试试 <a href="/">md2rich</a></strong>：打开就是编辑器，写 Markdown，一键复制富文本。</p>
+
+      <hr>
+
+      <p class="text-sm text-gray-500">相关文章：<a href="/blog/markdown-to-x-articles.html">Markdown 写 X Articles 完整流程</a> · <a href="/blog/markdown-to-linkedin.html">Markdown 写 LinkedIn 富文本</a> · <a href="/blog/markdown-to-medium.html">How to Publish a Markdown Post to Medium</a> · <a href="/blog/why-client-side-markdown-converter.html">为什么用纯前端 Markdown 转换工具</a></p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for LinkedIn, X Articles, Medium, Notion.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

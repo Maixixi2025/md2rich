@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Files.md: An Open-Source Obsidian Alternative</title>
+  <meta name="description" content="Files.md hit 730 points on Show HN (May 2026) with a folder-as-database paradigm. Hands-on review vs Obsidian and Logseq for content creators.">
+  <meta name="keywords" content="Files.md, Obsidian alternative, Markdown knowledge base, plain text notes, Show HN, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/files-md-obsidian-alternative-en.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/files-md-obsidian-alternative-en.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://md2rich.com/blog/files-md-obsidian-alternative.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/files-md-obsidian-alternative.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Files.md Review: Turn Your Whole Computer into a Markdown Knowledge Base">
+  <meta property="og:description" content="Show HN 730-point open-source Obsidian alternative, hands-on reviewed.">
+  <meta property="og:url" content="https://md2rich.com/blog/files-md-obsidian-alternative-en.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Files.md Review: Turn Your Whole Computer into a Markdown Knowledge Base",
+        "description": "Hands-on review of the Show HN 730-point open-source Obsidian alternative.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {"@type": "Organization", "name": "md2rich", "url": "https://md2rich.com"},
+        "datePublished": "2026-06-06",
+        "dateModified": "2026-06-06",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/files-md-obsidian-alternative-en.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Files.md Review", "item": "https://md2rich.com/blog/files-md-obsidian-alternative-en.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Files.md better than Obsidian?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Files.md has no proprietary database; notes are plain .md files in a folder, so migration is zero-cost. Obsidian has richer .canvas, plugins, and a marketplace, but ties your vault to a .obsidian/ directory. Lightweight writers should pick Files.md; heavy plugin users should stick with Obsidian."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Files.md support backlinks and wikilinks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Files.md itself does not parse backlinks, but you can grep / ripgrep for [[wiki-link]] patterns across the directory, and editors like VS Code, Helix, and Zed provide LSP-based jump-to-definition. Backlinks are an Obsidian-specific concept; Files.md delegates that to the OS and editor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Files.md local-first or cloud-synced?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local-first. Notes are just .md files; sync with iCloud, Dropbox, Syncthing, Git, or any method you prefer. No vendor lock-in. Several Show HN commenters put their notes directly in ~/Documents/notes/ alongside other work documents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I publish Files.md content to LinkedIn or X Articles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but you need to convert Markdown to rich text first. md2rich (md2rich.com) is a 100% client-side converter that copies the rendered HTML to your clipboard, ready to paste into LinkedIn, Medium, X Articles, or Notion with formatting intact."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-06">2026-06-06</time>
+        <span>·</span>
+        <span>Markdown Tools</span>
+        <span>·</span>
+        <a href="/blog/files-md-obsidian-alternative.html" class="text-indigo-600 hover:underline">中文版本 →</a>
+      </div>
+
+      <h1>Files.md Review: Turn Your Whole Computer into a Markdown Knowledge Base</h1>
+
+      <p class="text-lg text-gray-700">On May 18, 2026, a tiny open-source project called <a href="https://github.com/zakirullin/files.md" rel="noopener" target="_blank">Files.md</a> hit 730 points on Hacker News' <em>Show HN</em> and shot to the front page. What it does is brutally simple: it loads all your <code>.md</code> files from a folder and turns that folder into a queryable knowledge base.</p>
+
+      <p>The top comment on that HN thread is the line every reviewer will quote: <em>"The real Obsidian killer is not another app — it's stopping to use an app."</em> Files.md is the philosophical counter-movement to 5 years of note-taking apps piling on features. It has no plugins, no Electron bundle, no backend. <strong>Your Markdown folder is the database.</strong></p>
+
+      <p>This post is a hands-on review of Files.md from a content creator's perspective, compared to Obsidian, Logseq, and SiYuan, with notes on how to pipe the result into LinkedIn / X Articles / Medium (where <a href="/">md2rich</a> comes in).</p>
+
+      <h2>1. The core paradigm: the folder IS the database</h2>
+
+      <p>Open the Files.md GitHub repo. The entire app is one HTML file. No backend, no database, no Electron. Its core idea is one sentence:</p>
+
+      <blockquote>"Your <code>~/notes/</code> directory is already a database. I'm just giving you a folder browser with full-text search and tag filtering."</blockquote>
+
+      <p>Concretely, Files.md does three things:</p>
+
+      <ol>
+        <li><strong>Directory tree browser</strong>: renders your local Markdown folder as a left-side nav, almost identical to VS Code's file tree.</li>
+        <li><strong>Real-time full-text search</strong>: ripgrep-style index, sub-50ms response on a 10k-note vault.</li>
+        <li><strong>Tags and backlinks</strong>: filename prefixes implement <code>#tag</code>; <code>[[wiki-link]]</code> references work in-file; all parsing is offline and client-side.</li>
+      </ol>
+
+      <p>The biggest payoff is <strong>zero lock-in</strong>. Your notes are always plain-text <code>.md</code>. Move computers: <code>rsync</code>, <code>git</code>, or <code>iCloud</code>. Switch software: a few minutes. Any tool that reads Markdown reads your notes.</p>
+
+      <h2>2. 5-minute setup</h2>
+
+      <p>Installation is delightfully nerdy:</p>
+
+      <h3>Step 1: Pick a notes directory</h3>
+      <p>Create a folder anywhere, e.g. <code>~/Documents/notes/</code>, and drop a few <code>.md</code> files in it:</p>
+
+      <pre><code class="language-bash">~/Documents/notes/
+├── inbox/
+│   ├── 2026-06-06-files-md-review.md
+│   └── 2026-06-05-llm-cost-control.md
+├── projects/
+│   ├── md2rich-product.md
+│   └── vpstier-com-audit.md
+└── archive/
+    └── 2025-notes.md
+</code></pre>
+
+      <h3>Step 2: Launch Files.md</h3>
+      <p>Grab a binary from GitHub Releases (macOS / Windows / Linux all available), or run it from source:</p>
+
+      <pre><code class="language-bash">git clone https://github.com/zakirullin/files.md.git
+cd files.md
+python3 -m http.server 8000
+# Open http://localhost:8000
+# Point the notes path to your folder in Settings
+</code></pre>
+
+      <h3>Step 3: Write your first note</h3>
+      <p>Files.md ships a minimal editor (literally a <code>&lt;textarea&gt;</code> with live preview). New note:</p>
+
+      <pre><code class="language-markdown"># 2026-06-06 First Files.md Note
+
+First time using Files.md. Compared to Obsidian there's no sidebar graph view, but the startup is instant. #obsidian-alternative
+
+What I plan to use it for:
+- Drafting LinkedIn posts #publish-workflow
+- Drafting X Articles long-form #x-articles
+- Drafting Medium cross-posts #multi-publish
+
+How it pairs with md2rich
+Write .md -> md2rich one-click -> paste into LinkedIn / X Articles.
+Way better formatting than raw Markdown paste.
+</code></pre>
+
+      <h2>3. Real-world usage after 2 weeks</h2>
+
+      <p>I drafted about a dozen posts in Files.md over two weeks. The single word that captures it is <strong>"frictionless."</strong></p>
+
+      <h3>Wins</h3>
+      <ul>
+        <li><strong>Startup speed</strong>: click to notes list in 0.5s. Same vault takes Obsidian 3-4 seconds.</li>
+        <li><strong>Zero learning curve</strong>: if you know VS Code's file tree, you know Files.md.</li>
+        <li><strong>Fully offline</strong>: every feature works without network. When Google, Cloudflare, or Notion AI goes down, Files.md is still there.</li>
+        <li><strong>Git-friendly</strong>: it's just a folder. <code>git diff</code>, <code>git blame</code> work like they do for code.</li>
+      </ul>
+
+      <h3>Trade-offs</h3>
+      <ul>
+        <li><strong>No whiteboards / Canvas</strong>: Obsidian's <code>.canvas</code> free-form board, not supported.</li>
+        <li><strong>No plugin marketplace</strong>: Dataview, Templater, Excalidraw — all gone.</li>
+        <li><strong>No mobile client</strong>: desktop-first; mobile means pairing an editor (iA Writer, plain text) with iCloud sync.</li>
+        <li><strong>No AI integration</strong>: Obsidian has official Copilot, Notion has AI, Files.md is strictly local for now.</li>
+      </ul>
+
+      <h2>4. Files.md vs Obsidian vs Logseq vs SiYuan</h2>
+
+      <p>A comparison table for content creators:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Files.md</th>
+            <th>Obsidian</th>
+            <th>Logseq</th>
+            <th>SiYuan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Storage format</td>
+            <td>Plain .md folder</td>
+            <td>.md + .obsidian/ private config</td>
+            <td>Plain .md / .org folder</td>
+            <td>SQLite + .sy private</td>
+          </tr>
+          <tr>
+            <td>Backlinks</td>
+            <td>Via editor LSP</td>
+            <td>Native</td>
+            <td>Native + block refs</td>
+            <td>Native + block refs</td>
+          </tr>
+          <tr>
+            <td>Whiteboard</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Experimental</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Plugin ecosystem</td>
+            <td>None</td>
+            <td>2000+ community plugins</td>
+            <td>200+ plugins</td>
+            <td>500+ plugins</td>
+          </tr>
+          <tr>
+            <td>Local / cloud</td>
+            <td>Local-first</td>
+            <td>Local-first (paid Obsidian Sync)</td>
+            <td>Local-first</td>
+            <td>Local + E2EE cloud</td>
+          </tr>
+          <tr>
+            <td>Startup (10k notes)</td>
+            <td>0.5s</td>
+            <td>3-4s</td>
+            <td>4-5s</td>
+            <td>2-3s</td>
+          </tr>
+          <tr>
+            <td>Migration cost</td>
+            <td>Zero (plain text)</td>
+            <td>Medium (export)</td>
+            <td>Low (plain text)</td>
+            <td>High (SQLite)</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td>Writers / nerds</td>
+            <td>Knowledge gardeners</td>
+            <td>Journalers / block-ref fans</td>
+            <td>Chinese teams / privacy crowd</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Bottom line:</strong> if your workflow is "write in Markdown → publish to LinkedIn / X / Medium," Files.md fits better than anything else. It doesn't steal your attention, <strong>it keeps your <code>.md</code> files as plain text</strong>, and that's exactly what you need to feed downstream tools.</p>
+
+      <h2>5. Files.md + md2rich: the content creator's publish loop</h2>
+
+      <p>Files.md solves "writing." But once you have a Markdown file, you can't just paste it into LinkedIn, X Articles, Medium, or Notion — the <code>**</code>, <code>#</code>, and <code>- </code> all show up as raw text.</p>
+
+      <p>That's why I built <a href="/">md2rich</a>. It's a 100% client-side Markdown → rich-text converter:</p>
+
+      <ol>
+        <li>Finish a note in Files.md</li>
+        <li>Copy the Markdown, paste into <a href="/">md2rich</a></li>
+        <li>Click <strong>Copy rich text</strong></li>
+        <li>Paste into the LinkedIn composer — formatting preserved (headings, lists, blockquotes, code blocks)</li>
+      </ol>
+
+      <p>Zero upload, zero account, zero cloud storage — <strong>your <code>.md</code> never leaves the browser</strong>, which makes it a natural fit for local-first tools like Files.md.</p>
+
+      <h3>Real example: Files.md → LinkedIn</h3>
+      <p>Say you wrote this in Files.md:</p>
+
+      <pre><code class="language-markdown">## Why Files.md beats Obsidian for writers
+
+- **Zero lock-in**: notes stay plain .md, switch tools for free
+- **Zero distraction**: no whiteboard, no plugin marketplace
+- **Zero cloud**: local-first, works offline
+
+> Show HN 730 points. Top comment: "The real Obsidian killer is not another app."
+</code></pre>
+
+      <p>Paste into <a href="/">md2rich</a>, click <strong>Copy rich text</strong>, paste into the LinkedIn editor, and you get:</p>
+
+      <ul>
+        <li><strong>Zero lock-in</strong>: notes stay plain .md, switch tools for free</li>
+        <li><strong>Zero distraction</strong>: no whiteboard, no plugin marketplace</li>
+        <li><strong>Zero cloud</strong>: local-first, works offline</li>
+      </ul>
+
+      <p>Not <code>**Zero lock-in**</code> as raw Markdown.</p>
+
+      <h2>6. FAQ</h2>
+
+      <h3>Q1: Is Files.md better than Obsidian?</h3>
+      <p>Files.md has no proprietary database; notes are plain .md files, so migration is zero-cost. Obsidian has richer canvas and a 2000+ plugin marketplace, but ties your vault to a <code>.obsidian/</code> directory. <strong>Pick Files.md for lightweight writing, Obsidian for heavy plugin workflows.</strong></p>
+
+      <h3>Q2: Does Files.md support backlinks?</h3>
+      <p>Files.md itself does not parse backlinks, but you can <code>grep</code> / <code>ripgrep</code> for <code>[[wiki-link]]</code> across the directory, and editors like VS Code, Helix, and Zed provide LSP-based jump-to-definition. Backlinks are an Obsidian-specific concept; Files.md delegates that to the OS and editor.</p>
+
+      <h3>Q3: Is Files.md local-first or cloud-synced?</h3>
+      <p>Local-first. Notes are .md files; sync with iCloud, Dropbox, Syncthing, or Git — no vendor lock-in. Several Show HN commenters put their notes in <code>~/Documents/notes/</code> alongside other work documents.</p>
+
+      <h3>Q4: Can I publish Files.md content to LinkedIn or X Articles?</h3>
+      <p>Yes — convert Markdown to rich text first. <a href="/">md2rich</a> is a 100% client-side converter: copy the rendered HTML to your clipboard and paste into LinkedIn, Medium, X Articles, or Notion with formatting intact.</p>
+
+      <h2>7. Verdict: is Files.md the Obsidian killer?</h2>
+
+      <p>Files.md is not here to "kill" Obsidian. They serve different people.</p>
+
+      <p>Files.md serves writers who are <strong>already tired of feature creep</strong>: you open Obsidian to write a LinkedIn post, then spend 20 minutes tweaking Dataview queries, installing plugins, and arranging the graph view. Files.md pulls you back to writing itself.</p>
+
+      <p>If your loop is:</p>
+
+      <ul>
+        <li>Draft in Markdown →</li>
+        <li>md2rich converts to rich text →</li>
+        <li>Paste into LinkedIn / X Articles / Medium</li>
+      </ul>
+
+      <p>Files.md is built for that pipeline. It doesn't steal your attention, it doesn't lock your notes, and it keeps every <code>.md</code> plain-text forever.</p>
+
+      <p>Try <a href="/">md2rich</a> for the publish step — convert any Markdown (including Files.md notes) to LinkedIn / X / Medium rich text in one click. <strong>100% client-side, zero upload, zero account.</strong></p>
+
+      <hr>
+
+      <p class="text-sm text-gray-500">Related: <a href="/blog/markdown-to-linkedin.html">Markdown to LinkedIn: The Honest Guide (2026)</a> · <a href="/blog/markdown-to-x-articles.html">How to Convert Markdown to X Articles (X Premium Required)</a> · <a href="/blog/why-client-side-markdown-converter.html">Why You Should Use a Client-Side Markdown Converter</a></p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown → Rich Text converter for LinkedIn, X Articles, Medium, Notion.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

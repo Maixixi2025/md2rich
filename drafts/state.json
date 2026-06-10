@@ -1,0 +1,205 @@
+{
+  "site": "md2rich.com",
+  "topic_direction_rotation": [
+    "Markdown 入门",
+    "Obsidian 替代品",
+    "LinkedIn 富文本粘贴",
+    "X Articles 写作流程",
+    "Notion 转换",
+    "富文本编辑器对比",
+    "纯文本工作流"
+  ],
+  "published": [
+    {
+      "slug": "tweet-md-x-threads-to-markdown",
+      "date": "2026-06-08",
+      "type": "guide",
+      "lang": "zh-CN",
+      "file": "blog/tweet-md-x-threads-to-markdown.html",
+      "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html",
+      "title": "tweet.md + md2rich：30 秒把 X 线程变成博客文章",
+      "description": "tweet.md 是新出的开源工具，能把任何 X 线程一键转成 Markdown。搭配 md2rich 的富文本渲染，30 秒完成 X→文章全流程。",
+      "heat_source": "⭐⭐ 2026-06-08 daily report — tweet.md launched: X threads to Markdown in one click",
+      "status": "published",
+      "published_at": "2026-06-08T12:30:00Z",
+      "providers_featured": [
+        "tweet-md"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "tweet-md-x-threads-to-markdown-en",
+      "date": "2026-06-08",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/tweet-md-x-threads-to-markdown-en.html",
+      "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html",
+      "title": "tweet.md + md2rich: X Thread to Blog Post in 30s",
+      "description": "tweet.md converts X threads to clean Markdown in one click. Pair it with md2rich for an X-to-article pipeline. Tested against 3 alternatives.",
+      "heat_source": "⭐⭐ 2026-06-08 daily report — tweet.md launched: X threads to Markdown in one click",
+      "status": "published",
+      "published_at": "2026-06-08T12:30:00Z",
+      "providers_featured": [
+        "tweet-md"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "files-md-obsidian-alternative",
+      "date": "2026-06-06",
+      "type": "review",
+      "lang": "zh-CN",
+      "file": "blog/files-md-obsidian-alternative.html",
+      "url": "https://md2rich.com/blog/files-md-obsidian-alternative.html",
+      "title": "Files.md 评测：把整台电脑变成 Markdown 知识库",
+      "description": "Files.md 是 2026 年 5 月 Show HN 730 分爆红的开源 Markdown 知识库。",
+      "heat_source": "⭐⭐⭐ 2026-06-06 daily report — Show HN 730pts 5/18",
+      "status": "published",
+      "published_at": "2026-06-06T12:34:00Z",
+      "providers_featured": [
+        "files-md"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "files-md-obsidian-alternative-en",
+      "date": "2026-06-06",
+      "type": "review",
+      "lang": "en-US",
+      "file": "blog/files-md-obsidian-alternative-en.html",
+      "url": "https://md2rich.com/blog/files-md-obsidian-alternative-en.html",
+      "title": "Files.md: An Open-Source Obsidian Alternative",
+      "description": "Files.md hit 730 points on Show HN (May 2026) with a folder-as-database paradigm.",
+      "heat_source": "⭐⭐⭐ 2026-06-06 daily report — Show HN 730pts 5/18",
+      "status": "published",
+      "published_at": "2026-06-06T12:34:00Z",
+      "providers_featured": [
+        "files-md"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    }
+  ],
+  "drafts": [
+    {
+      "slug": "markdown-to-linkedin",
+      "date": "2026-06-06",
+      "type": "guide",
+      "lang": "zh-CN",
+      "file": "blog/markdown-to-linkedin.html",
+      "url": "https://md2rich.com/blog/markdown-to-linkedin.html",
+      "title": "Markdown 写 LinkedIn 富文本：2026 三个实测靠谱方案",
+      "description": "LinkedIn 的富文本粘贴对 Markdown 不友好。本文实测三个 2026 年可用的方案，包括 100% 客户端的 md2rich。",
+      "heat_source": "⭐⭐ 2026-06-06 daily report — md2rich 核心定位选题（orphan link in blog/index.html）",
+      "status": "drafted",
+      "providers_featured": [
+        "md2rich",
+        "stackedit",
+        "pandoc"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-linkedin-en",
+      "date": "2026-06-06",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-linkedin-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-linkedin-en.html",
+      "title": "Markdown to LinkedIn: The Honest Guide (2026)",
+      "description": "LinkedIn's rich text paste support is unreliable. Here are 3 real workarounds that actually work in 2026, including a 100% private one.",
+      "heat_source": "⭐⭐ 2026-06-06 daily report — md2rich 核心定位选题（orphan link in blog/index.html）",
+      "status": "drafted",
+      "providers_featured": [
+        "md2rich",
+        "stackedit",
+        "pandoc"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-x-articles",
+      "date": "2026-06-07",
+      "type": "guide",
+      "lang": "zh-CN",
+      "file": "blog/markdown-to-x-articles.html",
+      "url": "https://md2rich.com/blog/markdown-to-x-articles.html",
+      "title": "Markdown 写 X Articles 完整流程：2026 三个实测方案",
+      "description": "X Articles 是 X Premium 的长文功能，2026 年 5 月 Bluesky 上线长文反击。本文实测三个 Markdown → X Articles 的转换方案。",
+      "heat_source": "⭐⭐ 2026-06-07 daily report — Bluesky launches long-form to counter X Articles; orphan link in blog/index.html (fixed)",
+      "status": "drafted",
+      "providers_featured": [
+        "md2rich",
+        "x-articles",
+        "pandoc",
+        "bluesky"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-x-articles-en",
+      "date": "2026-06-07",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-x-articles-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-x-articles-en.html",
+      "title": "Markdown to X Articles: The Complete 2026 Workflow",
+      "description": "X Articles is X Premium's long-form feature. Bluesky launched long-form in May 2026 to counter it. Three tested Markdown to X Articles workflows compared.",
+      "heat_source": "⭐⭐ 2026-06-07 daily report — Bluesky launches long-form to counter X Articles; orphan link in blog/index.html (fixed)",
+      "status": "drafted",
+      "providers_featured": [
+        "md2rich",
+        "x-articles",
+        "pandoc",
+        "bluesky"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "x-articles-vs-linkedin-newsletter",
+      "date": "2026-06-09",
+      "type": "comparison",
+      "lang": "zh-CN",
+      "file": "blog/x-articles-vs-linkedin-newsletter.html",
+      "url": "https://md2rich.com/blog/x-articles-vs-linkedin-newsletter.html",
+      "title": "X Articles vs LinkedIn Newsletter：2026 长文触达率实测对比",
+      "description": "X Articles 的'Freedom of Reach'算法黑箱 vs LinkedIn Newsletter 的稳定订阅触达，2026 年 5 月 HN 720 分讨论。3 维度实测对比 + Markdown 跨平台工作流。",
+      "heat_source": "⭐⭐ 2026-06-09 daily report — 'Freedom of Reach' HN 720pts; X Articles vs LinkedIn Newsletter long-form reach comparison",
+      "status": "drafted",
+      "providers_featured": [
+        "x-articles",
+        "linkedin-newsletter",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "x-articles-vs-linkedin-newsletter-en",
+      "date": "2026-06-09",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/x-articles-vs-linkedin-newsletter-en.html",
+      "url": "https://md2rich.com/blog/x-articles-vs-linkedin-newsletter-en.html",
+      "title": "X Articles vs LinkedIn Newsletter: 2026 Reach Compared",
+      "description": "X Articles Freedom of Reach blackbox vs LinkedIn Newsletter's stable subscriber reach. 3-dimension test + Markdown cross-post workflow (2026).",
+      "heat_source": "⭐⭐ 2026-06-09 daily report — 'Freedom of Reach' HN 720pts; X Articles vs LinkedIn Newsletter long-form reach comparison",
+      "status": "drafted",
+      "providers_featured": [
+        "x-articles",
+        "linkedin-newsletter",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    }
+  ],
+  "recent_topics": [
+    "x-articles-vs-linkedin-newsletter",
+    "x-articles-vs-linkedin-newsletter-en",
+    "markdown-to-x-articles",
+    "markdown-to-x-articles-en",
+    "markdown-to-linkedin-en",
+    "markdown-to-linkedin",
+    "files-md-obsidian-alternative-en",
+    "files-md-obsidian-alternative"
+  ],
+  "current_index": 5
+}

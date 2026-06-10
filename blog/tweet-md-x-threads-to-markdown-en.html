@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tweet.md + md2rich: X Thread to Blog Post in 30s</title>
+  <meta name="description" content="tweet.md converts X threads to clean Markdown in one click. Pair it with md2rich for an X-to-article pipeline. Tested against 3 alternatives.">
+  <meta name="keywords" content="tweet.md, X threads to Markdown, md2rich, X to blog post, Markdown converter, social content automation">
+  <link rel="canonical" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="tweet.md + md2rich: X Thread to Blog Post in 30s">
+  <meta property="og:description" content="tweet.md converts X threads to clean Markdown. md2rich renders it to rich text. The full pipeline from X to LinkedIn/Medium/X Articles takes under 30 seconds.">
+  <meta property="og:url" content="https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "tweet.md + md2rich: X Thread to Blog Post in 30s",
+        "description": "tweet.md converts X threads to clean Markdown in one click. Pair it with md2rich for a complete X-to-article pipeline.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-08",
+        "dateModified": "2026-06-08",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "tweet.md + md2rich", "item": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is tweet.md? Is it free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tweet.md is a free online tool at tweet.md. Paste any X thread URL, click Fetch, and get a clean Markdown output. No login, no API key required. The code is open source on GitHub."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I paste tweet.md's output directly into X Articles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not directly. tweet.md outputs raw Markdown text, which X Articles' rich text editor doesn't parse. You need md2rich to render it to rich text first. The workflow: tweet.md extract -> md2rich render -> copy rich text -> paste into X Articles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between tweet.md and ThreadGrab?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tweet.md is an online tool for single-thread extraction. ThreadGrab is a browser extension for bulk operations. tweet.md is faster for occasional use. ThreadGrab is better for archiving an entire author's threads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does md2rich upload my data to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. md2rich is 100% client-side. All Markdown rendering happens in your browser. No backend, no uploads, no data stored. Close the tab and everything is gone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does tweet.md preserve images from X threads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tweet.md extracts text and links from tweets, but images are marked as ![alt](url) in the Markdown output. The image URLs reference X's CDN which may expire. For published articles, consider re-hosting images on your own CDN."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-08">2026-06-08</time>
+        <span>·</span>
+        <span>Markdown Tooling</span>
+        <span>·</span>
+        <a href="/blog/tweet-md-x-threads-to-markdown.html" class="text-indigo-600 hover:underline">中文版本 →</a>
+      </div>
+
+      <h1>tweet.md + md2rich: Turn Any X Thread Into a Blog Post</h1>
+
+      <p class="text-lg text-gray-700">A new tool called <strong>tweet.md</strong> (<a href="https://tweet.md" rel="noopener">tweet.md</a>) launched in early June 2026. Paste any X (Twitter) thread URL, and it extracts every tweet into clean Markdown. Combine it with <a href="/">md2rich</a>—which renders Markdown to rich text for LinkedIn, Medium, and X Articles—and you have a complete X-to-article pipeline that takes under 30 seconds.</p>
+
+      <p>This matters because X threads are one of the highest-quality sources of technical writing on the internet. Developers write full books as threads. But a thread on X is hard to search, hard to reference, and has zero SEO presence. Turning a good thread into a permanent blog post unlocks search traffic, citation links, and archival value.</p>
+
+      <h2>1. What tweet.md does</h2>
+
+      <p>tweet.md is about as minimal as a web tool gets. Open <a href="https://tweet.md" rel="noopener">tweet.md</a>, paste an X thread URL, click "Fetch." A few seconds later, every tweet in the thread is formatted as clean Markdown below the input.</p>
+
+      <p>No login. No API key. No registration. It hit Show HN in early June 2026 and quickly crossed 100 points, with comments noting how it fills an obvious gap in the X ecosystem for Markdown users.</p>
+
+      <h3>Sample output</h3>
+
+      <p>Feeding tweet.md a 5-tweet thread produces output like this:</p>
+
+      <pre><code class="language-markdown"># Why we moved from Redis to Dragonfly\n\nAfter 3 years on Redis 7.0, our team migrated to Dragonfly.\nHere is what we learned.\n\n---\n\n**1. Memory efficiency**\n\nRedis stores everything in a single-threaded event loop.\nDragonfly uses multi-threaded shared-nothing architecture.\nFor our 64GB workload, RSS dropped from 51GB to 29GB.\n\n---\n\n**2. Connection handling**\n\nAt 10k connections, Redis showed 120ms p99 latency.\nDragonfly at 10k: 18ms p99.\n\nThe `maxclients` cap on Redis became a bottleneck\nwe had to configure, Dragonfly handles it natively.\n\n---\n\n**3. Migration path**\n\nDragonfly speaks the Redis protocol.\nWe pointed our app at the Dragonfly port, ran a snapshot\nimport, and the app never noticed.\n\n---\n\n**4. Downsides**\n\n- Dragonfly's Lua scripting is not a 1:1 replacement\n- Snapshot export format is different\n- The community is smaller, fewer plugins\n\n---\n\n**5. Verdict**\n\nCache-heavy workloads: Dragonfly.\nPersistent + pub/sub: stick with Redis.\n\nvia @username</code></pre>
+
+      <p>Each tweet is separated by <code>---</code>, the sequence number is prepended with bold formatting, and the author's handle appears at the bottom. The output is clean, editable Markdown—no extra HTML, no <code>t.co</code> tracking links, no timestamp noise.</p>
+
+      <h2>2. The full workflow: tweet.md → md2rich → publish</h2>
+
+      <p>Here is the shortest path from an X thread to a published blog post:</p>
+
+      <ol>
+        <li>Find a high-quality thread on X</li>
+        <li>Copy the thread URL (e.g. <code>https://x.com/username/status/123456789</code>)</li>
+        <li>Open <a href="https://tweet.md" rel="noopener">tweet.md</a>, paste the URL, click "Fetch"</li>
+        <li>Copy the full Markdown output</li>
+        <li>Open <a href="/">md2rich.com</a>, paste the Markdown into the left editor</li>
+        <li>The right pane renders rich text in real time</li>
+        <li>Click "Copy as Rich Text", switch to LinkedIn / X Articles / Medium</li>
+        <li>Hit Ctrl+V (or Cmd+V)</li>
+      </ol>
+
+      <p>No desktop software required. No logins. No data leaves your browser (md2rich is client-side) or travels through tweet.md's server only during the extraction step.</p>
+
+      <h2>3. Why this pipeline matters</h2>
+
+      <p>X threads have three critical limitations for long-form content:</p>
+
+      <ul>
+        <li><strong>Not indexed</strong>: Google struggles to index multi-tweet threads as a single document</li>
+        <li><strong>Not citable</strong>: Sharing a thread means asking people to scroll through 20 tweets</li>
+        <li><strong>Not durable</strong>: If the author deletes their account, the thread is gone forever</li>
+      </ul>
+
+      <p>Converting a thread to a blog post on LinkedIn, Medium, or your own site fixes all three. tweet.md removes the friction of manual copying, and md2rich removes the friction of Markdown rendering.</p>
+
+      <h2>4. Alternatives compared</h2>
+
+      <p>Besides tweet.md, there are a few other ways to get X threads into Markdown:</p>
+
+      <h3>Option A: tweet.md (recommended)</h3>
+      <p>Zero setup, no login, clean output, works in real time. Single input field, single output format. Nothing to configure.</p>
+
+      <h3>Option B: Nitter instances</h3>
+      <p>Nitter is an open-source alternative X frontend. Opening a thread on a Nitter instance gives you a text-only view. But the output is HTML, not Markdown, so you need a browser extension (like MarkDownload) or manual formatting. Nitter instances are frequently blocked by X, and available mirrors keep changing.</p>
+
+      <h3>Option C: ThreadGrab browser extension</h3>
+      <p>ThreadGrab is a browser extension that adds a "Grab Thread" button to the X page. It can export to Markdown, CSV, or plain text, and supports batch capture. Downside: requires a browser extension install, only works through browser interaction, and has no API for scripting.</p>
+
+      <h3>Option D: Custom Python script</h3>
+      <p>Using libraries like <code>twikit</code> or <code>snscrape</code>, you can script thread extraction with custom formatting. Maximum flexibility, but requires maintenance (X API changes constantly) and technical skill.</p>
+
+      <h2>5. Comparison table</h2>
+
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="text-left py-2 pr-2">Dimension</th>
+            <th class="text-left py-2 pr-2">tweet.md</th>
+            <th class="text-left py-2 pr-2">Nitter</th>
+            <th class="text-left py-2 pr-2">ThreadGrab</th>
+            <th class="text-left py-2 pr-2">Custom script</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Setup</td>
+            <td class="py-2 pr-2">None</td>
+            <td class="py-2 pr-2">Find instance</td>
+            <td class="py-2 pr-2">Install extension</td>
+            <td class="py-2 pr-2">Install deps</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Login</td>
+            <td class="py-2 pr-2">None</td>
+            <td class="py-2 pr-2">None</td>
+            <td class="py-2 pr-2">None</td>
+            <td class="py-2 pr-2">May need auth</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Output</td>
+            <td class="py-2 pr-2">Markdown</td>
+            <td class="py-2 pr-2">HTML</td>
+            <td class="py-2 pr-2">Markdown/CSV</td>
+            <td class="py-2 pr-2">Custom</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Batch</td>
+            <td class="py-2 pr-2">Single thread</td>
+            <td class="py-2 pr-2">Single thread</td>
+            <td class="py-2 pr-2">Batch capable</td>
+            <td class="py-2 pr-2">Batch capable</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Reliability</td>
+            <td class="py-2 pr-2">Service-dependent</td>
+            <td class="py-2 pr-2">Instance-dependent</td>
+            <td class="py-2 pr-2">Browser-dependent</td>
+            <td class="py-2 pr-2">API-dependent</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Learning curve</td>
+            <td class="py-2 pr-2">20 seconds</td>
+            <td class="py-2 pr-2">2 minutes</td>
+            <td class="py-2 pr-2">5 minutes</td>
+            <td class="py-2 pr-2">30+ minutes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6. Privacy considerations</h2>
+
+      <p>If you are republishing a public thread (technical analysis, industry commentary), privacy is not a concern. But if you are working with unpublished draft threads or internal discussions, here is where data goes:</p>
+
+      <ul>
+        <li><strong>tweet.md</strong>: The X URL is sent to its server for extraction. The developer states no persistent storage, but the content is parsed server-side once.</li>
+        <li><strong>md2rich</strong>: 100% client-side. Markdown never leaves your browser. Close the tab, nothing persists.</li>
+        <li><strong>Target platform</strong> (LinkedIn / X Articles / Medium): Data reaches their servers during publish. This is unavoidable in the final step.</li>
+      </ul>
+
+      <p>This chain is more private than alternatives like "rewrite with ChatGPT" (sends data to OpenAI) or "schedule with a social media tool" (stores content long-term on a third-party server). Only tweet.md sees your content during extraction, and by design it does not store it.</p>
+
+      <h2>7. Who benefits</h2>
+
+      <ul>
+        <li><strong>Content creators</strong>: Scan X for 50 threads a day, convert the best 1-2 to LinkedIn articles</li>
+        <li><strong>Technical writers</strong>: Turn hot X threads into permanent blog posts with SEO value</li>
+        <li><strong>Community managers</strong>: Archive community discussions from X to official sites</li>
+        <li><strong>Researchers</strong>: Track an author's thread history as structured documents</li>
+      </ul>
+
+      <h2>FAQ</h2>
+
+      <p><strong>Does tweet.md work with non-English threads?</strong></p>
+      <p>Yes. The tool is language-agnostic. Chinese, Japanese, or Korean threads all extract cleanly. Emoji and special characters are preserved.</p>
+
+      <p><strong>Can I paste tweet.md's output directly into md2rich?</strong></p>
+      <p>Yes. tweet.md outputs standard Markdown, and md2rich handles it without any modifications. Paste into the left editor, see the rendered preview on the right, then copy as rich text.</p>
+
+      <p><strong>What happens if tweet.md goes down?</strong></p>
+      <p>tweet.md is hosted as a simple web service. If it's unavailable, the ThreadGrab browser extension is a good fallback. For production pipelines, a custom script provides the most reliability.</p>
+
+      <h2>8. Conclusion</h2>
+
+      <p>tweet.md fills a clear gap: X thread to Markdown should be one URL and one button, not a multi-tool workflow. md2rich fills the next gap: Markdown to rich text should be paste and copy, not Word or Google Docs.</p>
+
+      <p>Together they form the lightest <strong>X-to-blog-post</strong> pipeline available in mid-2026. Next time you scroll past a good thread on X, try the workflow: paste the URL into <a href="https://tweet.md" rel="noopener">tweet.md</a>, copy the Markdown, open <a href="/">md2rich.com</a>, render it, and paste into your platform of choice. In 30 seconds, an ephemeral thread becomes a permanent, searchable, citable article.</p>
+
+      <p><strong>Try <a href="/">md2rich</a></strong>: open it, write or paste Markdown, copy rich text in one click.</p>
+
+      <hr>
+
+      <p class="text-sm text-gray-500">Related: <a href="/blog/markdown-to-x-articles-en.html">Markdown to X Articles: The Complete Workflow</a> · <a href="/blog/markdown-to-linkedin-en.html">Markdown to LinkedIn: The Honest Guide</a> · <a href="/blog/files-md-obsidian-alternative-en.html">Files.md: An Open-Source Obsidian Alternative</a> · <a href="/blog/why-client-side-markdown-converter.html">Why Use a Client-Side Markdown Converter</a></p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for LinkedIn, X Articles, Medium, Notion.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="text-indigo-600 hover:underline">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>
