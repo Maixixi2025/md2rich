@@ -21,7 +21,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/blog/files-md-obsidian-alternative.html</loc>
+    <loc>https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich-en.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

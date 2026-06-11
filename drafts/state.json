@@ -11,23 +11,6 @@
   ],
   "published": [
     {
-      "slug": "tweet-md-x-threads-to-markdown",
-      "date": "2026-06-08",
-      "type": "guide",
-      "lang": "zh-CN",
-      "file": "blog/tweet-md-x-threads-to-markdown.html",
-      "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown.html",
-      "title": "tweet.md + md2rich：30 秒把 X 线程变成博客文章",
-      "description": "tweet.md 是新出的开源工具，能把任何 X 线程一键转成 Markdown。搭配 md2rich 的富文本渲染，30 秒完成 X→文章全流程。",
-      "heat_source": "⭐⭐ 2026-06-08 daily report — tweet.md launched: X threads to Markdown in one click",
-      "status": "published",
-      "published_at": "2026-06-08T12:30:00Z",
-      "providers_featured": [
-        "tweet-md"
-      ],
-      "primary_cta": "https://md2rich.com/"
-    },
-    {
       "slug": "tweet-md-x-threads-to-markdown-en",
       "date": "2026-06-08",
       "type": "guide",
@@ -41,23 +24,6 @@
       "published_at": "2026-06-08T12:30:00Z",
       "providers_featured": [
         "tweet-md"
-      ],
-      "primary_cta": "https://md2rich.com/"
-    },
-    {
-      "slug": "files-md-obsidian-alternative",
-      "date": "2026-06-06",
-      "type": "review",
-      "lang": "zh-CN",
-      "file": "blog/files-md-obsidian-alternative.html",
-      "url": "https://md2rich.com/blog/files-md-obsidian-alternative.html",
-      "title": "Files.md 评测：把整台电脑变成 Markdown 知识库",
-      "description": "Files.md 是 2026 年 5 月 Show HN 730 分爆红的开源 Markdown 知识库。",
-      "heat_source": "⭐⭐⭐ 2026-06-06 daily report — Show HN 730pts 5/18",
-      "status": "published",
-      "published_at": "2026-06-06T12:34:00Z",
-      "providers_featured": [
-        "files-md"
       ],
       "primary_cta": "https://md2rich.com/"
     },
@@ -189,9 +155,45 @@
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "linkedin-markdown-formatter-vs-md2rich",
+      "date": "2026-06-10",
+      "type": "comparison",
+      "lang": "zh-CN",
+      "file": "blog/linkedin-markdown-formatter-vs-md2rich.html",
+      "url": "https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich.html",
+      "title": "LinkedIn Markdown Formatter vs md2rich：隐私、功能、实测对比",
+      "description": "LinkedIn Markdown Formatter 上线。这是 md2rich 的第一个直接竞品。从头到尾对比两个工具——隐私策略、功能覆盖、真实使用体验。",
+      "heat_source": "⭐ 2026-06-10 daily report — LinkedIn Markdown Formatter 上线；MD发LinkedIn的4种工具横评",
+      "status": "drafted",
+      "providers_featured": [
+        "md2rich",
+        "linkedin-markdown-formatter"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "linkedin-markdown-formatter-vs-md2rich-en",
+      "date": "2026-06-10",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/linkedin-markdown-formatter-vs-md2rich-en.html",
+      "url": "https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich-en.html",
+      "title": "LinkedIn Markdown Formatter vs md2rich: In-Depth Comparison",
+      "description": "How a new LinkedIn Markdown Formatter compares to md2rich — privacy, features, and which one fits your workflow.",
+      "heat_source": "⭐ 2026-06-10 daily report — LinkedIn Markdown Formatter launched; MD-to-LinkedIn tool comparison",
+      "status": "drafted",
+      "providers_featured": [
+        "md2rich",
+        "linkedin-markdown-formatter"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "recent_topics": [
+    "linkedin-markdown-formatter-vs-md2rich-en",
+    "linkedin-markdown-formatter-vs-md2rich",
     "x-articles-vs-linkedin-newsletter",
     "x-articles-vs-linkedin-newsletter-en",
     "markdown-to-x-articles",
