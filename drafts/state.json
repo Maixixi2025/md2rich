@@ -121,7 +121,29 @@
       "primary_cta": "https://md2rich.com/"
     }
   ],
-  "drafts": [],
+  "drafts": [
+    {
+      "slug": "best-markdown-editors-2026-en",
+      "date": "2026-06-11",
+      "type": "comparison",
+      "lang": "en-US",
+      "title": "Best Markdown Editors 2026: Top 5 Reviewed for Writers",
+      "description": "Typora went paid. The Markdown editor market fractured in 2026. We compare Obsidian, iA Writer, Zettlr, and VS Code for writers and content creators.",
+      "file": "blog/best-markdown-editors-2026-en.html",
+      "url": "https://md2rich.com/blog/best-markdown-editors-2026-en.html",
+      "heat_source": "⭐⭐⭐ Markdown 编辑器横评 2026 — Typora 收费后阵营分化",
+      "status": "draft",
+      "created_at": "2026-06-11T04:36:57Z",
+      "providers_featured": [
+        "Typora",
+        "Obsidian",
+        "iA Writer",
+        "Zettlr",
+        "VS Code"
+      ],
+      "primary_cta": "md2rich.com"
+    }
+  ],
   "recent_topics": [
     "linkedin-markdown-formatter-vs-md2rich-en",
     "x-articles-vs-linkedin-newsletter-en",
