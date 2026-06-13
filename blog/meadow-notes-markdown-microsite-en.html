@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026</title>
+  <meta name="description" content="Meadow Notes is a new Markdown-to-microsite publishing tool. Hands-on review vs md2rich and plain Markdown workflows for content creators in 2026.">
+  <meta name="keywords" content="Meadow Notes, Markdown microsite, knowledge graph publishing, Markdown to website, md2rich, digital garden, note-taking publishing">
+  <link rel="canonical" href="https://md2rich.com/blog/meadow-notes-markdown-microsite-en.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/meadow-notes-markdown-microsite-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/meadow-notes-markdown-microsite-en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026">
+  <meta property="og:description" content="Meadow Notes is a new Markdown-to-microsite publishing tool. Hands-on review vs md2rich and plain Markdown workflows for content creators in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/meadow-notes-markdown-microsite-en.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026",
+        "description": "Meadow Notes is a new Markdown-to-microsite publishing tool that maps knowledge graphs to shareable websites. Hands-on review vs md2rich.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-12",
+        "dateModified": "2026-06-12",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/meadow-notes-markdown-microsite-en.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Meadow Notes Microsite Review", "item": "https://md2rich.com/blog/meadow-notes-markdown-microsite-en.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Meadow Notes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Meadow Notes is a new Markdown-based publishing tool that lets you create a shareable microsite from your Markdown notes. It organizes content as a knowledge graph where folders and notes form a connected web, then publishes everything as a static website. It launched in mid-2026 as a tool for knowledge workers who want their notes to be publicly accessible without managing a full CMS."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Meadow Notes different from md2rich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Meadow Notes and md2rich serve different purposes. Meadow Notes is a full publishing platform that turns your entire note collection into a microsite with a knowledge graph structure. md2rich is a simpler tool: paste Markdown, copy rich text, paste to any platform (LinkedIn, X Articles, Medium, Notion). Think of them as complementary: write your notes in Markdown, publish the collection with Meadow Notes, and use md2rich to convert individual articles to rich text for social media cross-posting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Meadow Notes client-side or cloud-based?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Meadow Notes is primarily a hosted publishing service. Your Markdown content is uploaded to their platform, processed into a knowledge graph, and served as a static site. This is different from tools like md2rich that process everything in the browser and never send data to a server. For privacy-sensitive content, the cloud upload trade-off is important to consider."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use Meadow Notes and md2rich together?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A natural workflow: maintain your knowledge base in Markdown files (local or in Meadow Notes). For long-form articles you want to cross-post to LinkedIn, X Articles, or Medium, use md2rich to convert the Markdown to rich text and paste it directly into each platform's editor. The two tools handle different parts of the publishing funnel."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-12">2026-06-12</time>
+        <span>·</span>
+        <span>Tool Review</span>
+      </div>
+
+      <h1>Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026</h1>
+
+      <p class="text-lg text-gray-700">A new tool called <strong>Meadow Notes</strong> (<a href="https://meadow-notes.com" rel="noopener">meadow-notes.com</a>) is generating buzz in the Markdown publishing space. The concept is simple but powerful: write interconnected Markdown notes in a folder structure, and Meadow Notes turns the whole collection into a shareable microsite with a knowledge graph that readers can explore.</p>
+
+      <p>This is not your typical "Markdown to HTML" converter. Meadow Notes treats your note-taking database as a <strong>publishing asset</strong> rather than a private archive. It targets a specific gap between private note-taking (Obsidian, Logseq) and public publishing (blog, newsletter) — the idea that your notes, when organized well, are already a publishable product.</p>
+
+      <p>I spent a day building a small microsite with Meadow Notes. Here is the full hands-on review, compared with <a href="/">md2rich</a> and traditional Markdown publishing workflows.</p>
+
+      <h2>1. What Meadow Notes Does</h2>
+
+      <p>Meadow Notes works as both a note-taking environment and a publishing platform. You create folders and Markdown files in their editor, link notes together with <code>[[wiki-links]]</code> (borrowed from Obsidian and Roam Research), and Meadow Notes renders the whole structure as a static website. Each note becomes a page, each link becomes a navigable connection, and the knowledge graph visualization becomes the site's navigation map.</p>
+
+      <p>Key capabilities:</p>
+
+      <ul>
+        <li><strong>Folder-as-navigation</strong>: Your folder hierarchy maps directly to site navigation</li>
+        <li><strong>Backlinks rendered as reverse-references</strong>: Every note shows what links to it</li>
+        <li><strong>Graph view</strong>: An interactive network map of all connected notes</li>
+        <li><strong>Static site export</strong>: Publishes as plain HTML/CSS/JS — no runtime database</li>
+        <li><strong>Custom domain support</strong>: Host on your own domain</li>
+      </ul>
+
+      <p>The resulting microsite feels like a mix between a digital garden (like Gwern or Andy Matuschak's notes) and a feature-rich wiki. For researchers, writers, and knowledge workers who already maintain an Obsidian vault or a folder of Markdown files, Meadow Notes offers a one-click path from private notes to public knowledge base.</p>
+
+      <h2>2. Hands-On: Setting Up a Microsite</h2>
+
+      <p>I created a Meadow Notes account and imported a folder of 12 Markdown files about "Markdown publishing workflows." The import process was straightforward — drag and drop a zip of Markdown files:</p>
+
+      <pre><code>my-markdown-publishing/
+  index.md
+  guides/
+    linkedin-publishing.md
+    x-articles-workflow.md
+    medium-conversion.md
+  tools/
+    md2rich-review.md
+    pandoc-workflow.md
+    obsidian-vs-logseq.md
+  comparisons/
+    client-side-vs-cloud.md
+    static-site-vs-cms.md</code></pre>
+
+      <p>Each <code>[[wiki-link]]</code> reference was automatically recognized. Meadow Notes even detected orphaned notes (files no other note links to) and flagged them as a suggestion to add links or remove them.</p>
+
+      <p>The resulting microsite had:</p>
+
+      <ul>
+        <li>A homepage summarizing the content tree</li>
+        <li>Individual pages for each Markdown file</li>
+        <li>Backlinks section at the bottom of every page</li>
+        <li>Full-text search across all notes</li>
+        <li>A "graph explorer" showing how all 12 files connected</li>
+      </ul>
+
+      <p><strong>What worked well</strong>: The graph navigation is genuinely useful for browsing. For a collection of 12 interconnected notes, it felt more discoverable than a traditional blog archive. The static site export was fast and clean.</p>
+
+      <p><strong>What felt constrained</strong>: Custom styling is limited to preset themes. You cannot inject custom CSS or JavaScript. For users who want pixel-perfect control over their site's appearance, this is a limitation. The graph view is the primary navigation metaphor — if readers prefer a chronological blog layout, Meadow Notes doesn't offer that option.</p>
+
+      <h2>3. Where Meadow Notes Fits in the Markdown Ecosystem</h2>
+
+      <p>There are now several ways to publish Markdown content online. Each serves a different use case:</p>
+
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="text-left py-2 pr-2">Tool</th>
+            <th class="text-left py-2 pr-2">Best For</th>
+            <th class="text-left py-2 pr-2">Output</th>
+            <th class="text-left py-2 pr-2">Privacy Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2 font-medium">Meadow Notes</td>
+            <td class="py-2 pr-2">Knowledge base / digital garden</td>
+            <td class="py-2 pr-2">Full microsite with graph nav</td>
+            <td class="py-2 pr-2">Cloud upload to platform</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2 font-medium"><a href="/">md2rich</a></td>
+            <td class="py-2 pr-2">Cross-platform publishing</td>
+            <td class="py-2 pr-2">Rich text for LinkedIn, X, Medium</td>
+            <td class="py-2 pr-2">100% client-side (zero upload)</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Obsidian Publish</td>
+            <td class="py-2 pr-2">Paid hosted vault</td>
+            <td class="py-2 pr-2">Wiki-style hosted site</td>
+            <td class="py-2 pr-2">Cloud upload, $10/mo</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Astro / Hugo</td>
+            <td class="py-2 pr-2">Full control site</td>
+            <td class="py-2 pr-2">Custom static site</td>
+            <td class="py-2 pr-2">Build locally, deploy anywhere</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-2">Pandoc</td>
+            <td class="py-2 pr-2">Batch format conversion</td>
+            <td class="py-2 pr-2">Any-to-any (CLI)</td>
+            <td class="py-2 pr-2">Local execution</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Meadow Notes occupies a unique niche: the "publishable knowledge base." It is not a replacement for a blog and not a replacement for a rich text converter. It is a third category — a public-facing, explorable collection of notes.</p>
+
+      <h2>4. The md2rich Complement: Cross-Posting Individual Articles</h2>
+
+      <p>This is where the two tools fit together. If you build a Meadow Notes microsite for your knowledge base, you will have dozens of well-written Markdown notes — but they are trapped inside the microsite's graph format. To cross-post individual articles to LinkedIn, X Articles, or Medium, you need a rich text converter.</p>
+
+      <p><a href="/">md2rich</a> solves that exact problem:</p>
+
+      <ol>
+        <li>Open your Meadow Notes page in Markdown format</li>
+        <li>Copy the Markdown content</li>
+        <li>Paste it into <a href="/">md2rich.com</a></li>
+        <li>Copy the rendered rich text</li>
+        <li>Paste directly into LinkedIn, X Articles, or Medium</li>
+      </ol>
+
+      <p>The beauty of this workflow is that your <strong>knowledge base</strong> stays in Meadow Notes (with graph navigation, backlinks, and full-text search), while your <strong>social distribution</strong> goes through md2rich. You get the best of both tools without compromising on either.</p>
+
+      <p>And because md2rich runs 100% in your browser, no data ever leaves your machine. You are not uploading your notes to a second platform just to get them out of the first one.</p>
+
+      <h3>Example: Converting a Meadow Notes Article for LinkedIn</h3>
+
+      <p>Here is a Markdown excerpt from a Meadow Notes page about client-side converting:</p>
+
+      <pre><code>## Why Client-Side Conversion Matters
+
+Most Markdown-to-rich-text tools send your content to a server for processing.
+This means:
+
+- **Privacy risk**: your draft is stored on someone else's infrastructure
+- **Speed dependency**: conversion waits on network round-trips
+- **Service availability**: if the server goes down, your tool stops working
+
+A client-side tool like md2rich avoids all three problems.\
+It runs in your browser using JavaScript.\
+Your Markdown never touches a network.</code></pre>
+
+      <p>Paste this into <a href="/">md2rich.com</a>, click "Copy Rich Text," and paste into LinkedIn. The headings, bold text, and list formatting all carry over with correct styling. The entire conversion takes under a second and uses zero server resources.</p>
+
+      <h2>5. Privacy Comparison: Microsite Hosting vs Client-Side</h2>
+
+      <p>Meadow Notes hosts your content on their servers (cloud upload required). This enables features like global graph view and full-text search across all notes. The trade-off is that your content leaves your machine.</p>
+
+      <p>md2rich takes the opposite approach: everything stays in the browser. There is no server, no upload, no storage. The trade-off is that md2rich does not offer a persistent publishing home — it is a conversion tool, not a hosting platform.</p>
+
+      <p><strong>Which one is right depends on your content.</strong> Public knowledge base content (e.g., tutorials, reference guides) benefits from Meadow Notes' discoverable graph format. Drafts, sensitive writing, or client work is better handled by a purely client-side pipeline: write in a local Markdown editor, convert with md2rich, paste to the target platform. No cloud upload anywhere in the chain.</p>
+
+      <p>For maximum privacy, use both: publish public-facing reference material in Meadow Notes, and use md2rich to individually distribute high-value articles to social platforms without any cloud intermediary.</p>
+
+      <h2>6. Who Should Use Meadow Notes</h2>
+
+      <p><strong>Meadow Notes is ideal if you:</strong></p>
+      <ul>
+        <li>Already maintain a Markdown-based knowledge base or Obsidian vault</li>
+        <li>Want a public-facing version of your notes without building a custom site</li>
+        <li>Believe your notes are valuable as a knowledge graph, not just individual articles</li>
+        <li>Are comfortable with cloud uploads for discoverable public content</li>
+      </ul>
+
+      <p><strong>Stick with traditional workflows if you:</strong></p>
+      <ul>
+        <li>Publish individual articles to social platforms rather than hosting a note collection</li>
+        <li>Need pixel-perfect control over site styling</li>
+        <li>Handle sensitive or client-confidential content that should never leave your machine</li>
+        <li>Prefer a chronological blog layout over a graph navigation</li>
+      </ul>
+
+      <h2>7. Conclusion</h2>
+
+      <p>Meadow Notes is a genuinely new product category: a publishing platform for your note-taking database. It repositions the folder of Markdown files from "private notes" to "publishable knowledge base" with minimal effort. The graph-based navigation is a meaningful improvement over traditional blog archives for interconnected topics.</p>
+
+      <p>It does not replace the need for a cross-platform rich text converter. When you want to take individual articles from your microsite and distribute them to LinkedIn, X Articles, or Medium, md2rich is the natural complement — zero-upload, zero-registration, one-click conversion.</p>
+
+      <p>The broader trend here is worth noting: Markdown is becoming the <strong>lingua franca of online publishing</strong>, not just a format for developers. Tools like Meadow Notes, Obsidian Publish, and md2rich all solve different parts of the publishing funnel, and they work better together than alone.</p>
+
+      <p><strong>Try <a href="/">md2rich</a></strong>: open the editor, paste Markdown, copy rich text. Free, client-side, open-source. No upload needed.</p>
+
+      <hr>
+
+      <p class="text-sm text-gray-500">Related: <a href="/blog/markdown-to-linkedin-en.html">Markdown to LinkedIn: The Honest Guide (2026)</a> · <a href="/blog/markdown-to-x-articles-en.html">Markdown to X Articles: The Complete 2026 Workflow</a> · <a href="/blog/best-markdown-editors-2026-en.html">Best Markdown Editors 2026</a> · <a href="/blog/why-client-side-markdown-converter.html">Why Use a Client-Side Markdown Converter</a></p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for LinkedIn, X Articles, Medium, Notion.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

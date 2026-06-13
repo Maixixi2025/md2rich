@@ -143,7 +143,25 @@
       "published_at": "2026-06-11T12:37:00Z"
     }
   ],
-  "drafts": [],
+  "drafts": [
+    {
+      "slug": "meadow-notes-markdown-microsite-en",
+      "date": "2026-06-12",
+      "type": "review",
+      "lang": "en-US",
+      "file": "blog/meadow-notes-markdown-microsite-en.html",
+      "title": "Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026",
+      "description": "Meadow Notes is a new Markdown-to-microsite publishing tool. Hands-on review vs md2rich and plain Markdown workflows for content creators in 2026.",
+      "heat_source": "⭐ 2026-06-12 daily report — Meadow Notes: publish microsites from Markdown knowledge graphs (meadow-notes.com)",
+      "status": "draft",
+      "status_updated": "2026-06-12T04:58:59Z",
+      "providers_featured": [
+        "meadow-notes",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    }
+  ],
   "recent_topics": [
     "linkedin-markdown-formatter-vs-md2rich-en",
     "x-articles-vs-linkedin-newsletter-en",
