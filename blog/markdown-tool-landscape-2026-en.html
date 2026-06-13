@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Markdown Tool Landscape: CyberWriter, Attn, & md2rich</title>
+  <meta name="description" content="CyberWriter brings local AI to Markdown. Attn is a sub-20MB Rust editor for AI agents. Map of the 2026 Markdown tool ecosystem and where md2rich fits.">
+  <meta name="keywords" content="2026 Markdown tools, CyberWriter Markdown editor, Attn Rust editor, Markdown AI tools, local AI Markdown, Markdown ecosystem 2026, md2rich Markdown converter">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-tool-landscape-2026-en.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-tool-landscape-2026-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-tool-landscape-2026-en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="2026 Markdown Tool Landscape: CyberWriter, Attn, & md2rich">
+  <meta property="og:description" content="CyberWriter brings local AI to Markdown. Attn is a sub-20MB Rust editor for AI agents. Map of the 2026 Markdown tool ecosystem and where md2rich fits.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-tool-landscape-2026-en.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "2026 Markdown Tool Landscape: CyberWriter, Attn, & md2rich",
+        "description": "CyberWriter brings local AI to Markdown. Attn is a sub-20MB Rust editor for AI agents. Map of the 2026 Markdown tool ecosystem and where md2rich fits.",
+        "author": {
+          "@type": "Person",
+          "name": "md2rich",
+          "url": "https://about.me/jasonxmai"
+        },
+        "datePublished": "2026-06-13",
+        "dateModified": "2026-06-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://md2rich.com/blog/markdown-tool-landscape-2026-en.html"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is CyberWriter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CyberWriter is a macOS-native Markdown editor that runs Apple's self-developed 3B language model locally for AI-assisted writing. It works fully offline with zero data upload, making it a privacy-first alternative to cloud-based AI writing tools like Lex.page or Jasper."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Attn and why is it built in Rust?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Attn is a sub-20MB Markdown editor written in Rust, designed specifically for AI agents like Claude Code. Its tiny footprint and fast startup make it ideal for programmatic use — AI agents can launch it, edit files, and close it in milliseconds without the overhead of Electron-based editors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does md2rich fit into the 2026 Markdown ecosystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich is the output layer of the Markdown pipeline. While editors like CyberWriter and Obsidian handle writing, and tools like Attn target AI-agent workflows, md2rich converts Markdown to platform-ready rich text for LinkedIn, X Articles, Medium, and Notion. It is a client-side-only tool with zero upload, completing the write-convert-publish workflow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is local AI Markdown editing better than cloud-based AI writing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local AI (like CyberWriter's 3B Apple model) offers privacy and offline capability but runs smaller models. Cloud-based AI tools use larger models (up to 700B parameters) for more capable writing assistance. The best choice depends on whether you prioritize data privacy or maximum AI capability. Many writers now use both: a local editor for daily drafting and a cloud tool for occasional heavy lifting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the 2026 Markdown tool ecosystem look like?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 2026 Markdown ecosystem has five layers: writing (Obsidian, Typora, iA Writer), AI assistants (CyberWriter, GitHub Copilot), agent-native tools (Attn), conversion/output tools (md2rich, Pandoc), and publishing targets (LinkedIn, X Articles, Medium, Notion, blogs). The key trend is specialization: instead of one tool doing everything, the ecosystem is fragmenting into purpose-built tools connected by the Markdown format."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-13">2026-06-13</time>
+        <span>·</span>
+        <span>Ecosystem Overview</span>
+      </div>
+
+      <h1>2026 Markdown Tool Ecosystem: CyberWriter, Attn, and the New Landscape</h1>
+
+      <p class="text-lg text-gray-700">Markdown tools are diversifying faster than ever. In just the past month, two new tools launched that point to where the ecosystem is heading: CyberWriter (a macOS-native editor with local AI running Apple's 3B model) and Attn (a sub-20MB Rust editor purpose-built for AI agents). Together with established players like Obsidian, Typora, and md2rich, the Markdown ecosystem in 2026 is more specialized — and more powerful — than most writers realize.</p>
+
+      <p>This article maps the current landscape, introduces the new entrants, and shows how each layer of the toolchain connects to the others. Whether you are a writer, developer, or content strategist, understanding where each tool fits helps you build a faster, more reliable publishing workflow.</p>
+
+      <h2>Quick Ecosystem Map</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Tool</th>
+            <th>Niche</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Writing</td>
+            <td>Obsidian, Typora, iA Writer, VS Code</td>
+            <td>Classic editing with rich features</td>
+            <td>Daily drafting, note-taking, long-form</td>
+          </tr>
+          <tr>
+            <td>AI-native</td>
+            <td>CyberWriter</td>
+            <td>Local AI assistant on macOS (3B model)</td>
+            <td>Private AI writing, offline drafting</td>
+          </tr>
+          <tr>
+            <td>Agent-native</td>
+            <td>Attn</td>
+            <td>Rust, sub-20MB, fast launch for AI agents</td>
+            <td>Programmatic editing, AI agent toolchain</td>
+          </tr>
+          <tr>
+            <td>Conversion</td>
+            <td>md2rich, Pandoc, Dillinger</td>
+            <td>Markdown to rich-text output</td>
+            <td>Pre-publish formatting for social platforms</td>
+          </tr>
+          <tr>
+            <td>Publishing</td>
+            <td>LinkedIn, X Articles, Medium, Notion</td>
+            <td>Target platforms for converted content</td>
+            <td>Reaching audiences across channels</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>1. The Classic Layer: Writing Tools That Wont Change</h2>
+
+      <p>The writing layer remains stable. Obsidian ($50/yr sync, free base) continues to dominate the personal knowledge management space with its graph view and plugin ecosystem. Typora ($14.99 one-time) still delivers the smoothest live-preview experience. iA Writer ($49.99) is the professional's choice for distraction-free prose. VS Code (free) covers the developer angle with Markdown All in One and GitHub Copilot integration.</p>
+
+      <p>These tools all produce plain Markdown files. That has not changed. What has changed is what happens before and after the writing stage — the input (AI assistants) and the output (conversion and publishing) have grown into their own specialized layers.</p>
+
+      <h2>2. CyberWriter: Local AI Comes to Markdown</h2>
+
+      <p>CyberWriter (<a href="https://cyberwriter.app" rel="nofollow">cyberwriter.app</a>) launched quietly in mid-2026 and is already gaining traction among macOS users who want AI writing assistance without sending their drafts to the cloud. It runs Apple's self-developed 3B language model entirely on-device — meaning zero data leaves your machine.</p>
+
+      <p>For comparison, most cloud-based AI writing tools (Jasper, Lex.page, Writesonic) send your text to a remote server for processing. CyberWriter eliminates that concern entirely. The trade-off: Apple's 3B model is less capable than GPT-4 or Claude for complex writing tasks. For everyday content, however, it handles sentence completion, summarization, and tone adjustment well enough for most writers.</p>
+
+      <p><strong>Key takeaway:</strong> CyberWriter signals that locally-run AI will become standard in pro Markdown editors within 12-18 months. The writing layer is absorbing AI natively, not through plugins.</p>
+
+      <h2>3. Attn: The Sub-20MB Rust Editor for AI Agents</h2>
+
+      <p>Attn (<a href="https://github.com/lightsofapollo/attn" rel="nofollow">GitHub</a>) takes a completely different approach. It is a Markdown editor written in Rust that compiles to a binary under 20MB. Its primary audience is not human writers — it is AI agents like Claude Code, Codex, and Copilot.</p>
+
+      <p>Here is why this matters: when an AI agent needs to edit a Markdown file in a workspace, launching VS Code (a ~300MB Electron app) is absurdly wasteful. Attn starts in under 50ms, opens the file, and hands control to the agent for edits. It is designed for programmatic use — letting AI agents write and edit Markdown files without the overhead of a full IDE.</p>
+
+      <p>This is a new category of tool: <strong>agent-native editors</strong>. As AI coding agents become more common in content workflows (generating drafts, editing documentation, writing blog posts), the need for lightweight, fast, non-graphical Markdown editors will grow. Attn is the first tool to fill that niche.</p>
+
+      <h2>4. How Traditional Editors Are Evolving</h2>
+
+      <p>Established tools are not standing still:</p>
+
+      <ul>
+        <li><strong>Obsidian</strong> recently improved its live preview and started experimenting with AI plugins that run local models via Ollama.</li>
+        <li><strong>VS Code</strong> now ships with better Markdown editing defaults and a faster startup mode (VS Code Server for web-based use).</li>
+        <li><strong>iA Writer</strong> added syntax highlighting for code blocks — a small but meaningful feature for technical writers.</li>
+        <li><strong>Zettlr</strong> improved its citation manager and now supports Zotero 7 natively.</li>
+      </ul>
+
+      <p>The trend is clear: every layer of the Markdown ecosystem is getting better at its specific job rather than trying to do everything.</p>
+
+      <h2>5. Where md2rich Fits: The Output Layer</h2>
+
+      <p>md2rich occupies a specific role in this ecosystem. No matter which editor you use — Obsidian, CyberWriter, Typora, or even an AI agent writing through Attn — at some point you need to convert your Markdown into platform-ready rich text for LinkedIn, X Articles, Medium, or Notion.</p>
+
+      <p>That is what md2rich does:</p>
+
+      <ul>
+        <li>Paste Markdown from any editor</li>
+        <li>Click convert</li>
+        <li>Copy the rich text output</li>
+        <li>Paste directly into your target platform</li>
+      </ul>
+
+      <p>All processing happens client-side. Zero data is uploaded to any server. This is particularly important for AI-assisted content where the Markdown source may contain prompts, conversation history, or partially generated text that you don't want leaving your machine.</p>
+
+      <p>In the 2026 Markdown toolchain, md2rich is the <strong>encoding bridge</strong> — the tool that takes plain Markdown (from any source) and makes it usable in the rich-text world where social platforms and newsletters live.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 my-6">
+        <p class="font-semibold text-indigo-800">Try md2rich Free</p>
+        <p class="text-indigo-700 text-sm mt-1">Paste Markdown from any editor → copy rich text → publish to LinkedIn, X Articles, Medium, Notion. All client-side, zero tracking, zero upload, free forever. <a href="/" class="underline font-medium">md2rich.com</a></p>
+      </div>
+
+      <h2>6. Markdown in the AI Era: A Practical Example</h2>
+
+      <p>Here is a concrete workflow that uses three layers of the ecosystem together:</p>
+
+      <pre><code>1. Draft in Obsidian or CyberWriter (your Markdown source)
+2. Generate code snippets or data tables with Claude Code using Attn
+3. Copy the combined Markdown into md2rich
+4. Convert to rich text
+5. Paste into X Articles or LinkedIn
+
+Total time: under 5 minutes. Zero data leaves your machine until you
+choose to publish.</code></pre>
+
+      <p>This workflow works because Markdown is the common language. No proprietary format, no vendor lock-in. Every tool in the chain reads and writes the same plain-text format.</p>
+
+      <h2>7. The Big Picture</h2>
+
+      <p>The 2026 Markdown ecosystem has five distinct layers:</p>
+
+      <ol>
+        <li><strong>Writing</strong> — Obsidian, Typora, iA Writer, VS Code</li>
+        <li><strong>AI-native</strong> — CyberWriter (local AI on macOS)</li>
+        <li><strong>Agent-native</strong> — Attn (Rust-based, for AI agents)</li>
+        <li><strong>Conversion</strong> — md2rich (Markdown to rich text)</li>
+        <li><strong>Publishing</strong> — LinkedIn, X Articles, Medium, Notion</li>
+      </ol>
+
+      <p>The fragmentation is a feature, not a bug. Each tool can focus on its specific strength without feature creep. CyberWriter does local AI editing better than Obsidian. Attn serves AI agents better than VS Code. md2rich converts Markdown to rich text better than any general-purpose formatter.</p>
+
+      <p>The unifying factor: they all speak Markdown. Your content remains portable across every layer.</p>
+
+      <h2>FAQ</h2>
+
+      <h3>Is CyberWriter free?</h3>
+      <p>CyberWriter is a macOS-native app. Pricing details were not publicly confirmed at launch, but the local-only model suggests a one-time purchase model similar to iA Writer or a subscription for ongoing model updates.</p>
+
+      <h3>Can Attn be used by human writers too?</h3>
+      <p>Technically yes — Attn is a functional Markdown editor. But its UI is minimal and it lacks the features human writers expect (live preview, file tree, themes). It is designed for programmatic use by AI agents. For human writing, Obsidian or Typora remain better choices.</p>
+
+      <h3>Does md2rich work with CyberWriter or Attn output?</h3>
+      <p>Yes. Both CyberWriter and Attn produce standard Markdown files. You can copy the content from either tool and paste it into md2rich — the conversion works identically regardless of which tool produced the Markdown.</p>
+
+      <h3>Is local AI better than cloud AI for Markdown writing?</h3>
+      <p>Local AI (CyberWriter's 3B model, Ollama + local LLMs) offers privacy and offline use. Cloud AI (GPT-4, Claude) offers more capable writing assistance. The best approach is to use both: a local editor for daily drafting with privacy-sensitive content, and cloud AI when you need more creative or analytical power.</p>
+
+      <h3>Will traditional Markdown editors be replaced by AI?</h3>
+      <p>No. AI-assisted writing tools complement traditional editors rather than replacing them. Writers still need to organize, edit, review, and polish. The Markdown format is the common ground — AI tools generate Markdown, editors refine it, and conversion tools like md2rich publish it. Each layer depends on the others.</p>
+
+      <h2>Conclusion</h2>
+
+      <p>The Markdown tool ecosystem in 2026 is healthier than ever. New specialized entrants like CyberWriter and Attn prove that there is room for innovation at every layer — from AI-assisted writing to agent-native editing to conversion and publishing.</p>
+
+      <p>As a writer or content creator, the smartest strategy is to choose the best tool for each stage of your workflow and connect them through Markdown. Your files are portable. Your workflow is flexible. And when you are ready to publish, <strong>md2rich</strong> is one click away.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 my-6">
+        <p class="font-semibold text-indigo-800">md2rich — Markdown to Rich Text, Client-Side</p>
+        <p class="text-indigo-700 text-sm mt-1">No upload. No tracking. No sign-up. Just paste your Markdown, copy the formatted rich text, and publish anywhere. <a href="/" class="underline font-medium">Try it now →</a></p>
+      </div>
+
+      <hr>
+
+      <p class="text-sm text-gray-500">Related: <a href="/blog/best-markdown-editors-2026-en.html">Best Markdown Editors 2026</a> · <a href="/blog/markdown-to-x-articles-en.html">Markdown to X Articles Workflow</a> · <a href="/blog/why-client-side-markdown-converter.html">Why Client-Side Markdown Converter</a> · <a href="/blog/best-markdown-to-html-tools.html">Best Markdown to HTML Converters</a></p>
+    </article>
+  </main>
+</body>
+</html>

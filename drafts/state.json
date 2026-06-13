@@ -141,28 +141,32 @@
       ],
       "primary_cta": "md2rich.com",
       "published_at": "2026-06-11T12:37:00Z"
-    }
-  ],
-  "drafts": [
+    },
     {
-      "slug": "meadow-notes-markdown-microsite-en",
-      "date": "2026-06-12",
-      "type": "review",
+      "slug": "markdown-tool-landscape-2026-en",
+      "date": "2026-06-13",
+      "type": "ecosystem-overview",
       "lang": "en-US",
-      "file": "blog/meadow-notes-markdown-microsite-en.html",
-      "title": "Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026",
-      "description": "Meadow Notes is a new Markdown-to-microsite publishing tool. Hands-on review vs md2rich and plain Markdown workflows for content creators in 2026.",
-      "heat_source": "⭐ 2026-06-12 daily report — Meadow Notes: publish microsites from Markdown knowledge graphs (meadow-notes.com)",
-      "status": "draft",
-      "status_updated": "2026-06-12T04:58:59Z",
+      "file": "blog/markdown-tool-landscape-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-tool-landscape-2026-en.html",
+      "title": "2026 Markdown Tool Landscape: CyberWriter, Attn, & md2rich",
+      "description": "CyberWriter brings local AI to Markdown. Attn is a sub-20MB Rust editor for AI agents. Map of the 2026 Markdown tool ecosystem and where md2rich fits.",
+      "heat_source": "⭐ 2026-06-13 daily report — CyberWriter (local AI macOS) + Attn (Rust AI-agent editor) + Markdown ecosystem mapping",
+      "status": "published",
+      "published_at": "2026-06-13T12:52:00Z",
       "providers_featured": [
-        "meadow-notes",
+        "cyberwriter",
+        "attn",
+        "obsidian",
+        "typora",
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
     }
   ],
+  "drafts": [],
   "recent_topics": [
+    "markdown-tool-landscape-2026-en",
     "linkedin-markdown-formatter-vs-md2rich-en",
     "x-articles-vs-linkedin-newsletter-en",
     "markdown-to-x-articles-en",
