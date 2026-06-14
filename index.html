@@ -24,20 +24,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "md2rich",
-    "url": "https://md2rich.com",
-    "description": "Convert Markdown to rich text format for LinkedIn, Medium, X Articles, and any rich text editor. 100% client-side, zero upload.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "featureList": [
-      "Markdown to LinkedIn",
-      "Markdown to Medium",
-      "Markdown to X Articles (X Premium)",
-      "Markdown to plain HTML for any rich text editor",
-      "Privacy-first client-side processing",
-      "No signup required"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "md2rich",
+        "url": "https://md2rich.com",
+        "description": "Convert Markdown to rich text format for LinkedIn, Medium, X Articles, and any rich text editor. 100% client-side, zero upload.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": [
+          "Markdown to LinkedIn",
+          "Markdown to Medium",
+          "Markdown to X Articles (X Premium)",
+          "Markdown to plain HTML for any rich text editor",
+          "Privacy-first client-side processing",
+          "No signup required"
+        ]
+      }
     ]
   }
   </script>
