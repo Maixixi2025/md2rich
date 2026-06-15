@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mkdnsite: Dual-Channel Markdown Publishing for Humans and AI</title>
+  <meta name="description" content="mkdnsite serves HTML for human readers and raw Markdown for AI crawlers from the same source. How it works and why it matters in 2026.">
+  <meta name="keywords" content="mkdnsite, dual-channel Markdown, Markdown site generator, AI-friendly publishing, Markdown for AI crawlers, static site generator 2026, Markdown publishing workflow">
+  <link rel="canonical" href="https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en.html">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="mkdnsite: Dual-Channel Markdown Publishing for Humans and AI">
+  <meta property="og:description" content="mkdnsite serves HTML for human readers and raw Markdown for AI crawlers from the same source. How it works and why it matters in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en.html">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "mkdnsite: Dual-Channel Markdown Publishing for Humans and AI",
+        "description": "mkdnsite serves HTML for human readers and raw Markdown for AI crawlers from the same source. How it works and why it matters in 2026.",
+        "author": {
+          "@type": "Person",
+          "name": "md2rich",
+          "url": "https://about.me/jasonxmai"
+        },
+        "datePublished": "2026-06-14",
+        "dateModified": "2026-06-14",
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en.html"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is mkdnsite?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "mkdnsite is an open-source Markdown site generator that serves two response formats from the same source file: formatted HTML for human readers and raw Markdown text for AI agents and crawlers. It detects the client type from the User-Agent header and serves the appropriate format, requiring zero build steps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does mkdnsite detect AI crawlers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "mkdnsite checks the User-Agent header of incoming requests. Known AI crawler bots (GPTBot, ClaudeBot, Google-Extended, PerplexityBot, and others) receive the raw Markdown response. Human browsers receive the styled HTML version. The detection list is configurable and open-source."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is mkdnsite different from traditional static site generators?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional SSGs like Hugo, Astro, and Jekyll pre-build all pages into HTML at build time. mkdnsite renders on-the-fly and dynamically switches between HTML and Markdown output based on the visitor. It also has zero build dependencies (no Node.js, no Go, no Ruby) and runs as a single binary."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does mkdnsite work with md2rich for publishing to LinkedIn and X?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Write content in Markdown, serve it via mkdnsite for your website, then copy the same Markdown source into md2rich to convert it into formatted rich text for LinkedIn posts, X Articles, Medium, or Notion. The Markdown source serves both your website and your social publishing in one workfow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is mkdnsite suitable for content creators who are not developers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "mkdnsite requires basic command-line familiarity to install and run. For content creators who prefer a zero-setup publishing pipeline, md2rich is the simpler alternative: write Markdown in any editor, paste into md2rich, and copy the rich text to your target platform with no server or deployment needed."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <article class="bg-white border border-gray-200 rounded-lg p-8 md:p-10">
+
+      <header class="mb-8">
+        <time class="text-xs text-gray-500 uppercase tracking-wide">June 14, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 leading-tight">mkdnsite: Dual-Channel Markdown Publishing for Humans and AI</h1>
+        <p class="text-gray-600 mt-3 text-lg">Why serving HTML to humans and raw Markdown to AI crawlers is the smartest publishing strategy in 2026.</p>
+      </header>
+
+      <div class="prose prose-gray max-w-none space-y-6 text-gray-800 leading-relaxed">
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">The Problem: AI Crawlers Can't Read Your Website</h2>
+          <p>In 2026, a growing share of your traffic comes from AI agents — Google AI Overview, ChatGPT, Perplexity, Claude, and Gemini all crawl the web to answer user queries. But there is a mismatch: your beautifully designed HTML site is full of navigation menus, sidebars, ad slots, and JavaScript that these crawlers have to parse through to find the actual content.</p>
+          <p>AI crawlers prefer clean, structured Markdown. They can extract meaning from a well-structured Markdown document far more accurately than from a rendered HTML page with dozens of DOM nodes per paragraph. The problem is that most publishing tools force you to choose: HTML for humans OR plain text for machines, but not both.</p>
+          <p><strong>Enter mkdnsite</strong> — an open-source tool that solves this by serving both from a single Markdown source file.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">What Is mkdnsite?</h2>
+          <p>mkdnsite is a lightweight, zero-build Markdown site generator that detects who is visiting and serves the right format:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Human readers</strong> get a clean, styled HTML page — rendered on-the-fly from Markdown with minimal layout overhead.</li>
+            <li><strong>AI crawlers</strong> (GPTBot, ClaudeBot, Google-Extended, PerplexityBot, and others) get the raw Markdown source — the same content, zero decoration, maximum signal.</li>
+          </ul>
+          <p>This dual-channel approach means you write your content once in Markdown, and both audiences get what they need. No duplicate content, no separate AI-friendly versions, no complex build pipelines.</p>
+          <p class="bg-gray-100 border-l-4 border-indigo-400 p-4 rounded-r text-sm mt-4">
+            <strong>Key differentiator:</strong> Unlike traditional static site generators that pre-build HTML, mkdnsite renders dynamically based on the User-Agent header. The same URL serves different content types depending on who requests it.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">How It Works</h2>
+          <p>mkdnsite is a single Go binary with no dependencies. You run it in your project directory and it serves your <code class="bg-gray-100 px-1 rounded">.md</code> files as both HTML and Markdown:</p>
+          <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mt-4"><code>$ mkdnsite
+  Serving /blog on port 8080
+  AI crawlers get .md, humans get .html</code></pre>
+          <p>Create a Markdown file like <code class="bg-gray-100 px-1 rounded">blog/my-post.md</code> and it is instantly available at:</p>
+          <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mt-4"><code>https://yoursite.com/blog/my-post    # Humans: styled HTML
+  https://yoursite.com/blog/my-post.md # AI crawlers: raw Markdown</code></pre>
+          <p>No <code class="bg-gray-100 px-1 rounded">npm install</code>, no build step, no deploy pipeline. Write a Markdown file, save it, refresh — done.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">Why Dual-Channel Matters for Content Creators</h2>
+          <p>If you are a writer, blogger, or content creator publishing Markdown-driven content, here is why the dual-channel approach matters:</p>
+          <div class="overflow-x-auto mt-4">
+            <table class="w-full border-collapse border border-gray-300 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Channel</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Audience</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Format</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Benefit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 p-3 font-medium">Human</td>
+                  <td class="border border-gray-300 p-3">Blog readers, subscribers</td>
+                  <td class="border border-gray-300 p-3">Styled HTML</td>
+                  <td class="border border-gray-300 p-3">Readable, shareable, fast loading</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 p-3 font-medium">AI</td>
+                  <td class="border border-gray-300 p-3">GPTBot, ClaudeBot, Google AI</td>
+                  <td class="border border-gray-300 p-3">Raw Markdown</td>
+                  <td class="border border-gray-300 p-3">Accurate extraction for AI search citations</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 p-3 font-medium">Social</td>
+                  <td class="border border-gray-300 p-3">LinkedIn, X, Medium readers</td>
+                  <td class="border border-gray-300 p-3">Rich text</td>
+                  <td class="border border-gray-300 p-3">Use <a href="https://md2rich.com" class="text-indigo-600 hover:underline">md2rich</a> to convert and publish</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4">Publishing platforms like LinkedIn and X Articles do not consume raw Markdown or HTML directly. They accept rich text (formatted text with headings, bold, lists). This is where the publishing pipeline splits again — and where md2rich fills the gap.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">The Complete Publishing Pipeline</h2>
+          <p>Here is how the three tools work together for a complete Markdown-to-publication workflow:</p>
+          <ol class="list-decimal pl-6 space-y-3">
+            <li>
+              <strong>Write in Markdown</strong> — Use any editor (Obsidian, VS Code, iA Writer) to create your content in plain Markdown.
+            </li>
+            <li>
+              <strong>Serve with mkdnsite</strong> — Deploy your Markdown files via mkdnsite. Humans see a clean blog. AI crawlers get the raw Markdown for better AI search visibility.
+            </li>
+            <li>
+              <strong>Publish to social with md2rich</strong> — For LinkedIn posts, X Articles, Medium, or Notion: copy the Markdown source, paste into <a href="https://md2rich.com" class="text-indigo-600 hover:underline">md2rich.com</a>, and copy the formatted rich text to your target platform.
+            </li>
+          </ol>
+          <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-lg mt-6">
+            <p class="text-sm text-indigo-800"><strong>Example:</strong> You write a LinkedIn article about Markdown workflows. Your Markdown source goes to mkdnsite (AI-friendly blog), md2rich (LinkedIn post), and your personal site (HTML for humans) — all from one file.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">mkdnsite vs Traditional Static Site Generators</h2>
+          <div class="overflow-x-auto mt-4">
+            <table class="w-full border-collapse border border-gray-300 text-sm">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Feature</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">mkdnsite</th>
+                  <th class="border border-gray-300 p-3 text-left font-semibold">Hugo / Astro / Jekyll</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 p-3 font-medium">Build step</td>
+                  <td class="border border-gray-300 p-3 text-green-700">None</td>
+                  <td class="border border-gray-300 p-3 text-red-700">Required (npm / hugo / bundle)</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 p-3 font-medium">AI-friendly output</td>
+                  <td class="border border-gray-300 p-3 text-green-700">Built-in (raw Markdown)</td>
+                  <td class="border border-gray-300 p-3 text-gray-600">Manual (extra plugin or template)</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 p-3 font-medium">Dependencies</td>
+                  <td class="border border-gray-300 p-3 text-green-700">Single Go binary</td>
+                  <td class="border border-gray-300 p-3 text-red-700">Node.js / Go / Ruby + plugins</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 p-3 font-medium">Dual output</td>
+                  <td class="border border-gray-300 p-3 text-green-700">Automatic per visitor</td>
+                  <td class="border border-gray-300 p-3 text-gray-600">Single output, manual work</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 p-3 font-medium">Best for</td>
+                  <td class="border border-gray-300 p-3">Markdown-first blogs, dev docs</td>
+                  <td class="border border-gray-300 p-3">Complex sites, themes, ecommerce</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4">mkdnsite is not a replacement for full-featured SSGs. If you need a complex theme, pagination, taxonomies, or multilingual sites, Hugo or Astro are better choices. But if you want a zero-friction Markdown blog that serves AI crawlers natively, mkdnsite is the most elegant solution available in 2026.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">Real-World Scenario: From Markdown to LinkedIn in 60 Seconds</h2>
+          <p>Here is a complete walkthrough of the dual-channel publishing pipeline:</p>
+          <ol class="list-decimal pl-6 space-y-3">
+            <li>
+              <strong>Write:</strong> Draft a 500-word article on Markdown productivity tips in Obsidian.
+            </li>
+            <li>
+              <strong>Publish to site:</strong> Save the <code class="bg-gray-100 px-1 rounded">.md</code> file to your mkdnsite-served blog folder. mkdnsite immediately serves it as HTML for visitors and Markdown for AI crawlers.
+            </li>
+            <li>
+              <strong>Publish to LinkedIn:</strong> Open the same Markdown file, paste it into <a href="https://md2rich.com" class="text-indigo-600 hover:underline">md2rich.com</a>, click convert, copy the rich text, and paste into LinkedIn. Your headings, bold, and lists transfer perfectly.
+            </li>
+          </ol>
+          <div class="bg-gray-100 border-l-4 border-indigo-400 p-4 rounded-r text-sm mt-4">
+            <strong>Markdown example:</strong><br>
+            <pre class="mt-2 bg-white p-3 rounded text-xs"><code># Markdown Productivity Tips
+
+## Use Templates
+Save reusable headers in a templates folder.
+
+## Keyboard Shortcuts
+- **Bold:** Ctrl+B
+- **Italic:** Ctrl+I
+- **Heading:** Ctrl+Shift+H</code></pre>
+            <p class="mt-2">This same Markdown becomes: (a) a styled HTML page on mkdnsite, (b) raw clean text for AI crawlers, and (c) formatted rich text on LinkedIn via md2rich.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">Limitations to Consider</h2>
+          <p>mkdnsite is not the right tool for every scenario. Here is what to keep in mind:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>No theming engine.</strong> The HTML output is deliberately minimal. If you need a custom design, you will have to write your own template or serve the Markdown through a different frontend.</li>
+            <li><strong>User-agent detection is not perfect.</strong> Some AI crawlers use generic user agents that mkdnsite may not recognize. The detection list is community-maintained and needs regular updates.</li>
+            <li><strong>Not for complex sites.</strong> If you need tags, categories, search, or analytics integration, traditional SSGs are still the better choice.</li>
+            <li><strong>Server required.</strong> Unlike static HTML that can be served from any CDN, mkdnsite is a running server that needs to be deployed on a VPS or cloud instance.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">FAQ</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-semibold text-lg">What is mkdnsite?</h3>
+              <p class="text-gray-700">mkdnsite is an open-source Markdown site generator that serves two response formats from the same source file: formatted HTML for human readers and raw Markdown text for AI agents and crawlers. It detects the client type from the User-Agent header and serves the appropriate format, requiring zero build steps.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">How does mkdnsite detect AI crawlers?</h3>
+              <p class="text-gray-700">mkdnsite checks the User-Agent header of incoming requests. Known AI crawler bots (GPTBot, ClaudeBot, Google-Extended, PerplexityBot, and others) receive the raw Markdown response. Human browsers receive the styled HTML version. The detection list is configurable and open-source.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">How is mkdnsite different from traditional static site generators?</h3>
+              <p class="text-gray-700">Traditional SSGs like Hugo, Astro, and Jekyll pre-build all pages into HTML at build time. mkdnsite renders on-the-fly and dynamically switches between HTML and Markdown output based on the visitor. It also has zero build dependencies (no Node.js, no Go, no Ruby) and runs as a single binary.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Does mkdnsite work with md2rich for publishing to LinkedIn and X?</h3>
+              <p class="text-gray-700">Yes. Write content in Markdown, serve it via mkdnsite for your website, then copy the same Markdown source into md2rich to convert it into formatted rich text for LinkedIn posts, X Articles, Medium, or Notion. The Markdown source serves both your website and your social publishing in one workflow.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Is mkdnsite suitable for content creators who are not developers?</h3>
+              <p class="text-gray-700">mkdnsite requires basic command-line familiarity to install and run. For content creators who prefer a zero-setup publishing pipeline, md2rich is the simpler alternative: write Markdown in any editor, paste into md2rich, and copy the rich text to your target platform with no server or deployment needed.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mt-10 mb-4">Conclusion</h2>
+          <p>As AI-driven search becomes the primary way people discover content, the way we publish needs to evolve. Serving clean Markdown to AI crawlers is no longer optional — it directly affects how accurately your content is cited in AI-generated answers.</p>
+          <p>mkdnsite solves this elegantly for Markdown-first publishers. Combined with <a href="https://md2rich.com" class="text-indigo-600 hover:underline">md2rich</a> for social publishing, you get a complete pipeline:</p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Write once in Markdown</li>
+            <li>Serve your blog with mkdnsite (HTML for humans + Markdown for AI)</li>
+            <li>Publish to LinkedIn, X Articles, or Medium with md2rich</li>
+          </ul>
+          <p class="mt-4">Give mkdnsite a try on <a href="https://github.com/mkdnsite/mkdnsite" class="text-indigo-600 hover:underline">GitHub</a>, and when you are ready to publish your Markdown content to social platforms, <a href="https://md2rich.com" class="text-indigo-600 hover:underline">md2rich</a> is here to help.</p>
+        </section>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich &middot; <a href="/about.html" class="text-indigo-600 hover:underline">About</a> &middot; <a href="/privacy.html" class="text-indigo-600 hover:underline">Privacy</a> &middot; <a href="https://github.com/mkdnsite/mkdnsite" class="text-indigo-600 hover:underline">mkdnsite on GitHub</a></p>
+  </footer>
+
+</body>
+</html>
