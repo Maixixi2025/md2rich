@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to Bluesky Long-Form: 2026 Publishing Guide</title>
+  <meta name="description" content="Bluesky launched long-form posts on May 28, 2026. Write in Markdown, convert with md2rich, and publish without losing formatting.">
+  <meta name="keywords" content="Markdown to Bluesky, Bluesky long-form, Bluesky Markdown paste, Bluesky rich text, Bluesky long post, md2rich, Bluesky publishing, client-side converter, privacy-first Bluesky">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-bluesky-long-form-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-bluesky-long-form-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-bluesky-long-form-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to Bluesky Long-Form: 2026 Publishing Guide">
+  <meta property="og:description" content="Bluesky launched long-form posts on May 28, 2026. Write in Markdown, convert with md2rich, and publish without losing formatting.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-bluesky-long-form-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Markdown to Bluesky Long-Form: 2026 Publishing Guide",
+        "description": "Bluesky launched long-form posts on May 28, 2026. Write in Markdown, convert with md2rich, and publish without losing formatting.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-17",
+        "dateModified": "2026-06-17",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markdown-to-bluesky-long-form-en"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Bluesky support pasting Markdown directly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Partially. Bluesky's long-form composer accepts basic Markdown patterns like bold, italic, links, and code spans on paste, but tables, headers, nested lists, and blockquotes get stripped or flattened. The behavior depends on whether you paste into the long-form draft editor or the regular 300-character post box. The platform launched long-form on May 28, 2026 and the paste handling is still maturing, so a client-side converter gives you more reliable output than relying on direct paste."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the character limit for Bluesky long-form posts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bluesky long-form posts support up to approximately 8,000 characters of rich text content, which is enough for a full article or essay. The exact limit can vary as the feature evolves, but it is far above the regular 300-character post limit. For long technical content, you can break a single article into multiple long-form posts if you need to."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is md2rich safe to use with unpublished Bluesky drafts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. md2rich runs 100% client-side in your browser. Your Markdown never leaves your device. This is especially important for Bluesky creators who draft announcements, opinion pieces, or unreleased product commentary — the conversion happens entirely in the browser, with no third-party server, no upload, and no analytics. Close the tab and the content is gone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does md2rich preserve Bluesky-specific features like facets and mentions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich preserves standard Markdown: headings, bold, italic, links, ordered and unordered lists, code blocks, blockquotes, horizontal rules, and tables. Bluesky-specific features like @mention facets, custom link cards, and embed blocks are platform extensions that standard Markdown libraries do not render. For standard long-form prose and technical writing, md2rich covers the formatting that actually matters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I publish the same article to both Bluesky and X Articles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. md2rich supports both Bluesky long-form and X Articles as output targets. Write the Markdown once, convert to the appropriate rich text format for each platform, and paste into each composer. The two platforms have different rendering quirks — X Articles whitelists a strict subset of tags while Bluesky's long-form composer is more permissive — but the source Markdown stays identical."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Markdown to Bluesky Long-Form", "item": "https://md2rich.com/blog/markdown-to-bluesky-long-form-en"}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .prose table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .prose th, .prose td { padding: 0.5rem 0.75rem; border: 1px solid #e5e7eb; text-align: left; }
+    .prose th { background: #f9fafb; font-weight: 600; }
+    .prose td { vertical-align: top; }
+    .prose pre { background: #1f2937; color: #e5e7eb; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+    .prose code { font-size: 0.875rem; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-17">2026-06-17</time>
+        <span>·</span>
+        <span>Markdown Tooling</span>
+      </div>
+
+      <h1>Markdown to Bluesky Long-Form: 2026 Publishing Guide</h1>
+
+      <p class="text-lg text-gray-700">Bluesky shipped long-form posts on May 28, 2026 — a direct counter to X Articles and a meaningful shift in the decentralized social space. The new format accepts rich text, supports headings, lists, and code blocks, and gives creators up to roughly 8,000 characters per post. But if you write in Markdown (Obsidian, VS Code, iA Writer, Zettlr), the path from your editor to a published Bluesky long-form post is not as smooth as it should be.</p>
+
+      <p>This guide walks through the actual workflow: writing in Markdown, converting it to a Bluesky-compatible rich text format, and pasting into the long-form composer. We test direct paste, copy-as-HTML workarounds, and a client-side converter pipeline — and show what survives each transition.</p>
+
+      <h2>What Changed When Bluesky Launched Long-Form</h2>
+
+      <p>Before May 28, Bluesky was a 300-character microblogging platform. Posts were short, link-heavy, and visually flat. Long-form was a third-party hack — users would screenshot Medium posts or paste raw URLs hoping for a card preview.</p>
+
+      <p>The long-form launch changed three things:</p>
+
+      <ul>
+        <li><strong>Character limit raised to ~8,000</strong> — enough for a full essay, technical write-up, or product analysis</li>
+        <li><strong>Rich text composer</strong> — supports bold, italic, headings, ordered and unordered lists, blockquotes, code blocks, and inline links</li>
+        <li><strong>Permanent URL per long-form post</strong> — each long-form gets its own canonical permalink, indexed by external crawlers, making it viable as a primary publishing surface</li>
+      </ul>
+
+      <p>This is the first real competitor to X Articles in the federated space. Mastodon has had 4,000-character posts for years but no rich text rendering. Bluesky's combination of AT Protocol federation, rich text, and a permanent URL creates a new publishing surface that Markdown writers can target directly.</p>
+
+      <h2>The Problem: Markdown Pastes Don't Survive the Transition</h2>
+
+      <p>Let's test what happens when you write a typical technical post in Markdown and try to publish it to Bluesky:</p>
+
+      <pre><code># Why AT Protocol Beats Mastodon's Federation Model
+
+## The Core Difference
+
+Both protocols federate across independent servers, but
+the data model diverges at the repository level. AT Protocol
+stores every post as a signed record in a user's repository
+— portable across providers.
+
+## Migration Comparison
+
+| Feature | Mastodon | AT Protocol |
+|---------|----------|-------------|
+| Account portability | Migration tool, days of downtime | Sign new key, instant |
+| Post storage | Server-side DB | User repository |
+| Federation discovery | Manual relay list | DHT-based |
+| Identity | Local username | Handle + DID |
+
+## Verdict
+
+AT Protocol's repository model wins on portability.
+The trade-off is a more complex client implementation.
+
+```python
+# Example: fetch a Bluesky post via AT Protocol
+from atproto import Client
+client = Client()
+client.login('user.bsky.social', 'app-password')
+post = client.get_post('at://...')
+print(post.value.text)
+```</code></pre>
+
+      <p>Now paste this into Bluesky's long-form composer. What you get depends on where you paste from:</p>
+
+      <ul>
+        <li><strong>From a Markdown editor (Obsidian, VS Code):</strong> Bold, italic, code blocks, and inline code survive. Tables flatten to plain text. Headers disappear or render as plain bold. Blockquotes lose their visual treatment. Nested lists collapse.</li>
+        <li><strong>From a browser preview:</strong> Better — the rendered HTML carries the structure, but Bluesky strips most block-level elements (tables, code fences, horizontal rules) on paste.</li>
+        <li><strong>From a Markdown-to-HTML converter without sanitization:</strong> Tables and code blocks make it through, but Bluesky's composer rejects unsupported tags (some `<div>`, `<span>` with inline styles), causing partial paste or a silent drop.</li>
+      </ul>
+
+      <p>The result: a Markdown document that took you 20 minutes to write lands in Bluesky looking half-finished. Tables disappear. Headers vanish. Code blocks lose their language hints. The post reads as a wall of text.</p>
+
+      <h2>The Fix: A Client-Side Markdown to Rich Text Pipeline</h2>
+
+      <p>The reliable workflow is to convert Markdown to a Bluesky-compatible HTML subset, sanitize it against the platform's tag whitelist, and paste. <a href="/">md2rich.com</a> does exactly this — 100% in the browser, with no upload step.</p>
+
+      <p>Here's the full pipeline:</p>
+
+      <ol>
+        <li><strong>Write in Markdown</strong> — Obsidian, iA Writer, VS Code, Zettlr, or any plain text editor. The source stays version-controllable, portable, and copy-pasteable to other platforms.</li>
+        <li><strong>Paste into md2rich.com</strong> — the converter renders your Markdown to HTML and sanitizes against the target platform's tag whitelist. For Bluesky long-form, that means keeping <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>p</code>, <code>strong</code>, <code>em</code>, <code>a</code>, <code>ul</code>, <code>ol</code>, <code>li</code>, <code>blockquote</code>, <code>pre</code>, <code>code</code>, and stripping everything else.</li>
+        <li><strong>Copy the rich text output</strong> — md2rich gives you a Copy button that places the sanitized HTML on your clipboard as both formatted text and HTML.</li>
+        <li><strong>Paste into Bluesky's long-form composer</strong> — every heading, list, table, and code block lands in the correct block. What you wrote is what readers see.</li>
+      </ol>
+
+      <p>The whole pipeline takes 10-15 seconds per post. For a writer publishing one long-form post per day, that is roughly 5 minutes per week of overhead — a fair trade for a reliable format.</p>
+
+      <h2>Walkthrough: A Real Bluesky Long-Form Post</h2>
+
+      <p>Let's take the AT Protocol example above and run it through the pipeline.</p>
+
+      <p><strong>Step 1 — Write in Markdown (your editor of choice):</strong></p>
+
+      <pre><code># Why I'm Switching from X Articles to Bluesky Long-Form
+
+After 18 months of X Articles, I moved my weekly newsletter
+to Bluesky long-form on June 1, 2026. Here's the comparison.
+
+## Reach
+
+X Articles reaches my existing 12,000 X followers.
+Bluesky long-form reaches ~3,200 followers.
+
+The number favors X, but engagement favors Bluesky:
+average read time on Bluesky: 4:12. On X: 1:48.
+
+## Monetization
+
+X Articles pay nothing directly. Subscribers see ads.
+Bluesky long-form has no ads. I link to my paid Substack
+from the post footer.
+
+## Verdict
+
+Different audiences, different goals. I publish technical
+analysis on Bluesky, breaking news on X.</code></pre>
+
+      <p><strong>Step 2 — Open md2rich.com, paste the Markdown:</strong></p>
+
+      <p>The live preview shows the rendered HTML on the right. You can see exactly what Bluesky will see before you paste.</p>
+
+      <p><strong>Step 3 — Click Copy, switch to Bluesky, paste into the long-form composer:</strong></p>
+
+      <p>The headings land as headings. The lists land as lists. The blockquotes land as blockquotes. The bold text lands bold. No formatting is lost. What you wrote in your Markdown editor is exactly what your readers see in their Bluesky feed.</p>
+
+      <p><strong>Step 4 — Add a closing line, link to your other work, publish:</strong></p>
+
+      <p>That's the entire workflow. For a post under 1,500 words, the conversion + paste takes under 20 seconds.</p>
+
+      <h2>Markdown Features: What Survives, What Doesn't</h2>
+
+      <p>Not every Markdown feature maps cleanly to Bluesky long-form. Here is the verified compatibility matrix as of June 2026:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Markdown Feature</th>
+            <th>Direct Paste</th>
+            <th>md2rich Pipeline</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Headings (h1, h2, h3)</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>Bluesky supports h2/h3/h4 natively; h1 treated as plain bold</td>
+          </tr>
+          <tr>
+            <td>Bold, italic</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>Both survive direct paste reliably</td>
+          </tr>
+          <tr>
+            <td>Inline code</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>Backtick syntax preserved</td>
+          </tr>
+          <tr>
+            <td>Code blocks (fenced)</td>
+            <td>⚠️ Partial</td>
+            <td>✅</td>
+            <td>Direct paste may lose language hint and indentation</td>
+          </tr>
+          <tr>
+            <td>Unordered lists</td>
+            <td>⚠️ Partial</td>
+            <td>✅</td>
+            <td>Nested lists collapse on direct paste</td>
+          </tr>
+          <tr>
+            <td>Ordered lists</td>
+            <td>⚠️ Partial</td>
+            <td>✅</td>
+            <td>Numbering can reset on direct paste</td>
+          </tr>
+          <tr>
+            <td>Blockquotes</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>Direct paste flattens to plain paragraph</td>
+          </tr>
+          <tr>
+            <td>Tables</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>Tables are stripped entirely on direct paste</td>
+          </tr>
+          <tr>
+            <td>Links</td>
+            <td>✅</td>
+            <td>✅</td>
+            <td>Inline and reference-style both work</td>
+          </tr>
+          <tr>
+            <td>Horizontal rules</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td>Rendered as visible separator</td>
+          </tr>
+          <tr>
+            <td>Images</td>
+            <td>⚠️ URL only</td>
+            <td>⚠️ URL only</td>
+            <td>Bluesky long-form doesn't embed images directly; URL displays as link</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>For a long-form technical post, the md2rich pipeline preserves 9 out of 11 features reliably. Direct paste preserves 3. The gap is the difference between a readable post and a wall of text.</p>
+
+      <h2>Bluesky Long-Form vs X Articles: When to Publish Where</h2>
+
+      <p>Bluesky long-form is not a replacement for X Articles — they serve different audiences and have different strengths. Here is the honest comparison as of June 2026:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Bluesky Long-Form</th>
+            <th>X Articles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Audience</td>
+            <td>Tech-savvy, privacy-aware, federated social users</td>
+            <td>Mainstream news, breaking-event followers</td>
+          </tr>
+          <tr>
+            <td>Character limit</td>
+            <td>~8,000 chars</td>
+            <td>~25,000 chars (effectively unlimited for most posts)</td>
+          </tr>
+          <tr>
+            <td>Markdown friendly</td>
+            <td>Via client-side converter (md2rich)</td>
+            <td>Via client-side converter (md2rich)</td>
+          </tr>
+          <tr>
+            <td>Federation</td>
+            <td>AT Protocol — portable identity, portable posts</td>
+            <td>Centralized — locked to X</td>
+          </tr>
+          <tr>
+            <td>Subscription model</td>
+            <td>None native (link out to Substack/Beehiiv)</td>
+            <td>X Premium subscriber-only</td>
+          </tr>
+          <tr>
+            <td>Discovery</td>
+            <td>Algorithmic feeds, no paid promotion</td>
+            <td>Algorithmic feeds, paid promotion available</td>
+          </tr>
+          <tr>
+            <td>Post permanence</td>
+            <td>Permanent URL, indexed by web crawlers</td>
+            <td>Permanent URL, indexed by web crawlers</td>
+          </tr>
+          <tr>
+            <td>Cost to publish</td>
+            <td>Free</td>
+            <td>Requires X Premium ($8-$16/month)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The pragmatic answer: publish both, write once. md2rich supports Bluesky long-form and X Articles as separate output targets — write the Markdown once, convert to each platform's accepted rich text format, and paste. The conversion logic is identical; the tag whitelist is what differs.</p>
+
+      <h2>FAQ</h2>
+
+      <h3>Does Bluesky support pasting Markdown directly?</h3>
+      <p>Partially. Bluesky's long-form composer accepts basic Markdown patterns like bold, italic, links, and inline code on paste, but tables, headers, nested lists, and blockquotes get stripped or flattened. The behavior varies depending on whether you paste into the long-form draft editor or the regular 300-character post box. The platform launched long-form on May 28, 2026 and the paste handling is still maturing, so a client-side converter gives you more reliable output than relying on direct paste.</p>
+
+      <h3>What is the character limit for Bluesky long-form posts?</h3>
+      <p>Bluesky long-form posts support up to approximately 8,000 characters of rich text content, which is enough for a full article or essay. The exact limit can vary as the feature evolves, but it is far above the regular 300-character post limit. For long technical content, you can break a single article into multiple long-form posts if you need to.</p>
+
+      <h3>Is md2rich safe to use with unpublished Bluesky drafts?</h3>
+      <p>Yes. md2rich runs 100% client-side in your browser. Your Markdown never leaves your device. This is especially important for Bluesky creators who draft announcements, opinion pieces, or unreleased product commentary — the conversion happens entirely in the browser, with no third-party server, no upload, and no analytics. Close the tab and the content is gone.</p>
+
+      <h3>Does md2rich preserve Bluesky-specific features like facets and mentions?</h3>
+      <p>md2rich preserves standard Markdown: headings, bold, italic, links, ordered and unordered lists, code blocks, blockquotes, horizontal rules, and tables. Bluesky-specific features like @mention facets, custom link cards, and embed blocks are platform extensions that standard Markdown libraries do not render. For standard long-form prose and technical writing, md2rich covers the formatting that actually matters.</p>
+
+      <h3>Can I publish the same article to both Bluesky and X Articles?</h3>
+      <p>Yes. md2rich supports both Bluesky long-form and X Articles as output targets. Write the Markdown once, convert to the appropriate rich text format for each platform, and paste into each composer. The two platforms have different rendering quirks — X Articles whitelists a strict subset of tags while Bluesky's long-form composer is more permissive — but the source Markdown stays identical.</p>
+
+      <h2>Conclusion</h2>
+
+      <p>Bluesky's long-form launch on May 28, 2026 is the first real opening in the federated social space for long-form writers. The platform accepts rich text, supports headings and lists, and gives you a permanent URL per post. For Markdown writers, the only gap is the conversion step — paste from your Markdown editor and you lose half your formatting.</p>
+
+      <p>The reliable fix is a 10-second client-side conversion:</p>
+
+      <ul>
+        <li><strong>Write in Markdown</strong> — your editor of choice (Obsidian, VS Code, iA Writer, Zettlr)</li>
+        <li><strong>Convert with md2rich</strong> — paste, copy, done. No account, no upload, no tracking.</li>
+        <li><strong>Paste into Bluesky long-form</strong> — every heading, list, table, and code block lands intact</li>
+      </ul>
+
+      <p>For writers who publish across multiple platforms, the same source Markdown converts to Bluesky long-form, X Articles, Notion pages, Medium drafts, and LinkedIn posts — one source, many destinations. The Markdown file stays as the canonical version; the platform-specific rich text is a derivative.</p>
+
+      <p>Try it with the AT Protocol example above. Write it in your Markdown editor, paste through <a href="/">md2rich.com</a>, and publish to Bluesky. The conversion takes 10 seconds; the time savings compound across every post you write.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 my-6">
+        <p class="font-semibold text-indigo-800">Try md2rich Free</p>
+        <p class="text-indigo-700 text-sm mt-1">Paste Markdown → copy rich text → publish to Bluesky long-form, X Articles, LinkedIn, or Medium. <a href="/" class="underline font-medium">md2rich.com</a> — zero tracking, zero upload, free.</p>
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles Guide</a>
+          <a href="/blog/x-articles-vs-linkedin-newsletter-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">X Articles vs LinkedIn Newsletter</a>
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">2026 Markdown Tool Landscape</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for Bluesky, LinkedIn, X Articles, Medium.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

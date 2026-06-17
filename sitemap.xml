@@ -6,12 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/about.html</loc>
+    <loc>https://md2rich.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/privacy.html</loc>
+    <loc>https://md2rich.com/privacy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -21,22 +21,67 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich-en.html</loc>
+    <loc>https://md2rich.com/blog/best-markdown-editors-2026-en</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html</loc>
+    <loc>https://md2rich.com/blog/files-md-obsidian-alternative-en</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/blog/best-markdown-editors-2026-en.html</loc>
+    <loc>https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich-en</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/blog/files-md-obsidian-alternative-en.html</loc>
+    <loc>https://md2rich.com/blog/markdown-to-linkedin-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/markdown-to-x-articles-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/markdown-tool-landscape-2026-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/meadow-notes-markdown-microsite-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/markdown-to-notion-workflow-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/x-articles-vs-linkedin-newsletter-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/markdown-to-bluesky-long-form-en</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

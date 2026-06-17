@@ -11,6 +11,24 @@
   ],
   "published": [
     {
+      "slug": "markdown-to-bluesky-long-form-en",
+      "date": "2026-06-17",
+      "type": "guide+comparison",
+      "title": "Markdown to Bluesky Long-Form: 2026 Publishing Guide",
+      "description": "Bluesky launched long-form posts on May 28, 2026. Write in Markdown, convert with md2rich, and publish without losing formatting.",
+      "lang": "en-US",
+      "file": "blog/markdown-to-bluesky-long-form-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-bluesky-long-form-en",
+      "heat_source": "⭐⭐⭐ 2026-06-17 daily report #1 (Bluesky 5/28 long-form launch)",
+      "status": "published",
+      "providers_featured": [
+        "bluesky"
+      ],
+      "primary_cta": "Try md2rich — paste Markdown → copy rich text → publish to Bluesky long-form",
+      "created_at": "2026-06-17 12:34:44",
+      "published_at": "2026-06-17"
+    },
+    {
       "slug": "tweet-md-x-threads-to-markdown-en",
       "date": "2026-06-08",
       "type": "guide",
@@ -162,10 +180,29 @@
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-notion-workflow-en",
+      "date": "2026-06-16",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-notion-workflow-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-notion-workflow-en",
+      "title": "Markdown to Notion: The Complete 2026 Guide (with md2rich)",
+      "description": "Notion's Markdown paste breaks tables, code blocks, and nested lists. Use md2rich for a tested client-side workflow — full formatting, no upload.",
+      "heat_source": "Rotation — Notion Conversion (已覆盖各平台，缺 Notion)",
+      "status": "published",
+      "published_at": "2026-06-16T12:30:00Z",
+      "providers_featured": [
+        "md2rich",
+        "notion"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "markdown-to-bluesky-long-form-en",
     "markdown-tool-landscape-2026-en",
     "linkedin-markdown-formatter-vs-md2rich-en",
     "x-articles-vs-linkedin-newsletter-en",
