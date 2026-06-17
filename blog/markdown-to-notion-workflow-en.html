@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to Notion: The Complete 2026 Guide (with md2rich)</title>
+  <meta name="description" content="Notion's Markdown paste breaks tables, code blocks, and nested lists. Use md2rich for a tested client-side workflow — full formatting, no upload.">
+  <meta name="keywords" content="Markdown to Notion, Notion Markdown paste, Notion formatting, md2rich, Markdown to Notion table, Notion code block, Notion rich text, client-side converter, privacy-first Notion">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-notion-workflow-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-notion-workflow-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-notion-workflow-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to Notion: The Complete 2026 Guide (with md2rich)">
+  <meta property="og:description" content="Notion's Markdown import breaks tables, code blocks, and nested lists. Here's a tested workflow for writing in Markdown and pasting into Notion with full formatting.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-notion-workflow-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Markdown to Notion: The Complete 2026 Guide (with md2rich)",
+        "description": "Notion's Markdown import breaks tables, code blocks, and nested lists. Here's a tested workflow for writing in Markdown and pasting into Notion with full formatting.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-16",
+        "dateModified": "2026-06-16",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markdown-to-notion-workflow-en"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Notion support pasting Markdown directly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Partially. Notion preserves bold, italic, inline code, and basic lists when you paste Markdown. But tables are flattened into plain text, code blocks lose their formatting, nested lists sometimes collapse, and headers may or may not carry over depending on the source. The paste behavior has improved since 2024 but remains unreliable for anything more complex than a paragraph with bold text."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I import a Markdown file directly into Notion?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — Notion supports importing .md files via File > Import > Markdown & CSV. But the import has significant limitations: tables are not supported and appear as plain text, image references are resolved as raw URLs, and callouts or blockquotes lose their styling. For most content, paste via a client-side converter like md2rich produces better results than direct import."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is md2rich safe to use with Notion drafts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. md2rich runs 100% client-side in your browser. Your Markdown never leaves your device. This is especially important for Notion users who write drafts containing unreleased product details, customer data, or internal planning notes. Unlike cloud-based converters, md2rich has no servers to upload your content to — close the tab and everything is gone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does md2rich preserve Notion's toggle lists and callout blocks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich preserves standard Markdown features: headings, bold, italic, links, ordered and unordered lists, code blocks, blockquotes, horizontal rules, and tables. Notion-specific features like toggle lists, callout blocks, and database properties are Markdown extensions that standard Markdown libraries do not render. For standard long-form content, md2rich covers everything you need."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Markdown editors work best with Notion + md2rich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Any Markdown editor works because the pipeline is just plain text. Obsidian is a popular pairing because its graph view helps organize Notion content across many documents. VS Code with Markdown All in One is the developer favorite. iA Writer excels for long-form prose destined for Notion pages. Write in any editor, copy the raw Markdown, paste into md2rich, and push into Notion."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Markdown to Notion Guide", "item": "https://md2rich.com/blog/markdown-to-notion-workflow-en"}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .prose table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .prose th, .prose td { padding: 0.5rem 0.75rem; border: 1px solid #e5e7eb; text-align: left; }
+    .prose th { background: #f9fafb; font-weight: 600; }
+    .prose td { vertical-align: top; }
+    .prose pre { background: #1f2937; color: #e5e7eb; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+    .prose code { font-size: 0.875rem; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-16">2026-06-16</time>
+        <span>·</span>
+        <span>Markdown Tooling</span>
+      </div>
+
+      <h1>Markdown to Notion: The Complete 2026 Guide (with md2rich)</h1>
+
+      <p class="text-lg text-gray-700">Notion has become the default workspace for millions of writers, project managers, and engineering teams. Its block-based editor is flexible, but its Markdown support has a strange inconsistency: it accepts some Markdown patterns on paste, silently drops others, and produces different results depending on whether you are pasting into a page body, a code block, or a database description.</p>
+
+      <p>If you write in a dedicated Markdown editor (Obsidian, Typora, VS Code, iA Writer) and want to bring that content into Notion, the paste workflow matters. This guide tests three approaches — direct paste, Notion's native import, and a client-side converter pipeline — against a real-world Markdown document with headings, tables, code blocks, nested lists, and blockquotes.</p>
+
+      <h2>The Problem: Notion's Markdown Paste Is Inconsistent</h2>
+
+      <p>Let's start with a typical Markdown document a technical writer might produce:</p>
+
+      <pre><code># Monthly Engineering Review — June 2026
+
+## Key Metrics
+
+| Service | P99 Latency | Error Rate | QPS |
+|---------|-------------|------------|-----|
+| Auth API | 45ms | 0.02% | 8,200 |
+| Search API | 210ms | 0.15% | 3,100 |
+| Payment API | 180ms | 0.08% | 1,400 |
+
+## What Changed
+
+We shipped three significant changes this sprint:
+
+1. **Redis cluster migration** — moved from a single 16GB instance
+   to a 3-node cluster in us-east-1
+2. **New rate limiter** — per-user token bucket with configurable
+   refill rate (details below)
+3. **Log pipeline rewrite** — Kafka topic partitioning doubled
+
+### Rate Limiter Code
+
+```python
+import time
+from collections import defaultdict
+
+class TokenBucket:
+    def __init__(self, rate, burst):
+        self.rate = rate
+        self.burst = burst
+        self.tokens = defaultdict(lambda: burst)
+        self.last_refill = defaultdict(time.time)
+
+    def allow(self, user_id):
+        now = time.time()
+        elapsed = now - self.last_refill[user_id]
+        self.tokens[user_id] = min(
+            self.burst,
+            self.tokens[user_id] + elapsed * self.rate
+        )
+        self.last_refill[user_id] = now
+        if self.tokens[user_id] >= 1:
+            self.tokens[user_id] -= 1
+            return True
+        return False
+```
+
+> **Note**: The token bucket approach was chosen over a fixed
+> window counter because it handles burst traffic better under
+> our current load profile. See the A/B test results in the
+> appendix.</pre></code>
+
+      <p>Now paste this Markdown directly into a Notion page and observe what breaks:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Direct Paste Result</th>
+            <th>Broken?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code># H1</code> heading</td>
+            <td>Becomes a Notion H1 block</td>
+            <td>✅ Works</td>
+          </tr>
+          <tr>
+            <td><code>## H2</code> heading</td>
+            <td>Becomes a Notion H2 block</td>
+            <td>✅ Works</td>
+          </tr>
+          <tr>
+            <td><code>### H3</code> heading</td>
+            <td>Becomes a Notion H3 block</td>
+            <td>✅ Works</td>
+          </tr>
+          <tr>
+            <td><strong>Table</strong></td>
+            <td>Flattened into plain text — pipes and dashes become literal characters</td>
+            <td>❌ Broken</td>
+          </tr>
+          <tr>
+            <td><strong>Code block (triple backtick)</strong></td>
+            <td>Pasted as plain paragraph with backticks visible</td>
+            <td>❌ Broken</td>
+          </tr>
+          <tr>
+            <td><strong>Ordered list</strong></td>
+            <td>Indentation lost — sub-items become separate top-level items</td>
+            <td>⚠️ Partial</td>
+          </tr>
+          <tr>
+            <td><strong>Blockquote</strong></td>
+            <td>Quote block not created — pasted as plain paragraph</td>
+            <td>❌ Broken</td>
+          </tr>
+          <tr>
+            <td><strong>Bold</strong></td>
+            <td>Preserved as bold text</td>
+            <td>✅ Works</td>
+          </tr>
+          <tr>
+            <td><strong>Inline code</strong></td>
+            <td>Preserved as inline code</td>
+            <td>✅ Works</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The pattern is clear: Notion handles <strong>inline formatting</strong> (bold, italic, inline code) and <strong>headings</strong> well. It falls apart on <strong>block-level elements</strong> that require structural conversion — tables, code blocks, blockquotes, and nested lists. For internal wiki-style content, direct paste might be acceptable. For published articles or detailed technical documentation, it is not.</p>
+
+      <h2>Notion's Native File Import: Better but Limited</h2>
+
+      <p>Notion offers a built-in Markdown importer: <code>File → Import → Markdown & CSV</code>. Select your <code>.md</code> file and Notion creates a new page from it. How does it handle the same document?</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>File Import Result</th>
+            <th>Broken?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Headings (H1-H3)</td>
+            <td>All converted to proper Notion heading blocks</td>
+            <td>✅ Works</td>
+          </tr>
+          <tr>
+            <td>Table</td>
+            <td>Rendered as plain text — pipes and formatting characters visible</td>
+            <td>❌ Broken</td>
+          </tr>
+          <tr>
+            <td>Code block</td>
+            <td>Not created as code block — pasted as text paragraph</td>
+            <td>❌ Broken</td>
+          </tr>
+          <tr>
+            <td>Ordered list with nesting</td>
+            <td>Import preserves list items but flattens sub-items</td>
+            <td>⚠️ Partial</td>
+          </tr>
+          <tr>
+            <td>Blockquote</td>
+            <td>Not converted — pasted as regular text</td>
+            <td>❌ Broken</td>
+          </tr>
+          <tr>
+            <td>Image references</td>
+            <td>Raw Markdown image syntax preserved as text — not rendered</td>
+            <td>❌ Broken</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The file import is slightly better than raw paste for headings (all work reliably) but still fails on the same block-level elements. The table and code block shortcomings are the most painful for technical writers — these are the structures that distinguish a well-formatted Notion page from a wall of text.</p>
+
+      <h2>The md2rich Workflow: Three Steps, Full Fidelity</h2>
+
+      <p>Here is the workflow I have been using for the past 6 months. It adds one step between your Markdown editor and Notion, and it preserves <em>everything</em>:</p>
+
+      <ol>
+        <li><strong>Write in your Markdown editor</strong> — Obsidian, Typora, VS Code, iA Writer, whatever you prefer. The Markdown file stays on your machine.</li>
+        <li><strong>Copy the Markdown → open <a href="/">md2rich.com</a> → paste in the left editor</strong> — the right panel shows a live rich text preview. Everything renders in your browser: headings, tables, code blocks with syntax highlighting, nested lists, blockquotes, horizontal rules.</li>
+        <li><strong>Click "Copy as Rich Text" → paste into Notion</strong> — the formatted content appears in Notion with all structure intact. The table becomes a real Notion table. The code block renders with a gray background and monospace font. Nested lists keep their indentation.</li>
+      </ol>
+
+      <p>That is it. The entire conversion happens client-side — your Markdown never reaches a server. Here is the same technical document pasted through md2rich:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>md2rich + Notion Paste</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Headings (H1-H3)</td>
+            <td>✅ Proper Notion heading blocks</td>
+          </tr>
+          <tr>
+            <td>Table with pipes</td>
+            <td>✅ Real Notion table — columns aligned, headers styled</td>
+          </tr>
+          <tr>
+            <td>Code block (Python, 20 lines)</td>
+            <td>✅ Code block with gray background, monospace, preserved indentation</td>
+          </tr>
+          <tr>
+            <td>Nested ordered list</td>
+            <td>✅ Full indentation preserved at all levels</td>
+          </tr>
+          <tr>
+            <td>Blockquote</td>
+            <td>✅ Rendered as quote block with left border</td>
+          </tr>
+          <tr>
+            <td>Inline code + bold</td>
+            <td>✅ Both inline styles preserved</td>
+          </tr>
+          <tr>
+            <td>Horizontal rule</td>
+            <td>✅ Divider line created in Notion</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>No element is lost. The same document that produces a broken mess when pasted directly into Notion renders perfectly through the md2rich pipeline.</p>
+
+      <h2>Why Client-Side Matters for Notion Users</h2>
+
+      <p>Notion users tend to put <em>everything</em> in Notion — meeting notes, product specs, customer feedback, hiring rubrics, financial models. When you stage content through a cloud-based Markdown converter before pushing it into Notion, that converter's server gets a copy of whatever you just pasted. For an engineering team writing a post-mortem of a production incident, that is a problem.</p>
+
+      <p>md2rich eliminates the server completely. The JavaScript runs in your browser tab. The Markdown you paste is read, rendered into HTML, written to the clipboard as rich text, and then the tab forgets everything. Refresh the page — the editor is empty. Close it — nothing happened outside your browser. This is the right security model for:</p>
+
+      <ul>
+        <li><strong>Incident post-mortems</strong> containing internal infrastructure details</li>
+        <li><strong>Product requirement documents</strong> discussing unreleased features</li>
+        <li><strong>Customer notes</strong> that include sensitive account information</li>
+        <li><strong>Internal engineering wikis</strong> shared across teams via Notion</li>
+      </ul>
+
+      <h2>Code Example: A Reader-Facing Document</h2>
+
+      <p>Here is a sample that a developer might write in Markdown for a public Notion page shared with their team or community:</p>
+
+      <pre><code># API Migration Guide: v2 to v3
+
+## Key Changes
+
+The v3 API introduces **breaking changes** in three areas:
+
+| Area | v2 | v3 |
+|------|----|-----|
+| Auth | Bearer token in header | OAuth 2.0 + refresh tokens |
+| Pagination | `page` / `per_page` | Cursor-based `after` / `before` |
+| Rate limit | 100 req/min | 1,000 req/min per token |
+
+## Migration Steps
+
+1. **Generate a new API key** in the developer dashboard
+2. **Update the authorization header** (see code below)
+3. **Test against the v3 sandbox endpoint** before switching
+
+### Python Example
+
+```python
+import requests
+
+def migrate_to_v3(old_token):
+    """Exchange v2 token for v3 OAuth credentials."""
+    response = requests.post(
+        "https://api.example.com/v3/auth/token",
+        json={"grant_type": "token_exchange",
+              "old_token": old_token}
+    )
+    return response.json().get("access_token")
+```
+
+> **Important**: The v2 auth header format (`Authorization: Token xxx`)
+> will stop working on August 1, 2026.</pre></code>
+
+      <p>Write this in Markdown, paste through md2rich, and paste into Notion. The table becomes a proper Notion table, the code block renders as a code block, the warning blockquote appears as a styled quote, and the nested list keeps every level of indentation. The reader sees a clean, well-structured Notion page — exactly as you intended.</p>
+
+      <h2>Comparison: Three Paths to Notion</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Direct Paste</th>
+            <th>File Import</th>
+            <th>md2rich Pipeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Setup time</td>
+            <td>0 seconds</td>
+            <td>File menu + path selection</td>
+            <td>10 seconds</td>
+          </tr>
+          <tr>
+            <td>Login required</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Content leaves your device</td>
+            <td>No</td>
+            <td>No (local file)</td>
+            <td>No (client-side)</td>
+          </tr>
+          <tr>
+            <td>Tables preserved</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Code blocks preserved</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Nested lists preserved</td>
+            <td>⚠️ Partial</td>
+            <td>⚠️ Partial</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Blockquotes preserved</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Batch / multiple documents</td>
+            <td>One at a time</td>
+            <td>One file at a time</td>
+            <td>One at a time</td>
+          </tr>
+          <tr>
+            <td>Works offline</td>
+            <td>N/A (Notion is online)</td>
+            <td>N/A</td>
+            <td>After initial page load</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>FAQ</h2>
+
+      <h3>Does Notion support pasting Markdown directly?</h3>
+      <p>Partially. Notion preserves bold, italic, inline code, and basic lists when you paste Markdown. But tables are flattened into plain text, code blocks lose their formatting, nested lists sometimes collapse, and headers may or may not carry over depending on the source. The paste behavior has improved since 2024 but remains unreliable for anything more complex than a paragraph with bold text.</p>
+
+      <h3>Can I import a Markdown file directly into Notion?</h3>
+      <p>Yes — Notion supports importing .md files via <code>File → Import → Markdown & CSV</code>. But the import has significant limitations: tables are not supported and appear as plain text, image references are resolved as raw URLs, and callouts or blockquotes lose their styling. For most content, the paste workflow through a client-side converter like md2rich produces better results than direct import.</p>
+
+      <h3>Is md2rich safe to use with confidential Notion drafts?</h3>
+      <p>Yes. md2rich runs 100% client-side in your browser. Your Markdown never leaves your device. This is especially important for Notion users who write drafts containing unreleased product details, customer data, or internal planning notes — the content goes from your Markdown editor to your Notion workspace with no third-party server in the middle.</p>
+
+      <h3>Does md2rich preserve Notion-specific features like toggle lists?</h3>
+      <p>md2rich preserves standard Markdown: headings, bold, italic, links, ordered and unordered lists, code blocks, blockquotes, horizontal rules, and tables. Notion-specific extensions like toggle lists, callout blocks, and database properties require Notion's own editor. For standard long-form content and technical documentation, md2rich covers everything.</p>
+
+      <h3>Which Markdown editor works best with Notion + md2rich?</h3>
+      <p>Any Markdown editor works because the pipeline is simply plain text copied between tools. Obsidian is a popular pairing because its graph view helps organize content across many Notion-related documents. VS Code with Markdown All in One is the developer favorite for technical documentation. iA Writer excels for long-form prose. Write in any editor, copy the Markdown, paste into <a href="/">md2rich.com</a>, and push into Notion — the workflow is identical regardless of your editor choice.</p>
+
+      <h3>Can I automate this for batch publishing to Notion?</h3>
+      <p>md2rich is designed for one-off conversion — open, paste, copy, close. For batch automation, you would pair a Markdown-to-HTML library (like marked.js that md2rich uses internally) with Notion's API. The client-side privacy advantage is lost in an automated pipeline, but the rendering logic is the same. For most users, the per-document approach takes under 10 seconds per page.</p>
+
+      <h2>Conclusion</h2>
+
+      <p>Notion's Markdown handling has a well-defined gap: it handles inline formatting reliably but fails on block-level structures that matter most for technical and long-form content. The fix is a single extra step — a client-side Markdown-to-rich-text converter that runs in your browser and touches no server.</p>
+
+      <p>The workflow is:</p>
+
+      <ul>
+        <li><strong>Write in Markdown</strong> — your editor of choice</li>
+        <li><strong>Convert with md2rich</strong> — paste, copy, done. No account, no upload, no tracking.</li>
+        <li><strong>Paste into Notion</strong> — everything lands perfectly: tables, code blocks, lists, blockquotes</li>
+      </ul>
+
+      <p>Try it with the sample Markdown above. Paste directly into Notion first, then paste through <a href="/">md2rich.com</a>. The difference is visible in under 30 seconds.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 my-6">
+        <p class="font-semibold text-indigo-800">Try md2rich Free</p>
+        <p class="text-indigo-700 text-sm mt-1">Paste Markdown → copy rich text → paste into Notion, LinkedIn, X Articles, or Medium. <a href="/" class="underline font-medium">md2rich.com</a> — zero tracking, zero upload, free.</p>
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-to-linkedin-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to LinkedIn: The Honest Guide</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles Guide</a>
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">2026 Markdown Tool Landscape</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for Notion, LinkedIn, X Articles, Medium.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

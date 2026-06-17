@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft MarkItDown + md2rich: Markdown Pipeline Guide 2026</title>
+  <meta name="description" content="Microsoft MarkItDown converts PDFs and DOCX to Markdown. md2rich renders to rich text for LinkedIn and X. The complete document-to-platform pipeline.">
+  <meta name="keywords" content="Microsoft MarkItDown, MarkItDown Markdown converter, md2rich, Markdown pipeline, PDF to Markdown, DOCX to Markdown, document to LinkedIn, Markdown workflow 2026">
+  <link rel="canonical" href="https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Microsoft MarkItDown + md2rich: Markdown Pipeline Guide 2026">
+  <meta property="og:description" content="Microsoft MarkItDown converts PDFs and DOCX to Markdown. md2rich renders to rich text for LinkedIn and X. The complete document-to-platform pipeline.">
+  <meta property="og:url" content="https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Microsoft MarkItDown + md2rich: Markdown Pipeline Guide 2026",
+        "description": "Microsoft MarkItDown converts PDFs and DOCX to Markdown. md2rich renders to rich text for LinkedIn and X. The complete document-to-platform pipeline.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-15",
+        "dateModified": "2026-06-15",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "MarkItDown + md2rich", "item": "https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Microsoft MarkItDown and what does it do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MarkItDown is Microsoft's open-source Python library that converts PDFs, DOCX files, PPTX presentations, Excel spreadsheets, HTML pages, CSV data, JSON, and images (via OCR) into clean Markdown. It works entirely locally with no cloud dependencies and is designed for AI pipeline ingestion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I paste MarkItDown's Markdown output directly into LinkedIn?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not directly. LinkedIn does not accept raw Markdown paste with proper formatting. MarkItDown outputs raw Markdown text (with [links] and **bold** markers), but LinkedIn's rich text editor won't parse these. You need md2rich to convert the Markdown to platform-ready rich text first."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is MarkItDown free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. MarkItDown is open source under MIT license on GitHub at github.com/microsoft/markitdown. No API key, no subscription, no usage limits. Install it with pip and run it entirely on your own machine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does md2rich upload my Markdown to a server like cloud converters do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. md2rich is 100% client-side. All rendering happens in your browser. No data ever leaves your device, no uploads, no accounts. Close the tab and everything is gone. This is a key difference from cloud-based format converters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What file formats does MarkItDown support besides PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MarkItDown supports PDF, DOCX, PPTX, XLSX, HTML, CSV, JSON, XML, ZIP archives, and images (JPEG/PNG) via OCR. Each format is handled by a dedicated plugin that extracts both text and structural metadata like headings, lists, and tables."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 15, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Microsoft MarkItDown + md2rich: The Complete Markdown Pipeline (2026)</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">Microsoft open-sourced MarkItDown, a Python library that converts PDFs, DOCX, and 12 other file formats to clean Markdown. Combined with md2rich, you get a complete document-to-platform pipeline — from a PDF on your desktop to fully formatted content on LinkedIn, X Articles, or Medium in under a minute. Here is how they work together.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Is Microsoft MarkItDown?</h2>
+
+        <p>MarkItDown is an open-source Python library (<a href="https://github.com/microsoft/markitdown" class="text-indigo-600 underline">github.com/microsoft/markitdown</a>) that converts documents to Markdown. Microsoft released it as a MIT-licensed project, making it available for anyone to install, extend, or integrate into their workflow.</p>
+
+        <p>Unlike cloud-based document converters that upload your files to a remote server, MarkItDown runs entirely on your local machine. This makes it a natural fit for the privacy-first document processing pipeline — especially when combined with client-side tools like md2rich.</p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">Supported Formats</h3>
+
+        <p>MarkItDown reads the following formats as of mid-2026:</p>
+
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Text documents</strong> — PDF, DOCX, TXT</li>
+          <li><strong>Presentations</strong> — PPTX</li>
+          <li><strong>Spreadsheets</strong> — XLSX, CSV</li>
+          <li><strong>Web content</strong> — HTML, XML, JSON</li>
+          <li><strong>Archives</strong> — ZIP (extracts and converts contained files)</li>
+          <li><strong>Images</strong> — JPEG, PNG (via built-in OCR using easyocr)</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Installation and Basic Usage</h2>
+
+        <p>MarkItDown requires Python 3.10 or later. Install it with pip:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+pip install markitdown
+        </div>
+
+        <p class="mt-3">Once installed, convert a file to Markdown with a few lines of Python:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+from markitdown import MarkItDown
+
+md = MarkItDown()
+result = md.convert(&quot;report.pdf&quot;)
+print(result.text_content)
+        </div>
+
+        <p class="mt-3">The output is clean Markdown with headings, lists, code blocks, and links preserved from the source document. MarkItDown also has a CLI interface for quick conversions:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+markitdown report.pdf &gt; report.md
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Gap: Markdown to Rich Text</h2>
+
+        <p>MarkItDown gets your content <em>into</em> Markdown. But what happens next? If you want to publish that content on LinkedIn, X Articles, Medium, or Notion, raw Markdown won't work. These platforms expect rendered rich text — bold, italics, headings, bullet points, and links displayed correctly.</p>
+
+        <p>This is where md2rich fills the gap. md2rich takes clean Markdown and renders it to rich text that you can paste directly into any platform's editor. The two tools form a complete pipeline:</p>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 my-6">
+          <p class="text-center font-semibold text-sm text-gray-500">DOCUMENT TO PLATFORM PIPELINE</p>
+          <p class="text-center text-lg mt-2">
+            <span class="text-indigo-600 font-semibold">Source file</span> (PDF/DOCX/PPTX)
+            <span class="text-gray-400"> → </span>
+            <span class="text-green-600 font-semibold">MarkItDown</span>
+            <span class="text-gray-400"> → </span>
+            <span class="text-gray-600 font-semibold">Markdown</span>
+            <span class="text-gray-400"> → </span>
+            <span class="text-indigo-600 font-semibold">md2rich</span>
+            <span class="text-gray-400"> → </span>
+            <span class="text-blue-600 font-semibold">Rich text</span>
+            <span class="text-gray-400"> → </span>
+            <span class="text-orange-600 font-semibold">LinkedIn / X / Medium</span>
+          </p>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Workflow Example: PDF to LinkedIn Post</h2>
+
+        <p>Here is a concrete example. You wrote a detailed report as a PDF and want to share key insights on LinkedIn. The pipeline takes under 60 seconds:</p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">Step 1: Extract to Markdown</h3>
+
+        <p>Run MarkItDown on your PDF:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+# Convert the full report
+markitdown market-trends-2026.pdf &gt; market-trends.md
+
+# Check the output
+head -30 market-trends.md
+        </div>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm mt-3">
+          <p class="text-gray-800 font-mono whitespace-pre-line"># Market Trends 2026: Q2 Report
+
+          ## Executive Summary
+
+          The **AI adoption rate** among enterprises reached **67%** in Q2 2026,
+          up from 52% in Q1. Three sectors drove most of the growth...
+
+          ## Key Findings
+
+          1. **Healthcare**: AI diagnostic tools approved in 14 new markets
+          2. **Finance**: Blockchain-based settlement reduced costs by 34%
+          3. **Retail**: Personalization engines boosted conversion rates 28%</p>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">Step 2: Edit and Trim</h3>
+
+        <p>Your LinkedIn post should focus on the most impactful findings. Open the Markdown in any editor and trim it down to the sections you want to share. Add an introduction paragraph:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+# Market Trends Q2 2026: 3 Takeaways
+
+AI adoption hit 67% among enterprises this quarter.
+Here are the numbers that matter.
+
+## Takedown 1: Healthcare
+
+AI diagnostic tools approved in 14 new markets.
+The regulatory shift is accelerating faster than expected.
+
+## Takedown 2: Finance
+
+Blockchain settlement cut costs by 34%.
+Fintech is quietly winning the infrastructure war.
+
+## Takedown 3: Retail
+
+Personalization engines boosted conversion 28%.
+The gap between early and late adopters is widening.
+
+---
+
+Read the full report: [link]
+What trends are you seeing in your industry?
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">Step 3: Render to Rich Text</h3>
+
+        <p>Paste the Markdown into <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>. The preview instantly renders all formatting. Click Copy to get rich text that preserves:</p>
+
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Bold</strong> and <em>italic</em> text</li>
+          <li>Heading hierarchy (H1, H2, H3)</li>
+          <li>Numbered and bullet lists</li>
+          <li>Inline links and code</li>
+          <li>Quotes and horizontal rules</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">Step 4: Paste into LinkedIn</h3>
+
+        <p>Open LinkedIn's post editor and paste (Ctrl+V / Cmd+V). The rich text renders exactly as md2rich showed in the preview. No lost formatting, no missing links, no manual reformatting.</p>
+
+        <p>Because md2rich runs entirely in your browser, none of your content — not the Markdown source, not the rendered output — ever reaches a server. This is especially important when sharing proprietary business insights from internal reports.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Real-World Uses Beyond LinkedIn</h2>
+
+        <p>The MarkItDown + md2rich pipeline works for any platform that accepts rich text:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Source</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">MarkItDown</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">md2rich</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Platform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Annual report (PDF)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Extract executive summary</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Render as rich text</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">X Articles</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Meeting notes (DOCX)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Convert to Markdown</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Format for newsletter</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">LinkedIn Newsletter</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Research paper (PDF)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Extract with OCR</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Format key findings</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Medium</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Slide deck (PPTX)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Extract slide notes</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Render as formatted post</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Notion</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Privacy Comparison: MarkItDown + md2rich vs Cloud Solutions</h2>
+
+        <p>Many document-to-social workflows use cloud-based services that upload your files to a third-party server. For business documents, proprietary research, or sensitive information, this is a non-starter. Here is how the pipeline stacks up:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Concern</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">MarkItDown + md2rich</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Cloud converters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">File upload</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Never leaves your machine</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Uploaded to remote server</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Data retention</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Zero (no server to store)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Varies; logs retained 30-90 days</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Offline capable</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Yes (both tools work locally)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">No (requires internet)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Account required</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">No</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Often yes</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Cost</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Free (MIT + no subscription)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Freemium (limits + upgrades)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Automating the Pipeline</h2>
+
+        <p>For content teams publishing multiple documents per week, the pipeline can be automated. Here is a simple bash script that watches a directory for new PDFs and converts them to ready-to-publish LinkedIn content:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+#!/bin/bash
+# watch-pipeline.sh — MarkItDown to md2rich pipeline
+
+WATCH_DIR=&quot;~/documents/to-publish&quot;
+OUTPUT_DIR=&quot;~/documents/markdown-ready&quot;
+
+inotifywait -m &quot;$WATCH_DIR&quot; -e create -e moved_to |
+  while read path action file; do
+    case &quot;$file&quot; in
+      *.pdf|*.docx|*.pptx)
+        base=&quot;${file%.*}&quot;
+        markitdown &quot;$path/$file&quot; &gt; &quot;$OUTPUT_DIR/$base.md&quot;
+        echo &quot;Converted $file to Markdown. Paste into md2rich for rich text.&quot;
+        ;;
+    esac
+  done
+        </div>
+
+        <p>Each converted Markdown file can then be opened in <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a> for instant rich text rendering. No backend infrastructure, no API keys, no data leaving your network.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Limitations to Know</h2>
+
+        <p>MarkItDown is powerful, but it has some boundaries worth noting:</p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Complex tables</strong> — PDFs with multi-row, multi-column merged cells may produce simplified Markdown tables. Verify output before publishing.</li>
+          <li><strong>OCR quality</strong> — Image-based PDFs (scanned documents) depend on easyocr accuracy. For handwritten content, expect errors.</li>
+          <li><strong>No image extraction</strong> — MarkItDown notes the presence of images in documents but does not extract or host them. You will need to upload images separately.</li>
+          <li><strong>Python required</strong> — Unlike md2rich which runs in any browser, MarkItDown requires Python, which may be a barrier for non-technical users.</li>
+          <li><strong>Formatting nuances</strong> — Some advanced DOCX features (tracked changes, embedded fonts, headers/footers) are not preserved.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">FAQ</h2>
+
+        <div class="space-y-6 mt-4">
+          <div>
+            <p class="font-semibold">Q: What is Microsoft MarkItDown and what does it do?</p>
+            <p class="mt-1">MarkItDown is Microsoft's open-source Python library that converts PDFs, DOCX files, PPTX presentations, Excel spreadsheets, HTML pages, CSV data, JSON, and images (via OCR) into clean Markdown. It works entirely locally with no cloud dependencies and is designed for AI pipeline ingestion.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Can I paste MarkItDown's Markdown output directly into LinkedIn?</p>
+            <p class="mt-1">Not directly. LinkedIn does not accept raw Markdown paste with proper formatting. MarkItDown outputs raw Markdown text (with [links] and **bold** markers), but LinkedIn's rich text editor will not parse these. You need md2rich to convert the Markdown to platform-ready rich text first.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Is MarkItDown free to use?</p>
+            <p class="mt-1">Yes. MarkItDown is open source under MIT license on GitHub at github.com/microsoft/markitdown. No API key, no subscription, no usage limits. Install it with pip and run it entirely on your own machine.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Does md2rich upload my Markdown to a server?</p>
+            <p class="mt-1">No. md2rich is 100% client-side. All rendering happens in your browser. No data ever leaves your device, no uploads, no accounts. Close the tab and everything is gone. This is a key difference from cloud-based format converters.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: What file formats does MarkItDown support besides PDF?</p>
+            <p class="mt-1">MarkItDown supports PDF, DOCX, PPTX, XLSX, HTML, CSV, JSON, XML, ZIP archives, and images (JPEG/PNG) via OCR. Each format is handled by a dedicated plugin that extracts both text and structural metadata like headings, lists, and tables.</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Conclusion</h2>
+
+        <p>Microsoft MarkItDown and md2rich are two sides of the same Markdown coin. MarkItDown gets your content <em>into</em> Markdown from any document format. md2rich gets your Markdown <em>onto</em> any platform as rich text.</p>
+
+        <p>Together, they form a complete, privacy-first content pipeline that handles the entire journey from a PDF on your hard drive to a formatted post on LinkedIn, X Articles, or Medium — with zero data ever touching a third-party server.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. Just paste and copy.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting →</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/mkdnsite-dual-channel-markdown-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">mkdnsite: Dual-Channel Markdown Publishing</a>
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">2026 Markdown Tool Landscape</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles Guide</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>
