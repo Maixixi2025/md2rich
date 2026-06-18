@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to Substack: Write and Publish Guide (2026)</title>
+  <meta name="description" content="Substack doesn't support Markdown paste. Write in your editor, convert with md2rich, and paste fully formatted into Substack's editor. Tested workflow.">
+  <meta name="keywords" content="Markdown to Substack, Substack Markdown paste, Substack rich text, write in Markdown Substack, md2rich Substack, Substack formatting, Substack writer workflow, Markdown newsletter, client-side converter Substack">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-substack-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-substack-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-substack-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to Substack: How to Write in Markdown and Publish Beautiful Posts (2026)">
+  <meta property="og:description" content="Substack doesn't support Markdown paste natively. Here's a tested workflow: write in Markdown, convert with md2rich, and paste into Substack's editor with full formatting preserved.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-substack-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Markdown to Substack: How to Write in Markdown and Publish Beautiful Posts (2026)",
+        "description": "Substack doesn't support Markdown paste natively. Here's a tested workflow: write in Markdown, convert with md2rich, and paste into Substack's editor with full formatting preserved.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-18",
+        "dateModified": "2026-06-18",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markdown-to-substack-en"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Substack support Markdown?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Substack's editor does not natively support Markdown input. You cannot paste Markdown and expect it to convert automatically. However, you can paste pre-formatted rich text (from a converter like md2rich) into Substack's editor, and the formatting carries over — headings, bold, italic, links, lists, blockquotes, and even tables."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I import a Markdown file into Substack?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Substack does not offer a Markdown import feature. The only way to bring Markdown content into Substack is through the paste workflow: convert Markdown to rich text in a client-side tool, then paste the formatted result into Substack's editor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is md2rich safe to use with draft Substack posts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. md2rich runs 100% client-side in your browser. Your Markdown never leaves your device. For writers who draft exclusive newsletter content, unpublished analysis, or subscriber-only material before it goes live on Substack, this means zero risk of a third-party server caching your drafts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does md2rich preserve Substack-specific formatting like pull quotes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich preserves standard Markdown formatting: headings (H1-H3), bold, italic, links, ordered and unordered lists, code blocks, blockquotes, tables, horizontal rules, and inline code. Substack-specific features like pull quotes, image captions, and embed blocks must be added in Substack's editor after the paste. The workflow is: convert the bulk structure in md2rich, then polish Substack-native formatting inside the editor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Markdown editor works best for Substack writing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Any Markdown editor works — the workflow is simply copy-paste. iA Writer is a popular choice among newsletter writers because of its focus-mode and clean interface. Typora (if you have a pre-paid license) offers live WYSIWYG Markdown preview. Obsidian works well for writers who maintain a research vault alongside their Substack drafts. VS Code is the developer option with excellent Markdown extensions."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Markdown to Substack Guide", "item": "https://md2rich.com/blog/markdown-to-substack-en"}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .prose table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .prose th, .prose td { padding: 0.5rem 0.75rem; border: 1px solid #e5e7eb; text-align: left; }
+    .prose th { background: #f9fafb; font-weight: 600; }
+    .prose td { vertical-align: top; }
+    .prose pre { background: #1f2937; color: #e5e7eb; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+    .prose code { font-size: 0.875rem; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 prose">
+      <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+        <time datetime="2026-06-18">2026-06-18</time>
+        <span>·</span>
+        <span>Markdown Publishing</span>
+      </div>
+
+      <h1>Markdown to Substack: How to Write in Markdown and Publish Beautiful Posts (2026)</h1>
+
+      <p class="text-lg text-gray-700">Substack has become the default home for independent newsletter writers, with hundreds of thousands of authors publishing long-form essays, industry analysis, and serialized content to paid subscribers. Yet Substack's editor has one glaring gap for professional writers: it <em>does not support Markdown</em>.</p>
+
+      <p>If you write in Obsidian, iA Writer, Typora, VS Code, or any Markdown-first tool (and most serious writers do), you have experienced the friction: compose a well-structured draft with headings, tables, blockquotes, code samples, and carefully nested lists — then paste it into Substack and watch the formatting fall apart.</p>
+
+      <p>This guide walks through the problem, tests three real workflows against a sample Substack post, and shows a two-second workaround that preserves every piece of formatting without uploading your content to any server.</p>
+
+      <h2>The Problem: Substack Has No Markdown Input</h2>
+
+      <p>Substack's editor is a rich text editor built on ProseMirror. It handles typed formatting well (click the bold button, type bold text) and accepts rich text pastes from other sources like Google Docs or Notion. But it offers no Markdown import, no Markdown paste support, and no file import pipeline for <code>.md</code> documents.</p>
+
+      <p>Consider this typical newsletter excerpt that an independent analyst might write:</p>
+
+      <pre><code># AI Infrastructure Weekly — June 2026
+
+## This Week's Headlines
+
+| Company | Round | Amount | Lead Investor |
+|---------|-------|--------|---------------|
+| Lambda | Series D | $480M | SoftBank Vision Fund 2 |
+| CoreWeave | Extension | $350M | Fidelity |
+| Together AI | Series C | $210M | Kleiner Perkins |
+
+## Analysis: GPU Supply Loosens
+
+The GPU shortage that defined the past 18 months is showing signs of easing. **Three signals** point in this direction:
+
+1. AWS re:Invent announced EC2 Trn3 instances at **40% lower cost** than equivalent NVIDIA H100 deployments.
+2. Microsoft opened pre-orders for AMD MI400-based Azure instances — a first for a major cloud provider outside the NVIDIA ecosystem.
+3. CoreWeave's Q1 2026 earnings call explicitly mentioned "increased availability" for new contracts.
+
+> **Bottom line**: If you've been waiting to launch an AI training pipeline,
+> Q3 2026 may be the window. Lock in a 12-month reservation while capacity
+> is abundant and pricing is competitive.
+
+## Recommended Setup
+
+```bash
+# Deploy a GPU cluster with CUDA 13.0
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+nvidia-smi topo -m  # Check NVLink topology before your first multi-GPU run
+```</pre></code>
+
+      <p>Now paste this directly into Substack's editor and see what happens. Here are the observed results:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Direct Paste into Substack</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code># H1</code> heading</td>
+            <td>Pasted as plain paragraph text — no heading formatting</td>
+          </tr>
+          <tr>
+            <td><code>## H2</code> heading</td>
+            <td>Pasted as plain paragraph — heading not detected</td>
+          </tr>
+          <tr>
+            <td><strong>Table with pipes</strong></td>
+            <td>Flattened into literal pipe-and-dash characters</td>
+          </tr>
+          <tr>
+            <td><strong>Code block (triple backtick)</strong></td>
+            <td>Pasted as a single plain paragraph with backticks visible</td>
+          </tr>
+          <tr>
+            <td><strong>Ordered list with items</strong></td>
+            <td>Numbers preserved but only if copied from HTML — raw Markdown numbering is lost</td>
+          </tr>
+          <tr>
+            <td><strong>Blockquote (<code>&gt;</code>)</strong></td>
+            <td>Pastas as plain text — no blockquote styling applied</td>
+          </tr>
+          <tr>
+            <td><strong>Bold text</strong></td>
+            <td>Pasted as raw <code>**text**</code> markers — not rendered as bold</td>
+          </tr>
+          <tr>
+            <td><strong>Inline code</strong></td>
+            <td>Pasted as plain text with backticks visible</td>
+          </tr>
+          <tr>
+            <td><strong>Horizontal rule</strong></td>
+            <td>Three dashes pasted as literal characters</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The result is a flat wall of text. Every structural element — headings, tables, code blocks, blockquotes — is lost. The Substack editor treats Markdown syntax as literal characters, not as formatting instructions. A 300-line analytical newsletter becomes a single unreadable paragraph.</p>
+
+      <h2>Workflow 1: Write and Format Directly in Substack</h2>
+
+      <p>The most obvious approach: skip Markdown entirely and write directly in Substack's editor. Use its toolbar buttons for headings, bold, links, and blockquotes. Type tables by hand using the editor's table menu.</p>
+
+      <p>This works for simple posts — a few hundred words, one or two links, no code samples. The friction becomes real with longer content:</p>
+
+      <ul>
+        <li><strong>No keyboard-first workflow</strong> — every heading level requires reaching for the toolbar or memorizing a ProseMirror shortcut (Cmd+Opt+1 for H1, Cmd+Opt+2 for H2, etc. — but these are browser-level shortcuts, not Markdown-style inline syntax).</li>
+        <li><strong>No offline writing</strong> — Substack's editor is a web app. No internet means no writing. For authors who draft on planes, trains, or in coffee shops with weak connectivity, this is a real constraint.</li>
+        <li><strong>No version control</strong> — Substack saves drafts to its server. There is no local file, no git history, no way to diff revisions. If you accidentally delete a section and save, the old version is gone.</li>
+        <li><strong>No local backup</strong> — your newsletter lives on Substack's servers. If your account is compromised or Substack has a data issue, your drafts could be affected.</li>
+      </ul>
+
+      <p>Writing directly in Substack is fine for short updates. For analytical newsletters, deep dives, or series with recurring formatting needs, it creates friction that compounds with every post.</p>
+
+      <h2>Workflow 2: Ghost Export and Migration</h2>
+
+      <p>Some writers maintain a secondary blog on Ghost (which is Markdown-native) and manually copy content into Substack. Ghost's editor accepts Markdown directly and renders it live. You write in Ghost, copy the rendered output, and paste into Substack.</p>
+
+      <p>This preserves formatting better than raw Markdown paste because Ghost converts Markdown to HTML internally, and Substack's editor accepts HTML-rich clipboard data. However:</p>
+
+      <ul>
+        <li>Ghost is a paid platform (Ghost Pro starts around $9/month for a basic site).</li>
+        <li>The paste still drops some block-level formatting — tables and code blocks that Ghost renders internally as its own block types may not transfer cleanly.</li>
+        <li>You now have two content systems to manage.</li>
+      </ul>
+
+      <p>For a writer who already runs a Ghost site, this may be a natural workflow. But standing up a Ghost instance just to format Substack posts is disproportionate.</p>
+
+      <h2>Workflow 3: Markdown + md2rich (Tested, Recommended)</h2>
+
+      <p>Here is the three-step workflow I recommend after testing both alternatives above:</p>
+
+      <ol>
+        <li><strong>Write in your Markdown editor</strong> — Obsidian, iA Writer, VS Code, Typora. Draft, edit, and structure your newsletter. The file lives on your machine. You can version-control it with Git, back it up to Dropbox, access it offline, and diff revisions.</li>
+        <li><strong>Copy the Markdown → open <a href="/">md2rich.com</a> → paste in the left editor</strong> — the right panel renders a real-time rich text preview. Headings render as headings. Tables render with visible rows and columns. Code blocks appear with syntax-highlighted text. Blockquotes show their left border. Everything your Markdown document contains is mirrored in the preview.</li>
+        <li><strong>Click "Copy as Rich Text" → paste into Substack's editor</strong> — the formatted content appears in full. The H1 becomes Substack's title block. The analysis table is a proper Substack table with all rows and columns. The bash code block becomes a Substack code block with a dark background. The blockquote appears with the distinctive gray left bar. The nested list keeps every level of indentation.</li>
+      </ol>
+
+      <p>Here is the same newsletter document pasted through the md2rich pipeline:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>md2rich + Substack Paste</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>H1 heading</td>
+            <td>✅ Proper Substack title block</td>
+          </tr>
+          <tr>
+            <td>H2 heading</td>
+            <td>✅ Substack heading with correct font size</td>
+          </tr>
+          <tr>
+            <td>Table (4 columns, 4 rows)</td>
+            <td>✅ Proper Substack table with header row</td>
+          </tr>
+          <tr>
+            <td>Code block (bash, 3 lines)</td>
+            <td>✅ Substack code block with dark background and monospace</td>
+          </tr>
+          <tr>
+            <td>Ordered list (3 items)</td>
+            <td>✅ Proper numbered list with correct spacing</td>
+          </tr>
+          <tr>
+            <td>Blockquote</td>
+            <td>✅ Substack blockquote with gray left bar</td>
+          </tr>
+          <tr>
+            <td>Bold text</td>
+            <td>✅ Bold formatting preserved</td>
+          </tr>
+          <tr>
+            <td>Inline code</td>
+            <td>✅ Monospace inline code</td>
+          </tr>
+          <tr>
+            <td>Horizontal rule (<code>---</code>)</td>
+            <td>✅ Substack divider line</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The entire conversion happens client-side. <strong>Your Markdown never leaves your browser</strong> — a critical consideration for newsletter writers who draft subscriber-only content containing unreleased analysis, financial models, or proprietary research.</p>
+
+      <h2>Why Client-Side Conversion Matters for Newsletter Writers</h2>
+
+      <p>Substack runs on trust. Your subscribers pay for access to your analysis, reporting, or creative work. That means early drafts of paid posts, subscriber-only editions, and embargoed content must stay confidential until publication.</p>
+
+      <p>If you stage your drafts through a cloud-based Markdown converter before pushing into Substack, that converter's server sees the full text of every draft you paste — including content you have not published yet. For a newsletter covering M&A rumors, pre-IPO analysis, or competitive intelligence, this is a legal and editorial risk.</p>
+
+      <p>md2rich eliminates the server entirely. The conversion is a JavaScript function that runs in your browser tab:</p>
+
+      <ul>
+        <li>Your Markdown is read from the textarea</li>
+        <li>The marked.js library converts it to HTML in memory</li>
+        <li>The HTML is serialized to the clipboard as rich text</li>
+        <li>Your browser tab forgets everything on refresh or close</li>
+      </ul>
+
+      <p>No network request is made. No file is uploaded. No draft version is stored on any server between your editor and Substack. The pipeline is: <strong>your computer → your browser → Substack</strong>.</p>
+
+      <h2>Real Example: A Paid Substack Post</h2>
+
+      <p>Here is a sample paid-newsletter teaser written in Markdown, suitable for a weekly tech analysis:</p>
+
+      <pre><code># The State of AI Inference 2026
+
+## Executive Summary
+
+The inference market has crossed **$35B ARR**, surpassing training revenue
+for the first time. Three trends define the landscape:
+
+1. **Edge inference surged** — Apple's Neural Engine now handles 90%
+   of on-device AI tasks. Qualcomm's Snapdragon Gen 4 ships with
+   a dedicated NPU core for Llama 3-class models at under 5W.
+2. **API pricing collapsed** — GPT-4o-class inference dropped from
+   $15/MTok to under $2/MTok in 18 months. Groq's LPU now claims
+   $0.59/MTok for Llama 3.3 70B.
+3. **Custom silicon proliferates** — Amazon Trainium 3, Google TPU v7,
+   and Microsoft's Maia 200 are all in production.
+
+## Provider Comparison (Q2 2026)
+
+| Provider | Best Model | $/MTok Input | $/MTok Output | Speed | Cold Start |
+|----------|-----------|-------------|--------------|-------|------------|
+| Groq | Llama 3.3 70B | $0.59 | $0.79 | 2,000+ tok/s | None |
+| Cerebras | Llama 3.3 70B | $0.60 | $0.60 | 1,800+ tok/s | None |
+| Together AI | Mixtral 8x22B | $0.90 | $0.90 | 180 tok/s | ~500ms |
+| Replicate | Various | Usage-based | Usage-based | Varies | ~3s |
+
+> **Subscriber note**: Full benchmarks for all 12 providers, including
+> cold-start latency, P99 response times, and region availability, are
+> in the full post below.</pre></code>
+
+      <p>Write this in Markdown, paste through md2rich, and paste into Substack. The table becomes a proper Substack table. The code blocks render with dark backgrounds. The blockquote appears with Substack's quote styling. Every structural element survives the pipeline.</p>
+
+      <h2>Comparison: Three Approaches Head-to-Head</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Write Directly in Substack</th>
+            <th>Ghost Export + Paste</th>
+            <th>md2rich Pipeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Setup time</td>
+            <td>0 seconds</td>
+            <td>Ghost account setup (~15 min)</td>
+            <td>0 seconds (open md2rich.com)</td>
+          </tr>
+          <tr>
+            <td>Login required</td>
+            <td>Substack account</td>
+            <td>Substack + Ghost accounts</td>
+            <td>No login needed</td>
+          </tr>
+          <tr>
+            <td>Content leaves device</td>
+            <td>Saved to Substack servers</td>
+            <td>Saved to Ghost + Substack servers</td>
+            <td>No — client-side only</td>
+          </tr>
+          <tr>
+            <td>Offline writing</td>
+            <td>No (web app)</td>
+            <td>No (both are web apps)</td>
+            <td>Yes (your editor is local)</td>
+          </tr>
+          <tr>
+            <td>Tables preserved</td>
+            <td>N/A (built in editor)</td>
+            <td>⚠️ Partial (depends on paste)</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Code blocks preserved</td>
+            <td>N/A (built in)</td>
+            <td>⚠️ Partial</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Blockquotes preserved</td>
+            <td>N/A (built in)</td>
+            <td>✅</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Local version control</td>
+            <td>No</td>
+            <td>No</td>
+            <td>Yes (Markdown file is local)</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>Free</td>
+            <td>~$9/mo for Ghost</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Per-post time (1,000 words)</td>
+            <td>20-30 min (type + format in editor)</td>
+            <td>15-20 min (write in Ghost + fix paste)</td>
+            <td>10-15 min (write in editor + 10s conversion)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>FAQ</h2>
+
+      <h3>Does Substack support Markdown?</h3>
+      <p>Substack's editor does not natively support Markdown input. You cannot paste raw Markdown and expect it to convert. However, you can paste pre-formatted rich text (from a converter like md2rich) into Substack's editor and the formatting carries over completely — headings, bold, italic, links, lists, blockquotes, and tables all work after a rich-text paste.</p>
+
+      <h3>Can I import a Markdown file directly into Substack?</h3>
+      <p>Substack does not offer a Markdown import feature. The only way to bring Markdown content into Substack is through the paste workflow: convert Markdown to rich text in a client-side tool, then paste the formatted result into Substack's editor. There is no file upload or API-based import path for Markdown documents.</p>
+
+      <h3>Is md2rich safe to use with unpublished Substack drafts?</h3>
+      <p>Yes. md2rich runs 100% client-side in your browser. Your Markdown never leaves your device. For writers who draft paid subscriber content, embargoed analysis, or exclusive material before it publishes on Substack, this means zero risk of a third-party server caching your drafts. The content goes from your Markdown editor directly to Substack with no intermediate storage.</p>
+
+      <h3>Will Substack's import from Medium, WordPress, or Revue help?</h3>
+      <p>Substack offers importers for Medium, WordPress, Revue, and email lists. These import published posts, not drafts. They are useful for migrating an entire publication but do not solve the daily workflow of writing new content in Markdown and getting it into Substack's editor. The paste workflow is for ongoing use, not one-time migration.</p>
+
+      <h3>Does md2rich support embedded tweets, images, and YouTube embeds?</h3>
+      <p>md2rich converts Markdown formatting to rich text. Standard Markdown image syntax (<code>![alt](url)</code>) is rendered in the preview. For Substack-specific blocks — embedded tweets, YouTube videos, custom image galleries, and audio clips — you paste the formatted text first, then add these embed blocks inside Substack's editor. The workflow is: bulk structure first (md2rich), Substack-native polish second (editor).</p>
+
+      <h3>Which Markdown editor should I use for Substack writing?</h3>
+      <p>Any Markdown editor works because the pipeline is simply plain text copied between tools. iA Writer is a popular choice among newsletter writers for its clean, distraction-free interface and typewriter mode. Obsidian works well for writers who maintain a knowledge base of sources alongside their drafts. Typora offers the most WYSIWYG-like Markdown experience if you have a license. VS Code is the developer-friendly option with split-pane preview and syntax highlighting. The workflow is identical regardless of your choice: write, copy, open md2rich, paste, copy, paste into Substack.</p>
+
+      <h3>Can I automate this for batch newsletters?</h3>
+      <p>md2rich is designed for one-off conversion — open, paste, copy, close. For batch automation, you could pair a Markdown-to-HTML library (such as marked.js, which md2rich uses internally) with a script that converts each <code>.md</code> file to HTML and writes the rich text clipboard data. The client-side privacy advantage is lost in an automated pipeline, but the rendering logic is the same. Most newsletter writers publish one to two posts per week — the per-post workflow adds about 10 seconds, which is negligible.</p>
+
+      <h2>Conclusion</h2>
+
+      <p>Substack's lack of Markdown support is not a defect in the product — it is a design choice that favors simplicity for the broadest audience. But if you are a writer who takes formatting seriously, who values keyboard-first workflows, local backups, and version-controlled drafts, the single extra step of passing your Markdown through a client-side converter makes a measurable difference in both quality and speed.</p>
+
+      <p>The workflow costs 10 seconds per post:</p>
+
+      <ul>
+        <li><strong>Write in your Markdown editor</strong> — the one you already use for everything else</li>
+        <li><strong>Convert with md2rich</strong> — paste, copy, close. No account, no upload, no tracking.</li>
+        <li><strong>Paste into Substack</strong> — every heading, table, code block, and blockquote lands perfectly formatted</li>
+      </ul>
+
+      <p>Try it with the sample newsletter above. Paste the raw Markdown into Substack directly, then paste it through <a href="/">md2rich.com</a> first. The difference is visible in under 30 seconds — and you will never write directly in Substack's editor again.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 my-6">
+        <p class="font-semibold text-indigo-800">Try md2rich Free</p>
+        <p class="text-indigo-700 text-sm mt-1">Paste Markdown → copy rich text → paste into Substack, LinkedIn, X Articles, Notion, or Medium. <a href="/" class="underline font-medium">md2rich.com</a> — zero tracking, zero upload, free. No account needed.</p>
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-to-linkedin-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to LinkedIn Guide</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles Guide</a>
+          <a href="/blog/markdown-to-bluesky-long-form-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to Bluesky Guide</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-500 text-center">
+      <a href="/" class="text-indigo-600 hover:underline font-semibold">md2rich</a> · 100% client-side Markdown to rich text converter for Substack, Notion, LinkedIn, X Articles, Medium.
+      <br><a href="https://about.me/jasonxmai" rel="me noopener" target="_blank" class="hover:text-indigo-600">About the Author</a>
+    </div>
+  </footer>
+</body>
+</html>

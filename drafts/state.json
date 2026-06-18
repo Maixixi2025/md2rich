@@ -198,10 +198,29 @@
         "notion"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-substack-en",
+      "date": "2026-06-18",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-substack-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-substack-en",
+      "title": "Markdown to Substack: Write and Publish Guide (2026)",
+      "description": "Substack doesn't support Markdown paste. Write in your editor, convert with md2rich, and paste fully formatted into Substack. Tested workflow.",
+      "heat_source": "Rotation — platform guide (Substack), hot topics report FAILED (HTTP 429)",
+      "status": "published",
+      "published_at": "2026-06-18",
+      "providers_featured": [
+        "md2rich",
+        "substack"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "markdown-to-substack-en",
     "markdown-to-bluesky-long-form-en",
     "markdown-tool-landscape-2026-en",
     "linkedin-markdown-formatter-vs-md2rich-en",
