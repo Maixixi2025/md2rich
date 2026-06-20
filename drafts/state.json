@@ -216,10 +216,29 @@
         "substack"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markitdown-md2rich-markdown-pipeline-en",
+      "date": "2026-06-20",
+      "type": "guide+tutorial",
+      "lang": "en-US",
+      "file": "blog/markitdown-md2rich-markdown-pipeline-en.html",
+      "url": "https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en",
+      "title": "Microsoft MarkItDown + md2rich: The Complete Markdown Pipeline (2026)",
+      "description": "Microsoft MarkItDown converts PDFs, DOCX, and 12 other file formats to clean Markdown. Pair it with md2rich for a full document-to-rich-text pipeline — no uploads, no accounts, no third-party servers.",
+      "heat_source": "⭐ 2026-06-19 daily report — Microsoft markitdown: file batch to Markdown tool + md2rich combination",
+      "status": "published",
+      "published_at": "2026-06-20",
+      "providers_featured": [
+        "markitdown",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "markitdown-md2rich-markdown-pipeline-en",
     "markdown-to-substack-en",
     "markdown-to-bluesky-long-form-en",
     "markdown-tool-landscape-2026-en",
