@@ -234,10 +234,31 @@
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "client-side-vs-cloud-markdown-converters-2026-en",
+      "date": "2026-06-21",
+      "type": "guide+comparison",
+      "lang": "en-US",
+      "file": "blog/client-side-vs-cloud-markdown-converters-2026-en.html",
+      "url": "https://md2rich.com/blog/client-side-vs-cloud-markdown-converters-2026-en",
+      "title": "Client-Side vs Cloud Markdown Converters: 2026 Guide",
+      "description": "Client-side vs cloud Markdown converters compared in 2026. md2rich, Quikdown, StackEdit, and more. Find the right tool for privacy and speed.",
+      "heat_source": "⭐ 2026-06-21 daily report — Quikdown 17KB Markdown parser + remaining ⭐ topic (client-side vs cloud converters)",
+      "status": "published",
+      "published_at": "2026-06-21",
+      "providers_featured": [
+        "md2rich",
+        "quikdown",
+        "stackedit",
+        "hackmd"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "client-side-vs-cloud-markdown-converters-2026-en",
     "markitdown-md2rich-markdown-pipeline-en",
     "markdown-to-substack-en",
     "markdown-to-bluesky-long-form-en",
@@ -246,8 +267,7 @@
     "x-articles-vs-linkedin-newsletter-en",
     "markdown-to-x-articles-en",
     "markdown-to-linkedin-en",
-    "tweet-md-x-threads-to-markdown-en",
-    "files-md-obsidian-alternative-en"
+    "tweet-md-x-threads-to-markdown-en"
   ],
   "current_index": 0
 }
