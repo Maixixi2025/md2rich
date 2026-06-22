@@ -254,10 +254,32 @@
         "hackmd"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-beginners-guide-2026-en",
+      "date": "2026-06-22",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-beginners-guide-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-beginners-guide-2026-en",
+      "title": "Markdown for Beginners: Complete 2026 Guide",
+      "description": "New to Markdown? Learn essential syntax and convert to rich text for LinkedIn, Medium, Substack, and more — no experience needed.",
+      "heat_source": "Rotation — Markdown for Beginners (not yet covered)",
+      "status": "published",
+      "published_at": "2026-06-22",
+      "providers_featured": [
+        "obsidian",
+        "vs-code",
+        "md2rich",
+        "typora",
+        "ia-writer"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "markdown-beginners-guide-2026-en",
     "client-side-vs-cloud-markdown-converters-2026-en",
     "markitdown-md2rich-markdown-pipeline-en",
     "markdown-to-substack-en",
@@ -269,5 +291,6 @@
     "markdown-to-linkedin-en",
     "tweet-md-x-threads-to-markdown-en"
   ],
-  "current_index": 0
+  "current_index": 0,
+  "last_topic_direction": "Markdown for Beginners"
 }
