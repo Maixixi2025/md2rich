@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>markitdown + md2rich: Office to Rich Text Pipeline (2026)</title>
+  <meta name="description" content="Microsoft markitdown converts DOCX, PPTX, XLSX, and PDF to Markdown. Pair it with md2rich for a complete Office-to-publishing pipeline. Tested workflow.">
+  <meta name="keywords" content="markitdown, md2rich, Microsoft markitdown, Office to Markdown, DOCX to Markdown, PPTX to Markdown, document to rich text, Office to LinkedIn, Office to X Articles, Markdown pipeline, content publishing workflow">
+  <link rel="canonical" href="https://md2rich.com/blog/markitdown-plus-md2rich-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markitdown-plus-md2rich-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markitdown-plus-md2rich-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="markitdown + md2rich: Office to Rich Text Pipeline (2026)">
+  <meta property="og:description" content="Microsoft markitdown (155K stars) converts DOCX, PPTX, XLSX, PDF to clean Markdown. Pair it with md2rich for a complete Office-to-publishing pipeline.">
+  <meta property="og:url" content="https://md2rich.com/blog/markitdown-plus-md2rich-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "markitdown + md2rich: Office to Rich Text Publishing Pipeline (2026)",
+        "description": "Microsoft markitdown converts DOCX, PPTX, XLSX, and PDF to clean Markdown. Pair it with md2rich for a complete Office-to-publishing pipeline. Tested workflow.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-19",
+        "dateModified": "2026-06-19",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markitdown-plus-md2rich-en"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does markitdown work with Google Docs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not directly. Markitdown is a Python CLI tool for local files. For Google Docs, export to DOCX or PDF first, then run markitdown on the exported file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can md2rich accept Markdown files from markitdown directly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. md2rich is a web-based tool that accepts pasted Markdown text. Copy the markitdown output (or pipe it directly) and paste into md2rich to get rich text."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is markitdown free and open-source?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. markitdown is open-source under the MIT License on GitHub (github.com/microsoft/markitdown) with over 155,000 stars. It requires Python 3.10+."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the markitdown + md2rich pipeline upload my files anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. markitdown runs locally on your machine (Python CLI). md2rich processes all conversions in your browser with zero server uploads. Your documents never leave your computer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What formats can markitdown convert?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Markitdown supports PDF, PowerPoint (PPTX), Word (DOCX), Excel (XLSX), HTML, CSV, JSON, XML, EPUB, images with OCR, audio with transcription, ZIP archives, and YouTube URLs."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-xs text-gray-500">2026-06-19</time>
+        <h1 class="text-3xl font-bold mt-2 mb-3">markitdown + md2rich: The Complete Office-to-Publishing Pipeline (2026)</h1>
+        <p class="text-lg text-gray-600">Microsoft just released markitdown 0.1.6 — a Python tool that turns Office documents into clean Markdown. Pair it with md2rich and you get a zero-upload pipeline from a Word doc to a formatted LinkedIn post in under 60 seconds.</p>
+      </header>
+
+      <div class="prose max-w-none">
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">The Problem With Office Documents and Publishing Platforms</h2>
+        <p>Your department head sends you a polished Word document. Your client emails a PowerPoint deck. Your data team shares an Excel report. You need to publish these on LinkedIn, X Articles, Medium, or Notion — but copy-pasting from Office apps into a web editor is a losing battle:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li>Tables collapse into unformatted text</li>
+          <li>Bullet point hierarchies vanish</li>
+          <li>Images detach from their captions</li>
+          <li>Code excerpts lose indentation</li>
+          <li>Font sizes and colors strip to plain text</li>
+        </ul>
+        <p>The workaround has always been: rewrite the document by hand in the publishing platform's editor. That takes 20 minutes per post and introduces inconsistencies.</p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 my-6 rounded-r">
+          <p class="text-sm text-indigo-900"><strong>The fix:</strong> A two-tool pipeline. <strong>markitdown</strong> extracts structured Markdown from any Office file. <strong>md2rich</strong> converts that Markdown to platform-ready rich text. Nothing leaves your machine.</p>
+        </div>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">What Is Microsoft markitdown?</h2>
+        <p><a href="https://github.com/microsoft/markitdown" class="text-indigo-600 underline" target="_blank" rel="noopener">markitdown</a> is an open-source Python utility from Microsoft's AutoGen team. With over 155,000 GitHub stars, it converts a wide range of file formats into clean, LLM-friendly Markdown. It supports:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li><strong>PDF</strong> — text extraction with layout preservation</li>
+          <li><strong>PowerPoint</strong> — slides, notes, and embedded content</li>
+          <li><strong>Word</strong> — headings, lists, tables, images</li>
+          <li><strong>Excel</strong> — sheets as Markdown tables</li>
+          <li><strong>HTML</strong> — full HTML to Markdown conversion</li>
+          <li><strong>EPUB</strong> — ebook format to Markdown</li>
+          <li><strong>Images + Audio</strong> — EXIF metadata, OCR, speech transcription</li>
+          <li><strong>ZIP</strong> — batch conversion of archive contents</li>
+        </ul>
+        <p>Install it in one line: <code class="bg-gray-100 px-1 rounded">pip install 'markitdown[all]'</code>. Then convert any document with a single CLI command.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">What Is md2rich?</h2>
+        <p><a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> is a client-side Markdown-to-rich-text converter. You paste Markdown into the editor, click convert, and copy the formatted result directly into LinkedIn, X Articles, Medium, Notion, Substack, or any rich text editor. Key advantages:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li><strong>Zero upload.</strong> All processing happens in your browser. No server, no database, no privacy risk.</li>
+          <li><strong>Headers, lists, tables, code blocks, links, images</strong> — all rendered as native rich text formatting.</li>
+          <li><strong>Works offline.</strong> Once loaded, md2rich runs from cache with no network dependency.</li>
+          <li><strong>No account.</strong> No signup, no email, no subscription.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">The Pipeline: Office Doc → Published Post in 4 Steps</h2>
+        <p>Here is the complete workflow, end to end.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Step 1: Install markitdown</h3>
+        <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4"><code>pip install 'markitdown[all]'</code></pre>
+        <p>This installs markitdown with all format converters (PDF, Office, images, audio, EPUB). The base package is under 1MB; with extras it installs around 20MB of dependencies.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Step 2: Convert your Office document to Markdown</h3>
+        <p>Point markitdown at your file. It outputs clean Markdown to stdout:</p>
+        <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4"><code># Convert a Word document
+markitdown report.docx > report.md
+
+# Convert a PowerPoint deck
+markitdown presentation.pptx > slides.md
+
+# Convert an Excel spreadsheet
+markitdown data.xlsx > data.md
+
+# Convert a PDF
+markitdown whitepaper.pdf > whitepaper.md</code></pre>
+        <p>Markitdown preserves heading hierarchy (H1, H2, H3), bullet lists, numbered lists, tables (converted to Markdown table syntax), code blocks, links, and basic formatting like bold and italic. The output is clean, human-readable Markdown — ready for editing or direct conversion.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Step 3: Open the Markdown in md2rich</h3>
+        <p>Navigate to <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>. Paste the contents of your <code class="bg-gray-100 px-1 rounded">.md</code> file into the editor. You'll see a live preview of the formatted result as you paste.</p>
+        <p>Make any tweaks directly in the Markdown editor — fix a broken table, add a subheading, insert a hyperlink. The live preview updates instantly.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Step 4: Copy rich text and publish</h3>
+        <p>Click the copy button in md2rich. The rich text version of your document is now in your clipboard:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li><strong>LinkedIn:</strong> Paste directly into the post composer. Headings, bold, bullet lists, and links arrive fully formatted.</li>
+          <li><strong>X Articles:</strong> Open the X Articles editor and paste. Tables and code blocks render correctly.</li>
+          <li><strong>Medium:</strong> Paste into Medium's editor. Images from your Markdown (as URLs) are preserved.</li>
+          <li><strong>Notion:</strong> Paste into any Notion page. Nested toggles and checklists are supported.</li>
+          <li><strong>Substack:</strong> Paste into Substack's editor. All formatting survives the crosswalk.</li>
+        </ul>
+        <p>That is it. From a Word document to a published LinkedIn article in under 60 seconds, with zero data leaving your computer.</p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 my-6 rounded-r">
+          <p class="text-sm text-indigo-900"><strong>Power tip:</strong> Pipe markitdown output directly into a file watcher. Set up a shell script that watches a Dropbox folder for new <code class="bg-gray-100 px-1 rounded">.docx</code> files, converts them to Markdown with markitdown, and opens md2rich in your browser. Your publishing workflow becomes fully automated.</p>
+        </div>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Real-World Use Cases</h2>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Case 1: The Consultant's Weekly Report</h3>
+        <p>A management consultant writes every deliverable in Word. Instead of reformatting for LinkedIn thought leadership posts: convert the Word doc to Markdown with markitdown, tweak the headline in a text editor, paste into md2rich, copy to LinkedIn. A task that used to take 25 minutes now takes 90 seconds.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Case 2: The Data Team's Dashboard Write-Up</h3>
+        <p>An analytics team exports SQL query results to Excel. They write the narrative in the same spreadsheet. Converting the full report to Markdown with markitdown preserves all data tables, which md2rich renders as native rich text tables in Notion — far easier than rebuilding them cell by cell.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Case 3: The Marketing Team's Blog Rollout</h3>
+        <p>A content team drafts all blog posts in Google Docs (exported to DOCX), converts them to Markdown with markitdown for editorial review, then pipes the approved Markdown through md2rich for cross-publishing to Medium, LinkedIn, and the company Substack. One source, three outputs, zero formatting loss.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Privacy: Why This Pipeline Matters</h2>
+        <p>Most document-to-publishing workflows involve an intermediary cloud service. You upload your Word file to a conversion website, they process it on their servers, and you download the result. This means:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li>Your confidential business documents are processed on third-party servers</li>
+          <li>You have no control over how long the files are retained</li>
+          <li>You may not even know they were stored</li>
+        </ul>
+        <p>The markitdown + md2rich pipeline is <strong>100% local-first</strong>. markitdown runs as a Python CLI on your machine. md2rich runs entirely in your browser with no server upload. Your documents physically never leave your control. For consultants handling sensitive client data, legal teams working under confidentiality agreements, or startups protecting trade secrets, this is the only safe workflow.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Limitations to Know</h2>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li><strong>No formatting roundtrip.</strong> markitdown extracts content structure, not pixel-perfect layout. A heavily designed PowerPoint slide will lose some visual arrangement in the Markdown output. The structure (headings, bullets, text) survives.</li>
+          <li><strong>Image handling.</strong> markitdown extracts image references as Markdown image syntax with local file paths. To publish images, you need to host them separately or use absolute URLs. md2rich will render any absolute image URL.</li>
+          <li><strong>Python dependency.</strong> markitdown requires Python 3.10+. If your team doesn't use Python, install it once and create a one-line shell alias.</li>
+          <li><strong>Complex Excel sheets.</strong> Markitdown converts each sheet to a Markdown table. Multi-sheet workbooks with merged cells require manual cleanup.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">FAQ</h2>
+
+        <div class="border-b border-gray-200 py-4">
+          <h3 class="font-semibold text-lg">Does markitdown work with Google Docs?</h3>
+          <p class="mt-1 text-gray-600">Not directly. Markitdown is a Python CLI tool for local files. For Google Docs, export to DOCX or PDF first, then run markitdown on the exported file.</p>
+        </div>
+        <div class="border-b border-gray-200 py-4">
+          <h3 class="font-semibold text-lg">Can md2rich accept Markdown files from markitdown directly?</h3>
+          <p class="mt-1 text-gray-600">Yes. md2rich is a web-based tool that accepts pasted Markdown text. Copy the markitdown output and paste into md2rich to get rich text. On Linux, you can pipe: <code class="bg-gray-100 px-1 rounded">markitdown doc.docx | xclip -selection clipboard</code> then paste directly into md2rich.</p>
+        </div>
+        <div class="border-b border-gray-200 py-4">
+          <h3 class="font-semibold text-lg">Is markitdown free?</h3>
+          <p class="mt-1 text-gray-600">Yes. markitdown is MIT-licensed open source. No subscriptions, no API keys, no usage limits.</p>
+        </div>
+        <div class="border-b border-gray-200 py-4">
+          <h3 class="font-semibold text-lg">Does this pipeline upload my documents anywhere?</h3>
+          <p class="mt-1 text-gray-600">No. markitdown runs locally on your machine. md2rich processes everything in your browser with zero server uploads. Your documents never leave your computer.</p>
+        </div>
+        <div class="py-4">
+          <h3 class="font-semibold text-lg">What if I don't use Python?</h3>
+          <p class="mt-1 text-gray-600">Install Python 3.10+ once using your system package manager (Homebrew, apt, winget), run <code class="bg-gray-100 px-1 rounded">pip install 'markitdown[all]'</code> once, and you are set. Markitdown itself requires no Python expertise to operate — the entire command is one line.</p>
+        </div>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3">Why This Combo Beats Any All-in-One Tool</h2>
+        <p>All-in-one document-to-publishing platforms promise convenience but deliver lock-in. They control your formatting, your template, your export options. The markitdown + md2rich approach is different:</p>
+        <ul class="list-disc pl-6 mb-4 space-y-1">
+          <li><strong>Markdown is future-proof.</strong> Unlike a proprietary template format, Markdown files work everywhere — VS Code, Obsidian, GitHub, ChatGPT, every note-taking app.</li>
+          <li><strong>Each tool does one thing well.</strong> markitdown extracts structured content from files. md2rich converts Markdown to rich text. Both are independently useful.</li>
+          <li><strong>You own the pipeline.</strong> Both tools are open source (markitdown) or zero-server (md2rich). No one can change the terms, remove features, or start charging you.</li>
+        </ul>
+
+        <div class="bg-gray-100 p-6 rounded-lg my-8">
+          <h2 class="text-2xl font-bold mb-2">Start Publishing From Any Document</h2>
+          <p class="text-gray-700 mb-4">Try the pipeline yourself:</p>
+          <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+            <li>Install markitdown: <code class="bg-gray-200 px-1 rounded">pip install 'markitdown[all]'</code></li>
+            <li>Convert your document: <code class="bg-gray-200 px-1 rounded">markitdown myfile.docx > myfile.md</code></li>
+            <li>Paste into <a href="https://md2rich.com" class="text-indigo-600 font-semibold underline">md2rich.com</a></li>
+            <li>Copy and publish to LinkedIn, X, Medium, Notion, or Substack</li>
+          </ol>
+          <p class="mt-4 text-gray-700">No uploads. No accounts. No formatting loss. Your first post is 60 seconds away.</p>
+        </div>
+
+      </div>
+    </article>
+  </main>
+</body>
+</html>
