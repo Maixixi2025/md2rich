@@ -275,10 +275,34 @@
         "ia-writer"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "lettera-vs-ia-writer-mac-markdown-2026-en",
+      "date": "2026-06-23",
+      "type": "comparison",
+      "lang": "en-US",
+      "title": "Lettera vs iA Writer: Mac Markdown Editor for LinkedIn",
+      "description": "Lettera (Shiny Frog, June 2026) vs iA Writer, Typora, Obsidian. We test all four for Markdown → LinkedIn rich-text workflow.",
+      "file": "blog/lettera-vs-ia-writer-mac-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/lettera-vs-ia-writer-mac-markdown-2026-en",
+      "heat_source": "⭐ Lettera (Shiny Frog, June 2026) — daily report 2026-06-23",
+      "status": "published",
+      "topic_direction": "Rich Text Editor Comparison + LinkedIn Rich Text Paste (hybrid)",
+      "providers_featured": [
+        "Lettera",
+        "iA Writer",
+        "Typora",
+        "Obsidian",
+        "md2rich"
+      ],
+      "primary_cta": "md2rich",
+      "drafted_at": "2026-06-23",
+      "published_at": "2026-06-23"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "lettera-vs-ia-writer-mac-markdown-2026-en",
     "markdown-beginners-guide-2026-en",
     "client-side-vs-cloud-markdown-converters-2026-en",
     "markitdown-md2rich-markdown-pipeline-en",
@@ -291,6 +315,6 @@
     "markdown-to-linkedin-en",
     "tweet-md-x-threads-to-markdown-en"
   ],
-  "current_index": 0,
-  "last_topic_direction": "Markdown for Beginners"
+  "current_index": 1,
+  "last_topic_direction": "Rich Text Editor Comparison + LinkedIn Rich Text Paste (hybrid)"
 }
