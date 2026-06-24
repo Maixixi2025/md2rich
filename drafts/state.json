@@ -298,10 +298,33 @@
       "primary_cta": "md2rich",
       "drafted_at": "2026-06-23",
       "published_at": "2026-06-23"
+    },
+    {
+      "slug": "quikdown-vs-marked-markdown-parser-2026-en",
+      "date": "2026-06-24",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/quikdown-vs-marked-markdown-parser-2026-en.html",
+      "url": "https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en",
+      "title": "Quikdown vs marked: 17KB Markdown Parser Showdown (2026)",
+      "description": "Quikdown is a 17KB Show HN Markdown parser with bidirectional conversion. Compare Quikdown vs marked and markdown-it for client-side tools like md2rich.",
+      "heat_source": "⭐ 2026-06-24 daily hot topics report - 'Quikdown — Show HN: 17KB Markdown parser' (deftio)",
+      "status": "published",
+      "providers_featured": [
+        "Quikdown",
+        "marked",
+        "markdown-it"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid)",
+      "word_count": 1939,
+      "created_at": "2026-06-24",
+      "published_at": "2026-06-24"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "quikdown-vs-marked-markdown-parser-2026-en",
     "lettera-vs-ia-writer-mac-markdown-2026-en",
     "markdown-beginners-guide-2026-en",
     "client-side-vs-cloud-markdown-converters-2026-en",
@@ -315,6 +338,6 @@
     "markdown-to-linkedin-en",
     "tweet-md-x-threads-to-markdown-en"
   ],
-  "current_index": 1,
-  "last_topic_direction": "Rich Text Editor Comparison + LinkedIn Rich Text Paste (hybrid)"
+  "current_index": 2,
+  "last_topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid)"
 }
