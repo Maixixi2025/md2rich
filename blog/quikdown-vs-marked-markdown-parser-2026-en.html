@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quikdown vs marked: 17KB Markdown Parser Showdown (2026)</title>
+  <meta name="description" content="Quikdown is a 17KB Show HN Markdown parser with bidirectional conversion. Compare Quikdown vs marked and markdown-it for client-side tools like md2rich.">
+  <meta name="keywords" content="Quikdown, Quikdown vs marked, 17KB Markdown parser, bidirectional Markdown parser, Show HN markdown, marked vs markdown-it, client-side markdown parser, md2rich, Markdown parser comparison 2026">
+  <link rel="canonical" href="https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Quikdown vs marked: 17KB Markdown Parser Showdown (2026)">
+  <meta property="og:description" content="Quikdown is a 17KB Show HN Markdown parser with bidirectional conversion. Compare Quikdown vs marked and markdown-it for client-side tools like md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Quikdown vs marked: 17KB Markdown Parser Showdown (2026)",
+        "description": "Quikdown is a 17KB Show HN Markdown parser with bidirectional conversion. Compare Quikdown vs marked and markdown-it for client-side tools like md2rich.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-24",
+        "dateModified": "2026-06-24",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Quikdown vs marked", "item": "https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Quikdown and why is it 17KB?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quikdown is a JavaScript Markdown parser by deftio that ships its core module as a 17 KB minified ESM file. It is small because it is regex-based, has zero runtime dependencies, and intentionally does not target full CommonMark compliance. The bidirectional MD↔HTML module is 22 KB. Both sizes were measured from the jsDelivr CDN."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Quikdown replace marked in md2rich-style client-side apps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, for the Markdown→HTML direction it is a drop-in replacement. Both expose a single function call (quikdown(md) vs marked.parse(md)), Quikdown ships ESM/UMD/CJS, escapes HTML by default, and adds zero dependencies. The reverse direction (HTML→Markdown) is not drop-in: Quikdown's HTML→MD module is designed to round-trip Quikdown's own annotated HTML, not arbitrary text/html pasted from a browser or Word document."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How big is Quikdown compared to marked and markdown-it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Measured from minified CDN bundles in June 2026: Quikdown core ESM is 17,225 bytes (17 KB), marked v18 min is 39,903 bytes (40 KB), markdown-it min is 124,245 bytes (124 KB). Quikdown is 2.3× smaller than marked and 7.2× smaller than markdown-it. Quikdown's bidirectional module (MD↔HTML) is 22,933 bytes — still 1.7× smaller than marked alone, and marked has no HTML→MD module."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Quikdown support tables, code blocks, and GFM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quikdown supports GFM tables, fenced code blocks (with optional highlight.js integration), blockquotes, ordered and unordered lists, inline styles, optional heading IDs, reference-style links, and footnotes. It is explicitly not full CommonMark and not a ProseMirror replacement. The editor module adds lazy-loaded plugins for Mermaid, MathJax, SVG, CSV/TSV, GeoJSON, STL, ABC music, Vega-Lite, and sanitized HTML."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Quikdown production-ready for client-side converters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For the Markdown→HTML direction in a client-side converter, yes. The library has 99.3% test coverage, escapes HTML by default, sanitizes URLs to block javascript:, vbscript:, and data: URIs (XSS-safe by design), and uses no eval or dynamic RegExp. The 14-star project is young (created August 2025) but maintained actively — the latest release v1.2.21 was published on June 20, 2026, four days before this article."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Quikdown run in the browser without a build step?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Drop the UMD bundle into any HTML page with a script tag: &lt;script src=\"https://unpkg.com/quikdown/dist/quikdown.umd.min.js\"&gt;&lt;/script&gt; exposes a global quikdown function. For ES module users, import quikdown from 'quikdown' or the bidirectional quikdown_bd from 'quikdown/bd'. Both work in browser, Node, and Deno without a bundler."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 24, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Quikdown vs marked vs markdown-it: 17KB Markdown Parser Showdown (2026)</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">A new Show HN project called <strong>Quikdown</strong> hit the front page on June 21, 2026 with a striking claim: a Markdown parser that fits both directions (MD→HTML <em>and</em> HTML→MD) into a 17 KB single-file bundle. For a privacy-first client-side tool like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>, where every kilobyte adds to first-load time and every dependency adds attack surface, Quikdown is the most interesting parser release since marked v18. Here is how the three libraries stack up and when to pick which.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Quikdown Is (and Why a Show HN)</h2>
+
+        <p><a href="https://github.com/deftio/quikdown" class="text-indigo-600 underline">Quikdown</a> is a regex-based Markdown parser written by David Williams (deftio). It has zero runtime dependencies, no <code>eval</code>, no dynamic RegExp, escapes HTML by default, and sanitizes URLs to block <code>javascript:</code>, <code>vbscript:</code>, and <code>data:</code> URIs. The README states the motivation plainly: <em>working with many different LLM frameworks and wanting to test tool calling and collaborative editing</em>.</p>
+
+        <p>The headline feature is <strong>bidirectional conversion</strong>. Most parsers (marked, markdown-it) only do Markdown→HTML. Quikdown ships a separate <code>quikdown/bd</code> module that round-trips Quikdown's own annotated HTML back to Markdown — useful for editors where the user might edit in the rendered view and want the change reflected in the source.</p>
+
+        <p>The Show HN post (<a href="https://news.ycombinator.com/item?id=48616229" class="text-indigo-600 underline">news.ycombinator.com/item?id=48616229</a>) reached 7 points within three days and zero comments as of writing. Small signal, but the bundle-size claim is verifiable.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Bundle Size: Measured, Not Claimed</h2>
+
+        <p>Marketing claims of "17 KB" are easy to inflate. To verify Quikdown's bundle, the minified ESM file was fetched from jsDelivr and measured in bytes. For comparison, marked and markdown-it were measured the same way on the same day:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Library</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Version</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Min ESM</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Direction</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Dependencies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Quikdown core</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">v1.2.21</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">17,225 B</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">MD → HTML</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">0</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Quikdown /bd</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">v1.2.21</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">22,933 B</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">MD ↔ HTML</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">0</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">marked</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">v18.0.5</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">39,903 B</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">MD → HTML only</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">0</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">markdown-it</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">latest</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">124,245 B</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">MD → HTML only</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-4">The numbers tell a clear story. Quikdown core is <strong>2.3× smaller than marked</strong> and <strong>7.2× smaller than markdown-it</strong>. Even Quikdown's full bidirectional module (22 KB) is still <strong>1.7× smaller than marked alone</strong> — and marked does not include HTML→MD at all. For a privacy-first client-side tool where every kilobyte is a privacy-cost (the user has to download it before rendering), Quikdown's footprint matters.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">API: Same Shape, Smaller Body</h2>
+
+        <p>All three parsers expose roughly the same calling convention. The following renders the same GFM table from each library:</p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">marked</h3>
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+import { marked } from 'marked';
+
+const md = '# Title\n\n| col1 | col2 |\n|------|------|\n| a    | b    |';
+
+document.body.innerHTML = marked.parse(md);
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">markdown-it</h3>
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+import MarkdownIt from 'markdown-it';
+
+const md = new MarkdownIt();
+const result = md.render('# Title\n\n| col1 | col2 |\n|------|------|\n| a    | b    |');
+
+document.body.innerHTML = result;
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">Quikdown</h3>
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+import quikdown from 'quikdown';
+
+const md = '# Title\n\n| col1 | col2 |\n|------|------|\n| a    | b    |';
+
+document.body.innerHTML = quikdown(md);
+        </div>
+
+        <p>The drop-in nature is the headline. A client-side converter like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> could swap <code>marked.parse(md)</code> for <code>quikdown(md)</code> with no other code changes. The reverse direction is also available via <code>quikdown/bd</code>:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+import quikdown_bd from 'quikdown/bd';
+
+const html = quikdown_bd('# Hello\n\n| a | b |\n|---|---|');
+const md   = quikdown_bd.toMarkdown(html);
+        </div>
+
+        <p>That round-trip is the part md2rich-style apps may want for future features like "edit rendered view, get Markdown back." It is not what md2rich needs today — but it is a free upgrade path.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Feature Parity: What You Lose by Switching</h2>
+
+        <p>Quikdown's README is explicit: <em>Quikdown intentionally does not try to be a full CommonMark implementation or a ProseMirror replacement.</em> That sentence is the trade-off in one line. Here is what the three libraries actually support for the features that matter in client-side converters:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Feature</th>
+                <th class="border border-gray-200 px-4 py-2 text-sm font-semibold">Quikdown</th>
+                <th class="border border-gray-200 px-4 py-2 text-sm font-semibold">marked</th>
+                <th class="border border-gray-200 px-4 py-2 text-sm font-semibold">markdown-it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">GFM tables</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅ (plugin)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Fenced code blocks</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">CommonMark compliance</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">⚠️ Partial</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">⚠️ Partial</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅ Full</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">HTML escaping by default</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅ Yes</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">⚠️ Opt-in</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅ Yes</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Plugin system</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Lazy fence plugins</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Extensions</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Rich rules API</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">HTML → Markdown</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">✅ (own HTML)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">❌</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">❌</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Test coverage</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">99.3%</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">High</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">High</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-4">For the 90% of use cases that are headings, bold, italics, links, lists, code blocks, and tables, all three parsers produce identical output. The differences show up in edge cases — nested list indentation, raw HTML passthrough, definition lists. md2rich does not use those edge cases, so the trade-off is not felt in the product.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Critical Distinction: Quikdown's HTML→MD Scope</h2>
+
+        <p>This is the part that trips people up. Quikdown's <code>toMarkdown()</code> function is <strong>designed to round-trip Quikdown's own annotated HTML</strong> — not arbitrary <code>text/html</code> pasted from a browser or a Word document. The README says this in plain language: <em>It is not intended to be a generic arbitrary-HTML-to-Markdown converter.</em></p>
+
+        <p>For <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>, the source is always Markdown you wrote. That is exactly the case where Quikdown is a clean drop-in. But for apps that need to ingest pasted rich content from third-party sources — say, a browser's clipboard HTML from a Notion export — Quikdown's reverse direction will produce surprising output. Libraries like Turndown or marked-it are built specifically for that job.</p>
+
+        <p>For client-side converters where you own the source Markdown, the recommended stack is:</p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Quikdown core (17 KB)</strong> for Markdown→HTML rendering</li>
+          <li><strong>Your own DOM-walking logic</strong> for clipboard HTML→rich-text (which is what md2rich actually does today)</li>
+          <li><strong>Quikdown /bd (22 KB)</strong> only if you also want rendered-view editing</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Browser-Ready: No Build Step Needed</h2>
+
+        <p>One of the underrated features of Quikdown for client-side apps is the UMD bundle. Drop it into any HTML page and it just works:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+&lt;script src=&quot;https://unpkg.com/quikdown/dist/quikdown.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;div id=&quot;preview&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  document.getElementById('preview').innerHTML =
+    quikdown('# Hello **world**\n\n- item one\n- item two');
+&lt;/script&gt;
+        </div>
+
+        <p>The same script tag works in Node, Deno, and via <code>import quikdown from 'quikdown'</code> in any modern bundler. ESM and CJS bundles ship alongside UMD in the <code>dist/</code> directory.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">When to Pick Which</h2>
+
+        <p>Use this quick rule of thumb:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Scenario</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Pick</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Client-side MD converter where bundle size matters</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Quikdown (17 KB, drop-in)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Editing in rendered view + round-trip to Markdown</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Quikdown /bd (22 KB)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Full CommonMark spec compliance (docs sites, academic)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">markdown-it</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Existing codebase already on marked, want minimum diff</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Stay on marked</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Need a rich plugin ecosystem (Mermaid, KaTeX, footnotes)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">markdown-it or marked</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm">Mature, large ecosystem, stable APIs</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">marked or markdown-it</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Production Readiness: Young But Maintained</h2>
+
+        <p>Quikdown is a 14-star project created August 15, 2025. That is young. Two markers push it into "production usable" territory:</p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Active maintenance:</strong> the latest release v1.2.21 was published on June 20, 2026 — four days before this article. 24 tags and 125 commits in 10 months indicate a real project, not a weekend hack.</li>
+          <li><strong>Security by default:</strong> HTML is escaped, URLs are sanitized against <code>javascript:</code>/<code>vbscript:</code>/<code>data:</code>, no <code>eval</code>, no dynamic RegExp, 99.3% test coverage. These are the design choices that matter for client-side converters handling untrusted Markdown input.</li>
+        </ul>
+
+        <p>That said, the ecosystem around Quikdown is thin. marked and markdown-it have years of plugins, Stack Overflow answers, and battle-tested edge case fixes. If your project already uses one of them and you do not have a bundle-size problem, the migration cost is not worth it. If you are starting fresh and bundle size is on your requirements list, Quikdown deserves a serious look.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The md2rich Perspective</h2>
+
+        <p><a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> is a 100% client-side Markdown to rich-text converter. Its single biggest constraint is: <em>everything must work in a browser tab without a build step and without uploading user content to a server</em>. That constraint maps directly onto Quikdown's design:</p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Zero dependencies — matches the privacy promise</li>
+          <li>No <code>eval</code> and no dynamic RegExp — matches the "no surprises in user content" guarantee</li>
+          <li>17 KB core bundle — first load is essentially instant on any connection</li>
+          <li>ESM / UMD / CJS — works in the existing single-file md2rich deployment</li>
+          <li>HTML escaping and URL sanitization on by default — protects users from pasted Markdown that contains hostile HTML</li>
+        </ul>
+
+        <p>For an app whose source code is one HTML file plus one CSS file plus one JS file, swapping a 40 KB marked for a 17 KB Quikdown is not an abstract optimization — it is a 23 KB reduction in what every visitor downloads. On a slow 3G connection, that is the difference between "instant" and "noticeable."</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">FAQ</h2>
+
+        <div class="space-y-6 mt-4">
+          <div>
+            <p class="font-semibold">Q: What is Quikdown and why is it 17KB?</p>
+            <p class="mt-1">Quikdown is a JavaScript Markdown parser by deftio that ships its core module as a 17 KB minified ESM file. It is small because it is regex-based, has zero runtime dependencies, and intentionally does not target full CommonMark compliance. The bidirectional MD↔HTML module is 22 KB. Both sizes were measured from the jsDelivr CDN.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Can Quikdown replace marked in md2rich-style client-side apps?</p>
+            <p class="mt-1">Yes, for the Markdown→HTML direction it is a drop-in replacement. Both expose a single function call (<code>quikdown(md)</code> vs <code>marked.parse(md)</code>), Quikdown ships ESM/UMD/CJS, escapes HTML by default, and adds zero dependencies. The reverse direction (HTML→Markdown) is not drop-in: Quikdown's HTML→MD module is designed to round-trip Quikdown's own annotated HTML, not arbitrary <code>text/html</code> pasted from a browser or Word document.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: How big is Quikdown compared to marked and markdown-it?</p>
+            <p class="mt-1">Measured from minified CDN bundles in June 2026: Quikdown core ESM is 17,225 bytes (17 KB), marked v18 min is 39,903 bytes (40 KB), markdown-it min is 124,245 bytes (124 KB). Quikdown is 2.3× smaller than marked and 7.2× smaller than markdown-it. Quikdown's bidirectional module (MD↔HTML) is 22,933 bytes — still 1.7× smaller than marked alone, and marked has no HTML→MD module.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Does Quikdown support tables, code blocks, and GFM?</p>
+            <p class="mt-1">Quikdown supports GFM tables, fenced code blocks (with optional highlight.js integration), blockquotes, ordered and unordered lists, inline styles, optional heading IDs, reference-style links, and footnotes. It is explicitly not full CommonMark and not a ProseMirror replacement. The editor module adds lazy-loaded plugins for Mermaid, MathJax, SVG, CSV/TSV, GeoJSON, STL, ABC music, Vega-Lite, and sanitized HTML.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Is Quikdown production-ready for client-side converters?</p>
+            <p class="mt-1">For the Markdown→HTML direction in a client-side converter, yes. The library has 99.3% test coverage, escapes HTML by default, sanitizes URLs to block <code>javascript:</code>, <code>vbscript:</code>, and <code>data:</code> URIs (XSS-safe by design), and uses no <code>eval</code> or dynamic RegExp. The 14-star project is young (created August 2025) but maintained actively — the latest release v1.2.21 was published on June 20, 2026, four days before this article.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Q: Does Quikdown run in the browser without a build step?</p>
+            <p class="mt-1">Yes. Drop the UMD bundle into any HTML page with a script tag: <code>&lt;script src="https://unpkg.com/quikdown/dist/quikdown.umd.min.js"&gt;&lt;/script&gt;</code> exposes a global <code>quikdown</code> function. For ES module users, <code>import quikdown from 'quikdown'</code> or <code>import quikdown_bd from 'quikdown/bd'</code>. Both work in browser, Node, and Deno without a bundler.</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Conclusion</h2>
+
+        <p>Quikdown is not a replacement for marked and markdown-it in every situation. It is a replacement in a specific situation: a privacy-first client-side converter where bundle size, zero dependencies, and XSS safety are requirements. In that situation — which is exactly what <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> is built for — Quikdown is the cleanest option on the market as of June 2026.</p>
+
+        <p>If you are building a converter, an editor, or any client-side Markdown tool and you are currently on marked, run the numbers: a 23 KB reduction in your main JS bundle, no dependencies to audit, the same call signature, and a free upgrade path to bidirectional editing when you need it. That is what a Show HN project looks like when it solves a real problem.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. Just paste and copy.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting →</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Client-Side vs Cloud Markdown Converters</a>
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">2026 Markdown Tool Landscape</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles Guide</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>
