@@ -116,6 +116,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://md2rich.com/blog/markdown-to-medium-2026-en</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
