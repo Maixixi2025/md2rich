@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to Medium: 2026 Publishing Guide with md2rich</title>
+  <meta name="description" content="Convert Markdown to Medium-ready rich text without losing formatting. Step-by-step 2026 guide using md2rich for tables, code blocks, and lists.">
+  <meta name="keywords" content="Markdown to Medium, Medium Markdown import, publish Markdown on Medium, Medium rich text paste, Medium editor Markdown, md2rich, Medium import tool, Medium guide 2026, Medium tables, Medium code blocks">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-medium-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-medium-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-medium-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to Medium: 2026 Publishing Guide with md2rich">
+  <meta property="og:description" content="Convert Markdown to Medium-ready rich text without losing formatting. Step-by-step 2026 guide using md2rich for tables, code blocks, and lists.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-medium-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Markdown to Medium: 2026 Publishing Guide with md2rich",
+        "description": "Convert Markdown to Medium-ready rich text without losing formatting. Step-by-step 2026 guide using md2rich for tables, code blocks, and lists.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-25",
+        "dateModified": "2026-06-25",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markdown-to-medium-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Markdown to Medium", "item": "https://md2rich.com/blog/markdown-to-medium-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Medium support Markdown natively in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Medium's editor is a WYSIWYG rich-text editor and has never had a Markdown mode. If you paste raw Markdown source text into a Medium draft, the asterisks for bold, hashes for headings, and pipe characters for tables all appear as literal characters. This is true for the medium.com web editor and the Medium mobile apps as of June 2026. To publish Markdown on Medium you must convert it to formatted rich text first and paste that."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Medium's import tool and where is it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Medium's import tool lives at medium.com/p/import. You paste a published URL and Medium fetches the HTML, converts it into a new draft, and sets that URL as the canonical link for the post. It works best with simple blog content. Tables, task lists, footnote syntax, and code-block language hints often degrade or break during import. The import tool is not a Markdown importer — it pulls HTML from a live URL."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I paste Markdown into Medium and have it format?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not by pasting the raw Markdown source. What works is pasting rich HTML — text that your clipboard carries as text/html with proper tags for <h1>, <strong>, <ul>, <pre><code>, and so on. If your clipboard payload is text/html, Medium's editor parses it and renders the formatted version. If the payload is plain text with Markdown characters, you see literal asterisks and hashes. The trick is generating the text/html clipboard payload, which is what tools like md2rich do on the client side."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get tables and code blocks to work on Medium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Medium does not support HTML tables at all — even when pasted as rich HTML, <table> markup is stripped. The accepted workaround is to convert each table into a structured list of bold labels with values, which Medium renders cleanly. For code blocks, Medium supports <pre><code> but does not apply syntax highlighting; the language class is ignored. Use GitHub Gist embeds for anything code-heavy: paste the Gist URL on its own line and Medium turns it into a rendered snippet. For long code samples, prefer Gists over inline code blocks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I set a canonical URL when cross-posting Markdown to Medium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if Medium is not your primary home for the article. Open the story settings (the three dots menu), find the 'Add canonical link' field, and paste the URL where the article lives on your own site. Without this, Google may pick Medium's higher-authority copy as the primary version and your original post loses organic traffic. If you imported via medium.com/p/import, Medium sets the canonical automatically to the source URL."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is using md2rich to convert Markdown for Medium private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. md2rich runs entirely in the browser as a single static HTML page with no backend. Your draft text, headings, lists, code blocks, and any sensitive content never leave your device. There is no signup, no analytics on draft content, and no server-side processing. This matters for Medium drafts because anything you paste into a cloud converter or editor is a copy of your unpublished work in someone else's log files."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 25, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Markdown to Medium: 2026 Publishing Guide with md2rich</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">Medium is one of the highest-traffic long-form publishing platforms on the web, and it does <strong>not</strong> support Markdown. As of June 2026, pasting <code># Heading</code> into a Medium draft still shows literal hash characters, and pasting <code>**bold**</code> shows literal asterisks. For writers who draft everything in Markdown, this is the single biggest friction point in the Medium workflow. Here is how to convert Markdown to Medium-ready rich text in 2026, including the table problem, the code-block problem, and the canonical-URL problem, using a privacy-first client-side tool: <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why Medium Doesn't Accept Markdown</h2>
+
+        <p>Medium's editor is a <strong>WYSIWYG</strong> rich-text editor built on the ContentEditable browser API. It was designed for a general audience who selects text and clicks a Bold button — not for developers or technical writers who want to write in syntax. The Medium team has not added a Markdown import mode, a paste-as-Markdown shortcut, or a Markdown toggle in settings. According to the <a href="https://kitmul.com/en/blog/markdown-to-medium-guide" class="text-indigo-600 underline">April 2026 Kitmul guide</a>: <em>"Medium doesn't support Markdown. Not in 2024, not in 2025, and still not in 2026."</em></p>
+
+        <p>What breaks when you paste raw Markdown source into a Medium draft:</p>
+
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Headings appear as <code>## My Title</code> with the hash symbols visible</li>
+          <li>Bold and italic show the asterisks instead of formatting</li>
+          <li>Code blocks lose syntax highlighting and sometimes indent</li>
+          <li>Tables are not supported at all — the text scatters across the page</li>
+          <li>Task lists like <code>- [x] Done</code> render as plain characters</li>
+          <li>Links display the raw <code>[text](url)</code> syntax</li>
+          <li>Images render the <code>![alt](url)</code> source instead of the picture</li>
+        </ul>
+
+        <p>If you have ever tried to manually reformat a 2,000-word technical article in Medium's editor, you know the feeling. It takes 30 minutes, and you still miss something. There is a better way.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Three Paths From Markdown to Medium</h2>
+
+        <p>There are three realistic workflows for publishing Markdown on Medium in 2026. Each has different trade-offs on privacy, fidelity, and effort.</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Method</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Fidelity</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Privacy</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Setup</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Copy raw Markdown, fix by hand</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Low (tables impossible)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Full</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">None</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Short posts, no tables</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Medium's <code>medium.com/p/import</code></td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Medium (degrades tables)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Sends URL to Medium</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Already-published URL</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Cross-posts with canonical set</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Convert to Medium HTML, paste (md2rich)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">High (tables converted to lists)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Full (client-side)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">None — paste into editor</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">All post types, including drafts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-4">For unpublished drafts and any writing that contains proprietary or sensitive content, the third option is the only one that keeps the text on your device. The second option is the right answer when the article is already published on your own blog and you are cross-posting to Medium for reach — the import tool sets the canonical URL automatically. The first option is a last resort for short posts.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Step-by-Step Workflow With md2rich</h2>
+
+        <p><a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> is a static HTML page that converts Markdown to rich HTML in the browser. No backend, no signup, no upload. The whole workflow takes under a minute:</p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">1. Write or paste your Markdown</h3>
+        <p>Open <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>. The editor is two panes: Markdown on the left, live preview on the right. Paste or type your post. Common patterns you can use without thinking about Medium's quirks:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+# My Headline
+
+A short intro paragraph that hooks the reader.
+
+## Section heading
+
+Body text with **bold**, *italic*, and `inline code`.
+
+- Bullet one
+- Bullet two
+- Bullet three
+
+```python
+def hello():
+    print("code block with language hint")
+```
+
+> A blockquote works the same as in Markdown.
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">2. Click "Copy rich text"</h3>
+        <p>md2rich converts the Markdown into <code>text/html</code> clipboard content. Your clipboard now carries both the visible plain text and the rich-text formatting Medium needs. You can verify by pasting into a plain text editor first — you will see the formatted version, not the Markdown source.</p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">3. Paste into Medium</h3>
+        <p>Open <code>medium.com/new</code>, place the cursor in the editor, and press <strong>Ctrl+V</strong> (Windows/Linux) or <strong>Cmd+V</strong> (Mac). Medium's editor parses the <code>text/html</code> from your clipboard and renders the formatted version: headings, bold, lists, code blocks, and blockquotes all appear correctly.</p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">4. Adjust what Medium cannot render</h3>
+        <p>Some Markdown features have no Medium equivalent. md2rich makes the call automatically, but it is worth knowing what changes:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Markdown</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">What md2rich does for Medium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">| a | b |</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Tables → bold-label list (Medium strips <code>&lt;table&gt;</code>)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">#### H4 / ##### H5 / ###### H6</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Downgraded to <code>&lt;h3&gt;</code> (Medium max)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">- [x] Done</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Becomes "☑ Done" Unicode symbols</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">```python</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Code block without language hint (no Medium highlighting)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">[^footnote]</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Removed (Medium has no footnotes)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-mono">$$latex$$</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Kept as plain text (Medium has no math)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-2">5. Set the canonical URL (if cross-posting)</h3>
+        <p>If this article is also on your own blog, set the canonical link before publishing. Click the three dots menu on the draft, find <em>"Add canonical link"</em>, and paste the URL where the article lives on your domain. Without this, Google's algorithm may pick Medium's higher-authority copy as the primary version.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Table Problem (and Why Lists Work Better)</h2>
+
+        <p>Medium does not render HTML tables. Even when pasted as rich HTML, <code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;</code> markup is stripped, and the cells scatter as a paragraph. The fix is to convert each table into a structured list before pasting. md2rich does this automatically — every table row becomes a bold label followed by the cell value, rendered as a paragraph or a sub-list. For readers on mobile (where Medium is mostly read), this is actually more readable than a horizontal table that breaks out of the viewport.</p>
+
+        <p>Here is an example. The source Markdown table:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+| Method | Speed | Tables |
+|--------|-------|--------|
+| Copy + fix | Slow | Broken |
+| md2rich   | Fast | Lists |
+        </div>
+
+        <p>Becomes this on Medium:</p>
+
+        <div class="bg-gray-100 rounded-lg p-4 text-sm font-mono overflow-x-auto">
+<strong>Method:</strong> Copy + fix
+<strong>Speed:</strong> Slow
+<strong>Tables:</strong> Broken
+
+<strong>Method:</strong> md2rich
+<strong>Speed:</strong> Fast
+<strong>Tables:</strong> Lists
+        </div>
+
+        <p>Each cell becomes its own bold-label paragraph. The visual scan order is identical to the original table, but it survives Medium's parser and renders well on phone screens.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Code Block Problem (and the Gist Escape Hatch)</h2>
+
+        <p>Medium supports <code>&lt;pre&gt;&lt;code&gt;</code> blocks but does not apply syntax highlighting. The language class on the code element — <code>language-python</code>, <code>language-js</code>, and so on — is stripped. A 30-line Python function pasted into Medium looks like a gray rectangle.</p>
+
+        <p>The clean fix is <strong>GitHub Gists</strong>. Create a public Gist with your code, copy the Gist URL, and paste it on its own line in the Medium draft. Medium detects the Gist URL and embeds it as a formatted, syntax-highlighted snippet — the same embed you see in any Markdown renderer that supports <code>https://gist.github.com/...</code>.</p>
+
+        <p>This works because Medium recognizes the Gist URL pattern and replaces the link with an embed at render time. The same trick works for CodePen, JSFiddle, and YouTube links — anything where the URL itself is enough for Medium to fetch and embed.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Canonical URL Problem (Why It Matters)</h2>
+
+        <p>When you cross-post the same article on your own site and Medium, Google needs to know which version is the "real" one. Without a canonical hint, Google picks based on domain authority — and Medium wins almost every time. The result: your original post on your domain gets outranked by your own writing on Medium.</p>
+
+        <p>Three ways to set canonical:</p>
+
+        <ol class="list-decimal pl-6 space-y-2">
+          <li><strong>Import via <code>medium.com/p/import</code></strong> — Medium sets the canonical automatically to the source URL.</li>
+          <li><strong>Paste manually and set canonical in settings</strong> — three dots menu → <em>"Add canonical link"</em> → paste your URL.</li>
+          <li><strong>Don't cross-post</strong> — keep the article only on your own site and avoid the duplication entirely.</li>
+        </ol>
+
+        <p>If your own site has any organic traffic at all, option 1 or 2 is worth the 30 seconds. The choice between them is whether you want the source HTML on a public URL first.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Privacy: Why Client-Side Conversion Matters Here</h2>
+
+        <p>Medium drafts are unpublished content. If you are writing about an unreleased feature, an internal decision, or anything with a non-disclosure agreement, pasting that draft into a cloud conversion service means giving the service a copy of your work in their log files. Most online Markdown-to-HTML converters send the text to a backend for parsing.</p>
+
+        <p>md2rich runs entirely in the browser as a single static HTML page with no backend. The conversion happens in JavaScript on your device. There is no signup, no analytics on draft content, no third-party request beyond the static page itself. The page is small enough to save locally and use offline — useful if you are writing on a plane or in a high-security environment.</p>
+
+        <p>This is the same privacy posture that makes md2rich useful for confidential LinkedIn posts, internal X Articles, and private Substack drafts. The full publishing workflow for Markdown is "write in your favorite editor, paste into md2rich, copy rich text, paste into the destination." No third party sees the content between draft and publish.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Full Workflow: Markdown → Medium in 60 Seconds</h2>
+
+        <p>Putting it all together, the fastest reliable Markdown-to-Medium workflow in 2026 is:</p>
+
+        <ol class="list-decimal pl-6 space-y-2">
+          <li>Draft in your favorite Markdown editor (Obsidian, VS Code, iA Writer, plain text).</li>
+          <li>Open <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>. Paste your Markdown into the left pane.</li>
+          <li>Click <em>"Copy rich text"</em>. Your clipboard now holds <code>text/html</code> content.</li>
+          <li>Open <code>medium.com/new</code>. Press <strong>Ctrl+V</strong> or <strong>Cmd+V</strong>.</li>
+          <li>Tables converted to bold-label lists appear automatically. Code blocks render as gray boxes (use Gists for syntax highlighting).</li>
+          <li>Set the canonical URL in the story settings if the article also lives on your own site.</li>
+          <li>Hit publish.</li>
+        </ol>
+
+        <p>Total time: under a minute. Total third-party data exposure: zero. Total Medium formatting fidelity: as high as Medium's editor allows, which is high for prose and lists, partial for tables (auto-converted), and basic for code (use Gists for the rest).</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. Just paste and copy. Works for Medium, LinkedIn, X Articles, Substack, Notion, and more.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting →</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-to-substack-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to Substack Guide</a>
+          <a href="/blog/markdown-to-linkedin-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to LinkedIn Guide</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles Guide</a>
+          <a href="/blog/write-once-publish-anywhere-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Write Once, Publish Anywhere</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>
