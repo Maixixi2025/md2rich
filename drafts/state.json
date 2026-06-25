@@ -320,6 +320,25 @@
       "word_count": 1939,
       "created_at": "2026-06-24",
       "published_at": "2026-06-24"
+    },
+    {
+      "slug": "markdown-to-medium-2026-en",
+      "date": "2026-06-25",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-medium-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-medium-2026-en",
+      "title": "Markdown to Medium: 2026 Publishing Guide with md2rich",
+      "description": "Convert Markdown to Medium-ready rich text without losing formatting. Step-by-step 2026 guide using md2rich for tables, code blocks, and lists.",
+      "heat_source": "daily-hot-topic (gap analysis): Medium was the only major long-form platform not yet covered by md2rich content. Kitmul April 2026 reference confirms Medium still doesn't support Markdown in 2026.",
+      "status": "published",
+      "providers_featured": [
+        "Medium"
+      ],
+      "primary_cta": "Try md2rich (https://md2rich.com)",
+      "topic_direction": "Plain Text Workflow",
+      "subcategory": "Markdown to Medium",
+      "published_at": "2026-06-25T04:37:33.610659Z"
     }
   ],
   "drafts": [],
@@ -336,7 +355,8 @@
     "x-articles-vs-linkedin-newsletter-en",
     "markdown-to-x-articles-en",
     "markdown-to-linkedin-en",
-    "tweet-md-x-threads-to-markdown-en"
+    "tweet-md-x-threads-to-markdown-en",
+    "markdown-to-medium-2026-en"
   ],
   "current_index": 2,
   "last_topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid)"
