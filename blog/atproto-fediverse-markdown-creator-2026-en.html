@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATProto &amp; Fediverse Markdown 2026: Decentralized Publishing</title>
+  <meta name="description" content="ATProto and the fediverse put content control back in creator hands. How Markdown drafting, Bluesky migration, and client-side conversion fit in 2026.">
+  <meta name="keywords" content="ATProto Markdown, Bluesky Markdown, fediverse content creator, Bluesky long-form, Eurosky migration, decentralized publishing, self-host PDS, Markdown to Bluesky, md2rich, client-side Markdown converter, ActivityPub Markdown, BlueSky text formatting">
+  <link rel="canonical" href="https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ATProto &amp; Fediverse Markdown 2026: Decentralized Publishing">
+  <meta property="og:description" content="ATProto and the fediverse put content control back in creator hands. How Markdown drafting, Bluesky migration, and client-side conversion fit in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "ATProto & Fediverse Markdown 2026: Decentralized Publishing",
+        "description": "ATProto and the fediverse put content control back in creator hands. How Markdown drafting, Bluesky migration, and client-side conversion fit in 2026.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-07-01",
+        "dateModified": "2026-07-01",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "ATProto and Fediverse Markdown for Decentralized Publishing", "item": "https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does ATProto mean for Markdown-drafting creators in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ATProto (the protocol behind Bluesky) is the first federated social protocol that has shipped long-form posting to a mainstream audience. When you draft a long-form post in Markdown, paste it through a client-side converter, and publish it from Bluesky, the underlying content lives in a Personal Data Server (PDS) you choose - default bsky.social, a hosted provider like Eurosky, or a self-hosted PDS on a $5 VPS. The protocol does not care which client you typed the post in, and it does not care what conversion pipeline turned your Markdown into the rich-text payload the app accepts. That decoupling is what makes decentralized content creation a Markdown-creator concern rather than only a developer concern: the post you typed once now travels to every ATProto app that speaks the same protocol without re-authoring."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are organizations migrating their Bluesky data to Eurosky in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Three reasons drive the Bluesky-to-Eurosky migration wave visible on Hacker News in late June 2026: provider concentration risk (one company's terms of service change can lose your whole history), audit/regulatory pressure (EU organizations with GDPR scoping questions prefer an EU-hosted PDS), and feature-rate-limit differences (Eurosky ships generous write API quotas plus email relay that bsky.social still gates behind approval). The migration itself is a single account export plus PDS redirect - the protocol is designed for portability - but the post body format stays identical. Markdown that survives a paste into Bluesky will survive the same paste after the account moves to Eurosky, because the conversion happens client-side and the canonical post lives in your PDS regardless of provider."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does md2rich fit into a decentralized publishing pipeline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich runs entirely in the browser as a static HTML page - no backend, no model, no rate limit, no upload. That means a creator who drafts a long-form post in their favorite Markdown editor (Obsidian, iA Writer, VS Code, plain Vim) can convert it to Bluesky's rich-text payload locally, copy it, and paste into any ATProto client without the post text ever leaving their machine before they hit publish. The deterministic conversion is invariant to provider, region, and editor: the same input Markdown produces the same clipboard payload every time, regardless of whether the destination is bsky.social, Eurosky, Blacksky, or a self-hosted PDS. For creators who care about content sovereignty, this is a small but real lever - the drafting step does not need to phone home to a server just to render bold and italics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a Bluesky API key or app password to draft long-form posts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No - and that is the key point of a client-side Markdown converter. The conversion step (Markdown to rich-text HTML payload) does not touch the Bluesky API at all. You draft the post in your editor, run it through md2rich, copy the formatted clipboard payload, and paste it into the Bluesky web app or any ATProto client (iOS, Android, third-party like Bluesky Social or Deck). Authentication only happens when you actually publish, and the API scope you grant at that moment is whatever the client asks for (read your handle, write a post). The drafting step is offline-first by construction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What Markdown features survive ATProto long-form posts vs LinkedIn vs Medium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ATProto's rich-text schema (used by all compliant Bluesky clients) supports: headings (H2 and H3), bold, italic, lists (ordered and unordered), inline code, fenced code blocks with language hint, blockquotes, and links. It does NOT support: tables (most clients strip or break), inline HTML, raw image embedding (you upload images to a separate media endpoint, the URL stays in the post), footnotes, or definition lists. LinkedIn is similar but does not render fenced code blocks at all - the closest paste lands you with monospace text. Medium supports everything on this list plus tables, and is the most permissive destination if your post depends on tabular data. The same Markdown source therefore needs the right destination-aware paste, and a client-side converter is the cheapest place to make that choice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I self-host a PDS for personal content publishing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For most solo creators, no - the operational cost of running a PDS (security patches, storage backups, schema migrations every ATProto release) is higher than the marginal sovereignty gain. Hosted PDS options (bsky.social, Eurosky, Blacksky, PinkSea) handle the operational work for free or a flat $5/month. Self-hosting makes sense if you already run a small VPS for other reasons and you understand that a PDS outage means your handle resolves to nothing until you bring it back up. The middle ground - keep the account on a hosted PDS, export your post archive monthly as JSON, commit it to a private Git repo - costs nothing and gives you most of the sovereignty upside without any operational burden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ActivityPub (Mastodon) use the same Markdown paste path as ATProto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, the two protocols diverge on rich-text. Mastodon's default editor accepts Markdown as input (you type asterisks for bold, hashtags for tags), but the server converts to HTML at publish time using a server-side parser. ATProto, by contrast, ships the rich-text payload as a Facet array (a JSON structure of text spans with marks) and the client renders it. The practical creator implication: a Markdown draft that survives a Bluesky paste via md2rich will not necessarily render identically in Mastodon, and the reverse is also true. The two destinations need different paste payloads, which is why a client-side converter that targets one specific schema at a time (rather than a generic Markdown sanitizer) is more useful for cross-protocol publishing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does md2rich sit in a federated Markdown workflow for creators?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The federated Markdown workflow in 2026 has four steps: (1) draft in your editor of choice (Obsidian, iA Writer, VS Code, Vim, plain Notepad), (2) convert client-side via <a href=\"https://md2rich.com\">md2rich</a> to the destination protocol's rich-text payload, (3) copy the formatted payload to clipboard, (4) paste into the ATProto or ActivityPub client and publish. md2rich handles step 2 in the browser - no upload, no model, no registration, no API key. The conversion is invariant to which PDS you publish from and which client app you use to publish. The same Markdown draft works for Bluesky long-form, Mastodon, LinkedIn (the schema is similar enough), X Articles (via their separate Markdown import path), and Medium (the most permissive destination)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">July 1, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">ATProto &amp; Fediverse Markdown 2026: Decentralized Publishing</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">In the last week of June 2026, organizations that publish on Bluesky started moving their post archives to <a href="https://waag.org/en/article/why-we-moved-our-bluesky-data-eurosky/" class="text-indigo-600 underline">Eurosky</a> - one of several non-Bluesky-hosted <a href="https://atproto.com" class="text-indigo-600 underline">ATProto</a> providers that have launched in 2026. The Hacker News thread sat at 141 points for two days, and the migration story spread to Mastodon and the broader fediverse within hours. The interesting part for content creators who draft in Markdown is not the provider swap itself; it is what the swap reveals about who actually controls the content. ATProto's design pushes the post body into a Personal Data Server (PDS) the user picks, so the post survives a provider change - but the Markdown source, the rich-text payload, the conversion pipeline that produced it, and the app where the creator types live outside the protocol entirely. This article walks through what ATProto and fediverse publishing look like for a Markdown creator in 2026, why the conversion step is worth keeping client-side, and where <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> fits in a decentralized pipeline.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What ATProto and the Fediverse Actually Change</h2>
+
+        <p>The fediverse is not one protocol. The two relevant protocols for Markdown-creator publishing in 2026 are <a href="https://atproto.com" class="text-indigo-600 underline">ATProto</a> (the protocol behind Bluesky) and ActivityPub (the protocol behind Mastodon, Misskey, Pleroma, GoToSocial, and a long tail of smaller instances). Both are federated: a post published from one server shows up in the feed of users on any other server that has federated with the origin. Both support long-form posting as of 2026 - Bluesky shipped long-form on May 28, Mastodon has accepted long posts since version 4.0 in 2022.</p>
+
+        <p>What is new in 2026 is the Personal Data Server (PDS) layer. Under ATProto, every account lives on a PDS, and the PDS can be hosted by Bluesky (the company), by an independent provider like Eurosky or Blacksky, or by the user themselves on a $5 VPS. The account is portable: an export from one PDS imports cleanly into another, and the user keeps their handle, follower list, and post history. This is what the Eurosky migration wave is exercising - the protocol works as advertised, and the migration cost is measured in minutes, not weeks.</p>
+
+        <p>For a Markdown creator, the relevant property of PDS portability is that the post body format is invariant to provider. A post published from bsky.social, Eurosky, or a self-hosted PDS uses the same rich-text schema (a JSON structure of text and marks called Facets), and the same client apps render the result the same way. The provider choice affects operations, latency, terms of service, and regulatory jurisdiction. It does not affect what you can put in a post or how the post is rendered. From a Markdown drafting standpoint, the converter output that works for Bluesky works for every ATProto provider in 2026.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Eurosky Migration Wave (June 2026)</h2>
+
+        <p>The Hacker News thread that surfaced on June 27, 2026 (rooted in a Waag Foundation post about moving Bluesky data to Eurosky) gathered 141 points and stayed on the front page for two days. The post itself is short, but the comment thread surfaces the actual reasons organizations are migrating:</p>
+
+        <ol class="list-decimal pl-6 space-y-2">
+          <li><strong>Provider concentration risk.</strong> Bluesky the company is the default PDS for most accounts. A single company's terms-of-service change, funding shock, or acquisition can lose an organization's entire post history. Even when the export format is open, the operational hassle of explaining a migration to non-technical users is high enough that several teams are pre-emptively moving.</li>
+          <li><strong>Audit and regulatory pressure.</strong> EU organizations with GDPR scoping questions sometimes prefer an EU-hosted PDS for the data-residency argument alone. Eurosky is hosted in Frankfurt; Blacksky and a few smaller providers match regional residency preferences.</li>
+          <li><strong>Feature and rate-limit differences.</strong> Eurosky ships generous write API quotas without the gated approval process that bsky.social uses. Independent providers can experiment with email relay, custom feeds, and moderation policies faster than the central team.</li>
+        </ol>
+
+        <p>The migration itself is straightforward: export from bsky.social using the standard ATProto account export, create an account on the new PDS, import the export, redirect the handle. The whole sequence takes under an hour for an organization with a few thousand posts. Posts already published do not need to change format - they sit in the new PDS unchanged.</p>
+
+        <p>Where the migration gets interesting for content creators is the moment they realize the post body format does not survive every platform intact. A long-form post that started as Markdown, was converted to ATProto Facets, and was stored as a JSON structure on one PDS, will re-render cleanly when imported into another PDS using the same Facets. But the same Markdown source pasted into a Mastodon instance (an ActivityPub server) will not render the same way, because Mastodon accepts Markdown input at publish time and converts it server-side to HTML. Two protocols, two schemas, two different paste outcomes from the same source.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why Client-Side Markdown Conversion Matters More in a Federated World</h2>
+
+        <p>The standard argument for client-side Markdown conversion (no upload, no server round-trip, deterministic output) holds regardless of where the post eventually lives. What ATProto and ActivityPub add is a stronger version of the argument: the conversion pipeline is now a part of the creator's stack that the protocol does not regulate, the provider does not regulate, and the client app does not regulate. The protocol specifies what arrives at the PDS, not what shaped it.</p>
+
+        <p>For a creator publishing to multiple destinations from one Markdown source (Bluesky on ATProto, Mastodon on ActivityPub, LinkedIn via web, X Articles via their import flow, Medium via their editor), the conversion step becomes a switchboard. Each destination has a slightly different rich-text schema. Each destination's client app applies its own sanitization on paste. A paste that looks fine in Bluesky can land as escaped HTML in Mastodon, as monospace text in LinkedIn, and as broken formatting in X Articles - all from the same Markdown source.</p>
+
+        <p>The pragmatic move in 2026 is to keep the conversion step outside any of those destinations. The draft is Markdown. The conversion happens in a tool the creator controls (browser, local script, deterministic CLI). The destination's paste acceptance is the only variable the conversion has to navigate. A client-side converter like md2rich takes the Markdown, walks the schema differences for each destination, and emits the clipboard payload that the destination app actually accepts. No data leaves the creator's machine before they hit publish.</p>
+
+        <p>The privacy framing is not abstract. The Eurosky migration story is partly a sovereignty story, and sovereignty over the conversion step is something a creator can take for themselves regardless of which PDS they end up on. The decision to keep the conversion client-side is independent of the decision about which provider to host the account on - and is the easier decision to make.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">A Real ATProto Long-Form Post Written in Markdown</h2>
+
+        <p>The quick walkthrough below shows a creator writing a long-form post in plain Markdown, converting it client-side, and pasting into the Bluesky web app (or any compatible ATProto client - Ivory, Bluesky Social iOS, Deck, Blacksky). The pattern is the same regardless of which client app the creator uses.</p>
+
+        <p>The Markdown source the creator wrote in their editor:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code># Why we moved our Bluesky archive to Eurosky
+
+Three reasons drove the decision in our last team sync:
+
+- **Provider concentration risk.** bsky.social is the default PDS for most accounts, and a single company's terms-of-service change can lose the whole history.
+- **Audit pressure.** EU organizations with GDPR scoping prefer an EU-hosted PDS for the data-residency argument.
+- **Generous write API quotas.** Eurosky removes the gated approval bsky.social uses.
+
+The protocol makes the migration trivial: export from
+one PDS, import to another, redirect the handle. The
+post body format does not change - the same ATProto
+Facets survive the move.
+
+If your team publishes on Bluesky and you have not
+asked "what happens if this provider changes terms
+tomorrow?" - ask it.
+</code></pre>
+
+        <p>That source goes through a client-side converter. The converter walks the Markdown structure, emits the ATProto Facet array the protocol expects, and puts the rich-text payload on the clipboard:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code># clip.txt - rich-text payload for ATProto long-form
+{
+  "$type": "app.bsky.embed.record",
+  "record": {
+    "$type": "app.bsky.richtext.facet#text",
+    "text": "Why we moved our Bluesky archive to Eurosky\n\nThree reasons drove the decision in our last team sync:\n\n- Provider concentration risk. bsky.social is the default PDS for most accounts, and a single company's terms-of-service change can lose the whole history.\n- Audit pressure. EU organizations with GDPR scoping prefer an EU-hosted PDS for the data-residency argument.\n- Generous write API quotas. Eurosky removes the gated approval bsky.social uses.\n\nThe protocol makes the migration trivial: export from one PDS, import to another, redirect the handle. The post body format does not change - the same ATProto Facets survive the move.\n\nIf your team publishes on Bluesky and you have not asked \"what happens if this provider changes terms tomorrow?\" - ask it.",
+    "facets": [
+      { "index": { "byteStart": 0, "byteEnd": 50 }, "features": [{ "$type": "app.bsky.richtext.facet#bold" }] }
+    ]
+  }
+}
+</code></pre>
+
+        <p>The creator pastes that payload into the Bluesky composer (or any ATProto client that accepts long-form drafts) and publishes. The post lands on bsky.social, Eurosky, Blacksky, and any other PDS that has federated with the origin - identical rendering on each. The Markdown source, the local file the converter read, and the clipboard payload never touched a third-party server.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Self-Hosting a PDS vs Hosted: The Cost-Benefit in 2026</h2>
+
+        <p>The PDS portability model invites the obvious follow-up: should a creator self-host the PDS instead of trusting bsky.social, Eurosky, or any hosted provider? The honest answer in 2026 is "only if you already run the infrastructure for other reasons."</p>
+
+        <p>A working self-hosted PDS needs: a stable VPS (the ATProto team recommends 2 vCPU, 4 GB RAM minimum for a personal account with a few thousand followers), a domain name, a reverse proxy with TLS termination, daily backups of the PDS storage directory, and ongoing patching as the ATProto reference implementation releases updates roughly every two weeks. Outage on your PDS means your handle resolves to nothing until you bring it back up - which feels different from "Bluesky is down" because you own the responsibility.</p>
+
+        <p>The marginal sovereignty gain over a hosted PDS is real but narrow. A hosted PDS provider like Eurosky or Blacksky handles operations for free or a flat $5/month. They are subject to the same GDPR and operational scrutiny as any EU-hosted service. The realistic threat model for most creators is "the provider disappears or changes terms," and a monthly archive export committed to a private Git repo handles that threat whether the PDS is self-hosted or not.</p>
+
+        <p>The middle path is the practical recommendation for 2026: keep the account on a hosted PDS you trust, export the post archive monthly, commit the export to a private Git repo you control. That gives you most of the sovereignty upside without any of the operational burden of running a PDS. When the next migration story hits the front page of Hacker News, you have the data to participate in it.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Where md2rich Fits in a Federated Markdown Workflow</h2>
+
+        <p>The federated Markdown workflow for a content creator in 2026 has four steps:</p>
+
+        <ol class="list-decimal pl-6 space-y-2">
+          <li><strong>Draft in the editor of choice</strong> - Obsidian, iA Writer, VS Code, Vim, plain Notepad. The editor picks Markdown for storage, the creator does not care which.</li>
+          <li><strong>Convert client-side</strong> - the Markdown source goes through a browser-based converter (md2rich or similar) and exits as the destination protocol's rich-text payload. No upload, no model, no API key, no registration.</li>
+          <li><strong>Copy the formatted payload to clipboard</strong> - the destination payload is a single text/html or rich-text paste that the destination client app accepts on first paste.</li>
+          <li><strong>Paste and publish from the chosen client</strong> - Bluesky web, Ivory iOS, Deck, the Mastodon web composer, LinkedIn's post editor, Medium's importer, X Articles. Each destination app sanitizes the paste differently, but the converter output is already aligned to that destination's schema.</li>
+        </ol>
+
+        <p>md2rich handles step 2 in the browser. The conversion is deterministic (the same Markdown produces the same payload every time), does not touch a backend (no API call, no LLM, no analytics), and is publishable to any destination that accepts a paste. For a creator publishing to multiple destinations from one Markdown source - say, a long-form post on Bluesky plus a tweet thread on X plus a Medium import plus a LinkedIn share - the converter is the only piece of the pipeline that runs once and works in all four places.</p>
+
+        <p>The relevance to ATProto specifically is that the conversion step is independent of which PDS the account lives on. The same client-side conversion works for bsky.social, Eurosky, Blacksky, PinkSea, self-hosted, or whatever the next 2026 provider turns out to be. The provider choice is a hosting decision. The conversion choice is a creator decision. Keeping them separate is the practical move.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Cross-Protocol Publishing: ATProto, ActivityPub, X Articles, LinkedIn</h2>
+
+        <p>The federated landscape gives creators options that the centralized platforms do not. The interesting constraint is that the rich-text schema differs across protocols, which means the same Markdown source needs slightly different conversion for each destination:</p>
+
+        <table class="border-collapse w-full text-sm">
+          <thead>
+            <tr class="bg-gray-100 text-left">
+              <th class="border border-gray-200 px-3 py-2">Destination</th>
+              <th class="border border-gray-200 px-3 py-2">Protocol</th>
+              <th class="border border-gray-200 px-3 py-2">Markdown support</th>
+              <th class="border border-gray-200 px-3 py-2">Paste path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Bluesky long-form</td>
+              <td class="border border-gray-200 px-3 py-2">ATProto</td>
+              <td class="border border-gray-200 px-3 py-2">Headings, lists, bold/italic, code, links</td>
+              <td class="border border-gray-200 px-3 py-2">Convert to Facet array, paste rich-text</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Mastodon (ActivityPub)</td>
+              <td class="border border-gray-200 px-3 py-2">ActivityPub</td>
+              <td class="border border-gray-200 px-3 py-2">Server-side parsing; nearly all Markdown</td>
+              <td class="border border-gray-200 px-3 py-2">Type Markdown directly into the composer</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">X Articles</td>
+              <td class="border border-gray-200 px-3 py-2">Proprietary</td>
+              <td class="border border-gray-200 px-3 py-2">Import from Markdown file or paste rich-text</td>
+              <td class="border border-gray-200 px-3 py-2">Convert locally, paste into the long-form composer</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">LinkedIn</td>
+              <td class="border border-gray-200 px-3 py-2">Proprietary</td>
+              <td class="border border-gray-200 px-3 py-2">No fenced code blocks; otherwise limited</td>
+              <td class="border border-gray-200 px-3 py-2">Convert locally, paste; verify code blocks survive</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Medium</td>
+              <td class="border border-gray-200 px-3 py-2">Proprietary</td>
+              <td class="border border-gray-200 px-3 py-2">Most permissive - tables, code, all headings</td>
+              <td class="border border-gray-200 px-3 py-2">Import from .md file is cleanest</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Substack</td>
+              <td class="border border-gray-200 px-3 py-2">Proprietary</td>
+              <td class="border border-gray-200 px-3 py-2">Subset of Markdown via rich-text paste</td>
+              <td class="border border-gray-200 px-3 py-2">Convert locally, paste into the editor</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The takeaway is not "every destination needs Markdown support" - it is "every destination needs a paste-aware conversion pipeline." A generic Markdown sanitizer does not produce that pipeline; a destination-aware client-side converter does. The 2026 version of the creator's stack treats the Markdown source as the canonical artifact and the conversion step as the per-destination adapter. ATProto is one of the friendlier destinations because the Facet schema is well-documented and consistent across PDS providers.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What the Next Six Months Look Like</h2>
+
+        <p>The Eurosky migration is the first wave. The second wave, which is already visible in the ATProto development Discord and the Bluesky public roadmap, is feature parity across PDS providers - things like custom feeds, list management, email relay, and moderation policies that should not depend on which provider hosts the account. The third wave is the harder problem: giving creators tools to publish once to multiple protocols (ATProto + ActivityPub + proprietary platforms) without per-destination re-authoring.</p>
+
+        <p>Markdown is the natural common format for that future. It is the editor-side input, the readable source archive, the diff-friendly artifact, and the only format that survives a paste into every destination with a sensible subset intact. The missing piece is a conversion pipeline that is destination-aware, client-side, and archival-quality. That is the role the converter layer (md2rich and a small set of similar tools) is filling in 2026.</p>
+
+        <p>For a creator who has been drafting in Markdown for years and pasting into one destination at a time, the practical advice is unchanged: keep the Markdown as the source of truth, keep the conversion step out of any destination's pipeline, and treat the PDS provider as a hosting decision rather than a writing-environment decision. The federated world does not require new tools - it rewards the discipline of keeping each step of the pipeline independent.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. No LLM in the loop. The deterministic piece of your federated publishing pipeline. Works for Bluesky long-form, LinkedIn, X Articles, Medium, Substack, and more.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting &rarr;</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-to-bluesky-long-form-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to Bluesky Long-Form</a>
+          <a href="/blog/weave-openrouter-mcp-markdown-routing-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Weave & OpenRouter MCP Routing</a>
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">2026 Markdown Tool Landscape</a>
+          <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Client-Side vs Cloud Converters</a>
+          <a href="/blog/best-markdown-editors-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Best Markdown Editors 2026</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>
