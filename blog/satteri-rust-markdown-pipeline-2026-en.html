@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satteri: Rust Markdown Pipeline for JavaScript (2026)</title>
+  <meta name="description" content="Satteri parses Markdown in Rust, runs plugins in JavaScript via NAPI. What the Astro team's pipeline means for client-side Markdown tools in 2026.">
+  <meta name="keywords" content="Satteri, Rust Markdown, JavaScript Markdown pipeline, MDAST HAST plugins, Astro Markdown, pulldown-cmark WASM, md2rich, client-side Markdown converter, NAPI Markdown, 2026">
+  <link rel="canonical" href="https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Satteri: Rust Markdown Pipeline for JavaScript (2026)">
+  <meta property="og:description" content="Satteri parses Markdown in Rust, runs plugins in JavaScript via NAPI. What the Astro team's pipeline means for client-side Markdown tools in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Satteri: Rust Markdown Pipeline for JavaScript (2026)",
+        "description": "Satteri parses Markdown in Rust, runs plugins in JavaScript via NAPI. What the Astro team's pipeline means for client-side Markdown tools in 2026.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-27",
+        "dateModified": "2026-06-27",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Satteri Rust Markdown Pipeline", "item": "https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Satteri and who built it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Satteri is a Markdown and MDX processing pipeline that parses and compiles in Rust, then runs user-defined plugins in JavaScript. It was created by a developer on the Astro core team, the group that maintains the Astro framework's content layer. The project was originally shown on Show HN in April 2026, re-shared on Hacker News on June 25 2026, and is now published on GitHub as a Rust + TypeScript monorepo under the MIT license, installable via npm or crates.io."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Satteri combine Rust and JavaScript?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The expensive work — lexing, parsing Markdown into an MDAST, compiling MDX into JavaScript, allocating AST nodes — happens in Rust compiled to a native module. The plugin layer, where the user-facing extensibility lives, runs in JavaScript via NAPI bindings. The Rust side hands the JavaScript side a typed AST (mdast for Markdown, hast for HTML) and JavaScript plugins visit each node. This is the same pattern LightningCSS uses for CSS and OXC uses for JavaScript tooling: keep the hot path in native code, expose a flexible plugin interface in a dynamic language."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does the Rust-in-JavaScript pattern matter for client-side Markdown tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Browser Markdown engines like marked, markdown-it, and remark are written in pure JavaScript. On long documents (10,000+ words with many code blocks and tables) they take several seconds to parse on a mid-range laptop. The same work in Rust compiled to WebAssembly runs roughly 5 to 10 times faster, which matters for client-side editors that re-render the document on every keystroke. Satteri exposes this speed through an npm package, so a static HTML editor can ship a much smaller and faster pipeline without the developer hand-rolling a WASM build."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Satteri different from a WASM Markdown parser like pulldown-cmark-wasm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, in one specific way. pulldown-cmark-wasm gives you a fast parser but the entire plugin layer stays in Rust or stays out of the picture. Satteri is structured so the parse is in Rust but every plugin you write is in JavaScript, with full TypeScript types and the same visitor pattern that remark and rehype use. A developer already familiar with the unified ecosystem can port an existing remark plugin to Satteri without learning Rust. That tradeoff — Rust for speed, JavaScript for ergonomics — is the point of the project."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Satteri work in the browser without a build step?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The package ships a WASM build that runs in any modern browser via the standard WebAssembly API. The Satteri playground (satteri.bruits.org/playground) is itself a single-page web app: you type Markdown on the left, it renders HTML on the right, and the conversion happens entirely in your browser. There is no server round-trip. This is the same client-side pattern that md2rich uses for converting Markdown to rich HTML for LinkedIn, X, and Medium — your draft never leaves the device."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 27, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Satteri: Rust Markdown Pipeline for JavaScript (2026)</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+      <p class="text-lg text-gray-600">A new Markdown engine landed on Hacker News on June 25 2026, and it changes what a client-side Markdown editor can do without giving up the JavaScript plugin model most authors are used to. Satteri is a Rust core that parses and compiles, wrapped in a JavaScript surface where you write your plugins the same way you would write remark or rehype plugins. For paste-into-rich-text tools like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>, it is the most interesting Markdown engine release of the year, because it offers a path to faster, more capable in-browser conversion while keeping the developer ergonomics that make custom transformations practical.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">What Satteri Is, in One Paragraph</h2>
+
+      <p>Satteri is a Markdown and MDX processing pipeline published by the Bruits project. The maintainer works on the Astro core team, the group responsible for the content layer that powers millions of Markdown-driven websites. Satteri's claim is simple: do the expensive work (lexing, parsing into an MDAST, allocating nodes, compiling MDX to JavaScript) in Rust, then expose a typed plugin API in JavaScript. You write your extensions in TypeScript using the same visitor pattern that remark and rehype use. Satteri compiles to a native module for Node, to WASM for the browser, and ships as a single npm package called <code>satteri</code>. It is MIT licensed and the source is on GitHub at <a href="https://github.com/bruits/satteri" class="text-indigo-600 underline">github.com/bruits/satteri</a>.</p>
+
+      <p>You do not need to know Rust to use it. The entire plugin layer is JavaScript with full TypeScript types. The Rust crates are an implementation detail unless you want to extend the parser itself.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">The Architecture: Rust Inside, JavaScript Outside</h2>
+
+      <p>The Satteri monorepo contains seven Rust crates and one npm package. The Rust crates handle the parser (<code>satteri-pulldown-cmark</code>, a fork of pulldown-cmark with MDX support), the AST node types and codecs (<code>satteri-ast</code>), the MDX-to-JavaScript compiler (<code>satteri-mdxjs-rs</code>), an arena allocator for low-allocation AST construction (<code>satteri-arena</code>), the plugin trait for Rust plugins (<code>satteri-plugin-api</code>), and the NAPI bindings that bridge Rust and Node (<code>satteri-napi-binding</code>). The high-level <code>satteri</code> crate exposes a clean Rust API on top of all of that.</p>
+
+      <p>The npm package, also named <code>satteri</code>, wraps the NAPI bindings and adds the JavaScript-side plugin API. A typical conversion looks like this:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>import &#123; markdownToHtml, defineMdastPlugin &#125; from "satteri";
+
+const stripInlineCode = defineMdastPlugin(&#123;
+  name: "strip-inline-code",
+  inlineCode(node, ctx) &#123;
+    ctx.replaceNode(node, &#123; type: "text", value: node.value &#125;);
+  &#125;,
+&#125;);
+
+const &#123; html &#125; = markdownToHtml("Use `let` instead of `var`.", &#123;
+  mdastPlugins: [stripInlineCode],
+&#125;);
+// &lt;p&gt;Use let instead of var.&lt;/p&gt;</code></pre>
+
+      <p>The shape should look familiar: <code>defineMdastPlugin</code> returns a plugin object with a <code>name</code> and a visitor per node type, and the function <code>markdownToHtml</code> takes the plugin in an options bag. If you have written a remark or rehype plugin, you can read this code and recognize the pattern. That is the design goal.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">Why Speed Matters for a Client-Side Editor</h2>
+
+      <p>Browser-based Markdown engines are written in pure JavaScript. The most popular ones — marked, markdown-it, remark — are all single-threaded JavaScript parsers. They are fast enough for typical documents, but they hit a wall on long drafts. A 15,000-word technical article with 40 code blocks and 12 tables takes several seconds to parse in marked on a mid-range laptop. The same document in pulldown-cmark compiled to WASM parses in a fraction of a second.</p>
+
+      <p>For a static-site generator like Astro, where build performance compounds across thousands of documents, this is a real win. For a client-side editor that re-renders the document on every keystroke, it is transformative. The mental model changes from "throttle the keystroke handler" to "render on every input without thinking about it."</p>
+
+      <p>Satteri is positioned as the Markdown equivalent of what LightningCSS did for CSS and OXC did for JavaScript tooling: a native core with a JavaScript surface. If you have used LightningCSS to speed up a build pipeline, the architectural argument for Satteri will be familiar.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">How Satteri Compares to Marked, remark, and pulldown-cmark-wasm</h2>
+
+      <p>The Markdown parser landscape in JavaScript has three reasonable choices in 2026, plus Satteri.</p>
+
+      <p><strong>marked</strong> is the lightweight default. About 30 KB minified, no dependencies, very fast for typical documents. The plugin model is limited — you can write tokenizers and renderer overrides, but the AST is shallow and there is no canonical MDAST. marked is what most simple client-side editors use under the hood.</p>
+
+      <p><strong>remark + unified</strong> is the structured-pipeline option. The full unified ecosystem (remark, rehype, remark-rehype, rehype-stringify) gives you a deeply composable AST. It is also slow on large documents and the dependency graph is large. The unified ecosystem is the right choice when you need a deep transformation pipeline; it is the wrong choice when you need to render on every keystroke in the browser.</p>
+
+      <p><strong>pulldown-cmark-wasm</strong> is the speed option. The CommonMark reference parser compiled to WebAssembly, with no plugin system and no AST exposed to JavaScript. You get bytes in, you get HTML out. Fast, but inflexible.</p>
+
+      <p><strong>Satteri</strong> is the speed + flexibility option. Rust for the hot path, JavaScript for the plugins, full MDAST and HAST exposed to your code. The tradeoff is a larger bundle than marked (the WASM is several hundred kilobytes) and a smaller plugin ecosystem than unified. For a new client-side editor that needs to be fast and customizable, Satteri is now the most credible foundation.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">The MDX Story: Components in Your Markdown</h2>
+
+      <p>MDX is Markdown that lets you embed JSX components directly in the source. Satteri handles MDX via a fork of mdxjs-rs, which means it can compile an MDX document into executable JavaScript that imports your components. The whole pipeline runs in Rust; the MDX-to-JS output runs wherever you ship it.</p>
+
+      <p>For most md2rich-style tools, MDX is not relevant — the destination is a rich-text editor that does not render React. But for a long-form publishing tool that targets both a static site (where MDX makes sense) and a social platform (where the same source needs to become rich HTML), a single source format that compiles both ways is genuinely useful. Satteri is positioned to be that format.</p>
+
+      <p>The same MDX source can go through <code>mdxToJs()</code> for a React-based blog and <code>markdownToHtml()</code> for a paste-into-LinkedIn flow. The two paths share the same parser and the same plugin system, so a custom shortcode or callout works in both destinations without re-implementation.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">Privacy by Construction: WASM, No Server</h2>
+
+      <p>Satteri runs in two modes: a native module for Node, and WebAssembly for the browser. In the browser, the entire pipeline executes on the user's device. There is no server round-trip and no API call. The Satteri playground at <a href="https://satteri.bruits.org/playground" class="text-indigo-600 underline">satteri.bruits.org/playground</a> is itself a working demonstration: type Markdown on the left, get rendered HTML on the right, watch the conversion happen in real time without any network activity after the page loads.</p>
+
+      <p>This is the same architectural pattern that md2rich uses. md2rich is a single static HTML page that converts your Markdown draft to the rich HTML that LinkedIn, X, and Medium expect on the clipboard. Nothing is uploaded; the conversion runs in your browser tab. If a future version of md2rich swapped its in-house JavaScript parser for a Satteri WASM build, the user experience would not change — your draft still never leaves the device — but the speed and the fidelity of complex constructs (nested tables, footnotes, MDX-style callouts) would both improve.</p>
+
+      <p>For any tool that touches unpublished drafts, this is the right architecture. The alternative — sending your draft to a server for conversion — means a copy of your unpublished work exists in someone else's log files. For a journalist, a lawyer, a researcher, or anyone who cares about source protection, that is a non-starter. Satteri is a private-by-construction pipeline because the WASM build makes the server round-trip unnecessary.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">What This Means for md2rich and Other Paste-Into-Rich-Text Tools</h2>
+
+      <p>The class of tools md2rich belongs to — client-side Markdown editors that produce rich text for social and long-form platforms — is exactly the class that benefits most from a faster Markdown engine. The bottleneck is no longer the UI; it is the parse. A 5 to 10x speedup on the parse step translates directly into a snappier editor and the ability to support longer documents without throttling the input.</p>
+
+      <p>If you are building a tool in this space in 2026, the Satteri architecture gives you four things you did not have before:</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>A fast core in Rust</strong> that you do not need to write yourself. The parser is pulldown-cmark with MDX extensions, battle-tested at the C and Rust level for over a decade.</li>
+        <li><strong>A clean JavaScript plugin API</strong> that mirrors the remark / rehype pattern. The mental model you already have applies.</li>
+        <li><strong>Full TypeScript types</strong> for every AST node and every plugin callback. No <code>any</code> escape hatches required.</li>
+        <li><strong>A WASM build for the browser</strong> that runs without a server, on the user's device, on their data.</li>
+      </ul>
+
+      <p>The main tradeoff is bundle size. The WASM build is several hundred kilobytes, which is fine for a tool that ships its own runtime (like md2rich or a desktop Markdown editor) and less fine for a tool that loads a Markdown engine as one of many dependencies. For paste-into-rich-text use cases, the size is a non-issue.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-3">The 60-Second Workflow: From Satteri-Aware Markdown to LinkedIn</h2>
+
+      <p>For a writer who drafts in Markdown and publishes to LinkedIn, X Articles, or Medium, Satteri changes nothing about the surface workflow and everything about the foundation underneath it. Here is the end-to-end flow as it stands in mid-2026:</p>
+
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>Draft in your favorite Markdown editor. Obsidian, iA Writer, VS Code, or a plain text file — the source format is the same.</li>
+        <li>Copy the rendered rich HTML to your clipboard. With md2rich this is a single click: paste your Markdown source into the editor pane, click "Copy as Rich Text," and the rich HTML is on your clipboard.</li>
+        <li>Paste into the destination. LinkedIn renders the formatting. X Articles does the same. Medium accepts the rich HTML and applies its own typography. Bluesky long-form handles it too.</li>
+      </ol>
+
+      <p>What Satteri brings to this flow is the option for tools like md2rich to upgrade their underlying engine to a Rust core, which means faster rendering, more faithful constructs, and a foundation that can support MDX-style components for users who want them. The day-to-day experience for the writer does not change. The day-to-day experience for the developer of the tool changes a lot — and that is what makes the release worth paying attention to.</p>
+
+      <p>If you are a JavaScript developer who builds Markdown tooling, Satteri is the most interesting release of 2026 so far. The architecture is proven in adjacent problem spaces (LightningCSS, OXC), the maintainer has shipped the WASM build, and the plugin API is ergonomic enough to port existing remark plugins without a rewrite. For a client-side rich-text tool, it is the right foundation for the next generation.</p>
+
+      <p>To try the Satteri playground, visit <a href="https://satteri.bruits.org/playground" class="text-indigo-600 underline">satteri.bruits.org/playground</a>. To convert your Markdown drafts to rich text for LinkedIn, X, and Medium, try <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> — it is free, runs entirely in your browser, and never uploads your drafts.</p>
+
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>

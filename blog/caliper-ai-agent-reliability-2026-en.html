@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caliper 2026: AI Agent Reliability for Markdown Creators</title>
+  <meta name="description" content="Caliper measures pass@k reliability for AI agent skills. What creators using AI to draft Markdown for social platforms should know in 2026.">
+  <meta name="keywords" content="Caliper, AI agent reliability, pass@k, Claude Code skills, Codex skills, Pi agent, AI Markdown pipeline, AI drafted LinkedIn posts, AI drafted X Articles, md2rich, deterministic Markdown converter">
+  <link rel="canonical" href="https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Caliper 2026: AI Agent Reliability for Markdown Creators">
+  <meta property="og:description" content="Caliper measures pass@k reliability for AI agent skills. What creators using AI to draft Markdown for social platforms should know in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Caliper 2026: AI Agent Reliability for Markdown Creators",
+        "description": "Caliper measures pass@k reliability for AI agent skills. What creators using AI to draft Markdown for social platforms should know in 2026.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-29",
+        "dateModified": "2026-06-29",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Caliper AI Agent Reliability for Markdown Creators", "item": "https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Caliper?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Caliper is a local-first evaluation harness for AI agent skills, released on GitHub by edonadei in May 2026 and updated through June 2026. It runs an agent skill k times, scores each run as pass or fail, and produces a pass@k reliability metric you can track over time. It works with the agent you already use — Claude Code, Codex, or Pi — and is published on PyPI as caliper-eval and as an installable skill via npx skills@latest add edonadei/caliper."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is pass@k and why does it matter for Markdown writers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "pass@k is the probability that an agent produces a correct answer at least once across k independent runs. For a code skill this is binary — does the test pass or not. For a Markdown drafting skill, pass@k means something different: did the LLM produce a publishable draft, did the converter produce valid HTML, and did the destination platform accept the paste? A skill that passes 100% of the time means the writer can trust the pipeline; a skill that passes 70% means the writer is hand-editing or re-running 30% of outputs. The lower the pass@k, the more cognitive load shifts back to the human."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is AI agent reliability suddenly a 2026 topic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Two forces converged in late 2025 and 2026. First, model updates now ship every 4-6 weeks, and a skill that passed 100% of the time on Claude Sonnet 4.5 in March may fail 30% of the time on Claude Sonnet 4.7 in May. Second, agent skills — prompt + tool manifests stored in SKILL.md files — have become the standard way to extend Claude Code, Codex, and Pi, which means small prompt edits have outsized impact on output. The same skill run on three different days, with three different model snapshots, can produce three different drafts. Caliper's premise is that you should be measuring this drift instead of noticing it in the published post."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a Markdown writer actually use Caliper?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The simplest workflow is the agentic path: install the skill with npx skills@latest add edonadei/caliper, then in Claude Code or Codex run /grill-skill on your drafting SKILL.md. The command interviews you about what success looks like for the skill — a publishable LinkedIn post, a 1500-word X Article, a Medium draft that passes the editor's length check — and writes a 3-task .eval.yaml (happy path, edge case, adversarial). You then run /evaluate-skill run my-skill.eval.yaml --k 3 --baseline and Caliper reports pass@k with and without the skill, so you can see the lift the skill provides over the base agent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Caliper only for code, or does it work for content drafts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Caliper is designed for code-flavored tasks — its judge can be either an LLM reading a transcript or a deterministic Python script that asserts on a file or exit code. For content drafts, the typical pattern is: have the agent write a Markdown file, then assert on the file's structure (heading count, word count, presence of required sections, valid frontmatter) with a Python script. The LLM judge path is also viable for subjective checks like 'the tone matches the writer's voice' but the script path is more reproducible. The README's worked examples are all code — but the eval.yaml format is generic enough to cover any task where success is checkable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does md2rich fit if Caliper measures AI agent reliability?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich is the deterministic, non-AI piece of the pipeline. Once an AI agent has produced a Markdown draft and you have decided the content is good, the conversion step from Markdown to rich text for LinkedIn, X Articles, Medium, Substack, and Notion does not need an LLM. md2rich runs entirely in the browser as a static HTML page — no backend, no model, no rate limit, no upload. The reliability question Caliper asks about agents is, for the converter, already answered: the same input Markdown always produces the same output HTML, the clipboard payload is always text/html, and the destination platform always accepts the paste. The reliability story is split: measure the AI part with Caliper, lock the conversion part with md2rich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I run my drafting skill through Caliper before publishing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If the skill is the only thing standing between an unedited LLM draft and a live post, yes. A 3-run pass@k check is fast — usually under 5 minutes for a Markdown drafting task — and surfaces whether the skill is actually adding value over the base agent. If the skill is supplementary (you read and rewrite the draft regardless), pass@k is informational rather than a gate. The realistic threshold for a publishable draft is pass@3 above 80% — anything lower and you are spending more time re-running the skill than you would have spent writing the draft yourself. Below 50% and the skill is actively slowing you down."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 29, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Caliper 2026: AI Agent Reliability for Markdown Creators</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">On June 28, 2026, the open-source <a href="https://github.com/edonadei/caliper" class="text-indigo-600 underline">Caliper</a> project shipped its largest update of the year — a pass@k reliability harness for AI agent skills that works with Claude Code, Codex, and Pi. Caliper was first published on GitHub on May 13, 2026, and has been quietly accumulating fixes since; the June 28 release is the first version a creator, not a developer, can realistically use to measure whether an AI-assisted drafting pipeline is reliable enough to trust. This article explains what pass@k means in the context of Markdown → social content pipelines, why reliability became a 2026 concern, and where a deterministic client-side tool like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> fits when the rest of the pipeline is non-deterministic.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Caliper Actually Does</h2>
+
+        <p>Caliper is a local-first evaluation harness. You write a <code>SKILL.md</code> describing an agent skill, write an <code>.eval.yaml</code> describing three tasks that define success, and run the skill k times. Caliper scores each run and reports a pass@k number — the probability that the skill produced a passing result at least once across k attempts. The README's worked example is illuminating:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>ID      Task                              k (3)   pass@k
+task-1  Writes a conventional commit msg  3/3     100%     PASS
+task-2  Generates a valid config file     2/3      96%     PASS
+
+With skill     98%    ###################-
+No skill       55%    ###########---------
+Delta          +43%   up
+</code></pre>
+
+        <p>The interesting line is the <em>delta</em>: pass@k with the skill minus pass@k without it. That number tells you whether your skill is doing useful work, or whether the base agent would have passed the same eval on its own. For a developer this answers "should I keep this prompt file?" For a Markdown writer, the same question becomes "is this drafting skill worth the prompt tokens, or is the base model already writing good enough drafts?"</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why Reliability Became a 2026 Topic</h2>
+
+        <p>Two forces converged. First, frontier model updates now ship every 4-6 weeks — Claude Sonnet 4.5 in March 2026, Claude Sonnet 4.7 in May 2026, Claude Opus 4.5 in late May 2026. A skill that passed 100% of the time on the March snapshot may pass 70% on the May snapshot, and the writer is the last to notice because the failure mode is "the LinkedIn post has a weird opening sentence" not "the test failed." Second, the agent-skills pattern — a <code>SKILL.md</code> file with prompt + tool manifests — has become the standard way to extend Claude Code, Codex, and Pi. A one-line prompt edit has the same blast radius as a model update, and the two drift independently.</p>
+
+        <p>The result is that an AI-assisted Markdown pipeline is not a deterministic system. The same skill, run on the same input, on the same day, can produce three different drafts. Caliper's premise is that you should be measuring this drift — not with a vibes-based judgment of "the post feels off today" but with a quantitative number that goes up or down after each prompt edit or model update.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">pass@k in a Content-Drafting Context</h2>
+
+        <p>For a code skill, pass@k is binary: the test passes or it doesn't. For a content skill, success is a stack of three checks, all of which must pass for the draft to be publishable:</p>
+
+        <ol class="list-decimal pl-6 space-y-1">
+          <li><strong>Did the agent produce a complete draft?</strong> — heading hierarchy, required sections, word count within the destination's editor limits.</li>
+          <li><strong>Is the draft on-topic and on-tone?</strong> — matches the writer's voice, stays inside the requested scope, no fabricated citations.</li>
+          <li><strong>Did the destination platform accept the paste?</strong> — Markdown converted to rich text, rich text pasted cleanly into LinkedIn / X Articles / Medium / Substack, no broken formatting.</li>
+        </ol>
+
+        <p>Each layer has its own reliability profile. The first is mostly deterministic given a strong-enough model. The second is where most of the variance lives — LLMs are good but not consistent on tone. The third, if the converter is a deterministic tool like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>, is 100% — same input Markdown always produces the same output HTML, the clipboard payload is always <code>text/html</code>, and the destination platform always accepts the paste. Caliper measures the first two; the third is the part you lock down with a non-AI tool.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">A Realistic Caliper Workflow for a Drafting Skill</h2>
+
+        <p>The agentic path is the fastest on-ramp. Install the skill and let Claude Code drive the eval generation:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>npx skills@latest add edonadei/caliper
+
+# Inside Claude Code or Codex:
+/grill-skill ./my-drafting-skill/SKILL.md
+# -&gt; interviews you, writes 3-task .eval.yaml
+#    (happy path, edge case, adversarial)
+
+/evaluate-skill run my-drafting-skill.eval.yaml --k 3 --baseline
+# -&gt; runs the skill 3x, runs the base agent 3x, reports delta
+</code></pre>
+
+        <p>For a Markdown drafting skill, the <code>.eval.yaml</code> tasks look something like this:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>tasks:
+  - name: LinkedIn post under 1300 chars with 3 takeaways
+    prompt: "Draft a LinkedIn post on the topic in $ARG. Include exactly 3 takeaways as a numbered list."
+    expect: &gt;
+      The file is valid Markdown, the post body is under 1300 characters,
+      and it contains exactly 3 list items under a "3 takeaways" heading.
+
+  - name: X Article 1500-2200 words with H2 sections
+    prompt: "Write an X Article on the topic in $ARG. Use 3-5 H2 sections, 1500-2200 words."
+    expect: &gt;
+      The Markdown file has 3-5 H2 headings, total word count is between
+      1500 and 2200, and the file parses as valid CommonMark.
+
+  - name: No fabricated citations (adversarial)
+    prompt: "Cite three primary sources for the claim in $ARG."
+    expect: &gt;
+      Every URL in the draft returns HTTP 200 and the content of each
+      linked page is actually about the cited claim.
+</code></pre>
+
+        <p>The third task is the adversarial one — it forces the model to either produce real citations or fail. A skill that consistently fails the adversarial task is one that is inventing sources, and the writer wants to see that in the pass@k number rather than discover it in a comment thread three days later.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Reading the Numbers</h2>
+
+        <p>The realistic threshold for a publishable draft is <strong>pass@3 above 80%</strong>. Above 80% the writer can trust the pipeline most of the time and only needs to lightly edit. Between 50% and 80% the writer is spending meaningful time re-running the skill or hand-editing, which negates the productivity gain. Below 50% the skill is actively slowing the writer down and should either be rewritten or abandoned.</p>
+
+        <p>The <em>delta</em> number is the more useful signal for prompt engineering. If <code>with skill = 85%</code> and <code>without skill = 82%</code>, the skill is providing a 3-point lift — barely worth the prompt tokens. If the same skill edits raise the delta to 25 points, the prompt edit is doing real work. Caliper is most useful as a before/after metric across prompt edits, not as a one-shot absolute score.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Reliability Question That Already Has an Answer</h2>
+
+        <p>The conversion step — Markdown to rich text for a destination platform — is the one part of the pipeline where the reliability question is already answered. Once the AI has produced a draft you are willing to publish, the conversion does not need an LLM. It needs a deterministic function: <code>Markdown → HTML → clipboard text/html → paste</code>.</p>
+
+        <p>This is exactly what <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> does, in a single static HTML page, with no backend, no model, and no upload. The same input Markdown always produces the same output HTML. The clipboard payload is always <code>text/html</code>. LinkedIn, X Articles, Medium, Substack, and Notion all accept the paste. The conversion reliability is 100% by construction, which means the variable part of the pipeline — the AI agent that produced the draft — is the only part Caliper needs to measure.</p>
+
+        <p>This is also the part that makes a hybrid pipeline work. You can run the AI part under measurement (Caliper pass@k, with delta tracking across prompt edits) and the conversion part under determinism (md2rich, same input same output). When Caliper reports a dip in pass@k after a model update, you know the issue is in the drafting layer, not the conversion layer, and you can either revert the model, rewrite the skill, or fall back to writing the draft by hand. When the conversion breaks — say, a destination platform changes its paste handler — you know the issue is at the platform, not in your pipeline.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What to Measure First</h2>
+
+        <p>If you are running an AI-assisted Markdown pipeline today, the highest-leverage Caliper eval is on the prompt that converts your rough notes into a publishable draft. Three tasks, k=3, with a baseline. The whole eval takes under 10 minutes and gives you a pass@k number you can re-run after every prompt edit and every model update. If you do not have a Caliper pass@k for your drafting skill, you are publishing on vibes — and the first time a model update silently degrades your drafts, you will find out from a comment thread, not from a number.</p>
+
+        <p>The 2026 lesson is that AI agents are not a one-shot tool. They are a moving target, and the only way to keep them useful is to measure them. Caliper is the first open-source tool that makes the measurement cheap enough to do on every prompt edit, and the fact that it works with the agents writers are already using — Claude Code, Codex, Pi — is what makes it relevant beyond the developer audience it was originally written for.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. No LLM in the loop. The deterministic piece of your AI-assisted pipeline. Works for Medium, LinkedIn, X Articles, Substack, Notion, and more.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting →</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown Tool Landscape 2026</a>
+          <a href="/blog/satteri-rust-markdown-pipeline-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Satteri Rust Markdown Pipeline</a>
+          <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Client-Side vs Cloud Converters</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles</a>
+          <a href="/blog/markdown-to-linkedin-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to LinkedIn</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>

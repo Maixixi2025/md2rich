@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFC7763: Markdown Standardization Returns to IETF</title>
+  <meta name="description" content="RFC7763 puts text/Markdown back on the IETF agenda. What the standardization push means for Markdown editors, converters, and md2rich.">
+  <meta name="keywords" content="RFC7763, Markdown standardization, IETF Markdown media type, text/markdown, CommonMark, Markdown standardization 2026, md2rich, Markdown editor future, Markdown converter standards">
+  <link rel="canonical" href="https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="RFC7763: Markdown Standardization Returns to IETF">
+  <meta property="og:description" content="RFC7763 puts text/Markdown back on the IETF agenda. What the standardization push means for Markdown editors, converters, and md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "RFC7763: Markdown Standardization Returns to IETF",
+        "description": "RFC7763 puts text/Markdown back on the IETF agenda. What the standardization push means for Markdown editors, converters, and md2rich.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-28",
+        "dateModified": "2026-06-28",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "RFC7763 Markdown Standardization", "item": "https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is RFC7763?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "RFC7763 is the IETF document titled 'The text/markdown Media Type' authored by G. Leonard, M. Weber, and A. Flournoy, published in March 2016. It is the IETF's formal attempt to register Markdown as a recognized Internet media type, sitting in the same category as text/html, text/plain, and text/csv. RFC7763 defines how user agents should identify and process Markdown content, but it stopped short of specifying a canonical syntax — that gap is exactly what the 2026 IETF revival is trying to address."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is RFC7763 back on the IETF agenda in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The datatracker.ietf.org entry for RFC7763 was reactivated on June 27, 2026, prompting a fresh discussion thread on the IETF mailing list. The revival is driven by three forces: AI training pipelines now ingest billions of Markdown documents and need a stable identifier for them; legal teams want a normative reference for what 'Markdown' means in published contracts; and CMS vendors are tired of supporting 8+ incompatible Markdown flavors in parallel. The 2026 push is not about inventing a new flavor — it is about deciding which existing spec (CommonMark, GFM, or a hybrid) becomes the canonical text/markdown payload."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between CommonMark and RFC7763?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CommonMark is a community-maintained Markdown specification created by John Gruber and Jeff Atwood in 2014. It defines the exact syntax rules — how many spaces of indent, what constitutes a valid list, how underscores in words behave. RFC7763 is the IETF media-type registration that says 'content with the text/markdown label should follow the CommonMark spec, with extensions for GFM tables, task lists, and autolinks when needed.' CommonMark is the grammar; RFC7763 is the label. Standardization at the IETF level means RFC7763 points at CommonMark as the normative reference, which gives the spec standing in formal standards bodies and legal contracts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will a standard Markdown media type change how my editor works?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not immediately. Editors like Obsidian, iA Writer, Typora, and Zettlr will continue to ship their own dialect engines and the existing parser libraries (markdown-it, marked, commonmark.js, remark) will keep working. The practical change is downstream: when a file is served as text/markdown, HTTP-aware tools (CDNs, search engines, AI scrapers) will know exactly which spec to validate against, and content-negotiation flows in browsers will be able to render Markdown natively without a JavaScript parser. For most writers the visible change is zero. For tool builders it removes the 'which flavor?' question that has blocked shipping Markdown features for over a decade."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does RFC7763 mean for client-side Markdown converters like md2rich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A stable text/markdown media type helps client-side converters in three concrete ways. First, when a CMS serves a draft as text/markdown, a converter can fetch the source without parsing the HTML wrapper. Second, a normative CommonMark reference reduces the surface area of 'edge cases that differ per parser' — md2rich currently has to defend against 4-5 distinct table-syntax dialects because every editor renders them slightly differently. Third, the media type gives clipboard payloads a real Content-Type: when you Copy rich text from md2rich today, the clipboard advertises text/html, which Medium and LinkedIn accept, but X Articles and Substack's email composer sometimes fall back to plain text. A text/markdown clipboard type would round-trip cleanly into any tool that supports paste-as-markdown."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does RFC7763 affect how I publish Markdown to LinkedIn, X, and Medium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Indirectly, yes. Today the publishing pipeline is: write in Markdown, convert to rich HTML on the client side, paste text/html into the destination editor. Once text/markdown is a registered media type, more destination editors will natively accept a Markdown paste without needing the intermediate HTML conversion step. LinkedIn, X Articles, and Substack are all watching the IETF thread because it determines whether they ship a Markdown paste handler or stick with rich HTML forever. The standard itself does not change the workflow in 2026 — the IETF revival is still in mailing-list discussion. But the trajectory is clear: a stable text/markdown media type makes the convert-then-paste step shorter in the next 12-18 months."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 28, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">RFC7763: Markdown Standardization Returns to IETF</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">On June 27, 2026, the IETF datatracker entry for <a href="https://datatracker.ietf.org/doc/html/rfc7763" class="text-indigo-600 underline">RFC7763 — The text/markdown Media Type</a> saw renewed mailing-list activity, putting Markdown standardization back on the formal Internet standards agenda after a decade of quiet dormancy. RFC7763 is the document that registers Markdown as a recognized Internet media type in the same category as <code>text/html</code>, <code>text/plain</code>, and <code>text/csv</code>. This article explains what the IETF revival means, why it matters in 2026, and what changes — and does not change — for writers, editors, and client-side tools like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What RFC7763 Actually Says</h2>
+
+        <p>RFC7763 was authored by G. Leonard, M. Weber, and A. Flournoy and published in March 2016. Its full title is <em>The text/markdown Media Type</em>, and it occupies an unusual position in the IETF document tree: it is informational, not standards-track, and it deliberately does not pick a single canonical Markdown grammar. The document defines:</p>
+
+        <ul class="list-disc pl-6 space-y-1">
+          <li>The media type identifier: <code>text/markdown</code></li>
+          <li>The expected file extension: <code>.md</code> (and <code>.markdown</code>, <code>.mkd</code>)</li>
+          <li>The required <code>charset</code> parameter, which defaults to <code>US-ASCII</code> and may be <code>UTF-8</code></li>
+          <li>A pointer to the CommonMark specification as the recommended normative reference</li>
+          <li>Acknowledgment that "Markdown" has multiple flavors (CommonMark, GFM, MultiMarkdown) and that a future revision may narrow the scope</li>
+        </ul>
+
+        <p>What RFC7763 does <strong>not</strong> do is define the syntax itself. It is a label, not a grammar. The grammar lives in the CommonMark spec and its extensions (GFM tables, task lists, strikethrough, autolinks). That separation — media type registration here, syntax specification there — is exactly the gap the 2026 revival is trying to close.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why the IETF Revival Is Happening Now</h2>
+
+        <p>The datatracker entry for RFC7763 had been essentially frozen since 2016. Three forces converged in mid-2026 to reopen it:</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">1. AI training pipelines need a stable identifier</h3>
+
+        <p>Frontier-model training corpora now contain billions of Markdown documents sourced from GitHub repositories, technical blogs, Reddit exports, StackOverflow archives, and Notion workspaces. The datasets are usually stored as raw <code>.md</code> files, but the labels are inconsistent — some pipelines emit <code>text/markdown</code>, others emit <code>text/plain</code>, others emit <code>application/octet-stream</code> because no media-type registry had a definitive entry. Standardizing the label makes provenance and licensing chains auditable.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">2. Legal and compliance teams want a normative reference</h3>
+
+        <p>When a contract says "the documentation is provided in Markdown," there has historically been no canonical answer to what that means. CommonMark? GitHub-Flavored Markdown? The flavor the author happened to use? A normative IETF reference gives legal teams a spec they can cite by URL, the same way they cite RFC 4180 for CSV.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">3. CMS vendors are tired of supporting 8+ flavors</h3>
+
+        <p>Every CMS that accepts Markdown — Notion, Ghost, Substack, WordPress with Jetpack, Drupal with Markdown filter, Shopify with rich-text extensions — ships its own dialect layer because the original Markdown spec (Gruber, 2004) is ambiguous. The cumulative maintenance cost of these parallel forks is now in the millions of engineering hours per year across the industry.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">CommonMark vs RFC7763: How They Fit Together</h2>
+
+        <p>CommonMark is the Markdown specification project started by John Gruber and Jeff Atwood in 2014. It is a community-maintained, versioned spec with a reference implementation in C and test suites in dozens of languages. RFC7763 cites CommonMark as the recommended grammar but stops short of making that citation mandatory. The 2026 IETF thread is discussing whether to:</p>
+
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Promote CommonMark to a Standards-Track RFC, citing it as the normative <code>text/markdown</code> grammar</li>
+          <li>Define a minimal "core Markdown" subset that all parsers must accept, with extension points for GFM tables, task lists, and autolinks</li>
+          <li>Leave RFC7763 informational but require a structured field in the <code>Content-Type</code> header that names the dialect (e.g. <code>text/markdown; variant=gfm</code>)</li>
+        </ul>
+
+        <p>None of these are decided yet. The mailing-list thread is in the early <em>shepherd review</em> stage, which historically takes 6-18 months before any IETF document is updated or replaced. What matters for 2026 is the direction of travel: the IETF is committing to a narrower, more enforceable <code>text/markdown</code> definition, and CommonMark is the front-runner for the reference grammar.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Changes for Markdown Writers in 2026</h2>
+
+        <p>For anyone who drafts in Obsidian, iA Writer, Typora, VS Code, or plain text, the answer is: nothing changes this year. The IETF discussion is moving slowly, and no editor needs to ship a flag-day update. But three downstream effects will start showing up in 2026 and 2027:</p>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full border-collapse border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Area</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">Today</th>
+                <th class="border border-gray-200 px-4 py-2 text-left text-sm font-semibold">After Standardization</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">File server Content-Type</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Varies (text/plain, text/html, octet-stream)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Consistent <code>text/markdown; charset=utf-8</code></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Browser rendering</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Download or raw text view only</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Native styled preview (content negotiation)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Clipboard paste handler</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">text/html only (md2rich workaround)</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">text/markdown payload recognized</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">Search engine indexing</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Crawls HTML wrapper, ignores .md source</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Indexes text/markdown directly</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2 text-sm font-medium">AI scraper provenance</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Inferred from file extension</td>
+                <td class="border border-gray-200 px-4 py-2 text-sm">Verified via media-type header</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What It Means for Client-Side Converters Like md2rich</h2>
+
+        <p>md2rich's job today is to take Markdown source text and emit a <code>text/html</code> clipboard payload that destination editors — Medium, LinkedIn, X Articles, Substack, Notion — recognize as formatted rich text and render correctly. A standardized <code>text/markdown</code> media type helps this workflow in three concrete ways:</p>
+
+        <p><strong>First, source fetching.</strong> When a CMS like Ghost or Hashnode serves a draft behind an authentication wall, it can expose the raw text as <code>text/markdown</code> with a Content-Type header that any client tool can fetch without re-parsing the HTML wrapper. md2rich can then convert it locally without sending the draft to a server-side parser.</p>
+
+        <p><strong>Second, parser hardening.</strong> md2rich currently defends against 4-5 distinct table-syntax dialects because GitHub, GitLab, Bitbucket, Obsidian, and Notion each render them slightly differently. A normative CommonMark reference at the IETF level lets the project commit to "if it parses as CommonMark plus the documented GFM extensions, it is supported — otherwise it is the source editor's bug to fix." That removes a long tail of edge-case regressions.</p>
+
+        <p><strong>Third, clipboard interoperability.</strong> Today, when md2rich copies rich text, the clipboard advertises <code>text/html</code>. Medium, LinkedIn, and X Articles all accept that payload. Substack's email composer and some CMS rich-text editors fall back to <code>text/plain</code>, losing all formatting. A registered <code>text/markdown</code> clipboard type would round-trip cleanly into any destination that opts into paste-as-markdown — a feature Substack, Beehiiv, and Ghost have all discussed shipping.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Markdown Sample: A Glance at the Grammar</h2>
+
+        <p>To ground the standardization discussion, here is a small Markdown sample that illustrates the kind of construct a stable spec needs to nail down. Paste this into md2rich to see how a conforming parser renders it:</p>
+
+<pre class="bg-gray-100 rounded-lg p-4 overflow-x-auto text-sm"><code>## RFC7763 sample
+
+Markdown is a **lightweight** markup language. The text/markdown media
+type was registered in 2016 and is being revived in 2026.
+
+### Standardization forces
+
+1. AI training corpora need stable identifiers.
+2. Legal teams want a normative spec.
+3. CMS vendors are tired of supporting 8+ flavors.
+
+| Flavor        | Year | Source          |
+|---------------|------|-----------------|
+| Markdown      | 2004 | Gruber          |
+| CommonMark    | 2014 | Gruber, Atwood  |
+| GFM           | 2017 | GitHub          |
+| RFC7763 (rev) | 2026 | IETF revival    |
+
+Read the spec at &lt;https://datatracker.ietf.org/doc/html/rfc7763&gt;.
+</code></pre>
+
+        <p>The output is deterministic: a CommonMark-conforming parser produces the same HTML from this source every time. That determinism is exactly what RFC7763 wants to make normative.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Editors Should Do Today</h2>
+
+        <p>If you ship a Markdown editor, a CMS, or a converter, three concrete steps get you ready for the IETF outcome without waiting for the standards-track decision:</p>
+
+        <ol class="list-decimal pl-6 space-y-2">
+          <li><strong>Serve your raw drafts with <code>Content-Type: text/markdown; charset=utf-8</code></strong>. Even if the canonical IETF reference is still under discussion, this header is already legal under RFC7763 and lets clients fetch drafts directly.</li>
+          <li><strong>Validate against the CommonMark spec, not a homemade dialect</strong>. Use commonmark.js, markdown-it with strict mode, or the commonmark reference implementation. Document any GFM extensions you accept.</li>
+          <li><strong>Ship a <code>text/markdown</code> clipboard payload alongside the <code>text/html</code> payload</strong>. Most modern browsers support multi-format clipboard writes via the async Clipboard API. Destinations that understand paste-as-markdown will pick the Markdown; others will fall back to text/html cleanly.</li>
+        </ol>
+
+        <p>Writers who use md2rich today already get most of this for free. The tool emits <code>text/html</code> by default, which every modern editor accepts, and the conversion is fully client-side so no server ever sees the draft. As the IETF thread progresses, expect md2rich to add a <code>text/markdown</code> clipboard option for destinations that prefer the round-trip.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Privacy Angle: Why Client-Side Stays Important</h2>
+
+        <p>RFC7763 is a media-type registration, not a transport protocol. It does not say anything about where Markdown content is processed, sent, or stored. That is a separate decision — and it is the one that matters most for writers handling unpublished drafts, internal documentation, or anything under NDA.</p>
+
+        <p>md2rich's stance does not change with the IETF revival: conversion happens entirely in the browser as a single static HTML page with no backend. The Markdown source text, the converted HTML, and the clipboard payload never leave the device. There is no signup, no analytics on draft content, no third-party request beyond the static page itself.</p>
+
+        <p>This is the same posture that made client-side conversion useful for confidential LinkedIn posts, internal X Articles, and private Substack drafts in 2024-2025. A standardized <code>text/markdown</code> media type does not change that calculus — it simply makes the convert-then-paste step more interoperable, which means more destinations accept Markdown natively without ever needing a server-side parser to see the draft.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. Just paste and copy. Works for Medium, LinkedIn, X Articles, Substack, Notion, and more.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting →</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown Tool Landscape 2026</a>
+          <a href="/blog/best-markdown-editors-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Best Markdown Editors 2026</a>
+          <a href="/blog/write-once-publish-anywhere-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Write Once, Publish Anywhere</a>
+          <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Client-Side vs Cloud Converters</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>

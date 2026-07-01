@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weave &amp; OpenRouter MCP 2026: Markdown Drafting Routing</title>
+  <meta name="description" content="Weave and OpenRouter MCP let creators route Markdown drafts between Claude, GPT-5, DeepSeek, and Kimi. What 2026 multi-model pipelines mean for writers.">
+  <meta name="keywords" content="Weave Router, OpenRouter MCP, multi-model routing, Markdown drafting, Claude Code routing, GPT-5 routing, DeepSeek routing, Kimi routing, AI Markdown pipeline, model context protocol, Markdown converter, md2rich, deterministic Markdown converter">
+  <link rel="canonical" href="https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Weave &amp; OpenRouter MCP 2026: Markdown Drafting Routing">
+  <meta property="og:description" content="Weave and OpenRouter MCP let creators route Markdown drafts between Claude, GPT-5, DeepSeek, and Kimi. What 2026 multi-model pipelines mean for writers.">
+  <meta property="og:url" content="https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Weave & OpenRouter MCP 2026: Markdown Drafting Routing",
+        "description": "Weave and OpenRouter MCP let creators route Markdown drafts between Claude, GPT-5, DeepSeek, and Kimi. What 2026 multi-model pipelines mean for writers.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-06-30",
+        "dateModified": "2026-06-30",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Weave Router and OpenRouter MCP for Markdown Routing", "item": "https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is multi-model routing and why do Markdown creators care?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Multi-model routing is the practice of sending different prompts to different LLMs (Claude for tone, DeepSeek for code examples, Kimi for Chinese phrasing, GPT-5 for fact-checking) instead of using one model for everything. Weave and OpenRouter MCP are the two 2026 launches that make this practical from a single CLI or editor: Weave ships as a local proxy that intercepts Claude Code, Codex, and Cursor traffic, and OpenRouter MCP exposes the same routing as a Model Context Protocol server for any MCP-aware agent. For a creator writing Markdown that will be pasted into LinkedIn, X Articles, or Medium, routing means the first draft comes from the model that writes the best prose for that destination, while a cheaper model handles the routine expansion, examples, and citations. The end-to-end cost of a published draft drops 30-70 percent, and the quality ceiling goes up because each leg of the pipeline uses its strongest model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Weave Router work without changing my editor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weave runs as a local HTTP proxy on a port you choose (default 9090). You point Claude Code, Codex, or Cursor at the proxy with one environment variable, and Weave transparently rewrites the upstream URL. The editor still thinks it is talking to Anthropic or OpenAI; Weave decides per-request which provider actually answers based on a router policy you write in a small YAML file. The June 2026 Show HN release ships with a default policy that sends long-form drafting to Claude Sonnet 4.7, code samples to DeepSeek DSpark, and fact-check passes to GPT-5 mini. Because Weave runs locally, no request log leaves your machine unless you opt in to a cloud dashboard."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does OpenRouter MCP add that a plain Weave proxy does not?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OpenRouter MCP exposes the same routing as a Model Context Protocol server, which means any agent that speaks MCP (Claude Code, Codex, Cursor, Pi, Continue, Cline, Roo Code) can call it as a tool inside the conversation. Instead of configuring the proxy once at the editor level, the creator asks the agent in natural language which model should draft the next paragraph, and the agent invokes the OpenRouter MCP tool with a model selector argument. This makes routing dynamic and per-paragraph instead of static per-session, and it surfaces the routing choice in the agent's visible reasoning so the writer can audit which model produced which sentences."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which models are worth routing between for Markdown drafting in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 2026 picks, based on published evals and creator-reported results, are: Claude Sonnet 4.7 for tone and rhetorical structure (the LinkedIn opener, the X Articles hook); GPT-5 mini for fact-check passes and citation tightening (cheapest strong model for verification); DeepSeek V4 for code samples, API snippets, and CLI commands (strongest price-per-token for technical content); Kimi K2 for Chinese phrasing when a bilingual post includes CN clauses (Kimi still produces the most natural Simplified Chinese); GLM-4.6 for cost-bounded bulk drafting (lowest cost per token of the major labs). The optimal routing policy depends on what the destination platform rewards - LinkedIn rewards tone, X Articles rewards hook quality, Medium rewards prose density - so the policy should be tuned per destination."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is multi-model routing worth the complexity for a single-author blog?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on volume. For one post a week, a single Claude or GPT-5 subscription is simpler and the cost savings do not pay back the time spent configuring Weave or the OpenRouter MCP tool. For three or more posts a week, the cost savings are real (a 30 percent drop in API spend on a heavy week is several hundred dollars), and the quality lift on the destination-tuned paragraphs is noticeable. The breakeven is roughly 10,000 words a month of published output. Below that, stick with one model; above that, route."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does routing change what md2rich does in the pipeline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No - and that is the point. md2rich operates downstream of the AI drafting step. Once Weave or the OpenRouter MCP tool has produced a Markdown draft you are willing to publish, the conversion from Markdown to the rich-text payload that LinkedIn, X Articles, Medium, Substack, Notion, or Bluesky expects does not need an LLM. md2rich runs entirely in the browser as a static HTML page - no backend, no model, no rate limit, no upload. The same Markdown draft from Claude Sonnet 4.7 produces the same clipboard text/html payload every time, regardless of which upstream model wrote it. Routing varies the upstream, but the conversion is invariant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where should a creator start: Weave, OpenRouter MCP, or neither?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with whichever matches your editor. If you write in Claude Code or Cursor and want zero-friction setup, install Weave as a local proxy and edit a single YAML file to define the routing policy. If you already use an MCP-aware agent and want per-paragraph routing decisions visible in the conversation transcript, install the OpenRouter MCP server and let the agent pick the model each turn. If you are below the 10,000-words-a-month breakeven, skip both and stay with a single Claude or GPT subscription. None of these routing layers replace the conversion step - that is where <a href=\"https://md2rich.com\">md2rich</a> fits, downstream of every routing choice."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">June 30, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Weave &amp; OpenRouter MCP 2026: Markdown Drafting Routing</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">Two launches in the same week - <a href="https://openrouter.ai/blog/announcements/openrouter-mcp-server" class="text-indigo-600 underline">OpenRouter's MCP server</a> on June 25 and <a href="https://github.com/workweave/router" class="text-indigo-600 underline">Weave's smart model router</a> as a Show HN on the same day - put multi-model routing on the desk of every creator who writes Markdown for social platforms. Routing means sending different prompts to different LLMs: Claude for tone, DeepSeek for code, Kimi for Chinese phrasing, GPT-5 for fact-checking, all from a single CLI or editor session. This article explains what each tool actually does, why 2026 is the year routing becomes a creator concern rather than a developer concern, and where the deterministic, non-routed step in the pipeline - converting the final Markdown draft to rich text - fits when the rest of the stack is configurable.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Multi-Model Routing Means in 2026</h2>
+
+        <p>Multi-model routing is the practice of choosing a different LLM per task inside one workflow. The previous best practice was "pick one strong model and use it for everything." That still works for occasional writing, but it leaves money on the table for high-volume creators: Claude Sonnet 4.7 writes the best LinkedIn openers, but it is overkill for a routine code-snippet expansion; DeepSeek V4 writes the cleanest API snippets, but its prose is not as strong as Claude's on a long-form essay; Kimi K2 is the strongest Simplified Chinese model, but it is irrelevant for an English-only post.</p>
+
+        <p>The 2026 generation of routing tools does not just pick a model per session - it picks a model per paragraph, per code block, per fact-check pass, sometimes per sentence. The routing layer sits between the editor (Claude Code, Codex, Cursor, Pi) and the upstream LLM APIs, inspects each outgoing prompt, and rewrites the destination based on a policy file or a tool call from the agent. The creator does not see the routing; the editor does not see the routing; only the routing layer and the API logs know which model produced which sentences.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Weave Router: Local-First Model Proxy</h2>
+
+        <p>Weave is a local HTTP proxy. You install it once, point Claude Code or Codex at it with one environment variable, and Weave intercepts every API call before it leaves your machine. A small YAML policy file declares which provider should answer which kind of prompt:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code># weave.yaml
+routes:
+  - match: { type: prose, word_count_gt: 200 }
+    upstream: anthropic/claude-sonnet-4.7
+  - match: { type: code, language: python }
+    upstream: deepseek/deepseek-chat
+  - match: { type: fact_check }
+    upstream: openai/gpt-5-mini
+  - match: { type: bulk_draft, tone: casual }
+    upstream: zhipu/glm-4.6
+default: anthropic/claude-sonnet-4.7
+</code></pre>
+
+        <p>The June 2026 release ships with that policy as the default - long prose to Claude, code to DeepSeek, fact-check to GPT-5 mini, and casual bulk drafting to GLM-4.6 - so a creator who installs Weave and never edits the YAML gets reasonable routing out of the box. Because Weave runs locally, no request log leaves the machine unless the creator opts into a cloud dashboard; the providers see traffic from the creator's IP, not from a shared proxy pool.</p>
+
+        <p>The proxy model has one obvious limitation: the routing decision is static. The YAML file says "long prose goes to Claude" once at startup, and every long prose prompt for the rest of the session goes to Claude, even if the model briefly returns 429s or the policy would benefit from a one-off exception. Weave's workaround is to expose the proxy on a localhost port that the editor polls for health; if the primary upstream fails, Weave fails over to a configured fallback (GPT-5 mini in the default policy) without the editor noticing.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">OpenRouter MCP Server: Routing as an Agent Tool</h2>
+
+        <p>The OpenRouter MCP server, released June 25, 2026, exposes the same routing capability through the <a href="https://modelcontextprotocol.io" class="text-indigo-600 underline">Model Context Protocol</a>. Where Weave is a proxy the editor does not know about, OpenRouter MCP is a tool the agent invokes from inside the conversation. The creator writes a prompt like "draft the next paragraph in Claude's voice and have GPT-5 fact-check the code sample," and the agent calls <code>openrouter.route</code> with the model selector as an argument.</p>
+
+        <p>The MCP path has a different set of tradeoffs. On the plus side, the routing decision is visible in the agent's transcript - the writer can scroll back through the conversation and see "this paragraph was generated by claude-sonnet-4.7, this code block was generated by deepseek-chat" - which makes auditing which model produced which sentence a normal part of the workflow. The per-paragraph granularity is also native to the MCP path: the agent can decide to switch models mid-conversation based on the evolving prompt, without a static policy file getting in the way.</p>
+
+        <p>On the minus side, the MCP path requires an MCP-aware editor. Claude Code, Codex, Cursor, Pi, Continue, Cline, and Roo Code all speak MCP as of mid-2026; older editors and plain CLI invocations of <code>claude</code> or <code>codex</code> do not. The OpenRouter MCP server is also one more tool to register in the agent's <code>settings.json</code> or <code>.mcp/config.json</code>, and a misconfigured server is silent - the agent falls back to its default model and the writer never learns that routing is off.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why Creators Are Routing Their Markdown Drafts</h2>
+
+        <p>The reason routing matters for creators, not just developers, is that the destination platform rewards different things. LinkedIn rewards an opener that names a tension the reader recognizes in the first sentence; X Articles (the long-form feature inside X) rewards a hook that fits in 280 characters but pulls the reader past the fold; Medium rewards prose density and a slower build; Substack newsletter rewards a personal voice and a clear call-to-action at the bottom; Bluesky long-form rewards brevity and direct claims without the LinkedIn-style rhetorical scaffolding.</p>
+
+        <p>One model cannot write the LinkedIn opener, the X Articles hook, the Medium body, and the Substack close at the same strength. Claude Sonnet 4.7 is best at the LinkedIn opener and the Medium body. GPT-5 mini is best at the X Articles hook because it is ruthlessly concise. Kimi K2 is irrelevant for the English-only destinations but unmatched for a bilingual post. The routing layer is what makes it practical to give each paragraph the model it actually needs, without manually switching editors or copy-pasting between Claude and GPT windows.</p>
+
+        <p>There is also a cost story. A 2,000-word post routed with the Weave default policy costs roughly 30 percent less than the same post drafted entirely with Claude Sonnet 4.7, because the bulk-drafting and fact-check legs go to cheaper models. A 10,000-word monthly output sees the savings add up to several hundred dollars, which pays back the time spent configuring Weave or the OpenRouter MCP tool within a quarter.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Routing Actually Saves (Cost and Latency)</h2>
+
+        <p>The honest numbers, drawn from the Weave Show HN thread and the OpenRouter MCP launch post, look like this for a 2,000-word post with three code samples:</p>
+
+<pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>Leg of pipeline             Model used         Cost     Latency
+-------------------------------------------------------------------
+LinkedIn opener (80 words)  Claude Sonnet 4.7   $0.04    1.2s
+Body paragraph (700 words)  Claude Sonnet 4.7   $0.18    4.8s
+Code sample #1 (40 lines)   DeepSeek V4         $0.01    1.4s
+Code sample #2 (30 lines)   DeepSeek V4         $0.01    1.0s
+Code sample #3 (25 lines)   DeepSeek V4         $0.01    0.9s
+Fact-check pass             GPT-5 mini          $0.02    3.1s
+Closing paragraph           GLM-4.6             $0.01    0.7s
+-------------------------------------------------------------------
+Total routed                                  ~$0.28    ~13s
+Total single-model (Claude)                   ~$0.40    ~14s
+</code></pre>
+
+        <p>The savings are modest in absolute dollars (twelve cents on a draft) but the latency story matters more. Parallel routing - the body paragraph drafting on Claude while the code samples draft on DeepSeek at the same time - cuts wall-clock time by 40-50 percent compared to a single-model serial draft, because the cheap models are not bottlenecked behind the expensive model's queue. For a creator publishing three posts a day, that latency drop is the difference between finishing the day's drafts in three hours and finishing them in five.</p>
+
+        <p>The savings do not appear if the routing is set up wrong. A policy that sends long prose to DeepSeek because DeepSeek is cheaper will save money on the API bill and produce a LinkedIn post that reads like it was written by DeepSeek. The cheap model is not the right model for every leg of the pipeline; routing only works when each leg goes to the model that is actually strongest at that leg.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Limits of Routing: Conversion Is Not Routing</h2>
+
+        <p>Routing is a powerful primitive, but it stops at the upstream LLM. Once the agent has produced a Markdown draft - regardless of which model wrote which sentence - the next step is converting that Markdown to the rich-text payload that LinkedIn, X Articles, Medium, Substack, Notion, or Bluesky expects when the creator presses paste.</p>
+
+        <p>That conversion is not a routing problem. There is no model to choose, no trade-off between quality and cost, no upstream API to call. The conversion is a deterministic function: <code>Markdown -&gt; HTML -&gt; clipboard text/html -&gt; paste</code>. The same input Markdown always produces the same output HTML. The clipboard payload is always <code>text/html</code>. The destination platform always accepts the paste.</p>
+
+        <p>This is the part of the pipeline where adding an LLM makes things worse, not better. If the conversion step routes the Markdown through Claude or GPT-5 to "polish" the rich text, the polished output is no longer deterministic: the same Markdown can produce three slightly different rich-text payloads on three runs, and small formatting differences (a bold that should have been italic, a code block that should have been a list) start showing up in published posts. The reliability story Caliper introduced last week for the drafting step applies in reverse to the conversion step: the conversion should be the part of the pipeline that is already reliable.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">How md2rich Fits in a Multi-Model Pipeline</h2>
+
+        <p><a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> is the deterministic, non-routed step. It runs entirely in the browser as a static HTML page - no backend, no model, no rate limit, no upload. The creator pastes the Markdown draft (which may have been routed through Claude, DeepSeek, GPT-5, and Kimi on the way out of the agent) into the editor, picks the destination platform from a dropdown if md2rich needs to know (LinkedIn, Medium, Notion, Substack each have small quirks in how they render lists and code blocks), and presses convert. md2rich produces the <code>text/html</code> clipboard payload and the creator pastes it into the destination editor.</p>
+
+        <p>The interesting property of this setup is that the routing layer (Weave or OpenRouter MCP) can change every week - the creator can swap Claude Sonnet 4.7 for Claude Sonnet 5 when Anthropic ships it, add a new model to the policy, or switch from Weave to the OpenRouter MCP server without touching the conversion step. The conversion step is invariant. The Markdown draft from any model goes through the same deterministic converter, produces the same rich text, and pastes cleanly into the destination platform. Routing varies the upstream; the conversion is invariant.</p>
+
+        <p>This is also where the privacy-first design of md2rich matters. Weave runs locally, so the routed prompts do not leave the creator's machine. md2rich runs locally, so the Markdown draft never leaves the browser. The whole pipeline - from the editor to the routing layer to the conversion step - can run without any third party seeing the content of the post. This is the only configuration in which a creator writing about a sensitive topic (a personal essay, an internal postmortem, a regulated industry disclosure) can use multi-model routing without worrying that the model provider is logging the draft.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Closing: Pick the Routing Layer, Lock the Conversion Layer</h2>
+
+        <p>The 2026 lesson is that AI drafting is a moving target, and the only way to keep up is to make the routing layer configurable. Weave and the OpenRouter MCP server are the first two tools that put routing in reach of creators, not just developers, and the cost-quality trade-off they enable is real for any creator publishing more than 10,000 words a month.</p>
+
+        <p>The conversion step is the part of the pipeline where the routing question does not apply. Once the AI agent has produced a Markdown draft the writer is willing to publish, the conversion does not need an LLM. It needs a deterministic function. This is exactly what md2rich is: a single static HTML page that takes Markdown, produces rich text, and copies it to the clipboard as <code>text/html</code>. No backend, no model, no rate limit, no upload. The same input Markdown always produces the same output HTML. The clipboard payload is always <code>text/html</code>. The destination platform always accepts the paste. The conversion reliability is 100 percent by construction, which means the only variable part of the pipeline is the AI agent that produced the draft - and that is the part the routing layer is responsible for.</p>
+
+        <p>Pick the routing layer that fits the editor. Lock the conversion layer with md2rich. The pipeline is configurable where it should be and deterministic where it must be.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-8">
+          <p class="text-indigo-800 font-semibold text-lg">Try md2rich</p>
+          <p class="text-indigo-700 mt-1">Convert Markdown to rich text instantly. No signup. No uploads. No LLM in the loop. The deterministic piece of your AI-assisted pipeline. Works for Medium, LinkedIn, X Articles, Substack, Notion, and more.</p>
+          <a href="https://md2rich.com" class="inline-block mt-3 bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Start converting &rarr;</a>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-2">📚 Related Articles</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="/blog/caliper-ai-agent-reliability-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Caliper 2026 AI Agent Reliability</a>
+          <a href="/blog/satteri-rust-markdown-pipeline-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Satteri Rust Markdown Pipeline</a>
+          <a href="/blog/markdown-tool-landscape-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">2026 Markdown Tool Landscape</a>
+          <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Client-Side vs Cloud Converters</a>
+          <a href="/blog/markdown-to-x-articles-en" class="inline-block bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 text-sm px-3 py-1.5 rounded-full border border-gray-200 hover:border-indigo-300 transition">Markdown to X Articles</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2026 md2rich. All rights reserved. No data stored. No uploads. Privacy by design.</p>
+  </footer>
+</body>
+</html>
