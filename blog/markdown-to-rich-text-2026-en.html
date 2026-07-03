@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to Rich Text 2026: A Cross-Platform Guide</title>
+  <meta name="description" content="Convert Markdown to rich text for X, LinkedIn, Medium, Notion, and Substack. A 2026 workflow for writers who draft in plain text and publish everywhere.">
+  <meta name="keywords" content="markdown to rich text, md to rich text, markdown rich text converter, paste markdown as rich text, client-side markdown converter, md2rich, LinkedIn rich text from Markdown, X Articles Markdown, Medium Markdown paste, Notion Markdown import, Substack Markdown">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-rich-text-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-rich-text-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-rich-text-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to Rich Text 2026: A Cross-Platform Guide">
+  <meta property="og:description" content="Convert Markdown to rich text for X, LinkedIn, Medium, Notion, and Substack. A 2026 workflow for writers who draft in plain text and publish everywhere.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-rich-text-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Markdown to Rich Text 2026: A Cross-Platform Guide",
+        "description": "Convert Markdown to rich text for X, LinkedIn, Medium, Notion, and Substack. A 2026 workflow for writers who draft in plain text and publish everywhere.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-07-03",
+        "dateModified": "2026-07-03",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/markdown-to-rich-text-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Markdown to Rich Text 2026: A Cross-Platform Guide", "item": "https://md2rich.com/blog/markdown-to-rich-text-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does 'Markdown to rich text' actually mean in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It means converting a document written in Markdown (headings, bold, italic, links, lists, code blocks, blockquotes, tables) into the rich-text format a specific platform expects so you can paste it with formatting intact. In 2026 every major social and publishing platform - X Articles, LinkedIn, Medium, Notion, Substack, Ghost, Bluesky long-form, Mastodon - accepts some form of rich text, but none of them natively parse Markdown syntax the way a static site generator does. The conversion step is what bridges the gap. 'Rich text' as a destination format varies: X uses a subset of HTML inside an Article body, LinkedIn's editor accepts a limited inline-HTML subset, Medium interprets Markdown when you paste, and Notion's API accepts a block-based payload. A good Markdown-to-rich-text converter in 2026 produces platform-specific output that preserves the formatting you wrote in your source."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is the conversion step still necessary in 2026 if every platform has a paste handler?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because every platform's paste handler is partial. Pasting raw Markdown into LinkedIn's editor leaves the asterisks and hash signs visible; pasting into X Articles shows literal '#' characters; pasting into Notion imports some syntax but treats headings inconsistently. Cloud-based converters like markdown-it or marked on a remote server solve part of this, but they upload your draft to a third party - a non-starter for drafts that contain unpublished reporting, source code, or anything under NDA. A client-side converter runs the same Markdown parser in your browser, so the document never leaves your machine, and the output is tailored to the platform's accepted rich-text format. The conversion step is necessary because the gap between 'what you wrote' and 'what the platform renders' is real, and a deliberate, repeatable conversion pipeline is the only way to close it consistently across platforms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which platform is the easiest to convert Markdown to rich text for in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Medium is the easiest. Medium's editor accepts pasted Markdown directly - it parses headings, bold, italic, links, lists, and code blocks without any preprocessing, and it shows a clean preview of the rendered result before you publish. Notion is the second easiest if you use Notion's import flow (paste Markdown into a new page, Notion's parser handles headings, lists, code, and quotes) but the parsing of tables and nested lists is inconsistent. LinkedIn requires the most care - its editor only accepts a narrow inline-HTML subset (bold, italic, links, line breaks) and discards headings, tables, and code blocks, so you need a converter that flattens headings into bold and converts code to inline monospace. X Articles accepts a richer HTML subset than LinkedIn and renders headings, lists, and inline formatting correctly, but you cannot use block-level code fences. Substack parses Markdown for the body of the email but strips most inline HTML, so a converter that targets Substack needs to inline-stretch everything into paragraph form."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I use a client-side or a server-side Markdown to rich text converter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Client-side, for most individual creators in 2026. A server-side converter (an API like markdown-it over HTTP, or a hosted service) uploads your draft to a third party every time you convert. For a daily publishing workflow that means your drafts - including unpublished work, source material, and anything sensitive - leave your machine on every paste. Client-side converters run the Markdown parser in your browser using JavaScript, so the document is parsed and converted without ever making a network request. The trade-off is feature scope: a client-side converter cannot use server-side rendering for tables or use LLM-driven rewrite steps. For pure Markdown-to-rich-text conversion, client-side is fast, private, and offline-capable; for an end-to-end publishing pipeline that includes AI rewriting, fact-checking, or platform-specific optimization, you need a hybrid where the conversion stays client-side and the AI step happens elsewhere."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does md2rich fit into a Markdown to rich text workflow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich is the conversion layer in a Markdown-first publishing workflow. You write the draft in plain Markdown using whatever editor you prefer - iA Writer, Typora, Obsidian, VS Code, even a plain text file - and when the draft is ready to publish, you paste the raw Markdown into md2rich.com, choose the target platform (X Articles, LinkedIn, Medium, Notion, Substack, plain HTML, or copy-ready for any custom CMS), and get back rich text that preserves the formatting you wrote. The conversion runs entirely in your browser, so the draft never leaves your machine. md2rich is not a publishing tool, an editor, or an AI rewriter - it is the bridge between 'what you wrote in Markdown' and 'what the platform will render as rich text.' For a workflow that includes AI-assisted drafting, md2rich sits after the AI step (so the model's Markdown output is what gets converted), and for a workflow that includes client-side analytics or scheduling, md2rich sits before those steps (so the conversion happens once and the output is what gets distributed)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">July 3, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Markdown to Rich Text 2026: A Cross-Platform Guide</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">A writer in 2026 who drafts in Markdown has a problem the Markdown specification never intended to solve: every platform they publish to expects a different rich-text format. X Articles want a subset of HTML, LinkedIn wants inline tags only, Medium parses Markdown directly, Notion wants block-based JSON, Substack flattens inline HTML into paragraphs, and a personal blog or CMS wants whatever the static-site generator is configured for. This guide walks through the conversion step that bridges the gap, the platforms that need the most care, and the workflow that makes Markdown-to-rich-text conversion fast, repeatable, and private.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why Markdown to Rich Text Conversion Is Still Necessary in 2026</h2>
+
+        <p>Markdown won the writing-format war a decade ago. Every static-site generator, every technical writer, every note-taking app, and every LLM training pipeline speaks Markdown. But publishing platforms did not converge on a single rich-text format. LinkedIn's editor accepts a narrow inline-HTML subset. X Articles accepts a richer HTML subset but discards Markdown syntax. Medium's editor parses Markdown directly, so pasting raw Markdown works, but Medium's preview only shows the rendered version - you cannot edit the Markdown afterward without re-pasting. Notion's import handles headings and lists but treats tables and nested lists inconsistently. Substack parses Markdown for the body but strips most inline HTML, so bold, italic, and links need to be in Markdown form to survive the import.</p>
+
+        <p>The conversion step is what bridges the gap between the draft you wrote and the format the platform accepts. For a writer who publishes to two or more platforms, the conversion is not optional - it is the difference between a polished post and one where the bold is missing in LinkedIn, the headings are literal hash signs in X Articles, and the code blocks are visible asterisks in Substack. The conversion is also the place where the privacy story lives: a server-side converter uploads the draft to a third party on every paste, while a client-side converter parses the Markdown in the browser and never makes a network request. For most individual creators in 2026, client-side is the right default.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Core Markdown to Rich Text Pipeline</h2>
+
+        <p>A repeatable Markdown-to-rich-text pipeline in 2026 has four steps: write in plain Markdown using the editor you prefer, run the draft through a client-side converter, paste the converted rich text into the target platform, and verify the rendered output before publishing. The first step is the one writers already know. The second is where the conversion happens. The third is the platform-specific paste. The fourth is the only step that catches edge cases - a missing link, a misaligned table, an inline code block that the platform dropped.</p>
+
+        <p>The conversion step is platform-specific. A converter that targets X Articles produces inline HTML with bold tags, italic tags, line breaks, and link tags - no headings, no tables, no block-level code. A converter that targets LinkedIn produces a narrower subset: bold, italic, links, and line breaks only. A converter that targets Medium produces Markdown - because Medium parses Markdown natively - but with the editor-friendly adjustments like line breaks and inline code that render correctly in Medium's preview. A converter that targets Notion produces block-based JSON that the Notion API accepts. A converter that targets a personal blog or CMS produces the full HTML the site expects, with headings, tables, code blocks, and blockquotes preserved.</p>
+
+        <p>For a writer publishing to multiple platforms, the converter needs to support all of these targets, or the writer is back to hand-tuning the output for each platform, which is the problem the conversion step was supposed to solve.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Platform-Specific Conversion Targets</h2>
+
+        <p>Each platform has a different accepted rich-text format, and the differences matter more than the similarities. The table below summarizes what each platform accepts and what the converter needs to produce.</p>
+
+        <p><strong>X Articles</strong> accepts inline HTML (bold, italic, links, line breaks) plus block-level headings, lists, and code fences. A Markdown-to-rich-text converter targeting X Articles needs to preserve headings, lists, inline formatting, and links, and convert code blocks to inline monospace because block-level code fences are not rendered.</p>
+
+        <p><strong>LinkedIn</strong> accepts a narrower inline-HTML subset: bold, italic, links, and line breaks. Headings need to be flattened into bold paragraphs. Tables need to be flattened into lists or paragraphs. Code blocks need to be inlined as monospace. The converter needs to be careful to produce only the tags LinkedIn's editor accepts, or the paste will silently strip the unsupported tags and the result will look incomplete.</p>
+
+        <p><strong>Medium</strong> parses Markdown directly. A converter targeting Medium can output Markdown with minor adjustments - line breaks, inline code formatting, and list spacing - and Medium will render it correctly. The advantage is that the draft's source Markdown is preserved, so re-editing the Medium draft later (by re-pasting updated Markdown) is straightforward. The disadvantage is that Medium's preview only shows the rendered version, so any Markdown syntax that does not parse is invisible until the post is published.</p>
+
+        <p><strong>Notion</strong> accepts Markdown pasted into a new page, and its import parser handles headings, lists, code blocks, and blockquotes. Tables and nested lists are inconsistent. For a writer who wants more control, Notion's API accepts block-based JSON, which a converter can produce directly. The trade-off is complexity: a JSON converter is more work to build, but the output is predictable and can be re-imported cleanly.</p>
+
+        <p><strong>Substack</strong> parses Markdown for the body of the email and the post, but strips most inline HTML. Bold, italic, and links need to be in Markdown form (asterisks, underscores, square brackets). A converter targeting Substack needs to inline-stretch everything into paragraph form and avoid inline HTML tags, because the Substack parser will drop them.</p>
+
+        <p><strong>Bluesky long-form</strong> and <strong>Mastodon</strong> accept a limited Markdown subset - paragraphs, line breaks, links, and inline formatting. Headings are typically rendered as bold paragraphs. A converter targeting these platforms needs to flatten headings and avoid block-level elements.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Markdown to Rich Text: A Worked Example</h2>
+
+        <p>Consider this draft, written in any plain-text editor:</p>
+
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code># Why Markdown Still Wins in 2026
+
+Markdown is the **lingua franca** of technical writing. Every static-site
+generator, every note-taking app, and every LLM speaks it.
+
+- Draft once
+- Convert per platform
+- Publish everywhere
+
+The conversion step is the bridge. Tools like [md2rich](https://md2rich.com)
+handle it client-side, so the draft never leaves your machine.</code></pre>
+
+        <p>For <strong>X Articles</strong>, the converter needs to produce inline HTML with bold tags, line breaks, and a link. The output looks like:</p>
+
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>Why Markdown Still Wins in 2026
+
+Markdown is the &lt;b&gt;lingua franca&lt;/b&gt; of technical writing.
+Every static-site generator, every note-taking app, and every LLM speaks it.
+
+- Draft once
+- Convert per platform
+- Publish everywhere
+
+The conversion step is the bridge. Tools like &lt;a href="https://md2rich.com"&gt;md2rich&lt;/a&gt; handle it client-side, so the draft never leaves your machine.</code></pre>
+
+        <p>For <strong>LinkedIn</strong>, the converter flattens the heading into a bold paragraph, removes the list markers, and keeps the inline bold and link:</p>
+
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>&lt;b&gt;Why Markdown Still Wins in 2026&lt;/b&gt;
+
+Markdown is the &lt;b&gt;lingua franca&lt;/b&gt; of technical writing.
+Every static-site generator, every note-taking app, and every LLM speaks it.
+
+Draft once. Convert per platform. Publish everywhere.
+
+The conversion step is the bridge. Tools like &lt;a href="https://md2rich.com"&gt;md2rich&lt;/a&gt; handle it client-side, so the draft never leaves your machine.</code></pre>
+
+        <p>For <strong>Medium</strong>, the converter can output the original Markdown almost as-is, with minor adjustments for Medium's parser:</p>
+
+        <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code># Why Markdown Still Wins in 2026
+
+Markdown is the **lingua franca** of technical writing. Every static-site
+generator, every note-taking app, and every LLM speaks it.
+
+- Draft once
+- Convert per platform
+- Publish everywhere
+
+The conversion step is the bridge. Tools like [md2rich](https://md2rich.com)
+handle it client-side, so the draft never leaves your machine.</code></pre>
+
+        <p>For <strong>Notion</strong>, the converter can produce block-based JSON that the Notion API accepts, or output Markdown that Notion's import parser handles. The block-based JSON is more predictable but more complex to build; the Markdown is simpler but has the table and nested-list quirks noted above.</p>
+
+        <p>For <strong>Substack</strong>, the converter strips the inline HTML and keeps the Markdown form of bold, links, and lists. Substack's parser will render the Markdown correctly, and the post will look clean in both the email and the web view.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Client-Side vs Server-Side Conversion</h2>
+
+        <p>The choice between client-side and server-side conversion is a privacy and performance decision, not a feature decision. A server-side converter uploads the draft to a remote service on every paste, parses the Markdown, and returns the rich text. The advantages are that the server can use larger Markdown parsers, support more platforms, and integrate with AI services for rewriting. The disadvantages are that the draft leaves your machine, the conversion is rate-limited, and the service has access to every draft you convert.</p>
+
+        <p>A client-side converter parses the Markdown in the browser using JavaScript. The advantages are that the draft never leaves your machine, the conversion is instant, and the converter works offline. The disadvantages are that the converter is limited to the JavaScript Markdown parsers available in the browser, and the converter cannot integrate with server-side AI services. For pure Markdown-to-rich-text conversion, client-side is fast, private, and offline-capable.</p>
+
+        <p>For a 2026 publishing workflow that includes AI-assisted drafting, the right architecture is a hybrid: the AI step happens server-side (or via a local LLM), the output is Markdown, and the conversion step happens client-side. This way, the AI service sees the draft, but the conversion service does not. The conversion is the step that has the most access to the final platform's rich-text format, and it is the step that should run on your machine.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Conversion Step in a Multi-Model AI Pipeline</h2>
+
+        <p>A 2026 writing workflow that uses AI assistance - for drafting, fact-checking, or rewriting - produces Markdown as the intermediate format. The AI model writes Markdown, the writer reviews the Markdown, and the Markdown is what gets converted to rich text for the target platform. The conversion step is the bridge between the AI's output and the platform's input.</p>
+
+        <p>When the AI pipeline uses multiple models (Claude for tone, GPT-5 mini for fact-checking, DeepSeek for code snippets, Kimi for translations), each model produces Markdown, and the writer stitches the outputs together. The conversion step then takes the stitched Markdown and produces the platform-specific rich text. The conversion is the last step in the pipeline, and it is the step that determines what the published post looks like.</p>
+
+        <p>For a workflow that uses AI agents to draft and post directly (via the X hosted MCP server or the OpenRouter MCP routing layer), the conversion step still exists - it is the step that converts the agent's Markdown output to the platform's rich text format. The agent writes Markdown, the conversion step runs, and the platform-specific rich text is what the agent posts. Skipping the conversion step means the agent posts raw Markdown, which renders as visible syntax characters on platforms that do not parse Markdown.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Privacy, Offline, and the Single-Page Web App Advantage</h2>
+
+        <p>A client-side Markdown converter that runs as a single-page web app - HTML, CSS, and JavaScript served from a static host - has three advantages that matter for daily publishing in 2026. First, the converter works offline once the page is loaded, so a writer on a plane or in a coffee shop with bad Wi-Fi can still convert drafts. Second, the converter leaves no trace on a remote server, so drafts that contain unpublished reporting, source material, or anything sensitive never leave the machine. Third, the converter is auditable - the JavaScript that parses the Markdown is the JavaScript that runs, with no server-side logic to trust.</p>
+
+        <p>The single-page web app architecture also makes the converter portable. A writer can save the page locally, run it from a USB drive, or host it on a personal server. The conversion is the same regardless of where the page is served from, because the parsing happens in the browser. This is materially different from a server-side converter, where the conversion logic is on a remote machine the writer cannot audit or run locally.</p>
+
+        <p>For a 2026 workflow that values privacy, the client-side single-page web app is the right default. <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> is built on this principle: the conversion runs in the browser, the draft never leaves the machine, and the converter is a single HTML page that can be saved and used offline.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Where the Conversion Step Fails in 2026</h2>
+
+        <p>The conversion step is not perfect. Three edge cases consistently trip up Markdown-to-rich-text converters in 2026. First, nested lists. Some platforms parse nested lists correctly (Medium, Notion's import) and some flatten them (LinkedIn, X Articles). A converter that produces nested HTML lists for LinkedIn will see the lists flattened by the LinkedIn editor, and the result will look like a single-level list. Second, tables. LinkedIn and X Articles do not support tables in their editors, so any Markdown table in the source becomes a visual mess. A converter needs to flatten tables into lists or paragraphs for these platforms. Third, code blocks. Block-level code fences are supported by X Articles but not by LinkedIn or Substack. A converter targeting LinkedIn or Substack needs to inline code as monospace text, which loses the visual distinction but preserves the content.</p>
+
+        <p>The conversion step also fails when the Markdown source is ambiguous. A line break in Markdown can be a soft break (rendered as a space) or a hard break (rendered as a new line), depending on the parser's configuration. A converter that treats all line breaks as soft breaks will lose the hard breaks in the source. A converter that treats all line breaks as hard breaks will produce double-spaced paragraphs on platforms that expect single spacing. The right behavior depends on the target platform, and a good converter lets the writer choose.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Markdown to Rich Text Workflow in Practice</h2>
+
+        <p>For a writer who publishes to two or more platforms in 2026, the workflow looks like this. First, write the draft in plain Markdown using the editor you prefer. Second, review the draft for platform-specific quirks - tables for LinkedIn, code blocks for Substack, nested lists for X Articles. Third, run the draft through a client-side converter that targets each platform. Fourth, paste the converted rich text into the platform's editor and verify the rendered output. Fifth, publish. The conversion step is steps three and four, and it is the step that makes the difference between a polished post and one where the formatting is broken.</p>
+
+        <p>The workflow is fast once the conversion step is dialed in. A writer who has a client-side converter that supports all the target platforms can convert a draft in seconds, paste the output, verify, and publish. The bottleneck is not the conversion - it is the writing and the editing. The conversion step is the bridge that lets the writing happen in plain Markdown and the publishing happen on the platform.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Future of Markdown to Rich Text</h2>
+
+        <p>The conversion step will not disappear in 2026 or 2027. Platforms will continue to evolve their rich-text formats, and the gap between what Markdown expresses and what platforms render will persist. AI-assisted writing will make the gap wider, not narrower - models produce Markdown at scale, and the volume of drafts that need conversion is growing. The right architecture is a client-side converter that runs in the browser, supports multiple target platforms, and stays out of the way of the writer.</p>
+
+        <p>The writer's job is to write. The converter's job is to bridge the gap. The platform's job is to render. When the three are decoupled, the writing flows.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Try md2rich for Your Next Cross-Platform Post</h2>
+
+        <p><a href="https://md2rich.com" class="text-indigo-600 underline font-semibold">md2rich</a> is a free, client-side Markdown-to-rich-text converter that runs entirely in your browser. Paste your Markdown, pick a target platform (X Articles, LinkedIn, Medium, Notion, Substack, or plain HTML), and get back rich text that preserves your formatting. No upload, no account, no tracking. The conversion is instant, the converter works offline once loaded, and the output is auditable. For a writer who publishes to multiple platforms in 2026, md2rich is the bridge between the draft and the publish.</p>
+
+        <p class="text-gray-600 italic">This article is part of a series on Markdown-first publishing workflows in 2026. For the AI-assisted angle, see <a href="/blog/caliper-ai-agent-reliability-2026-en" class="text-indigo-600 underline">Caliper AI agent reliability for Markdown creators</a> and <a href="/blog/weave-openrouter-mcp-markdown-routing-2026-en" class="text-indigo-600 underline">Weave and OpenRouter MCP for Markdown routing</a>. For the platform-specific guides, see <a href="/blog/markdown-to-linkedin-en" class="text-indigo-600 underline">Markdown to LinkedIn</a>, <a href="/blog/markdown-to-x-articles-en" class="text-indigo-600 underline">Markdown to X Articles</a>, <a href="/blog/markdown-to-medium-2026-en" class="text-indigo-600 underline">Markdown to Medium</a>, <a href="/blog/markdown-to-notion-workflow-en" class="text-indigo-600 underline">Markdown to Notion</a>, and <a href="/blog/markdown-to-substack-en" class="text-indigo-600 underline">Markdown to Substack</a>.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex justify-between">
+      <span>&copy; 2026 md2rich. A privacy-first Markdown converter.</span>
+      <a href="/" class="text-indigo-600 hover:underline">Try md2rich &rarr;</a>
+    </div>
+  </footer>
+</body>
+</html>
