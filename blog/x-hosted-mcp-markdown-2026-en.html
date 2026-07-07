@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X Hosted MCP for Markdown Creators 2026</title>
+  <meta name="description" content="X launched a hosted MCP server on July 1, 2026. AI agents can now pull X posts as Markdown. What it means for writers using md2rich to publish.">
+  <meta name="keywords" content="X MCP server, hosted MCP, Model Context Protocol X, X API for AI agents, Markdown to X, X Articles, md2rich, client-side Markdown converter, AI agent publishing">
+  <link rel="canonical" href="https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="X Hosted MCP for Markdown Creators 2026">
+  <meta property="og:description" content="X launched a hosted MCP server on July 1, 2026. AI agents can now pull X posts as Markdown. What it means for writers using md2rich to publish.">
+  <meta property="og:url" content="https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "X Hosted MCP for Markdown Creators 2026",
+        "description": "X launched a hosted MCP server on July 1, 2026. AI agents can now pull X posts as Markdown. What it means for writers using md2rich to publish.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-07-02",
+        "dateModified": "2026-07-02",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "X Hosted MCP for Markdown Creators 2026", "item": "https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is X's hosted MCP server and what does it do for Markdown creators?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "X's hosted MCP (Model Context Protocol) server, announced on July 1, 2026, is an officially operated endpoint that lets AI agents call the X API using the standardized MCP protocol instead of writing raw HTTP code. For a Markdown creator, the practical effect is that any agent running in Claude Code, Codex, Cursor, or Cline can now pull your draft post as Markdown, post a thread to X, reply to comments, and search for related conversations without you ever opening the X developer portal or managing bearer tokens yourself. The hosted part means X runs the infrastructure; you bring the agent. The Markdown part matters because MCP tool descriptions and agent memory both flow as text - and Markdown is the dominant interchange format between agents and humans in 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does X hosted MCP differ from the older OpenRouter MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "OpenRouter's MCP server (covered earlier on this blog) routes prompts between large language models - Claude, GPT-5, DeepSeek, Kimi - so the same draft can be rewritten by different models depending on the leg of the pipeline. X's hosted MCP server routes a different boundary entirely: between an AI agent and the X platform itself. One is about choosing which LLM drafts your Markdown; the other is about which platform the agent posts the finished Markdown to. They are complementary, not competing. A realistic 2026 workflow uses OpenRouter MCP to pick the right model for tone or fact-checking, then X hosted MCP to push the final rich-text payload to a thread or an X Article. The two protocols both ride on MCP, but they solve different problems."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to share my X credentials with an AI agent to use hosted MCP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No - and that is the main reason X bothered to ship a hosted MCP server rather than just publishing another API client library. Authentication is delegated to X's own OAuth flow; the agent receives a scoped token that you approve once in a browser, and the token never lives in the agent's prompt context or its memory file. This is materially safer than pasting a bearer token into a Claude Code session or storing it in a .env file that gets committed by accident. The trade-off is that X controls the token lifecycle and can revoke it, and you still have to trust the agent not to do destructive actions (delete a draft, post a draft you did not mean to publish) within whatever scopes you granted."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does a client-side Markdown converter like md2rich fit in an X MCP workflow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "md2rich sits at the rendering step the agent cannot do for you. The agent can draft, revise, and post via MCP, but the rich-text payload X Articles and LinkedIn accept is not Markdown - it is a serialized HTML fragment with specific quirks for code blocks, tables, and nested lists. Most agents emit a Markdown draft because that is what they write well, and most platforms reject raw Markdown. The conversion step is yours, and it should stay client-side: your draft never leaves your browser, you see exactly what the platform will receive before you click post, and there is no third-party server that could log the unpublished text. md2rich's role is to be the deterministic, inspectable bridge between the agent's Markdown output and the platform's rich-text input - and the bridge runs entirely in your tab."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is X hosted MCP free to use in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As of the July 1, 2026 launch, X's hosted MCP server is offered at no additional cost beyond the X API rate limits that already apply to your developer account. Free-tier developer accounts get a lower monthly call budget than paid X API access, and rate limits reset on the same window as the existing X API v2 plan. There is no separate MCP subscription. The cost you should plan for is the LLM usage on the agent side: every tool call the agent makes through X hosted MCP still consumes tokens on whatever model you are routing through (Claude, GPT-5, DeepSeek, etc.), and those tokens are billed by your LLM provider regardless of whether MCP itself is free."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">July 2, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">X Hosted MCP for Markdown Creators 2026</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">On July 1, 2026, X (formerly Twitter) shipped a hosted MCP server that lets any AI agent - Claude Code, Codex, Cursor, Cline, Roo Code - call the X API through the standardized Model Context Protocol instead of hand-rolled HTTP code. For a creator who drafts in Markdown, the practical question is not what the protocol is. It is what the agent can now do with your draft that you used to do by hand: pull a thread as Markdown, post a finished piece to an X Article, reply to comments in your voice, search for related conversations before you publish. This article walks through what X hosted MCP actually changes for a Markdown-first publishing workflow, how it relates to the <a href="/blog/weave-openrouter-mcp-markdown-routing-2026-en" class="text-indigo-600 underline">OpenRouter MCP routing layer</a> we covered earlier this week, and where a client-side converter like <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> still has to live in the pipeline.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What X Hosted MCP Actually Does</h2>
+
+        <p>The Model Context Protocol is the standardized wire format Anthropic open-sourced in late 2024 and that has become the default way agents talk to tools in 2026. Instead of writing a custom integration for every API, the agent speaks MCP and the tool exposes its capabilities as a list of typed functions. X's hosted MCP server exposes the X API v2 surface - post a tweet, post a thread, post an X Article, search, fetch a thread by ID, reply, like, retweet - as MCP tools, and X runs the infrastructure that backs them.</p>
+
+        <p>For a Markdown creator, the practical change is that the agent can now read and write X on your behalf without you ever opening the X developer portal. You approve the connection once in a browser, the agent gets a scoped OAuth token, and from that point every tool call the agent makes goes through X's hosted endpoint. You do not paste a bearer token into a Claude Code session. You do not store a key in a .env file that might get committed. X handles the token lifecycle, the rate limits, and the request signing.</p>
+
+        <p>The Markdown angle matters because MCP tool descriptions and agent memory both flow as text. When an agent drafts a thread, it writes Markdown. When it fetches a thread you want to repurpose, the response is text that an LLM can rewrite as Markdown. Markdown is the lingua franca between agents and humans in 2026, and X's hosted MCP server was designed to preserve that - the post body sent over MCP is Markdown, not a structured rich-text payload, and the rendering to X's accepted rich-text format happens on X's side.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">X Hosted MCP vs OpenRouter MCP: Different Problems, Same Protocol</h2>
+
+        <p>Readers who saw our <a href="/blog/weave-openrouter-mcp-markdown-routing-2026-en" class="text-indigo-600 underline">Weave and OpenRouter MCP coverage</a> on June 30 will recognize the protocol name but the boundary being crossed is different. OpenRouter MCP routes prompts between large language models - Claude for tone, GPT-5 mini for fact-checking, DeepSeek for code snippets, Kimi for Chinese-language rewrites. The question it answers is "which model should write this part of my draft?" X hosted MCP routes between an agent and the X platform itself. The question it answers is "how does the agent's finished draft get onto X?"</p>
+
+        <p>The two protocols are complementary, not competing. A realistic 2026 workflow uses OpenRouter MCP to pick the right model for each leg of a draft, then X hosted MCP to push the final rich-text payload to a thread or an X Article. The output of the OpenRouter stage is still Markdown - that is the format LLMs write best. The output of the X hosted MCP stage is a posted status, and the platform-side rendering handles the conversion to whatever rich-text format the X article editor accepts. The conversion that has to happen in your browser is the one between Markdown and the rich-text format you paste into X Articles' editor manually - which is exactly the conversion <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> was built for.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">A Realistic X MCP Publishing Workflow in 2026</h2>
+
+        <p>Here is how a Markdown-first creator uses X hosted MCP in practice. The agent runs locally in your editor; the LLM is whatever you routed through OpenRouter MCP for the current draft; the conversion step is client-side and invisible to the agent.</p>
+
+        <p><strong>Step 1: Draft as Markdown.</strong> You write the post in your editor of choice - Obsidian, iA Writer, VS Code, Zettlr, or the md2rich editor at <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>. The draft is plain text with Markdown formatting. The agent never sees the rich-text version.</p>
+
+        <p><strong>Step 2: Ask the agent to draft a thread.</strong> In Claude Code (or Codex, Cursor, Cline), you say: "Take this Markdown draft, split it into a 7-tweet thread, hook on tweet 1, CTA on tweet 7, voice matches my last 20 posts." The agent uses OpenRouter MCP behind the scenes to route the voice-matching and the CTA generation to whichever model fits each leg. The output is a Markdown file with seven sections.</p>
+
+        <p><strong>Step 3: Ask the agent to post the thread via X hosted MCP.</strong> You say: "Post the seven tweets as a thread to @yourhandle, scheduled for 9am Pacific tomorrow." The agent calls X hosted MCP's <code>post_thread</code> tool. X renders the Markdown to rich-text on its side. You get a notification when the thread goes live.</p>
+
+        <p><strong>Step 4: Promote the thread to an X Article.</strong> You say: "Pull the thread I just posted, expand each tweet into a paragraph, add the headers and code blocks from the original draft, post as an X Article." The agent uses X hosted MCP's <code>fetch_thread</code> and <code>post_article</code> tools. The expanded Markdown gets posted as an X Article. The rich-text rendering happens on X's side.</p>
+
+        <p><strong>Step 5: Manually polish in md2rich before cross-posting to LinkedIn and Medium.</strong> The same Markdown draft, expanded for the X Article, is also the right starting point for a LinkedIn post and a Medium article. But neither LinkedIn nor Medium accept raw Markdown. You open the draft in <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>, click "Copy rich text," and paste into LinkedIn's composer or Medium's editor. The conversion happens entirely in your browser; nothing is uploaded.</p>
+
+        <p>This workflow keeps three boundaries clear: model choice (OpenRouter MCP), platform publishing (X hosted MCP), and rich-text rendering for platforms that do not accept Markdown (your browser via md2rich). Each step is inspectable, each tool call is reversible, and the Markdown source is the single source of truth across all three platforms.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why the Conversion Step Has to Stay Client-Side</h2>
+
+        <p>The temptation when an agent can post directly via X hosted MCP is to skip the manual conversion step and let the agent handle everything end-to-end. For X Articles that works because X renders Markdown to rich-text server-side. For LinkedIn, Medium, Substack, Bluesky long-form, and Notion, it does not - those platforms reject raw Markdown or render it inconsistently, and the agent cannot paste rich-text on your behalf because paste requires browser DOM access the agent does not have.</p>
+
+        <p>That gap is exactly where a client-side converter earns its place. The agent does what agents are good at - drafting, revising, routing between models, posting to platforms that expose MCP - and <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a> does what browsers are good at - rendering Markdown to the specific rich-text payload each platform accepts, in your tab, with no third-party server in the loop. The agent cannot log what it converts. The converter does not log what it converts. The draft stays yours until you click post.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What X Hosted MCP Does Not Solve</h2>
+
+        <p>Three things X hosted MCP deliberately does not address, and where a Markdown creator still needs a separate tool:</p>
+
+        <p><strong>Cross-platform syndication.</strong> X hosted MCP posts to X. It does not post to LinkedIn, Medium, Bluesky, Substack, Notion, or anywhere else. A creator publishing to four platforms still needs a way to render the same Markdown draft into four different rich-text payloads - which is the core job of <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich</a>.</p>
+
+        <p><strong>Voice preservation across agent rewrites.</strong> X hosted MCP preserves the Markdown you send it; it does not preserve your voice across agent-generated revisions. If the agent rewrites your draft three times through OpenRouter MCP before posting, the voice drift is the model's responsibility, not the protocol's. The fix is to keep the original Markdown draft intact in your editor and treat agent revisions as suggestions, not commits.</p>
+
+        <p><strong>Draft privacy.</strong> X hosted MCP sends your draft to X's servers for rendering and storage. If your draft contains unpublished business strategy, a confidential source, or a paid-newsletter preview, posting via MCP makes it visible to X's content moderation pipeline and any developer with X API access at your scope. For sensitive drafts, keep the conversion local and post manually after review.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Try the Workflow</h2>
+
+        <p>X hosted MCP went live on July 1, 2026 and is available to any X developer account. OpenRouter MCP has been live since Q1 2026 and works with Claude Code, Codex, Cursor, Cline, and any other MCP-compatible agent. The bridge between the agent's Markdown output and the rich-text payload LinkedIn, Medium, and Substack accept has been live at <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a> since launch - 100% client-side, no upload, no account, no third-party server. Draft once in Markdown, route through the right model, post to X via MCP, and cross-post the polished version to LinkedIn or Medium through md2rich. The whole pipeline is inspectable at every step.</p>
+
+      </div>
+    </article>
+
+    <section class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+      <h2 class="text-xl font-semibold text-indigo-900 mb-2">Convert Markdown to Rich Text — No Upload, No Account</h2>
+      <p class="text-indigo-800 mb-3">md2rich runs entirely in your browser. Draft in Markdown, paste rich text into X Articles, LinkedIn, Medium, Substack, Notion, or Bluesky. The conversion is deterministic and inspectable - what you see in the preview is exactly what the platform receives.</p>
+      <a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white font-medium px-5 py-2 rounded hover:bg-indigo-700">Try md2rich →</a>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex flex-wrap items-center justify-between gap-2">
+      <span>&copy; 2026 md2rich. Client-side Markdown to rich text conversion.</span>
+      <span><a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a></span>
+    </div>
+  </footer>
+</body>
+</html>

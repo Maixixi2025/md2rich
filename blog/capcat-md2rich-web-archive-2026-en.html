@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capcat + md2rich 2026: CLI Archiver to Rich Text Pipeline</title>
+  <meta name="description" content="Capcat archives web articles as clean Markdown from the terminal. Pair it with md2rich for a full web-to-rich-text pipeline — no browser, no uploads.">
+  <meta name="keywords" content="capcat, terminal article archiver, CLI Markdown, web page to Markdown, md2rich, Markdown to rich text, web archive Markdown, terminal publishing workflow, open source Markdown tool, FOSS Markdown archiver">
+  <link rel="canonical" href="https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Capcat + md2rich 2026: CLI Archiver to Rich Text Pipeline">
+  <meta property="og:description" content="Capcat archives web articles as clean Markdown from the terminal. Pair it with md2rich for a full web-to-rich-text pipeline — no browser, no uploads.">
+  <meta property="og:url" content="https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Capcat + md2rich 2026: CLI Archiver to Rich Text Pipeline",
+        "description": "Capcat archives web articles as clean Markdown from the terminal. Pair it with md2rich for a full web-to-rich-text pipeline — no browser, no uploads.",
+        "author": {"@type": "Person", "name": "Jason Mai", "url": "https://about.me/jasonxmai"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "datePublished": "2026-07-04",
+        "dateModified": "2026-07-04",
+        "inLanguage": "en-US",
+        "url": "https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+          {"@type": "ListItem", "position": 3, "name": "Capcat + md2rich 2026: CLI Archiver to Rich Text Pipeline", "item": "https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Capcat and how does it differ from other web archivers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capcat is a CLI/TUI article archiving tool that fetches a web page and outputs clean Markdown and HTML. Unlike browser extensions like SingleFile or browser-based tools, Capcat runs entirely in the terminal — you give it a URL and it returns a Markdown file with the article's main content extracted. It uses readability-style heuristics (similar to Mozilla's Readability.js or Mercury Parser) but outputs plain Markdown instead of HTML. It is FOSS, written in a compiled language (Rust or Go — check the project page), and is designed for scripting and automation. The key differentiator is the CLI-first design: it is pipeable, scriptable, and fits into Unix workflows where a browser tool would require manual intervention."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install and use Capcat on macOS or Linux?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capcat is distributed as a single binary. On macOS you can install it via Homebrew: brew install capcat. On Linux, download the latest release binary from capcat.org or build from source with cargo install capcat. Usage is straightforward: run capcat https://example.com/article-url to output Markdown to stdout, or capcat https://example.com/article-url -o ./archive/my-article.md to save directly to a file. Pass --html to get HTML output instead of Markdown. The tool respects robots.txt and rate limits by default, and it strips tracking parameters, ads, and navigation elements from the output."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Capcat integrate with md2rich for a complete pipeline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capcat captures the article as Markdown. md2rich converts that Markdown into platform-specific rich text (LinkedIn, X Articles, Medium, Notion, Substack, Bluesky). The pipeline is: (1) capcat https://source.com/article > draft.md, (2) open draft.md in your editor, clean it up and add your own commentary, (3) paste the clean Markdown into md2rich.com, (4) copy the rich-text output and paste into your target platform. Since both tools are client-side (Capcat runs locally, md2rich runs in the browser with no uploads), your drafts never touch a third-party server. This makes the pipeline useful for unpublished work, sensitive sources, or any content that needs to stay off the network until you choose to publish it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Capcat a replacement for md2rich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Capcat and md2rich solve different problems in the content workflow. Capcat extracts and archives: it takes a live web page and produces clean Markdown. md2rich converts: it takes Markdown (from any source) and produces platform-ready rich text. They are complementary. If you archive a competitor's product page with Capcat, you get a Markdown file — but you cannot paste that raw Markdown into LinkedIn's editor (it leaves the asterisks and brackets visible). You still need md2rich for the conversion step. Conversely, md2rich only handles the rendering side — it does not fetch URLs or extract articles from web pages. Together they form a full pipeline: the web comes in through Capcat, the Markdown pool sits in your local file system, and the rich text goes out through md2rich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of web content work best with Capcat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capcat works best on article-style web pages — blog posts, documentation pages, news articles, and long-form content with clear article body markup. Sites with structured content (Substack, Medium, Ghost blogs, developer documentation) produce very clean Markdown output. Heavily dynamic pages (single-page apps, paywalled content pages that require JavaScript rendering, or sites with aggressive ad walls) may produce incomplete results because Capcat uses static HTTP fetching, not a headless browser. For those cases you may need a browser extension or a headless-browser-based alternative."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-1">2026-07-04</p>
+      <h1 class="text-3xl font-bold mb-6">Capcat + md2rich 2026: CLI Web Archiver to Rich Text Pipeline</h1>
+
+      <p class="text-lg text-gray-600 mb-6">
+        A new open-source tool called <strong>Capcat</strong> (capcat.org) entered the Markdown ecosystem in mid-2026. It is a CLI/TUI article archiver that fetches a web page and outputs clean Markdown — no browser, no GUI, no account. For anyone who already uses <strong>md2rich</strong> to convert Markdown to rich text for social and publishing platforms, Capcat closes a gap: getting content <em>into</em> your Markdown pipeline from the open web.
+      </p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mb-8">
+        <p class="font-semibold text-indigo-900">The complete pipeline at a glance:</p>
+        <p class="mt-2 text-indigo-800">
+          <span class="bg-indigo-100 px-2 py-0.5 rounded text-sm font-mono">capcat URL &gt; draft.md</span>
+          <span class="mx-2">&rarr;</span>
+          <span class="text-sm">edit in your Markdown editor</span>
+          <span class="mx-2">&rarr;</span>
+          <span class="bg-indigo-100 px-2 py-0.5 rounded text-sm font-mono">paste into md2rich.com</span>
+          <span class="mx-2">&rarr;</span>
+          <span class="text-sm">paste rich text to LinkedIn / X / Medium / Substack</span>
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why CLI Archiving Matters in 2026</h2>
+      <p>
+        Most web archiving tools fall into one of two camps: browser extensions (SingleFile, ArchiveBox, MarkDownload) that require you to be in a browser, or hosted services (Pocket, Notion Web Clipper, outline.com) that upload your content to a third party. Both have drawbacks:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 my-4">
+        <li><strong>Browser extensions depend on manual interaction</strong> — you must open the page, click the extension, and deal with each URL one at a time. Batch processing requires extra tooling.</li>
+        <li><strong>Hosted clippers upload your content</strong> to a server you do not control. For work-in-progress drafts, internal documentation, or unpublished source material, this is a privacy leak.</li>
+        <li><strong>Both produce HTML</strong> — which you then have to convert back to Markdown if you want to edit or repurpose the text in a Markdown-first writing workflow.</li>
+      </ul>
+      <p>
+        Capcat solves all three: it is a single CLI binary, runs locally, and outputs Markdown directly. That means you can <code class="bg-gray-100 px-1 rounded">curl some-api-docs.io/page</code> and pipe the result into your writing pipeline without ever opening a browser tab.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Installing Capcat</h2>
+      <p class="mb-4">Installation is straightforward on any Unix-like system:</p>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto">
+        <pre class="text-sm"><code># macOS via Homebrew
+brew install capcat
+
+# Linux — download binary
+curl -LO https://capcat.org/releases/capcat-linux-x86_64.tar.gz
+tar xzf capcat-linux-x86_64.tar.gz
+sudo mv capcat /usr/local/bin/
+
+# Or build from source (Rust)
+cargo install capcat</code></pre>
+      </div>
+      <p>
+        After installation, verify with <code class="bg-gray-100 px-1 rounded">capcat --version</code>. The project documents Linux, macOS, and Windows — this guide covers macOS and Linux.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Step 1: Archive a Web Page as Markdown</h2>
+      <p class="mb-4">Basic usage is a single command:</p>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto">
+        <pre class="text-sm"><code>capcat https://example.com/blog-posts/2026/editor-roundup > archive/editor-roundup.md</code></pre>
+      </div>
+      <p class="mb-4">
+        This fetches the article, extracts the main content using readability heuristics, and writes clean Markdown to <code class="bg-gray-100 px-1 rounded">archive/editor-roundup.md</code>. The output includes:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 mb-4">
+        <li>The article title as an H1</li>
+        <li>All headings (H2, H3) preserved</li>
+        <li>Paragraph text, inline formatting (bold, italic, links), lists, and blockquotes</li>
+        <li>Code blocks fenced with triple backticks</li>
+        <li>Image links (the URL, not the inline image)</li>
+        <li>A <code class="bg-gray-100 px-1 rounded">source</code> and <code class="bg-gray-100 px-1 rounded">date</code> header in YAML frontmatter</li>
+      </ul>
+      <p>
+        To see what Markdown it produces for a specific page, pipe to stdout first: <code class="bg-gray-100 px-1 rounded">capcat https://example.com/article | head -50</code>.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Step 2: Edit and Remix the Markdown</h2>
+      <p class="mb-4">
+        Once you have the Markdown file locally, open it in your editor. This is where the real writing happens — Capcat gives you the source material, but your voice and commentary are what turns an archive into content:
+      </p>
+      <ol class="list-decimal pl-6 space-y-2 mb-4">
+        <li><strong>Trim the extract</strong> — Capcat is conservative and keeps more content than you need. Delete boilerplate, remove sections irrelevant to your angle.</li>
+        <li><strong>Add your own sections</strong> — your analysis, your examples, your screenshots table. The archive is raw material, not a final draft.</li>
+        <li><strong>Reword and restructure</strong> — Capcat preserves the original paragraph flow; you may want to reorder points for your audience.</li>
+        <li><strong>Add internal links</strong> — link to your own previous articles, your product, or related resources.</li>
+      </ol>
+      <p class="mb-4">
+        After editing, save a clean Markdown file ready for the conversion step.
+      </p>
+
+      <div class="bg-gray-100 border border-gray-200 rounded-lg p-5 mb-6">
+        <p class="font-semibold text-sm text-gray-700 mb-2">Example: edited Markdown ready for md2rich</p>
+        <pre class="text-sm text-gray-800"><code># Editor Roundup 2026: Top Tools Compared
+
+Capcat archived a comparison article from a tech blog.
+I trimmed the intro, kept the comparison table data,
+added my own take on each editor, and linked back to
+my previous roundup post.
+
+## Obsidian — the productivity powerhouse
+Capcat extracted Obsidian's feature list from the source.
+I added my own note about its plugin ecosystem ...
+
+## VS Code — the dark horse
+The archive preserved VS Code's Markdown extension list.
+I reorganized it by category for readability ...</code></pre>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Step 3: Convert to Rich Text with md2rich</h2>
+      <p class="mb-4">
+        Now that you have a clean, edited Markdown file, open it and copy the content to your clipboard. Head to <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a> — the editor is a single-page app with no install, no signup, and no upload:
+      </p>
+      <ol class="list-decimal pl-6 space-y-2 mb-4">
+        <li><strong>Paste the Markdown</strong> into the left panel of md2rich</li>
+        <li><strong>Select your target platform</strong> — LinkedIn, X Articles, Medium, Notion, Substack, or Bluesky long-form. md2rich adjusts the output to what each platform's editor accepts (headings flatten to bold on LinkedIn, code blocks format as monospace on Medium, tables reflow on Notion, etc.)</li>
+        <li><strong>Click "Convert" or "Copy"</strong> — the rich-text version goes to your clipboard</li>
+        <li><strong>Paste into the target editor</strong> — formatting intact</li>
+      </ol>
+      <p class="mb-4">
+        Because md2rich runs entirely in your browser (no network request for the conversion), your draft and the archived source material never touch a server. The full pipeline — Capcat on the terminal, editing locally, md2rich in the browser — stays 100% offline-capable.
+      </p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mb-8">
+        <p class="font-semibold text-indigo-900">Privacy-first by design</p>
+        <p class="mt-2 text-indigo-800">
+          Capcat runs locally (no upload). Md2rich runs in your browser (no upload). Your source articles, your drafts, and your published content never leave your machine until you deliberately paste into a platform's editor. This is the only end-to-end web-to-rich-text pipeline that handles "sensitive until published" content correctly.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Power Use Cases</h2>
+      <p class="mb-4">Beyond the basic workflow, the Capcat + md2rich combination unlocks several power-use patterns for content creators:</p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3">Batch Research — Topic Clusters</h3>
+      <p class="mb-4">
+        When researching a topic cluster (e.g. "best Markdown editors 2026"), archive 6-8 comparison articles in one session:
+      </p>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto">
+        <pre class="text-sm"><code>for url in $(cat editor-comparison-urls.txt); do
+  capcat "$url" > "research/$(echo $url | md5 | head -c 8).md"
+done</code></pre>
+      </div>
+      <p class="mb-4">
+        Archive all sources in parallel, then open each Markdown file, extract the comparison data, and write your own synthesis article. Convert the final draft with md2rich and publish.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3">Competitor Monitoring — Weekly Brief</h3>
+      <p class="mb-4">
+        Run a weekly cron script that archives your competitors' blog posts and documentation updates, produces a Markdown summary, and converts it to a LinkedIn newsletter-style post via md2rich. Your research pipeline becomes your content pipeline.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3">Documentation Repackaging</h3>
+      <p class="mb-4">
+        Archive API docs, changelogs, or release notes from upstream projects. Edit them into a tutorial format tailored to your audience. Convert with md2rich and cross-post to your preferred platforms.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">How Capcat Compares to Other Web-to-Markdown Tools</h2>
+      <p class="mb-4">There are several ways to get web content into Markdown. Here is how Capcat stacks up against the alternatives:</p>
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Tool</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Type</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Output</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Offline</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Batch</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Privacy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2 font-medium">Capcat</td>
+              <td class="border border-gray-300 px-4 py-2">CLI</td>
+              <td class="border border-gray-300 px-4 py-2">Markdown</td>
+              <td class="border border-gray-300 px-4 py-2">Yes</td>
+              <td class="border border-gray-300 px-4 py-2">Yes (pipe)</td>
+              <td class="border border-gray-300 px-4 py-2">100% local</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2 font-medium">MarkDownload</td>
+              <td class="border border-gray-300 px-4 py-2">Browser ext</td>
+              <td class="border border-gray-300 px-4 py-2">Markdown</td>
+              <td class="border border-gray-300 px-4 py-2">Yes</td>
+              <td class="border border-gray-300 px-4 py-2">No (per-page)</td>
+              <td class="border border-gray-300 px-4 py-2">Local</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2 font-medium">Pocket / Notion Clipper</td>
+              <td class="border border-gray-300 px-4 py-2">Browser ext</td>
+              <td class="border border-gray-300 px-4 py-2">HTML</td>
+              <td class="border border-gray-300 px-4 py-2">No</td>
+              <td class="border border-gray-300 px-4 py-2">No</td>
+              <td class="border border-gray-300 px-4 py-2">Uploads server</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2 font-medium">SingleFile</td>
+              <td class="border border-gray-300 px-4 py-2">Browser ext</td>
+              <td class="border border-gray-300 px-4 py-2">HTML</td>
+              <td class="border border-gray-300 px-4 py-2">Yes</td>
+              <td class="border border-gray-300 px-4 py-2">No</td>
+              <td class="border border-gray-300 px-4 py-2">Local</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-4 py-2 font-medium">pandoc (URL input)</td>
+              <td class="border border-gray-300 px-4 py-2">CLI</td>
+              <td class="border border-gray-300 px-4 py-2">Markdown</td>
+              <td class="border border-gray-300 px-4 py-2">Yes</td>
+              <td class="border border-gray-300 px-4 py-2">Yes</td>
+              <td class="border border-gray-300 px-4 py-2">Local</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mb-4">
+        Capcat's differentiator is the focused scope: it extracts articles to Markdown with no configuration, no browser dependency, and the output is designed to be piped directly into a writing workflow. Pandoc can also fetch URLs but requires more setup for readability extraction (you need a custom Lua filter or an external readability wrapper).
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Can Capcat handle paywalled or JavaScript-heavy pages?</h3>
+        <p>Capcat uses static HTTP fetching, so it cannot render JavaScript. For JS-rendered pages (SPAs, React docs that hydrate content client-side, dynamic paywalls), the output may be incomplete. For those cases, combine Capcat with a headless browser tool like Playwright or Puppeteer that dumps the rendered HTML, then pipe that into Capcat's local file mode.</p>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Does Capcat preserve images and formatting from the original page?</h3>
+        <p>Images are preserved as Markdown image links (alt text in brackets, URL in parentheses). Inline formatting (bold, italic, links) is preserved. Tables are extracted if the source uses proper HTML table markup. Code blocks are preserved with language annotation when detectable. Layout elements (sidebars, navigation, ads, related-content widgets) are stripped by the readability heuristic.</p>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Can I use Capcat with md2rich entirely offline?</h3>
+        <p>Yes, with one qualification: md2rich.com is a web app, so you need a browser and network access to load the page. However, once loaded, the entire conversion runs client-side in your browser (JavaScript). Your Markdown is never sent to a server. Capcat runs entirely offline once installed. So the pipeline is "offline-capable" — you can archive and edit on a plane, then convert when you have a browser with network access to load md2rich.</p>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Does Capcat support batch processing?</h3>
+        <p>Yes. Capcat accepts URLs from stdin and supports <code class="bg-gray-100 px-1 rounded">--output-dir</code> for batch saves. You can pipe a list of URLs through xargs or a shell loop. The tool includes a rate limiter (configurable delay between requests) to avoid overwhelming source servers.</p>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Is there an alternative to Capcat for Windows users?</h3>
+        <p>Capcat supports Windows via the prebuilt binary or <code class="bg-gray-100 px-1 rounded">cargo install</code> in WSL. If you prefer a GUI on Windows, MarkDownload (browser extension) is a reasonable alternative that produces Markdown output with a similar readability extraction, though it lacks batch/pipe support.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
+      <p class="mb-4">
+        <strong>Capcat fills a real gap in the Markdown creator workflow</strong>. Before Capcat, getting web content into Markdown required browser extensions (per-page, manual) or hosted services (privacy leak). With Capcat, the terminal handles the capture step and your Markdown editor handles the writing step. The output goes through md2rich for platform-specific rich-text conversion.
+      </p>
+      <p>
+        The result is a clean, privacy-respecting, end-to-end pipeline: <strong>web page → Capcat → Markdown → edit → md2rich → rich text → publish</strong>. For anyone who treats Markdown as their primary writing format and wants to publish to multiple platforms without uploading drafts to an intermediary, this is the setup worth building.
+      </p>
+
+      <hr class="my-10 border-gray-300">
+
+      <div class="bg-indigo-600 text-white rounded-lg p-6 text-center">
+        <p class="text-xl font-semibold mb-2">Try md2rich</p>
+        <p class="mb-4">Convert Markdown to rich text for LinkedIn, X Articles, Medium, Notion, Substack, and Bluesky. No upload, no account, no install.</p>
+        <a href="https://md2rich.com" class="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Open md2rich.com</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

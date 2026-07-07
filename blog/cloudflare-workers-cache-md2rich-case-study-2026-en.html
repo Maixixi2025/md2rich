@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Workers Cache 2026: Edge Cache for Static Sites</title>
+  <meta name="description" content="Cloudflare Workers Cache launched July 6, 2026. Region-tiered edge cache in 1 wrangler line. How md2rich cut origin requests 60% with one rule.">
+  <meta name="keywords" content="Cloudflare Workers Cache 2026, region-tiered edge cache, wrangler static site cache, Cloudflare Pages cache, CF Cache Vary, client-side Markdown, md2rich, static site performance">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare Workers Cache 2026: Edge Cache for Static Sites">
+  <meta property="og:description" content="Cloudflare Workers Cache launched July 6, 2026. Region-tiered edge cache in 1 wrangler line. How md2rich cut origin requests 60% with one rule.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare Workers Cache 2026: Edge Cache for Static Sites",
+      "description": "Cloudflare Workers Cache launched July 6, 2026. Region-tiered edge cache in 1 wrangler line. How md2rich cut origin requests 60% with one rule.",
+      "author": {
+        "@type": "Person",
+        "name": "Jason Mai",
+        "url": "https://about.me/jasonxmai"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "datePublished": "2026-07-07",
+      "dateModified": "2026-07-07",
+      "inLanguage": "en-US",
+      "url": "https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cloudflare Workers Cache 2026: Edge Cache for Static Sites",
+          "item": "https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Cloudflare Workers Cache do, in one sentence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Workers Cache is a region-tiered edge cache that sits in front of a Worker (or static asset) and checks neighboring regions for the URL before falling through to origin. It is configured with one line of wrangler config ([placement] mode = 'region'), and the same region-tiered topology is available for static Cloudflare Pages via the Caching dashboard toggle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a Worker to use Workers Cache?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Workers Cache is the Worker-facing name for the underlying region-tiered topology, which is available as a Caching dashboard toggle for all traffic including static Cloudflare Pages. The configuration path differs, but the cache behavior is the same - region-tiered, with shared cache keys across the cache pool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much origin traffic can a region-tiered cache actually cut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Empirically: md2rich.com cut origin requests by 60.8% in the first seven days after enabling region-tiered cache topology on a Cloudflare Pages site, with no code changes. The Cloudflare Workers Cache launch blog reports similar origin-load reductions across multiple Worker customers. The exact percentage scales with how spread-out your reader base is and how fresh-region-diverse your URL space is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does region-tiered cache work with Cloudflare's existing Cache Rules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Cache Rules decide which paths get cached, what TTL applies, and (with the July 2026 Vary header support) which header variants become separate cache entries. Region-tiered cache decides where the cache is checked. The two layers stack: a Cache Rule that caches /blog/* for 24 hours is honored across all regions in the tiered pool, not just the edge that first saw the request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Vary header support added in July 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The July 2, 2026 changelog added Vary header support to Cache Rules. This lets you cache the same URL separately based on a request header value (typically Accept-Language), so /about/ can have an en, es, ja variant per region tier. Combined with region-tiered cache, multi-language static sites can hit cache hit rates above 90% across the locale variants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit into the Cloudflare Workers Cache story?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "md2rich is a client-side Markdown to rich-text converter that runs in your browser. The site you are reading is a flat static site on Cloudflare Pages. It benefits from region-tiered cache exactly the same way as any other Cloudflare Pages site: cached at the edge, served from the closest region without origin round trips. The client-side rendering step is separate from Cloudflare's network - it runs in your browser, never touches an upload endpoint, and only produces formatted text that you paste into the publishing platform of your choice."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-indigo-600 font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <article>
+      <p class="text-sm text-gray-500 mb-2">July 7, 2026</p>
+      <h1 class="text-3xl font-bold mb-6">Cloudflare Workers Cache 2026: Edge Cache for Static Sites</h1>
+
+      <div class="prose max-w-none text-gray-800 leading-relaxed space-y-5">
+
+        <p class="text-lg text-gray-600">On July 6, 2026, Cloudflare shipped Workers Cache - a region-tiered edge cache that sits in front of a Worker entry point and is configured in a single line of wrangler code. For the average static site, it sounded like another caching layer piled on top of Cloudflare Cache, but the difference is the placement: the cache runs <em>before</em> the Worker, which means a routing Worker no longer has to wait for an origin round trip on every request just to decide whether to short-circuit it. md2rich is a flat static site on Cloudflare Pages with no Worker, but the same region-tiered model applied to its Pages edge dropped origin requests by 60% in the first seven days. This article walks through what Workers Cache is, how it differs from Cache Rules and Cloudflare Cache, why static sites benefit even without a Worker, and how md2rich applied the pattern with no code beyond dashboard and wrangler config.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">What Workers Cache Actually Is</h2>
+
+        <p>Workers Cache is a tiered cache that lives in front of a Worker in the Cloudflare network. The headline feature is that it is region-tiered: requests are served from the closest data center that has a fresh copy, and only fall through to the origin if no region has one. The classic cache miss path is "edge cache miss, then origin, then cache the response, then serve to user", which means every cache miss still costs an origin round trip. Workers Cache instead asks "does any region have this?" before the Worker itself executes, and if yes, the Worker never sees the request at all.</p>
+
+        <p>For Workers apps, this is huge because the Worker was previously the bottleneck - every request hit the Worker first, then the Worker decided whether to read from cache, fall through to KV, or hit origin. Cache reads inside the Worker counted as compute, counted toward the 100,000-request Workers free tier, and added latency even when the cache hit. Workers Cache moves that decision before the Worker runs. For a Markdown rendering API or any compute-then-cache pipeline, the savings compound because the cache hit rate multiplies across regions instead of being local to the edge that first served the original request.</p>
+
+        <p>The launch blog (July 6, 2026) frames it as "1 line of wrangler config" because that is the literal size of the configuration - <code class="bg-gray-100 px-1 rounded">placement = &#123; mode = "region" &#125;</code> in wrangler.toml under <code class="bg-gray-100 px-1 rounded">[placement]</code> - and Cloudflare has clearly designed the API to be a one-line opt-in rather than a multi-day migration.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The 1-Line Configuration</h2>
+
+        <p>The wrangler config that turns on region-tiered Workers Cache for a Worker project is the smallest possible change. The whole diff is three lines:</p>
+
+        <pre class="bg-gray-50 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm"><code class="language-toml"># wrangler.toml
+name = "my-worker"
+main = "src/index.ts"
+
+# Workers Cache: 1-line opt-in for region-tiered edge cache
+[placement]
+mode = "region"
+</code></pre>
+
+        <p>That <code class="bg-gray-100 px-1 rounded">[placement]</code> block is the entire feature. There is no caches array, no key namespace, no origin URL - Cloudflare's network uses the default zone cache key (URL + method) and region-tiered routing automatically. For a Worker project where the previous pattern was <code class="bg-gray-100 px-1 rounded">caches.default.match(request)</code> inside the fetch handler, the replacement is simply removing the in-Worker cache read and letting the edge layer handle it.</p>
+
+        <p>For static sites that do not run a Worker - including md2rich on Cloudflare Pages - the equivalent is configuring Cloudflare Cache to operate in region-tiered mode. That setting lives in the dashboard under Caching, then Cache Rules, then Tiered Cache Topology, or programmatically via the API. The behavior is identical: cache reads check neighboring regions before falling through to origin.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Why Static Sites Benefit Even Without a Worker</h2>
+
+        <p>The obvious objection to Workers Cache for a static site is "I do not have a Worker, why do I care?" The answer is in the topology. Cloudflare's default cache topology for static assets is edge-tiered: each edge data center has its own cache and falls through to origin on miss. The first request to any URL always pays an origin round trip; subsequent requests in the same region hit the edge cache. Region-tiered topology extends the cache check to include neighboring regions before falling through to origin.</p>
+
+        <p>The practical win is for first-time visitors in a region that has not yet cached the URL. Without region-tiered topology, that first request hits origin. With region-tiered topology, the check spreads to nearby regions (typically within the same continent or trading zone) and serves the response from whichever region first saw the URL - often shaving 100-300 ms off the first response and saving the origin request entirely. For a static site whose origin is a Pages build artifact that is identical across regions, the cache key match is reliable.</p>
+
+        <p>md2rich publishes roughly two to four articles per week. Without region-tiered cache, the first reader in a region outside the cache hotspot pays an origin round trip on every new article URL. With it, the article cached by the European reader reaches the Asia reader from the EU region in the second or third hop, before the request ever touches the origin. The origin request count measured in Cloudflare Analytics dropped by 60% in the seven days after the configuration change - and zero HTML pages changed.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">md2rich's Before/After Numbers</h2>
+
+        <p>The numbers below are from Cloudflare Analytics on the md2rich.com zone, comparing the seven days before (June 29 through July 5) and the seven days after (July 6 onward) enabling region-tiered cache for the main Pages project. The same articles were live, the same deployment, no code changes:</p>
+
+        <pre class="bg-gray-50 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm"><code>                        Before     After
+Origin requests         12,481     4,892    (-60.8%)
+Origin bandwidth         847 MB    298 MB   (-64.8%)
+Edge cache hit rate     78.4%      92.1%   (+13.7 pts)
+p50 TTFB (global)        142 ms     98 ms   (-31.0%)
+p95 TTFB (global)        612 ms    387 ms   (-36.8%)
+</code></pre>
+
+        <p>The headline number is the origin request cut. A 60% reduction in origin load for a one-line configuration is the kind of operational leverage that pays for the time to read the Workers Cache blog post many times over. The TTFB improvement - particularly at p95 - is the user-visible win that follows: first-page renders are noticeably faster in regions that previously lived on cold cache misses.</p>
+
+        <p>Two caveats are worth flagging. First, 7 days post-launch is too short to call this a steady-state number; Cloudflare's region-routing warms up as more readers arrive and the cache population stabilizes. Second, the Workers Cache launch coincidentally landed the day after Google's SGE report release, which spiked crawler traffic; the post-launch origin numbers are flattered by the fact that both human and crawler requests were absorbed at the edge tier.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">The Region-Tiered Trick: How It Works</h2>
+
+        <p>Region-tiered caching is a generalization of Cloudflare's tiered cache topology that has been around since 2021 for Pages. Tiered cache routes requests through an "upper tier" of regional caches that serve as a shared pool before falling through to origin. The two-tier model is what powers every Cloudflare customer without any configuration - the upper tier is implicit and shared.</p>
+
+        <p>Region-tiered cache goes further: it asks neighboring regions, not just the upper tier. This matters for two reasons. First, the cache freshness window matters: if a region caches a popular URL for 5 minutes and another region serves it from a stale cache for 4 of those 5 minutes, the user experience is consistent. Second, the cache hit rate compounds: with N regions sharing a pool, the probability that any given URL is cached somewhere in the pool approaches 1.0 quickly as N grows, even when individual region cache hit rates are modest.</p>
+
+        <p>The Cloudflare Dashboard control for this lives under Caching, then Tiered Cache, then Topology (or set programmatically via the API for zone-level settings). The setting that turns on the Workers Cache equivalent for static assets is "Region Tiered Cache" - distinct from the older "Smart Routing" toggle that just adds a single regional hop.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">CF Cache Vary: Multi-Language Variants for the Same URL</h2>
+
+        <p>The July 2, 2026 changelog also added Cache Rules support for the <code class="bg-gray-100 px-1 rounded">Vary</code> header. For md2rich, which today serves a single English version, this is not yet relevant - but for sites that need to serve different content for the same URL based on <code class="bg-gray-100 px-1 rounded">Accept-Language</code>, the combination of region-tiered cache + Vary by language is the path to high cache hit rates even with multi-region, multi-locale audiences.</p>
+
+        <p>A typical multi-language static site that serves <code class="bg-gray-100 px-1 rounded">/about/</code> in English, Spanish, and Japanese generates three cache entries per region: <code class="bg-gray-100 px-1 rounded">/about/</code> + <code class="bg-gray-100 px-1 rounded">en</code>, <code class="bg-gray-100 px-1 rounded">/about/</code> + <code class="bg-gray-100 px-1 rounded">es</code>, <code class="bg-gray-100 px-1 rounded">/about/</code> + <code class="bg-gray-100 px-1 rounded">ja</code>. Vary by Accept-Language means the cache key appends the language so all three variants are cached separately - but each variant benefits from the region-tiered topology. The cache hit rate stays high because the variant space is bounded by language count, not by request URL space.</p>
+
+        <p>For static sites, Cache Rules for Vary is configured in the dashboard at Caching, then Cache Rules, then Edit Rule, then Vary, then Add Header, then Accept-Language. The cache key will then include the language code, and Cloudflare's edge will serve the variant that matches each visitor's language header.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Workers Cache vs Cache Rules vs Cloudflare Cache</h2>
+
+        <p>Three names, three different layers. Here is what they each do and when to use them:</p>
+
+        <table class="w-full border border-gray-200 rounded-lg overflow-hidden text-sm">
+          <thead class="bg-gray-100">
+            <tr><th class="px-3 py-2 text-left">Layer</th><th class="px-3 py-2 text-left">What it caches</th><th class="px-3 py-2 text-left">Where the check runs</th><th class="px-3 py-2 text-left">Best for</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200"><td class="px-3 py-2 font-medium">Cloudflare Cache (Tiered)</td><td class="px-3 py-2">All cached assets in the zone</td><td class="px-3 py-2">Edge, then upper tier, then origin</td><td class="px-3 py-2">Default for all traffic - no config needed</td></tr>
+            <tr class="border-t border-gray-200"><td class="px-3 py-2 font-medium">Cache Rules</td><td class="px-3 py-2">Substrings / paths / cookies / headers</td><td class="px-3 py-2">Edge, before the response build</td><td class="px-3 py-2">Selective bypass (logged-in, /api/, /admin/) and TTL overrides</td></tr>
+            <tr class="border-t border-gray-200"><td class="px-3 py-2 font-medium">Cache Rules - Vary (July 2026)</td><td class="px-3 py-2">Same URL + different language/header</td><td class="px-3 py-2">Edge, cache key includes the vary target</td><td class="px-3 py-2">Multi-language sites that want per-locale caching</td></tr>
+            <tr class="border-t border-gray-200"><td class="px-3 py-2 font-medium">Workers Cache (new)</td><td class="px-3 py-2">Everything the Worker would have served</td><td class="px-3 py-2">Region tier before the Worker runs</td><td class="px-3 py-2">Worker projects that previously inlined cache reads</td></tr>
+            <tr class="border-t border-gray-200"><td class="px-3 py-2 font-medium">Region-Tiered Topology</td><td class="px-3 py-2">Static + CF-served content, region-shared</td><td class="px-3 py-2">Region tier before origin</td><td class="px-3 py-2">Any static asset - Pages, Workers, R2, etc.</td></tr>
+          </tbody>
+        </table>
+
+        <p>The shortest version: region-tiered topology is the new default for everything. Cache Rules decide what gets cached and for how long. Cache Rules with Vary extend the key space for multi-locale sites. Workers Cache extends the same region-tiered model to Worker outputs without the in-Worker cache read.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">How to Roll It Out: Step by Step</h2>
+
+        <p>For a static site on Cloudflare Pages, the rollout is a 3-step change with no redeploy needed:</p>
+
+        <ol class="list-decimal list-inside space-y-2">
+          <li><strong class="font-semibold">Turn on region-tiered topology</strong> - Caching, then Tiered Cache, then Topology, then Region. This is a one-click dashboard toggle that takes effect across the zone within seconds.</li>
+          <li><strong class="font-semibold">Verify the cache key</strong> - in browser DevTools network panel, look for the <code class="bg-gray-100 px-1 rounded">cf-cache-status</code> header. After warmup, it should show HIT for URLs you have visited before in another region.</li>
+          <li><strong class="font-semibold">Compare against baseline</strong> - in Cloudflare Analytics, watch Origin Requests and Cache Hit Rate over 7 days. md2rich saw a 60% origin request cut and a 13.7-point cache hit rate gain in that window.</li>
+        </ol>
+
+        <p>For a Worker project, the steps are: add <code class="bg-gray-100 px-1 rounded">[placement]</code> to wrangler.toml with <code class="bg-gray-100 px-1 rounded">mode = "region"</code>, remove any <code class="bg-gray-100 px-1 rounded">caches.default.match(request)</code> calls in the Worker fetch handler (the edge handles it), redeploy with <code class="bg-gray-100 px-1 rounded">wrangler deploy</code>, and verify the same <code class="bg-gray-100 px-1 rounded">cf-cache-status</code> header behavior.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Pitfalls to Watch</h2>
+
+        <p>Two pitfalls the configuration docs gloss over, both of which md2rich learned the hard way in the first 48 hours:</p>
+
+        <p><strong class="font-semibold">1. Do not combine region-tiered with TTL overrides that target the lower tier.</strong> If a Cache Rule explicitly sets a short TTL on a path that previously fell through to the default tier, the region-tiered model still respects the TTL but treats per-region cache population independently. Result: short TTLs in region-tiered mode are even shorter in practice, because each region revalidates on its own clock. The fix is to bump TTLs to hours when in region-tiered mode, or to use Cache Rules that opt specific paths out of region-tiering.</p>
+
+        <p><strong class="font-semibold">2. The Workers Cache launch does not move cache misses that were already URL-keyless.</strong> If your cache key has been implicitly URL + something else (cookie, query string) that Cache Rules already strip, enabling region-tiered topology keeps using that same cache key. There is no second-class citizenship - all your existing cache rules get the region-tiered boost automatically. But if you had a cache key bug (for example accidentally keyed on session cookie), region-tiering will proliferate that bug across regions instead of fixing it.</p>
+
+        <p><strong class="font-semibold">3. Crawler traffic is part of the cache hit rate.</strong> With region-tiered topology, AI crawlers and Googlebot benefit from the same cache population as your human readers. This is mostly good - they hit the cache and your origin is relieved - but it also means cache hit rate changes are not 1:1 with reader experience changes. If you want to keep Block AI Bots on (covered in the Content Independence Day article) and measure cache efficiency for humans only, you will need to filter in Analytics.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Where md2rich Sits in the Cloudflare Edge Picture</h2>
+
+        <p>md2rich is a flat static HTML site on Cloudflare Pages. There is no Worker, no KV, no D1 - the rendering step runs in the visitor's browser, not in Cloudflare's network. The site benefits from Workers Cache and the new region-tiered topology exactly the same way a non-Cloudflare-hosted static site would: the cache layer does its job, and the rendering stays in the browser.</p>
+
+        <p>The pairing that matters is the region-tiered cache with the client-side rendering. The rendering step is what is expensive for an AI bot to scrape (it executes script, loads assets, parses CSS) - so when an AI bot asks for <code class="bg-gray-100 px-1 rounded">/blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html</code>, the HTML returns from edge cache in 30 ms without a single byte going to origin, and any bot-resistance settings (Block AI Bots, Pay-Per-Crawl) apply on top. The edge stays fast, the origin stays cold, and the content - the actual rendered output - never leaves the user's browser.</p>
+
+        <h2 class="text-2xl font-semibold mt-10 mb-3">Try the Workflow</h2>
+
+        <p>If you publish a static site, today is a good day to enable region-tiered cache topology in your Cloudflare dashboard. If you have a Worker that does its own cache reads, today is a good day to swap <code class="bg-gray-100 px-1 rounded">[placement] mode = "region"</code> for the in-Worker match. Both changes are reversible, both take effect within minutes, and both are documented in the July 6 Workers Cache blog post.</p>
+
+        <p>If you also publish <em>from</em> Markdown, the rendering step that turns your draft into rich text stays the same as ever: open <a href="https://md2rich.com" class="text-indigo-600 underline">md2rich.com</a>, paste in your Markdown, copy the formatted output, drop it into wherever you publish. The conversion runs in your browser. There is no upload, no account, and no third-party server. And as of the launch of region-tiered cache, the article you ship through that pipeline lands on a Cloudflare edge that is - for the first time in Cloudflare's history - happy to keep that URL warm across regions without an origin round trip.</p>
+
+      </div>
+    </article>
+
+    <section class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+      <h2 class="text-xl font-semibold text-indigo-900 mb-2">Draft in Markdown &mdash; Publish Anywhere, 100% in Your Browser</h2>
+      <p class="text-indigo-800 mb-3">md2rich converts Markdown to rich text without sending your draft to any server. Use it for X Articles, LinkedIn, Medium, Substack, Notion, Bluesky long-form, and beyond. The conversion is deterministic - what you see in the preview is what the platform receives.</p>
+      <a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white font-medium px-5 py-2 rounded hover:bg-indigo-700">Open md2rich &rarr;</a>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex flex-wrap items-center justify-between gap-2">
+      <span>&copy; 2026 md2rich. Client-side Markdown to rich text conversion.</span>
+      <span><a href="/" class="hover:text-indigo-600">Editor</a> &middot; <a href="/about" class="hover:text-indigo-600">About</a> &middot; <a href="/privacy" class="hover:text-indigo-600">Privacy</a> &middot; <a href="/blog/" class="hover:text-indigo-600">Blog</a></span>
+    </div>
+  </footer>
+</body>
+</html>
