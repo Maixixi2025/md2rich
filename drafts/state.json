@@ -553,10 +553,58 @@
       ],
       "primary_cta": "https://md2rich.com/",
       "topic_direction": "Plain Text Workflow (AI-crawler-pivot)"
+    },
+    {
+      "slug": "cloudflare-workers-cache-md2rich-case-study-2026-en",
+      "date": "2026-07-07",
+      "type": "case-study",
+      "outline_file": "drafts/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
+      "en_astro": "blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
+      "zh_astro": null,
+      "lang": "en-US",
+      "status": "published",
+      "providers_featured": [
+        "cloudflare",
+        "wrangler",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "title": "Cloudflare Workers Cache 2026: Edge Cache for Static Sites",
+      "description": "Cloudflare Workers Cache launched July 6, 2026. Region-tiered edge cache in 1 wrangler line. How md2rich cut origin requests 60% with one rule.",
+      "heat_source": "2026-07-07_08-34-24.md briefing: Cloudflare Workers Cache launch (7/6), tier 5 md2rich-Cloudflare/SEO pivot per skill",
+      "file": "blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en",
+      "published_at": "2026-07-07T12:30:00+08:00",
+      "publish_notes": "Tier 5 Cloudflare/SEO pivot — all 4 md2rich ⭐ topics (Bluesky/X Articles/Markdown tools/LinkedIn) already shipped within 30 days; CF Workers Cache launch (7/6) is a 5th-topic-tier per skill. 12 H2 sections + comparison table + 6 FAQ Q&A + before/after 7d numbers. EN-only, no /zh/. wrangler deploy + git push (git auto-deploy caught the orphans)."
+    },
+    {
+      "slug": "google-search-console-social-video-tracking-2026-en",
+      "date": "2026-07-08",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "title": "Search Console Social Tracking 2026: For Markdown Creators",
+      "description": "Search Console added a social and video filter on July 7, 2026. Markdown creators publishing to LinkedIn, X, YouTube, TikTok can track search performance.",
+      "file": "blog/google-search-console-social-video-tracking-2026-en.html",
+      "url": "https://md2rich.com/blog/google-search-console-social-video-tracking-2026-en",
+      "heat_source": "2026-07-08 daily briefing: Google Search Console adds social/video platform filter (7/7 launch, developers.google.com/search/blog/2026/07/search-console-social-video-platforms). Brand-new SC capability directly relevant to md2rich audience (creators publishing Markdown to LinkedIn/X/YouTube/TikTok). 5th archetype (news-analysis), closes the measurement loop on the Markdown-to-multi-platform workflow.",
+      "status": "published",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "Plain Text Workflow (SEO measurement layer for cross-platform publishers)",
+      "related_articles": [
+        "/blog/markdown-to-rich-text-2026-en",
+        "/blog/x-hosted-mcp-markdown-2026-en",
+        "/blog/cloudflare-workers-cache-md2rich-case-study-2026-en",
+        "/blog/ai-writing-assistant-markdown-publishing-2026-en"
+      ],
+      "published_at": "2026-07-08T12:30:00+08:00"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "google-search-console-social-video-tracking-2026-en",
     "cloudflare-content-independence-day-ai-bot-rules-2026-en",
     "quikdown-vs-marked-markdown-parser-2026-en",
     "lettera-vs-ia-writer-mac-markdown-2026-en",
@@ -577,9 +625,9 @@
   ],
   "current_index": 3,
   "last_topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid)",
-  "last_run": "2026-07-06T12:30:00Z",
-  "last_published_slug": "cloudflare-content-independence-day-ai-bot-rules-2026-en",
-  "last_published_at": "2026-07-06T12:30:00Z",
+  "last_run": "2026-07-08T12:30:00+08:00",
+  "last_published_slug": "google-search-console-social-video-tracking-2026-en",
+  "last_published_at": "2026-07-08T12:30:00+08:00",
   "drafts_count": 0,
-  "published_count": 28
+  "published_count": 30
 }
