@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rowboat: Open-Source AI Desktop for Markdown 2026</title>
+  <meta name="description" content="Rowboat is an open-source Claude Desktop alternative with native Markdown support. Draft with local AI, edit in plain text, publish with md2rich.">
+  <meta name="keywords" content="Rowboat, open source AI desktop, Claude Desktop alternative, Rowboat AI, Markdown workflow, local AI assistant, open source LLM desktop, Rowboat vs Claude Desktop, Rowboat 2026, Markdown drafting AI, Rowboat GitHub, rowboatlabs, md2rich, AI writing tool, open source AI writing, privacy-first AI, local LLM desktop">
+  <link rel="canonical" href="https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Rowboat: Open-Source AI Desktop for Markdown 2026">
+  <meta property="og:description" content="Rowboat is an open-source Claude Desktop alternative with native Markdown support. Draft with local AI, edit in plain text, publish with md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Rowboat: Open-Source AI Desktop for Markdown 2026",
+        "description": "Rowboat is an open-source Claude Desktop alternative with native Markdown support. Draft with local AI, edit in plain text, publish with md2rich.",
+        "author": {
+          "@type": "Person",
+          "name": "md2rich",
+          "url": "https://about.me/jasonxmai"
+        },
+        "datePublished": "2026-07-12",
+        "dateModified": "2026-07-12",
+        "publisher": {
+          "@type": "Organization",
+          "name": "md2rich",
+          "url": "https://md2rich.com"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Rowboat Open-Source AI Desktop", "item": "https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article>
+      <time class="text-xs text-gray-500">2026-07-12</time>
+      <h1 class="text-3xl font-bold mt-2 mb-4">Rowboat: Open-Source AI Desktop for Markdown 2026</h1>
+
+      <p class="text-gray-600 text-lg mb-8">Rowboat hit 217 points on Hacker News in July 2026 as an open-source Claude Desktop alternative. It runs locally, respects your privacy, and treats Markdown as a first-class citizen — not an afterthought.</p>
+
+      <hr class="border-gray-200 my-8">
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">What Is Rowboat?</h2>
+
+      <p>Rowboat (github.com/rowboatlabs/rowboat) is a desktop AI assistant that runs entirely on your machine. Think Claude Desktop, but open-source, local-first, and designed for writers who work in <strong>plain text</strong>.</p>
+
+      <p>Unlike the hosted Claude or ChatGPT desktop apps, Rowboat connects to whatever LLM you choose — a local model via Ollama, an API key for Anthropic or OpenAI, or a self-hosted inference server. Your conversation history, drafts, and system prompts all live in Markdown files on your filesystem.</p>
+
+      <p class="bg-indigo-50 border-l-4 border-indigo-400 p-4 my-6 text-sm">Key differentiator: Rowboat stores every draft as a <code>.md</code> file in a user-specified directory. You can edit them with any text editor, version them with git, and pipe them directly into md2rich for publishing.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Why Markdown Writers Should Care</h2>
+
+      <p>Most AI desktop apps treat output as a black box. You generate text, copy it out, and lose all provenance. Rowboat does the opposite:</p>
+
+      <ul class="list-disc pl-6 space-y-2 my-4">
+        <li><strong>Every conversation becomes a Markdown file.</strong> Chat logs are saved as structured <code>.md</code> files with YAML frontmatter for metadata — model used, timestamp, token count.</li>
+        <li><strong>System prompts are Markdown templates.</strong> Instead of clicking through a settings panel, you write a natural-language system prompt in Markdown. The file IS the configuration.</li>
+        <li><strong>Drafts are separate Markdown files.</strong> When Rowboat generates a long-form draft, it writes it to a standalone <code>.md</code> file in your drafts folder. You never have to fight a rich-text editor to extract your work.</li>
+        <li><strong>Git-native workflows.</strong> Because everything is plain text, you can commit, diff, roll back, and collaborate on drafts using the same tools your engineering team uses.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Rowboat vs Claude Desktop</h2>
+
+      <p>Here is how the two compare for a Markdown-first writer:</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full border-collapse border border-gray-300 text-sm">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border border-gray-300 px-4 py-2 text-left">Feature</th>
+              <th class="border border-gray-300 px-4 py-2 text-left">Rowboat</th>
+              <th class="border border-gray-300 px-4 py-2 text-left">Claude Desktop</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">Source</td>
+              <td class="border border-gray-300 px-4 py-2">Open-source (MIT)</td>
+              <td class="border border-gray-300 px-4 py-2">Proprietary</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">Local LLM support</td>
+              <td class="border border-gray-300 px-4 py-2">Yes (Ollama, LM Studio)</td>
+              <td class="border border-gray-300 px-4 py-2">No (Anthropic API only)</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">Draft format</td>
+              <td class="border border-gray-300 px-4 py-2">Plain <code>.md</code> files</td>
+              <td class="border border-gray-300 px-4 py-2">App-internal database</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">System prompt storage</td>
+              <td class="border border-gray-300 px-4 py-2">Markdown files in a folder</td>
+              <td class="border border-gray-300 px-4 py-2">App preferences (opaque)</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">Export workflow</td>
+              <td class="border border-gray-300 px-4 py-2">Open <code>.md</code> → paste into md2rich</td>
+              <td class="border border-gray-300 px-4 py-2">Copy-paste from UI</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">Privacy</td>
+              <td class="border border-gray-300 px-4 py-2">Local-first, optional API keys</td>
+              <td class="border border-gray-300 px-4 py-2">Cloud-dependent</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2 font-medium">Cost</td>
+              <td class="border border-gray-300 px-4 py-2">Free (open-source)</td>
+              <td class="border border-gray-300 px-4 py-2">$20/mo + API usage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">The Rowboat → md2rich Pipeline</h2>
+
+      <p>Here is the end-to-end workflow for a Markdown-first creator using Rowboat and md2rich together:</p>
+
+      <ol class="list-decimal pl-6 space-y-3 my-4">
+        <li><strong>Draft in Rowboat.</strong> Ask the AI assistant to write a LinkedIn article, an X thread, or a Medium post. Rowboat writes the result as a <code>.md</code> file in your drafts folder.</li>
+        <li><strong>Edit in your text editor.</strong> Open the <code>.md</code> file in Obsidian, VS Code, or iA Writer. Review, revise, and add your voice. The Markdown source is yours — no lock-in.</li>
+        <li><strong>Open md2rich.com.</strong> Paste the Markdown into the editor. md2rich converts it to rich text in your browser — zero uploads, zero servers.</li>
+        <li><strong>Copy and publish.</strong> Paste the formatted rich text into LinkedIn, X Articles, Medium, Substack, or Notion. All formatting — headings, bold, lists, tables, code blocks — arrives intact.</li>
+      </ol>
+
+      <p class="bg-indigo-50 border-l-4 border-indigo-400 p-4 my-6 text-sm"><strong>Privacy note:</strong> Because Rowboat runs locally and md2rich processes everything client-side, your draft never touches a third-party server. This is the difference between writing with an AI assistant and <em>surrendering</em> your writing to one.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Markdown Example: Rowboat Draft → LinkedIn Post</h2>
+
+      <p>Say you ask Rowboat to draft a LinkedIn post about AI ethics. It writes this Markdown:</p>
+
+      <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm my-4"><code># Three AI Ethics Questions Every Team Should Ask
+
+Building responsible AI is not about writing a one-page policy.
+
+It is about embedding ethics into the engineering workflow:
+
+1. **Who audits the training data?**
+   - Bias detection should live in CI/CD, not in a quarterly review.
+   - Automated fairness checks catch problems before deployment.
+
+2. **What is the fallback for incorrect outputs?**
+   - Every API call needs a confidence threshold.
+   - Below threshold → human review, not auto-approval.
+
+3. **How do users report problems?**
+   - A feedback channel is not a feature request.
+   - Users need a direct path to flag harmful outputs.</code></pre>
+
+      <p>Now paste that Markdown into md2rich. The output is fully formatted HTML-ready rich text with bold headings, numbered lists, and bullet points — everything LinkedIn expects. Copy it, paste into a LinkedIn post, and publish.</p>
+
+      <p>No formatting lost. No third-party platform touching your draft. Just Markdown in, rich text out.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-6 my-6">
+        <div>
+          <h3 class="font-semibold text-lg">Is Rowboat completely free?</h3>
+          <p class="text-gray-700 mt-1">Yes. Rowboat is MIT-licensed open source. You pay for compute — either a local LLM (free if you have a capable machine) or API credits for cloud models. The software itself costs nothing.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">Can I use Rowboat with a Claude or GPT API key?</h3>
+          <p class="text-gray-700 mt-1">Yes. Rowboat supports multiple LLM backends. Configure it with an Anthropic or OpenAI API key, and it works exactly like Claude Desktop — except your drafts live in Markdown files on your disk, not in a proprietary database.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">Does Rowboat work offline?</h3>
+          <p class="text-gray-700 mt-1">With a local model (via Ollama or LM Studio), yes — Rowboat works fully offline. Your drafts, system prompts, and chat history are all stored locally. No internet required beyond the initial download.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">How does md2rich fit into the Rowboat workflow?</h3>
+          <p class="text-gray-700 mt-1">Rowboat handles the drafting stage. md2rich handles the publishing stage. Rowboat writes Markdown — md2rich converts it to rich text for social platforms and content management systems. Together they form a complete write → edit → publish pipeline with zero cloud uploads.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-lg">What models can Rowboat run locally?</h3>
+          <p class="text-gray-700 mt-1">Rowboat works with any model hosted by Ollama (Llama 3, Mistral, Qwen, Phi-3, etc.) or any OpenAI-compatible API server. You can mix local and cloud models per conversation — lightweight edits on a local model, heavy drafting on a larger cloud model.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Bottom Line</h2>
+
+      <p>Rowboat fills a real gap in the AI desktop market: an open-source, local-first assistant that treats your writing output as yours — not as data trapped in a proprietary UI. Its Markdown-native design makes it a natural partner for any writer who wants to draft with AI and publish from plain text.</p>
+
+      <p><strong>The complete workflow is simple:</strong> draft in Rowboat, edit in your text editor, convert with <a href="https://md2rich.com/" class="text-indigo-600 underline">md2rich</a>, and publish anywhere. No uploads, no lock-in, no formatting loss.</p>
+
+      <p class="mt-8 pt-6 border-t border-gray-200 text-sm text-gray-500">
+        <strong>Related reading:</strong>
+        <a href="/blog/ai-writing-assistant-markdown-publishing-2026-en" class="text-indigo-600">AI Writing Assistants to Rich Text: 2026 Workflow</a> &middot;
+        <a href="/blog/markdown-tool-landscape-2026-en" class="text-indigo-600">2026 Markdown Tool Landscape</a> &middot;
+        <a href="/blog/markdown-to-rich-text-2026-en" class="text-indigo-600">Markdown to Rich Text 2026</a>
+      </p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16 py-8 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center text-sm text-gray-500">
+      <p><a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> — convert Markdown to rich text. No uploads, no accounts, just paste and copy.</p>
+      <p class="mt-2"><a href="/privacy" class="text-gray-400 hover:text-gray-600">Privacy</a></p>
+    </div>
+  </footer>
+</body>
+</html>
