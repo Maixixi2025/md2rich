@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Workers AI toMarkdown vs md2rich 2026</title>
+  <meta name="description" content="Cloudflare Workers AI added text output and Markdown for Agents (July 2026). Compare with md2rich for writers pasting Markdown into LinkedIn, X, Substack.">
+  <meta name="keywords" content="Cloudflare Workers AI toMarkdown, Markdown for Agents, env.AI.toMarkdown, md2rich, client-side markdown converter, Markdown to rich text, LinkedIn markdown, X Articles markdown, edge markdown conversion, privacy-first converter">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare Workers AI toMarkdown vs md2rich 2026">
+  <meta property="og:description" content="Cloudflare Workers AI added text output and Markdown for Agents (July 2026). Compare with md2rich for writers pasting Markdown into LinkedIn, X, Substack.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare Workers AI toMarkdown vs md2rich 2026",
+      "description": "Cloudflare Workers AI added text output and Markdown for Agents (July 2026). Compare with md2rich for writers pasting Markdown into LinkedIn, X, Substack.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-14",
+      "dateModified": "2026-07-14",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cloudflare Workers AI toMarkdown vs md2rich: 2026 Writer's Guide",
+          "item": "https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Cloudflare Workers AI toMarkdown free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most format conversions are free on Cloudflare Workers AI toMarkdown. Image conversion can call Workers AI models for object detection and summarization, which may exceed the Workers AI free tier and bill you per request. PDF and HTML conversions are inside the free allocation today; expensive image batches are the only path that costs money."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Workers AI toMarkdown work for Markdown to LinkedIn pasting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Workers AI toMarkdown converts files (HTML, PDF, images, Office docs) into Markdown. It does not convert Markdown into the rich text LinkedIn's composer accepts. For the paste step from a Markdown draft into LinkedIn, you need a Markdown-to-clipboard rich-text converter like md2rich, which runs entirely in the browser and emits the bold, italic, headers, and links that LinkedIn's WYSIWYG preserves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Markdown for Agents and does it replace md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown for Agents (Cloudflare, July 13 2026) is a content-negotiation feature for Cloudflare zones. When a request sends Accept: text/markdown, Cloudflare returns the Markdown version of any HTML page on the zone, with security headers preserved and a default Content-Signal: ai-train=yes, search=yes, ai-input=yes. It is for AI agents crawling websites, not for writers pasting into LinkedIn. md2rich stays the right tool for the human-writer paste step."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run Workers AI toMarkdown locally like md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Workers AI runs on Cloudflare's edge network. The env.AI binding lives inside a Worker; you cannot invoke toMarkdown from a local browser tab the way you can paste Markdown into md2rich. If your draft contains a paragraph you do not want leaving the page, md2rich is the only option of the two."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should a Markdown-first writer use Workers AI toMarkdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use it for batch document ingestion: turning 50 PDF reports into Markdown for an LLM to read, processing screenshots or scanned receipts, or converting a folder of HTML archive pages for a RAG index. For daily writing (a Markdown draft into LinkedIn, X Articles, or Substack), md2rich is faster, cheaper, and never sends the draft to a server."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">July 14, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Cloudflare Workers AI toMarkdown vs md2rich 2026</h1>
+      </header>
+
+<p class="text-lg text-gray-700 mb-6">Cloudflare shipped two Markdown-conversion updates in July 2026: a <code>text</code> output option for the Workers AI <code>toMarkdown</code> method on July 10, and the "Markdown for Agents" content-negotiation feature on July 13 that preserves HSTS, CSP, and <code>Content-Signal</code> headers from your origin. For a Markdown-first writer who pastes into LinkedIn, X Articles, and Substack, the question is whether either of these replaces <a href="/">md2rich</a> — the client-side converter that turns Markdown drafts into the rich text those composers actually accept. The short answer is no, they solve different problems, and this guide shows where each one fits in a 2026 writing workflow.</p>
+
+<p class="text-gray-700 mb-6">Workers AI <code>toMarkdown</code> is for <em>ingesting</em> documents into Markdown. It converts PDFs, scanned images, Office files, and HTML pages into structured Markdown that an LLM or a RAG index can parse. md2rich is for <em>publishing</em> Markdown drafts into rich-text composers. One runs on Cloudflare's edge and the other runs in your browser. The two are complementary, not competitive, and the right combination depends on which direction your Markdown is moving.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What Cloudflare shipped in July 2026</h2>
+
+<p class="text-gray-700 mb-6">Cloudflare's Workers AI <code>toMarkdown</code> method has been live since 2024, but the two July 2026 releases made it production-grade for the kind of pipelines Markdown writers actually need. Both are documented on the Cloudflare developer changelog and confirmed against the official <a href="https://developers.cloudflare.com/workers-ai/features/markdown-conversion/" target="_blank" rel="noopener">Markdown Conversion</a> docs page.</p>
+
+<div class="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
+<table class="w-full text-sm">
+<thead class="bg-gray-50">
+<tr><th class="text-left px-4 py-2">Feature</th><th class="text-left px-4 py-2">Released</th><th class="text-left px-4 py-2">What it does</th></tr>
+</thead>
+<tbody>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">output.format = "text"</td><td class="px-4 py-2">July 10, 2026</td><td class="px-4 py-2">Returns plain text with Markdown syntax stripped, useful for indexing or pre-LLM cleaning. Default stays "markdown".</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Markdown for Agents</td><td class="px-4 py-2">July 13, 2026</td><td class="px-4 py-2">Origin Content Signals: HTML responses return Markdown when the request sends Accept: text/markdown, with HSTS, CSP, Set-Cookie, and Content-Signal headers preserved.</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">GIF and BMP to Markdown</td><td class="px-4 py-2">Earlier in 2026</td><td class="px-4 py-2">Adds raster image formats to the converter so screenshots and scanned receipts convert without pre-processing.</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Browser Rendering /markdown endpoint</td><td class="px-4 py-2">Available since 2025</td><td class="px-4 py-2">Renders a JS-heavy page in a real browser, then converts the rendered DOM to Markdown. Use for SPAs.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">The pricing page confirms <code>toMarkdown</code> is free for most format conversions. Image conversion can call Workers AI models for object detection and summarization, which may exceed the free tier and bill per request — but PDF and HTML conversions stay free as of July 2026.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What md2rich does in 2026</h2>
+
+<p class="text-gray-700 mb-6">md2rich is a single-page web app: open the URL, paste Markdown into the left pane, the right pane renders rich text, click <em>Copy rich text</em>, paste into LinkedIn / X Articles / Substack / Notion / Bluesky. The conversion runs in your browser using the standard <code>ClipboardItem</code> API with HTML and plain-text variants, so the rich-text payload lands in the platform's composer already formatted as bold, italics, headers, links, and lists.</p>
+
+<p class="text-gray-700 mb-6">Because it runs in your browser tab, no network request carries the draft. There is no API key, no login, and no server-side processing. The same property makes it useless for batch processing 200 PDFs — but that is not the use case md2rich is built for.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Side-by-side: Workers AI toMarkdown vs md2rich</h2>
+
+<div class="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
+<table class="w-full text-sm">
+<thead class="bg-gray-50">
+<tr><th class="text-left px-4 py-2">Dimension</th><th class="text-left px-4 py-2">Workers AI toMarkdown</th><th class="text-left px-4 py-2">md2rich</th></tr>
+</thead>
+<tbody>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Direction</td><td class="px-4 py-2">Document → Markdown</td><td class="px-4 py-2">Markdown → rich text</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Where it runs</td><td class="px-4 py-2">Cloudflare edge (Worker)</td><td class="px-4 py-2">Your browser tab</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Network</td><td class="px-4 py-2">Document is POSTed to Cloudflare</td><td class="px-4 py-2">Zero network — local paste only</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Cost</td><td class="px-4 py-2">Free for most formats, billed on heavy image batches</td><td class="px-4 py-2">Free, no rate limits</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Latency</td><td class="px-4 py-2">~100–400ms per file (edge round trip)</td><td class="px-4 py-2">Instant (sub-frame)</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Best input</td><td class="px-4 py-2">PDF, Office, image, raw HTML page</td><td class="px-4 py-2">A Markdown draft you have already written</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Best output</td><td class="px-4 py-2">Markdown string or plain text for an LLM/RAG</td><td class="px-4 py-2">Rich text on the OS clipboard for pasting into a composer</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Auth</td><td class="px-4 py-2">Cloudflare account + API token</td><td class="px-4 py-2">None</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Privacy</td><td class="px-4 py-2">Document reaches the edge (encrypted in transit, processed, discarded)</td><td class="px-4 py-2">Draft never leaves the browser</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Limits</td><td class="px-4 py-2">Per-account Workers AI quota</td><td class="px-4 py-2">Clipboard size cap (~50MB on most browsers)</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">The columns that matter most are <em>Direction</em> and <em>Where it runs</em>. If your starting artifact is a PDF or a screenshot, Workers AI is the only option — md2rich cannot read a PDF. If your starting artifact is a Markdown draft and your target is a social composer, md2rich is the only option — Workers AI <code>toMarkdown</code> outputs Markdown or text, not the HTML-flavored clipboard payload that LinkedIn's composer accepts.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Five writer workflows that combine both</h2>
+
+<p class="text-gray-700 mb-6">The cleanest 2026 setup uses each tool inside its lane. Five concrete workflows show the division of labor.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">1. Ingest research PDFs into a Markdown research vault</h3>
+
+<p class="text-gray-700 mb-6">Drop a folder of PDFs into an R2 bucket, write a Worker that iterates the bucket and calls <code>env.AI.toMarkdown()</code> on each file, write the Markdown to a second bucket or feed it directly into a Vectorize index. The Worker runs on the same edge as the bucket, so 200 PDFs convert in under a minute and cost nothing on the free allocation for text-based PDFs. This is a Markdown-first vault built without ever opening a desktop OCR tool.</p>
+
+<pre class="bg-gray-900 text-gray-100 text-sm rounded-lg p-4 overflow-x-auto mb-6"><code>// workers-ai-tomarkdown-pipeline.ts
+export default {
+  async fetch(req, env) {
+    const form = await req.formData();
+    const file = form.get('file');
+    const md = await env.AI.toMarkdown(
+      { name: file.name, blob: file },
+      { conversionOptions: { output: { format: 'markdown' } } },
+    );
+    return new Response(md, { headers: { 'content-type': 'text/markdown' } });
+  },
+};</code></pre>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">2. Convert screenshots of paywalled articles</h3>
+
+<p class="text-gray-700 mb-6">Screenshot a Bloomberg or FT article (your subscription, your screenshot), drop the PNG into the same Worker. <code>toMarkdown</code> with the image path runs object detection and OCR under the hood and returns a Markdown approximation you can paste into a notes app. Useful for the "I read this three weeks ago and need the cite" workflow. Note: this is the path that may exceed the Workers AI free tier if you batch-process dozens of images per day.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">3. Daily Markdown draft → LinkedIn longform</h3>
+
+<p class="text-gray-700 mb-6">This is the workflow md2rich exists for and where Workers AI is the wrong tool. Open your editor (Obsidian, iA Writer, VS Code), write a 1,200-word Markdown draft with one H1, three H2s, three links, and one bold callout. Open <a href="/">md2rich</a>, paste the Markdown into the left pane, click <em>Copy rich text</em>, switch to LinkedIn, paste into the longform composer. The bold, italics, headers, and links survive the round trip; the LinkedIn AI detector (covered in the July 13 detector roundup) sees your sentence patterns, not a pasted-HTML payload.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">4. Markdown for Agents on your own Cloudflare zone</h3>
+
+<p class="text-gray-700 mb-6">If you publish a documentation site on Cloudflare Pages, enable the Markdown for Agents feature (Cloudflare Fundamentals → Content Signals). Any HTTP client — including GPTBot, ClaudeBot, and the LLM scrapers in your analytics — that requests the page with <code>Accept: text/markdown</code> receives the Markdown version directly. You do not need a Worker; the conversion happens at the edge, and the security headers your origin sets (HSTS, CSP, X-Frame-Options, Set-Cookie, CORS) are preserved on the converted response. The default Content-Signal when you do not set one is <code>ai-train=yes, search=yes, ai-input=yes</code>, which tells AI crawlers the content is open for training and search use.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">5. Markdown newsletter → Substack without losing code blocks</h3>
+
+<p class="text-gray-700 mb-6">Substack's composer accepts pasted HTML from <code>ClipboardItem</code> the same way LinkedIn does. The same md2rich paste step (write in Markdown → md2rich → paste into Substack) preserves fenced code blocks and inline code formatting, which the Substack markdown shortcut loses. Workers AI is irrelevant here; you are not converting a document, you are publishing one.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The privacy line that decides the tool</h2>
+
+<p class="text-gray-700 mb-6">Workers AI <code>toMarkdown</code> runs on Cloudflare's edge and the document is POSTed to the Workers AI binding inside a Worker. Cloudflare documents that conversion data is processed and discarded, and the edge network is encrypted in transit. For a PDF you wrote, a screenshot of your own work, or a public article, that is fine. For an unpublished draft containing source material you have not yet cited, the route to the edge is one more party in the trust chain — and there is no way to disable it without leaving Workers AI entirely.</p>
+
+<p class="text-gray-700 mb-6">md2rich's zero-upload property is the same property that lets you paste a draft containing three paragraphs you have not yet sourced, an unreleased product name, or a personal anecdote you do not want logged. The conversion runs in your browser tab using the standard DOM and <code>ClipboardItem</code> APIs; no <code>fetch()</code> call leaves the page. If your threat model includes "the platform I am pasting into might scrape my drafts," md2rich reduces that surface; Workers AI does not.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Pricing in July 2026</h2>
+
+<div class="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
+<table class="w-full text-sm">
+<thead class="bg-gray-50">
+<tr><th class="text-left px-4 py-2">Item</th><th class="text-left px-4 py-2">Cost</th></tr>
+</thead>
+<tbody>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Workers AI toMarkdown (PDF, HTML, Office)</td><td class="px-4 py-2">Free, included in Workers AI free tier</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Workers AI toMarkdown (image: PNG, JPG, GIF, BMP)</td><td class="px-4 py-2">Free up to Workers AI monthly limit, then per-image billed against object-detection models</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Browser Rendering /markdown endpoint</td><td class="px-4 py-2">Free for the first 100 requests/month, then per-request billed</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Markdown for Agents (zone-level content negotiation)</td><td class="px-4 py-2">Free for Pro+ zones, included with the Workers Paid plan</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">md2rich</td><td class="px-4 py-2">Free, no rate limits, no account</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">Both tools are free for the writer workflow they were built for. Workers AI's free tier is enough for a personal RAG of a few hundred PDFs a month; md2rich has no tier at all because there is nothing to bill against (no API key, no server).</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">When to pick which</h2>
+
+<p class="text-gray-700 mb-6">Pick <strong>Workers AI toMarkdown</strong> when you are turning PDFs, scanned images, or HTML pages into structured Markdown for an LLM, RAG index, or local note archive. The edge round trip is fast, the cost is free for text-based formats, and the new <code>text</code> output option is the cleanest way to strip Markdown syntax before chunking for embeddings.</p>
+
+<p class="text-gray-700 mb-6">Pick <strong>md2rich</strong> when you are publishing a Markdown draft into LinkedIn, X Articles, Substack, Bluesky, Notion, or any other rich-text composer that accepts pasted HTML. The paste step runs in your browser, the formatting survives the round trip, and the draft never reaches a server.</p>
+
+<p class="text-gray-700 mb-6">For most Markdown-first writers, the two are complementary parts of the same stack: Workers AI on the ingestion side (PDFs in → Markdown out for an LLM to read) and md2rich on the publishing side (Markdown draft → rich text on the clipboard for a human reader). The July 2026 releases closed the two gaps that made this stack incomplete — text output for LLM preprocessing and Markdown for Agents for AI crawler access — without changing either tool's primary purpose.</p>
+
+<p class="text-gray-700 mb-6">If you write in Markdown and publish to social, <a href="/" class="text-indigo-600 font-semibold">try md2rich</a> first — the conversion is local, the paste is one click, and your draft never reaches a server. If you maintain a research archive that needs to become Markdown for an LLM, point a Worker at your R2 bucket and call <code>env.AI.toMarkdown()</code> on every new file. The two tools together are the cleanest 2026 split: ingestion on the edge, publishing in the browser, and your draft never crosses the wrong boundary for either step.</p>
+
+<div class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+<h3 class="text-lg font-semibold text-indigo-900 mb-2">Try md2rich — client-side Markdown to rich text</h3>
+<p class="text-gray-700 mb-3">Open the editor, paste your Markdown, click <em>Copy rich text</em>, paste into LinkedIn, X Articles, Substack, Bluesky, or Notion. The conversion runs in your browser tab using the standard <code>ClipboardItem</code> API; no upload, no account, no API key. Bold, italics, headers, links, fenced code blocks, and inline code all survive the round trip.</p>
+<p class="text-gray-700"><a href="/" class="text-indigo-600 font-semibold">Open the editor →</a> &nbsp; <a href="/blog/" class="text-indigo-600 font-semibold">More guides</a></p>
+</div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between">
+      <span>&copy; 2026 md2rich</span>
+      <span><a href="/" class="hover:text-indigo-600">Editor</a> &middot; <a href="/about" class="hover:text-indigo-600">About</a> &middot; <a href="/blog/" class="hover:text-indigo-600">Blog</a></span>
+    </div>
+  </footer>
+</body>
+</html>

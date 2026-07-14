@@ -717,6 +717,23 @@
         "zerogpt"
       ],
       "primary_cta": "Try md2rich — Markdown to rich text in your browser, no upload"
+    },
+    {
+      "slug": "cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
+      "date": "2026-07-14",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
+      "title": "Cloudflare Workers AI toMarkdown vs md2rich 2026",
+      "description": "Cloudflare Workers AI added text output and Markdown for Agents (July 2026). Compare with md2rich for writers pasting Markdown into LinkedIn, X, Substack.",
+      "heat_source": "briefing-2026-07-14:Cloudflare Workers AI Markdown Conversion text output (07-10) + Markdown for Agents (07-13)",
+      "status": "published",
+      "published_at": "2026-07-14",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
