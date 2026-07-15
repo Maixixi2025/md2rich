@@ -734,6 +734,27 @@
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-bluesky-x-linkedin-longform-2026-en",
+      "date": "2026-07-15",
+      "type": "workflow",
+      "lang": "en-US",
+      "file": "blog/markdown-to-bluesky-x-linkedin-longform-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-bluesky-x-linkedin-longform-2026-en",
+      "title": "Markdown to Bluesky, X & LinkedIn: Long-Form 2026",
+      "description": "Write Markdown once, paste to Bluesky, X Articles, and LinkedIn without losing formatting. A 2026 long-form social publishing workflow.",
+      "heat_source": "daily-briefing-2026-07-15 (Bluesky long-form + 25% AI text detection 7-09 Register)",
+      "status": "published",
+      "published_at": "2026-07-15T15:00:00Z",
+      "providers_featured": [
+        "Bluesky",
+        "X Articles",
+        "LinkedIn"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_pool": "tier-5-freshest-briefing-fallback",
+      "topic_pool_rationale": "All 5 prompt-listed priority topics (Markdown editor 2026, MD to LinkedIn, X Articles workflow, Obsidian alts, client-vs-cloud) covered in last 30d. Per v3.0.17 rule, fell through to today's freshest briefing item with direct md2rich alignment: cross-platform long-form social publishing (Bluesky 5-28 + Register 7-09 25% AI detection). Fresh angle: write-once-publish-everywhere workflow distinct from prior single-platform articles (07-09 bluesky, 07-11 x-post-correction)."
     }
   ],
   "drafts": [],
