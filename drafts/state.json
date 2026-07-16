@@ -755,6 +755,21 @@
       "primary_cta": "https://md2rich.com/",
       "topic_pool": "tier-5-freshest-briefing-fallback",
       "topic_pool_rationale": "All 5 prompt-listed priority topics (Markdown editor 2026, MD to LinkedIn, X Articles workflow, Obsidian alts, client-vs-cloud) covered in last 30d. Per v3.0.17 rule, fell through to today's freshest briefing item with direct md2rich alignment: cross-platform long-form social publishing (Bluesky 5-28 + Register 7-09 25% AI detection). Fresh angle: write-once-publish-everywhere workflow distinct from prior single-platform articles (07-09 bluesky, 07-11 x-post-correction)."
+    },
+    {
+      "slug": "milepost-markdown-agent-memory-vs-md2rich-2026-en",
+      "date": "2026-07-16",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/milepost-markdown-agent-memory-vs-md2rich-2026-en.html",
+      "url": "https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en",
+      "title": "Milepost Markdown Agent Memory vs md2rich 2026",
+      "description": "Milepost (2026) gives Claude Code plain-markdown long-term memory. See how md2rich normalizes X/Bluesky long-form into clean input for agent memory.",
+      "heat_source": "daily-briefing 2026-07-16 ⭐ Milepost (HN 2026-07-15, sashamitrovich/milepost): plain-Markdown long-term memory for Claude Code",
+      "status": "published",
+      "published_at": "2026-07-16T12:35:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "md2rich"
     }
   ],
   "drafts": [],

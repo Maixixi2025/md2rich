@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milepost Markdown Agent Memory vs md2rich 2026</title>
+  <meta name="description" content="Milepost (2026) gives Claude Code plain-markdown long-term memory. See how md2rich normalizes X/Bluesky long-form into clean input for agent memory.">
+  <meta name="keywords" content="Milepost markdown memory, Claude Code memory plugin, plain markdown agent memory, AI agent diary, markdown normalization, md2rich, Markdown to rich text, X long form to markdown, Bluesky long form to markdown, agent context compression, markdown to AI input">
+  <link rel="canonical" href="https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Milepost Markdown Agent Memory vs md2rich 2026">
+  <meta property="og:description" content="Milepost (2026) gives Claude Code plain-markdown long-term memory. See how md2rich normalizes X/Bluesky long-form into clean input for agent memory.">
+  <meta property="og:url" content="https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Milepost Markdown Agent Memory vs md2rich 2026",
+      "description": "Milepost (2026) gives Claude Code plain-markdown long-term memory. See how md2rich normalizes X/Bluesky long-form into clean input for agent memory, end to end.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-16",
+      "dateModified": "2026-07-16",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Milepost Markdown Agent Memory vs md2rich 2026",
+          "item": "https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Milepost, and why does it matter for Markdown writers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Milepost is an open-source Claude Code plugin released in July 2026 that gives the AI coding agent a plain-markdown, milestone-triggered long-term memory. Each project gets a log.md (append-only milestone entries) and a STATUS.md (living snapshot). Everything is on disk, greppable, version-controllable, and never inside a database. For Markdown-first writers who use Claude Code for long-running research and publishing work, Milepost means the agent remembers your decisions and next steps weeks later, with no SaaS lock-in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Milepost differ from claude-mem or claude-diary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "claude-mem captures everything automatically into SQLite + a vector database — easy to get locked in, hard to export, opaque to inspect. claude-diary writes markdown but only when you run a command or after a session ends. Milepost takes the third path: writes happen as you work, but only when a real milestone happens (a deliverable, a key decision, a blocker, a direction change), not every token. The diary stays greppable plain markdown and the agent reads STATUS.md back into context at session start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I normalize X Articles or Bluesky long-form into Markdown before feeding it to an agent memory?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Long-form social posts are stored as platform-specific HTML with platform-specific wrappers (Bluesky facets, X Articles rich blocks, LinkedIn URNs). Pasting that raw HTML into a Markdown memory file leaves embedded tracking pixels, platform metadata, and broken inline styles. Running the post through a Markdown normalizer (such as md2rich, run in reverse) produces a clean, greppable, agent-readable input that survives grep, git, and future parsers. The diary stays small and the agent spends fewer tokens re-reading garbage wrappers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Milepost log secrets or sensitive content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Defense in depth, not just a polite instruction. The CLAUDE.md policy tells the agent to reference secrets by location only. A PreToolUse guard hook mechanically blocks diary writes containing secret-shaped content (API keys, AWS/GitHub/Slack tokens, JWTs, URLs with embedded credentials, plus a high-entropy catch-all for unknown token formats). MILEPOST_STRICT=1 additionally blocks IP addresses and e-mail addresses for client work. A .no-milepost file at a project root excludes that project entirely. The diary is owner-only (chmod 700) and not encrypted by design — use full-disk encryption for stolen-device protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can md2rich convert pasted rich text back into clean Markdown for agent input?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. md2rich is built on the ClipboardItem API and runs entirely in the browser. Pasting rich text from X Articles, Bluesky long-form, or LinkedIn into the editor and clicking 'Copy as Markdown' produces a normalized plain-markdown version suitable for dropping into a Milepost log.md entry, a STATUS.md update, or any other agent-readable memory file. The conversion runs locally, no upload, no account, no API key. For long-running projects that span weeks of social posts and code work, this is the missing piece that keeps the diary clean."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    article p { line-height: 1.7; }
+    article h2 { scroll-margin-top: 80px; }
+    article h3 { scroll-margin-top: 80px; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    pre { background: #1f2937; color: #f9fafb; padding: 16px; border-radius: 8px; overflow-x: auto; }
+    pre code { background: transparent; color: inherit; padding: 0; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white rounded-lg p-8 shadow-sm">
+      <time class="text-xs text-gray-500">2026-07-16</time>
+      <h1 class="text-3xl font-bold mt-2 mb-6">Milepost Markdown Agent Memory vs md2rich 2026</h1>
+
+<p class="text-gray-700 mb-6">Milepost landed on Hacker News on July 15, 2026 with four points and a single comment, but the timing is more important than the score: the AI coding world just got its first credible plain-markdown long-term memory plugin, and the Markdown-first writing community has been waiting for it without knowing it. This guide walks through what Milepost is, why it matters for writers who publish Markdown to X Articles, Bluesky, and LinkedIn, and how a tool like md2rich slots into the workflow to keep the agent's memory clean enough that grep, git, and the next session can actually use it.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What Milepost actually is</h2>
+
+<p class="text-gray-700 mb-6">Milepost is an MIT-licensed Claude Code plugin by Saša Mitrović that gives the agent a milestone-triggered, in-session work diary stored entirely as plain markdown files. You install it inside Claude Code with two commands:</p>
+
+<pre><code>/plugin marketplace add sashamitrovich/milepost
+/plugin install milepost@milepost</code></pre>
+
+<p class="text-gray-700 mb-6">Once installed, four pieces cooperate. A CLAUDE.md policy block tells the agent <em>when</em> a milestone is worth recording and <em>how</em> to write it. A throttled Stop hook (default: once per 15 minutes) gently nudges the agent to check for unrecorded milestones on long sessions. A read-only SessionStart hook surfaces the current project's STATUS.md back into context at the start of every session, matched via a git-root-aware project slug. A PreToolUse hook mechanically blocks diary writes containing secret-shaped content — API keys, AWS/GitHub/Slack tokens, JWTs, URLs with embedded credentials — so the policy alone does not have to be trusted.</p>
+
+<p class="text-gray-700 mb-6">Per project, on disk:</p>
+
+<pre><code>~/.claude/memory/milepost/&lt;project&gt;/
+&#9500;&#9472;&#9472; log.md         # append-only, timestamped milestone entries
+&#9500;&#9472;&#9472; STATUS.md      # living snapshot: current goal, where things stand, next step
+&#9492;&#9472;&#9472; reflections/   # optional /reflect syntheses</code></pre>
+
+<p class="text-gray-700 mb-6">A real entry, copied from the README, looks like this:</p>
+
+<pre><code>## 2026-06-27 14:32 — Converted architect PDF to per-page JPEGs
+**Type:** deliverable
+**What:** Rendered all 4 A3 pages at 200 DPI with ImageMagick.
+**Why:** Client needed individual page images for review.
+**Next:** —</code></pre>
+
+<p class="text-gray-700 mb-6">Readable by humans. Parseable by machines. Owned by you. No SQLite, no vector DB, no cloud, no lock-in. That last line is the part the Markdown-first writing community has been waiting for, because most AI memory systems trade portability for convenience in a way that breaks grep and breaks git, and the people who write everything in Markdown tend to be the people who care about that.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Why Markdown-first writers care</h2>
+
+<p class="text-gray-700 mb-6">Three reasons. First, the writers who already keep their drafts in plain markdown (Obsidian vaults, Logseq journals, static-site drafts, GitHub repos) are the same writers most likely to use Claude Code for research-heavy long-form posts. They need an agent memory that lives where their drafts already live — in git, on disk, in grep. Second, the platform-specific wrappers around long-form social posts (Bluesky facets, X Articles rich blocks, LinkedIn URNs) are hostile to agent ingestion. If you paste raw HTML into a Markdown memory file, the diary fills up with platform metadata, tracking pixels, and broken inline styles, and the agent spends its context window re-reading garbage. Third, Milepost's milestone-triggered logging is closer to how writers actually work than continuous capture: a draft was published, a decision was reversed, a research thread hit a wall, an editor asked for a structural change. Those are milestones. Continuous token-by-token capture is not.</p>
+
+<p class="text-gray-700 mb-6">The other plugins in the space split into two camps. claude-mem captures everything automatically into SQLite plus a vector store — useful for retrieval, opaque to inspection, and creates the exact lock-in that Markdown-first users reject by default. claude-diary writes markdown but only when you run a command or after a session ends, which means the diary misses the in-session reasoning that often matters most. Milepost takes the third path: plain markdown, written as you go, triggered by milestones — not by a clock, a command, or a database.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The dirty secret about feeding social posts into agent memory</h2>
+
+<p class="text-gray-700 mb-6">Writers who publish to X Articles, Bluesky long-form, or LinkedIn newsletter often want the published post to live in the agent's memory too — not just the draft. "What did I write about Bluesky federation last month?" is a normal question to ask Claude Code on a Tuesday morning, and the answer should not require re-Googling your own handle.</p>
+
+<p class="text-gray-700 mb-6">The problem is that copying a long-form post from X Articles or Bluesky and pasting it into a markdown file embeds platform metadata. Bluesky long-form exports include facet markup (mentions, links, tags) wrapped in angle-bracket delimiters that survive a copy but break in most Markdown parsers. X Articles rich-text blocks carry inline styles that look like <code>&lt;b&gt;</code> tags inside your plain text. LinkedIn posts include URNs for every mention. If you paste any of these into log.md, the file works in Notion but breaks in grep, breaks in git diff, and the agent spends the first 500 tokens of its next session trying to figure out which <code>&lt;span&gt;</code> is content and which is wrapper.</p>
+
+<p class="text-gray-700 mb-6">The fix is a normalization step: take the rich text from the platform, run it through a converter that emits clean Markdown, then drop the Markdown into the diary. md2rich is built on the browser's ClipboardItem API and runs the conversion locally with no upload, no account, no API key. Paste the published post into the editor, click "Copy as Markdown," and the clipboard holds a normalized plain-markdown version that survives grep, git, and any agent session that comes next.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">A 5-step workflow: normalize → diary → recall</h2>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Step 1: Draft and publish as usual</h3>
+
+<p class="text-gray-700 mb-6">Write the post in Markdown. Run the Markdown draft through md2rich to convert to rich text. Paste into X Articles, Bluesky long-form, or LinkedIn. Publish. This is the workflow every social publishing guide in 2026 recommends, and the conversion step has nothing to do with agent memory — it is just the standard paste-without-losing-formatting step.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Step 2: Copy the published rich text back out</h3>
+
+<p class="text-gray-700 mb-6">After publishing, select the post in your platform's UI, copy it as rich text (Cmd-C on Mac in the X Articles composer, the standard copy in Bluesky, Cmd-Shift-C in some LinkedIn clients). The clipboard now holds platform-rich HTML with all the wrappers your agent memory does not want.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Step 3: Convert rich text → clean Markdown</h3>
+
+<p class="text-gray-700 mb-6">Paste the rich text into the md2rich editor at <a href="/" class="text-indigo-600 font-semibold">md2rich.com</a>. Click "Copy as Markdown." The clipboard now holds a normalized Markdown version with the platform wrappers stripped, the inline styles converted to asterisks and backticks, and the mentions and links rendered as plain <code>[text](url)</code>. The conversion runs locally in the browser; nothing is uploaded, nothing is logged.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Step 4: Drop into log.md or STATUS.md</h3>
+
+<p class="text-gray-700 mb-6">Open <code>~/.claude/memory/milepost/&lt;your-publishing-project&gt;/log.md</code> and append a new milestone entry. The Milepost CLAUDE.md policy will eventually do this for you automatically when it judges a publication to be a milestone, but for the first few weeks of using the plugin, manual entries are useful while you learn the diary's rhythm:</p>
+
+<pre><code>## 2026-07-16 09:14 — Published "X Articles vs LinkedIn Newsletter" long-form comparison
+**Type:** deliverable
+**What:** Shipped the cross-platform comparison post, normalized from
+        rich text to clean Markdown via md2rich before logging here.
+**Why:** Wanted the diary to keep a greppable record of every published
+        long-form post so future sessions can recall what I covered.
+**Next:** Promote on Bluesky; rewrite the lede for a LinkedIn newsletter cut.</code></pre>
+
+<p class="text-gray-700 mb-6">For a project-wide snapshot, the same normalized Markdown goes into STATUS.md. The living STATUS.md is what the SessionStart hook reads back into context the next time you sit down at Claude Code, so the agent knows you just published a comparison post and the next step is the LinkedIn newsletter cut without you having to re-explain it.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Step 5: Let the agent recall, verify, and continue</h3>
+
+<p class="text-gray-700 mb-6">The next time you open Claude Code on this project, the Milepost SessionStart hook reads STATUS.md back into context. The agent already knows the project state. You can ask "what did I publish this week?" or "did I cover Bluesky federation yet?" without re-explaining the project history. The Milepost <code>/status</code> command refreshes the snapshot on demand; <code>/reflect</code> synthesizes recurring themes from the log. Both are read-only and never modify your entries without your say-so.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">How Milepost compares to the alternatives</h2>
+
+<p class="text-gray-700 mb-6">The honest comparison matrix from the README puts three plugins side by side. The differences matter more for Markdown-first writers than for AI-agent power users, because the writer's existing toolchain (Obsidian, Logseq, plain text editor, grep, git) is the one that has to keep working alongside whatever memory plugin is running.</p>
+
+<div class="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
+<table class="w-full text-sm">
+<thead class="bg-gray-50">
+<tr><th class="text-left px-4 py-2">Dimension</th><th class="text-left px-4 py-2">Milepost</th><th class="text-left px-4 py-2">claude-mem</th><th class="text-left px-4 py-2">claude-diary</th></tr>
+</thead>
+<tbody>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Storage</td><td class="px-4 py-2">Plain markdown</td><td class="px-4 py-2">SQLite + vector DB</td><td class="px-4 py-2">Plain markdown</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Greppable / exportable</td><td class="px-4 py-2">Yes</td><td class="px-4 py-2">Only via export</td><td class="px-4 py-2">Yes</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Writes during a session</td><td class="px-4 py-2">Yes</td><td class="px-4 py-2">Yes</td><td class="px-4 py-2">No (session-end only)</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Milestone-aware</td><td class="px-4 py-2">Yes (high-signal)</td><td class="px-4 py-2">No (captures everything)</td><td class="px-4 py-2">No (session-level)</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Trigger</td><td class="px-4 py-2">Milestones</td><td class="px-4 py-2">Continuous</td><td class="px-4 py-2">Manual / pre-compact</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Living status file</td><td class="px-4 py-2">Yes (STATUS.md)</td><td class="px-4 py-2">No</td><td class="px-4 py-2">No</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Database required</td><td class="px-4 py-2">No</td><td class="px-4 py-2">Yes</td><td class="px-4 py-2">No</td></tr>
+<tr class="border-t"><td class="px-4 py-2 font-semibold">Secret-content guard</td><td class="px-4 py-2">PreToolUse hook (blocks)</td><td class="px-4 py-2">Policy only</td><td class="px-4 py-2">Policy only</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">The row that matters most for writers is the secret-content guard. Milepost does not just ask the agent nicely to leave secrets out of the diary; it <em>blocks</em> any diary write that matches a secret pattern, including shell redirection via Bash. The other two plugins rely on the CLAUDE.md policy alone, which is necessary but not sufficient for client work or anything where an accidental commit would be embarrassing. The audit command <code>bash ~/.claude/hooks/milepost-secret-scan.sh &lt; ~/.claude/memory/milepost/&lt;project&gt;/log.md</code> returns exit 1 plus the matched pattern names on any hit, so existing diaries can be scanned retroactively.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Three real use cases for Markdown writers</h2>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Use case 1: long-running research thread</h3>
+
+<p class="text-gray-700 mb-6">You have been writing a 5-post series on Bluesky federation for six weeks. Each post builds on the last, and you keep losing track of which ATProto protocol terms you have already defined for the reader. Milepost's STATUS.md holds the running list, refreshed at every milestone. At session start, the SessionStart hook surfaces it, and the agent knows what was covered and what is still pending. The diary entries are plain markdown, so when you are ready to assemble the series into an ebook (a separate project), the entries can be grep'd, sorted by date, and pulled into the manuscript in chronological order with no parser.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Use case 2: client work with strict NDAs</h3>
+
+<p class="text-gray-700 mb-6">Some clients do not want their name in any long-term memory, ever. Drop a <code>.no-milepost</code> file at the project root and Milepost excludes the project entirely: no diary, no nudges, no recall. For client work where summaries are fine but the agent might accidentally leak a customer name, <code>MILEPOST_STRICT=1</code> blocks IP addresses and e-mail addresses in addition to the standard secret patterns. The diary dir itself is chmod 700 — owner-only access — so even local users on the same machine cannot read it without sudo.</p>
+
+<h3 class="text-xl font-semibold mt-8 mb-3">Use case 3: the publish-and-archive loop</h3>
+
+<p class="text-gray-700 mb-6">You publish a long-form post to X Articles, then a shorter version to Bluesky, then a newsletter cut to LinkedIn. You want all three platforms and the original draft in one searchable place. The workflow: draft in Markdown, publish via md2rich-converted rich text to all three platforms, copy the published rich text back out of the platform, run it through md2rich again to extract clean Markdown, and drop the normalized output into Milepost's log.md as a milestone entry. The diary entry contains the canonical Markdown, the platforms each contain their own rich-text rendering, and a single <code>grep</code> across the diary dir returns every post you have ever shipped with no parser involved.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Configuration knobs worth knowing</h2>
+
+<p class="text-gray-700 mb-6">Three settings control the diary's rhythm. <code>MILEPOST_NUDGE_INTERVAL</code> defaults to 900 seconds (15 minutes) and is the minimum gap between Stop-hook nudges; raise it to journal less often, lower it to journal more. The <code>.no-milepost</code> file is a per-project opt-out and is the cleanest way to keep client work out of the diary entirely. <code>MILEPOST_STRICT=1</code> activates the IP and e-mail address blocklist in addition to the default secret patterns; set it in <code>settings.json</code> under <code>"env": {"MILEPOST_STRICT": "1"}</code> or in your shell profile so Claude Code's hooks can see it. For zero-hook operation, the <code>CLAUDE.md</code> policy works on its own; the diary just leans on the model to remember during very long sessions.</p>
+
+<p class="text-gray-700 mb-6">A neat detail from the README: the PreToolUse guard hook's high-entropy catch-all is tuned so that git SHAs, UUIDs, paths, and ordinary identifiers do not trip it. The threshold is 32-character base64url-ish runs mixing upper/lower/digits. A diary entry containing <code>commit a3f8d92c1b4e</code> is fine; a diary entry containing <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code> is blocked with a message naming the matched pattern. The honest caveat applies: milestone detection is a judgment, so the diary may occasionally over- or under-log, and entries use a little of the working session's tokens. <code>/milepost</code> is the manual backstop for cases where the agent missed a milestone you care about.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Where md2rich fits</h2>
+
+<p class="text-gray-700 mb-6">md2rich is not a memory plugin and does not pretend to be one. It is a client-side Markdown-to-rich-text converter that runs in the browser and writes to the clipboard via the standard ClipboardItem API. The fit with Milepost is in the normalization step: anything coming out of a social platform's composer is rich text with platform wrappers, and anything going into a Markdown diary should be clean plain Markdown. md2rich does the round trip in both directions. Draft to rich text for publishing. Published rich text back to Markdown for logging. The conversion is local, no upload, no account, no API key, no rate limit.</p>
+
+<p class="text-gray-700 mb-6">For long-running projects that span weeks of social posts and code work, this two-tool loop keeps the diary clean enough that grep, git, and the next Claude Code session can actually use it. The agent memory stays small (milestone entries, not every token), the storage stays portable (plain markdown, not SQLite), and the writing workflow stays the same (Markdown draft, md2rich conversion, paste into X Articles or Bluesky or LinkedIn). The only addition is the normalize-on-publish step that converts the published rich text back into clean Markdown for the diary.</p>
+
+<p class="text-gray-700 mb-6">If you write in Markdown, publish to X Articles, Bluesky, or LinkedIn, and use Claude Code for research-heavy long-form work, install <a href="https://github.com/sashamitrovich/milepost" class="text-indigo-600 font-semibold">Milepost</a> first and bookmark <a href="/" class="text-indigo-600 font-semibold">try md2rich</a> for the round trip. The two tools are smaller than the agents they serve, and that is the point. The agent's memory is yours. The conversion runs in your browser. The diary lives on your disk. None of it is locked inside a database, and a year from now you can still grep it.</p>
+
+<div class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+<h3 class="text-lg font-semibold text-indigo-900 mb-2">Try md2rich — client-side Markdown to rich text</h3>
+<p class="text-gray-700 mb-3">Open the editor, paste your Markdown, click <em>Copy rich text</em>, paste into LinkedIn, X Articles, Bluesky, or Notion. Or paste published rich text back in and click <em>Copy as Markdown</em> for a normalized version suitable for an agent memory file. The conversion runs in your browser tab using the standard <code>ClipboardItem</code> API; no upload, no account, no API key. Bold, italics, headers, links, fenced code blocks, and inline code all survive the round trip, and your draft never reaches a server.</p>
+<p class="text-gray-700"><a href="/" class="text-indigo-600 font-semibold">Open the editor →</a> &nbsp; <a href="/blog/" class="text-indigo-600 font-semibold">More guides</a></p>
+</div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between">
+      <span>&copy; 2026 md2rich</span>
+      <span><a href="/" class="hover:text-indigo-600">Editor</a> &middot; <a href="/about" class="hover:text-indigo-600">About</a> &middot; <a href="/blog/" class="hover:text-indigo-600">Blog</a></span>
+    </div>
+  </footer>
+</body>
+</html>
