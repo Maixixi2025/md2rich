@@ -770,6 +770,26 @@
       "published_at": "2026-07-16T12:35:00+08:00",
       "providers_featured": [],
       "primary_cta": "md2rich"
+    },
+    {
+      "slug": "all2md-vs-md2rich-markdown-converter-2026-en",
+      "date": "2026-07-17",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/all2md-vs-md2rich-markdown-converter-2026-en.html",
+      "url": "https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en",
+      "title": "all2md vs md2rich: Markdown Converter Compared (2026)",
+      "description": "all2md (Python+CLI+MCP) converts 40+ formats to Markdown. md2rich (browser) converts Markdown to rich text for LinkedIn, X, Notion. Compare them here.",
+      "heat_source": "2026-07-17 daily briefing ⭐ — All2md Show HN: PDF/DOCX/PPTX/HTML/Email etc. 40+ formats to Markdown (Python+CLI+MCP)",
+      "status": "published",
+      "published_at": "2026-07-17",
+      "providers_featured": [
+        "all2md",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "comparator_tool": "all2md",
+      "category": "markdown-tool-comparison"
     }
   ],
   "drafts": [],

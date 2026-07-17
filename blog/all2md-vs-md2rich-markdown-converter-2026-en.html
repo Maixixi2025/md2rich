@@ -1,0 +1,299 @@
+---
+layout: null
+permalink: /blog/all2md-vs-md2rich-markdown-converter-2026-en
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>all2md vs md2rich: Markdown Converter Compared (2026)</title>
+  <meta name="description" content="all2md (Python+CLI+MCP) converts 40+ formats to Markdown. md2rich (browser) converts Markdown to rich text for LinkedIn, X, Notion. Compare them here.">
+  <meta name="keywords" content="all2md, md2rich, Python markdown converter, PDF to markdown, Markdown to rich text, CLI markdown tool, MCP server markdown, document to markdown, md2rich alternative, Markdown publishing pipeline, markdown for RAG">
+  <link rel="canonical" href="https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="all2md vs md2rich: Markdown Converter Compared (2026)">
+  <meta property="og:description" content="all2md (Python+CLI+MCP) converts 40+ formats to Markdown. md2rich (browser) converts Markdown to rich text for LinkedIn, X, Notion. Compare them here.">
+  <meta property="og:url" content="https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "all2md vs md2rich: Markdown Converter Compared (2026)",
+      "description": "all2md (Python+CLI+MCP) converts 40+ formats to Markdown. md2rich (browser) converts Markdown to rich text for LinkedIn, X, Notion. Compare them here.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-17",
+      "dateModified": "2026-07-17",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "all2md vs md2rich: Markdown Converter Compared (2026)",
+          "item": "https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is all2md a replacement for md2rich, or do they solve different problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They solve different problems. all2md converts existing documents (PDF, DOCX, PPTX, HTML, email, EPUB, etc.) INTO clean Markdown for AI/RAG pipelines. md2rich converts Markdown the other direction — into rich-text HTML that LinkedIn, X Articles, Medium, Notion, and Substack accept. If you only need to publish Markdown you already wrote, md2rich is enough. If you need to feed a corpus of PDFs and Word files into an LLM, all2md (or Pandoc) is what you reach for. The two tools are complementary and pair naturally in a source-document-to-published-post workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can md2rich ingest a PDF and turn it into Markdown for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. md2rich runs entirely in your browser using the ClipboardItem API, so it can only operate on text already on your system clipboard. PDF parsing in the browser is slow, often fails on scanned documents, and exposes the file to a third-party parser. If you need to convert a PDF to clean Markdown, use all2md with PyMuPDF-based PDF extraction (pip install all2md[pdf]), or run Markitdown, Pandoc, or a hosted service like Cloudflare's toMarkdown. Once the file is Markdown, paste it into md2rich to publish the cleaned output to LinkedIn or X Articles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does all2md work as a model-context-protocol (MCP) server for Claude or ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — that is one of its primary selling points. The package ships with a built-in MCP server that exposes document-conversion, search, diff, and outline tools to MCP-aware clients including Claude Desktop, Claude Code, Cursor, and Windsurf. Running all2md install-skills also drops pre-built agent-skills files into your editor so the assistant knows when to call all2md vs another converter. md2rich has no MCP integration because it is a local in-browser tool with no server endpoint to expose."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why would I prefer md2rich over all2md or Pandoc for publishing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three concrete reasons. First, md2rich outputs the exact HTML dialect that LinkedIn, X Articles, Medium, Notion, and Substack accept on paste — including image embeds, code-block fences, and inline formatting. Pandoc outputs generic HTML or Markdown that those platforms often mangle. Second, md2rich runs entirely in your browser, so private drafts never leave the device — important for client work or unpublished material. Third, the conversion is one click, no install. For one-off publishing, the install-and-run cost of Python tooling is overhead you do not need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can all2md and md2rich be combined in a single pipeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and it is the natural fit for a research-then-publish workflow. Run all2md to convert a folder of PDFs and DOCX files into a clean Markdown corpus, edit the Markdown in any text editor, then paste it into md2rich and click 'Copy as Rich Text' to publish the final version to LinkedIn, X Articles, or Notion. The all2md side of the pipeline runs locally on your machine (or in a Docker container) and md2rich runs locally in your browser — neither step requires uploading your work to a third-party server."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white rounded-lg p-8 shadow-sm">
+      <time class="text-xs text-gray-500">2026-07-17</time>
+      <h1 class="text-3xl font-bold mt-2 mb-6">all2md vs md2rich: Markdown Converter Compared (2026)</h1>
+
+<p class="text-gray-700 mb-6">A reader asked, reasonably, "I see all2md trending on Hacker News — is it a better <a href="/" class="text-indigo-600 font-semibold">md2rich</a>?" The honest answer is no, because they point at opposite ends of the same Markdown pipeline. <strong>all2md</strong> turns existing documents (PDF, DOCX, PPTX, HTML, email, EPUB, and 40+ more) into clean Markdown for AI / RAG pipelines, with a CLI, a Python API, and a built-in MCP server. <strong>md2rich</strong> goes the other way — it takes Markdown you have already written and converts it into the rich-text HTML that LinkedIn, X Articles, Medium, Notion, and Substack accept on paste, in the browser, with zero install. This guide compares the two side by side, shows where each one shines, and explains why the natural workflow uses both together rather than picking one.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What all2md actually does</h2>
+
+<p class="text-gray-700 mb-6">all2md is a Python package by Thomas Villani (repo first published 2025-10-10, MIT-licensed, 19 stars and 4 forks on GitHub as of July 17 2026 — early days for a tool with this much surface area). The value proposition is concrete: read any of 40+ input formats through a single AST-based pipeline, write clean Markdown for downstream consumption by an LLM, RAG chunker, or human editor. The CLI is the primary entry point:</p>
+
+<pre><code># Install with PDF support
+pip install "all2md[pdf]"
+
+# Convert a single file
+all2md document.pdf
+
+# Save to a specific output path
+all2md report.docx -o report.md
+
+# Use it from Python
+python -c "from all2md import to_markdown; print(to_markdown('document.pdf'))"</code></pre>
+
+<p class="text-gray-700 mb-6">Beyond conversion, all2md ships a surprising set of adjacent commands that make it useful as a document-workflow hub rather than just a converter. <code>all2md view report.docx</code> opens an in-browser HTML preview; <code>all2md edit notes.md</code> opens any document in a markdown/WYSIWYG editor and saves back to the original format with a <code>.bak</code> backup. <code>all2md grep "term" *.pdf</code> greps PDFs and Word docs the way you would grep text files. <code>all2md chunk report.pdf --strategy semantic --max-tokens 512 --overlap 64</code> produces JSONL chunks with page and section provenance — built for RAG pipelines out of the box. <code>all2md roundtrip notes.md --via docx</code> measures how much survives a Markdown → DOCX → Markdown round trip and scores it, which is the right way to spot a converter regression before it ships.</p>
+
+<p class="text-gray-700 mb-6">The MCP integration is the headline feature for AI workflows. <code>all2md</code> exposes document conversion, corpus search, document diff, and heading outline as MCP tools that any MCP-aware client can call — Claude Desktop, Claude Code, Cursor, and Windsurf are the primary targets. <code>all2md install-skills</code> drops pre-built agent-skill files into those editors so the assistant knows when to invoke all2md rather than a generic converter. For an authoring assistant that lives next to a folder of PDFs, this is the right shape: one CLI, one protocol, many input formats.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What md2rich actually does</h2>
+
+<p class="text-gray-700 mb-6">md2rich is a single-page web app at <a href="/" class="text-indigo-600 font-semibold">md2rich.com</a>. Paste or type Markdown on the left, see a live preview on the right, click <strong>Copy as Rich Text</strong>, and paste into LinkedIn, X Articles, Medium, Notion, or Substack. The conversion targets the exact HTML dialect each platform accepts on paste, including platform-specific quirks (LinkedIn's URN wrapping, X Articles' article-shell, Medium's image caption handling). The page runs entirely in your browser via the ClipboardItem API — zero upload, zero server storage, zero account. There is no CLI, no Python API, no MCP server, no install step.</p>
+
+<pre><code>## What you type in md2rich
+
+This is a **bold** claim about [links](https://example.com).
+
+- Bullet one
+- Bullet two with `inline code`
+
+&#96;&#96;&#96;js
+function hello() { return "world"; }
+&#96;&#96;&#96;
+
+## What LinkedIn sees after you paste
+
+This is a bold claim about links.
+
+• Bullet one
+• Bullet two with inline code
+
+function hello() { return "world"; }</code></pre>
+
+<p class="text-gray-700 mb-6">The point of md2rich is to remove the friction between <em>writing Markdown</em> and <em>publishing rich text</em>. The platforms do not accept Markdown on paste — they expect HTML — and vanilla HTML does not survive the platform sanitizers cleanly. md2rich handles the platform-specific shimming so the writer never sees it. If the only thing you are doing is writing Markdown for one of the five supported platforms, md2rich is the entire pipeline.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Direction: the biggest difference between the two</h2>
+
+<p class="text-gray-700 mb-6">Put the two side by side and the difference becomes obvious:</p>
+
+<table class="w-full text-sm">
+  <thead class="bg-gray-100">
+    <tr><th class="text-left p-2">Dimension</th><th class="text-left p-2">all2md</th><th class="text-left p-2">md2rich</th></tr>
+  </thead>
+  <tbody>
+    <tr class="border-t"><td class="p-2 font-medium">Direction</td><td class="p-2">Documents → Markdown (40+ formats in)</td><td class="p-2">Markdown → Rich text (5 platforms out)</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Runtime</td><td class="p-2">Python CLI + library, runs locally</td><td class="p-2">Browser page, runs in a tab</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Install</td><td class="p-2"><code>pip install "all2md[pdf]"</code></td><td class="p-2">None — open the URL</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Network</td><td class="p-2">Fully local; optional stdin/stdout piping</td><td class="p-2">Zero data egress (files stay in browser)</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">AI integration</td><td class="p-2">Built-in MCP server + agent-skills install</td><td class="p-2">None (not applicable — no server)</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Output target</td><td class="p-2">Markdown for LLMs / RAG / human editors</td><td class="p-2">Rich-text HTML for social publishing</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">First commit</td><td class="p-2">2025-10-10</td><td class="p-2">2026-04 (Markdown publishing niche)</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">License</td><td class="p-2">MIT</td><td class="p-2">Free web tool</td></tr>
+  </tbody>
+</table>
+
+<p class="text-gray-700 mb-6">The "direction" row is the one to internalize. all2md converts <em>into</em> Markdown; md2rich converts <em>out of</em> Markdown. Choosing between them because they sound similar is a category error — like choosing between a scanner and a printer.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Where all2md is the right tool</h2>
+
+<p class="text-gray-700 mb-6">Pick all2md when you already have a corpus of non-Markdown files and you want them as clean Markdown. Concrete cases the project docs call out:</p>
+
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+  <li><strong>RAG ingestion</strong> — turn a folder of PDFs, DOCX, and EML files into JSONL chunks with section provenance, then load them into a vector store. <code>all2md chunk corpus/ --strategy semantic --max-tokens 512 --overlap 64</code> writes the chunks, the rest is up to your embedding pipeline.</li>
+  <li><strong>PDF table extraction</strong> — multi-column layouts and header/footer detection live in the <code>pdf</code> extra. <code>pip install "all2md[pdf]"</code> pulls PyMuPDF for text and table parsing, plus an optional GNN-based semantic layout classifier (<code>pdf_layout</code> extra) for academic PDFs.</li>
+  <li><strong>Scanned PDFs (OCR)</strong> — opt into Tesseract OCR for scanned documents. Without OCR, a scanned page is empty text; with it, the page becomes a normal Markdown source.</li>
+  <li><strong>Editorial round-trip checks</strong> — <code>all2md roundtrip notes.md --via docx</code> measures Markdown → DOCX → Markdown fidelity. Useful before promising a client that a Markdown draft will survive a Word review cycle.</li>
+  <li><strong>Agent-driven file conversion</strong> — the MCP server makes all2md callable from Claude Code or Cursor. The assistant can read a folder of mixed-format files, convert the ones it needs, and chunk them inline.</li>
+</ul>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Where md2rich is the right tool</h2>
+
+<p class="text-gray-700 mb-6">Pick md2rich when you already have Markdown (in any editor — Obsidian, VS Code, Vim, Sublime Text, even <code>nano</code>) and the destination is one of the supported publishing platforms:</p>
+
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+  <li><strong>LinkedIn long-form posts</strong> — the platform accepts HTML on paste but re-wraps paragraphs and strips inline styles. md2rich emits the exact subset LinkedIn preserves, so bold/italic/code/links/blockquotes survive.</li>
+  <li><strong>X Articles</strong> — needs X-specific rich-block JSON. md2rich produces it; vanilla HTML converters do not.</li>
+  <li><strong>Medium import</strong> — Medium accepts HTML or Markdown import but loses inline formatting on partial matches. md2rich outputs Medium's preferred HTML dialect.</li>
+  <li><strong>Notion paste</strong> — Notion accepts HTML and converts to its block schema. md2rich's output maps cleanly to Notion's callout, code, and quote blocks.</li>
+  <li><strong>Substack post</strong> — Substack accepts Markdown directly but treats inline images and footnotes inconsistently. md2rich compensates.</li>
+  <li><strong>Private drafts</strong> — client work, unpublished material, anything you cannot risk on a server. md2rich runs in the browser tab; nothing leaves the device.</li>
+</ul>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The natural pairing: research → publish</h2>
+
+<p class="text-gray-700 mb-6">The two tools solve adjacent problems and the pipeline that uses both is shorter than either one alone:</p>
+
+<ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+  <li><strong>Convert the source corpus to Markdown with all2md.</strong> From a folder of PDFs, Word docs, and meeting notes: <code>all2md sources/ -o markdown/ --recursive</code>. Each output file is a clean Markdown source the rest of the workflow can consume.</li>
+  <li><strong>Edit and synthesize in your favorite Markdown editor.</strong> Combine the converted sources into a draft, drop in your analysis and links, save as <code>draft.md</code>. All Markdown, no platform-specific markup.</li>
+  <li><strong>Paste the draft through md2rich.</strong> Open <a href="/" class="text-indigo-600 font-semibold">md2rich</a>, paste the Markdown in, choose the target platform (LinkedIn / X Articles / Medium / Notion / Substack), click <strong>Copy as Rich Text</strong>.</li>
+  <li><strong>Paste into the platform.</strong> The receiving CMS sees the rich-text HTML and renders it as the platform's own blocks. No upload step, no third-party converter, no API key.</li>
+</ol>
+
+<pre><code># Step 1: source files → markdown
+all2md sources/ -o markdown/ --recursive
+
+# Step 2 (manual): edit markdown/draft.md in your editor
+
+# Step 3 + 4: human in the loop, browser tab, one click</code></pre>
+
+<p class="text-gray-700 mb-6">Steps 1 and 3 are both fully local — the corpus conversion runs on your machine via Python, the rich-text conversion runs in your browser tab. The published post never touches a third-party server other than the destination platform itself.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">When to reach for Pandoc instead</h2>
+
+<p class="text-gray-700 mb-6">all2md's own README makes the honest comparison: choose Pandoc when you need maximum format support (100+ formats the all2md project does not cover), scholarly features (citations, bibliographies, LaTeX math), a standalone binary with no Python runtime, or 15+ years of stability from a battle-tested C/Haskell codebase. Choose all2md when you want a Python API, an MCP integration, AST-based programmatic transforms, or RAG-specific chunking built in. The two can coexist — all2md for LLM preprocessing, then a Pandoc call for the bibliography step if you are writing an academic piece.</p>
+
+<p class="text-gray-700 mb-6">md2rich is not in this comparison at all because it does not do document-to-Markdown. Pandoc can be coerced into Markdown-to-rich-text via custom writers, but the platform-specific shimming is the whole point of md2rich — a Pandoc custom writer for LinkedIn dialect is a substantial project on its own.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Caveats worth knowing</h2>
+
+<p class="text-gray-700 mb-6">Three honest caveats apply to each tool.</p>
+
+<p class="text-gray-700 mb-6"><strong>all2md is young.</strong> The repository is nine months old as of July 2026, with 19 stars on GitHub. The README is thorough and the test surface is wide, but you should expect format-edge-case bugs in 2026 — particularly in EML parsing, scanned PDFs without OCR, and complex multi-column academic layouts. The <code>all2md roundtrip</code> command is the right way to spot a bug before it ruins your output. File issues on GitHub; the maintainer is responsive.</p>
+
+<p class="text-gray-700 mb-6"><strong>md2rich cannot read your files.</strong> It only sees what is on the clipboard or what you type. If a PDF is the source, convert it with all2md (or another tool) first. If a Word document is the source, convert it with Pandoc, all2md, or save-as-Markdown from Word, then paste the result into md2rich. Trying to drag a file into the browser tab does not work — that is the privacy guarantee working as designed.</p>
+
+<p class="text-gray-700 mb-6"><strong>Platform sanitizers change.</strong> Both tools depend on the receiving platform accepting the rich-text HTML or Markdown output. LinkedIn in particular has been tightening its paste sanitizer over the past year. md2rich is updated as those changes land, but every few months a particular code-block edge case or footnote pattern needs to be re-shimmed. If you publish regularly, sign up for the project's release notes.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Who each tool is for</h2>
+
+<p class="text-gray-700 mb-6"><strong>Pick all2md</strong> if you are a Python developer building an LLM, RAG, or document-automation pipeline that needs to ingest non-Markdown files. The MCP integration makes it especially attractive for editor-driven AI workflows where the assistant needs to read a corpus on demand.</p>
+
+<p class="text-gray-700 mb-6"><strong>Pick md2rich</strong> if you write in Markdown and want to publish to LinkedIn, X Articles, Medium, Notion, or Substack without reformatting by hand. The whole point is removing the friction between writing in plain text and shipping as rich text.</p>
+
+<p class="text-gray-700 mb-6"><strong>Use both</strong> if your workflow starts from PDFs or Word documents and ends on a social platform. all2md gets the corpus into Markdown, your editor trims it, md2rich publishes the result.</p>
+
+      <div class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+        <h3 class="text-xl font-bold mb-2">Try md2rich — client-side Markdown to rich text</h3>
+        <p class="text-gray-700 mb-3">Open the <a href="/" class="text-indigo-600 font-semibold">md2rich editor</a> in any browser, paste Markdown, click <em>Copy as Rich Text</em>, and paste into LinkedIn, X Articles, Medium, Notion, or Substack. No upload, no account, no API key.</p>
+        <p class="text-gray-700"><a href="/" class="text-indigo-600 font-semibold">Open the editor →</a> &nbsp;·&nbsp; <a href="/blog/" class="text-indigo-600 font-semibold">More guides</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex items-center justify-between">
+      <div>© 2026 md2rich · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → Rich Text</div>
+    </div>
+  </footer>
+</body>
+</html>
