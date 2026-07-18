@@ -790,21 +790,48 @@
       "primary_cta": "https://md2rich.com/",
       "comparator_tool": "all2md",
       "category": "markdown-tool-comparison"
+    },
+    {
+      "slug": "patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
+      "date": "2026-07-18",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/patreon-cloudflare-block-ai-crawlers-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
+      "title": "Patreon Blocks AI Crawlers: Markdown Writer Impact (2026)",
+      "description": "Patreon partnered with Cloudflare (Jul 17 2026) to block AI training crawlers at the network level. What it means for writers who use Markdown.",
+      "heat_source": "⭐ 2026-07-18 daily briefing — Patreon stops asking AI bots not to scrape, starts blocking them (TechCrunch 7/17, 404media 7/9). md2rich angle: how Patreon × Cloudflare network-level block changes the publishing-stack calculus for Markdown writers, with the sister piece cloudflare-content-independence-day-ai-bot-rules-2026-en (07-06) providing the AI-bot blocking backbone context.",
+      "status": "published",
+      "published_at": "2026-07-18",
+      "providers_featured": [
+        "Patreon",
+        "Cloudflare",
+        "Jack Conte",
+        "Drew Rowny"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "News-analysis (creator-platform × AI-blocking × Markdown workflow)",
+      "cluster": [
+        "cloudflare-content-independence-day-ai-bot-rules-2026-en",
+        "ai-writing-assistant-markdown-publishing-2026-en"
+      ],
+      "deploy_method": "git push (md2rich Git auto-deploy)",
+      "word_count": 2249
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
     "ai-writing-assistant-markdown-publishing-2026-en",
     "bluesky-x-articles-alternative-markdown-2026-en",
     "linkedin-ai-detection-rewrite-markdown-2026-en",
-    "x-post-correction-markdown-creator-2026-en",
-    "rowboat-open-source-claude-desktop-markdown-2026-en"
+    "x-post-correction-markdown-creator-2026-en"
   ],
   "current_index": 3,
-  "last_topic_direction": "News-analysis (X platform feature → Markdown correction workflow)",
-  "last_run": "2026-07-11T12:34:11+08:00",
-  "last_published_slug": "rowboat-open-source-claude-desktop-markdown-2026-en",
-  "last_published_at": "2026-07-12",
+  "last_topic_direction": "News-analysis (Patreon × Cloudflare AI block × Markdown publishing)",
+  "last_run": "2026-07-18T12:30:00+08:00",
+  "last_published_slug": "patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
+  "last_published_at": "2026-07-18",
   "drafts_count": 0,
-  "published_count": 34
+  "published_count": 40
 }
