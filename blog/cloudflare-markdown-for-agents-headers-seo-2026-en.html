@@ -1,0 +1,325 @@
+---
+layout: null
+permalink: /blog/cloudflare-markdown-for-agents-headers-seo-2026-en
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Markdown for Agents: Headers &amp; SEO 2026</title>
+  <meta name="description" content="See how Cloudflare Markdown for Agents handles headers, caching, Content Signals, and SEO for static-site publishers.">
+  <meta name="keywords" content="Cloudflare Markdown for Agents, Markdown for Agents SEO, content-signal header, AI crawler markdown, Accept text/markdown, static site Markdown, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare Markdown for Agents: Headers &amp; SEO 2026">
+  <meta property="og:description" content="See how Cloudflare Markdown for Agents handles headers, caching, Content Signals, and SEO for static-site publishers.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare Markdown for Agents: Headers & SEO 2026",
+      "description": "See how Cloudflare Markdown for Agents handles headers, caching, Content Signals, and SEO for static-site publishers.",
+      "author": {"@type": "Person", "name": "md2rich", "url": "https://about.me/jasonxmai"},
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-07-19",
+      "publisher": {"@type": "Organization", "name": "md2rich", "url": "https://md2rich.com"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://md2rich.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://md2rich.com/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "Cloudflare Markdown for Agents: Headers & SEO 2026", "item": "https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Cloudflare Markdown for Agents?",
+          "acceptedAnswer": {"@type": "Answer", "text": "It is an edge content-conversion feature. When an enabled Cloudflare zone receives a request with Accept: text/markdown, Cloudflare converts the origin HTML into Markdown instead of making the caller parse HTML. It is designed for AI systems and agents, not as a replacement for a writer-facing Markdown editor."}
+        },
+        {
+          "@type": "Question",
+          "name": "Does Markdown for Agents change my HTML page for Google?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. The feature uses HTTP content negotiation. A normal browser request still receives HTML; a client that requests text/markdown receives the converted variant. Cloudflare adds Vary: Accept so caches can keep the two representations separate."}
+        },
+        {
+          "@type": "Question",
+          "name": "Which headers survive Cloudflare's Markdown conversion?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Cloudflare documents preservation of security headers such as HSTS, CSP, X-Frame-Options, Set-Cookie, and CORS headers, plus cache headers such as Cache-Control, Expires, and Age. It recalculates Content-Length and removes body-specific headers such as ETag and Last-Modified."}
+        },
+        {
+          "@type": "Question",
+          "name": "Can a site control how its content is used by AI systems?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes, through the Content-Signal header. If the origin sends a content-signal value, Markdown for Agents preserves it as authoritative. If the origin sends no policy, Cloudflare documents a default of ai-train=yes, search=yes, ai-input=yes."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is Markdown for Agents a competitor to md2rich?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. Markdown for Agents converts hosted HTML into Markdown for readers, crawlers, and agents. md2rich converts Markdown drafts into rich text for human publishing on LinkedIn, X Articles, Medium, Notion, and Substack. They sit on opposite sides of the publishing pipeline."}
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white rounded-lg p-8 shadow-sm">
+      <time class="text-xs text-gray-500">2026-07-19</time>
+      <h1 class="text-3xl font-bold mt-2 mb-6">Cloudflare Markdown for Agents: Headers &amp; SEO 2026</h1>
+
+<p class="text-gray-700 mb-6">Cloudflare's <strong>Markdown for Agents</strong> is easy to misunderstand if you approach it as another Markdown editor or converter. It is neither. The feature adds an HTTP content-negotiation path at the edge: an AI system sends <code>Accept: text/markdown</code>, and an enabled Cloudflare zone converts the origin's HTML into structured Markdown before returning it. A browser that asks for HTML still gets HTML.</p>
+
+<p class="text-gray-700 mb-6">That makes this a useful companion to <a href="/" class="text-indigo-600 font-semibold">md2rich</a>, not a competitor. Markdown for Agents moves content from a site toward an agent. md2rich moves a writer's Markdown draft toward a publishing platform. The difference matters for SEO, caching, security headers, and the privacy-first workflow behind this site.</p>
+
+<p class="text-gray-700 mb-6">Cloudflare's July 13, 2026 changelog is the reason to revisit the feature now: converted responses preserve security- and cache-relevant headers, respect the origin's Content Signals policy, and fix relative-link resolution for directory-style URLs. Here is what publishers should actually test.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What Markdown for Agents actually does</h2>
+
+<p class="text-gray-700 mb-6">The feature is an edge representation of an existing page. Your origin remains the source of truth. If a client requests a normal HTML representation, Cloudflare serves the normal page. If the client includes <code>text/markdown</code> in its <code>Accept</code> header, Cloudflare fetches the HTML, strips non-content elements, and returns Markdown when conversion is possible.</p>
+
+<p class="text-gray-700 mb-6">The documented output has three parts:</p>
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+  <li><strong>YAML frontmatter</strong> extracted from supported title, description, and Open Graph tags.</li>
+  <li><strong>Body Markdown</strong> converted from the page body, with navigation, scripts, styles, headers, and footers removed.</li>
+  <li><strong>JSON-LD</strong> preserved at the end in a fenced <code>json</code> block, so structured data is not lost during conversion.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">This is useful because agents do not have to invent a bespoke HTML parser for every site. They can request a predictable text representation, retain page metadata, and still inspect schema markup. It is an interoperability layer, not a new authoring surface.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The request is ordinary HTTP content negotiation</h2>
+
+<p class="text-gray-700 mb-6">Cloudflare's official documentation shows the smallest possible client:</p>
+
+<pre><code>curl https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/ \
+  -H "Accept: text/markdown"</code></pre>
+
+<p class="text-gray-700 mb-6">An agent can do the same thing from JavaScript. The response includes token estimates that can help an agent decide whether a page fits its context window or how aggressively to chunk it:</p>
+
+<pre><code>const response = await fetch(url, {
+  headers: { Accept: "text/markdown" },
+});
+
+const markdown = await response.text();
+const markdownTokens = response.headers.get("x-markdown-tokens");
+const originalTokens = response.headers.get("x-original-tokens");</code></pre>
+
+<p class="text-gray-700 mb-6">The important operational detail is <code>Vary: Accept</code>. HTML and Markdown are two representations of one URL. A cache that ignores the <code>Accept</code> dimension could serve Markdown to a browser or HTML to an agent. Cloudflare documents that the converted response adds <code>Accept</code> to <code>Vary</code>, while preserving any other origin-declared dimensions.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Headers: what survives, what changes, and why</h2>
+
+<p class="text-gray-700 mb-6">The July 13 changelog makes Markdown for Agents much more practical for production sites. Converting the body does not mean discarding the response's security and caching policy.</p>
+<table class="w-full text-sm">
+  <thead class="bg-gray-100">
+    <tr><th class="text-left p-2">Header group</th><th class="text-left p-2">Documented behavior</th><th class="text-left p-2">Publisher implication</th></tr>
+  </thead>
+  <tbody>
+    <tr class="border-t"><td class="p-2 font-medium">Security</td><td class="p-2">HSTS, CSP, X-Frame-Options, Set-Cookie, and CORS headers are preserved.</td><td class="p-2">The Markdown representation keeps the origin's security posture.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Caching</td><td class="p-2">Cache-Control, Expires, and Age continue to pass through.</td><td class="p-2">Agents can receive a cacheable representation without losing cache intent.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Representation</td><td class="p-2">Content-Type becomes text/markdown; Content-Length is recalculated.</td><td class="p-2">Clients can trust the body type and length for the new response.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Cache key</td><td class="p-2">Vary includes Accept.</td><td class="p-2">HTML and Markdown variants stay distinct in a compliant cache.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Original body metadata</td><td class="p-2">ETag, Last-Modified, Content-Encoding, Content-Range, and Transfer-Encoding are removed.</td><td class="p-2">Do not build conditional-request logic around the converted body.</td></tr>
+  </tbody>
+</table>
+
+<p class="text-gray-700 mb-6">The last row is easy to miss. A converted body is not byte-identical to the origin body, so an origin ETag or Last-Modified value would describe the wrong representation. Cloudflare drops those headers instead of pretending the old validators still apply.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Content Signals are the policy layer</h2>
+
+<p class="text-gray-700 mb-6">Content Signals is the part most relevant to publishers thinking about AI crawlers. Cloudflare's docs say that an origin-provided <code>content-signal</code> header is authoritative and is preserved in the converted response. If the origin sends no policy, Cloudflare documents this default:</p>
+
+<pre><code>Content-Signal: ai-train=yes, search=yes, ai-input=yes</code></pre>
+
+<p class="text-gray-700 mb-6">Those values express three separate permissions: training use, search use, and AI input use, including agentic use. The practical takeaway is not that Cloudflare has decided your policy for you. It is that your origin can state the policy once, and the Markdown representation will carry it forward.</p>
+
+<p class="text-gray-700 mb-6">If you run a static site, treat this as a header-level publishing decision. Decide whether you want an agent to use your content as input, whether search discovery is allowed, and whether training use is allowed. Then test the actual response instead of relying on a dashboard screenshot or a robots file.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Does it change SEO or canonical URLs?</h2>
+
+<p class="text-gray-700 mb-6">Not in the way a second HTML page would. Markdown for Agents uses content negotiation on the same URL. Normal users and search crawlers that request HTML see your canonical tag, visible page, and normal HTML metadata. An agent that asks for Markdown receives a different representation of that URL.</p>
+
+<p class="text-gray-700 mb-6">There are still SEO details worth checking:</p>
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+  <li>Keep a useful HTML <code>&lt;title&gt;</code>, description, and Open Graph title because they seed the Markdown frontmatter.</li>
+  <li>Keep JSON-LD valid. Cloudflare preserves it, but malformed schema remains malformed after conversion.</li>
+  <li>Use stable absolute or directory-correct relative links. The July 13 release fixed a trailing-slash resolution bug, but your links still need to be intentional.</li>
+  <li>Keep the human page readable. Markdown output is an additional representation, not a reason to strip headings or context from the HTML.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">In other words, this is closer to a structured distribution channel than a new indexable URL. You should measure it as part of your AI-search and agent-access strategy, while continuing to optimize the HTML that search engines render and users read.</p>
+<h2 class="text-2xl font-bold mt-10 mb-4">How to enable it on a Cloudflare zone</h2>
+
+<p class="text-gray-700 mb-6">Cloudflare documents Markdown for Agents for Pro, Business, and Enterprise plans, plus SSL for SaaS customers, at no additional cost. In the dashboard, select a zone, open the AI Crawl Control section, and enable <strong>Markdown for Agents</strong>. For a narrower rollout, use a Configuration Rule to match a hostname or path.</p>
+
+<p class="text-gray-700 mb-6">The documented API setting is a zone settings update:</p>
+
+<pre><code>curl -X PATCH \
+  "https://api.cloudflare.com/client/v4/zones/ZONE_ID/settings/content_converter" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer *** " \
+  --data '{"value":"on"}'</code></pre>
+
+<p class="text-gray-700 mb-6">Replace the placeholder with the real zone ID. Replace <code>ZONE_ID</code> and <code>YOUR_API_TOKEN</code> with your real credentials in your own command. For path-based control, Cloudflare's Configuration Rules documentation shows a <code>content_converter</code> setting that can be enabled when an expression such as <code>starts_with(http.request.uri.path, "/blog/")</code> matches.</p>
+
+<p class="text-gray-700 mb-6">Start with a small path or staging hostname if your site has sensitive content. Then test both representations with a clean cache and a real browser-like request.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">A production test checklist for static-site publishers</h2>
+
+<ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+  <li>Fetch the page without an <code>Accept</code> override and confirm you still receive <code>text/html</code>.</li>
+  <li>Fetch the same URL with <code>Accept: text/markdown</code> and check for <code>text/markdown</code> plus a Markdown body.</li>
+  <li>Confirm <code>Vary</code> includes <code>Accept</code>, and that your CDN does not collapse the two variants.</li>
+  <li>Check <code>Content-Signal</code>, HSTS, CSP, CORS, and cache headers against your origin policy.</li>
+  <li>Check that frontmatter includes the title and description you intended, not a stale Open Graph fallback.</li>
+  <li>Parse the JSON-LD code block and confirm that Article, BreadcrumbList, and FAQPage data remain valid.</li>
+  <li>Test a page with a trailing slash and links such as <code>../page/</code>; verify that the converted links resolve to the intended URLs.</li>
+  <li>Test a page over the documented 2 MB origin-response limit. Large pages may need to be split or simplified.</li>
+</ol>
+
+<pre><code># HTML representation
+curl -sSI https://example.com/blog/post/ \
+  -H "Accept: text/html" \
+  -H "Cache-Control: no-cache"
+
+# Markdown representation
+curl -sSI https://example.com/blog/post/ \
+  -H "Accept: text/markdown" \
+  -H "Cache-Control: no-cache"
+
+# Inspect the converted body
+curl -s https://example.com/blog/post/ \
+  -H "Accept: text/markdown" | head -80</code></pre>
+
+<p class="text-gray-700 mb-6">Do not call a successful HTTP 200 proof of success. The useful evidence is the representation, headers, title/frontmatter, links, and schema together.</p>
+<h2 class="text-2xl font-bold mt-10 mb-4">Markdown for Agents versus md2rich</h2>
+
+<p class="text-gray-700 mb-6">The names overlap because both products care about Markdown, but their directions are opposite:</p>
+
+<table class="w-full text-sm">
+  <thead class="bg-gray-100">
+    <tr><th class="text-left p-2">Question</th><th class="text-left p-2">Markdown for Agents</th><th class="text-left p-2">md2rich</th></tr>
+  </thead>
+  <tbody>
+    <tr class="border-t"><td class="p-2 font-medium">Who uses it?</td><td class="p-2">AI agents, crawlers, and structured-content clients.</td><td class="p-2">Human writers publishing a Markdown draft.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Direction</td><td class="p-2">Hosted HTML → Markdown.</td><td class="p-2">Markdown → rich text.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Where does it run?</td><td class="p-2">At Cloudflare's edge for an enabled zone.</td><td class="p-2">In the browser via client-side JavaScript.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">What leaves the device?</td><td class="p-2">The request reaches the hosted site and Cloudflare edge.</td><td class="p-2">The draft is not uploaded to a conversion server.</td></tr>
+    <tr class="border-t"><td class="p-2 font-medium">Primary output</td><td class="p-2">Predictable Markdown with frontmatter and preserved JSON-LD.</td><td class="p-2">Clipboard-ready rich text for LinkedIn, X, Medium, Notion, and Substack.</td></tr>
+  </tbody>
+</table>
+
+<p class="text-gray-700 mb-6">A real workflow can use both. An agent requests a research page as Markdown, a writer edits and fact-checks the draft in a local editor, and md2rich converts the finished Markdown to the rich text a publishing platform expects.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Two Markdown-to-rich-text examples</h2>
+
+<p class="text-gray-700 mb-6">Cloudflare's feature helps an agent read your published page. At the publishing end, the writer still needs a clean way to turn Markdown into platform-friendly rich text. Here are two small examples of what that handoff looks like.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Example 1: a short announcement</h3>
+<pre><code>## The useful update
+
+Cloudflare now preserves **Content Signals** in Markdown responses.
+
+- Check your headers
+- Test both representations
+- Keep the Markdown source</code></pre>
+
+<p class="text-gray-700 mb-6">Paste that source into <a href="/" class="text-indigo-600 font-semibold">md2rich</a>, click <em>Copy as Rich Text</em>, and the destination receives a heading, paragraph with bold emphasis, and a real list instead of literal Markdown punctuation. The source stays reusable for a blog post, LinkedIn article, or X Article.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Example 2: a code-focused tutorial</h3>
+<pre><code>### Test the Markdown variant
+
+```bash
+curl https://example.com/post/ -H "Accept: text/markdown"
+```
+
+> Verify `Vary: Accept` before shipping.</code></pre>
+
+<p class="text-gray-700 mb-6">The same draft becomes a styled subheading, a readable code block, and a blockquote with inline code when copied as rich text. That is the narrow job md2rich is built for: preserve the author's structure while moving it into a platform that does not accept raw Markdown paste reliably.</p>
+
+<p class="text-gray-700 mb-6">For the earlier Cloudflare comparison — Workers AI's document conversion versus md2rich's writer-facing workflow — see <a href="/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en" class="text-indigo-600 font-semibold">Cloudflare Workers AI toMarkdown vs md2rich</a>. For the broader crawler-policy context, see our <a href="/blog/cloudflare-content-independence-day-ai-bot-rules-2026-en" class="text-indigo-600 font-semibold">Cloudflare Content Independence Day guide</a>.</p>
+<h2 class="text-2xl font-bold mt-10 mb-4">What we verified on md2rich.com</h2>
+
+<p class="text-gray-700 mb-6">This article is published on a static site, so it is worth checking the claim rather than assuming that every Cloudflare-hosted site has the feature enabled. On July 19, 2026, a live request to md2rich.com with <code>Accept: text/markdown</code> still returned <code>text/html</code>. That means this site is not currently advertising a Markdown representation through that setting, even though the zone could support it if the feature is enabled and configured.</p>
+
+<p class="text-gray-700 mb-6">That distinction is useful for operators: being on Cloudflare is not the same as having Markdown for Agents enabled. Test the response. If your site uses a custom cache, WAF, or configuration rule, test those layers too. A page can have excellent HTML SEO and still return the wrong representation, stale metadata, or collapsed cache variants to agents.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The practical verdict for 2026</h2>
+
+<p class="text-gray-700 mb-6">Markdown for Agents is a sensible protocol improvement for the agent web. It gives clients an explicit way to ask for structured text, preserves the metadata and schema that make pages understandable, carries forward the origin's security and cache policy, and makes Content Signals operational instead of purely declarative documentation.</p>
+
+<p class="text-gray-700 mb-6">It is not a replacement for writing in Markdown, and it is not a replacement for a Markdown-to-rich-text publishing tool. The clean stack is layered:</p>
+
+<ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+  <li><strong>Write once in Markdown</strong> so your source is portable.</li>
+  <li><strong>Publish with a client-side converter</strong> when the destination expects rich text; <a href="/" class="text-indigo-600 font-semibold">try md2rich</a> for that step.</li>
+  <li><strong>Expose the published page to agents as Markdown</strong> when your Cloudflare policy and audience call for it.</li>
+  <li><strong>Verify headers and policy</strong> with real HTTP requests, not assumptions.</li>
+</ol>
+
+<p class="text-gray-700 mb-6">The most important mindset shift is simple: a web page no longer has to be one representation. Human readers can get HTML, agents can request Markdown, and the origin can still declare how the content should be used. Treat those paths as part of one publishing system and test them together.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Frequently asked questions</h2>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Does Markdown for Agents create a new URL?</h3>
+<p class="text-gray-700 mb-6">No. It uses the same URL with the HTTP <code>Accept</code> header to negotiate the response representation. The HTML and Markdown variants should be kept separate in caches through <code>Vary: Accept</code>.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Does it preserve JSON-LD?</h3>
+<p class="text-gray-700 mb-6">Yes. Cloudflare documents that JSON-LD scripts are preserved in a fenced JSON block at the end of the Markdown response. Validate the original JSON-LD first; conversion does not repair broken schema.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Does it work on every Cloudflare plan?</h3>
+<p class="text-gray-700 mb-6">Cloudflare's documentation lists Pro, Business, Enterprise, and SSL for SaaS availability. Check the current plan documentation before designing around it.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Is this the same as Workers AI document conversion?</h3>
+<p class="text-gray-700 mb-6">No. Markdown for Agents converts HTML at the edge through content negotiation. Workers AI conversion APIs target application workflows and can support other document types. They solve different operational problems.</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-3">Should every blog enable it?</h3>
+<p class="text-gray-700 mb-6">No. Decide based on your audience, content policy, and agent-access goals. If you enable it, test privacy-sensitive paths, Content Signals, caching, metadata, links, and schema before making it a default.</p>
+      <div class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+        <h3 class="text-xl font-bold mb-2">Try md2rich — client-side Markdown to rich text</h3>
+        <p class="text-gray-700 mb-3">Open the <a href="/" class="text-indigo-600 font-semibold">md2rich editor</a> in any browser, paste Markdown, click <em>Copy as Rich Text</em>, and paste into LinkedIn, X Articles, Medium, Notion, or Substack. No upload, no account, no API key — your draft stays in the browser.</p>
+        <p class="text-gray-700"><a href="/" class="text-indigo-600 font-semibold">Open the editor &rarr;</a> &nbsp;&middot;&nbsp; <a href="/blog/" class="text-indigo-600 font-semibold">More guides</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex items-center justify-between">
+      <div>&copy; 2026 md2rich &middot; <a href="/about" class="hover:text-indigo-600">About</a> &middot; <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown &rarr; Rich Text</div>
+    </div>
+  </footer>
+</body>
+</html>
