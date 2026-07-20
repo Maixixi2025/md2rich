@@ -845,6 +845,21 @@
         "https://blog.cloudflare.com/markdown-for-agents/"
       ],
       "word_count": 2633
+    },
+    {
+      "slug": "markdown-archives-ai-2026-tweet-md-bluesky-en",
+      "date": "2026-07-20",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/markdown-archives-ai-2026-tweet-md-bluesky-en.html",
+      "url": "https://md2rich.com/blog/markdown-archives-ai-2026-tweet-md-bluesky-en",
+      "title": "Markdown Archives for AI: 2026 Stack with tweet.md + Bluesky",
+      "description": "tweet.md's 2026 paid launch and Bluesky's atproto trademark both signal LLM-friendly Markdown archives are now a real category. Here's the stack.",
+      "heat_source": "daily-briefing 2026-07-20 ⭐ tweet.md (X → Markdown converter, Show HN 2026-07-20, $5/$19/$49 credit packs) + Bluesky atproto trademark (2026-07-15) + Toni Schneider as permanent CEO (2026-07-10). Broader angle on same news event per briefing-pivot rule (tweet.md+md2rich article from 2026-06-08 covered narrow angle).",
+      "status": "published",
+      "published_at": "2026-07-20",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
