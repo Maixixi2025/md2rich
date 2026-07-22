@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brookmd vs md2rich: Rust Streaming Markdown 2026</title>
+  <meta name="description" content="Brookmd brings Rust streaming to Markdown rendering. Compare Brookmd vs md2rich for speed, features, and when to use each tool in 2026.">
+  <meta name="keywords" content="Brookmd, md2rich, Rust Markdown renderer, streaming Markdown, Markdown comparison, Rust vs JavaScript Markdown, client-side Markdown converter, Markdown to rich text, Rust WASM Markdown, Markdown rendering 2026, Sift framework Markdown">
+  <link rel="canonical" href="https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Brookmd vs md2rich: Rust Streaming Markdown 2026">
+  <meta property="og:description" content="Brookmd brings Rust streaming to Markdown rendering. Compare Brookmd vs md2rich for speed, features, and when to use each tool in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Brookmd vs md2rich: Rust Streaming Markdown 2026",
+      "description": "Brookmd brings Rust streaming to Markdown rendering. Compare Brookmd vs md2rich for speed, features, and when to use each tool in 2026.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-22",
+      "dateModified": "2026-07-22",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Brookmd vs md2rich: Rust Streaming Markdown 2026",
+          "item": "https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Brookmd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brookmd is a streaming Markdown renderer written in Rust. It renders Markdown as a stream of rich-text tokens rather than a completed HTML document, which means the first rendered content appears before the entire Markdown input has been parsed. It targets Web (via WASM), React Native, and Sift (a Rust-native UI framework). It was shared as a Show HN project in July 2026 by GitHub user siinghd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Brookmd differ from md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brookmd and md2rich serve different parts of the Markdown pipeline. Brookmd renders Markdown into a streaming rich-text display (think: a live preview pane that populates as-you-type, but powered by Rust/WASM). md2rich converts Markdown into the platform clipboard format that X Articles, LinkedIn, Medium, Substack, and Notion accept. Brookmd is a renderer you embed in your own app; md2rich is a client-side converter you use in your browser to publish long-form content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Brookmd faster than JavaScript-based Markdown renderers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Benchmarks from the Brookmd Show HN post suggest Rust streaming can parse and begin rendering a 10 KB Markdown document in under 2 ms, which is roughly 3 to 5 times faster than a modern JavaScript parser for the same input. For most real-world use (editing a blog post or a README), the difference is imperceptible to a human. The advantage becomes meaningful when rendering very large Markdown documents, streaming incremental updates from a collaborative editor, or embedding the renderer in a resource-constrained environment like React Native."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Brookmd work inside a browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Brookmd compiles to WASM and ships a Web target. You can embed the streaming renderer in a browser-based Markdown editor or preview pane. The Rust core compiles to a WASM binary that the browser loads once, and subsequent renders reuse the compiled binary. The streaming output can be piped into a virtual DOM or a canvas renderer. The tradeoff is the initial WASM binary size (a few MB gzipped for the full pipeline) versus a JavaScript library like marked or markdown-it that ships in 10-20 KB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I use Brookmd instead of md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use Brookmd when you are building an application that needs a streaming Markdown preview pane and you can afford the WASM binary size. Use md2rich when you need to convert Markdown into paste-ready rich text for social and publishing platforms. They are complementary: you could author Markdown in an editor that uses Brookmd for live preview, then copy the Markdown source and push it through md2rich when you are ready to publish to X, LinkedIn, Medium, or Substack."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is md2rich a streaming renderer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. md2rich is a client-side batch converter. You paste the full Markdown document, click Copy as Rich Text, and the entire conversion happens synchronously in JavaScript. There is no streaming pipeline. The design tradeoff is deliberate: for publishing workflows, you want the complete output before you paste it into a platform editor, not an incremental stream. Streaming is better for live previews where the user is actively editing; batch conversion is better for publishing where the source document is already finished."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <p class="text-sm text-gray-500 mb-2">2026-07-22</p>
+        <h1 class="text-3xl font-bold text-gray-900">Brookmd vs md2rich: Rust Streaming Markdown 2026</h1>
+      </header>
+
+      <section class="prose max-w-none text-gray-800 leading-relaxed">
+
+        <p class="mb-4">A new Show HN project called <strong>Brookmd</strong> landed in late July 2026 with an unusual claim: a Markdown renderer built entirely in Rust that streams the rendered output token by token as the parser reads the input. No waiting for the full AST to assemble. No blocking render pass at the end. Just a continuous pipeline from Markdown text to rich-text output, with the first visible characters appearing microseconds after the first keystroke.</p>
+
+        <p class="mb-4">The tool, by GitHub user <strong>siinghd</strong>, opens a third axis in the Markdown rendering conversation. Most tools compete on feature completeness (does it support tables, footnotes, GFM, math?). A smaller set competes on bundle size (marked at 17 KB, markdown-it at 20 KB, Quikdown at 17 KB). Brookmd competes on <em>latency to first rendered pixel</em>, and it does it by rewriting the rendering pipeline entirely in Rust with a WASM compile target.</p>
+
+        <p class="mb-4">This article compares Brookmd to md2rich, explains the streaming approach, and helps you decide which tool fits your Markdown workflow in 2026.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">What Brookmd Does</h2>
+
+        <p class="mb-4">Brookmd is not a Markdown-to-clipboard converter. It is a <strong>streaming rich-text renderer</strong> that takes Markdown input and produces styled rich-text output incrementally. The core architecture has three layers:</p>
+
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li><strong>A Rust parser</strong> that tokenizes Markdown into an event stream. Each event (heading open, paragraph, bold, link, code fence open, code fence close) fires a callback that the rendering layer immediately processes.</li>
+          <li><strong>A streaming rendering backend</strong> that maps events to styled output on the target platform. The Web backend writes to a DOM fragment. The React Native backend writes to a native text component. The Sift backend writes to a Rust-native canvas.</li>
+          <li><strong>Platform adapters</strong> that abstract the output target. The same Rust parser feeds into Web WASM, React Native, or Sift without changing a line of the parsing code.</li>
+        </ul>
+
+        <p class="mb-4">The streaming model means a 10 KB Markdown document starts rendering before the parser has read the entire file. For a 10 KB file, the end-to-end latency to first rendered pixel is quoted at under 2 ms. For comparison, a typical JavaScript parser (marked, markdown-it) parses the whole AST before beginning the render pass, which adds 6-10 ms of latency for the same input. The difference is negligible for a human typing into an editor, but meaningful for programmatic rendering pipelines or collaborative editor streams.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Brookmd vs md2rich: Side-by-Side</h2>
+
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-300 p-2 text-left font-semibold">Feature</th>
+                <th class="border border-gray-300 p-2 text-left font-semibold">Brookmd</th>
+                <th class="border border-gray-300 p-2 text-left font-semibold">md2rich</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-300 p-2">Language</td>
+                <td class="border border-gray-300 p-2">Rust (compiles to WASM)</td>
+                <td class="border border-gray-300 p-2">JavaScript (browser-native)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Rendering model</td>
+                <td class="border border-gray-300 p-2">Streaming (incremental)</td>
+                <td class="border border-gray-300 p-2">Batch (full document)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Platform targets</td>
+                <td class="border border-gray-300 p-2">Web, React Native, Sift</td>
+                <td class="border border-gray-300 p-2">Web (clipboard API)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Output format</td>
+                <td class="border border-gray-300 p-2">Rendered rich text (display)</td>
+                <td class="border border-gray-300 p-2">Platform clipboard (paste-ready)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Bundle size</td>
+                <td class="border border-gray-300 p-2">~2-5 MB WASM (gzipped)</td>
+                <td class="border border-gray-300 p-2">~150 KB (JavaScript, no load step)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Offline capable</td>
+                <td class="border border-gray-300 p-2">Yes (WASM)</td>
+                <td class="border border-gray-300 p-2">Yes (zero server)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Privacy model</td>
+                <td class="border border-gray-300 p-2">Client-side (no upload)</td>
+                <td class="border border-gray-300 p-2">Client-side (no upload)</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">Primary use case</td>
+                <td class="border border-gray-300 p-2">Embedded live preview in apps</td>
+                <td class="border border-gray-300 p-2">Publish Markdown to social/long-form platforms</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 p-2">First rendered pixel</td>
+                <td class="border border-gray-300 p-2">&lt; 2 ms (10 KB doc)</td>
+                <td class="border border-gray-300 p-2">N/A (batch, ~5-10 ms total)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">When to Use Each Tool</h2>
+
+        <p class="mb-4">The comparison above makes one thing clear: Brookmd and md2rich are not competitors. They operate on different parts of the Markdown workflow.</p>
+
+        <p class="mb-4"><strong>Use Brookmd when:</strong></p>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>You are building a Markdown editor or note-taking app and need a fast embedded preview pane.</li>
+          <li>You need Markdown rendering in a React Native app where JavaScript Markdown parsers have limited native support.</li>
+          <li>You are working with very large Markdown documents (50+ KB) where streaming makes the difference between a visible preview in 2 ms versus 20 ms.</li>
+          <li>You control the app delivery pipeline and can include a ~2-5 MB WASM binary without user friction.</li>
+        </ul>
+
+        <p class="mb-4"><strong>Use md2rich when:</strong></p>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>You need to convert a finished Markdown document into formatted rich text that you can paste into X Articles, LinkedIn, Medium, Substack, or Notion.</li>
+          <li>You want a privacy-first tool that runs entirely in the browser with zero server uploads.</li>
+          <li>You need a lightweight solution that loads instantly (150 KB, no WASM download).</li>
+          <li>You are a writer, not an app developer, and you want the publishing workflow to be as simple as paste-and-copy.</li>
+        </ul>
+
+        <p class="mb-4">There is also a natural composition: use Brookmd as the live preview engine inside a custom Markdown editor, write your drafts there, and when the draft is finished, convert it through md2rich for platform publishing. The streaming renderer handles the editing phase; the batch converter handles the publishing phase.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Markdown Example: md2rich in Action</h2>
+
+        <p class="mb-4">Here is a quick Markdown example. Write this in your editor:</p>
+
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># My Post Title
+
+**Key insight:** Streaming Markdown rendering is fast, but
+batch conversion is what your publishing workflow needs.
+
+- Write in Markdown in any editor
+- Convert with md2rich (client-side, no upload)
+- Paste into X Articles, LinkedIn, or Medium
+- Publish with full formatting intact</code></pre>
+
+        <p class="mb-4">Open md2rich.com, paste the Markdown into the left panel, click <strong>Copy as Rich Text</strong>, then paste into your target platform. The formatting survives: headings render as headings, bold as bold, lists as lists. No server round-trip, no account, no upload.</p>
+
+        <p class="mb-4">This is the core difference from the Brookmd approach. Brookmd renders the Markdown for you to <em>look at</em>. md2rich renders the Markdown for you to <em>paste somewhere</em>. Both are valid; they serve different moments in the same writing lifecycle.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">The Rust-in-the-Browser Trend</h2>
+
+        <p class="mb-4">Brookmd is part of a larger 2026 trend: Rust in the browser. Satteri (the Astro team&apos;s Rust Markdown pipeline, covered <a href="/blog/satteri-rust-markdown-pipeline-2026-en" class="text-indigo-600 hover:underline">in a previous article</a>) took a similar approach for the build-time rendering side. Brookmd takes it to the client side.</p>
+
+        <p class="mb-4">The common thread is that Rust+WASM lets developers push performance boundaries that JavaScript alone struggles with: streaming, parallel parsing, sub-millisecond first paint, and shared code across Web, mobile, and desktop via the same Rust core. The tradeoff is WASM binary size, which remains 10-50 times larger than equivalent JavaScript libraries, and the cold-start download cost for users who visit a page that uses a Rust renderer for the first time.</p>
+
+        <p class="mb-4">For md2rich, the batch-conversion model converges on a different tradeoff: zero download (the app is already loaded when you visit the page), zero streaming complexity, and a 150 KB footprint that loads in milliseconds even on a slow connection. Batch conversion is the right model for publishing because the output needs to be deterministic and complete before the paste action. Streaming is the right model for live editing because the user needs to see feedback while typing. Both models have their place.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">FAQ</h2>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">What is Brookmd?</h3>
+        <p class="mb-4">Brookmd is a streaming Markdown renderer written in Rust. It renders Markdown as a stream of rich-text tokens rather than a completed HTML document, which means the first rendered content appears before the entire Markdown input has been parsed. It targets Web (via WASM), React Native, and Sift (a Rust-native UI framework). It was shared as a Show HN project in July 2026 by GitHub user siinghd.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">How does Brookmd differ from md2rich?</h3>
+        <p class="mb-4">Brookmd and md2rich serve different parts of the Markdown pipeline. Brookmd renders Markdown into a streaming rich-text display (think: a live preview pane that populates as-you-type, but powered by Rust/WASM). md2rich converts Markdown into the platform clipboard format that X Articles, LinkedIn, Medium, Substack, and Notion accept. Brookmd is a renderer you embed in your own app; md2rich is a client-side converter you use in your browser to publish long-form content.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Is Brookmd faster than JavaScript-based Markdown renderers?</h3>
+        <p class="mb-4">Benchmarks from the Brookmd Show HN post suggest Rust streaming can parse and begin rendering a 10 KB Markdown document in under 2 ms, which is roughly 3 to 5 times faster than a modern JavaScript parser for the same input. For most real-world use (editing a blog post or a README), the difference is imperceptible to a human. The advantage becomes meaningful when rendering very large Markdown documents, streaming incremental updates from a collaborative editor, or embedding the renderer in a resource-constrained environment like React Native.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Does Brookmd work inside a browser?</h3>
+        <p class="mb-4">Yes. Brookmd compiles to WASM and ships a Web target. You can embed the streaming renderer in a browser-based Markdown editor or preview pane. The Rust core compiles to a WASM binary that the browser loads once, and subsequent renders reuse the compiled binary. The streaming output can be piped into a virtual DOM or a canvas renderer. The tradeoff is the initial WASM binary size (a few MB gzipped for the full pipeline) versus a JavaScript library like marked or markdown-it that ships in 10-20 KB.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">When should I use Brookmd instead of md2rich?</h3>
+        <p class="mb-4">Use Brookmd when you are building an application that needs a streaming Markdown preview pane and you can afford the WASM binary size. Use md2rich when you need to convert Markdown into paste-ready rich text for social and publishing platforms. They are complementary: you could author Markdown in an editor that uses Brookmd for live preview, then copy the Markdown source and push it through md2rich when you are ready to publish to X, LinkedIn, Medium, or Substack.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Is md2rich a streaming renderer?</h3>
+        <p class="mb-4">No. md2rich is a client-side batch converter. You paste the full Markdown document, click Copy as Rich Text, and the entire conversion happens synchronously in JavaScript. There is no streaming pipeline. The design tradeoff is deliberate: for publishing workflows, you want the complete output before you paste it into a platform editor, not an incremental stream. Streaming is better for live previews where the user is actively editing; batch conversion is better for publishing where the source document is already finished.</p>
+
+      </section>
+
+      <div class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+        <h3 class="text-xl font-bold mb-2 text-gray-900">Try md2rich &mdash; client-side Markdown to rich text</h3>
+        <p class="mb-3">Paste your Markdown into the editor on the left; copy the rendered rich text from the right into X Articles, LinkedIn, Medium, Substack, Notion, or anywhere else that does not render Markdown natively. Your draft never leaves your browser.</p>
+        <p class="mb-0"><a href="/" class="text-indigo-600 font-semibold">Open md2rich &rarr;</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap items-center justify-between gap-2">
+      <span>&copy; 2026 md2rich. Markdown to rich text, client-side.</span>
+      <span>
+        <a href="/about" class="hover:text-indigo-600">About</a>
+        &middot;
+        <a href="/privacy" class="hover:text-indigo-600">Privacy</a>
+        &middot;
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

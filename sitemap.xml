@@ -274,4 +274,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

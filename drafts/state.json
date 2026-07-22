@@ -860,6 +860,41 @@
       "published_at": "2026-07-20",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en",
+      "date": "2026-07-21",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en.html",
+      "url": "https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en",
+      "title": "tweet.md vs md2rich: Markdown X Round-Trip 2026",
+      "description": "tweet.md parses X posts into clean Markdown; md2rich renders Markdown to rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.",
+      "heat_source": "2026-07-21 daily briefing (tweet.md Show HN 2p)",
+      "status": "published",
+      "published_at": "2026-07-21T11:30:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "brookmd-vs-md2rich-streaming-markdown-2026-en",
+      "date": "2026-07-22",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/brookmd-vs-md2rich-streaming-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en",
+      "title": "Brookmd vs md2rich: Rust Streaming Markdown 2026",
+      "description": "Brookmd brings Rust streaming to Markdown rendering. Compare Brookmd vs md2rich for speed, features, and when to use each tool in 2026.",
+      "heat_source": "2026-07-22 daily briefing — Brookmd (Show HN, Rust streaming Markdown renderer, github.com/siinghd/brookmd)",
+      "status": "published",
+      "published_at": "2026-07-22T11:30:00+08:00",
+      "providers_featured": [
+        "brookmd",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "faq_count": 6,
+      "word_count": 1900
     }
   ],
   "drafts": [],
@@ -874,8 +909,8 @@
   "current_index": 3,
   "last_topic_direction": "News-analysis (Cloudflare Markdown for Agents × headers × Content Signals × Markdown publishing)",
   "last_run": "2026-07-19T12:30:00+08:00",
-  "last_published_slug": "cloudflare-markdown-for-agents-headers-seo-2026-en",
-  "last_published_at": "2026-07-19",
+  "last_published_slug": "brookmd-vs-md2rich-streaming-markdown-2026-en",
+  "last_published_at": "2026-07-22",
   "drafts_count": 0,
-  "published_count": 41
+  "published_count": 44
 }
