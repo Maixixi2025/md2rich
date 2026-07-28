@@ -997,6 +997,41 @@
       "lang_versions": [
         "en"
       ]
+    },
+    {
+      "slug": "writemark-md2rich-inline-markdown-editor-2026-en",
+      "date": "2026-07-27",
+      "type": "editorial",
+      "lang": "en-US",
+      "file": "blog/writemark-md2rich-inline-markdown-editor-2026-en.html",
+      "url": "https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en",
+      "title": "Writemark + md2rich 2026: Inline Editor for Multi-Platform",
+      "description": "Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.",
+      "heat_source": "Show HN: Writemark — zero-dep inline Markdown editor (2026-07-25, 51 points). Picked ⭐⭐⭐ from /root/.hermes/cron/output/3ea88f8bb2d0/2026-07-27_08-03-21.md.",
+      "status": "ready_for_publish",
+      "published_at": "2026-07-27T00:00:00+00:00",
+      "providers_featured": [],
+      "primary_cta": "Open md2rich → (https://md2rich.com/)"
+    },
+    {
+      "slug": "markdown-newsletters-2026-substack-beehiiv-ghost-en",
+      "date": "2026-07-28",
+      "type": "guide+comparison",
+      "title": "Markdown Newsletters 2026: Substack, Beehiiv & Ghost",
+      "description": "Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 — import, export, rich-text pasting, and the privacy angle that fits md2rich.",
+      "lang": "en-US",
+      "file": "blog/markdown-newsletters-2026-substack-beehiiv-ghost-en.html",
+      "url": "https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en",
+      "heat_source": "⭐⭐⭐ 2026-07-28 daily report: Substack vs Beehiiv vs Ghost for Markdown newsletters (cross-platform paste workflow, privacy angle ties to md2rich values).",
+      "status": "ready_for_publish",
+      "providers_featured": [
+        "substack",
+        "beehiiv",
+        "ghost"
+      ],
+      "primary_cta": "Open md2rich → (https://md2rich.com/)",
+      "created_at": "2026-07-28 12:00:00",
+      "published_at": "2026-07-28T12:00:00+08:00"
     }
   ],
   "drafts": [],
@@ -1006,13 +1041,14 @@
     "x-articles-rich-media-publishing-markdown-2026-en",
     "ai-writing-assistant-markdown-publishing-2026-en",
     "bluesky-x-articles-alternative-markdown-2026-en",
-    "linkedin-ai-detection-rewrite-markdown-2026-en"
+    "linkedin-ai-detection-rewrite-markdown-2026-en",
+    "markdown newsletters 2026 (Substack + Beehiiv + Ghost, privacy angle)"
   ],
-  "current_index": 3,
-  "last_topic_direction": "News-analysis (Cloudflare Markdown for Agents × headers × Content Signals × Markdown publishing)",
-  "last_run": "2026-07-26",
-  "last_published_slug": "search-traffic-decline-markdown-multi-platform-2026-en",
-  "last_published_at": "2026-07-25T12:00:00+08:00",
+  "current_index": 4,
+  "last_topic_direction": "Newsletter platforms (Substack / Beehiiv / Ghost) — Markdown import, rich-text paste, privacy angle",
+  "last_run": "2026-07-28",
+  "last_published_slug": "markdown-newsletters-2026-substack-beehiiv-ghost-en",
+  "last_published_at": "2026-07-28T12:00:00+08:00",
   "drafts_count": 0,
-  "published_count": 47
+  "published_count": 50
 }

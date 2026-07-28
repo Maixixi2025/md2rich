@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Newsletters 2026: Substack, Beehiiv & Ghost</title>
+  <meta name="description" content="Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 — import, export, rich-text pasting, and the privacy angle that fits md2rich.">
+  <meta name="keywords" content="Markdown newsletter, Substack Markdown, Beehiiv Markdown, Ghost Markdown, Markdown to newsletter, rich text newsletter, md2rich newsletter, client-side Markdown, Markdown publishing 2026">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown Newsletters 2026: Substack, Beehiiv & Ghost">
+  <meta property="og:description" content="Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 — import, export, rich-text pasting, and the privacy angle that fits md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown Newsletters 2026: Substack, Beehiiv & Ghost">
+  <meta name="twitter:description" content="Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 — import, export, rich-text pasting, and the privacy angle that fits md2rich.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Markdown Newsletters 2026: Substack, Beehiiv & Ghost",
+      "description": "Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 \u2014 import, export, rich-text pasting, and the privacy angle that fits md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-28",
+      "dateModified": "2026-07-28",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markdown Newsletters 2026: Substack, Beehiiv & Ghost",
+          "item": "https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which newsletter platform is the most Markdown-friendly in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ghost is the most Markdown-native: the editor is built on the same CommonMark pipeline that powers the publishing API, so what you type is what gets stored. Beehiiv is Markdown-friendly through import and the new AI Composer accepts pasted Markdown that it re-parses server-side. Substack is the weakest of the three \u2014 the editor is a stripped-down rich-text composer, and pasted Markdown is converted to HTML on the way in, which means round-tripping is lossy. For a writer who wants the source file to be the canonical record, Ghost is the cleanest fit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can md2rich paste rich text into all three platforms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with the same caveat that applies to any rich-text paste: the destination editor needs to accept HTML on paste. Substack, Beehiiv, and Ghost all use browser-based rich-text composers (TipTap, ProseMirror, or Lexical under the hood), so they all parse the rich text md2rich produces. Substack occasionally strips nested blockquotes during paste because its composer is the simplest of the three. Beehiiv preserves tables and code blocks cleanly. Ghost preserves everything including footnotes. If you write a lot of code or tables, Beehiiv and Ghost are both stronger than Substack on paste fidelity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the privacy angle matter for newsletters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two reasons. First, newsletters are a high-value target for prompt injection \u2014 once an attacker gets an email into your subscriber list, they can use the unsubscribe or reply surface to attack your other systems. Second, the draft itself is sensitive: it usually contains the unpublished version of your thinking, sources, and personal notes. A workflow that keeps the draft client-side (your Markdown file never leaves the browser until you explicitly hit publish) cuts the attack surface in half compared to a workflow that requires you to type into a cloud editor from the first keystroke. md2rich plus a local Markdown file is the simplest version of this pattern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the practical Markdown workflow for a paid newsletter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 80% pattern that works across Substack, Beehiiv, and Ghost: write the draft in a local Markdown file, run it through md2rich to convert into rich text, paste into the platform's composer, preview the post, and publish. The 20% step that most paid writers add is a CI step that lints the Markdown for broken links, missing alt text, and image references before the paste step. Beehiiv's CLI import supports a headless mode where you can push a Markdown file directly without going through the composer. Ghost has a similar headless publish path through its Admin API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which platform handles images, code blocks, and tables best?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ghost is the strongest all-rounder: it supports inline images, code blocks with syntax highlighting, tables, footnotes, and callouts, and all of them survive the Markdown \u2192 HTML \u2192 platform round trip. Beehiiv handles images and tables well but renders code blocks as plain monospace (no syntax highlighting). Substack strips footnotes and collapses nested tables on paste. If your newsletter is technical (developer audience, data analysis, research), Beehiiv or Ghost are both acceptable; Substack forces you to either avoid those elements or post-process the HTML manually."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 'write once, publish anywhere' actually mean for newsletter authors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It means treating the Markdown file as the canonical source and re-publishing from that source to each platform rather than authoring inside each platform's editor. For a writer publishing on both Beehiiv and Ghost, the Markdown file is the master, and the platform composers are read-mostly views into the same content. md2rich makes this realistic because the rich-text paste is one click and preserves formatting across the three platforms. The catch is that comments, subscriber analytics, and email-specific metadata still live on each platform and have to be reconciled separately."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-lg font-bold text-gray-900">md2rich</a>
+      <nav class="text-sm text-gray-600 flex gap-4">
+        <a href="/" class="hover:text-indigo-600">Editor</a>
+        <a href="/about" class="hover:text-indigo-600">About</a>
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+        <a href="/faq" class="hover:text-indigo-600">FAQ</a>
+        <a href="/privacy" class="hover:text-indigo-600">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+      <article>
+        <header class="mb-8">
+          <time class="text-sm text-gray-500">July 28, 2026</time>
+          <h1 class="text-3xl font-bold mt-2 mb-4">Markdown Newsletters 2026: Substack, Beehiiv & Ghost</h1>
+        </header>
+
+        <p class="text-gray-700 mb-6">Substack, Beehiiv, and Ghost are the three platforms that pay newsletter writers actually pick in 2026. They look similar on the surface — each has a hosted composer, a paid tier, and an audience graph — but their treatment of Markdown is wildly different. Ghost stores your post as Markdown and renders it on the fly. Beehiiv accepts Markdown imports and parses pasted Markdown server-side. Substack accepts Markdown only through import, and the editor itself is a stripped-down rich-text composer that treats pasted Markdown as a one-time conversion. If you intend to write in Markdown and reuse the same source across platforms, this difference determines which platform becomes the canonical home of your writing.</p>
+
+        <p class="text-gray-700 mb-6">The workflow that fits all three is the same on the writing side: a local Markdown file as the source of truth, <a href="/" class="text-indigo-600 font-semibold">md2rich</a> to convert that Markdown into the rich text the platform composers accept, and a paste step into the destination. The platform-specific differences show up in what survives the round trip, what gets stripped on paste, and what the post-paste cleanup looks like. This guide compares the three on those axes and shows the workflow that works in each case without locking you into one platform's editor.</p>
+
+        <h2 id="how-each-platform-handles-markdown" class="text-2xl font-bold mt-10 mb-4">How each platform handles Markdown</h2>
+
+        <p class="text-gray-700 mb-6">Ghost is the most Markdown-native of the three because the editor is built on the same CommonMark pipeline that powers the publishing API. A post written in the Ghost editor is stored as Markdown in the database and rendered to HTML at request time. Round-tripping is lossless by construction: paste Markdown in, get Markdown out, paste Markdown in again, get the same Markdown out. This is the platform where the file-on-disk is genuinely the canonical record of the post.</p>
+
+        <p class="text-gray-700 mb-6">Beehiiv is Markdown-friendly through two paths: the import endpoint accepts Markdown and HTML, and the AI Composer parses pasted Markdown server-side using a custom CommonMark variant. The Composer itself is a TipTap-based rich-text editor that does not expose the source Markdown to the writer once the post is converted. Round-tripping requires exporting the post and re-parsing, which Beehiiv does not expose through the Composer UI. For a paid writer who imports once and edits rarely inside the platform, Beehiiv's import fidelity is high enough that the Markdown source can stay canonical.</p>
+
+        <p class="text-gray-700 mb-6">Substack is the weakest of the three for Markdown because the editor is a stripped-down rich-text composer and pasted Markdown is converted to HTML on the way in. Once the post is in Substack, the source Markdown is gone. Re-exporting the post gets HTML back, not Markdown. For writers who want their Markdown file to be the canonical record and Substack to be one of several publication surfaces, Substack has to be the last hop in the workflow, not the source of truth.</p>
+
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># Markdown source (canonical file)
+# file: newsletter/2026-07-28-paid-edition.md
+
+---
+title: Why Substack, Beehiiv, Ghost handle Markdown differently
+date: 2026-07-28
+audience: paid
+---
+
+## The headline
+
+The three platforms look similar but treat Markdown as **canonical**,
+**import-only**, or **converted-on-paste** respectively.
+
+| Platform | Markdown storage | Round-trip fidelity |
+|----------|------------------|---------------------|
+| Ghost    | Canonical source  | Lossless            |
+| Beehiiv  | Import only       | High (single import)|
+| Substack | Converted to HTML | Lossy (HTML out)    |
+
+> Pick Ghost if Markdown is the canonical record. Pick Beehiiv if you
+> import once and edit rarely inside the platform. Pick Substack if
+> you treat it as a publication surface, not a writing tool.
+</code></pre>
+
+        <p class="text-gray-700 mb-6">The above source is what you would write in a local file or a Markdown editor like the ones <a href="/blog/best-markdown-editors-2026-en" class="text-indigo-600 hover:underline">compared here</a>. The conversion step to rich text is the same regardless of which destination platform you pick — md2rich parses the Markdown and produces the HTML clipboard payload that the platform composers accept on paste.</p>
+
+        <h2 id="the-shared-workflow" class="text-2xl font-bold mt-10 mb-4">The shared workflow</h2>
+
+        <p class="text-gray-700 mb-6">The 80% workflow that works for all three platforms looks the same. The differences are at the platform-specific cleanup step at the end.</p>
+
+        <ol class="list-decimal pl-6 mb-6 text-gray-700"><li class="mb-2">Write the draft in a local Markdown file. The file is the canonical record of the post.</li><li class="mb-2">Open <a href="/" class="text-indigo-600 font-semibold">md2rich</a> and paste the Markdown into the left pane.</li><li class="mb-2">Click <strong>Convert</strong>. The right pane shows the rich-text HTML that all three platform composers accept on paste.</li><li class="mb-2">Copy from the rich-pane, paste into the destination platform's composer.</li><li class="mb-2">Run the platform-specific cleanup: Substack needs blockquote re-nesting, Beehiiv needs code-block re-style, Ghost usually needs nothing.</li><li class="mb-2">Preview the post inside the platform, then publish or schedule.</li></ol>
+
+        <p class="text-gray-700 mb-6">This is the same workflow described in the <a href="/blog/markdown-to-substack-en" class="text-indigo-600 hover:underline">Substack-focused guide</a> and the <a href="/blog/markdown-to-rich-text-2026-en" class="text-indigo-600 hover:underline">broader Markdown → rich text guide</a>, extended to all three platforms. The privacy angle is the same too: the draft stays on your machine until the moment you choose to publish, with no keystroke logging and no third-party content script running while you write.</p>
+
+        <h2 id="platform-by-platform-cleanup" class="text-2xl font-bold mt-10 mb-4">Platform-by-platform cleanup</h2>
+
+        <p class="text-gray-700 mb-6">Substack strips nested blockquotes on paste and collapses tables with more than two columns into a flat list. The fix is to use single-level blockquotes and split wide tables into multiple smaller tables. Substack also does not preserve <code>```language</code> code-block fences — the language hint is dropped and the block is rendered as plain monospace. For technical newsletters, this is the deal-breaker that pushes most writers toward Beehiiv or Ghost.</p>
+
+        <p class="text-gray-700 mb-6">Beehiiv preserves tables, code blocks, and images cleanly through paste. The only cleanup step worth doing is re-applying the syntax highlighting to code blocks because Beehiiv strips the language hint and renders them as plain monospace by default. The fix is to select each code block inside the Composer and pick the language from the dropdown. This takes about 30 seconds per post and is worth doing once for technical content.</p>
+
+        <p class="text-gray-700 mb-6">Ghost is the closest to "paste and forget." Code blocks keep their language hints, tables round-trip cleanly, nested blockquotes stay nested, and footnotes survive the round trip. The only thing Ghost strips on paste is the <code>title</code> frontmatter field, which is expected because the Composer has its own title field. For a writer who wants the Markdown file to be canonical and the platform to be a view into that file, Ghost is the cleanest fit.</p>
+
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># Cleanup checklist per platform
+
+# Substack
+- Flatten nested blockquotes (&gt; &gt; becomes &gt;)
+- Split wide tables into multiple tables
+- Re-apply code-block language hints manually
+
+# Beehiiv
+- Re-apply code-block language hints in the Composer
+- (everything else survives paste)
+
+# Ghost
+- Set the post title in the Composer title field
+- (everything else survives paste)
+</code></pre>
+
+        <h2 id="the-headless-publish-path" class="text-2xl font-bold mt-10 mb-4">The headless publish path</h2>
+
+        <p class="text-gray-700 mb-6">For writers who publish the same content to two or three platforms, the paste-into-composer workflow is fine for one or two posts a week. For higher cadence, the better path is a headless publish step that skips the Composer entirely.</p>
+
+        <p class="text-gray-700 mb-6">Ghost has the cleanest headless path through its Admin API. You POST a Markdown body to <code>/ghost/api/admin/posts/</code> with a content API key and the post is created in draft status. You can then schedule or publish from the dashboard, or use the API to publish directly. For a writer maintaining a Markdown file and publishing through a CI pipeline, Ghost's Admin API is the most scriptable of the three.</p>
+
+        <p class="text-gray-700 mb-6">Beehiiv has a similar headless path through its bulk-import endpoint, which accepts a zip of HTML or Markdown files. The endpoint is rate-limited and the import goes into a draft state that you have to review and publish inside the dashboard. For writers who batch-import weekly editions, this works cleanly. For real-time publishing, the Composer paste path is faster.</p>
+
+        <p class="text-gray-700 mb-6">Substack does not expose a public API for posts. Import is only available during onboarding as part of a platform migration, and there is no documented endpoint for ongoing imports. For a writer who treats Substack as the canonical home of their newsletter, this is fine. For a writer who treats their Markdown file as canonical and Substack as one of several publication surfaces, this is the limit that pushes them toward Ghost or Beehiiv for the canonical home and treats Substack as a manual re-paste surface.</p>
+
+        <h2 id="the-privacy-floor" class="text-2xl font-bold mt-10 mb-4">The privacy floor</h2>
+
+        <p class="text-gray-700 mb-6">All three platforms require you to log into their Composer to publish. The privacy angle is therefore not about the platform itself — once you paste, the content lives on their infrastructure — but about the draft phase before the paste.</p>
+
+        <p class="text-gray-700 mb-6">The md2rich pattern keeps the draft client-side: you write the Markdown in a local file or in <a href="/blog/writemark-md2rich-inline-markdown-editor-2026-en" class="text-indigo-600 hover:underline">an inline editor</a>, you convert it through md2rich, and you paste the result into the platform. Nothing in that pipeline touches a server until the explicit publish step. Compared to a workflow that requires you to type into a cloud editor from the first keystroke, the md2rich pattern cuts the attack surface in half during the draft phase.</p>
+
+        <p class="text-gray-700 mb-6">For newsletters specifically, the draft-phase privacy floor matters more than it does for social posts because the draft usually contains unpublished sources, personal notes, and unreleased information. A workflow that keeps the draft in a local Markdown file and treats the platform as a publication-only surface is the cleanest fit for that threat model.</p>
+
+        <h2 id="when-to-pick-which" class="text-2xl font-bold mt-10 mb-4">When to pick which</h2>
+
+        <p class="text-gray-700 mb-6">The choice between Substack, Beehiiv, and Ghost comes down to three questions: how important is the Markdown file as the canonical record, how often do you cross-publish to other platforms, and how technical is your audience.</p>
+
+        <p class="text-gray-700 mb-6">If the Markdown file is canonical and Ghost is the publication home, Ghost is the right pick. The round-trip fidelity is lossless, the headless API is scriptable, and the cleanup step is essentially zero. Beehiiv is the right pick if you want a larger built-in audience graph and a stronger monetization toolset, with the tradeoff that round-tripping requires re-importing. Substack is the right pick if the audience graph is your primary value and the Markdown file is a one-time source you are happy to leave behind in the platform after the first paste.</p>
+
+        <p class="text-gray-700 mb-6">For most technical writers in 2026, the best fit is a Ghost primary with a Beehiiv secondary, and Substack reserved for occasional cross-posts where the audience graph matters more than the source fidelity. md2rich is the conversion step that makes this multi-platform pattern realistic — the rich-text paste works across all three composers with the same one-click flow, and the headless API path on Ghost means the high-cadence publish flow stays scriptable end to end.</p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+          <p class="text-gray-800 mb-3"><strong>Try the workflow:</strong> Write your next newsletter issue in a local Markdown file, run it through md2rich, paste the result into Substack, Beehiiv, or Ghost. The rich-text conversion is one click, the cleanup is at most a few seconds per post, and the draft stays on your machine until you publish. Client-side, zero upload, no metadata leak.</p>
+          <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Open md2rich →</a>
+        </div>
+      </article>
+
+      <section class="mt-16">
+        <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Which newsletter platform is the most Markdown-friendly in 2026?</h3>
+            <p class="text-gray-700">Ghost is the most Markdown-native: the editor is built on the same CommonMark pipeline that powers the publishing API, so what you type is what gets stored. Beehiiv is Markdown-friendly through import and the AI Composer accepts pasted Markdown that it re-parses server-side. Substack is the weakest of the three — the editor is a stripped-down rich-text composer, and pasted Markdown is converted to HTML on the way in, which means round-tripping is lossy. For a writer who wants the source file to be the canonical record, Ghost is the cleanest fit.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Can md2rich paste rich text into all three platforms?</h3>
+            <p class="text-gray-700">Yes, with the same caveat that applies to any rich-text paste: the destination editor needs to accept HTML on paste. Substack, Beehiiv, and Ghost all use browser-based rich-text composers (TipTap, ProseMirror, or Lexical under the hood), so they all parse the rich text md2rich produces. Substack occasionally strips nested blockquotes during paste because its composer is the simplest of the three. Beehiiv preserves tables and code blocks cleanly. Ghost preserves everything including footnotes. If you write a lot of code or tables, Beehiiv and Ghost are both stronger than Substack on paste fidelity.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Why does the privacy angle matter for newsletters?</h3>
+            <p class="text-gray-700">Two reasons. First, newsletters are a high-value target for prompt injection — once an attacker gets an email into your subscriber list, they can use the unsubscribe or reply surface to attack your other systems. Second, the draft itself is sensitive: it usually contains the unpublished version of your thinking, sources, and personal notes. A workflow that keeps the draft client-side (your Markdown file never leaves the browser until you explicitly hit publish) cuts the attack surface in half compared to a workflow that requires you to type into a cloud editor from the first keystroke. md2rich plus a local Markdown file is the simplest version of this pattern.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">What is the practical Markdown workflow for a paid newsletter?</h3>
+            <p class="text-gray-700">The 80% pattern that works across Substack, Beehiiv, and Ghost: write the draft in a local Markdown file, run it through md2rich to convert into rich text, paste into the platform's composer, preview the post, and publish. The 20% step that most paid writers add is a CI step that lints the Markdown for broken links, missing alt text, and image references before the paste step. Beehiiv's CLI import supports a headless mode where you can push a Markdown file directly without going through the composer. Ghost has a similar headless publish path through its Admin API.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Which platform handles images, code blocks, and tables best?</h3>
+            <p class="text-gray-700">Ghost is the strongest all-rounder: it supports inline images, code blocks with syntax highlighting, tables, footnotes, and callouts, and all of them survive the Markdown → HTML → platform round trip. Beehiiv handles images and tables well but renders code blocks as plain monospace (no syntax highlighting). Substack strips footnotes and collapses nested tables on paste. If your newsletter is technical (developer audience, data analysis, research), Beehiiv or Ghost are both acceptable; Substack forces you to either avoid those elements or post-process the HTML manually.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-2">What does "write once, publish anywhere" actually mean for newsletter authors?</h3>
+            <p class="text-gray-700">It means treating the Markdown file as the canonical source and re-publishing from that source to each platform rather than authoring inside each platform's editor. For a writer publishing on both Beehiiv and Ghost, the Markdown file is the master, and the platform composers are read-mostly views into the same content. md2rich makes this realistic because the rich-text paste is one click and preserves formatting across the three platforms. The catch is that comments, subscriber analytics, and email-specific metadata still live on each platform and have to be reconciled separately.</p>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>
