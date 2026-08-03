@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown for AI Agents 2026: llms.txt + AGENTS.md Guide</title>
+  <meta name="description" content="Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.">
+  <meta name="keywords" content="llms.txt, AGENTS.md, Markdown for AI agents, Cloudflare Agents Week 2026, md2rich, agent-readable Markdown, AI search citation">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown for AI Agents 2026: llms.txt + AGENTS.md Guide">
+  <meta property="og:description" content="Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown for AI Agents 2026: llms.txt + AGENTS.md Guide">
+  <meta name="twitter:description" content="Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Markdown for AI Agents 2026: llms.txt + AGENTS.md Guide",
+      "description": "Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-03",
+      "dateModified": "2026-08-03",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to keep a Markdown-first workflow for AI agents",
+      "totalTime": "PT15M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Write one canonical Markdown file per post",
+          "text": "Keep the source filename dated and topic-specific; the file is your contract with both human readers and any agent that visits later."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Commit the source before distribution",
+          "text": "Freeze the canonical Markdown in Git so every chat edit, social rewrite, and agent patch happens against a known starting point."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Publish llms.txt at the site root",
+          "text": "List the canonical post, a one-line orientation blockquote, and an Optional section for low-priority pages."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Add AGENTS.md to any code repo that publishes for you",
+          "text": "If your site generator, newsletter pipeline, or conversion script lives in a repo, give the coding agent clear rules for build, test, and PR."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Convert at the edge, not in the cloud",
+          "text": "Use md2rich to turn the canonical Markdown into platform-specific rich text without uploading the draft."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markdown for AI Agents 2026",
+          "item": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is llms.txt the same as robots.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. robots.txt tells agents what they are not allowed to crawl. llms.txt tells agents what is worth reading once they arrive. They are complements, not substitutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a content-only writer publish AGENTS.md?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if your publishing pipeline lives in a code repo (site generator, newsletter export script, social post converter). AGENTS.md targets coding agents, not content agents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to update llms.txt every time I publish a new post?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, when the post is canonical (decision records, evergreen guides, policy docs). For transient updates, the Optional section is the right home so agents can skip them when context is tight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will a Markdown source with an llms.txt entry rank better in 2026 search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google has not confirmed llms.txt as a ranking signal. Anthropic and Cloudflare have confirmed they read it. For AI-search-driven traffic, the manifest is a direct citation surface."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does md2rich upload the Markdown when I convert it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The conversion runs in your browser. md2rich does not store the draft, log the text, or send it to a server-side rewriting model."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 3, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Markdown for AI agents in 2026: a privacy-first workflow around llms.txt and AGENTS.md</h1>
+        <p class="text-lg text-gray-600">Cloudflare Agents Week 2026 just made the llms.txt + AGENTS.md pair essential. Here is the writer-friendly Markdown workflow that keeps conversion client-side and citations portable.</p>
+      </header>
+
+<p class="text-gray-700 mb-6">Cloudflare Agents Week 2026 launched on August 3 with a clear thesis: AI agents are now first-class visitors to every public website. Anthropic's <code>docs.anthropic.com/llms.txt</code>, Cloudflare's <code>/llms.txt</code>, and the AGENTS.md repo (23,000+ stars on GitHub by August 2026) are no longer research demos. They are the actual reading list your audience — including the silent one made of bots — uses to decide what to trust, summarize, and re-publish.</p>
+
+<p class="text-gray-700 mb-6">For Markdown writers, this is good news. Markdown was already the lingua franca for both humans and language models. Two complementary standards now describe how a website should expose itself to agents: <code>llms.txt</code> for content sites, <code>AGENTS.md</code> for code repositories. Both rely on plain Markdown. Neither requires a CMS, a build step, or a vendor account. They are the rare 2026 protocol a Markdown writer can implement in an afternoon.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Why two standards, and why they are not competing</h2>
+
+<p class="text-gray-700 mb-6">It is tempting to pick a side. The reality is that the two standards answer different questions:</p>
+
+<div class="overflow-x-auto mb-8">
+<table class="min-w-full border border-gray-200 text-left text-sm">
+<thead class="bg-gray-50"><tr><th class="p-3 border-b">Question</th><th class="p-3 border-b">llms.txt</th><th class="p-3 border-b">AGENTS.md</th></tr></thead>
+<tbody>
+<tr><td class="p-3 border-b">Where does it live?</td><td class="p-3 border-b">Site root (<code>/llms.txt</code>)</td><td class="p-3 border-b">Repo root (<code>AGENTS.md</code>)</td></tr>
+<tr><td class="p-3 border-b">Who reads it?</td><td class="p-3 border-b">Web agents visiting your domain</td><td class="p-3 border-b">Coding agents working in your repo</td></tr>
+<tr><td class="p-3 border-b">What it provides</td><td class="p-3 border-b">Curated Markdown list of pages worth reading</td><td class="p-3 border-b">Build, test, and PR rules for AI coding assistants</td></tr>
+<tr><td class="p-3 border-b">Format</td><td class="p-3 border-b">Markdown with H1, blockquote, optional H2 sections</td><td class="p-3 border-b">Markdown with free-form sections</td></tr>
+<tr><td class="p-3 border-b">Spec author</td><td class="p-3 border-b">Jeremy Howard (Answer.AI), September 2024</td><td class="p-3 border-b">agentsmd maintainers, August 2025</td></tr>
+<tr><td class="p-3">Adoption signal (Aug 2026)</td><td class="p-3">Anthropic docs, Cloudflare, Astro docs, md2rich.com</td><td class="p-3">Cursor, Claude Code, GitHub Copilot, Aider</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">A Markdown writer publishes <code>llms.txt</code> on the site. A Markdown-writing developer adds <code>AGENTS.md</code> to the repository. Many people need both. They are not in tension because they target different layers — content surface versus source tree.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What llms.txt actually looks like</h2>
+
+<p class="text-gray-700 mb-4">The spec is short on rules and long on intent. From the proposal page, an llms.txt file must contain, in this order:</p>
+
+<ol class="list-decimal pl-6 mb-6 text-gray-700">
+<li class="mb-2">An optional byte-order mark.</li>
+<li class="mb-2">A single H1 with the project or site name. This is the only required section.</li>
+<li class="mb-2">A blockquote with a short summary that gives an agent the orientation it needs.</li>
+<li class="mb-2">Zero or more Markdown sections (paragraphs, lists, no headings) with detailed orientation.</li>
+<li class="mb-2">Zero or more H2-delimited sections, each containing a Markdown list of <code>[name](url)</code> links plus optional <code>: notes</code>.</li>
+<li class="mb-2">An optional final H2 named <code>Optional</code> for content an agent may skip when context is tight.</li>
+</ol>
+
+<p class="text-gray-700 mb-4">A working example, the actual md2rich.com manifest:</p>
+
+<pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># md2rich
+
+&gt; Markdown to rich text converter for X Articles, LinkedIn, Medium,
+&gt; and any rich-text platform.
+&gt; 100% client-side, zero upload, free, no signup.
+
+## What it is
+md2rich is a single-page web app that:
+1. Lets you write Markdown on the left
+2. Previews the rendered HTML on the right
+3. Converts the Markdown into platform-specific rich text
+4. Copies the rich text to your clipboard with one click
+5. Optionally downloads the result as a standalone HTML file
+
+## Key features
+- 100% client-side JavaScript (no backend, no server)
+- Zero tracking, zero cookies, zero analytics
+- No signup, no account, no limits
+- Supports X Articles, LinkedIn, Medium, plain HTML, raw Markdown
+- Code blocks, tables, lists, blockquotes, links, images
+
+## Optional
+- Privacy policy and the exact third-party libraries</code></pre>
+
+<p class="text-gray-700 mb-6">The blockquote is the orientation paragraph an agent will quote back at the user. The H2 list sections are the actual reading list. The <code>Optional</code> section at the bottom gives an agent permission to skip low-priority URLs when its context window is constrained.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What AGENTS.md actually looks like</h2>
+
+<p class="text-gray-700 mb-4">AGENTS.md is older in spirit — a README for AI coding assistants — and newer in name. The official repository published a minimal template:</p>
+
+<pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># Sample AGENTS.md file
+
+## Dev environment tips
+- Use `pnpm dlx turbo run where &lt;project_name&gt;` to jump to a package
+  instead of scanning with `ls`.
+- Run `pnpm install --filter &lt;project_name&gt;` to add the package to your
+  workspace so Vite, ESLint, and TypeScript can see it.
+
+## Testing instructions
+- Find the CI plan in the .github/workflows folder.
+- Run `pnpm turbo run test --filter &lt;project_name&gt;` to run every check
+  defined for that package.
+- From the package root you can just call `pnpm test`.
+
+## PR instructions
+- Title format: [&lt;project_name&gt;] &lt;Title&gt;
+- Always run `pnpm lint` and `pnpm test` before committing.</code></pre>
+
+<p class="text-gray-700 mb-6">There is no schema, no validator, no schema.org counterpart. AGENTS.md is intentionally a Markdown file with section headings that an agent recognizes by convention: dev environment, testing, PR rules. The discipline is in keeping the file short and reviewable. A 5,000-line AGENTS.md gets ignored. A 200-line AGENTS.md gets read.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The five-step writer workflow for 2026</h2>
+
+<p class="text-gray-700 mb-6">If you already publish Markdown, you are 80% of the way there. The remaining 20% is giving agents a stable place to find you, and a stable place to summarize you without losing the source.</p>
+
+<ol class="list-decimal pl-6 mb-8 text-gray-700">
+<li class="mb-4"><strong>Write one canonical Markdown file per post.</strong> Keep the source filename dated and topic-specific: <code>2026-08-03-agents-week.md</code> beats <code>notes-final-v3.md</code>. The file is your contract with both human readers and any agent that visits later.</li>
+<li class="mb-4"><strong>Commit the source before distribution.</strong> Git is the only reviewable checkpoint where the canonical Markdown is frozen. Every chat edit, social rewrite, and agent patch happens against a known starting point.</li>
+<li class="mb-4"><strong>Publish <code>/llms.txt</code> at the site root.</strong> List the canonical post, a one-line orientation blockquote, and an <code>Optional</code> section for low-priority pages. Update it whenever a new canonical post lands.</li>
+<li class="mb-4"><strong>Add <code>AGENTS.md</code> to any code repo that publishes for you.</strong> If your site generator, newsletter pipeline, or conversion script lives in a repo, give the coding agent clear rules for build, test, and PR. Keep it under 200 lines.</li>
+<li class="mb-4"><strong>Convert at the edge, not in the cloud.</strong> When a destination (LinkedIn, Medium, Notion) needs rich text, convert in the browser. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> turns the canonical Markdown into platform-specific rich text without uploading the draft.</li>
+</ol>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Example 1: a canonical post that survives an agent re-summary</h2>
+
+<p class="text-gray-700 mb-4">A post written for chat will lose structure the moment an agent summarizes it. A post written for both readers and agents keeps the decision boundary explicit:</p>
+
+<pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># Export launch status — 2026-08-03
+
+## Decision
+Ship CSV export on August 6. Defer PDF export to the next release.
+
+## Evidence
+- 18 of 20 CSV fixtures pass
+- accessibility review completed August 1
+- two PDF font bugs remain open
+
+## Owners
+- CSV regression suite: Mina — due August 4
+- release notes: Devon — due August 5
+
+## Open question
+Should enterprise accounts receive export audit logs at launch?
+
+## llms.txt section
+- [Export launch status — 2026-08-03](https://example.com/posts/2026-08-03-export-launch.md)
+  : canonical source for the launch post. Re-summarize from this URL only.</code></pre>
+
+<p class="text-gray-700 mb-6">The <code>llms.txt section</code> at the bottom is a pointer an agent can copy into your site's manifest. The explicit dates and owners are claims an agent can verify in Git. The open question is a deliberate gap that an agent should not fill.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Example 2: a public derivative that preserves verified facts</h2>
+
+<p class="text-gray-700 mb-4">From the canonical post above, derive the public version. Do not paste the internal file. Open the derivative in <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a>, convert to rich text, then paste into LinkedIn, Medium, or X Articles:</p>
+
+<pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># CSV export ships August 6
+
+You asked for a faster way to move reporting data into your own tools.
+CSV export arrives August 6.
+
+The first release includes:
+
+- filtered dataset exports
+- UTF-8 encoding
+- consistent date columns
+- accessible progress and error states
+
+We moved PDF export to a later release rather than ship with unresolved
+font problems. Existing dashboards are unchanged.</code></pre>
+
+<p class="text-gray-700 mb-6">This derivative keeps the verified August 6 date and the deferred PDF decision. It drops employee names, internal test counts, and unresolved enterprise discussion. The conversion happens locally, so the canonical source and the public derivative never need to share a server.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Why client-side conversion still matters in an agent era</h2>
+
+<p class="text-gray-700 mb-6">An <code>llms.txt</code> file gives agents permission to read. It does not give them permission to convert, rewrite, or store your draft. The two operations should stay separate. A Markdown writer who keeps conversion client-side does three things well: the canonical source remains a single file in Git, the conversion step never touches a third-party rewriting model, and the human stays the final approver before anything reaches a public surface.</p>
+
+<p class="text-gray-700 mb-6">md2rich is intentionally narrow. It is not an agent, not a CMS, not a content hub. It is the conversion step that turns the canonical Markdown into the rich text a destination expects, with no upload, no account, and no analytics. The narrow boundary is the point: in a 2026 where agents read more pages than humans do, the only safe conversion step is the one that does not require a third party to see the source.</p>
+
+<h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+
+<div class="space-y-6">
+<div><h3 class="text-lg font-semibold mb-2">Is llms.txt the same as robots.txt?</h3><p class="text-gray-700">No. robots.txt tells agents what they are not allowed to crawl. llms.txt tells agents what is worth reading once they arrive. They are complements, not substitutes.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Should a content-only writer publish AGENTS.md?</h3><p class="text-gray-700">Only if your publishing pipeline lives in a code repo (site generator, newsletter export script, social post converter). AGENTS.md targets coding agents, not content agents.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Do I need to update llms.txt every time I publish a new post?</h3><p class="text-gray-700">Yes, when the post is canonical (decision records, evergreen guides, policy docs). For transient updates, the <code>Optional</code> section is the right home so agents can skip them when context is tight.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Will a Markdown source with an llms.txt entry rank better in 2026 search?</h3><p class="text-gray-700">Google has not confirmed llms.txt as a ranking signal. Anthropic and Cloudflare have confirmed they read it. For AI-search-driven traffic, the manifest is a direct citation surface. Treat it as a citation hedge, not a ranking hack.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Does md2rich upload the Markdown when I convert it?</h3><p class="text-gray-700">No. The conversion runs in your browser. md2rich does not store the draft, log the text, or send it to a server-side rewriting model. The canonical file remains on your machine and in your Git history.</p></div>
+</div>
+
+<div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+<h2 class="text-xl font-bold mb-2">One canonical Markdown file, one conversion step, two manifest entries</h2>
+<p class="text-gray-700 mb-4">Write the source once, expose it to agents via <code>llms.txt</code> and <code>AGENTS.md</code>, and convert at the edge when a destination needs rich text.</p>
+<a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich</a>
+</div>
+    </article>
+  </main>
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>

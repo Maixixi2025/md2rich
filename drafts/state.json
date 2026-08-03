@@ -1155,22 +1155,39 @@
         "x-hosted-mcp-markdown-2026-en"
       ],
       "topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid) — unified collab tools, agent publishing contracts, client-side conversion boundary"
+    },
+    {
+      "slug": "markdown-llms-txt-agents-md-standards-2026-en",
+      "date": "2026-08-03",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/markdown-llms-txt-agents-md-standards-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en",
+      "title": "Markdown for AI Agents 2026: llms.txt + AGENTS.md Standards Guide",
+      "description": "Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.",
+      "heat_source": "⭐ Cloudflare Agents Week 2026 launched Aug 3 (https://blog.cloudflare.com/agents-week-welcome/) + AGENTS.md GitHub repo (23,380 stars Aug 2026, https://github.com/agentsmd/agents.md) + llms.txt spec (Jeremy Howard, Sep 2024, https://llmstxt.org/)",
+      "status": "preview_pending_publish",
+      "published_at": null,
+      "providers_featured": [],
+      "primary_cta": "Try md2rich",
+      "topic_direction": "Markdown for AI agents / privacy-first / llms.txt / AGENTS.md / Cloudflare Agents Week 2026",
+      "created_at": "2026-08-03"
     }
   ],
   "drafts": [],
   "recent_topics": [
-    "Buzz team chat + AI agents + Git hosting one Markdown source",
-    "LinkedIn AI Slop report button Markdown editing workflow",
     "State of Markdown Publishing July 2026 round-up",
     "Marvelous Git-backed Markdown editor vs md2rich comparison",
     "PrivateMarkdown 135+ format local converter vs md2rich",
-    "Markdown newsletters 2026 (Substack + Beehiiv + Ghost, privacy angle)"
+    "Markdown newsletters 2026 (Substack + Beehiiv + Ghost, privacy angle)",
+    "Markdown for AI agents 2026 (llms.txt + AGENTS.md, Cloudflare Agents Week)"
   ],
-  "current_index": 5,
-  "last_topic_direction": "Buzz (Jack Dorsey team chat + AI agents + Git hosting) — one canonical Markdown source, agent publishing contracts, client-side conversion",
-  "last_run": "2026-08-02",
-  "last_published_slug": "buzz-team-chat-markdown-publishing-workflow-2026-en",
-  "last_published_at": "2026-08-02T12:00:00+08:00",
+  "current_index": 6,
+  "last_topic_direction": "Markdown for AI agents (Cloudflare Agents Week 2026) — llms.txt + AGENTS.md pair, privacy-first client-side conversion, agent-readable headers",
+  "last_run": "2026-08-03",
+  "last_published_slug": "markdown-llms-txt-agents-md-standards-2026-en",
+  "last_published_at": "2026-08-03 (preview_pending_publish)",
   "drafts_count": 0,
-  "published_count": 53
+  "published_count": 56,
+  "publish_notes": "2026-08-03: Drafted 'markdown-llms-txt-agents-md-standards-2026-en'. JSON-LD triple-brace pitfall caught and fixed (used Python dict → json.dumps to avoid manual brace miscount). Title 55c / desc 155c / canonical / hreflang en+x-default / 5 FAQ + 5 HowTo steps + BreadcrumbList + Article. Topic = Cloudflare Agents Week 2026 + llms.txt + AGENTS.md. lang=en-US. awaiting publish confirmation."
 }
