@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown to Mastodon 2026: Privacy-First Fediverse Workflow</title>
+  <meta name="description" content="Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.">
+  <meta name="keywords" content="Markdown to Mastodon, Mastodon Markdown, Mastodon long-form 2026, Mastodon TOS 2026, Pleroma Markdown, Misskey Markdown, Akkoma Markdown, md2rich, client-side Markdown, privacy-first publishing, Fediverse publishing">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown to Mastodon 2026: Privacy-First Fediverse Workflow">
+  <meta property="og:description" content="Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown to Mastodon 2026: Privacy-First Fediverse Workflow">
+  <meta name="twitter:description" content="Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Markdown to Mastodon 2026: Privacy-First Fediverse Workflow",
+      "description": "Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to publish Markdown to Mastodon long-form with md2rich",
+      "totalTime": "PT10M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Draft the post in plain Markdown",
+          "text": "Keep one canonical Markdown file per post. Mastodon's compose box is a plain-text editor, so the Markdown source stays your source of truth."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Convert client-side with md2rich",
+          "text": "Open https://md2rich.com/, paste the Markdown into the editor, and copy the rendered rich text. Nothing leaves the browser."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Paste into Mastodon's compose box",
+          "text": "Switch to the Mastodon web UI (or a desktop client that accepts rich-text paste), paste with Ctrl/Cmd+V, and verify the formatting before posting."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Test on a private post first",
+          "text": "Send the post to yourself with privacy 'followers only' or 'direct' before going public. Some Fediverse software still strips headings or code blocks on render."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Re-render when a Fediverse fork changes syntax",
+          "text": "Mastodon, Pleroma, Misskey, and Akkoma each render slightly differently. Re-run md2rich when the upstream server ships a Markdown renderer update."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markdown to Mastodon 2026: Privacy-First Fediverse Workflow",
+          "item": "https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Mastodon accept raw Markdown directly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The Mastodon compose box is a plain-text field. You need to convert the Markdown to HTML or rich text first (for example, with md2rich), then paste the rendered output into the compose box."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Mastodon's 2026-08-31 TOS change actually mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The new TOS grants the Mastodon operator a licence to restore content you previously deleted if it still exists in a backup. The deletion appears to the public but the operator can still publish the original. Writers who care about real deletion should treat any Fediverse post as potentially recoverable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Markdown rendering different on Pleroma, Misskey, and Akkoma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pleroma, Misskey, and Akkoma all render a Markdown-flavoured subset inside HTML, but support varies. Pleroma exposes the BBCode/Markdown toggle in user settings, Misskey parses inline Markdown but skips big headings, and Akkoma mirrors Pleroma's renderer. Always test on a draft before going public."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does md2rich keep a draft private on Fediverse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "md2rich runs entirely in your browser. There is no server, no upload, and no analytics. Your Markdown and the rendered rich text never leave the device you typed them on, so even a TOS change on the destination server cannot retroactively reveal an unpublished draft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I paste rich-text formatting into the Mastodon iOS or Android app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The official mobile clients accept rich text on most modern devices, but a few third-party clients pass through as plain text. For the most reliable formatting, paste into the web compose box on a desktop browser, or use the Mastodon web UI's advanced editor if your instance enables it."
+          }
+        }
+      ]
+    }
+  ]
+}  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about.html" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <article class="max-w-3xl mx-auto px-4 py-10 bg-white">
+    <header class="mb-8">
+      <p class="text-sm text-gray-500 mb-2">
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a> &middot;
+        <time datetime="2026-08-04">2026-08-04</time>
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-3">Markdown to Mastodon 2026: Privacy-First Fediverse Workflow</h1>
+      <p class="text-lg text-gray-700">Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.</p>
+    </header>
+
+    <div class="prose prose-indigo max-w-none text-gray-800 leading-relaxed">
+      <p>On August 1, 2026, the <a href="https://mastodon.social/terms-of-service/2026-08-31">Mastodon operators updated their terms of service</a> with a clause that quietly expanded what a self-deleted post really means: "We may restore your self-deleted content from backup." For most writers that sentence is fine &mdash; the original post is still gone from public timelines. For anyone who relies on Mastodon as a private publishing surface for long-form work, the phrase changes the threat model.</p>
+<p>Delete is no longer fire. It is at most <em>hide</em>. If you treat a Fediverse post as the canonical home for a long-form essay, the operator could, in principle, surface the earlier draft back out. The right response is to keep one canonical Markdown source on a surface you control, and use the Fediverse as a render target &mdash; not the primary store.</p>
+<p>This guide shows how to keep that boundary. We walk through what each Fediverse server actually supports for Markdown rendering, why the Mastodon compose box does not accept Markdown directly, and how to use <a href="https://md2rich.com/">md2rich</a> to publish a polished long-form post without ever uploading the draft anywhere.</p><h2>Why the 2026 Mastodon TOS change matters for Markdown writers</h2>
+<p>Mastodon is a federated network. Each server (an "instance") runs its own software and signs its own data-protection commitments. The flagship instance, <a href="https://mastodon.social/">mastodon.social</a>, currently serves version <code>4.7.0-alpha.2</code> &mdash; which is why the August 1, 2026 TOS clause lands on top of an actively developed codebase rather than an EOL release. The federation model is the technical reason a TOS clause can change without a per-user consent prompt: switching servers means re-following and re-posting from scratch, and most users never do.</p>
+<p>For Markdown writers who treat a Fediverse post as the canonical store of a long-form piece, two implications follow:</p>
+<ul>
+  <li><strong>Backup retention is the operator's choice.</strong> If your instance keeps daily database backups for 30 days, a self-deleted post can in principle be recovered from backup until the retention window rotates. The 2026 TOS clause is the operator pre-announcing that they reserve the right to do exactly that.</li>
+  <li><strong>The instance sees the rendered HTML, not the source Markdown.</strong> You can keep the canonical Markdown in a Git repo, a private note, or a plain text file you control. The instance never sees that file &mdash; only the rendered HTML you paste into the compose box. That is the privacy boundary we will exploit.</li>
+</ul>
+<p>The fix is structural: keep your draft where the TOS cannot reach it, and treat every Fediverse post as a <em>cached render</em> of the canonical Markdown. This is the same architecture we recommend for LinkedIn, X Articles, and Medium &mdash; see our <a href="/blog/canonical-markdown-content-hub-five-platforms-2026-en">Markdown Content Hub 2026</a> article for the broader pattern.</p><h2>What Mastodon's compose box actually accepts</h2>
+<p>Mastodon's compose box is a plain-text field with a lightweight Markdown-flavoured parser. The official interface accepts a subset of CommonMark that renders into HTML at post time. In 2026, the supported syntax on a default instance looks like this:</p>
+<ul>
+  <li><strong>Inline:</strong> <code>**bold**</code>, <code>*italic*</code>, <code>~~strike~~</code>, <code>`inline code`</code></li>
+  <li><strong>Links:</strong> <code>[label](https://example.com)</code> &mdash; rendered as a clickable link with a visible URL on hover.</li>
+  <li><strong>Headings:</strong> <code># H1</code> through <code>###### H6</code> &mdash; rendered, but tiny: H1 maps to roughly the same size as bold body text.</li>
+  <li><strong>Lists:</strong> Unordered <code>-</code> and ordered <code>1.</code>, including nested lists. Indent with two spaces.</li>
+  <li><strong>Blockquote:</strong> <code>&gt;</code> at the start of a line.</li>
+  <li><strong>Code fences:</strong> Triple backtick fences with optional language hint. The renderer keeps the language tag as a CSS class, so readers see syntax highlighting if their client loads a highlight.js or Prism.js bundle.</li>
+</ul>
+<p>What Mastodon does <em>not</em> do natively:</p>
+<ul>
+  <li><strong>Tables.</strong> Pipe <code>|</code> tables render as plain text on every Fediverse server tested in 2026.</li>
+  <li><strong>Images.</strong> Inline <code>![alt](url)</code> is stripped. Attach images through the media-upload control instead.</li>
+  <li><strong>Math.</strong> No LaTeX or AsciiMath. Render to a hosted image and attach.</li>
+  <li><strong>Footnotes.</strong> No <code>[^1]</code> syntax. Use numbered inline citations or link to a footnote anchor at the bottom of the post.</li>
+  <li><strong>Hard line breaks.</strong> A blank line is a paragraph break. A single newline collapses into a space. Add <code>&lt;br&gt;</code> via raw HTML if you need a hard break &mdash; most clients allow this.</li>
+</ul>
+<p>The 500-character default post limit extends to about 5000 characters if the post is marked as a content warning, but the rendering quirks remain. For long-form essays, treat the compose box as a target that needs pre-rendered HTML, not a place to type Markdown directly.</p><h2>The md2rich paste workflow for Mastodon long-form</h2>
+<p>Because Mastodon's compose box is plain text but renders Markdown on submit, the only stable way to publish formatted content is to paste already-formatted HTML or rich text. Here is the workflow that keeps the draft fully client-side:</p>
+<ol>
+  <li><strong>Draft the canonical Markdown in a text editor.</strong> Plain <code>.md</code> in any editor &mdash; Vim, VS Code, Zed, a Notion export, or whatever you use for the primary source. This file is the contract between you and your future self.</li>
+  <li><strong>Open <a href="https://md2rich.com/">md2rich.com</a></strong> in the same browser. The whole converter is one static page &mdash; no account, no server round-trip, no tracking.</li>
+  <li><strong>Paste the Markdown source into the left pane.</strong> The right pane shows the rendered HTML preview in real time. The "copy rich text" button writes <code>text/html</code> plus <code>text/plain</code> to the clipboard, the same shape Mastodon's compose box expects.</li>
+  <li><strong>Switch to the Mastodon web UI</strong> (or a desktop client that accepts rich paste). Click into the compose box and press <kbd>Ctrl</kbd>+<kbd>V</kbd> (or <kbd>Cmd</kbd>+<kbd>V</kbd> on macOS). The formatting lands as HTML inside the post.</li>
+  <li><strong>Verify before submitting.</strong> Open the post preview if your instance shows one. Headings render small, code fences keep their language hint, and lists nest correctly.</li>
+</ol>
+<p>The critical property is that the canonical Markdown file never touches a server you do not control. md2rich runs entirely in your browser &mdash; the conversion is done in JavaScript on your device, not on a backend &mdash; so the 2026 TOS clause on Mastodon has nothing to reach back to. Even if the Mastodon operator restores your rendered post from backup, they never see the source.</p><h2>Markdown support across the major Fediverse servers (2026)</h2>
+<p>Mastodon is the most popular Fediverse server, but it is not the only one. Each fork renders Markdown slightly differently, and the differences matter when you publish the same source to multiple instances. This table records the live behaviour on a fresh post on each server in August 2026:</p>
+<table>
+<thead>
+<tr><th>Feature</th><th>Mastodon</th><th>Pleroma</th><th>Misskey</th><th>Akkoma</th></tr>
+</thead>
+<tbody>
+<tr><td>Bold / italic / strike</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Inline code</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Code fences with language</td><td>Yes (language preserved)</td><td>Yes (language preserved)</td><td>Yes (language preserved)</td><td>Yes (language preserved)</td></tr>
+<tr><td>Headings H1&ndash;H6</td><td>Rendered (small)</td><td>Rendered (full size)</td><td>Rendered (small)</td><td>Rendered (full size)</td></tr>
+<tr><td>Nested lists</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Blockquote</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Tables (pipe)</td><td>Plain text</td><td>Plain text</td><td>Plain text</td><td>Plain text</td></tr>
+<tr><td>Inline images</td><td>Stripped</td><td>Stripped</td><td>Stripped</td><td>Stripped</td></tr>
+<tr><td>Footnotes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td>Default post limit</td><td>500 chars</td><td>5000 chars</td><td>3000 chars</td><td>5000 chars</td></tr>
+<tr><td>Markdown/BBCode toggle</td><td>N/A (Markdown only)</td><td>User setting</td><td>N/A (Mk/MFM hybrid)</td><td>User setting</td></tr>
+</tbody>
+</table>
+<p>A few takeaways from the table. <strong>Pleroma and Akkoma</strong> render headings at full size, so a Pleroma post of the same source looks less cramped than a Mastodon post. <strong>Misskey</strong> uses its own MFM (Misskey Flavour Markdown) for the timeline and falls back to inline Markdown for the body &mdash; if a feature does not exist in MFM, Misskey silently drops it. <strong>Mastodon</strong> has the smallest default character limit, which makes the 5000-char extended-post workaround (a content warning with the body inside) the only viable path for essay-length pieces.</p>
+<p>If you publish the same Markdown source to multiple instances, the simplest fix is to keep a short heading hierarchy (H2 only, no H1) and to mark tables as code fences. Both render consistently across the four servers tested.</p><h2>Why client-side rendering is the privacy-first answer</h2>
+<p>The privacy failure mode the 2026 TOS clause introduces is not "someone else reads your post" &mdash; the public timeline already does that. The failure mode is <em>repudiation</em>: a writer deletes a post, and the instance operator can still surface the original. The only durable response is to treat every Fediverse post as a render of a canonical source the operator has never seen.</p>
+<p>This is exactly where client-side conversion earns its keep. md2rich is a static HTML page; it loads, it runs, it copies formatted output to your clipboard &mdash; and that is the entire request lifecycle. There is no API endpoint to subpoena because there is no server. There is no analytics call because the page does not include any tracking. There is no upload log because nothing is uploaded.</p>
+<p>Compare that to a hosted converter: even if the hosted service promises "we do not store your drafts," a subpoenable server is a server the operator can hand over. A static page that runs entirely in the browser is the only class of tool where the privacy property is structural rather than promised. The same reasoning makes <a href="https://md2rich.com/">md2rich</a> a natural fit for any post a writer wants to control end to end &mdash; for example, a sensitive policy critique that has to remain editable until the moment it is published.</p><h2>Step-by-step: writing your next Mastodon long-form post with md2rich</h2>
+<ol>
+  <li><strong>Pick the canonical surface.</strong> Choose a Git repo, an Obsidian vault, or a plain text file. The only requirement is that you can edit the file without the Fediverse instance being a participant.</li>
+  <li><strong>Draft the post in Markdown.</strong> Use H2 for section breaks, fenced code blocks for any code, and a one-line blockquote at the top if you want a TL;DR. Avoid pipe tables and inline images for the broad cross-server compatibility described above.</li>
+  <li><strong>Open <a href="https://md2rich.com/">md2rich.com</a>.</strong> Paste the Markdown on the left, watch the preview on the right, and click "Copy rich text" when the rendered output looks right.</li>
+  <li><strong>Switch to the Mastodon web UI.</strong> Open <code>https://[your-instance]/publish</code> or click the compose button. Click into the body field and paste. Headings, lists, code fences, and blockquotes all land as HTML.</li>
+  <li><strong>Test privately before publishing.</strong> Set the visibility to "Followers only" or "Direct" for the first draft. Mastodon's preview pane is a reliable way to confirm that headings render and code fences keep their language hint.</li>
+  <li><strong>Publish, then commit the source.</strong> After the public post is live, commit the canonical Markdown to your Git repo with the post URL in the commit message. The repo is now the authoritative reference; the Fediverse post is the render.</li>
+</ol>
+<p>The workflow takes about three minutes per post once it becomes muscle memory. The privacy property is what you cannot get from any hosted converter.</p><h2>When Mastodon long-form is the wrong choice</h2>
+<p>Mastodon long-form is a great fit for essays, code snippets, and policy commentary, but it is a poor primary store for content you cannot afford to lose or for content you need to edit after publishing. The 500-character default limit alone makes it unfit for any post longer than ~2,000 words without the content-warning workaround. If your workflow needs versioning, comments, or per-sentence quotation, a self-hosted blog with an ActivityPub bridge (WriteFreely, Plume, or Ghost with the ActivityPub plugin) is a better fit.</p>
+<p>For everything that does fit &mdash; short essays, code samples, day-of commentary on a public-interest story &mdash; the canonical-Markdown + md2rich pattern keeps the writer in control of the source, leaves no upload log, and renders cleanly across the four major Fediverse servers documented above. It is the closest thing the Fediverse has to a write-once, publish-anywhere workflow in 2026.</p><p>Drafts you would rather not upload anywhere deserve a converter that runs nowhere but your browser. <a href="https://md2rich.com/">Try md2rich</a> &mdash; paste your Markdown on the left, copy the formatted output on the right, and the canonical source stays on your device. That is the structural property the 2026 Mastodon TOS change makes worth having.</p>
+    </div>
+
+    <footer class="mt-12 pt-6 border-t border-gray-200 text-sm text-gray-600">
+      <p>
+        Posted on <time datetime="2026-08-04">2026-08-04</time> in
+        <a href="/blog/?tag=mastodon" class="text-indigo-600 hover:underline">Mastodon</a>,
+        <a href="/blog/?tag=fediverse" class="text-indigo-600 hover:underline">Fediverse</a>,
+        <a href="/blog/?tag=privacy" class="text-indigo-600 hover:underline">Privacy</a>,
+        <a href="/blog/?tag=markdown-workflow" class="text-indigo-600 hover:underline">Markdown workflow</a>.
+      </p>
+      <p class="mt-2">
+        More guides:
+        <a href="/blog/markdown-to-bluesky-long-form-en" class="text-indigo-600 hover:underline">Markdown to Bluesky long-form</a> &middot;
+        <a href="/blog/canonical-markdown-content-hub-five-platforms-2026-en" class="text-indigo-600 hover:underline">Markdown Content Hub 2026</a> &middot;
+        <a href="/blog/markdown-llms-txt-agents-md-standards-2026-en" class="text-indigo-600 hover:underline">Markdown for AI agents</a>.
+      </p>
+    </footer>
+  </article>
+
+</body>
+</html>

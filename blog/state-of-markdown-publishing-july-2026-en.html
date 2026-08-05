@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State of Markdown Publishing: July 2026 Round-Up</title>
+  <meta name="description" content="July 2026 Markdown publishing round-up: Buzz, Bluesky longform, X Articles rich media, Substack, and the md2rich paste workflow that ties it all together.">
+  <meta name="keywords" content="Markdown publishing 2026, Bluesky longform, X Articles, Buzz Jack Dorsey, Substack newsletter, md2rich, client-side Markdown, multi-platform publishing, Markdown state of the union July 2026, LinkedIn Markdown paste, Notion Markdown paste">
+  <link rel="canonical" href="https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="State of Markdown Publishing: July 2026 Round-Up">
+  <meta property="og:description" content="July 2026 Markdown publishing round-up: Buzz, Bluesky longform, X Articles rich media, Substack, and the md2rich paste workflow that ties it all together.">
+  <meta property="og:url" content="https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="State of Markdown Publishing: July 2026 Round-Up">
+  <meta name="twitter:description" content="July 2026 Markdown publishing round-up: Buzz, Bluesky longform, X Articles rich media, Substack, and the md2rich paste workflow that ties it all together.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "State of Markdown Publishing: July 2026 Round-Up",
+      "description": "July 2026 Markdown publishing round-up: Buzz, Bluesky longform, X Articles rich media, Substack, and the md2rich paste workflow that ties it all together.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-31",
+      "dateModified": "2026-07-31",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "State of Markdown Publishing: July 2026 Round-Up",
+          "item": "https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What changed in Markdown publishing in July 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three platform-level shifts landed in the same fortnight: Jack Dorsey launched Buzz (team chat + AI agents + Git hosting, Show HN 378 points) on July 31, Bluesky rolled out long-form posts to compete with X Articles, and X Articles shipped rich-media support (video, charts, regional paywalls) for Premium+ writers. The shared Markdown first-draft pattern gained one more platform to publish to without rewriting source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Buzz support Markdown for posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Buzz is positioned as a team-chat and AI-agents product with Git hosting bundled in. Its long-form content surface is still emerging in late July 2026. For now, writers who already use a Markdown-first workflow can keep writing in Markdown and convert with md2rich for any platform that accepts rich text on paste; Buzz's eventual text format is likely to accept pasted rich text the same way X Articles does."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the same Markdown draft publish to Bluesky, X, LinkedIn, Notion, Medium, and Substack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with a converter in the middle. The canonical-source pattern is: write the Markdown once, then convert it to platform-accepted rich text and paste. md2rich is client-side and produces the rich text all six platforms accept on paste. Each platform has small rendering quirks (Notion collapses long headers into toggles, X Articles flattens nested lists), but the same source travels with the paste."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did Bluesky push long-form posts in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bluesky's atproto-based network launched long-form posts in 2026 to compete with X Articles and capture the writers leaving X over policy and bot noise. The technical reason is that atproto makes portable feeds a first-class concept — a long-form post is just a record with more fields. The product reason is that long-form writers generate the kind of stable, quotable content that drives subscription retention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Markdown-first paste workflow still worth it in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, more than ever. Each new platform launch in 2026 — Buzz, Bluesky longform, X Articles rich media, Substack's continued newsletter growth — adds another destination for the same source. Writers who anchor on Markdown and use a client-side converter avoid rewriting the draft for every new platform. The workflow also keeps the draft private: no server-side draft storage, no third-party content scripts reading your unpublished text."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit in the July 2026 Markdown stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "md2rich is the client-side conversion step between Markdown source and platform-accepted rich text. You write the Markdown in any editor (a textarea, Writemark, Obsidian, VS Code, or md2rich's own editor), then md2rich turns the source into the rich HTML and plain-text fallback that LinkedIn, X Articles, Notion, Medium, Substack, and Bluesky all render correctly on paste. No upload, no telemetry, no metadata leak — the draft stays in your browser."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">July 31, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">State of Markdown Publishing: July 2026 Round-Up</h1>
+      </header>
+
+      <p class="text-gray-700 mb-6">The last week of July 2026 was one of the densest news cycles for Markdown-first publishing in years. Jack Dorsey's new project <strong>Buzz</strong> hit Show HN with 378 points and bundled team chat, AI agents, and Git hosting. Bluesky pushed long-form posts to compete with X Articles. X Articles itself rolled out rich-media support for Premium+ writers. Meanwhile Substack, Beehiiv, and Ghost kept the newsletter side of the ecosystem growing. If you write in Markdown and publish to more than one place, this is the moment to consolidate your workflow — and the right time to check that your paste-pipeline is still pulling its weight. This guide captures where the Markdown-first stack stands at the end of July 2026 and where <a href="/" class="text-indigo-600 font-semibold">md2rich</a> fits.</p>
+
+      <h2 id="the-three-shifts" class="text-2xl font-bold mt-10 mb-4">The three shifts that landed in the same fortnight</h2>
+
+      <p class="text-gray-700 mb-6">These are not separate stories. They are the same story: more platforms are now competing for the long-form writer's attention, and they all accept pasted rich text the same way. That convergence is the practical reason the Markdown-first paste workflow is the most resilient shape a one-person publishing stack can take in 2026.</p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3">1. Buzz launched (HN, 378 points, July 31)</h3>
+      <p class="text-gray-700 mb-6">Jack Dorsey's Block unveiled Buzz on the last day of July. The product is team chat with AI agents and Git hosting bundled in. The relevant part for a Markdown writer is not the chat surface — it is the signal that one more platform with a publishing story just entered the field. Buzz joins a crowded list: LinkedIn, X Articles, Bluesky, Notion, Medium, Substack, Beehiiv, Ghost, dev.to, Hashnode, and a dozen long-tail destinations. The fragmentation argument for canonical-source Markdown got stronger this week, not weaker.</p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3">2. Bluesky long-form went broad</h3>
+      <p class="text-gray-700 mb-6">Bluesky rolled long-form posts to general availability in 2026. The technical hook is atproto — a long-form post is just a record type with more fields, and the same content is portable across feeds and frontends. The product hook is the writer-flight story: people leaving X for Bluesky over policy and bot noise need somewhere to publish essays, not just 300-character takes. For a Markdown writer, Bluesky long-form means another destination that accepts pasted rich text the same way X Articles does.</p>
+
+      <h3 class="text-xl font-semibold mt-8 mb-3">3. X Articles rich media for Premium+</h3>
+      <p class="text-gray-700 mb-6">X Articles shipped video embeds, charts, and regional paywalls for Premium+ writers in the second half of July. The Markdown angle here is that none of those rich-media features replace text — they augment it. The text body still travels through the same paste path: write in Markdown, convert to rich text, paste into the X Articles composer, then add the embedded video or chart on top. The article body itself remains a Markdown-first source.</p>
+
+      <h2 id="what-stays-the-same" class="text-2xl font-bold mt-10 mb-4">What stays the same</h2>
+
+      <p class="text-gray-700 mb-6">For all the new platform launches, the underlying paste contract has not changed. Every destination on the list — LinkedIn, X Articles, Bluesky, Notion, Medium, Substack, Beehiiv, Ghost — accepts pasted rich text. The formatting that survives paste is the formatting the platform's editor knows how to render. That list is short and stable: bold, italic, code, links, ordered and unordered lists, and three levels of headings. Anything beyond that (tables, callouts, footnotes, math, syntax highlighting) is platform-specific and breaks on paste to destinations that do not support it.</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># The universal Markdown first-draft
+
+This is the contract every platform accepts on paste:
+
+- **bold**, *italic*, `inline code`
+- [links](https://example.com) keep their href
+- 1. ordered lists
+- 2. nested lists
+- > blockquotes
+- # H1, ## H2, ### H3 (rendering varies by platform)
+
+Anything outside this list needs a platform-specific export step.</code></pre>
+
+      <p class="text-gray-700 mb-6">The Markdown above, after a one-click convert, pastes cleanly into all five mainstream platforms plus Bluesky and Substack. That has been true for years. What changed in July 2026 is the number of destinations — and the number of writers who now have to manage that many destinations in parallel.</p>
+
+      <h2 id="the-canonical-source-pattern" class="text-2xl font-bold mt-10 mb-4">The canonical-source pattern</h2>
+
+      <p class="text-gray-700 mb-6">The pattern most multi-platform writers settle into by August 2026 looks like this:</p>
+
+      <ol class="list-decimal pl-6 mb-6 text-gray-700"><li class="mb-2"><strong>Write once.</strong> The Markdown source is canonical. It lives in a single file on disk, version-controlled if you want, sync'd if you want. Some writers keep it in a Git repo (Marvelous auto-commits per save), some in a notes app (Obsidian, Logseq, files.md), some in a plain <code>~/drafts/</code> directory.</li><li class="mb-2"><strong>Convert on demand.</strong> When it is time to publish, the Markdown goes through a client-side converter that produces platform-accepted rich text. <a href="/" class="text-indigo-600 font-semibold">md2rich</a> is the canonical example — paste the source, click convert, copy the rich text. No upload, no auth, no third-party content script reading your draft.</li><li class="mb-2"><strong>Paste into the destination.</strong> Cmd/Ctrl-V into LinkedIn, X Articles, Bluesky, Notion, Medium, Substack, Beehiiv, or Ghost. The formatting travels with the paste. The destination's editor interprets the rich text and renders it with its own styles.</li><li class="mb-2"><strong>Add platform-native embellishments.</strong> Embedded video on X Articles, a paywall on Substack, an image on LinkedIn, a Bluesky starter thread — these are added on top of the pasted body. The text source is unchanged.</li><li class="mb-2"><strong>Track the canonical file.</strong> Each publish produces a small edit to the canonical source (a date stamp, a "published to X" line). The source remains the single source of truth.</li></ol>
+
+      <p class="text-gray-700 mb-6">This pattern survived every platform change in 2026 because the contract at step 3 — "platform accepts pasted rich text" — has not changed. Buzz, Bluesky longform, and X Articles rich media all join a list whose entry conditions are stable. The pattern will keep working as long as new platforms follow the same entry contract.</p>
+
+      <h2 id="privacy-floor" class="text-2xl font-bold mt-10 mb-4">The privacy floor, late July 2026</h2>
+
+      <p class="text-gray-700 mb-6">One thing the July 2026 news cycle did not change is the data hygiene of the writing step. The draft still lives in the writer's browser until the moment they choose to publish. The converter, if it is client-side, does not see the draft either. The privacy floor of the stack is closed-loop: write in your editor of choice, convert with a tool that runs in the browser, paste to the destination. The only outbound request is the paste action on whichever platform you publish to.</p>
+
+      <p class="text-gray-700 mb-6">The reason this matters more in 2026 than it did in 2024 is AI crawler activity. Cloudflare rolled out Markdown-for-Agents headers in July, Patreon partnered with Cloudflare to block AI training crawlers at the network level, and writers are increasingly aware that draft content (or anything stored in a third-party draft service) can be a target. The client-side paste workflow sidesteps the entire draft-storage attack surface: there is no draft-storage step to attack. The canonical source is on your disk. The converter is in your browser. The paste is the only network call.</p>
+
+      <h2 id="what-doesnt-fit" class="text-2xl font-bold mt-10 mb-4">What does not fit the pattern</h2>
+
+      <p class="text-gray-700 mb-6">Two cases break the canonical-source model. The first is real-time collaboration: if you and another writer need to edit the same draft at the same time, you need presence cursors, conflict resolution, and a hosted document. Substack's editor, Ghost's editor, Notion, and Google Docs are the realistic options. md2rich does not solve this — and should not, because solving it would mean adding a server.</p>
+
+      <p class="text-gray-700 mb-6">The second is scheduled publishing. If you want to write 12 LinkedIn posts on Sunday and schedule them across the week, you need a queue (Buffer, Taplio, Hypefury, or platform-native schedulers). The canonical-source pattern handles the writing and converting; the scheduling step is a separate concern with its own tool. Some writers automate the end-to-end with GitHub Actions or a Cron job that fires the convert-and-paste API. Most do not, because the cost of automating paste across six platforms is higher than the cost of clicking paste six times on Monday morning.</p>
+
+      <h2 id="practical-checklist" class="text-2xl font-bold mt-10 mb-4">A practical checklist for the rest of 2026</h2>
+
+      <p class="text-gray-700 mb-6">If you write in Markdown and publish to multiple platforms, the late-July 2026 landscape is asking you to do four things.</p>
+
+      <ol class="list-decimal pl-6 mb-6 text-gray-700"><li class="mb-2"><strong>Pick a canonical source location.</strong> One file, one directory, one repo. If you have not already, this is the month. Marvelous or a plain <code>~/drafts/</code> folder both work; the choice is about how much version history you want.</li><li class="mb-2"><strong>Pick a converter that runs in the browser.</strong> <a href="/" class="text-indigo-600 font-semibold">md2rich</a> is the obvious choice for client-side, zero-upload conversion. Any other tool that runs in the browser and does not log your draft is fine.</li><li class="mb-2"><strong>Audit your destinations.</strong> List the platforms you actually publish to. Most writers discover they are paying for three scheduling tools and publishing to seven platforms, when they only need four. Pruning the list is a 2026-hygiene task.</li><li class="mb-2"><strong>Add Bluesky longform to your destination list.</strong> The migration off X is real. The atproto portability story is real. Adding it as a paste destination costs nothing — same Markdown, same converter, same paste pattern.</li></ol>
+
+      <p class="text-gray-700 mb-6">After these four, the workflow for the rest of 2026 looks like: write Markdown on Monday morning, convert with md2rich, paste to your four destinations, add the platform-specific embellishments, mark the canonical file as published. The Buzz launch and the Bluesky longform rollout are part of the same story — more destinations, same paste contract, same workflow.</p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What changed in Markdown publishing in July 2026?</h3>
+          <p class="text-gray-700">Three platform-level shifts landed in the same fortnight: Jack Dorsey launched Buzz (team chat + AI agents + Git hosting, Show HN 378 points) on July 31, Bluesky rolled out long-form posts to compete with X Articles, and X Articles shipped rich-media support (video, charts, regional paywalls) for Premium+ writers. The shared Markdown first-draft pattern gained one more platform to publish to without rewriting source.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Does Buzz support Markdown for posts?</h3>
+          <p class="text-gray-700">Buzz is positioned as a team-chat and AI-agents product with Git hosting bundled in. Its long-form content surface is still emerging in late July 2026. For now, writers who already use a Markdown-first workflow can keep writing in Markdown and convert with md2rich for any platform that accepts rich text on paste; Buzz's eventual text format is likely to accept pasted rich text the same way X Articles does.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Can the same Markdown draft publish to Bluesky, X, LinkedIn, Notion, Medium, and Substack?</h3>
+          <p class="text-gray-700">Yes, with a converter in the middle. The canonical-source pattern is: write the Markdown once, then convert it to platform-accepted rich text and paste. md2rich is client-side and produces the rich text all six platforms accept on paste. Each platform has small rendering quirks (Notion collapses long headers into toggles, X Articles flattens nested lists), but the same source travels with the paste.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Why did Bluesky push long-form posts in 2026?</h3>
+          <p class="text-gray-700">Bluesky's atproto-based network launched long-form posts in 2026 to compete with X Articles and capture the writers leaving X over policy and bot noise. The technical reason is that atproto makes portable feeds a first-class concept — a long-form post is just a record with more fields. The product reason is that long-form writers generate the kind of stable, quotable content that drives subscription retention.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is the Markdown-first paste workflow still worth it in 2026?</h3>
+          <p class="text-gray-700">Yes, more than ever. Each new platform launch in 2026 — Buzz, Bluesky longform, X Articles rich media, Substack's continued newsletter growth — adds another destination for the same source. Writers who anchor on Markdown and use a client-side converter avoid rewriting the draft for every new platform. The workflow also keeps the draft private: no server-side draft storage, no third-party content scripts reading your unpublished text.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Where does md2rich fit in the July 2026 Markdown stack?</h3>
+          <p class="text-gray-700">md2rich is the client-side conversion step between Markdown source and platform-accepted rich text. You write the Markdown in any editor (a textarea, Writemark, Obsidian, VS Code, or md2rich's own editor), then md2rich turns the source into the rich HTML and plain-text fallback that LinkedIn, X Articles, Notion, Medium, Substack, and Bluesky all render correctly on paste. No upload, no telemetry, no metadata leak — the draft stays in your browser.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Convert Markdown to platform-accepted rich text</h3>
+        <p class="text-gray-700 mb-4"><a href="/" class="text-indigo-600 font-semibold">md2rich</a> turns your Markdown draft into the rich text that LinkedIn, X Articles, Bluesky, Notion, Medium, and Substack all accept on paste. Client-side, zero upload, no metadata leak. The same converter that powers the canonical-source pattern described in this post.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Open md2rich →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>

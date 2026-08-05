@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tweet.md vs md2rich: Markdown X Round-Trip 2026</title>
+  <meta name="description" content="tweet.md converts X posts to clean Markdown; md2rich renders Markdown as rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.">
+  <meta name="keywords" content="tweet.md, md2rich, Markdown to X Articles, X thread Markdown converter, Markdown rich text, Markdown round-trip, LLM-friendly Markdown, Bluesky long-form, Markdown for Agents, client-side markdown converter, Markdown to rich text, write Markdown paste X, X Articles Markdown">
+  <link rel="canonical" href="https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="tweet.md vs md2rich: Markdown X Round-Trip 2026">
+  <meta property="og:description" content="tweet.md converts X posts to clean Markdown; md2rich renders Markdown as rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.">
+  <meta property="og:url" content="https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "tweet.md vs md2rich: Markdown X Round-Trip 2026",
+      "description": "tweet.md converts X posts to clean Markdown; md2rich renders Markdown as rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-21",
+      "dateModified": "2026-07-21",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "tweet.md vs md2rich: Markdown X Round-Trip 2026",
+          "item": "https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Markdown-to-X round-trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is two directions of the same workflow. Outbound: you draft a long-form post in Markdown in any editor (Obsidian, VS Code, Typora, a plain .md file) and need it published to X Articles with the formatting intact. Inbound: you want to capture an X thread, an X Article, or a Bluesky long-form post as clean Markdown for archiving, for LLM ingestion, or for reposting on a different surface. The outbound leg is what md2rich solves. The inbound leg is what tweet.md solves. Treating them as a round-trip is a cleaner mental model than treating them as two separate tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is tweet.md free in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partially. tweet.md ships a no-charge demo corpus (one post, one thread, one X Article, one profile) that you can fetch as Markdown for free. Converting your own posts and threads costs credits: $5 for 250 credits, $19 for 1,100, and $49 for 3,200. One post costs 1 credit; adding author metadata costs 2 more credits per unique author. For a writer who just wants to round-trip a few of their own threads into Markdown for archival, the $5 tier is enough. For LLM-training data pipelines that need to ingest thousands of posts, the $49 tier is the practical entry point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does md2rich preserve Markdown formatting when pasting into X Articles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in the parts X Articles actually supports. md2rich converts Markdown to the rich-text clipboard format that X Articles, LinkedIn, Medium, Substack, and Notion all accept. Headings, bold, italic, ordered and unordered lists, inline code, and code blocks (with monospace) survive the paste. Things X Articles does not natively render (images embedded in code blocks, raw HTML, LaTeX math) get cleaned or dropped. The published result looks like normal X Article formatting rather than a Markdown dump, which is what you want for readers on the platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use tweet.md and md2rich together in one workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is the natural composition. Take an X thread you wrote last year, fetch it as Markdown via tweet.md (replace x.com with tweet.md in the URL, or use the npx skill), edit the result in your preferred Markdown editor (Obsidian, VS Code, whatever), add a section that did not exist on the original thread, and then push the cleaned-up Markdown through md2rich to republish it on a different platform (LinkedIn long-form, Medium, Substack, your own blog). One direction uses tweet.md, the other uses md2rich, and the Markdown file is the shared canonical source. You stop treating each social platform as a walled garden and start treating the .md as the truth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the round-trip matter if X has its own editor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "X's editor is fine for casual posting, but it has three structural limits. First, you cannot write in it offline. Second, you cannot version your drafts (no git diff, no draft history beyond the platform's own). Third, you cannot reuse the same draft across platforms without rewriting. By treating Markdown as the canonical source and converting at the edges (md2rich on the way out, tweet.md on the way in), you get offline drafting, version control, and platform portability for free. The X editor becomes a thin renderer for a draft that already exists in a .md file somewhere you control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is md2rich client-side? Does my Markdown get uploaded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes to client-side, no to uploading. md2rich runs entirely in your browser. When you paste Markdown into the left panel and click Copy as Rich Text, the conversion happens in JavaScript on your device. The Markdown text never touches a server. This is the opposite of tweet.md, which is a hosted service (your requests go through tweet.md's infrastructure to fetch the X content). For drafts you do not want to leak to a third party (unpublished work, confidential sources, internal analysis), md2rich is the right tool for the outbound leg. For public posts you are trying to archive, tweet.md's hosted model is fine because the content is already public."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">2026-07-21</time>
+        <h1 class="text-3xl font-bold mt-1 mb-3 text-gray-900">tweet.md vs md2rich: Markdown X Round-Trip 2026</h1>
+        <p class="text-lg text-gray-600">tweet.md converts X posts to clean Markdown; md2rich renders Markdown as rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.</p>
+      </header>
+
+        <section class="mb-10">
+          <p class="mb-4">In July 2026 the social-writing toolbox has two anchors: <strong>tweet.md</strong> for converting X posts into clean Markdown, and <strong>md2rich</strong> for converting Markdown into rich text that X Articles, LinkedIn, Medium, Substack, and Notion all accept. They are not competitors &mdash; they are two halves of the same round-trip. The mental model is simple. <em>Markdown is the canonical source. tweet.md gets Markdown <strong>out of</strong> X. md2rich puts Markdown <strong>into</strong> X (and everywhere else).</em></p>
+          <p class="mb-4">Yesterday's piece covered the inbound leg: archiving public X content as Markdown for AI ingestion and durable storage. Today's piece covers the outbound leg: writing in Markdown and publishing as formatted X Articles, without losing headings, lists, code blocks, or inline emphasis in the paste. Together they form the loop most Markdown-first writers have been assembling by hand since Typora's paid pivot in 2024.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Why the round-trip exists at all</h2>
+          <p class="mb-4">X's own editor renders Markdown-like syntax (asterisks for bold, underscores for italic) but it does not respect headings, code blocks, ordered/unordered lists, or blockquotes the way a real Markdown parser does. X Articles handles longer posts but its own composer is a stripped-down WYSIWYG, not a Markdown editor. If you draft a 2,000-word piece in Obsidian with `#` headings, `>` blockquotes, and triple-backtick code fences, the raw text pasted into X Articles collapses into a wall of plain prose. The formatting that took you 20 minutes to set up disappears in the paste.</p>
+          <p class="mb-4">tweet.md solves the reverse problem. If you want to take an X thread and put it into a Markdown file (for a knowledge base, for an LLM context window, for a Substack repost), tweet.md's hosted converter parses the X content into proper Markdown with code fences preserved, author metadata optional, and the thread structure flattened into a single document. The piece I wrote on the LLM-archive stack on July 20 walks through the inbound workflow in detail.</p>
+          <p class="mb-4">md2rich solves the outbound problem. You already have the Markdown (from Obsidian, from a draft in VS Code, from a tweet.md export of your own old thread). You want it on X Articles, on LinkedIn long-form, on Medium, on Substack &mdash; with the headings preserved as headings, the lists preserved as lists, the code blocks preserved as monospace blocks. md2rich runs entirely in your browser, converts the Markdown to the rich-text clipboard format those editors accept, and gives you a Copy button. Paste, and the formatting is there.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">The round-trip, step by step</h2>
+          <p class="mb-4">Here is the workflow in 5 steps, the way an LLM-archive-curious writer would actually run it in July 2026.</p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Step 1 &mdash; Identify a thread worth archiving or republishing</h3>
+          <p class="mb-4">Open the X post in your browser. Note the URL. Replace <code class="bg-gray-100 px-1 rounded">x.com</code> with <code class="bg-gray-100 px-1 rounded">tweet.md</code> in the address bar. Hit enter. tweet.md returns the post (or thread, or X Article, or profile) as clean Markdown. Free for the demo corpus; paid credits for your own posts.</p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Step 2 &mdash; Edit the Markdown locally</h3>
+          <p class="mb-4">Save the result as <code class="bg-gray-100 px-1 rounded">my-thread.md</code> in your notes folder. Open it in Obsidian, VS Code, or whatever you draft in. Add an intro paragraph, fix a typo, expand a section that needed more context, drop a footnote. This is the step the platform editors never let you do &mdash; and it is the step where the round-trip becomes more valuable than the original post.</p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Step 3 &mdash; Push through md2rich for the destination</h3>
+          <p class="mb-4">Open <a href="/" class="text-indigo-600 font-semibold">md2rich</a>. Paste the edited Markdown into the left panel. The right panel shows the rendered preview. Click <strong>Copy as Rich Text</strong>. The clipboard now holds rich text &mdash; not Markdown, not plain text &mdash; so the destination editor sees actual headings, lists, and code blocks rather than literal <code class="bg-gray-100 px-1 rounded">#</code> characters.</p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Step 4 &mdash; Paste into the destination platform</h3>
+          <p class="mb-4">Open LinkedIn, Medium, Substack, Notion, or X Articles. Paste. The formatting survives. For X Articles specifically, this is the only reliable way to get a properly-formatted long-form post without composing entirely inside X's stripped-down editor.</p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Step 5 &mdash; Archive the canonical Markdown</h3>
+          <p class="mb-4">Keep the <code class="bg-gray-100 px-1 rounded">my-thread.md</code> file. That is the source of truth. The LinkedIn post, the Medium cross-post, the X Article republish &mdash; all of those are renders. If a platform changes its editor, deprecates its API, or shuts down entirely, the .md file is still readable, still diff-able, still usable as LLM input. Markdown is the durable layer; the platforms are the ephemeral render targets.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">A worked example: code block that survives the round-trip</h2>
+          <p class="mb-4">Consider this Markdown source:</p>
+          <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code>## Why md2rich + tweet.md
+
+- **Inbound**: tweet.md parses X posts into clean Markdown
+- **Outbound**: md2rich renders Markdown into rich text for X Articles
+
+```python
+# A round-trip in 4 lines
+md = tweet_md.fetch(url)
+edits = local_editor.open(md).edit()
+md2rich.copy_rich(edits).paste_to(&quot;X Articles&quot;)
+```</code></pre>
+          <p class="mb-4">Pasted raw into X Articles, this collapses to a wall of text with literal backticks and asterisks. Pushed through md2rich first, the heading becomes a heading, the bullet list becomes a bullet list, and the code block becomes a monospace block. The reader sees structured content. The writer did not have to retype anything in X's editor.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">What changes when you stop using the platform editor for drafting</h2>
+          <p class="mb-4">Three things, in order of how much they matter to me.</p>
+          <p class="mb-4"><strong>You can draft offline.</strong> X's editor requires a network connection. md2rich does not. Your Obsidian vault works on a plane. Your VS Code works in a coffee shop with bad wifi. The Markdown draft is the artifact; the platform is the renderer.</p>
+          <p class="mb-4"><strong>You get version control for free.</strong> <code class="bg-gray-100 px-1 rounded">git diff my-thread.md</code> shows you what changed between drafts. X's draft history shows you what you pasted, but not what you intended. A pre-paste Markdown diff is the kind of artifact platforms will never ship, because they would rather you start a fresh draft in their editor.</p>
+          <p class="mb-4"><strong>You can repurpose the same draft across platforms without rewriting.</strong> The piece you publish as an X Article on Monday can become a LinkedIn long-form post on Tuesday, a Medium cross-post on Wednesday, and a Substack newsletter on Friday. Each platform gets a render; you wrote the source once.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">FAQ</h2>
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">What is the Markdown-to-X round-trip?</h3>
+          <p class="mb-4">It is two directions of the same workflow. Outbound: you draft a long-form post in Markdown in any editor (Obsidian, VS Code, Typora, a plain .md file) and need it published to X Articles with the formatting intact. Inbound: you want to capture an X thread, an X Article, or a Bluesky long-form post as clean Markdown for archiving, for LLM ingestion, or for reposting on a different surface. The outbound leg is what md2rich solves. The inbound leg is what tweet.md solves. Treating them as a round-trip is a cleaner mental model than treating them as two separate tools.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Is tweet.md free in 2026?</h3>
+          <p class="mb-4">Partially. tweet.md ships a no-charge demo corpus (one post, one thread, one X Article, one profile) that you can fetch as Markdown for free. Converting your own posts and threads costs credits: $5 for 250 credits, $19 for 1,100, and $49 for 3,200. One post costs 1 credit; adding author metadata costs 2 more credits per unique author. For a writer who just wants to round-trip a few of their own threads into Markdown for archival, the $5 tier is enough. For LLM-training data pipelines that need to ingest thousands of posts, the $49 tier is the practical entry point.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Does md2rich preserve Markdown formatting when pasting into X Articles?</h3>
+          <p class="mb-4">Yes, in the parts X Articles actually supports. md2rich converts Markdown to the rich-text clipboard format that X Articles, LinkedIn, Medium, Substack, and Notion all accept. Headings, bold, italic, ordered and unordered lists, inline code, and code blocks (with monospace) survive the paste. Things X Articles does not natively render (images embedded in code blocks, raw HTML, LaTeX math) get cleaned or dropped. The published result looks like normal X Article formatting rather than a Markdown dump, which is what you want for readers on the platform.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Can I use tweet.md and md2rich together in one workflow?</h3>
+          <p class="mb-4">That is the natural composition. Take an X thread you wrote last year, fetch it as Markdown via tweet.md (replace x.com with tweet.md in the URL, or use the npx skill), edit the result in your preferred Markdown editor (Obsidian, VS Code, whatever), add a section that did not exist on the original thread, and then push the cleaned-up Markdown through md2rich to republish it on a different platform (LinkedIn long-form, Medium, Substack, your own blog). One direction uses tweet.md, the other uses md2rich, and the Markdown file is the shared canonical source. You stop treating each social platform as a walled garden and start treating the .md as the truth.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Why does the round-trip matter if X has its own editor?</h3>
+          <p class="mb-4">X's editor is fine for casual posting, but it has three structural limits. First, you cannot write in it offline. Second, you cannot version your drafts (no git diff, no draft history beyond the platform's own). Third, you cannot reuse the same draft across platforms without rewriting. By treating Markdown as the canonical source and converting at the edges (md2rich on the way out, tweet.md on the way in), you get offline drafting, version control, and platform portability for free. The X editor becomes a thin renderer for a draft that already exists in a .md file somewhere you control.</p>
+          <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-900">Is md2rich client-side? Does my Markdown get uploaded?</h3>
+          <p class="mb-4">Yes to client-side, no to uploading. md2rich runs entirely in your browser. When you paste Markdown into the left panel and click Copy as Rich Text, the conversion happens in JavaScript on your device. The Markdown text never touches a server. This is the opposite of tweet.md, which is a hosted service (your requests go through tweet.md's infrastructure to fetch the X content). For drafts you do not want to leak to a third party (unpublished work, confidential sources, internal analysis), md2rich is the right tool for the outbound leg. For public posts you are trying to archive, tweet.md's hosted model is fine because the content is already public.</p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Conclusion: the round-trip is the point</h2>
+          <p class="mb-4">tweet.md and md2rich are not competing tools. They are the input and output halves of the same workflow. tweet.md parses X content into Markdown. md2rich renders Markdown into the rich text every other platform accepts. Markdown is the canonical source; social platforms are render targets. Once you internalize that mental model, you stop thinking about which platform "wins" your long-form writing and start thinking about which surface gets which render this week.</p>
+          <p class="mb-4">The pieces are all in place in July 2026. tweet.md has paid tiers so you can ingest your own X content at scale. md2rich has a stable client-side conversion path so the outbound leg stays private. The only piece you have to assemble yourself is the workflow: choose your Markdown editor, choose your archive location, and commit to keeping the .md file as the truth.</p>
+        </section>
+
+        <div class="mt-12 p-6 bg-indigo-50 border border-indigo-200 rounded-lg">
+          <h3 class="text-xl font-bold mb-2 text-gray-900">Try md2rich &mdash; client-side Markdown to rich text</h3>
+          <p class="mb-3">Paste your Markdown into the editor on the left; copy the rendered rich text from the right into X Articles, LinkedIn, Medium, Substack, Notion, or anywhere else that does not render Markdown natively. Your draft never leaves your browser.</p>
+          <p class="mb-0"><a href="/" class="text-indigo-600 font-semibold">Open md2rich &rarr;</a></p>
+        </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap items-center justify-between gap-2">
+      <span>&copy; 2026 md2rich. Markdown to rich text, client-side.</span>
+      <span>
+        <a href="/about" class="hover:text-indigo-600">About</a>
+        &middot;
+        <a href="/privacy" class="hover:text-indigo-600">Privacy</a>
+        &middot;
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

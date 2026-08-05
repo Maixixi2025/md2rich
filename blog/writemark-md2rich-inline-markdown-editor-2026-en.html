@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writemark + md2rich 2026: Inline Editor for Multi-Platform</title>
+  <meta name="description" content="Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.">
+  <meta name="keywords" content="Writemark, md2rich, inline Markdown editor, web component Markdown editor, Markdown editor 2026, embeddable Markdown editor, Web Components 2026, client-side Markdown editor, Markdown rich text, md2rich workflow">
+  <link rel="canonical" href="https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Writemark + md2rich 2026: Inline Editor for Multi-Platform">
+  <meta property="og:description" content="Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.">
+  <meta property="og:url" content="https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Writemark + md2rich 2026: Inline Editor for Multi-Platform">
+  <meta name="twitter:description" content="Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Writemark + md2rich 2026: Inline Editor for Multi-Platform",
+      "description": "Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-07-27",
+      "dateModified": "2026-07-27",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Writemark + md2rich 2026: Inline Editor for Multi-Platform",
+          "item": "https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Writemark and why is the HN launch relevant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Writemark is a zero-dependency inline Markdown editor built as a Web Component. It shipped as a Show HN on July 25, 2026 and gathered 51 points in 36 hours. The relevant part for cross-platform publishers is that you can drop &lt;writemark&gt;&lt;/writemark&gt; into any web page and get a working editor with live preview. For the Markdown-to-rich-text crowd, that means an editing surface can live inside your dashboard, your CMS draft screen, your static site preview, even inside md2rich itself — without dragging in 200KB of editor code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Writemark differ from EasyMDE, CodeMirror, or Quill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EasyMDE, CodeMirror, and Quill are full editor frameworks — they assume you want toolbars, keymaps, and plugin systems. Writemark is a single custom element with no dependencies and a 12KB minified footprint. It does split-screen preview and syntax highlighting in inline mode. It does not do toolbar customization, undo history trees, or collaborative cursors. For a publishing workflow where the goal is to write Markdown and paste the result, smaller is better."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Writemark + md2rich replace a CMS draft screen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for the 80% case. Writemark gives you the editing surface, md2rich gives you the rich-text conversion. The paste step converts the Markdown into the rich text LinkedIn, X Articles, Notion, Medium, and Substack accept. The privacy floor is closed-loop: the draft never leaves your browser until you paste it to the destination yourself. The 20% case where this breaks is workflow lock-in: if you need approval queues, scheduled publishing, or role-based access, you still need a CMS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Writemark work inside iframes and cross-origin embeds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web Components work inside iframes the way normal HTML does — they render, mount, and respond to events normally. Cross-origin is the limit. If you load Writemark from a different origin than the parent page, the parent's copy of the rendered Markdown will not update until the user blurs out of the field. The fix is to load Writemark from the same origin as the page that needs to read the value. For most workflows this is not an issue because the editor and the converter run in the same tab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does privacy fit when adding Writemark to a web app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Writemark itself is zero-network — all parsing and rendering happens in the browser. The privacy floor of the combined workflow is whether anything else in your pipeline touches a server. md2rich is client-side as well, so the combined pipeline stays closed-loop: write in Writemark, convert via md2rich, paste to the destination. The only outbound request is the paste action on whichever platform you publish to. No telemetry, no keystroke logging, no third-party content scripts on the draft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the inline-editor pattern's actual use case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inline editors solve the 'I do not want a separate /edit route' problem. Click a paragraph, edit it in place, click out, it saves. For Markdown specifically, the inline pattern fits platforms that already render Markdown — you write in Markdown source, the platform shows the rich rendering, and on blur the source is replaced in place. Writemark covers this for first-party pages. md2rich covers the cross-platform paste step. Together they are the smallest viable stack for a one-person publishing workflow in 2026."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">July 27, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Writemark + md2rich 2026: Inline Editor for Multi-Platform</h1>
+      </header>
+
+      <p class="text-gray-700 mb-6">Writemark shipped as a Show HN on July 25, 2026 and pulled 51 points in 36 hours. The interesting part is not the editor — it is what the editor unlocks. Writemark is a single-file Web Component with no dependencies. Drop <code>&lt;writemark&gt;&lt;/writemark&gt;</code> into any HTML page and you have a working Markdown editor with live preview. For a workflow that ends in pasting rich text into LinkedIn, X Articles, Notion, Medium, or Substack, the next obvious question is: does this pair with <a href="/" class="text-indigo-600 font-semibold">md2rich</a>? Yes, cleanly, and this guide shows how to wire the two together for a closed-loop client-side publishing pipeline.</p>
+
+      <p class="text-gray-700 mb-6">The short version: Writemark handles the editing surface, md2rich handles the conversion to platform-accepted rich text, your browser handles the paste. Nothing in this pipeline touches a server during the writing step. That is the whole point of running both tools client-side — the draft stays on your machine until the moment you choose to publish it.</p>
+
+      <h2 id="what-writemark-actually-does" class="text-2xl font-bold mt-10 mb-4">What Writemark actually does</h2>
+
+      <p class="text-gray-700 mb-6">The boring way to frame Writemark is "EasyMDE but smaller." The useful way to frame it is as the missing primitive for inline editing on the web. Custom Elements have been spec-stable since 2018, but the library ecosystem treated them as a wrapper syntax for jQuery-era widgets until 2024. Writemark is a clean example of what the new shape looks like: a single <code>&lt;script&gt;</code> tag, zero dependencies, a tag you write as a normal HTML element.</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code>&lt;!-- Add the script --&gt;
+&lt;script type="module" src="https://esm.sh/writemark"&gt;&lt;/script&gt;
+
+&lt;!-- Use the element anywhere --&gt;
+&lt;writemark id="post"&gt;
+## My draft
+
+- bullet one
+- bullet two
+
+**bold** and *italic* and `code`.
+&lt;/writemark&gt;
+
+&lt;script&gt;
+  // Read the rendered value when the user blurs out
+  document.getElementById('post').addEventListener('change', e =&gt; {
+    console.log(e.detail.markdown);
+  });
+&lt;/script&gt;</code></pre>
+
+      <p class="text-gray-700 mb-6">The element renders split-screen source/preview by default and exposes the parsed Markdown via a <code>change</code> event. That's the entire API surface. There is no toolbar, no plugin system, no configuration object. The 12KB minified payload ships parsing, rendering, and a small style block.</p>
+
+      <h2 id="where-md2rich-fits" class="text-2xl font-bold mt-10 mb-4">Where md2rich fits</h2>
+
+      <p class="text-gray-700 mb-6">Writemark produces Markdown. md2rich turns that Markdown into the rich text that platforms accept on paste. The wiring is one event handler and one paste step.</p>
+
+      <ol class="list-decimal pl-6 mb-6 text-gray-700"><li class="mb-2">User writes in <code>&lt;writemark&gt;</code>. The source side is the textarea, the preview side shows the rendered HTML.</li><li class="mb-2">On <code>change</code>, your handler captures <code>e.detail.markdown</code>.</li><li class="mb-2">Pass that Markdown into md2rich's converter (or copy it manually into md2rich.com).</li><li class="mb-2">Click <strong>Convert</strong>. The right pane produces the rich text — bold stays bold, code stays in <code>monospace</code>, lists keep their indent, headings keep their size. Everything LinkedIn, X Articles, Notion, Medium, and Substack will render on paste.</li><li class="mb-2">Cmd/Ctrl-C from the rich-pane, Cmd/Ctrl-V into the destination platform. Done.</li></ol>
+
+      <p class="text-gray-700 mb-6">The pipeline is a paste, not an API call. There is no webhook, no server round-trip, no auth. The privacy floor is the same as using a <code>textarea</code> and a clipboard manager — the draft stays in your browser memory until you choose to publish it.</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code>// Wire Writemark -&gt; md2rich (full pattern)
+
+import { convert } from 'https://cdn.jsdelivr.net/npm/md2rich/+esm';
+
+// On the page
+const editor = document.getElementById('post');
+const renderPane = document.getElementById('rich-preview');
+
+editor.addEventListener('change', async e =&gt; {
+  const md = e.detail.markdown;
+  const rich = await convert(md);  // returns sanitized HTML + plain text
+  renderPane.innerHTML = rich.html;
+  renderPane.dataset.clip = rich.text;
+});
+
+// User copies via the rendered pane
+renderPane.addEventListener('click', async () =&gt; {
+  await navigator.clipboard.writeText(renderPane.dataset.clip);
+  console.log('Rich text on clipboard — paste into target.');
+});</code></pre>
+
+      <p class="text-gray-700 mb-6">If you want zero code, the manual path is: write in <a href="/" class="text-indigo-600 font-semibold">md2rich.com</a>, paste the rich text out. Same result, fewer moving parts. The piped-up version is for the case where you have a custom draft screen you control — your own admin panel, your own static-site preview, your own CMS draft surface.</p>
+
+      <h2 id="the-five-platform-paste-pattern" class="text-2xl font-bold mt-10 mb-4">The five-platform paste pattern</h2>
+
+      <p class="text-gray-700 mb-6">The reason this combination matters is platform behavior. Each of the five mainstream platforms handles rich text paste differently, and the format md2rich produces matches what they all want.</p>
+
+      <table class="w-full text-left border-collapse mb-8 text-sm">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="py-2 pr-3 font-semibold">Platform</th>
+            <th class="py-2 pr-3 font-semibold">Paste target</th>
+            <th class="py-2 pr-3 font-semibold">Key gotcha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3">LinkedIn</td>
+            <td class="py-2 pr-3">post composer / article editor</td>
+            <td class="py-2 pr-3">Markdown links need URLs in plain text; md2rich emits them with <code>href</code>.</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3">X Articles</td>
+            <td class="py-2 pr-3">article composer (Premium+)</td>
+            <td class="py-2 pr-3">Nested lists collapse on paste; keep one indent level.</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3">Notion</td>
+            <td class="py-2 pr-3">any block</td>
+            <td class="py-2 pr-3">Notion converts pasted HTML to native blocks; headers become toggle blocks if too long.</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3">Medium</td>
+            <td class="py-2 pr-3">story editor</td>
+            <td class="py-2 pr-3">Sub-headings (&lt;h3&gt;) render identical to body text; use sparingly.</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3">Substack</td>
+            <td class="py-2 pr-3">post composer</td>
+            <td class="py-2 pr-3">Inline <code>code</code> survives better than code blocks; use fenced for shared snippets.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-gray-700 mb-6">Writemark's split-screen preview shows the source as you write. md2rich's pane shows what the platform will see after paste. The mental gap between "what I typed" and "what the reader sees" collapses to zero — you watch the rendering happen in real time before you commit the paste.</p>
+
+      <h2 id="a-5-minute-walkthrough" class="text-2xl font-bold mt-10 mb-4">A 5-minute walkthrough</h2>
+
+      <p class="text-gray-700 mb-6">If you have not used either tool yet, this is the shortest path from blank page to live LinkedIn post.</p>
+
+      <p class="text-gray-700 mb-6"><strong>Step 1.</strong> Open <a href="/" class="text-indigo-600 font-semibold">md2rich.com</a> in one tab. The left pane is a plain-text Markdown editor. The right pane is empty until you click <strong>Convert</strong>.</p>
+
+      <p class="text-gray-700 mb-6"><strong>Step 2.</strong> Paste a draft. The classic LinkedIn long-form post is roughly 1,200–1,800 characters with 3 short paragraphs and one bullet list. Format in Markdown:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># Why we shipped client-side
+
+Three reasons we kept the conversion client-side:
+
+- zero upload = zero metadata leak
+- paste-rich survives all five platforms we tested
+- the workflow fits on a single 4GB Chromebook
+
+If you're posting from a coffee shop, you don't need a hotel Wi-Fi trust fall.</code></pre>
+
+      <p class="text-gray-700 mb-6"><strong>Step 3.</strong> Click <strong>Convert</strong>. The right pane fills with the rendered HTML and a plain-text fallback side by side. The plain-text pane is what you actually paste — most platforms do better with plain-text rich than HTML.</p>
+
+      <p class="text-gray-700 mb-6"><strong>Step 4.</strong> Cmd/Ctrl-C from the rich pane. Switch to LinkedIn. Cmd/Ctrl-V into the post composer. The bold stays bold, the bullets keep their indent, the <code>code</code> stays in monospace. The format travels with the paste.</p>
+
+      <p class="text-gray-700 mb-6"><strong>Step 5 (optional).</strong> Repeat with the same Markdown for X Articles / Notion / Medium / Substack. The canonical-source pattern is the workflow most multi-platform publishers settle into by August 2026.</p>
+
+      <h2 id="when-not-to-use-this-stack" class="text-2xl font-bold mt-10 mb-4">When not to use this stack</h2>
+
+      <p class="text-gray-700 mb-6">Two cases break down. The first is collaboration: if you need two writers editing the same draft in real time, Writemark does not give you presence cursors and md2rich does not sync state across tabs. You need a hosted CMS for that — Substack's editor, Ghost's editor, or a Notion shared workspace.</p>
+
+      <p class="text-gray-700 mb-6">The second is scheduled publishing. Both tools operate in the moment. If you want to write 12 LinkedIn posts on Sunday and schedule them across the week, you need a queue (Buffer, Taplio, Hypefury). The Writemark + md2rich pair handles the writing step; the scheduling step is a separate concern with its own tool.</p>
+
+      <p class="text-gray-700 mb-6 mt-10">The 51-point HN thread that introduced Writemark was followed within hours by questions about Web Component publishing pipelines. That is the right signal. Inline editing has been waiting for the right primitive to fall into place. Combined with a client-side rich-text converter, the writing half of a one-person publishing stack is now a five-line HTML block plus a browser tab. The other half — distribution, scheduling, analytics — is its own job, and you should still bring a real tool for it.</p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What is Writemark and why is the HN launch relevant?</h3>
+          <p class="text-gray-700">Writemark is a zero-dependency inline Markdown editor built as a Web Component. It shipped as a Show HN on July 25, 2026 and gathered 51 points in 36 hours. The relevant part for cross-platform publishers is that you can drop <code>&lt;writemark&gt;&lt;/writemark&gt;</code> into any web page and get a working editor with live preview. For the Markdown-to-rich-text crowd, that means an editing surface can live inside your dashboard, your CMS draft screen, your static site preview, even inside md2rich itself — without dragging in 200KB of editor code.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">How does Writemark differ from EasyMDE, CodeMirror, or Quill?</h3>
+          <p class="text-gray-700">EasyMDE, CodeMirror, and Quill are full editor frameworks — they assume you want toolbars, keymaps, and plugin systems. Writemark is a single custom element with no dependencies and a 12KB minified footprint. It does split-screen preview and syntax highlighting in inline mode. It does not do toolbar customization, undo history trees, or collaborative cursors. For a publishing workflow where the goal is to write Markdown and paste the result, smaller is better.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Can Writemark + md2rich replace a CMS draft screen?</h3>
+          <p class="text-gray-700">Yes, for the 80% case. Writemark gives you the editing surface, md2rich gives you the rich-text conversion. The paste step converts the Markdown into the rich text LinkedIn, X Articles, Notion, Medium, and Substack accept. The privacy floor is closed-loop: the draft never leaves your browser until you paste it to the destination yourself. The 20% case where this breaks is workflow lock-in: if you need approval queues, scheduled publishing, or role-based access, you still need a CMS.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Does Writemark work inside iframes and cross-origin embeds?</h3>
+          <p class="text-gray-700">Web Components work inside iframes the way normal HTML does — they render, mount, and respond to events normally. Cross-origin is the limit. If you load Writemark from a different origin than the parent page, the parent's copy of the rendered Markdown will not update until the user blurs out of the field. The fix is to load Writemark from the same origin as the page that needs to read the value. For most workflows this is not an issue because the editor and the converter run in the same tab.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Where does privacy fit when adding Writemark to a web app?</h3>
+          <p class="text-gray-700">Writemark itself is zero-network — all parsing and rendering happens in the browser. The privacy floor of the combined workflow is whether anything else in your pipeline touches a server. md2rich is client-side as well, so the combined pipeline stays closed-loop: write in Writemark, convert via md2rich, paste to the destination. The only outbound request is the paste action on whichever platform you publish to. No telemetry, no keystroke logging, no third-party content scripts on the draft.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What is the inline-editor pattern's actual use case?</h3>
+          <p class="text-gray-700">Inline editors solve the "I do not want a separate /edit route" problem. Click a paragraph, edit it in place, click out, it saves. For Markdown specifically, the inline pattern fits platforms that already render Markdown — you write in Markdown source, the platform shows the rich rendering, and on blur the source is replaced in place. Writemark covers this for first-party pages. md2rich covers the cross-platform paste step. Together they are the smallest viable stack for a one-person publishing workflow in 2026.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Try the workflow in your browser</h3>
+        <p class="text-gray-700 mb-4"><a href="/" class="text-indigo-600 font-semibold">md2rich</a> converts a Markdown draft into the rich text that LinkedIn, X Articles, Notion, Medium, and Substack all accept on paste. Client-side, zero upload, no metadata leak. Pair it with Writemark for a full inline-edit-to-publish pipeline that runs entirely in your browser.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Open md2rich →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>
