@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandoc at 20: Universal Document Converter Guide 2026</title>
+  <meta name="description" content="Pandoc turns 20 in 2026. Learn what the universal document converter does, how its in-browser build works, and how it compares with client-side tools.">
+  <meta name="keywords" content="Pandoc 20 years 2026, Pandoc tutorial, Pandoc WebAssembly, Markdown to DOCX, Markdown to EPUB, Pandoc vs md2rich, universal document converter, John MacFarlane Pandoc">
+  <link rel="canonical" href="https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pandoc at 20: Universal Document Converter Guide 2026">
+  <meta property="og:description" content="Pandoc turns 20 in 2026. Learn what the universal document converter does, how its in-browser build works, and how it compares with client-side tools.">
+  <meta property="og:url" content="https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pandoc at 20: Universal Document Converter Guide 2026">
+  <meta name="twitter:description" content="Pandoc turns 20 in 2026. Learn what the universal document converter does, how its in-browser build works, and how it compares with client-side tools.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Pandoc at 20: Universal Document Converter Guide 2026",
+      "description": "Pandoc turns 20 in 2026. Learn what the universal document converter does, how its in-browser build works, and how it compares with client-side tools.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-06",
+      "dateModified": "2026-08-06",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to convert Markdown to a Word document with Pandoc's WebAssembly build in the browser",
+      "totalTime": "PT15M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Open the Pandoc WebAssembly build in your browser",
+          "text": "Pandoc 3.9 added a WebAssembly build, so the converter can run fully in the browser without a server. Point your browser at a hosted build or run a local page from disk."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Load your Markdown source file",
+          "text": "Select a local .md file from your device. Because conversion happens on your machine, the file does not need to be uploaded to a remote server."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Pick the output format",
+          "text": "Choose the target format such as DOCX, ODT, EPUB, or HTML. Pandoc's reader-and-writer model handles any supported combination without a separate tool per format pair."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Run the conversion and keep both files local",
+          "text": "Convert the document and save the output to your device. The source and result stay on your machine, with no file leaving your control."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pandoc at 20: Universal Document Converter Guide 2026",
+          "item": "https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Pandoc and why is it called a universal document converter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pandoc is an open-source document converter built on a reader-and-writer architecture. It turns inputs such as Markdown, HTML, LaTeX, DOCX, EPUB, and Jupyter Notebooks into a common abstract syntax tree, then writes that tree to the output format you choose. One tool replaces many format-pair converters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What formats does Pandoc support in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pandoc supports a large set of markup, word-processing, academic, presentation, and publishing formats, including Markdown, HTML, LaTeX, DOCX, ODT, EPUB, AsciiDoc, reStructuredText, Org Mode, Typst, Jupyter Notebook, PowerPoint, DocBook, and JATS, plus bibliography formats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Pandoc run in a web browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pandoc 3.9 added the ability to compile the application to WebAssembly, which lets a largely fully featured version of Pandoc run directly in a web browser without sending documents to a remote server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Pandoc compare with a client-side Markdown to rich text tool like md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pandoc is a heavyweight command-line and Haskell tool for many academic and publishing formats, ideal for batch and automated pipelines. md2rich is a lightweight single-page app for the common writing task of turning Markdown into rich text for LinkedIn, X, and similar platforms with zero upload. Both keep files local and privacy-first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do writers choose Pandoc over cloud document converters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pandoc offers predictable, reliable output, low energy requirements, full offline control, and no upload of private documents. Its creator John MacFarlane has argued these are advantages over AI-based format translation, which can be less predictable and more expensive to run."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 6, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Pandoc turns 20 in 2026 — what every Markdown writer should know</h1>
+        <p class="text-lg text-gray-600">Twenty years after its first release, Pandoc is still the most versatile document converter in open source — and with its new WebAssembly build, it can now run entirely in your browser. Here is what changed, why it matters for Markdown writers, and how to pick it against a simple client-side tool.</p>
+      </header>
+
+<p class="text-gray-700 mb-6">On August 3, 2026, <a href="https://linuxiac.com/pandoc-celebrates-20-years-as-the-universal-document-converter/" class="text-indigo-600 font-semibold">Linuxiac reported</a> that Pandoc — the open-source tool used everywhere to convert one markup format into another — was celebrating its twentieth birthday. The initial release landed on August 3, 2006, under the GPL license, and the project has been quietly powering publishing pipelines ever since.</p>
+
+<p class="text-gray-700 mb-6">If you write in <a href="/blog/markdown-to-rich-text-2026-en" class="text-indigo-600 font-semibold">Markdown</a>, Pandoc is probably already part of your life even if you have never run it. Its HTML output shapes how thousands of static sites and blogs are built. Its DOCX and EPUB writers turn plain-text notes into finished documents that open anywhere. And its new ability to run in a web browser points directly at the same privacy-first, no-upload workflow that md2rich is built around.</p>
+
+<p class="text-gray-700 mb-6">This guide breaks down what Pandoc is, the milestone the 2026 anniversary marks, the brand-new in-browser capability that changes how you can use it, and — most practically — when you should reach for Pandoc versus a lightweight client-side converter.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">A quick history: from a Haskell learning project to a publishing staple</h2>
+
+<p class="text-gray-700 mb-6">Pandoc began, the way many beloved tools do, as a personal project. Its creator John MacFarlane, a philosophy professor and mathematician, built it in Haskell partly to learn the language. The very first version, Pandoc 0.1, weighed in at about 3,000 lines of code and could convert documents between Markdown, reStructuredText, HTML, and LaTeX, while also generating RTF and S5 slide-show output.</p>
+
+<p class="text-gray-700 mb-6">That modest start solved a problem most writers still have today: you almost never want just one output. You draft in a readable syntax, but your editor wants a Word file, your publisher wants LaTeX or EPUB, your website wants HTML, and your slides want a presentation format. Pandoc's answer was to build a single engine with pluggable readers and writers rather than a pile of bespoke converters.</p>
+
+<p class="text-gray-700 mb-6">Because a reader converts any input format into a common abstract syntax tree, and a writer renders that tree into any output format, Pandoc does not need a separate tool for each possible format pair. Add one reader and one writer and a format can take part in many combinations at once. That architectural bet — now twenty years old — is the reason the project has stayed so flexible without collapsing under its own weight.</p>
+
+<p class="text-gray-700 mb-6">The 2026 retrospective put real numbers on that design: more than 200 versions released across two decades, four main packages containing over 85,000 lines of Haskell (not counting tests), more than 600 contributors, and 7,346 GitHub issues closed. The latest release at the time of writing is <strong>3.10.1</strong>.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What Pandoc actually is</h2>
+
+<p class="text-gray-700 mb-6">People often call Pandoc a document converter, but it is more precisely a programmable document-processing system. Instead of keeping a separate converter for every pair of formats, Pandoc uses two kinds of components: <em>readers</em>, which parse an input format into a common abstract syntax tree, and <em>writers</em>, which render that internal representation into the desired output. Because every reader and writer plugs into the same tree, any format that has a reader can be combined with any format that has a writer.</p>
+
+<p class="text-gray-700 mb-6">That architecture is why the format list keeps growing without the project ballooning in complexity. According to the 2026 retrospective, Pandoc now supports a large set of markup, word-processing, academic, presentation, and publishing formats — including Markdown, HTML, LaTeX, DOCX, ODT, EPUB, AsciiDoc, reStructuredText, Org Mode, Typst, Jupyter Notebook, PowerPoint, DocBook, and JATS, along with a number of wiki and bibliography formats.</p>
+
+<p class="text-gray-700 mb-6">Pandoc has also moved well beyond plain text conversion. It handles citations and bibliographies, mathematical expressions, templates and reference documents, presentations, and electronic books. In other words, it is a foundation for automated publishing workflows — exactly the kind of pipeline we covered in our <a href="/blog/markdown-tool-landscape-2026-en" class="text-indigo-600 font-semibold">round-up of the 2026 Markdown tool landscape</a>.</p>
+
+<p class="text-gray-700 mb-6">Two more features make Pandoc more than a batch file converter. First, <strong>filters</strong>: you can alter the structure of the intermediate document with custom filters that run against the abstract syntax tree, transforming headings, images, or metadata however you like. Second, <strong>Lua scripting</strong> is built in, so you can write small scripts that reshape documents without recompiling Pandoc. For developers this turns Pandoc into a genuine programmable publishing layer, not merely a converter.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Twenty years in numbers</h2>
+
+<p class="text-gray-700 mb-6">The 20th-anniversary retrospective by Pandoc's creator, <strong>John MacFarlane</strong>, lays out the scale of the project:</p>
+
+<div class="overflow-x-auto mb-8">
+<table class="min-w-full border border-gray-200 text-left text-sm">
+<thead class="bg-gray-50"><tr><th class="p-3 border-b">Metric</th><th class="p-3 border-b">Value</th></tr></thead>
+<tbody>
+<tr><td class="p-3 border-b">First release</td><td class="p-3 border-b">August 3, 2006 (GPL license)</td></tr>
+<tr><td class="p-3 border-b">Pandoc 0.1 size</td><td class="p-3 border-b">~3,000 lines of Haskell code</td></tr>
+<tr><td class="p-3 border-b">Versions released in 20 years</td><td class="p-3 border-b">200+</td></tr>
+<tr><td class="p-3 border-b">Main packages</td><td class="p-3 border-b">4 (85,000+ lines of Haskell, not counting tests)</td></tr>
+<tr><td class="p-3 border-b">Contributors</td><td class="p-3 border-b">600+</td></tr>
+<tr><td class="p-3 border-b">GitHub issues resolved</td><td class="p-3 border-b">7,346</td></tr>
+<tr><td class="p-3 border-b">Latest release (2026)</td><td class="p-3 border-b">3.10.1</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">What started as a personal project to learn Haskell became one of that language's best-known applications. That trajectory mirrors the wider story of Markdown tooling: small, local, plain-text tools that outgrow their humble beginnings because they solve a real problem predictably.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The big 2026 change: Pandoc in the browser</h2>
+
+<p class="text-gray-700 mb-6">The most notable new capability in recent Pandoc releases is the ability to compile the application to <strong>WebAssembly</strong>. Pandoc 3.9 introduced this as a major feature, and it changes what "universal document converter" can mean.</p>
+
+<p class="text-gray-700 mb-6">With the WebAssembly build, a largely fully featured version of Pandoc runs directly in a web browser — <em>without sending your documents to a remote server</em>. The conversion happens on your device. That is the same privacy-first promise that makes <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="text-indigo-600 font-semibold">client-side conversion</a> attractive for anyone who handles sensitive or unpublished writing.</p>
+
+<p class="text-gray-700 mb-6">MacFarlane's own words on the AI question are worth reading. He acknowledges that AI systems can already translate between some document formats, but he maintains that Pandoc keeps several advantages: much lower energy requirements, predictable output, and more reliable conversions. When you need a deterministic file to hand to a publisher or an academic journal, you do not want a model improvising the layout.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">A quick Pandoc workflow with real examples</h2>
+
+<p class="text-gray-700 mb-6">Pandoc is both a command-line program and a Haskell library. The most common way to use it is the <code class="bg-gray-100 px-1 py-0.5 rounded">pandoc</code> command. Here is how a typical Markdown-to-Word conversion looks:</p>
+
+<pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto mb-8"><code># Convert Markdown to a Word document
+pandoc post.md -o post.docx
+
+# Convert Markdown to a self-contained HTML file
+pandoc post.md -s -o post.html
+
+# Convert Markdown to EPUB (an e-book)
+pandoc post.md -o post.epub
+
+# Render a bibliography from a Markdown + BibTeX source
+pandoc paper.md --citeproc --bibliography=refs.bib -o paper.pdf</code></pre>
+
+<p class="text-gray-700 mb-6">Because Pandoc reads and writes from your existing files, it fits beautifully into scripts and automated pipelines. You can bundle every article in a folder, convert the whole set to DOCX for an editor, to EPUB for an e-reader, and to PDF for archival — all from one source of truth.</p>
+
+<p class="text-gray-700 mb-6">Here is a concrete Markdown fragment and what it becomes under Pandoc's standard writer. Your Markdown source:</p>
+
+<pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto mb-8"><code># Launch announcement
+
+**Date:** 2026-08-06
+
+Today we published the **20th-anniversary edition** of the 
+guide. Highlights:
+
+- Local, offline conversion
+- No upload, no tracking
+- Predictable output
+
+> Convert once, publish everywhere.</code></pre>
+
+<p class="text-gray-700 mb-6">Feed that to <code class="bg-gray-100 px-1 py-0.5 rounded">pandoc launch.md -o launch.html</code> and Pandoc writes the equivalent structured HTML: an <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;h1&gt;</code> for the title, a paragraph with the date, a <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;ul&gt;</code> for the list, and a <code class="bg-gray-100 px-1 py-0.5 rounded">&lt;blockquote&gt;</code> for the quoted line. The same source can ship as a polished <code class="bg-gray-100 px-1 py-0.5 rounded">.docx</code> for a stakeholder or an <code class="bg-gray-100 px-1 py-0.5 rounded">.epub</code> for readers.</p>
+
+<p class="text-gray-700 mb-6">Pandoc lets you specify input and output formats explicitly with the <code class="bg-gray-100 px-1 py-0.5 rounded">-f</code> (from) and <code class="bg-gray-100 px-1 py-0.5 rounded">-t</code> (to) flags, though it usually infers them from file extensions. Those flags are especially useful when you want a format that is not obvious from a filename:</p>
+
+<pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto mb-8"><code># Convert an Org Mode file to a Markdown file explicitly
+pandoc notes.org -f org -t markdown -o notes.md
+
+# Convert Markdown to a PDF via LaTeX (needs a LaTeX engine)
+pandoc report.md -o report.pdf --pdf-engine=xelatex
+
+# Convert a folder of Markdown files to a combined EPUB
+pandoc chapter-*.md -o book.epub --toc</code></pre>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Getting started: how to install Pandoc in 2026</h2>
+
+<p class="text-gray-700 mb-6">Installing Pandoc depends on your operating system, and the options are broad enough that practically everyone can run it:</p>
+
+<ul class="list-disc pl-6 mb-8 text-gray-700">
+<li class="mb-3"><strong>Windows</strong> — a self-contained installer is available, and Pandoc also ships in Windows Package Manager (<code class="bg-gray-100 px-1 py-0.5 rounded">winget install JohnMacFarlane.Pandoc</code>) and Chocolatey.</li>
+<li class="mb-3"><strong>macOS</strong> — a <code class="bg-gray-100 px-1 py-0.5 rounded">.pkg</code> installer, plus Homebrew (<code class="bg-gray-100 px-1 py-0.5 rounded">brew install pandoc</code>).</li>
+<li class="mb-3"><strong>Linux</strong> — packages in most distributions (<code class="bg-gray-100 px-1 py-0.5 rounded">apt install pandoc</code> on Debian/Ubuntu, <code class="bg-gray-100 px-1 py-0.5 rounded">dnf install pandoc</code> on Fedora), or a portable binary.</li>
+<li class="mb-3"><strong>In the browser</strong> — the WebAssembly build added in Pandoc 3.9 means you can run a largely fully featured Pandoc without installing anything, on any device with a modern browser.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">Once installed, <code class="bg-gray-100 px-1 py-0.5 rounded">pandoc --version</code> prints the version you are running, and <code class="bg-gray-100 px-1 py-0.5 rounded">pandoc --list-input-formats</code> and <code class="bg-gray-100 px-1 py-0.5 rounded">pandoc --list-output-formats</code> show every format your build can read and write. The WebAssembly edition brings that same capability to people who would rather not touch a terminal.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">A privacy-minded take on the browser build</h2>
+
+<p class="text-gray-700 mb-6">The WebAssembly milestone is significant beyond convenience. When a converter compiles to WebAssembly and runs in a browser, the document no longer has to cross the network to be transformed. For writers handling drafts, contracts, unpublished research, or any material that should not sit on a third-party server, that is a meaningful privacy guarantee — the same zero-upload principle behind <a href="/blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en" class="text-indigo-600 font-semibold">client-side Markdown converters</a>.</p>
+
+<p class="text-gray-700 mb-6">MacFarlane frames the durability of Pandoc partly in these terms. In discussing AI-based format translation, he notes that while AI systems can already translate between certain document formats, Pandoc retains clear advantages: much lower energy requirements, predictable output, and more reliable conversions. When you are shipping a manuscript or a paper, "predictable" is worth a great deal — you want the same input to produce the same output every single time, not a plausible-sounding variation.</p>
+
+<p class="text-gray-700 mb-6">The energy point matters too. A locally compiled converter that turns a few files into different formats costs almost nothing to run. The same task on a remote AI endpoint involves inference, network transfer, and electricity on someone else's servers — and it sends your private document along with it.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">When to reach for Pandoc — and when to reach for md2rich</h2>
+
+<p class="text-gray-700 mb-6">Pandoc is extraordinarily capable, but it is also a heavyweight generalist. There are two very different jobs hiding inside "document conversion." It is worth choosing the right tool for each.</p>
+
+<div class="overflow-x-auto mb-8">
+<table class="min-w-full border border-gray-200 text-left text-sm">
+<thead class="bg-gray-50"><tr><th class="p-3 border-b">Consideration</th><th class="p-3 border-b">Pandoc</th><th class="p-3 border-b">md2rich</th></tr></thead>
+<tbody>
+<tr><td class="p-3 border-b font-semibold">Best for</td><td class="p-3 border-b">Batch, academic, technical, and multi-format publishing pipelines</td><td class="p-3 border-b">Quick Markdown to rich text for LinkedIn, X, Medium, Notion</td></tr>
+<tr><td class="p-3 border-b font-semibold">Installation</td><td class="p-3 border-b">CLI tool to install, or WebAssembly build in the browser</td><td class="p-3 border-b">None — runs in the browser as a single-page app</td></tr>
+<tr><td class="p-3 border-b font-semibold">Output formats</td><td class="p-3 border-b">Dozens, incl. DOCX, ODT, EPUB, LaTeX, PDF, HTML, slides</td><td class="p-3 border-b">Rich text with formatting ready to paste into the target editor</td></tr>
+<tr><td class="p-3 border-b font-semibold">Automation</td><td class="p-3 border-b">Scriptable, filters, Lua, works in CI and Makefiles</td><td class="p-3 border-b">Manual, interactive, no server required</td></tr>
+<tr><td class="p-3 border-b font-semibold">Privacy</td><td class="p-3 border-b">Fully local and offline</td><td class="p-3 border-b">Fully client-side — no upload, no account, no analytics</td></tr>
+<tr><td class="p-3 border-b font-semibold">Learning curve</td><td class="p-3 border-b">Steeper; rewards scripting experience</td><td class="p-3 border-b">Almost none for writers</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6"><strong>Pandoc is the right choice when</strong> you are building automated pipelines, working with academic or technical formats (LaTeX, JATS, bibliography tools), generating e-books, or converting between many formats at once. It rewards people who script their publishing. It is free, open source, offline, and deterministic.</p>
+
+<p class="text-gray-700 mb-6"><strong>md2rich is the right choice when</strong> the task is narrower and more common: you write Markdown and want to paste it as formatted rich text into LinkedIn, X Articles, Medium, or Notion. You do not want to install anything, learn a command line, or manage a LaTeX toolchain. A single-page app that converts in your browser, with nothing uploaded and no account, is the fastest path from draft to published post.</p>
+
+<p class="text-gray-700 mb-6">You can see this distinction in practice across our <a href="/blog/markdown-to-x-articles-en" class="text-indigo-600 font-semibold">Markdown to X Articles guide</a> and the <a href="/blog/best-markdown-editors-2026-en" class="text-indigo-600 font-semibold">Markdown editor round-up</a>. Different jobs call for different tools, and the best workflow often uses both.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The larger lesson: local, predictable, yours</h2>
+
+<p class="text-gray-700 mb-6">Pandoc's twentieth birthday is a useful reminder of what plain-text publishing tools get right. Twenty years in, the tool still works offline, produces predictable output, and leaves you in control of your files. Those are the same values that drive the privacy-first publishing movement we have covered in articles like <a href="/blog/state-of-markdown-publishing-july-2026-en" class="text-indigo-600 font-semibold">the State of Markdown Publishing round-up</a> and the <a href="/blog/markdown-to-mastodon-long-form-2026-en" class="text-indigo-600 font-semibold">privacy-first Fediverse workflow</a>.</p>
+
+<p class="text-gray-700 mb-6">Whether you use a powerful converter for your archive and a lightweight one for your daily posting, the principle stays the same: keep the canonical source on your device, convert client-side, and never hand your unpublished writing to a server you do not control. On its twentieth anniversary, that is the strongest argument for Pandoc — and for every tool that follows in the same spirit.</p>
+
+<h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+
+<div class="space-y-6">
+<div><h3 class="text-lg font-semibold mb-2">What is Pandoc and why is it called a universal document converter?</h3><p class="text-gray-700">Pandoc is an open-source document converter built on a reader-and-writer architecture. It turns inputs such as Markdown, HTML, LaTeX, DOCX, EPUB, and Jupyter Notebooks into a common abstract syntax tree, then writes that tree to the output format you choose. One tool replaces many format-pair converters.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">What formats does Pandoc support in 2026?</h3><p class="text-gray-700">Pandoc supports a large set of markup, word-processing, academic, presentation, and publishing formats, including Markdown, HTML, LaTeX, DOCX, ODT, EPUB, AsciiDoc, reStructuredText, Org Mode, Typst, Jupyter Notebook, PowerPoint, DocBook, and JATS, plus bibliography formats.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Can Pandoc run in a web browser?</h3><p class="text-gray-700">Yes. Pandoc 3.9 added the ability to compile the application to WebAssembly, which lets a largely fully featured version of Pandoc run directly in a web browser without sending documents to a remote server.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">How does Pandoc compare with a client-side Markdown to rich text tool like md2rich?</h3><p class="text-gray-700">Pandoc is a heavyweight command-line and Haskell tool for many academic and publishing formats, ideal for batch and automated pipelines. md2rich is a lightweight single-page app for the common task of turning Markdown into rich text for LinkedIn, X, and similar platforms with zero upload. Both keep files local and privacy-first.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Why do writers choose Pandoc over cloud document converters?</h3><p class="text-gray-700">Pandoc offers predictable, reliable output, low energy requirements, full offline control, and no upload of private documents. Its creator John MacFarlane has argued these are advantages over AI-based format translation, which can be less predictable and more expensive to run.</p></div>
+</div>
+
+<div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+<h2 class="text-xl font-bold mb-2">Write it once in Markdown. Publish it as yours.</h2>
+<p class="text-gray-700 mb-4">Pandoc handles the heavyweight conversions. For the daily job of turning Markdown into rich text for LinkedIn and X, use a tool that stays on your device — no upload, no account, no rewrite.</p>
+<a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich</a>
+</div>
+    </article>
+  </main>
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>
