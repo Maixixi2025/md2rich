@@ -1,1356 +1,1389 @@
 {
- "site": "md2rich.com",
- "topic_direction_rotation": [
-  "Markdown for Beginners",
-  "Obsidian Alternatives",
-  "LinkedIn Rich Text Paste",
-  "X Articles Writing Workflow",
-  "Notion Conversion",
-  "Rich Text Editor Comparison",
-  "Plain Text Workflow"
- ],
- "published": [
-  {
-   "slug": "markdown-to-bluesky-long-form-en",
-   "date": "2026-06-17",
-   "type": "guide+comparison",
-   "title": "Markdown to Bluesky Long-Form: 2026 Publishing Guide",
-   "description": "Bluesky launched long-form posts on May 28, 2026. Write in Markdown, convert with md2rich, and publish without losing formatting.",
-   "lang": "en-US",
-   "file": "blog/markdown-to-bluesky-long-form-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-bluesky-long-form-en",
-   "heat_source": "⭐⭐⭐ 2026-06-17 daily report #1 (Bluesky 5/28 long-form launch)",
-   "status": "published",
-   "providers_featured": [
-    "bluesky"
-   ],
-   "primary_cta": "Try md2rich — paste Markdown → copy rich text → publish to Bluesky long-form",
-   "created_at": "2026-06-17 12:34:44",
-   "published_at": "2026-06-17"
-  },
-  {
-   "slug": "tweet-md-x-threads-to-markdown-en",
-   "date": "2026-06-08",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/tweet-md-x-threads-to-markdown-en.html",
-   "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html",
-   "title": "tweet.md + md2rich: X Thread to Blog Post in 30s",
-   "description": "tweet.md converts X threads to clean Markdown in one click. Pair it with md2rich for an X-to-article pipeline. Tested against 3 alternatives.",
-   "heat_source": "⭐⭐ 2026-06-08 daily report — tweet.md launched: X threads to Markdown in one click",
-   "status": "published",
-   "published_at": "2026-06-08T12:30:00Z",
-   "providers_featured": [
-    "tweet-md"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "files-md-obsidian-alternative-en",
-   "date": "2026-06-06",
-   "type": "review",
-   "lang": "en-US",
-   "file": "blog/files-md-obsidian-alternative-en.html",
-   "url": "https://md2rich.com/blog/files-md-obsidian-alternative-en.html",
-   "title": "Files.md: An Open-Source Obsidian Alternative",
-   "description": "Files.md hit 730 points on Show HN (May 2026) with a folder-as-database paradigm.",
-   "heat_source": "⭐⭐⭐ 2026-06-06 daily report — Show HN 730pts 5/18",
-   "status": "published",
-   "published_at": "2026-06-06T12:34:00Z",
-   "providers_featured": [
-    "files-md"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-to-linkedin-en",
-   "date": "2026-06-06",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-to-linkedin-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-linkedin-en.html",
-   "title": "Markdown to LinkedIn: The Honest Guide (2026)",
-   "description": "LinkedIn's rich text paste support is unreliable. Here are 3 real workarounds that actually work in 2026, including a 100% private one.",
-   "heat_source": "⭐⭐ 2026-06-06 daily report — md2rich core positioning topic",
-   "status": "published",
-   "published_at": "2026-06-06T12:30:00Z",
-   "providers_featured": [
-    "md2rich",
-    "stackedit",
-    "pandoc"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-to-x-articles-en",
-   "date": "2026-06-07",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-to-x-articles-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-x-articles-en.html",
-   "title": "Markdown to X Articles: The Complete 2026 Workflow",
-   "description": "X Articles is X Premium's long-form feature. Bluesky launched long-form in May 2026 to counter it. Three tested Markdown to X Articles workflows compared.",
-   "heat_source": "⭐⭐ 2026-06-07 daily report — Bluesky launches long-form to counter X Articles",
-   "status": "published",
-   "published_at": "2026-06-07T12:30:00Z",
-   "providers_featured": [
-    "md2rich",
-    "x-articles",
-    "pandoc",
-    "bluesky"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "x-articles-vs-linkedin-newsletter-en",
-   "date": "2026-06-09",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/x-articles-vs-linkedin-newsletter-en.html",
-   "url": "https://md2rich.com/blog/x-articles-vs-linkedin-newsletter-en.html",
-   "title": "X Articles vs LinkedIn Newsletter: 2026 Reach Compared",
-   "description": "X Articles Freedom of Reach blackbox vs LinkedIn Newsletter's stable subscriber reach. 3-dimension test + Markdown cross-post workflow (2026).",
-   "heat_source": "⭐⭐ 2026-06-09 daily report — 'Freedom of Reach' HN 720pts",
-   "status": "published",
-   "published_at": "2026-06-09T12:30:00Z",
-   "providers_featured": [
-    "x-articles",
-    "linkedin-newsletter",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "linkedin-markdown-formatter-vs-md2rich-en",
-   "date": "2026-06-10",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/linkedin-markdown-formatter-vs-md2rich-en.html",
-   "url": "https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich-en.html",
-   "title": "LinkedIn Markdown Formatter vs md2rich: In-Depth Comparison",
-   "description": "How a new LinkedIn Markdown Formatter compares to md2rich — privacy, features, and which one fits your workflow.",
-   "heat_source": "⭐ 2026-06-10 daily report — LinkedIn Markdown Formatter launched",
-   "status": "published",
-   "published_at": "2026-06-10T12:30:00Z",
-   "providers_featured": [
-    "md2rich",
-    "linkedin-markdown-formatter"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "best-markdown-editors-2026-en",
-   "date": "2026-06-11",
-   "type": "comparison",
-   "lang": "en-US",
-   "title": "Best Markdown Editors 2026: Top 5 Reviewed for Writers",
-   "description": "Typora went paid. The Markdown editor market fractured in 2026. We compare Obsidian, iA Writer, Zettlr, and VS Code for writers and content creators.",
-   "file": "blog/best-markdown-editors-2026-en.html",
-   "url": "https://md2rich.com/blog/best-markdown-editors-2026-en.html",
-   "heat_source": "⭐⭐⭐ Markdown Editor Roundup 2026 — Post-Typora-pricing landscape",
-   "status": "published",
-   "created_at": "2026-06-11T04:36:57Z",
-   "providers_featured": [
-    "Typora",
-    "Obsidian",
-    "iA Writer",
-    "Zettlr",
-    "VS Code"
-   ],
-   "primary_cta": "md2rich.com",
-   "published_at": "2026-06-11T12:37:00Z"
-  },
-  {
-   "slug": "markdown-tool-landscape-2026-en",
-   "date": "2026-06-13",
-   "type": "ecosystem-overview",
-   "lang": "en-US",
-   "file": "blog/markdown-tool-landscape-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-tool-landscape-2026-en.html",
-   "title": "2026 Markdown Tool Landscape: CyberWriter, Attn, & md2rich",
-   "description": "CyberWriter brings local AI to Markdown. Attn is a sub-20MB Rust editor for AI agents. Map of the 2026 Markdown tool ecosystem and where md2rich fits.",
-   "heat_source": "⭐ 2026-06-13 daily report — CyberWriter (local AI macOS) + Attn (Rust AI-agent editor) + Markdown ecosystem mapping",
-   "status": "published",
-   "published_at": "2026-06-13T12:52:00Z",
-   "providers_featured": [
-    "cyberwriter",
-    "attn",
-    "obsidian",
-    "typora",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-to-notion-workflow-en",
-   "date": "2026-06-16",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-to-notion-workflow-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-notion-workflow-en",
-   "title": "Markdown to Notion: The Complete 2026 Guide (with md2rich)",
-   "description": "Notion's Markdown paste breaks tables, code blocks, and nested lists. Use md2rich for a tested client-side workflow — full formatting, no upload.",
-   "heat_source": "Rotation — Notion Conversion (已覆盖各平台，缺 Notion)",
-   "status": "published",
-   "published_at": "2026-06-16T12:30:00Z",
-   "providers_featured": [
-    "md2rich",
-    "notion"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-to-substack-en",
-   "date": "2026-06-18",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-to-substack-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-substack-en",
-   "title": "Markdown to Substack: Write and Publish Guide (2026)",
-   "description": "Substack doesn't support Markdown paste. Write in your editor, convert with md2rich, and paste fully formatted into Substack. Tested workflow.",
-   "heat_source": "Rotation — platform guide (Substack), hot topics report FAILED (HTTP 429)",
-   "status": "published",
-   "published_at": "2026-06-18",
-   "providers_featured": [
-    "md2rich",
-    "substack"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markitdown-md2rich-markdown-pipeline-en",
-   "date": "2026-06-20",
-   "type": "guide+tutorial",
-   "lang": "en-US",
-   "file": "blog/markitdown-md2rich-markdown-pipeline-en.html",
-   "url": "https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en",
-   "title": "Microsoft MarkItDown + md2rich: The Complete Markdown Pipeline (2026)",
-   "description": "Microsoft MarkItDown converts PDFs, DOCX, and 12 other file formats to clean Markdown. Pair it with md2rich for a full document-to-rich-text pipeline — no uploads, no accounts, no third-party servers.",
-   "heat_source": "⭐ 2026-06-19 daily report — Microsoft markitdown: file batch to Markdown tool + md2rich combination",
-   "status": "published",
-   "published_at": "2026-06-20",
-   "providers_featured": [
-    "markitdown",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "client-side-vs-cloud-markdown-converters-2026-en",
-   "date": "2026-06-21",
-   "type": "guide+comparison",
-   "lang": "en-US",
-   "file": "blog/client-side-vs-cloud-markdown-converters-2026-en.html",
-   "url": "https://md2rich.com/blog/client-side-vs-cloud-markdown-converters-2026-en",
-   "title": "Client-Side vs Cloud Markdown Converters: 2026 Guide",
-   "description": "Client-side vs cloud Markdown converters compared in 2026. md2rich, Quikdown, StackEdit, and more. Find the right tool for privacy and speed.",
-   "heat_source": "⭐ 2026-06-21 daily report — Quikdown 17KB Markdown parser + remaining ⭐ topic (client-side vs cloud converters)",
-   "status": "published",
-   "published_at": "2026-06-21",
-   "providers_featured": [
-    "md2rich",
-    "quikdown",
-    "stackedit",
-    "hackmd"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-beginners-guide-2026-en",
-   "date": "2026-06-22",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-beginners-guide-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-beginners-guide-2026-en",
-   "title": "Markdown for Beginners: Complete 2026 Guide",
-   "description": "New to Markdown? Learn essential syntax and convert to rich text for LinkedIn, Medium, Substack, and more — no experience needed.",
-   "heat_source": "Rotation — Markdown for Beginners (not yet covered)",
-   "status": "published",
-   "published_at": "2026-06-22",
-   "providers_featured": [
-    "obsidian",
-    "vs-code",
-    "md2rich",
-    "typora",
-    "ia-writer"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "lettera-vs-ia-writer-mac-markdown-2026-en",
-   "date": "2026-06-23",
-   "type": "comparison",
-   "lang": "en-US",
-   "title": "Lettera vs iA Writer: Mac Markdown Editor for LinkedIn",
-   "description": "Lettera (Shiny Frog, June 2026) vs iA Writer, Typora, Obsidian. We test all four for Markdown → LinkedIn rich-text workflow.",
-   "file": "blog/lettera-vs-ia-writer-mac-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/lettera-vs-ia-writer-mac-markdown-2026-en",
-   "heat_source": "⭐ Lettera (Shiny Frog, June 2026) — daily report 2026-06-23",
-   "status": "published",
-   "topic_direction": "Rich Text Editor Comparison + LinkedIn Rich Text Paste (hybrid)",
-   "providers_featured": [
-    "Lettera",
-    "iA Writer",
-    "Typora",
-    "Obsidian",
-    "md2rich"
-   ],
-   "primary_cta": "md2rich",
-   "drafted_at": "2026-06-23",
-   "published_at": "2026-06-23"
-  },
-  {
-   "slug": "quikdown-vs-marked-markdown-parser-2026-en",
-   "date": "2026-06-24",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/quikdown-vs-marked-markdown-parser-2026-en.html",
-   "url": "https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en",
-   "title": "Quikdown vs marked: 17KB Markdown Parser Showdown (2026)",
-   "description": "Quikdown is a 17KB Show HN Markdown parser with bidirectional conversion. Compare Quikdown vs marked and markdown-it for client-side tools like md2rich.",
-   "heat_source": "⭐ 2026-06-24 daily hot topics report - 'Quikdown — Show HN: 17KB Markdown parser' (deftio)",
-   "status": "published",
-   "providers_featured": [
-    "Quikdown",
-    "marked",
-    "markdown-it"
-   ],
-   "primary_cta": "https://md2rich.com",
-   "topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid)",
-   "word_count": 1939,
-   "created_at": "2026-06-24",
-   "published_at": "2026-06-24"
-  },
-  {
-   "slug": "markdown-to-medium-2026-en",
-   "date": "2026-06-25",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-to-medium-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-medium-2026-en",
-   "title": "Markdown to Medium: 2026 Publishing Guide with md2rich",
-   "description": "Convert Markdown to Medium-ready rich text without losing formatting. Step-by-step 2026 guide using md2rich for tables, code blocks, and lists.",
-   "heat_source": "daily-hot-topic (gap analysis): Medium was the only major long-form platform not yet covered by md2rich content. Kitmul April 2026 reference confirms Medium still doesn't support Markdown in 2026.",
-   "status": "published",
-   "providers_featured": [
-    "Medium"
-   ],
-   "primary_cta": "Try md2rich (https://md2rich.com)",
-   "topic_direction": "Plain Text Workflow",
-   "subcategory": "Markdown to Medium",
-   "published_at": "2026-06-25T04:37:33.610659Z"
-  },
-  {
-   "slug": "satteri-rust-markdown-pipeline-2026-en",
-   "date": "2026-06-27",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/satteri-rust-markdown-pipeline-2026-en.html",
-   "url": "https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en",
-   "title": "Satteri: Rust Markdown Pipeline for JavaScript (2026)",
-   "description": "Satteri parses Markdown in Rust, runs plugins in JavaScript via NAPI. What the Astro team's pipeline means for client-side Markdown tools in 2026.",
-   "heat_source": "Show HN: Satteri, Rust Markdown pipeline (HN 6-25, github.com/bruits/satteri)",
-   "status": "published",
-   "published_at": "2026-06-27",
-   "providers_featured": [
-    "satteri",
-    "pulldown-cmark",
-    "oxc",
-    "lightningcss",
-    "remark",
-    "rehype",
-    "marked",
-    "markdown-it"
-   ],
-   "primary_cta": "Try md2rich (client-side Markdown to rich text for LinkedIn, X, Medium)"
-  },
-  {
-   "slug": "rfc7763-markdown-standardization-2026-en",
-   "date": "2026-06-28",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/rfc7763-markdown-standardization-2026-en.html",
-   "url": "https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en",
-   "title": "RFC7763: Markdown Standardization Returns to IETF",
-   "description": "RFC7763 puts text/Markdown back on the IETF agenda. What the standardization push means for Markdown editors, converters, and md2rich.",
-   "heat_source": "i-lang daily briefing 2026-06-28 — RFC7763 / text/Markdown IETF revival",
-   "status": "published",
-   "published_at": "2026-06-28T00:00:00Z",
-   "providers_featured": [],
-   "primary_cta": "https://md2rich.com",
-   "related_articles": [
-    "/blog/markdown-tool-landscape-2026-en",
-    "/blog/best-markdown-editors-2026-en",
-    "/blog/write-once-publish-anywhere-2026-en",
-    "/blog/client-side-vs-cloud-markdown-converters-2026-en"
-   ],
-   "live_url_verified": "https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en",
-   "sitemap_verified": "https://md2rich.com/sitemap.xml",
-   "blog_index_verified": "https://md2rich.com/blog/",
-   "deployment": "wrangler pages deploy . --project-name=md2rich",
-   "deploy_status": "success",
-   "deploy_timestamp": "2026-06-28T11:30:00Z"
-  },
-  {
-   "slug": "caliper-ai-agent-reliability-2026-en",
-   "date": "2026-06-29",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/caliper-ai-agent-reliability-2026-en.html",
-   "url": "https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en",
-   "title": "Caliper 2026: AI Agent Reliability for Markdown Creators",
-   "description": "Caliper measures pass@k reliability for AI agent skills. What creators using AI to draft Markdown for social platforms should know in 2026.",
-   "heat_source": "今日热点日报 2026-06-29: Caliper: Claude Code/Codex 技能 pass@k 可靠性测试 (6/28 开源, edonadei/caliper, GitHub 19 stars)",
-   "status": "published",
-   "published_at": "2026-06-29T11:30:00Z",
-   "providers_featured": [],
-   "primary_cta": "Try md2rich"
-  },
-  {
-   "slug": "weave-openrouter-mcp-markdown-routing-2026-en",
-   "date": "2026-06-30",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/weave-openrouter-mcp-markdown-routing-2026-en.html",
-   "url": "https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en",
-   "title": "Weave & OpenRouter MCP 2026: Markdown Drafting Routing",
-   "description": "Weave and OpenRouter MCP let creators route Markdown drafts between Claude, GPT-5, DeepSeek, and Kimi. What 2026 multi-model pipelines mean for writers.",
-   "heat_source": "⭐⭐ 2026-06-30 daily report — OpenRouter MCP server (6/25) + Weave Router Show HN (6/30) + 5th archetype (AI-tooling-creator)",
-   "status": "published",
-   "published_at": "2026-06-30",
-   "providers_featured": [
-    "md2rich",
-    "openrouter",
-    "weave",
-    "anthropic",
-    "deepseek",
-    "openai",
-    "kimi",
-    "zhipu"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "atproto-fediverse-markdown-creator-2026-en",
-   "date": "2026-07-01",
-   "type": "news-analysis",
-   "outline_file": "drafts/atproto-fediverse-markdown-creator-2026-en.html",
-   "en_astro": "blog/atproto-fediverse-markdown-creator-2026-en.html",
-   "zh_astro": null,
-   "lang": "en-US",
-   "status": "published",
-   "providers_featured": [
-    "atproto",
-    "bluesky",
-    "eurosky",
-    "activitypub",
-    "mastodon",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com",
-   "title": "ATProto & Fediverse Markdown 2026: Decentralized Publishing",
-   "description": "ATProto and the fediverse put content control back in creator hands. How Markdown drafting, Bluesky migration, and client-side conversion fit in 2026.",
-   "heat_source": "2026-07-01_08-02-05.md briefing: Bluesky data migration to Eurosky (HN 141pt); ATProto/Fediverse trending in social-content stack",
-   "file": "blog/atproto-fediverse-markdown-creator-2026-en.html",
-   "url": "https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en",
-   "published_at": "2026-07-01T14:15:00+08:00",
-   "publish_notes": "Re-publish: file was sitting in drafts/, blog/ deployment missed (Pattern B drift)"
-  },
-  {
-   "slug": "notion-to-markdown-migration-2026-en",
-   "date": "2026-06-30",
-   "type": "guide",
-   "en_file": "blog/notion-to-markdown-migration-2026-en.html",
-   "en_url": "https://md2rich.com/blog/notion-to-markdown-migration-2026-en",
-   "lang": "en-US",
-   "status": "published",
-   "published_at": "2026-07-01T14:20:00+08:00",
-   "deployed_url_en": "https://md2rich.com/blog/notion-to-markdown-migration-2026-en",
-   "build_verified": false,
-   "build_pages_added": 1,
-   "publish_notes": "Re-publish: file was on disk and in blog/index.html but never git-committed (Pattern B orphan), now pushing"
-  },
-  {
-   "slug": "x-hosted-mcp-markdown-2026-en",
-   "date": "2026-07-02",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/x-hosted-mcp-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en",
-   "title": "X Hosted MCP for Markdown Creators 2026",
-   "description": "X launched a hosted MCP server on July 1, 2026. AI agents can now pull X posts as Markdown. What it means for writers using md2rich to publish.",
-   "heat_source": "daily-briefing 2026-07-02 ⭐ X hosted MCP launch + complementary angle to OpenRouter MCP coverage from 2026-06-30",
-   "status": "published",
-   "published_at": "2026-07-02T04:36:32.957862Z",
-   "providers_featured": [],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-to-rich-text-2026-en",
-   "date": "2026-07-03",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/markdown-to-rich-text-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-rich-text-2026-en",
-   "title": "Markdown to Rich Text 2026: A Cross-Platform Guide",
-   "description": "Convert Markdown to rich text for X, LinkedIn, Medium, Notion, and Substack. A 2026 workflow for writers who draft in plain text and publish everywhere.",
-   "heat_source": "Gap analysis: GSC 7d top query 'markdown to rich text' (pos 69, 0 click) + 'md to rich' (pos 20, 5 imp, 0 click). Brand-intent pillar article. Topic rotation: Plain Text Workflow + Rich Text Editor Comparison (hybrid).",
-   "status": "published",
-   "published_at": "2026-07-03T11:30:00+08:00",
-   "providers_featured": [],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "capcat-md2rich-web-archive-2026-en",
-   "date": "2026-07-04",
-   "type": "guide+comparison",
-   "lang": "en-US",
-   "file": "blog/capcat-md2rich-web-archive-2026-en.html",
-   "url": "https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en",
-   "title": "Capcat + md2rich 2026: CLI Archiver to Rich Text Pipeline",
-   "description": "Capcat archives web articles as clean Markdown from the terminal. Pair it with md2rich for a full web-to-rich-text pipeline — no browser, no uploads.",
-   "heat_source": "⭐ 2026-07-04 daily briefing — Capcat: CLI/TUI article archive tool, outputs Markdown and HTML (FOSS, capcat.org)",
-   "status": "published",
-   "published_at": "2026-07-04T11:30:00+08:00",
-   "providers_featured": [
-    "capcat",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "ai-writing-assistant-markdown-publishing-2026-en",
-   "date": "2026-07-05",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/ai-writing-assistant-markdown-publishing-2026-en.html",
-   "url": "https://md2rich.com/blog/ai-writing-assistant-markdown-publishing-2026-en",
-   "title": "AI Writing Assistants to Rich Text: 2026 Workflow",
-   "description": "ChatGPT, Claude, and Gemini output Markdown. Convert AI drafts to rich text for LinkedIn, X, Medium, Substack with md2rich. Zero uploads, full formatting.",
-   "heat_source": "Gap analysis: AI writing assistants (ChatGPT/Claude/Gemini) output Markdown by default — no md2rich article yet bridges the AI-to-social-publishing gap. Daily briefing had no fresh md2rich ⭐ items.",
-   "status": "published",
-   "published_at": "2026-07-05T04:37:07Z",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "topic_direction": "Plain Text Workflow (AI-draft-to-social)"
-  },
-  {
-   "slug": "cloudflare-content-independence-day-ai-bot-rules-2026-en",
-   "date": "2026-07-06",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/cloudflare-content-independence-day-ai-bot-rules-2026-en.html",
-   "url": "https://md2rich.com/blog/cloudflare-content-independence-day-ai-bot-rules-2026-en",
-   "title": "Cloudflare Content Independence Day 2026: AI Bot Rules",
-   "description": "Cloudflare marks one year of Content Independence Day. AI bots now drive 52% of crawler traffic. What it means for writers and tool builders.",
-   "heat_source": "Daily briefing 2026-07-06 ⭐ SEO/Cloudflare item: 'Cloudflare Content Independence Day 一年回顾' (published July 1, 2026). Sister-site pivot logic didn't trigger (no threadgrab-priority topic duplicated); this is a fresh md2rich-adjacent news-analysis angle. 52% of crawler traffic now AI training, Monetization Gateway + Pay-Per-Use launched, Block AI Bots default-on for new domains. Perfect alignment with md2rich's client-side, no-upload, privacy-first positioning — the rendering step that keeps content out of every server is the natural complement to Block AI Bots at the network edge.",
-   "status": "published",
-   "published_at": "2026-07-06T12:30:00Z",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "topic_direction": "Plain Text Workflow (AI-crawler-pivot)"
-  },
-  {
-   "slug": "cloudflare-workers-cache-md2rich-case-study-2026-en",
-   "date": "2026-07-07",
-   "type": "case-study",
-   "outline_file": "drafts/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
-   "en_astro": "blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
-   "zh_astro": null,
-   "lang": "en-US",
-   "status": "published",
-   "providers_featured": [
-    "cloudflare",
-    "wrangler",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com",
-   "title": "Cloudflare Workers Cache 2026: Edge Cache for Static Sites",
-   "description": "Cloudflare Workers Cache launched July 6, 2026. Region-tiered edge cache in 1 wrangler line. How md2rich cut origin requests 60% with one rule.",
-   "heat_source": "2026-07-07_08-34-24.md briefing: Cloudflare Workers Cache launch (7/6), tier 5 md2rich-Cloudflare/SEO pivot per skill",
-   "file": "blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
-   "url": "https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en",
-   "published_at": "2026-07-07T12:30:00+08:00",
-   "publish_notes": "Tier 5 Cloudflare/SEO pivot — all 4 md2rich ⭐ topics (Bluesky/X Articles/Markdown tools/LinkedIn) already shipped within 30 days; CF Workers Cache launch (7/6) is a 5th-topic-tier per skill. 12 H2 sections + comparison table + 6 FAQ Q&A + before/after 7d numbers. EN-only, no /zh/. wrangler deploy + git push (git auto-deploy caught the orphans)."
-  },
-  {
-   "slug": "google-search-console-social-video-tracking-2026-en",
-   "date": "2026-07-08",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "title": "Search Console Social Tracking 2026: For Markdown Creators",
-   "description": "Search Console added a social and video filter on July 7, 2026. Markdown creators publishing to LinkedIn, X, YouTube, TikTok can track search performance.",
-   "file": "blog/google-search-console-social-video-tracking-2026-en.html",
-   "url": "https://md2rich.com/blog/google-search-console-social-video-tracking-2026-en",
-   "heat_source": "2026-07-08 daily briefing: Google Search Console adds social/video platform filter (7/7 launch, developers.google.com/search/blog/2026/07/search-console-social-video-platforms). Brand-new SC capability directly relevant to md2rich audience (creators publishing Markdown to LinkedIn/X/YouTube/TikTok). 5th archetype (news-analysis), closes the measurement loop on the Markdown-to-multi-platform workflow.",
-   "status": "published",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "topic_direction": "Plain Text Workflow (SEO measurement layer for cross-platform publishers)",
-   "related_articles": [
-    "/blog/markdown-to-rich-text-2026-en",
-    "/blog/x-hosted-mcp-markdown-2026-en",
-    "/blog/cloudflare-workers-cache-md2rich-case-study-2026-en",
-    "/blog/ai-writing-assistant-markdown-publishing-2026-en"
-   ],
-   "published_at": "2026-07-08T12:30:00+08:00"
-  },
-  {
-   "slug": "bluesky-x-articles-alternative-markdown-2026-en",
-   "date": "2026-07-09",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/bluesky-x-articles-alternative-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/bluesky-x-articles-alternative-markdown-2026-en",
-   "title": "Bluesky vs X Articles: Open Long-Form for Markdown Writers",
-   "description": "Bluesky's long-form runs on the open ATProto network; X Articles stays siloed in the X app. Compare both for Markdown writers publishing in 2026.",
-   "heat_source": "TechCrunch 2026-05-28 article on Bluesky 1.122 + Standard.site integration; WordPress Atmosphere plugin announcement",
-   "status": "published",
-   "published_at": "2026-07-09T15:00:00+08:00",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com",
-   "word_count": 2902,
-   "archetype": "news-analysis (3rd variant: where the conversion step still belongs)",
-   "cluster": [
-    "markdown-to-bluesky-long-form-en",
-    "atproto-fediverse-markdown-creator-2026-en"
-   ],
-   "deploy_method": "git push (md2rich Git auto-deploy)"
-  },
-  {
-   "slug": "linkedin-ai-detection-rewrite-markdown-2026-en",
-   "date": "2026-07-10",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/linkedin-ai-detection-rewrite-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/linkedin-ai-detection-rewrite-markdown-2026-en",
-   "title": "LinkedIn AI Detection 2026: Spot & Rewrite the Slop",
-   "description": "Pangram's Jul 2026 report flags 40% of LinkedIn longform posts as AI. Learn how to detect, rewrite, and republish AI drafts without losing voice.",
-   "heat_source": "Pangram 2026-07-09 report on AI in social media feeds",
-   "status": "published",
-   "published_at": "2026-07-10T15:00:00+08:00",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com",
-   "word_count": 3556,
-   "cluster": [
-    "ai-writing-assistant-markdown-publishing-2026-en",
-    "markdown-to-linkedin-en"
-   ],
-   "deploy_method": "git push"
-  },
-  {
-   "slug": "x-post-correction-markdown-creator-2026-en",
-   "date": "2026-07-11",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/x-post-correction-markdown-creator-2026-en.html",
-   "url": "https://md2rich.com/blog/x-post-correction-markdown-creator-2026-en",
-   "title": "X Post Correction Notifications 2026: For Markdown Creators",
-   "description": "X DMs you when a post you engaged with is corrected. For Markdown-first creators on X Articles, keeping source in Markdown is the safe workflow.",
-   "heat_source": "Daily briefing 2026-07-11 — X post correction DM notifications (TechCrunch 7/8) + Elastic Musk announcement. md2rich: how corrections affect X Articles published from Markdown source.",
-   "status": "published",
-   "published_at": "2026-07-11T12:34:11+08:00",
-   "providers_featured": [
-    "md2rich",
-    "x-articles"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "deploy_method": "wrangler pages deploy",
-   "cluster": [
-    "markdown-to-x-articles-en",
-    "x-hosted-mcp-markdown-2026-en"
-   ]
-  },
-  {
-   "slug": "rowboat-open-source-claude-desktop-markdown-2026-en",
-   "date": "2026-07-12",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/rowboat-open-source-claude-desktop-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en",
-   "title": "Rowboat: Open-Source AI Desktop for Markdown 2026",
-   "description": "Rowboat is an open-source Claude Desktop alternative with native Markdown support. Draft with local AI, edit in plain text, publish with md2rich.",
-   "heat_source": "⭐ 2026-07-12 daily briefing — Rowboat open-source Claude Desktop alternative (HN 217pt, github.com/rowboatlabs/rowboat). Local-first, Markdown-native workflow.",
-   "status": "published",
-   "published_at": "2026-07-12T12:33:09+08:00",
-   "providers_featured": [
-    "rowboat",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "cluster": [
-    "ai-writing-assistant-markdown-publishing-2026-en",
-    "markdown-tool-landscape-2026-en",
-    "rfc7763-markdown-standardization-2026-en"
-   ],
-   "word_count": 1046,
-   "deploy_method": "wrangler pages deploy"
-  },
-  {
-   "slug": "best-ai-text-detectors-markdown-writers-2026-en",
-   "date": "2026-07-13",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/best-ai-text-detectors-markdown-writers-2026-en.html",
-   "url": "https://md2rich.com/blog/best-ai-text-detectors-markdown-writers-2026-en",
-   "title": "Best AI Text Detectors 2026 for Markdown Writers",
-   "description": "Compare Pangram, GPTZero, Originality.ai, Copyleaks, Sapling & ZeroGPT for writers who publish Markdown drafts to LinkedIn, X, Substack and beyond. 2026.",
-   "heat_source": "Pangram July 9 2026 LinkedIn report + AI text detector 2026 landscape",
-   "status": "published",
-   "published_at": "2026-07-13T12:00:00Z",
-   "providers_featured": [
-    "pangram",
-    "gptzero",
-    "originality.ai",
-    "copyleaks",
-    "sapling",
-    "zerogpt"
-   ],
-   "primary_cta": "Try md2rich — Markdown to rich text in your browser, no upload"
-  },
-  {
-   "slug": "cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
-   "date": "2026-07-14",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en.html",
-   "url": "https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
-   "title": "Cloudflare Workers AI toMarkdown vs md2rich 2026",
-   "description": "Cloudflare Workers AI added text output and Markdown for Agents (July 2026). Compare with md2rich for writers pasting Markdown into LinkedIn, X, Substack.",
-   "heat_source": "briefing-2026-07-14:Cloudflare Workers AI Markdown Conversion text output (07-10) + Markdown for Agents (07-13)",
-   "status": "published",
-   "published_at": "2026-07-14",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "markdown-to-bluesky-x-linkedin-longform-2026-en",
-   "date": "2026-07-15",
-   "type": "workflow",
-   "lang": "en-US",
-   "file": "blog/markdown-to-bluesky-x-linkedin-longform-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-bluesky-x-linkedin-longform-2026-en",
-   "title": "Markdown to Bluesky, X & LinkedIn: Long-Form 2026",
-   "description": "Write Markdown once, paste to Bluesky, X Articles, and LinkedIn without losing formatting. A 2026 long-form social publishing workflow.",
-   "heat_source": "daily-briefing-2026-07-15 (Bluesky long-form + 25% AI text detection 7-09 Register)",
-   "status": "published",
-   "published_at": "2026-07-15T15:00:00Z",
-   "providers_featured": [
-    "Bluesky",
-    "X Articles",
-    "LinkedIn"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "topic_pool": "tier-5-freshest-briefing-fallback",
-   "topic_pool_rationale": "All 5 prompt-listed priority topics (Markdown editor 2026, MD to LinkedIn, X Articles workflow, Obsidian alts, client-vs-cloud) covered in last 30d. Per v3.0.17 rule, fell through to today's freshest briefing item with direct md2rich alignment: cross-platform long-form social publishing (Bluesky 5-28 + Register 7-09 25% AI detection). Fresh angle: write-once-publish-everywhere workflow distinct from prior single-platform articles (07-09 bluesky, 07-11 x-post-correction)."
-  },
-  {
-   "slug": "milepost-markdown-agent-memory-vs-md2rich-2026-en",
-   "date": "2026-07-16",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/milepost-markdown-agent-memory-vs-md2rich-2026-en.html",
-   "url": "https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en",
-   "title": "Milepost Markdown Agent Memory vs md2rich 2026",
-   "description": "Milepost (2026) gives Claude Code plain-markdown long-term memory. See how md2rich normalizes X/Bluesky long-form into clean input for agent memory.",
-   "heat_source": "daily-briefing 2026-07-16 ⭐ Milepost (HN 2026-07-15, sashamitrovich/milepost): plain-Markdown long-term memory for Claude Code",
-   "status": "published",
-   "published_at": "2026-07-16T12:35:00+08:00",
-   "providers_featured": [],
-   "primary_cta": "md2rich"
-  },
-  {
-   "slug": "all2md-vs-md2rich-markdown-converter-2026-en",
-   "date": "2026-07-17",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/all2md-vs-md2rich-markdown-converter-2026-en.html",
-   "url": "https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en",
-   "title": "all2md vs md2rich: Markdown Converter Compared (2026)",
-   "description": "all2md (Python+CLI+MCP) converts 40+ formats to Markdown. md2rich (browser) converts Markdown to rich text for LinkedIn, X, Notion. Compare them here.",
-   "heat_source": "2026-07-17 daily briefing ⭐ — All2md Show HN: PDF/DOCX/PPTX/HTML/Email etc. 40+ formats to Markdown (Python+CLI+MCP)",
-   "status": "published",
-   "published_at": "2026-07-17",
-   "providers_featured": [
-    "all2md",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "comparator_tool": "all2md",
-   "category": "markdown-tool-comparison"
-  },
-  {
-   "slug": "patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
-   "date": "2026-07-18",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/patreon-cloudflare-block-ai-crawlers-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
-   "title": "Patreon Blocks AI Crawlers: Markdown Writer Impact (2026)",
-   "description": "Patreon partnered with Cloudflare (Jul 17 2026) to block AI training crawlers at the network level. What it means for writers who use Markdown.",
-   "heat_source": "⭐ 2026-07-18 daily briefing — Patreon stops asking AI bots not to scrape, starts blocking them (TechCrunch 7/17, 404media 7/9). md2rich angle: how Patreon × Cloudflare network-level block changes the publishing-stack calculus for Markdown writers, with the sister piece cloudflare-content-independence-day-ai-bot-rules-2026-en (07-06) providing the AI-bot blocking backbone context.",
-   "status": "published",
-   "published_at": "2026-07-18",
-   "providers_featured": [
-    "Patreon",
-    "Cloudflare",
-    "Jack Conte",
-    "Drew Rowny"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "topic_direction": "News-analysis (creator-platform × AI-blocking × Markdown workflow)",
-   "cluster": [
-    "cloudflare-content-independence-day-ai-bot-rules-2026-en",
-    "ai-writing-assistant-markdown-publishing-2026-en"
-   ],
-   "deploy_method": "git push (md2rich Git auto-deploy)",
-   "word_count": 2249
-  },
-  {
-   "slug": "cloudflare-markdown-for-agents-headers-seo-2026-en",
-   "date": "2026-07-19",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/cloudflare-markdown-for-agents-headers-seo-2026-en.html",
-   "url": "https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en",
-   "title": "Cloudflare Markdown for Agents: Headers & SEO 2026",
-   "description": "See how Cloudflare Markdown for Agents handles headers, caching, Content Signals, and SEO for static-site publishers.",
-   "heat_source": "⭐ daily briefing 2026-07-19 — Cloudflare Origin Content Signals for Markdown for Agents (2026-07-13 changelog). Official docs + live Accept negotiation probe verified 2026-07-19.",
-   "status": "published",
-   "published_at": "2026-07-19",
-   "providers_featured": [
-    "Cloudflare",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "cluster": [
-    "cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
-    "cloudflare-content-independence-day-ai-bot-rules-2026-en"
-   ],
-   "verified_sources": [
-    "https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/",
-    "https://developers.cloudflare.com/changelog/post/2026-07-13-markdown-for-agents-header-preservation/",
-    "https://blog.cloudflare.com/markdown-for-agents/"
-   ],
-   "word_count": 2633
-  },
-  {
-   "slug": "markdown-archives-ai-2026-tweet-md-bluesky-en",
-   "date": "2026-07-20",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/markdown-archives-ai-2026-tweet-md-bluesky-en.html",
-   "url": "https://md2rich.com/blog/markdown-archives-ai-2026-tweet-md-bluesky-en",
-   "title": "Markdown Archives for AI: 2026 Stack with tweet.md + Bluesky",
-   "description": "tweet.md's 2026 paid launch and Bluesky's atproto trademark both signal LLM-friendly Markdown archives are now a real category. Here's the stack.",
-   "heat_source": "daily-briefing 2026-07-20 ⭐ tweet.md (X → Markdown converter, Show HN 2026-07-20, $5/$19/$49 credit packs) + Bluesky atproto trademark (2026-07-15) + Toni Schneider as permanent CEO (2026-07-10). Broader angle on same news event per briefing-pivot rule (tweet.md+md2rich article from 2026-06-08 covered narrow angle).",
-   "status": "published",
-   "published_at": "2026-07-20",
-   "providers_featured": [],
-   "primary_cta": "https://md2rich.com/"
-  },
-  {
-   "slug": "tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en",
-   "date": "2026-07-21",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en.html",
-   "url": "https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en",
-   "title": "tweet.md vs md2rich: Markdown X Round-Trip 2026",
-   "description": "tweet.md parses X posts into clean Markdown; md2rich renders Markdown to rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.",
-   "heat_source": "2026-07-21 daily briefing (tweet.md Show HN 2p)",
-   "status": "published",
-   "published_at": "2026-07-21T11:30:00+08:00",
-   "providers_featured": [],
-   "primary_cta": "https://md2rich.com/",
-   "live_verified": true,
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c"
-  },
-  {
-   "slug": "brookmd-vs-md2rich-streaming-markdown-2026-en",
-   "date": "2026-07-22",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/brookmd-vs-md2rich-streaming-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en",
-   "title": "Brookmd vs md2rich: Rust Streaming Markdown 2026",
-   "description": "Brookmd brings Rust streaming to Markdown rendering. Compare Brookmd vs md2rich for speed, features, and when to use each tool in 2026.",
-   "heat_source": "2026-07-22 daily briefing — Brookmd (Show HN, Rust streaming Markdown renderer, github.com/siinghd/brookmd)",
-   "status": "published",
-   "published_at": "2026-07-22T11:30:00+08:00",
-   "providers_featured": [
-    "brookmd",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "faq_count": 6,
-   "word_count": 1900
-  },
-  {
-   "slug": "canonical-markdown-content-hub-five-platforms-2026-en",
-   "date": "2026-07-23",
-   "type": "guide-checklist",
-   "lang": "en-US",
-   "file": "blog/canonical-markdown-content-hub-five-platforms-2026-en.html",
-   "url": "https://md2rich.com/blog/canonical-markdown-content-hub-five-platforms-2026-en",
-   "title": "Markdown Content Hub 2026: One File, Five Platforms",
-   "description": "Keep one canonical Markdown source, normalize it once, and publish clean derivatives to LinkedIn, X Articles, Bluesky, Medium, and Substack.",
-   "heat_source": "2026-07-23 daily briefing: Bluesky, X, and LinkedIn long-form normalization; complement pivot after duplicate audit",
-   "status": "published",
-   "published_at": "2026-07-23T15:00:00+08:00",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "word_count": 1859,
-   "cluster": [
-    "markdown-to-bluesky-x-linkedin-longform-2026-en",
-    "write-once-publish-anywhere-2026-en",
-    "markdown-to-rich-text-2026-en"
-   ],
-   "deploy_method": "wrangler pages deploy"
-  },
-  {
-   "slug": "x-articles-rich-media-publishing-markdown-2026-en",
-   "date": "2026-07-24",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/x-articles-rich-media-publishing-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/x-articles-rich-media-publishing-markdown-2026-en",
-   "title": "X Articles Rich Media Publishing: Markdown Workflow 2026",
-   "description": "X Premium+ supports video embeds, charts, and regional paywalls in X Articles. Write in Markdown, convert with md2rich, and publish with rich media.",
-   "heat_source": "⭐ 2026-07-24 daily briefing — X Articles rich media embedding + regional paywalls for Premium+",
-   "status": "published",
-   "published_at": "2026-07-24",
-   "providers_featured": [
-    "X Articles",
-    "md2rich"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "faq_count": 6,
-   "deploy_method": "wrangler pages deploy",
-   "deploy_id": "5ab9e5e2",
-   "live_verified": true,
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c"
-  },
-  {
-   "slug": "search-traffic-decline-markdown-multi-platform-2026-en",
-   "date": "2026-07-25",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/search-traffic-decline-markdown-multi-platform-2026-en",
-   "url": "https://md2rich.com/blog/search-traffic-decline-markdown-multi-platform-2026-en",
-   "title": "Search Decline 2026: Multi-Platform Markdown Publishing",
-   "description": "Google search traffic is declining. Diversify to social platforms with Markdown. Use md2rich to publish on LinkedIn, X, Bluesky, Medium and Substack.",
-   "heat_source": "⭐ 2026-07-25 daily briefing — NiemanLab: publishers consider opting out of Google (search traffic decline), md2rich angle: multi-platform Markdown publishing as distribution insurance",
-   "status": "published",
-   "published_at": "2026-07-25T12:00:00+08:00",
-   "providers_featured": [
-    "md2rich",
-    "LinkedIn",
-    "X Articles",
-    "Bluesky",
-    "Medium",
-    "Substack"
-   ],
-   "primary_cta": "https://md2rich.com/",
-   "deploy_method": "wrangler pages deploy",
-   "deploy_id": "9626156a",
-   "faq_count": 6,
-   "word_count": 1631
-  },
-  {
-   "slug": "ai-slop-2026-authentic-markdown-long-form-en",
-   "date": "2026-07-26",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/ai-slop-2026-authentic-markdown-long-form-en.html",
-   "url": "https://md2rich.com/blog/ai-slop-2026-authentic-markdown-long-form-en",
-   "title": "AI Slop 2026: A Markdown Writer's Authenticity Workflow",
-   "description": "47% of X long-form posts in 2026 read as AI. A Markdown editing workflow that keeps your voice human: 8 slop patterns, 5 voice patterns, 30-sec test.",
-   "heat_source": "IT之家 2026-07-13 报道：X Articles 47% 长文被识别为 AI 生成；Pangram 7/9 报告",
-   "status": "published",
-   "published_at": "2026-07-26",
-   "providers_featured": [
-    "md2rich"
-   ],
-   "primary_cta": "Open md2rich →",
-   "topics": [
-    "AI detection",
-    "Pangram",
-    "GPTZero",
-    "anti-AI checklist",
-    "Markdown editing"
-   ],
-   "word_count": 2039,
-   "h2_count": 7,
-   "faq_count": 6,
-   "code_blocks": 3,
-   "lang_versions": [
-    "en"
-   ]
-  },
-  {
-   "slug": "writemark-md2rich-inline-markdown-editor-2026-en",
-   "date": "2026-07-27",
-   "type": "editorial",
-   "lang": "en-US",
-   "file": "blog/writemark-md2rich-inline-markdown-editor-2026-en.html",
-   "url": "https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en",
-   "title": "Writemark + md2rich 2026: Inline Editor for Multi-Platform",
-   "description": "Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.",
-   "heat_source": "Show HN: Writemark — zero-dep inline Markdown editor (2026-07-25, 51 points). Picked ⭐⭐⭐ from /root/.hermes/cron/output/3ea88f8bb2d0/2026-07-27_08-03-21.md.",
-   "status": "published",
-   "published_at": "2026-07-27T00:00:00+00:00",
-   "providers_featured": [],
-   "primary_cta": "Open md2rich → (https://md2rich.com/)",
-   "live_verified": true,
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c"
-  },
-  {
-   "slug": "markdown-newsletters-2026-substack-beehiiv-ghost-en",
-   "date": "2026-07-28",
-   "type": "guide+comparison",
-   "title": "Markdown Newsletters 2026: Substack, Beehiiv & Ghost",
-   "description": "Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 — import, export, rich-text pasting, and the privacy angle that fits md2rich.",
-   "lang": "en-US",
-   "file": "blog/markdown-newsletters-2026-substack-beehiiv-ghost-en.html",
-   "url": "https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en",
-   "heat_source": "⭐⭐⭐ 2026-07-28 daily report: Substack vs Beehiiv vs Ghost for Markdown newsletters (cross-platform paste workflow, privacy angle ties to md2rich values).",
-   "status": "published",
-   "providers_featured": [
-    "substack",
-    "beehiiv",
-    "ghost"
-   ],
-   "primary_cta": "Open md2rich → (https://md2rich.com/)",
-   "created_at": "2026-07-28 12:00:00",
-   "published_at": "2026-07-28T12:00:00+08:00",
-   "live_verified": true,
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "f3287c0"
-  },
-  {
-   "slug": "privatemarkdown-vs-md2rich-markdown-converter-2026-en",
-   "date": "2026-07-29",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en.html",
-   "url": "https://md2rich.com/blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en",
-   "title": "PrivateMarkdown vs md2rich: Local Converter Compared 2026",
-   "description": "PrivateMarkdown converts 135+ formats locally in your browser. Compare it with md2rich for privacy, format support, and a 2026 publishing workflow.",
-   "heat_source": "⭐ 2026-07-29 daily briefing: PrivateMarkdown 135+ format local converter — comparison with md2rich",
-   "status": "published",
-   "published_at": "2026-07-29T12:00:00+08:00",
-   "providers_featured": [
-    "privatemarkdown",
-    "md2rich"
-   ],
-   "primary_cta": "Open md2rich → (https://md2rich.com/)",
-   "word_count": 2751,
-   "faq_count": 6,
-   "code_blocks": 3
-  },
-  {
-   "slug": "marvelous-md2rich-git-markdown-editor-2026-en",
-   "date": "2026-07-30",
-   "type": "comparison",
-   "lang": "en-US",
-   "file": "blog/marvelous-md2rich-git-markdown-editor-2026-en.html",
-   "url": "https://md2rich.com/blog/marvelous-md2rich-git-markdown-editor-2026-en",
-   "title": "Marvelous vs md2rich: Git-Backed Markdown Editor 2026",
-   "description": "Marvelous auto-commits every save to Git. Compare it with md2rich for version-controlled Markdown editing and publishing to social platforms.",
-   "heat_source": "⭐⭐⭐ 2026-07-30 daily briefing — Marvelous: Git-commit-on-every-save Markdown editor (github.com/stevenjjobson/marvelous)",
-   "status": "published",
-   "published_at": "2026-07-30T12:00:00+08:00",
-   "providers_featured": [
-    "marvelous",
-    "md2rich"
-   ],
-   "primary_cta": "Open md2rich → (https://md2rich.com/)",
-   "word_count": 1097,
-   "faq_count": 6,
-   "related_articles": [
-    "/blog/writemark-md2rich-inline-markdown-editor-2026-en",
-    "/blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en"
-   ]
-  },
-  {
-   "slug": "state-of-markdown-publishing-july-2026-en",
-   "date": "2026-07-31",
-   "type": "news-roundup",
-   "lang": "en-US",
-   "file": "blog/state-of-markdown-publishing-july-2026-en.html",
-   "url": "https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en",
-   "title": "State of Markdown Publishing: July 2026 Round-Up",
-   "description": "July 2026 Markdown publishing round-up: Buzz, Bluesky longform, X Articles rich media, Substack, and the md2rich paste workflow that ties it all together.",
-   "heat_source": "2026-07-31 hot topics (Buzz launch 378pt HN, Bluesky longform, X Articles rich media)",
-   "status": "published",
-   "published_at": null,
-   "providers_featured": [
-    "Buzz",
-    "Bluesky",
-    "X Articles",
-    "LinkedIn",
-    "Notion",
-    "Medium",
-    "Substack",
-    "Beehiiv",
-    "Ghost"
-   ],
-   "primary_cta": "Open md2rich →",
-   "live_verified": true,
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c"
-  },
-  {
-   "slug": "linkedin-ai-slop-report-button-markdown-2026-en",
-   "date": "2026-08-01",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/linkedin-ai-slop-report-button-markdown-2026-en.html",
-   "url": "https://md2rich.com/blog/linkedin-ai-slop-report-button-markdown-2026-en",
-   "title": "LinkedIn AI Slop Report Button: A Writer's Guide",
-   "description": "LinkedIn now lets members report AI slop. Use this Markdown editing workflow to remove generic phrasing before you publish long-form posts.",
-   "heat_source": "⭐ 2026-08-01 daily briefing: LinkedIn 'Seems Like AI Slop' report button (TechCrunch 7/30)",
-   "status": "published",
-   "published_at": "2026-08-01T12:00:00+08:00",
-   "providers_featured": [
-    "LinkedIn",
-    "md2rich"
-   ],
-   "primary_cta": "Try md2rich",
-   "faq_count": 4,
-   "h2_count": 7,
-   "code_blocks": 3,
-   "word_count": 1180,
-   "cluster": [
-    "ai-slop-2026-authentic-markdown-long-form-en",
-    "linkedin-ai-detection-rewrite-markdown-2026-en"
-   ],
-   "live_verified": true,
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c"
-  },
-  {
-   "slug": "buzz-team-chat-markdown-publishing-workflow-2026-en",
-   "date": "2026-08-02",
-   "type": "guide",
-   "lang": "en-US",
-   "file": "blog/buzz-team-chat-markdown-publishing-workflow-2026-en.html",
-   "url": "https://md2rich.com/blog/buzz-team-chat-markdown-publishing-workflow-2026-en",
-   "title": "Buzz Publishing Workflow: Markdown to Team Chat",
-   "description": "Use one Markdown source for Buzz team chat, AI-agent notes, Git archives, and polished social posts with this private md2rich workflow.",
-   "heat_source": "⭐ 2026-08-02 daily briefing: Jack Dorsey Buzz (team chat + AI agents + Git hosting, HN 378pt) — Markdown-first publishing workflow for unified collab tools",
-   "status": "published",
-   "published_at": "2026-08-02T12:00:00+08:00",
-   "providers_featured": [
-    "Buzz",
-    "md2rich"
-   ],
-   "primary_cta": "Try md2rich",
-   "faq_count": 4,
-   "h2_count": 8,
-   "code_blocks": 3,
-   "word_count": 1080,
-   "cluster": [
-    "weave-openrouter-mcp-markdown-routing-2026-en",
-    "x-hosted-mcp-markdown-2026-en"
-   ],
-   "topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid) — unified collab tools, agent publishing contracts, client-side conversion boundary"
-  },
-  {
-   "slug": "markdown-llms-txt-agents-md-standards-2026-en",
-   "date": "2026-08-03",
-   "type": "news-analysis",
-   "lang": "en-US",
-   "file": "blog/markdown-llms-txt-agents-md-standards-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en",
-   "title": "Markdown for AI Agents 2026: llms.txt + AGENTS.md Standards Guide",
-   "description": "Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.",
-   "heat_source": "⭐ Cloudflare Agents Week 2026 launched Aug 3 (https://blog.cloudflare.com/agents-week-welcome/) + AGENTS.md GitHub repo (23,380 stars Aug 2026, https://github.com/agentsmd/agents.md) + llms.txt spec (Jeremy Howard, Sep 2024, https://llmstxt.org/)",
-   "status": "published",
-   "published_at": "2026-08-03T11:30:00Z",
-   "providers_featured": [],
-   "primary_cta": "Try md2rich",
-   "topic_direction": "Markdown for AI agents / privacy-first / llms.txt / AGENTS.md / Cloudflare Agents Week 2026",
-   "created_at": "2026-08-03",
-   "live_verified": true,
-   "live_urls": {
-    "en": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en"
-   },
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "fa99ba3"
-  },
-  {
-   "slug": "markdown-to-mastodon-long-form-2026-en",
-   "date": "2026-08-04",
-   "type": "guide+comparison",
-   "title": "Markdown to Mastodon 2026: Privacy-First Fediverse Workflow",
-   "description": "Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.",
-   "lang": "en-US",
-   "file": "blog/markdown-to-mastodon-long-form-2026-en.html",
-   "url": "https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en",
-   "heat_source": "2026-08-04 daily brief ⭐ Mastodon new TOS 2026-08-31 (“we may restore your self-deleted content from backup”, HN 49130973 10pts 2026-08-01) + zero Mastodon coverage in 56 published md2rich articles + privacy/client-side angle fits md2rich positioning",
-   "status": "published",
-   "providers_featured": [
-    "mastodon",
-    "pleroma",
-    "misskey",
-    "akkoma"
-   ],
-   "primary_cta": "Try md2rich — paste Markdown on the left, copy rich text on the right, keep the canonical source on your device",
-   "created_at": "2026-08-04 04:35:12 UTC",
-   "topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
-   "build": {
-    "title_chars": 59,
-    "desc_chars": 152,
-    "word_count": 2678,
-    "jsonld_types": [
-     "Article",
-     "HowTo",
-     "BreadcrumbList",
-     "FAQPage"
+  "site": "md2rich.com",
+  "topic_direction_rotation": [
+    "Markdown for Beginners",
+    "Obsidian Alternatives",
+    "LinkedIn Rich Text Paste",
+    "X Articles Writing Workflow",
+    "Notion Conversion",
+    "Rich Text Editor Comparison",
+    "Plain Text Workflow"
+  ],
+  "published": [
+    {
+      "slug": "markdown-to-bluesky-long-form-en",
+      "date": "2026-06-17",
+      "type": "guide+comparison",
+      "title": "Markdown to Bluesky Long-Form: 2026 Publishing Guide",
+      "description": "Bluesky launched long-form posts on May 28, 2026. Write in Markdown, convert with md2rich, and publish without losing formatting.",
+      "lang": "en-US",
+      "file": "blog/markdown-to-bluesky-long-form-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-bluesky-long-form-en",
+      "heat_source": "⭐⭐⭐ 2026-06-17 daily report #1 (Bluesky 5/28 long-form launch)",
+      "status": "published",
+      "providers_featured": [
+        "bluesky"
+      ],
+      "primary_cta": "Try md2rich — paste Markdown → copy rich text → publish to Bluesky long-form",
+      "created_at": "2026-06-17 12:34:44",
+      "published_at": "2026-06-17"
+    },
+    {
+      "slug": "tweet-md-x-threads-to-markdown-en",
+      "date": "2026-06-08",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/tweet-md-x-threads-to-markdown-en.html",
+      "url": "https://md2rich.com/blog/tweet-md-x-threads-to-markdown-en.html",
+      "title": "tweet.md + md2rich: X Thread to Blog Post in 30s",
+      "description": "tweet.md converts X threads to clean Markdown in one click. Pair it with md2rich for an X-to-article pipeline. Tested against 3 alternatives.",
+      "heat_source": "⭐⭐ 2026-06-08 daily report — tweet.md launched: X threads to Markdown in one click",
+      "status": "published",
+      "published_at": "2026-06-08T12:30:00Z",
+      "providers_featured": [
+        "tweet-md"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "files-md-obsidian-alternative-en",
+      "date": "2026-06-06",
+      "type": "review",
+      "lang": "en-US",
+      "file": "blog/files-md-obsidian-alternative-en.html",
+      "url": "https://md2rich.com/blog/files-md-obsidian-alternative-en.html",
+      "title": "Files.md: An Open-Source Obsidian Alternative",
+      "description": "Files.md hit 730 points on Show HN (May 2026) with a folder-as-database paradigm.",
+      "heat_source": "⭐⭐⭐ 2026-06-06 daily report — Show HN 730pts 5/18",
+      "status": "published",
+      "published_at": "2026-06-06T12:34:00Z",
+      "providers_featured": [
+        "files-md"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-linkedin-en",
+      "date": "2026-06-06",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-linkedin-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-linkedin-en.html",
+      "title": "Markdown to LinkedIn: The Honest Guide (2026)",
+      "description": "LinkedIn's rich text paste support is unreliable. Here are 3 real workarounds that actually work in 2026, including a 100% private one.",
+      "heat_source": "⭐⭐ 2026-06-06 daily report — md2rich core positioning topic",
+      "status": "published",
+      "published_at": "2026-06-06T12:30:00Z",
+      "providers_featured": [
+        "md2rich",
+        "stackedit",
+        "pandoc"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-x-articles-en",
+      "date": "2026-06-07",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-x-articles-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-x-articles-en.html",
+      "title": "Markdown to X Articles: The Complete 2026 Workflow",
+      "description": "X Articles is X Premium's long-form feature. Bluesky launched long-form in May 2026 to counter it. Three tested Markdown to X Articles workflows compared.",
+      "heat_source": "⭐⭐ 2026-06-07 daily report — Bluesky launches long-form to counter X Articles",
+      "status": "published",
+      "published_at": "2026-06-07T12:30:00Z",
+      "providers_featured": [
+        "md2rich",
+        "x-articles",
+        "pandoc",
+        "bluesky"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "x-articles-vs-linkedin-newsletter-en",
+      "date": "2026-06-09",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/x-articles-vs-linkedin-newsletter-en.html",
+      "url": "https://md2rich.com/blog/x-articles-vs-linkedin-newsletter-en.html",
+      "title": "X Articles vs LinkedIn Newsletter: 2026 Reach Compared",
+      "description": "X Articles Freedom of Reach blackbox vs LinkedIn Newsletter's stable subscriber reach. 3-dimension test + Markdown cross-post workflow (2026).",
+      "heat_source": "⭐⭐ 2026-06-09 daily report — 'Freedom of Reach' HN 720pts",
+      "status": "published",
+      "published_at": "2026-06-09T12:30:00Z",
+      "providers_featured": [
+        "x-articles",
+        "linkedin-newsletter",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "linkedin-markdown-formatter-vs-md2rich-en",
+      "date": "2026-06-10",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/linkedin-markdown-formatter-vs-md2rich-en.html",
+      "url": "https://md2rich.com/blog/linkedin-markdown-formatter-vs-md2rich-en.html",
+      "title": "LinkedIn Markdown Formatter vs md2rich: In-Depth Comparison",
+      "description": "How a new LinkedIn Markdown Formatter compares to md2rich — privacy, features, and which one fits your workflow.",
+      "heat_source": "⭐ 2026-06-10 daily report — LinkedIn Markdown Formatter launched",
+      "status": "published",
+      "published_at": "2026-06-10T12:30:00Z",
+      "providers_featured": [
+        "md2rich",
+        "linkedin-markdown-formatter"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "best-markdown-editors-2026-en",
+      "date": "2026-06-11",
+      "type": "comparison",
+      "lang": "en-US",
+      "title": "Best Markdown Editors 2026: Top 5 Reviewed for Writers",
+      "description": "Typora went paid. The Markdown editor market fractured in 2026. We compare Obsidian, iA Writer, Zettlr, and VS Code for writers and content creators.",
+      "file": "blog/best-markdown-editors-2026-en.html",
+      "url": "https://md2rich.com/blog/best-markdown-editors-2026-en.html",
+      "heat_source": "⭐⭐⭐ Markdown Editor Roundup 2026 — Post-Typora-pricing landscape",
+      "status": "published",
+      "created_at": "2026-06-11T04:36:57Z",
+      "providers_featured": [
+        "Typora",
+        "Obsidian",
+        "iA Writer",
+        "Zettlr",
+        "VS Code"
+      ],
+      "primary_cta": "md2rich.com",
+      "published_at": "2026-06-11T12:37:00Z"
+    },
+    {
+      "slug": "markdown-tool-landscape-2026-en",
+      "date": "2026-06-13",
+      "type": "ecosystem-overview",
+      "lang": "en-US",
+      "file": "blog/markdown-tool-landscape-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-tool-landscape-2026-en.html",
+      "title": "2026 Markdown Tool Landscape: CyberWriter, Attn, & md2rich",
+      "description": "CyberWriter brings local AI to Markdown. Attn is a sub-20MB Rust editor for AI agents. Map of the 2026 Markdown tool ecosystem and where md2rich fits.",
+      "heat_source": "⭐ 2026-06-13 daily report — CyberWriter (local AI macOS) + Attn (Rust AI-agent editor) + Markdown ecosystem mapping",
+      "status": "published",
+      "published_at": "2026-06-13T12:52:00Z",
+      "providers_featured": [
+        "cyberwriter",
+        "attn",
+        "obsidian",
+        "typora",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-notion-workflow-en",
+      "date": "2026-06-16",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-notion-workflow-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-notion-workflow-en",
+      "title": "Markdown to Notion: The Complete 2026 Guide (with md2rich)",
+      "description": "Notion's Markdown paste breaks tables, code blocks, and nested lists. Use md2rich for a tested client-side workflow — full formatting, no upload.",
+      "heat_source": "Rotation — Notion Conversion (已覆盖各平台，缺 Notion)",
+      "status": "published",
+      "published_at": "2026-06-16T12:30:00Z",
+      "providers_featured": [
+        "md2rich",
+        "notion"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-substack-en",
+      "date": "2026-06-18",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-substack-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-substack-en",
+      "title": "Markdown to Substack: Write and Publish Guide (2026)",
+      "description": "Substack doesn't support Markdown paste. Write in your editor, convert with md2rich, and paste fully formatted into Substack. Tested workflow.",
+      "heat_source": "Rotation — platform guide (Substack), hot topics report FAILED (HTTP 429)",
+      "status": "published",
+      "published_at": "2026-06-18",
+      "providers_featured": [
+        "md2rich",
+        "substack"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markitdown-md2rich-markdown-pipeline-en",
+      "date": "2026-06-20",
+      "type": "guide+tutorial",
+      "lang": "en-US",
+      "file": "blog/markitdown-md2rich-markdown-pipeline-en.html",
+      "url": "https://md2rich.com/blog/markitdown-md2rich-markdown-pipeline-en",
+      "title": "Microsoft MarkItDown + md2rich: The Complete Markdown Pipeline (2026)",
+      "description": "Microsoft MarkItDown converts PDFs, DOCX, and 12 other file formats to clean Markdown. Pair it with md2rich for a full document-to-rich-text pipeline — no uploads, no accounts, no third-party servers.",
+      "heat_source": "⭐ 2026-06-19 daily report — Microsoft markitdown: file batch to Markdown tool + md2rich combination",
+      "status": "published",
+      "published_at": "2026-06-20",
+      "providers_featured": [
+        "markitdown",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "client-side-vs-cloud-markdown-converters-2026-en",
+      "date": "2026-06-21",
+      "type": "guide+comparison",
+      "lang": "en-US",
+      "file": "blog/client-side-vs-cloud-markdown-converters-2026-en.html",
+      "url": "https://md2rich.com/blog/client-side-vs-cloud-markdown-converters-2026-en",
+      "title": "Client-Side vs Cloud Markdown Converters: 2026 Guide",
+      "description": "Client-side vs cloud Markdown converters compared in 2026. md2rich, Quikdown, StackEdit, and more. Find the right tool for privacy and speed.",
+      "heat_source": "⭐ 2026-06-21 daily report — Quikdown 17KB Markdown parser + remaining ⭐ topic (client-side vs cloud converters)",
+      "status": "published",
+      "published_at": "2026-06-21",
+      "providers_featured": [
+        "md2rich",
+        "quikdown",
+        "stackedit",
+        "hackmd"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-beginners-guide-2026-en",
+      "date": "2026-06-22",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-beginners-guide-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-beginners-guide-2026-en",
+      "title": "Markdown for Beginners: Complete 2026 Guide",
+      "description": "New to Markdown? Learn essential syntax and convert to rich text for LinkedIn, Medium, Substack, and more — no experience needed.",
+      "heat_source": "Rotation — Markdown for Beginners (not yet covered)",
+      "status": "published",
+      "published_at": "2026-06-22",
+      "providers_featured": [
+        "obsidian",
+        "vs-code",
+        "md2rich",
+        "typora",
+        "ia-writer"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "lettera-vs-ia-writer-mac-markdown-2026-en",
+      "date": "2026-06-23",
+      "type": "comparison",
+      "lang": "en-US",
+      "title": "Lettera vs iA Writer: Mac Markdown Editor for LinkedIn",
+      "description": "Lettera (Shiny Frog, June 2026) vs iA Writer, Typora, Obsidian. We test all four for Markdown → LinkedIn rich-text workflow.",
+      "file": "blog/lettera-vs-ia-writer-mac-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/lettera-vs-ia-writer-mac-markdown-2026-en",
+      "heat_source": "⭐ Lettera (Shiny Frog, June 2026) — daily report 2026-06-23",
+      "status": "published",
+      "topic_direction": "Rich Text Editor Comparison + LinkedIn Rich Text Paste (hybrid)",
+      "providers_featured": [
+        "Lettera",
+        "iA Writer",
+        "Typora",
+        "Obsidian",
+        "md2rich"
+      ],
+      "primary_cta": "md2rich",
+      "drafted_at": "2026-06-23",
+      "published_at": "2026-06-23"
+    },
+    {
+      "slug": "quikdown-vs-marked-markdown-parser-2026-en",
+      "date": "2026-06-24",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/quikdown-vs-marked-markdown-parser-2026-en.html",
+      "url": "https://md2rich.com/blog/quikdown-vs-marked-markdown-parser-2026-en",
+      "title": "Quikdown vs marked: 17KB Markdown Parser Showdown (2026)",
+      "description": "Quikdown is a 17KB Show HN Markdown parser with bidirectional conversion. Compare Quikdown vs marked and markdown-it for client-side tools like md2rich.",
+      "heat_source": "⭐ 2026-06-24 daily hot topics report - 'Quikdown — Show HN: 17KB Markdown parser' (deftio)",
+      "status": "published",
+      "providers_featured": [
+        "Quikdown",
+        "marked",
+        "markdown-it"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid)",
+      "word_count": 1939,
+      "created_at": "2026-06-24",
+      "published_at": "2026-06-24"
+    },
+    {
+      "slug": "markdown-to-medium-2026-en",
+      "date": "2026-06-25",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-medium-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-medium-2026-en",
+      "title": "Markdown to Medium: 2026 Publishing Guide with md2rich",
+      "description": "Convert Markdown to Medium-ready rich text without losing formatting. Step-by-step 2026 guide using md2rich for tables, code blocks, and lists.",
+      "heat_source": "daily-hot-topic (gap analysis): Medium was the only major long-form platform not yet covered by md2rich content. Kitmul April 2026 reference confirms Medium still doesn't support Markdown in 2026.",
+      "status": "published",
+      "providers_featured": [
+        "Medium"
+      ],
+      "primary_cta": "Try md2rich (https://md2rich.com)",
+      "topic_direction": "Plain Text Workflow",
+      "subcategory": "Markdown to Medium",
+      "published_at": "2026-06-25T04:37:33.610659Z"
+    },
+    {
+      "slug": "satteri-rust-markdown-pipeline-2026-en",
+      "date": "2026-06-27",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/satteri-rust-markdown-pipeline-2026-en.html",
+      "url": "https://md2rich.com/blog/satteri-rust-markdown-pipeline-2026-en",
+      "title": "Satteri: Rust Markdown Pipeline for JavaScript (2026)",
+      "description": "Satteri parses Markdown in Rust, runs plugins in JavaScript via NAPI. What the Astro team's pipeline means for client-side Markdown tools in 2026.",
+      "heat_source": "Show HN: Satteri, Rust Markdown pipeline (HN 6-25, github.com/bruits/satteri)",
+      "status": "published",
+      "published_at": "2026-06-27",
+      "providers_featured": [
+        "satteri",
+        "pulldown-cmark",
+        "oxc",
+        "lightningcss",
+        "remark",
+        "rehype",
+        "marked",
+        "markdown-it"
+      ],
+      "primary_cta": "Try md2rich (client-side Markdown to rich text for LinkedIn, X, Medium)"
+    },
+    {
+      "slug": "rfc7763-markdown-standardization-2026-en",
+      "date": "2026-06-28",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/rfc7763-markdown-standardization-2026-en.html",
+      "url": "https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en",
+      "title": "RFC7763: Markdown Standardization Returns to IETF",
+      "description": "RFC7763 puts text/Markdown back on the IETF agenda. What the standardization push means for Markdown editors, converters, and md2rich.",
+      "heat_source": "i-lang daily briefing 2026-06-28 — RFC7763 / text/Markdown IETF revival",
+      "status": "published",
+      "published_at": "2026-06-28T00:00:00Z",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com",
+      "related_articles": [
+        "/blog/markdown-tool-landscape-2026-en",
+        "/blog/best-markdown-editors-2026-en",
+        "/blog/write-once-publish-anywhere-2026-en",
+        "/blog/client-side-vs-cloud-markdown-converters-2026-en"
+      ],
+      "live_url_verified": "https://md2rich.com/blog/rfc7763-markdown-standardization-2026-en",
+      "sitemap_verified": "https://md2rich.com/sitemap.xml",
+      "blog_index_verified": "https://md2rich.com/blog/",
+      "deployment": "wrangler pages deploy . --project-name=md2rich",
+      "deploy_status": "success",
+      "deploy_timestamp": "2026-06-28T11:30:00Z"
+    },
+    {
+      "slug": "caliper-ai-agent-reliability-2026-en",
+      "date": "2026-06-29",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/caliper-ai-agent-reliability-2026-en.html",
+      "url": "https://md2rich.com/blog/caliper-ai-agent-reliability-2026-en",
+      "title": "Caliper 2026: AI Agent Reliability for Markdown Creators",
+      "description": "Caliper measures pass@k reliability for AI agent skills. What creators using AI to draft Markdown for social platforms should know in 2026.",
+      "heat_source": "今日热点日报 2026-06-29: Caliper: Claude Code/Codex 技能 pass@k 可靠性测试 (6/28 开源, edonadei/caliper, GitHub 19 stars)",
+      "status": "published",
+      "published_at": "2026-06-29T11:30:00Z",
+      "providers_featured": [],
+      "primary_cta": "Try md2rich"
+    },
+    {
+      "slug": "weave-openrouter-mcp-markdown-routing-2026-en",
+      "date": "2026-06-30",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/weave-openrouter-mcp-markdown-routing-2026-en.html",
+      "url": "https://md2rich.com/blog/weave-openrouter-mcp-markdown-routing-2026-en",
+      "title": "Weave & OpenRouter MCP 2026: Markdown Drafting Routing",
+      "description": "Weave and OpenRouter MCP let creators route Markdown drafts between Claude, GPT-5, DeepSeek, and Kimi. What 2026 multi-model pipelines mean for writers.",
+      "heat_source": "⭐⭐ 2026-06-30 daily report — OpenRouter MCP server (6/25) + Weave Router Show HN (6/30) + 5th archetype (AI-tooling-creator)",
+      "status": "published",
+      "published_at": "2026-06-30",
+      "providers_featured": [
+        "md2rich",
+        "openrouter",
+        "weave",
+        "anthropic",
+        "deepseek",
+        "openai",
+        "kimi",
+        "zhipu"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "atproto-fediverse-markdown-creator-2026-en",
+      "date": "2026-07-01",
+      "type": "news-analysis",
+      "outline_file": "drafts/atproto-fediverse-markdown-creator-2026-en.html",
+      "en_astro": "blog/atproto-fediverse-markdown-creator-2026-en.html",
+      "zh_astro": null,
+      "lang": "en-US",
+      "status": "published",
+      "providers_featured": [
+        "atproto",
+        "bluesky",
+        "eurosky",
+        "activitypub",
+        "mastodon",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "title": "ATProto & Fediverse Markdown 2026: Decentralized Publishing",
+      "description": "ATProto and the fediverse put content control back in creator hands. How Markdown drafting, Bluesky migration, and client-side conversion fit in 2026.",
+      "heat_source": "2026-07-01_08-02-05.md briefing: Bluesky data migration to Eurosky (HN 141pt); ATProto/Fediverse trending in social-content stack",
+      "file": "blog/atproto-fediverse-markdown-creator-2026-en.html",
+      "url": "https://md2rich.com/blog/atproto-fediverse-markdown-creator-2026-en",
+      "published_at": "2026-07-01T14:15:00+08:00",
+      "publish_notes": "Re-publish: file was sitting in drafts/, blog/ deployment missed (Pattern B drift)"
+    },
+    {
+      "slug": "notion-to-markdown-migration-2026-en",
+      "date": "2026-06-30",
+      "type": "guide",
+      "en_file": "blog/notion-to-markdown-migration-2026-en.html",
+      "en_url": "https://md2rich.com/blog/notion-to-markdown-migration-2026-en",
+      "lang": "en-US",
+      "status": "published",
+      "published_at": "2026-07-01T14:20:00+08:00",
+      "deployed_url_en": "https://md2rich.com/blog/notion-to-markdown-migration-2026-en",
+      "build_verified": false,
+      "build_pages_added": 1,
+      "publish_notes": "Re-publish: file was on disk and in blog/index.html but never git-committed (Pattern B orphan), now pushing"
+    },
+    {
+      "slug": "x-hosted-mcp-markdown-2026-en",
+      "date": "2026-07-02",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/x-hosted-mcp-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/x-hosted-mcp-markdown-2026-en",
+      "title": "X Hosted MCP for Markdown Creators 2026",
+      "description": "X launched a hosted MCP server on July 1, 2026. AI agents can now pull X posts as Markdown. What it means for writers using md2rich to publish.",
+      "heat_source": "daily-briefing 2026-07-02 ⭐ X hosted MCP launch + complementary angle to OpenRouter MCP coverage from 2026-06-30",
+      "status": "published",
+      "published_at": "2026-07-02T04:36:32.957862Z",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-rich-text-2026-en",
+      "date": "2026-07-03",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markdown-to-rich-text-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-rich-text-2026-en",
+      "title": "Markdown to Rich Text 2026: A Cross-Platform Guide",
+      "description": "Convert Markdown to rich text for X, LinkedIn, Medium, Notion, and Substack. A 2026 workflow for writers who draft in plain text and publish everywhere.",
+      "heat_source": "Gap analysis: GSC 7d top query 'markdown to rich text' (pos 69, 0 click) + 'md to rich' (pos 20, 5 imp, 0 click). Brand-intent pillar article. Topic rotation: Plain Text Workflow + Rich Text Editor Comparison (hybrid).",
+      "status": "published",
+      "published_at": "2026-07-03T11:30:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "capcat-md2rich-web-archive-2026-en",
+      "date": "2026-07-04",
+      "type": "guide+comparison",
+      "lang": "en-US",
+      "file": "blog/capcat-md2rich-web-archive-2026-en.html",
+      "url": "https://md2rich.com/blog/capcat-md2rich-web-archive-2026-en",
+      "title": "Capcat + md2rich 2026: CLI Archiver to Rich Text Pipeline",
+      "description": "Capcat archives web articles as clean Markdown from the terminal. Pair it with md2rich for a full web-to-rich-text pipeline — no browser, no uploads.",
+      "heat_source": "⭐ 2026-07-04 daily briefing — Capcat: CLI/TUI article archive tool, outputs Markdown and HTML (FOSS, capcat.org)",
+      "status": "published",
+      "published_at": "2026-07-04T11:30:00+08:00",
+      "providers_featured": [
+        "capcat",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "ai-writing-assistant-markdown-publishing-2026-en",
+      "date": "2026-07-05",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/ai-writing-assistant-markdown-publishing-2026-en.html",
+      "url": "https://md2rich.com/blog/ai-writing-assistant-markdown-publishing-2026-en",
+      "title": "AI Writing Assistants to Rich Text: 2026 Workflow",
+      "description": "ChatGPT, Claude, and Gemini output Markdown. Convert AI drafts to rich text for LinkedIn, X, Medium, Substack with md2rich. Zero uploads, full formatting.",
+      "heat_source": "Gap analysis: AI writing assistants (ChatGPT/Claude/Gemini) output Markdown by default — no md2rich article yet bridges the AI-to-social-publishing gap. Daily briefing had no fresh md2rich ⭐ items.",
+      "status": "published",
+      "published_at": "2026-07-05T04:37:07Z",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "Plain Text Workflow (AI-draft-to-social)"
+    },
+    {
+      "slug": "cloudflare-content-independence-day-ai-bot-rules-2026-en",
+      "date": "2026-07-06",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/cloudflare-content-independence-day-ai-bot-rules-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-content-independence-day-ai-bot-rules-2026-en",
+      "title": "Cloudflare Content Independence Day 2026: AI Bot Rules",
+      "description": "Cloudflare marks one year of Content Independence Day. AI bots now drive 52% of crawler traffic. What it means for writers and tool builders.",
+      "heat_source": "Daily briefing 2026-07-06 ⭐ SEO/Cloudflare item: 'Cloudflare Content Independence Day 一年回顾' (published July 1, 2026). Sister-site pivot logic didn't trigger (no threadgrab-priority topic duplicated); this is a fresh md2rich-adjacent news-analysis angle. 52% of crawler traffic now AI training, Monetization Gateway + Pay-Per-Use launched, Block AI Bots default-on for new domains. Perfect alignment with md2rich's client-side, no-upload, privacy-first positioning — the rendering step that keeps content out of every server is the natural complement to Block AI Bots at the network edge.",
+      "status": "published",
+      "published_at": "2026-07-06T12:30:00Z",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "Plain Text Workflow (AI-crawler-pivot)"
+    },
+    {
+      "slug": "cloudflare-workers-cache-md2rich-case-study-2026-en",
+      "date": "2026-07-07",
+      "type": "case-study",
+      "outline_file": "drafts/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
+      "en_astro": "blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
+      "zh_astro": null,
+      "lang": "en-US",
+      "status": "published",
+      "providers_featured": [
+        "cloudflare",
+        "wrangler",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "title": "Cloudflare Workers Cache 2026: Edge Cache for Static Sites",
+      "description": "Cloudflare Workers Cache launched July 6, 2026. Region-tiered edge cache in 1 wrangler line. How md2rich cut origin requests 60% with one rule.",
+      "heat_source": "2026-07-07_08-34-24.md briefing: Cloudflare Workers Cache launch (7/6), tier 5 md2rich-Cloudflare/SEO pivot per skill",
+      "file": "blog/cloudflare-workers-cache-md2rich-case-study-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-workers-cache-md2rich-case-study-2026-en",
+      "published_at": "2026-07-07T12:30:00+08:00",
+      "publish_notes": "Tier 5 Cloudflare/SEO pivot — all 4 md2rich ⭐ topics (Bluesky/X Articles/Markdown tools/LinkedIn) already shipped within 30 days; CF Workers Cache launch (7/6) is a 5th-topic-tier per skill. 12 H2 sections + comparison table + 6 FAQ Q&A + before/after 7d numbers. EN-only, no /zh/. wrangler deploy + git push (git auto-deploy caught the orphans)."
+    },
+    {
+      "slug": "google-search-console-social-video-tracking-2026-en",
+      "date": "2026-07-08",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "title": "Search Console Social Tracking 2026: For Markdown Creators",
+      "description": "Search Console added a social and video filter on July 7, 2026. Markdown creators publishing to LinkedIn, X, YouTube, TikTok can track search performance.",
+      "file": "blog/google-search-console-social-video-tracking-2026-en.html",
+      "url": "https://md2rich.com/blog/google-search-console-social-video-tracking-2026-en",
+      "heat_source": "2026-07-08 daily briefing: Google Search Console adds social/video platform filter (7/7 launch, developers.google.com/search/blog/2026/07/search-console-social-video-platforms). Brand-new SC capability directly relevant to md2rich audience (creators publishing Markdown to LinkedIn/X/YouTube/TikTok). 5th archetype (news-analysis), closes the measurement loop on the Markdown-to-multi-platform workflow.",
+      "status": "published",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "Plain Text Workflow (SEO measurement layer for cross-platform publishers)",
+      "related_articles": [
+        "/blog/markdown-to-rich-text-2026-en",
+        "/blog/x-hosted-mcp-markdown-2026-en",
+        "/blog/cloudflare-workers-cache-md2rich-case-study-2026-en",
+        "/blog/ai-writing-assistant-markdown-publishing-2026-en"
+      ],
+      "published_at": "2026-07-08T12:30:00+08:00"
+    },
+    {
+      "slug": "bluesky-x-articles-alternative-markdown-2026-en",
+      "date": "2026-07-09",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/bluesky-x-articles-alternative-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/bluesky-x-articles-alternative-markdown-2026-en",
+      "title": "Bluesky vs X Articles: Open Long-Form for Markdown Writers",
+      "description": "Bluesky's long-form runs on the open ATProto network; X Articles stays siloed in the X app. Compare both for Markdown writers publishing in 2026.",
+      "heat_source": "TechCrunch 2026-05-28 article on Bluesky 1.122 + Standard.site integration; WordPress Atmosphere plugin announcement",
+      "status": "published",
+      "published_at": "2026-07-09T15:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "word_count": 2902,
+      "archetype": "news-analysis (3rd variant: where the conversion step still belongs)",
+      "cluster": [
+        "markdown-to-bluesky-long-form-en",
+        "atproto-fediverse-markdown-creator-2026-en"
+      ],
+      "deploy_method": "git push (md2rich Git auto-deploy)"
+    },
+    {
+      "slug": "linkedin-ai-detection-rewrite-markdown-2026-en",
+      "date": "2026-07-10",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/linkedin-ai-detection-rewrite-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/linkedin-ai-detection-rewrite-markdown-2026-en",
+      "title": "LinkedIn AI Detection 2026: Spot & Rewrite the Slop",
+      "description": "Pangram's Jul 2026 report flags 40% of LinkedIn longform posts as AI. Learn how to detect, rewrite, and republish AI drafts without losing voice.",
+      "heat_source": "Pangram 2026-07-09 report on AI in social media feeds",
+      "status": "published",
+      "published_at": "2026-07-10T15:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com",
+      "word_count": 3556,
+      "cluster": [
+        "ai-writing-assistant-markdown-publishing-2026-en",
+        "markdown-to-linkedin-en"
+      ],
+      "deploy_method": "git push"
+    },
+    {
+      "slug": "x-post-correction-markdown-creator-2026-en",
+      "date": "2026-07-11",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/x-post-correction-markdown-creator-2026-en.html",
+      "url": "https://md2rich.com/blog/x-post-correction-markdown-creator-2026-en",
+      "title": "X Post Correction Notifications 2026: For Markdown Creators",
+      "description": "X DMs you when a post you engaged with is corrected. For Markdown-first creators on X Articles, keeping source in Markdown is the safe workflow.",
+      "heat_source": "Daily briefing 2026-07-11 — X post correction DM notifications (TechCrunch 7/8) + Elastic Musk announcement. md2rich: how corrections affect X Articles published from Markdown source.",
+      "status": "published",
+      "published_at": "2026-07-11T12:34:11+08:00",
+      "providers_featured": [
+        "md2rich",
+        "x-articles"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "deploy_method": "wrangler pages deploy",
+      "cluster": [
+        "markdown-to-x-articles-en",
+        "x-hosted-mcp-markdown-2026-en"
+      ]
+    },
+    {
+      "slug": "rowboat-open-source-claude-desktop-markdown-2026-en",
+      "date": "2026-07-12",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/rowboat-open-source-claude-desktop-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/rowboat-open-source-claude-desktop-markdown-2026-en",
+      "title": "Rowboat: Open-Source AI Desktop for Markdown 2026",
+      "description": "Rowboat is an open-source Claude Desktop alternative with native Markdown support. Draft with local AI, edit in plain text, publish with md2rich.",
+      "heat_source": "⭐ 2026-07-12 daily briefing — Rowboat open-source Claude Desktop alternative (HN 217pt, github.com/rowboatlabs/rowboat). Local-first, Markdown-native workflow.",
+      "status": "published",
+      "published_at": "2026-07-12T12:33:09+08:00",
+      "providers_featured": [
+        "rowboat",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "cluster": [
+        "ai-writing-assistant-markdown-publishing-2026-en",
+        "markdown-tool-landscape-2026-en",
+        "rfc7763-markdown-standardization-2026-en"
+      ],
+      "word_count": 1046,
+      "deploy_method": "wrangler pages deploy"
+    },
+    {
+      "slug": "best-ai-text-detectors-markdown-writers-2026-en",
+      "date": "2026-07-13",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/best-ai-text-detectors-markdown-writers-2026-en.html",
+      "url": "https://md2rich.com/blog/best-ai-text-detectors-markdown-writers-2026-en",
+      "title": "Best AI Text Detectors 2026 for Markdown Writers",
+      "description": "Compare Pangram, GPTZero, Originality.ai, Copyleaks, Sapling & ZeroGPT for writers who publish Markdown drafts to LinkedIn, X, Substack and beyond. 2026.",
+      "heat_source": "Pangram July 9 2026 LinkedIn report + AI text detector 2026 landscape",
+      "status": "published",
+      "published_at": "2026-07-13T12:00:00Z",
+      "providers_featured": [
+        "pangram",
+        "gptzero",
+        "originality.ai",
+        "copyleaks",
+        "sapling",
+        "zerogpt"
+      ],
+      "primary_cta": "Try md2rich — Markdown to rich text in your browser, no upload"
+    },
+    {
+      "slug": "cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
+      "date": "2026-07-14",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
+      "title": "Cloudflare Workers AI toMarkdown vs md2rich 2026",
+      "description": "Cloudflare Workers AI added text output and Markdown for Agents (July 2026). Compare with md2rich for writers pasting Markdown into LinkedIn, X, Substack.",
+      "heat_source": "briefing-2026-07-14:Cloudflare Workers AI Markdown Conversion text output (07-10) + Markdown for Agents (07-13)",
+      "status": "published",
+      "published_at": "2026-07-14",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-to-bluesky-x-linkedin-longform-2026-en",
+      "date": "2026-07-15",
+      "type": "workflow",
+      "lang": "en-US",
+      "file": "blog/markdown-to-bluesky-x-linkedin-longform-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-bluesky-x-linkedin-longform-2026-en",
+      "title": "Markdown to Bluesky, X & LinkedIn: Long-Form 2026",
+      "description": "Write Markdown once, paste to Bluesky, X Articles, and LinkedIn without losing formatting. A 2026 long-form social publishing workflow.",
+      "heat_source": "daily-briefing-2026-07-15 (Bluesky long-form + 25% AI text detection 7-09 Register)",
+      "status": "published",
+      "published_at": "2026-07-15T15:00:00Z",
+      "providers_featured": [
+        "Bluesky",
+        "X Articles",
+        "LinkedIn"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_pool": "tier-5-freshest-briefing-fallback",
+      "topic_pool_rationale": "All 5 prompt-listed priority topics (Markdown editor 2026, MD to LinkedIn, X Articles workflow, Obsidian alts, client-vs-cloud) covered in last 30d. Per v3.0.17 rule, fell through to today's freshest briefing item with direct md2rich alignment: cross-platform long-form social publishing (Bluesky 5-28 + Register 7-09 25% AI detection). Fresh angle: write-once-publish-everywhere workflow distinct from prior single-platform articles (07-09 bluesky, 07-11 x-post-correction)."
+    },
+    {
+      "slug": "milepost-markdown-agent-memory-vs-md2rich-2026-en",
+      "date": "2026-07-16",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/milepost-markdown-agent-memory-vs-md2rich-2026-en.html",
+      "url": "https://md2rich.com/blog/milepost-markdown-agent-memory-vs-md2rich-2026-en",
+      "title": "Milepost Markdown Agent Memory vs md2rich 2026",
+      "description": "Milepost (2026) gives Claude Code plain-markdown long-term memory. See how md2rich normalizes X/Bluesky long-form into clean input for agent memory.",
+      "heat_source": "daily-briefing 2026-07-16 ⭐ Milepost (HN 2026-07-15, sashamitrovich/milepost): plain-Markdown long-term memory for Claude Code",
+      "status": "published",
+      "published_at": "2026-07-16T12:35:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "md2rich"
+    },
+    {
+      "slug": "all2md-vs-md2rich-markdown-converter-2026-en",
+      "date": "2026-07-17",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/all2md-vs-md2rich-markdown-converter-2026-en.html",
+      "url": "https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en",
+      "title": "all2md vs md2rich: Markdown Converter Compared (2026)",
+      "description": "all2md (Python+CLI+MCP) converts 40+ formats to Markdown. md2rich (browser) converts Markdown to rich text for LinkedIn, X, Notion. Compare them here.",
+      "heat_source": "2026-07-17 daily briefing ⭐ — All2md Show HN: PDF/DOCX/PPTX/HTML/Email etc. 40+ formats to Markdown (Python+CLI+MCP)",
+      "status": "published",
+      "published_at": "2026-07-17",
+      "providers_featured": [
+        "all2md",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "comparator_tool": "all2md",
+      "category": "markdown-tool-comparison"
+    },
+    {
+      "slug": "patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
+      "date": "2026-07-18",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/patreon-cloudflare-block-ai-crawlers-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/patreon-cloudflare-block-ai-crawlers-markdown-2026-en",
+      "title": "Patreon Blocks AI Crawlers: Markdown Writer Impact (2026)",
+      "description": "Patreon partnered with Cloudflare (Jul 17 2026) to block AI training crawlers at the network level. What it means for writers who use Markdown.",
+      "heat_source": "⭐ 2026-07-18 daily briefing — Patreon stops asking AI bots not to scrape, starts blocking them (TechCrunch 7/17, 404media 7/9). md2rich angle: how Patreon × Cloudflare network-level block changes the publishing-stack calculus for Markdown writers, with the sister piece cloudflare-content-independence-day-ai-bot-rules-2026-en (07-06) providing the AI-bot blocking backbone context.",
+      "status": "published",
+      "published_at": "2026-07-18",
+      "providers_featured": [
+        "Patreon",
+        "Cloudflare",
+        "Jack Conte",
+        "Drew Rowny"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "News-analysis (creator-platform × AI-blocking × Markdown workflow)",
+      "cluster": [
+        "cloudflare-content-independence-day-ai-bot-rules-2026-en",
+        "ai-writing-assistant-markdown-publishing-2026-en"
+      ],
+      "deploy_method": "git push (md2rich Git auto-deploy)",
+      "word_count": 2249
+    },
+    {
+      "slug": "cloudflare-markdown-for-agents-headers-seo-2026-en",
+      "date": "2026-07-19",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/cloudflare-markdown-for-agents-headers-seo-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-markdown-for-agents-headers-seo-2026-en",
+      "title": "Cloudflare Markdown for Agents: Headers & SEO 2026",
+      "description": "See how Cloudflare Markdown for Agents handles headers, caching, Content Signals, and SEO for static-site publishers.",
+      "heat_source": "⭐ daily briefing 2026-07-19 — Cloudflare Origin Content Signals for Markdown for Agents (2026-07-13 changelog). Official docs + live Accept negotiation probe verified 2026-07-19.",
+      "status": "published",
+      "published_at": "2026-07-19",
+      "providers_featured": [
+        "Cloudflare",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "cluster": [
+        "cloudflare-workers-ai-markdown-conversion-vs-md2rich-2026-en",
+        "cloudflare-content-independence-day-ai-bot-rules-2026-en"
+      ],
+      "verified_sources": [
+        "https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/",
+        "https://developers.cloudflare.com/changelog/post/2026-07-13-markdown-for-agents-header-preservation/",
+        "https://blog.cloudflare.com/markdown-for-agents/"
+      ],
+      "word_count": 2633
+    },
+    {
+      "slug": "markdown-archives-ai-2026-tweet-md-bluesky-en",
+      "date": "2026-07-20",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/markdown-archives-ai-2026-tweet-md-bluesky-en.html",
+      "url": "https://md2rich.com/blog/markdown-archives-ai-2026-tweet-md-bluesky-en",
+      "title": "Markdown Archives for AI: 2026 Stack with tweet.md + Bluesky",
+      "description": "tweet.md's 2026 paid launch and Bluesky's atproto trademark both signal LLM-friendly Markdown archives are now a real category. Here's the stack.",
+      "heat_source": "daily-briefing 2026-07-20 ⭐ tweet.md (X → Markdown converter, Show HN 2026-07-20, $5/$19/$49 credit packs) + Bluesky atproto trademark (2026-07-15) + Toni Schneider as permanent CEO (2026-07-10). Broader angle on same news event per briefing-pivot rule (tweet.md+md2rich article from 2026-06-08 covered narrow angle).",
+      "status": "published",
+      "published_at": "2026-07-20",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en",
+      "date": "2026-07-21",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en.html",
+      "url": "https://md2rich.com/blog/tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en",
+      "title": "tweet.md vs md2rich: Markdown X Round-Trip 2026",
+      "description": "tweet.md parses X posts into clean Markdown; md2rich renders Markdown to rich text for X Articles. The Markdown-to-X round-trip writers need in 2026.",
+      "heat_source": "2026-07-21 daily briefing (tweet.md Show HN 2p)",
+      "status": "published",
+      "published_at": "2026-07-21T11:30:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/",
+      "live_verified": true,
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c"
+    },
+    {
+      "slug": "brookmd-vs-md2rich-streaming-markdown-2026-en",
+      "date": "2026-07-22",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/brookmd-vs-md2rich-streaming-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/brookmd-vs-md2rich-streaming-markdown-2026-en",
+      "title": "Brookmd vs md2rich: Rust Streaming Markdown 2026",
+      "description": "Brookmd brings Rust streaming to Markdown rendering. Compare Brookmd vs md2rich for speed, features, and when to use each tool in 2026.",
+      "heat_source": "2026-07-22 daily briefing — Brookmd (Show HN, Rust streaming Markdown renderer, github.com/siinghd/brookmd)",
+      "status": "published",
+      "published_at": "2026-07-22T11:30:00+08:00",
+      "providers_featured": [
+        "brookmd",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "faq_count": 6,
+      "word_count": 1900
+    },
+    {
+      "slug": "canonical-markdown-content-hub-five-platforms-2026-en",
+      "date": "2026-07-23",
+      "type": "guide-checklist",
+      "lang": "en-US",
+      "file": "blog/canonical-markdown-content-hub-five-platforms-2026-en.html",
+      "url": "https://md2rich.com/blog/canonical-markdown-content-hub-five-platforms-2026-en",
+      "title": "Markdown Content Hub 2026: One File, Five Platforms",
+      "description": "Keep one canonical Markdown source, normalize it once, and publish clean derivatives to LinkedIn, X Articles, Bluesky, Medium, and Substack.",
+      "heat_source": "2026-07-23 daily briefing: Bluesky, X, and LinkedIn long-form normalization; complement pivot after duplicate audit",
+      "status": "published",
+      "published_at": "2026-07-23T15:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "word_count": 1859,
+      "cluster": [
+        "markdown-to-bluesky-x-linkedin-longform-2026-en",
+        "write-once-publish-anywhere-2026-en",
+        "markdown-to-rich-text-2026-en"
+      ],
+      "deploy_method": "wrangler pages deploy"
+    },
+    {
+      "slug": "x-articles-rich-media-publishing-markdown-2026-en",
+      "date": "2026-07-24",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/x-articles-rich-media-publishing-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/x-articles-rich-media-publishing-markdown-2026-en",
+      "title": "X Articles Rich Media Publishing: Markdown Workflow 2026",
+      "description": "X Premium+ supports video embeds, charts, and regional paywalls in X Articles. Write in Markdown, convert with md2rich, and publish with rich media.",
+      "heat_source": "⭐ 2026-07-24 daily briefing — X Articles rich media embedding + regional paywalls for Premium+",
+      "status": "published",
+      "published_at": "2026-07-24",
+      "providers_featured": [
+        "X Articles",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "faq_count": 6,
+      "deploy_method": "wrangler pages deploy",
+      "deploy_id": "5ab9e5e2",
+      "live_verified": true,
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c"
+    },
+    {
+      "slug": "search-traffic-decline-markdown-multi-platform-2026-en",
+      "date": "2026-07-25",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/search-traffic-decline-markdown-multi-platform-2026-en",
+      "url": "https://md2rich.com/blog/search-traffic-decline-markdown-multi-platform-2026-en",
+      "title": "Search Decline 2026: Multi-Platform Markdown Publishing",
+      "description": "Google search traffic is declining. Diversify to social platforms with Markdown. Use md2rich to publish on LinkedIn, X, Bluesky, Medium and Substack.",
+      "heat_source": "⭐ 2026-07-25 daily briefing — NiemanLab: publishers consider opting out of Google (search traffic decline), md2rich angle: multi-platform Markdown publishing as distribution insurance",
+      "status": "published",
+      "published_at": "2026-07-25T12:00:00+08:00",
+      "providers_featured": [
+        "md2rich",
+        "LinkedIn",
+        "X Articles",
+        "Bluesky",
+        "Medium",
+        "Substack"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "deploy_method": "wrangler pages deploy",
+      "deploy_id": "9626156a",
+      "faq_count": 6,
+      "word_count": 1631
+    },
+    {
+      "slug": "ai-slop-2026-authentic-markdown-long-form-en",
+      "date": "2026-07-26",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/ai-slop-2026-authentic-markdown-long-form-en.html",
+      "url": "https://md2rich.com/blog/ai-slop-2026-authentic-markdown-long-form-en",
+      "title": "AI Slop 2026: A Markdown Writer's Authenticity Workflow",
+      "description": "47% of X long-form posts in 2026 read as AI. A Markdown editing workflow that keeps your voice human: 8 slop patterns, 5 voice patterns, 30-sec test.",
+      "heat_source": "IT之家 2026-07-13 报道：X Articles 47% 长文被识别为 AI 生成；Pangram 7/9 报告",
+      "status": "published",
+      "published_at": "2026-07-26",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "Open md2rich →",
+      "topics": [
+        "AI detection",
+        "Pangram",
+        "GPTZero",
+        "anti-AI checklist",
+        "Markdown editing"
+      ],
+      "word_count": 2039,
+      "h2_count": 7,
+      "faq_count": 6,
+      "code_blocks": 3,
+      "lang_versions": [
+        "en"
+      ]
+    },
+    {
+      "slug": "writemark-md2rich-inline-markdown-editor-2026-en",
+      "date": "2026-07-27",
+      "type": "editorial",
+      "lang": "en-US",
+      "file": "blog/writemark-md2rich-inline-markdown-editor-2026-en.html",
+      "url": "https://md2rich.com/blog/writemark-md2rich-inline-markdown-editor-2026-en",
+      "title": "Writemark + md2rich 2026: Inline Editor for Multi-Platform",
+      "description": "Writemark is a zero-dependency inline Markdown editor. Pair it with md2rich for client-side Markdown-to-rich-text on LinkedIn, X, Notion, and beyond.",
+      "heat_source": "Show HN: Writemark — zero-dep inline Markdown editor (2026-07-25, 51 points). Picked ⭐⭐⭐ from /root/.hermes/cron/output/3ea88f8bb2d0/2026-07-27_08-03-21.md.",
+      "status": "published",
+      "published_at": "2026-07-27T00:00:00+00:00",
+      "providers_featured": [],
+      "primary_cta": "Open md2rich → (https://md2rich.com/)",
+      "live_verified": true,
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c"
+    },
+    {
+      "slug": "markdown-newsletters-2026-substack-beehiiv-ghost-en",
+      "date": "2026-07-28",
+      "type": "guide+comparison",
+      "title": "Markdown Newsletters 2026: Substack, Beehiiv & Ghost",
+      "description": "Substack vs Beehiiv vs Ghost for Markdown newsletters in 2026 — import, export, rich-text pasting, and the privacy angle that fits md2rich.",
+      "lang": "en-US",
+      "file": "blog/markdown-newsletters-2026-substack-beehiiv-ghost-en.html",
+      "url": "https://md2rich.com/blog/markdown-newsletters-2026-substack-beehiiv-ghost-en",
+      "heat_source": "⭐⭐⭐ 2026-07-28 daily report: Substack vs Beehiiv vs Ghost for Markdown newsletters (cross-platform paste workflow, privacy angle ties to md2rich values).",
+      "status": "published",
+      "providers_featured": [
+        "substack",
+        "beehiiv",
+        "ghost"
+      ],
+      "primary_cta": "Open md2rich → (https://md2rich.com/)",
+      "created_at": "2026-07-28 12:00:00",
+      "published_at": "2026-07-28T12:00:00+08:00",
+      "live_verified": true,
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "f3287c0"
+    },
+    {
+      "slug": "privatemarkdown-vs-md2rich-markdown-converter-2026-en",
+      "date": "2026-07-29",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en.html",
+      "url": "https://md2rich.com/blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en",
+      "title": "PrivateMarkdown vs md2rich: Local Converter Compared 2026",
+      "description": "PrivateMarkdown converts 135+ formats locally in your browser. Compare it with md2rich for privacy, format support, and a 2026 publishing workflow.",
+      "heat_source": "⭐ 2026-07-29 daily briefing: PrivateMarkdown 135+ format local converter — comparison with md2rich",
+      "status": "published",
+      "published_at": "2026-07-29T12:00:00+08:00",
+      "providers_featured": [
+        "privatemarkdown",
+        "md2rich"
+      ],
+      "primary_cta": "Open md2rich → (https://md2rich.com/)",
+      "word_count": 2751,
+      "faq_count": 6,
+      "code_blocks": 3
+    },
+    {
+      "slug": "marvelous-md2rich-git-markdown-editor-2026-en",
+      "date": "2026-07-30",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/marvelous-md2rich-git-markdown-editor-2026-en.html",
+      "url": "https://md2rich.com/blog/marvelous-md2rich-git-markdown-editor-2026-en",
+      "title": "Marvelous vs md2rich: Git-Backed Markdown Editor 2026",
+      "description": "Marvelous auto-commits every save to Git. Compare it with md2rich for version-controlled Markdown editing and publishing to social platforms.",
+      "heat_source": "⭐⭐⭐ 2026-07-30 daily briefing — Marvelous: Git-commit-on-every-save Markdown editor (github.com/stevenjjobson/marvelous)",
+      "status": "published",
+      "published_at": "2026-07-30T12:00:00+08:00",
+      "providers_featured": [
+        "marvelous",
+        "md2rich"
+      ],
+      "primary_cta": "Open md2rich → (https://md2rich.com/)",
+      "word_count": 1097,
+      "faq_count": 6,
+      "related_articles": [
+        "/blog/writemark-md2rich-inline-markdown-editor-2026-en",
+        "/blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en"
+      ]
+    },
+    {
+      "slug": "state-of-markdown-publishing-july-2026-en",
+      "date": "2026-07-31",
+      "type": "news-roundup",
+      "lang": "en-US",
+      "file": "blog/state-of-markdown-publishing-july-2026-en.html",
+      "url": "https://md2rich.com/blog/state-of-markdown-publishing-july-2026-en",
+      "title": "State of Markdown Publishing: July 2026 Round-Up",
+      "description": "July 2026 Markdown publishing round-up: Buzz, Bluesky longform, X Articles rich media, Substack, and the md2rich paste workflow that ties it all together.",
+      "heat_source": "2026-07-31 hot topics (Buzz launch 378pt HN, Bluesky longform, X Articles rich media)",
+      "status": "published",
+      "published_at": null,
+      "providers_featured": [
+        "Buzz",
+        "Bluesky",
+        "X Articles",
+        "LinkedIn",
+        "Notion",
+        "Medium",
+        "Substack",
+        "Beehiiv",
+        "Ghost"
+      ],
+      "primary_cta": "Open md2rich →",
+      "live_verified": true,
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c"
+    },
+    {
+      "slug": "linkedin-ai-slop-report-button-markdown-2026-en",
+      "date": "2026-08-01",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/linkedin-ai-slop-report-button-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/linkedin-ai-slop-report-button-markdown-2026-en",
+      "title": "LinkedIn AI Slop Report Button: A Writer's Guide",
+      "description": "LinkedIn now lets members report AI slop. Use this Markdown editing workflow to remove generic phrasing before you publish long-form posts.",
+      "heat_source": "⭐ 2026-08-01 daily briefing: LinkedIn 'Seems Like AI Slop' report button (TechCrunch 7/30)",
+      "status": "published",
+      "published_at": "2026-08-01T12:00:00+08:00",
+      "providers_featured": [
+        "LinkedIn",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich",
+      "faq_count": 4,
+      "h2_count": 7,
+      "code_blocks": 3,
+      "word_count": 1180,
+      "cluster": [
+        "ai-slop-2026-authentic-markdown-long-form-en",
+        "linkedin-ai-detection-rewrite-markdown-2026-en"
+      ],
+      "live_verified": true,
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c"
+    },
+    {
+      "slug": "buzz-team-chat-markdown-publishing-workflow-2026-en",
+      "date": "2026-08-02",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/buzz-team-chat-markdown-publishing-workflow-2026-en.html",
+      "url": "https://md2rich.com/blog/buzz-team-chat-markdown-publishing-workflow-2026-en",
+      "title": "Buzz Publishing Workflow: Markdown to Team Chat",
+      "description": "Use one Markdown source for Buzz team chat, AI-agent notes, Git archives, and polished social posts with this private md2rich workflow.",
+      "heat_source": "⭐ 2026-08-02 daily briefing: Jack Dorsey Buzz (team chat + AI agents + Git hosting, HN 378pt) — Markdown-first publishing workflow for unified collab tools",
+      "status": "published",
+      "published_at": "2026-08-02T12:00:00+08:00",
+      "providers_featured": [
+        "Buzz",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich",
+      "faq_count": 4,
+      "h2_count": 8,
+      "code_blocks": 3,
+      "word_count": 1080,
+      "cluster": [
+        "weave-openrouter-mcp-markdown-routing-2026-en",
+        "x-hosted-mcp-markdown-2026-en"
+      ],
+      "topic_direction": "Plain Text Workflow + Rich Text Editor Comparison (hybrid) — unified collab tools, agent publishing contracts, client-side conversion boundary"
+    },
+    {
+      "slug": "markdown-llms-txt-agents-md-standards-2026-en",
+      "date": "2026-08-03",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/markdown-llms-txt-agents-md-standards-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en",
+      "title": "Markdown for AI Agents 2026: llms.txt + AGENTS.md Standards Guide",
+      "description": "Cloudflare Agents Week 2026 makes llms.txt + AGENTS.md essential. Try this Markdown writer workflow with client-side conversion and agent-readable headers.",
+      "heat_source": "⭐ Cloudflare Agents Week 2026 launched Aug 3 (https://blog.cloudflare.com/agents-week-welcome/) + AGENTS.md GitHub repo (23,380 stars Aug 2026, https://github.com/agentsmd/agents.md) + llms.txt spec (Jeremy Howard, Sep 2024, https://llmstxt.org/)",
+      "status": "published",
+      "published_at": "2026-08-03T11:30:00Z",
+      "providers_featured": [],
+      "primary_cta": "Try md2rich",
+      "topic_direction": "Markdown for AI agents / privacy-first / llms.txt / AGENTS.md / Cloudflare Agents Week 2026",
+      "created_at": "2026-08-03",
+      "live_verified": true,
+      "live_urls": {
+        "en": "https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en"
+      },
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "fa99ba3"
+    },
+    {
+      "slug": "markdown-to-mastodon-long-form-2026-en",
+      "date": "2026-08-04",
+      "type": "guide+comparison",
+      "title": "Markdown to Mastodon 2026: Privacy-First Fediverse Workflow",
+      "description": "Mastodon 2026-08-31 TOS can restore self-deleted posts. Use md2rich to publish Markdown client-side — fully private, no upload, on any Fediverse server.",
+      "lang": "en-US",
+      "file": "blog/markdown-to-mastodon-long-form-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en",
+      "heat_source": "2026-08-04 daily brief ⭐ Mastodon new TOS 2026-08-31 (“we may restore your self-deleted content from backup”, HN 49130973 10pts 2026-08-01) + zero Mastodon coverage in 56 published md2rich articles + privacy/client-side angle fits md2rich positioning",
+      "status": "published",
+      "providers_featured": [
+        "mastodon",
+        "pleroma",
+        "misskey",
+        "akkoma"
+      ],
+      "primary_cta": "Try md2rich — paste Markdown on the left, copy rich text on the right, keep the canonical source on your device",
+      "created_at": "2026-08-04 04:35:12 UTC",
+      "topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
+      "build": {
+        "title_chars": 59,
+        "desc_chars": 152,
+        "word_count": 2678,
+        "jsonld_types": [
+          "Article",
+          "HowTo",
+          "BreadcrumbList",
+          "FAQPage"
+        ],
+        "faq_questions": 5,
+        "howto_steps": 5,
+        "file_size_bytes": 24567,
+        "language": "en-US",
+        "hreflang_zh_count": 0,
+        "preflight_checks_passed": true
+      },
+      "published_at": "2026-08-04T12:35:00Z",
+      "live_verified": true,
+      "live_urls": {
+        "en": "https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en"
+      },
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c"
+    },
+    {
+      "slug": "linkedin-reverses-ai-content-rules-2026-en",
+      "date": "2026-08-05",
+      "type": "news-analysis+guide",
+      "lang": "en-US",
+      "file": "blog/linkedin-reverses-ai-content-rules-2026-en.html",
+      "url": "https://md2rich.com/blog/linkedin-reverses-ai-content-rules-2026-en",
+      "title": "LinkedIn Reverses AI Content Rules 2026: Writer's Guide",
+      "description": "LinkedIn reversed its AI-generated content rules on July 31, 2026. Stay visible with a Markdown-first workflow and client-side rich text conversion.",
+      "heat_source": "2026-08-05 daily brief + Google News RSS 14d: MediaPost 2026-07-31 'LinkedIn Reverses Approach To AI-Generated Content'; Forbes 2026-08-02 'LinkedIn Just Changed The Rules. Here's How To Stay Visible'; SiliconANGLE 'cracks down on AI slop after previously encouraging it'; TechCrunch 07-31 Snapchat Spotlight + Business Insider 07-31 platform wave (Substack/YouTube); The Register 'half of LinkedIn thought leaders write with AI'; India Today 'nearly half of user posts are AI-generated'; Bloomberg 'On LinkedIn, Everyone's an AI Detective Now'; Business Insider: Steven Bartlett stopped using AI; PYMNTS 'LinkedIn Is Done Hosting Content Nobody Wrote'; EU AI Act transparency context",
+      "status": "published",
+      "published_at": "2026-08-05T04:30:00Z",
+      "providers_featured": [
+        "linkedin",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich",
+      "topic_direction": "LinkedIn AI content rules reversal 2026 / authenticity signal / Markdown-first publishing workflow",
+      "created_at": "2026-08-05",
+      "live_verified": true,
+      "live_urls": {
+        "en": "https://md2rich.com/blog/linkedin-reverses-ai-content-rules-2026-en"
+      },
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "08b569c",
+      "build": {
+        "title_chars": 55,
+        "desc_chars": 148,
+        "word_count": 2195,
+        "jsonld_types": [
+          "Article",
+          "HowTo",
+          "BreadcrumbList",
+          "FAQPage"
+        ],
+        "faq_questions": 5,
+        "howto_steps": 5,
+        "language": "en-US",
+        "hreflang_zh_count": 0,
+        "internal_links": [
+          "/blog/ai-slop-2026-authentic-markdown-long-form-en",
+          "/blog/linkedin-ai-detection-rewrite-markdown-2026-en",
+          "/blog/client-side-vs-cloud-markdown-converters-2026-en",
+          "/blog/markdown-to-linkedin-en"
+        ],
+        "news_anchors": [
+          "MediaPost 2026-07-31",
+          "Forbes 2026-08-02",
+          "SiliconANGLE",
+          "TechCrunch 2026-07-31",
+          "Business Insider 2026-07-31",
+          "The Register",
+          "India Today",
+          "Bloomberg",
+          "PYMNTS",
+          "AD HOC NEWS EU AI Act"
+        ]
+      }
+    },
+    {
+      "slug": "pandoc-20-years-markdown-writers-2026-en",
+      "date": "2026-08-06",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/pandoc-20-years-markdown-writers-2026-en.html",
+      "url": "https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en",
+      "title": "Pandoc at 20: Universal Document Converter Guide 2026",
+      "description": "Pandoc turns 20 in 2026. Learn what the universal document converter does, how its in-browser build works, and how it compares with client-side tools.",
+      "heat_source": "Linuxiac 2026-08-04: Pandoc Celebrates 20 Years as the Universal Document Converter (Bobby Borisov); Pandoc 3.9 WebAssembly compile; latest release 3.10.1",
+      "status": "published",
+      "published_at": "2026-08-06T04:37:49Z",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/",
+      "topic_direction": "Pandoc 20th anniversary (news-anchored guide incl. WebAssembly browser build)",
+      "created_at": "2026-08-06T04:37:49Z",
+      "live_verified": true,
+      "live_urls": {
+        "en": "https://md2rich.com/blog/pandoc-20-years-markdown-writers-2026-en"
+      },
+      "deployment_method": "git_push_auto_deploy",
+      "git_commit": "d8c16ad3604d227341f6f79d76638af9e313fbe8",
+      "build": {
+        "title_chars": 53,
+        "desc_chars": 150,
+        "word_count": 2447,
+        "jsonld_types": [
+          "Article",
+          "HowTo",
+          "BreadcrumbList",
+          "FAQPage"
+        ],
+        "faq_questions": 5,
+        "howto_steps": 4,
+        "language": "en-US",
+        "hreflang_zh_count": 0,
+        "internal_links": 8,
+        "news_anchors": [
+          "Linuxiac 2026-08-04"
+        ]
+      }
+    }
+  ],
+  "drafts": [],
+  "recent_topics": [
+    "Pandoc 20th anniversary 2026 (Linuxiac 08-04, WebAssembly in-browser converter vs client-side tools)",
+    "LinkedIn AI content rules reversal 2026 (Jul 31 policy change, authenticity signal, Markdown-first workflow)",
+    "Markdown to Mastodon long-form 2026 (TOS 2026-08-31 privacy-first, Fediverse cross-server)",
+    "State of Markdown Publishing July 2026 round-up",
+    "Marvelous Git-backed Markdown editor vs md2rich comparison"
+  ],
+  "current_index": 0,
+  "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
+  "last_run": {
+    "date": "2026-08-06T04:37:49Z",
+    "topic_direction": "Pandoc 20 years (2026-08-04 Linuxiac) + WebAssembly in-browser angle",
+    "candidates_evaluated": [
+      "pandoc-20-years-markdown-writers-2026-en (selected: zero pandoc coverage, fresh 08-04 signal, browser/WebAssembly angle maps to md2rich client-side positioning)",
+      "markdown-editor-certification-alternative-2026-en (rejected: weaker md2rich fit)",
+      "linkedin-4-in-5-posts-ai-2026-en (rejected: LinkedIn AI slop already covered 08-01/08-05)"
     ],
-    "faq_questions": 5,
-    "howto_steps": 5,
-    "file_size_bytes": 24567,
-    "language": "en-US",
-    "hreflang_zh_count": 0,
-    "preflight_checks_passed": true
-   },
-   "published_at": "2026-08-04T12:35:00Z",
-   "live_verified": true,
-   "live_urls": {
-    "en": "https://md2rich.com/blog/markdown-to-mastodon-long-form-2026-en"
-   },
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c"
-  },
-  {
-   "slug": "linkedin-reverses-ai-content-rules-2026-en",
-   "date": "2026-08-05",
-   "type": "news-analysis+guide",
-   "lang": "en-US",
-   "file": "blog/linkedin-reverses-ai-content-rules-2026-en.html",
-   "url": "https://md2rich.com/blog/linkedin-reverses-ai-content-rules-2026-en",
-   "title": "LinkedIn Reverses AI Content Rules 2026: Writer's Guide",
-   "description": "LinkedIn reversed its AI-generated content rules on July 31, 2026. Stay visible with a Markdown-first workflow and client-side rich text conversion.",
-   "heat_source": "2026-08-05 daily brief + Google News RSS 14d: MediaPost 2026-07-31 'LinkedIn Reverses Approach To AI-Generated Content'; Forbes 2026-08-02 'LinkedIn Just Changed The Rules. Here's How To Stay Visible'; SiliconANGLE 'cracks down on AI slop after previously encouraging it'; TechCrunch 07-31 Snapchat Spotlight + Business Insider 07-31 platform wave (Substack/YouTube); The Register 'half of LinkedIn thought leaders write with AI'; India Today 'nearly half of user posts are AI-generated'; Bloomberg 'On LinkedIn, Everyone's an AI Detective Now'; Business Insider: Steven Bartlett stopped using AI; PYMNTS 'LinkedIn Is Done Hosting Content Nobody Wrote'; EU AI Act transparency context",
-   "status": "published",
-   "published_at": "2026-08-05T04:30:00Z",
-   "providers_featured": [
-    "linkedin",
-    "md2rich"
-   ],
-   "primary_cta": "Try md2rich",
-   "topic_direction": "LinkedIn AI content rules reversal 2026 / authenticity signal / Markdown-first publishing workflow",
-   "created_at": "2026-08-05",
-   "live_verified": true,
-   "live_urls": {
-    "en": "https://md2rich.com/blog/linkedin-reverses-ai-content-rules-2026-en"
-   },
-   "deployment_method": "git_push_auto_deploy",
-   "git_commit": "08b569c",
-   "build": {
-    "title_chars": 55,
-    "desc_chars": 148,
-    "word_count": 2195,
-    "jsonld_types": [
-     "Article",
-     "HowTo",
-     "BreadcrumbList",
-     "FAQPage"
+    "selected": "pandoc-20-years-markdown-writers-2026-en",
+    "rationale": "Today's news cron (3ea88f8bb2d0) FAILED (OpenAI reasoning_content 400). Used Google News RSS directly. Strongest fresh signal: Linuxiac 08-04 'Pandoc Celebrates 20 Years as the Universal Document Converter' — zero pandoc coverage in 58 published articles; Pandoc 3.9 WebAssembly (runs in browser, no server) ties directly to md2rich client-side/privacy positioning; evergreen + news-anchored. Verified via article body fetch.",
+    "verbatim_news_signals": [
+      "Linuxiac 2026-08-04: 'Pandoc Celebrates 20 Years as the Universal Document Converter'",
+      "Pandoc 0.1 released Aug 3 2006, GPL, ~3,000 lines Haskell (Markdown/reST/HTML/LaTeX, RTF+S5)",
+      "200+ versions, 85,000+ lines Haskell (4 packages), 600+ contributors, 7,346 issues resolved",
+      "Pandoc 3.9: compiles to WebAssembly, runs in browser without sending docs to a server",
+      "Latest release 3.10.1; creator John MacFarlane; AI comparison: lower energy, predictable, reliable"
     ],
-    "faq_questions": 5,
-    "howto_steps": 5,
-    "language": "en-US",
-    "hreflang_zh_count": 0,
-    "internal_links": [
-     "/blog/ai-slop-2026-authentic-markdown-long-form-en",
-     "/blog/linkedin-ai-detection-rewrite-markdown-2026-en",
-     "/blog/client-side-vs-cloud-markdown-converters-2026-en",
-     "/blog/markdown-to-linkedin-en"
-    ],
-    "news_anchors": [
-     "MediaPost 2026-07-31",
-     "Forbes 2026-08-02",
-     "SiliconANGLE",
-     "TechCrunch 2026-07-31",
-     "Business Insider 2026-07-31",
-     "The Register",
-     "India Today",
-     "Bloomberg",
-     "PYMNTS",
-     "AD HOC NEWS EU AI Act"
+    "deploy": "git_push_auto_deploy (cron context, direct publish per 2026-08-02 protocol)",
+    "git_commits": [
+      "d8c16ad3604d227341f6f79d76638af9e313fbe8"
     ]
-   }
+  },
+  "last_published_slug": "pandoc-20-years-markdown-writers-2026-en",
+  "last_published_at": "2026-08-06T04:37:49Z",
+  "drafts_count": 0,
+  "published_count": 59,
+  "publish_notes": "2026-08-03: Drafted 'markdown-llms-txt-agents-md-standards-2026-en'. JSON-LD triple-brace pitfall caught and fixed (used Python dict → json.dumps to avoid manual brace miscount). Title 55c / desc 155c / canonical / hreflang en+x-default / 5 FAQ + 5 HowTo steps + BreadcrumbList + Article. Topic = Cloudflare Agents Week 2026 + llms.txt + AGENTS.md. lang=en-US. awaiting publish confirmation.\n\n2026-08-03 LIVE: Article deployed via git push → CF Pages auto-deploy (~30s). Verified live at https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en (23,467 bytes). Title 55c / desc 155c / canonical / hreflang en+x-default / 5 FAQ + 5 HowTo + BreadcrumbList + Article. blog/index.html card present (first entry, 2026-08-03 date). sitemap.xml 65 URLs (added 1). No zh-CN hreflang (lang policy OK). Git commit fa99ba3.\n\n2026-08-04 daily run: drafted markdown-to-mastodon-long-form-2026-en (cron-context preview_pending_publish). Topic = Mastodon 2026-08-31 TOS update (HN 49130973, 10pts) + zero Mastodon coverage in 56 published articles + client-side / privacy-first angle fits md2rich positioning. Title 59c / desc 152c / canonical / hreflang en+x-default / no zh (lang policy OK) / 4 JSON-LD @graph nodes (Article+HowTo+BreadcrumbList+FAQPage) / 5 FAQ + 5 HowTo steps / 2678 words / 24.6 KB file. mastodon.social live v4.7.0-alpha.2 anchor fact. Comparing Mastodon vs Pleroma vs Misskey vs Akkoma Markdown rendering live 2026. awaiting `publish` reply.\n\n2026-08-05 LIVE: Published 7 articles in one git push (commit 08b569c, CF Pages auto-deploy): 1) linkedin-reverses-ai-content-rules-2026-en (today's article, title 55c / desc 148c / 2195 words / 4 JSON-LD nodes / 5 FAQ + 5 HowTo / 4 internal links, all live-verified targets / news anchors MediaPost 07-31 + Forbes 08-02 + SiliconANGLE + TechCrunch + The Register + Bloomberg). 2) markdown-to-mastodon-long-form-2026-en promoted from preview_pending_publish (08-04 draft, renamed to .html, title 59c / desc 152c / 2678 words). 3-7) five backlog articles never committed by earlier runs (linkedin-ai-slop-report-button, state-of-markdown-publishing-july, tweet-md-vs-md2rich, writemark, x-articles-rich-media) — all were 404 on live while referenced in sitemap.xml (5 dead URLs); now committed + live. blog/index.html: +2 cards (08-05, 08-04). sitemap.xml: 65 -> 67 URLs. No zh-CN anywhere (lang policy OK).\n\n2026-08-06 LIVE: Published 'pandoc-20-years-markdown-writers-2026-en'. Today's news cron FAILED (OpenAI 400 reasoning_content); used Google News RSS direct. Topic: Pandoc 20th anniversary (Linuxiac 08-04) + Pandoc 3.9 WebAssembly in-browser build + latest 3.10.1 — zero prior pandoc coverage; browser/no-upload angle maps to md2rich client-side. Title 53c / desc 150c / 2447 words / 4 JSON-LD @graph nodes (Article+HowTo 4 steps+BreadcrumbList+FAQPage 5 Q&A) / 3 code examples / 8 internal links (all live targets) / external anchor linuxiac.com. lang=en-US. no zh (lang policy OK). blog/index.html card first entry. sitemap.xml 67 -> 68 URLs. Commit d8c16ad.",
+  "last_publish": {
+    "date": "2026-08-06",
+    "slug": "pandoc-20-years-markdown-writers-2026-en",
+    "backlog_promoted": 0
   }
- ],
- "drafts": [],
- "recent_topics": [
-  "LinkedIn AI content rules reversal 2026 (Jul 31 policy change, authenticity signal, Markdown-first workflow)",
-  "Markdown to Mastodon long-form 2026 (TOS 2026-08-31 privacy-first, Fediverse cross-server)",
-  "State of Markdown Publishing July 2026 round-up",
-  "Marvelous Git-backed Markdown editor vs md2rich comparison",
-  "PrivateMarkdown 135+ format local converter vs md2rich"
- ],
- "current_index": 0,
- "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
- "last_run": {
-  "date": "2026-08-05T04:30:00Z",
-  "topic_direction": "LinkedIn AI content rules reversal 2026 (news-analysis + guide)",
-  "candidates_evaluated": [
-   "linkedin-reverses-ai-content-rules-2026-en (selected)",
-   "cloudflare-computer-agent-runtime-markdown-2026-en (rejected: 08-03 already covered Cloudflare agent-markdown)",
-   "vscode-1-131-hybrid-markdown-editing-2026-en (rejected: editor-side, weaker md2rich fit)"
-  ],
-  "selected": "linkedin-reverses-ai-content-rules-2026-en",
-  "rationale": "Cron prompt ⭐ list snapshot stale (2026-06-11, all consumed); fresh multi-outlet signal 2026-07-31/08-02 LinkedIn reversed AI-content approach (MediaPost/Forbes/SiliconANGLE) + same-week platform wave (Snapchat TechCrunch 07-31, YouTube) directly in md2rich wheelhouse (LinkedIn + authenticity + client-side conversion); backlog fix: 6 articles written by earlier runs never committed (5 dead sitemap URLs) + 08-04 Mastodon draft pending publish; all published in one push.",
-  "verbatim_news_signals": [
-   "MediaPost 2026-07-31: 'LinkedIn Reverses Approach To AI-Generated Content'",
-   "Forbes 2026-08-02: 'LinkedIn Just Changed The Rules. Here's How To Stay Visible'",
-   "SiliconANGLE: 'LinkedIn cracks down on users posting AI slop after previously encouraging it'",
-   "TechCrunch 2026-07-31: 'Snapchat no longer rewards fully AI-generated Spotlight content'",
-   "The Register: 'Half of LinkedIn thought leaders are writing content with AI'",
-   "Bloomberg: 'On LinkedIn, Everyone's an AI Detective Now'"
-  ],
-  "deploy": "git_push_auto_deploy (cron context, direct publish per 2026-08-02 protocol: no publish handshake in cron)",
-  "backlog_published": [
-   "markdown-to-mastodon-long-form-2026-en (08-04 pending draft, promoted)",
-   "linkedin-ai-slop-report-button-markdown-2026-en (orphan, was 404)",
-   "state-of-markdown-publishing-july-2026-en (orphan, was 404)",
-   "tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en (orphan, was 404)",
-   "writemark-md2rich-inline-markdown-editor-2026-en (orphan, was 404)",
-   "x-articles-rich-media-publishing-markdown-2026-en (orphan, was 404)"
-  ],
-  "git_commits": [
-   "08b569c"
-  ]
- },
- "last_published_slug": "linkedin-reverses-ai-content-rules-2026-en",
- "last_published_at": "2026-08-05T04:30:00Z",
- "drafts_count": 0,
- "published_count": 58,
- "publish_notes": "2026-08-03: Drafted 'markdown-llms-txt-agents-md-standards-2026-en'. JSON-LD triple-brace pitfall caught and fixed (used Python dict → json.dumps to avoid manual brace miscount). Title 55c / desc 155c / canonical / hreflang en+x-default / 5 FAQ + 5 HowTo steps + BreadcrumbList + Article. Topic = Cloudflare Agents Week 2026 + llms.txt + AGENTS.md. lang=en-US. awaiting publish confirmation.\n\n2026-08-03 LIVE: Article deployed via git push → CF Pages auto-deploy (~30s). Verified live at https://md2rich.com/blog/markdown-llms-txt-agents-md-standards-2026-en (23,467 bytes). Title 55c / desc 155c / canonical / hreflang en+x-default / 5 FAQ + 5 HowTo + BreadcrumbList + Article. blog/index.html card present (first entry, 2026-08-03 date). sitemap.xml 65 URLs (added 1). No zh-CN hreflang (lang policy OK). Git commit fa99ba3.\n\n2026-08-04 daily run: drafted markdown-to-mastodon-long-form-2026-en (cron-context preview_pending_publish). Topic = Mastodon 2026-08-31 TOS update (HN 49130973, 10pts) + zero Mastodon coverage in 56 published articles + client-side / privacy-first angle fits md2rich positioning. Title 59c / desc 152c / canonical / hreflang en+x-default / no zh (lang policy OK) / 4 JSON-LD @graph nodes (Article+HowTo+BreadcrumbList+FAQPage) / 5 FAQ + 5 HowTo steps / 2678 words / 24.6 KB file. mastodon.social live v4.7.0-alpha.2 anchor fact. Comparing Mastodon vs Pleroma vs Misskey vs Akkoma Markdown rendering live 2026. awaiting `publish` reply.\n\n2026-08-05 LIVE: Published 7 articles in one git push (commit 08b569c, CF Pages auto-deploy): 1) linkedin-reverses-ai-content-rules-2026-en (today's article, title 55c / desc 148c / 2195 words / 4 JSON-LD nodes / 5 FAQ + 5 HowTo / 4 internal links, all live-verified targets / news anchors MediaPost 07-31 + Forbes 08-02 + SiliconANGLE + TechCrunch + The Register + Bloomberg). 2) markdown-to-mastodon-long-form-2026-en promoted from preview_pending_publish (08-04 draft, renamed to .html, title 59c / desc 152c / 2678 words). 3-7) five backlog articles never committed by earlier runs (linkedin-ai-slop-report-button, state-of-markdown-publishing-july, tweet-md-vs-md2rich, writemark, x-articles-rich-media) — all were 404 on live while referenced in sitemap.xml (5 dead URLs); now committed + live. blog/index.html: +2 cards (08-05, 08-04). sitemap.xml: 65 -> 67 URLs. No zh-CN anywhere (lang policy OK).",
- "last_publish": {
-  "date": "2026-08-05",
-  "slug": "linkedin-reverses-ai-content-rules-2026-en",
-  "backlog_promoted": 6
- }
 }
