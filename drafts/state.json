@@ -1382,43 +1382,78 @@
         "internal_links": 7,
         "new_article_created": true
       }
+    },
+    {
+      "slug": "apple-notes-markdown-export-publish-2026-en",
+      "date": "2026-08-08",
+      "type": "blog_article",
+      "lang": "en-US",
+      "file": "blog/apple-notes-markdown-export-publish-2026-en.html",
+      "url": "https://md2rich.com/blog/apple-notes-markdown-export-publish-2026-en",
+      "title": "Apple Notes Markdown Export 2026: Publish Anywhere",
+      "description": "Apple Notes now imports and exports Markdown. Here's how to write on iPhone or Mac and publish as rich text to LinkedIn, X Articles, or Medium.",
+      "heat_source": "Apple Notes iOS 26 Markdown import/export + iOS 27 Markdown copy-paste (MacRumors Sep 2025, AppleInsider Jan 2026, Gadget Hacks Sep 2025/Aug 2026, Apple World Today Jul 2026, 9to5Mac Jul 2026, MacRumors Jun 2026); today's 3ea88f8bb2d0 brief FAILED (API error) so researched directly via Google News RSS",
+      "status": "published",
+      "primary_keyword": "apple notes markdown export",
+      "secondary_keywords": [
+        "apple notes to linkedin",
+        "ios 26 notes markdown",
+        "ios 27 notes copy paste markdown",
+        "apple notes markdown",
+        "write in markdown iphone"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "providers_featured": [],
+      "external_links": [
+        "https://www.apple.com/os/ios/",
+        "https://www.markdownguide.org/basic-syntax/"
+      ],
+      "meta_title_chars": 50,
+      "meta_desc_chars": 155,
+      "word_count": 1610,
+      "faq_count": 5,
+      "internal_links": 5,
+      "git_commit": "691e4df",
+      "published_at": "2026-08-08T04:35:55Z",
+      "deployed_url_en": "https://md2rich.com/blog/apple-notes-markdown-export-publish-2026-en"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "Apple Notes Markdown export 2026 (iOS 26 import/export + iOS 27 copy-paste, write-once-publish-anywhere to LinkedIn/X/Medium)",
     "VS Code hybrid Markdown editor 2026 (1.131 + 1.132, Markdown diffs + dictation, client-side conversion to LinkedIn/X)",
     "Pandoc 20th anniversary 2026 (Linuxiac 08-04, WebAssembly in-browser converter vs client-side tools)",
     "LinkedIn AI content rules reversal 2026 (Jul 31 policy change, authenticity signal, Markdown-first workflow)",
-    "Markdown to Mastodon long-form 2026 (TOS 2026-08-31 privacy-first, Fediverse cross-server)",
-    "State of Markdown Publishing July 2026 round-up"
+    "Markdown to Mastodon long-form 2026 (TOS 2026-08-31 privacy-first, Fediverse cross-server)"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
   "last_run": {
-    "date": "2026-08-07T04:39:51Z",
-    "topic_direction": "VS Code 1.131/1.132 hybrid Markdown editor (official release notes 08-05) + client-side Markdown-to-rich-text workflow",
+    "date": "2026-08-08T04:35:55Z",
+    "topic_direction": "Apple Notes Markdown import/export (iOS 26, shipped 2025-2026) + iOS 27 Markdown copy-and-paste (fall 2026) -> write in Apple Notes, export .md, convert client-side with md2rich, publish to LinkedIn/X/Medium. Fresh non-covered signal, verified via 6 named outlets. Today's hot-brief FAILED (reasoning_content API 400) so used direct Google News RSS.",
     "candidates_evaluated": [
-      "vs-code-hybrid-markdown-editing-2026-en (selected: zero VS Code Markdown coverage in 59 published, fresh 08-05 1.132 signal, hybrid editor + Markdown diffs + dictation = strongest editor-tool fit for md2rich audience)",
-      "omniscanvas-40-browser-tools-2026-en (rejected: mykxlg.com source is weak/aggregator, weak brand citable body)",
-      "bluesky-long-form-x-articles-2026-en (rejected: Bluesky long-form already covered 07-09/07-15; signal dated 05-28)"
+      "apple-notes-markdown-export-publish-2026-en (selected: zero Apple-Notes-Markdown coverage in 60 published; fresh iOS 26 import/export + iOS 27 copy-paste signal from 6+ named outlets; perfect md2rich fit - write once in Notes, export Markdown, convert to rich text; strong 'apple notes markdown' long-tail SEO)",
+      "bluesky-long-form-x-articles-2026-en (rejected: Bluesky long-form already covered 3x - bluesky-x-articles-alternative, markdown-to-bluesky-long-form, markdown-to-bluesky-x-linkedin)",
+      "tweet-md-api-x-to-markdown-2026-en (rejected: tweet.md territory owned by threadgrab site; already covered via tweet-md-vs-md2rich + tweet-md-x-threads)"
     ],
-    "selected": "vs-code-hybrid-markdown-editing-2026-en",
+    "selected": "apple-notes-markdown-export-publish-2026-en",
     "verbatim_news_signals": [
-      "VS Code 1.131 (late Jul 2026): new experimental hybrid Markdown editor - view, edit, add agent-actionable comments to Markdown files in the Agents window",
-      "Setting: workbench.editor.markdownDefaultEditorInAgentsWindow",
-      "VS Code 1.132 (Aug 5, 2026): Markdown diffs in the hybrid Markdown editor; multilingual dictation; side chats",
-      "VS Code 1.131 also added built-in dictation (Experimental) across chat, editors, and workbench",
-      "Sources: InfoWorld, visualstudiomagazine.com, Neowin (all Aug 5) + official code.visualstudio.com release notes"
+      "Gadget Hacks Aug 7 2026: 'How to Import and Export Markdown in Apple Notes on iOS 26'",
+      "Apple World Today Jul 24 2026: 'How to Import and Export Markdown Files in Apple Notes'",
+      "AppleInsider Jan 12 2026: 'How to import and export Markdown with Apple Notes in iOS 26'",
+      "MacRumors Sep 3 2025: 'iOS 26: Import and Export Markdown Files in Apple Notes'",
+      "MacRumors Jun 17 2026: 'iOS 27 Adds Four New Features to Notes App, Including Markdown Copy-and-Paste'",
+      "9to5Mac Jul 30 2026: \"Here's everything new for Apple Notes in iOS 27\""
     ]
   },
   "last_published_slug": "vs-code-hybrid-markdown-editing-2026-en",
   "last_published_at": "2026-08-07T04:39:51Z",
   "drafts_count": 0,
   "published_count": 60,
-  "publish_notes": "2026-08-07: Published 'vs-code-hybrid-markdown-editing-2026-en'. VS Code 1.131+1.132 hybrid Markdown editor (official release notes), Markdown diffs + dictation angle. Title 51c / desc 147c / 1659 words / 5 FAQ / 4 HowTo / Article+HowTo+BreadcrumbList+FAQPage / 7 internal links / lang en-US. Deploy git_push_auto_deploy. Caught+fixed stray </p> in 3 meta description attrs before publish.",
+  "publish_notes": "2026-08-08: Published apple-notes-markdown-export-publish-2026-en (Apple Notes Markdown guide, 1610 words, 50c title / 155c desc, 5 FAQ, 5 internal + 2 external links). Hot-brief 3ea88f8bb2d0 FAILED (reasoning_content API 400) -> direct Google News RSS research.",
   "last_publish": {
-    "date": "2026-08-07",
-    "slug": "vs-code-hybrid-markdown-editing-2026-en",
+    "date": "2026-08-08",
+    "slug": "apple-notes-markdown-export-publish-2026-en",
     "backlog_promoted": 0
   }
 }
