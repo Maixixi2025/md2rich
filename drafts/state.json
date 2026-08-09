@@ -1416,44 +1416,80 @@
       "git_commit": "691e4df",
       "published_at": "2026-08-08T04:35:55Z",
       "deployed_url_en": "https://md2rich.com/blog/apple-notes-markdown-export-publish-2026-en"
+    },
+    {
+      "slug": "markdown-ai-bots-publisher-debate-2026-en",
+      "date": "2026-08-09",
+      "type": "blog_article",
+      "lang": "en-US",
+      "file": "blog/markdown-ai-bots-publisher-debate-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-ai-bots-publisher-debate-2026-en",
+      "title": "Markdown for AI Bots 2026: The Publisher Debate",
+      "description": "Publishers are split on serving Markdown to AI bots. Here is the for-and-against case and how creators keep one Markdown source for AI and human platforms.",
+      "heat_source": "Digiday Media Briefing 'The case for and against markdown for AI bots' (Aug 6, 2026) — verified from article body (TollBit ~90% token reduction, Time ads in markdown, Promptwatch 1.6M-citation study, Google GEO guidelines ignore llms.txt for ranking); today's 3ea88f8bb2d0 brief FAILED (persistent reasoning_content API 400) so researched directly via Google News RSS + Digiday feed",
+      "status": "published",
+      "primary_keyword": "markdown for ai bots",
+      "secondary_keywords": [
+        "markdown ai visibility",
+        "llms.txt debate 2026",
+        "markdown for agents",
+        "tollbit markdown tokens",
+        "google geo markdown"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "providers_featured": [],
+      "external_links": [
+        "https://digiday.com/media/media-briefing-the-case-for-and-against-markdown-for-ai-bots/",
+        "https://tollbit.com/",
+        "https://developers.cloudflare.com/bots/",
+        "https://promptwatch.io/",
+        "https://llmstxt.org/"
+      ],
+      "meta_title_chars": 47,
+      "meta_desc_chars": 155,
+      "word_count": 1818,
+      "faq_count": 5,
+      "internal_links": 6,
+      "git_commit": "5ff2296",
+      "published_at": "2026-08-09T04:35:00Z",
+      "deployed_url_en": "https://md2rich.com/blog/markdown-ai-bots-publisher-debate-2026-en"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "Markdown for AI bots 2026 publisher debate (Digiday Aug 6 for/against: token economy + Time markdown ads vs free-scraping risk + Promptwatch no-citation-lift; one-source publish for AI + humans via md2rich)",
     "Apple Notes Markdown export 2026 (iOS 26 import/export + iOS 27 copy-paste, write-once-publish-anywhere to LinkedIn/X/Medium)",
     "VS Code hybrid Markdown editor 2026 (1.131 + 1.132, Markdown diffs + dictation, client-side conversion to LinkedIn/X)",
     "Pandoc 20th anniversary 2026 (Linuxiac 08-04, WebAssembly in-browser converter vs client-side tools)",
-    "LinkedIn AI content rules reversal 2026 (Jul 31 policy change, authenticity signal, Markdown-first workflow)",
-    "Markdown to Mastodon long-form 2026 (TOS 2026-08-31 privacy-first, Fediverse cross-server)"
+    "LinkedIn AI content rules reversal 2026 (Jul 31 policy change, authenticity signal, Markdown-first workflow)"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
   "last_run": {
-    "date": "2026-08-08T04:35:55Z",
-    "topic_direction": "Apple Notes Markdown import/export (iOS 26, shipped 2025-2026) + iOS 27 Markdown copy-and-paste (fall 2026) -> write in Apple Notes, export .md, convert client-side with md2rich, publish to LinkedIn/X/Medium. Fresh non-covered signal, verified via 6 named outlets. Today's hot-brief FAILED (reasoning_content API 400) so used direct Google News RSS.",
+    "date": "2026-08-09T04:35:00Z",
+    "topic_direction": "Digiday Media Briefing (Aug 6 2026): the case for and against markdown for AI bots — for (agents prefer structured plain text, TollBit ~90% token reduction, Time serving ads in markdown) vs against (easier free scraping/lost control, Promptwatch 1.6M citations show no citation lift, Google GEO guidelines ignore llms.txt for ranking). Creator takeaway: keep one Markdown source, expose to AI if desired, convert to rich text locally with md2rich for human platforms.",
     "candidates_evaluated": [
-      "apple-notes-markdown-export-publish-2026-en (selected: zero Apple-Notes-Markdown coverage in 60 published; fresh iOS 26 import/export + iOS 27 copy-paste signal from 6+ named outlets; perfect md2rich fit - write once in Notes, export Markdown, convert to rich text; strong 'apple notes markdown' long-tail SEO)",
-      "bluesky-long-form-x-articles-2026-en (rejected: Bluesky long-form already covered 3x - bluesky-x-articles-alternative, markdown-to-bluesky-long-form, markdown-to-bluesky-x-linkedin)",
-      "tweet-md-api-x-to-markdown-2026-en (rejected: tweet.md territory owned by threadgrab site; already covered via tweet-md-vs-md2rich + tweet-md-x-threads)"
+      "markdown-ai-bots-publisher-debate-2026-en (selected: fresh Aug 6 Digiday debate signal, zero prior coverage of the for/against markdown-for-AI-bots debate; strong md2rich fit — write-once Markdown source for two audiences (AI + human rich text); distinguishes from existing llms.txt/AGENTS.md standards piece by being a news-analysis of the publisher debate)",
+      "google-keep-markdown-export-2026-en (rejected: Android Authority May 2026 — dated ~3 months, weaker news hook)",
+      "linkedin-creator-marketplace-markdown-2026-en (rejected: Digiday Jun 2026, older, narrower B2B angle)"
     ],
-    "selected": "apple-notes-markdown-export-publish-2026-en",
+    "selected": "markdown-ai-bots-publisher-debate-2026-en",
     "verbatim_news_signals": [
-      "Gadget Hacks Aug 7 2026: 'How to Import and Export Markdown in Apple Notes on iOS 26'",
-      "Apple World Today Jul 24 2026: 'How to Import and Export Markdown Files in Apple Notes'",
-      "AppleInsider Jan 12 2026: 'How to import and export Markdown with Apple Notes in iOS 26'",
-      "MacRumors Sep 3 2025: 'iOS 26: Import and Export Markdown Files in Apple Notes'",
-      "MacRumors Jun 17 2026: 'iOS 27 Adds Four New Features to Notes App, Including Markdown Copy-and-Paste'",
-      "9to5Mac Jul 30 2026: \"Here's everything new for Apple Notes in iOS 27\""
+      "Digiday Aug 6 2026: 'Media Briefing: The case for and against markdown for AI bots'",
+      "Digiday Aug 7 2026: 'Clients are hungry for AI visibility aids, but buyers are skeptical of specialized markdown ads'",
+      "ContentGrip Aug 8 2026: 'Can AI markdown ads earn buyer trust?'",
+      "Cloudflare Blog Feb 2026: 'Introducing Markdown for Agents'",
+      "visualstudiomagazine Feb 2026: 'In Agentic AI, It's All About the Markdown'"
     ]
   },
   "last_published_slug": "vs-code-hybrid-markdown-editing-2026-en",
   "last_published_at": "2026-08-07T04:39:51Z",
   "drafts_count": 0,
   "published_count": 60,
-  "publish_notes": "2026-08-08: Published apple-notes-markdown-export-publish-2026-en (Apple Notes Markdown guide, 1610 words, 50c title / 155c desc, 5 FAQ, 5 internal + 2 external links). Hot-brief 3ea88f8bb2d0 FAILED (reasoning_content API 400) -> direct Google News RSS research.",
+  "publish_notes": "2026-08-09 publish: markdown-ai-bots-publisher-debate-2026-en (news-analysis of Digiday markdown-for-AI-bots debate; title 47c / desc 155c / 1818 words / 5 FAQ / 6 internal + 5 external links; blog card + sitemap updated)",
   "last_publish": {
-    "date": "2026-08-08",
-    "slug": "apple-notes-markdown-export-publish-2026-en",
+    "date": "2026-08-09",
+    "slug": "markdown-ai-bots-publisher-debate-2026-en",
     "backlog_promoted": 0
   }
 }
