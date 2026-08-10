@@ -1453,43 +1453,77 @@
       "git_commit": "5ff2296",
       "published_at": "2026-08-09T04:35:00Z",
       "deployed_url_en": "https://md2rich.com/blog/markdown-ai-bots-publisher-debate-2026-en"
+    },
+    {
+      "slug": "jorge-org-mode-markdown-site-generator-2026-en",
+      "date": "2026-08-10",
+      "type": "blog_article",
+      "lang": "en-US",
+      "file": "blog/jorge-org-mode-markdown-site-generator-2026-en.html",
+      "url": "https://md2rich.com/blog/jorge-org-mode-markdown-site-generator-2026-en",
+      "title": "Jorge: Minimal org-mode + Markdown Site Generator 2026",
+      "description": "Jorge is a small static site generator with org-mode + Markdown support. See how it fits a write-once, publish-everywhere Markdown workflow.",
+      "heat_source": "Today's 3ea88f8bb2d0 brief (2026-08-10): Show HN 'Jorge - minimal site generator with Markdown and org-mode support' (github.com/facundoolano/jorge). Verified from GitHub README body: Go learning project inspired by Jekyll, goldmark (MD) + go-org (org) renderers, single binary, jorge init/serve/post/build workflow, .org drafts by default with draft:true flag. Fresh signal - zero prior Jorge/org-mode coverage.",
+      "status": "published",
+      "primary_keyword": "jorge org-mode site generator",
+      "secondary_keywords": [
+        "org mode static site",
+        "markdown blog generator",
+        "minimal static site generator",
+        "markdown to static site",
+        "write once publish everywhere"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "providers_featured": [],
+      "external_links": [
+        "https://github.com/facundoolano/jorge",
+        "https://github.com/niklasfasching/go-org",
+        "https://github.com/yuin/goldmark",
+        "https://jekyllrb.com/",
+        "https://orgmode.org/",
+        "https://olano.dev/"
+      ],
+      "meta_title_chars": 54,
+      "meta_desc_chars": 140,
+      "word_count": 1670,
+      "faq_count": 5,
+      "internal_links": 7,
+      "git_commit": "93e36b6",
+      "published_at": "2026-08-10T00:00:00Z",
+      "deployed_url_en": "https://md2rich.com/blog/jorge-org-mode-markdown-site-generator-2026-en"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "Jorge 2026 org-mode + Markdown static site generator (Show HN: one Markdown/org source -> Jorge builds a site you host, md2rich converts same source to rich text for LinkedIn/X/Medium)",
     "Markdown for AI bots 2026 publisher debate (Digiday Aug 6 for/against: token economy + Time markdown ads vs free-scraping risk + Promptwatch no-citation-lift; one-source publish for AI + humans via md2rich)",
     "Apple Notes Markdown export 2026 (iOS 26 import/export + iOS 27 copy-paste, write-once-publish-anywhere to LinkedIn/X/Medium)",
     "VS Code hybrid Markdown editor 2026 (1.131 + 1.132, Markdown diffs + dictation, client-side conversion to LinkedIn/X)",
-    "Pandoc 20th anniversary 2026 (Linuxiac 08-04, WebAssembly in-browser converter vs client-side tools)",
-    "LinkedIn AI content rules reversal 2026 (Jul 31 policy change, authenticity signal, Markdown-first workflow)"
+    "Pandoc 20th anniversary 2026 (Linuxiac 08-04, WebAssembly in-browser converter vs client-side tools)"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
   "last_run": {
-    "date": "2026-08-09T04:35:00Z",
-    "topic_direction": "Digiday Media Briefing (Aug 6 2026): the case for and against markdown for AI bots — for (agents prefer structured plain text, TollBit ~90% token reduction, Time serving ads in markdown) vs against (easier free scraping/lost control, Promptwatch 1.6M citations show no citation lift, Google GEO guidelines ignore llms.txt for ranking). Creator takeaway: keep one Markdown source, expose to AI if desired, convert to rich text locally with md2rich for human platforms.",
+    "date": "2026-08-10T00:00:00Z",
+    "topic_direction": "Jorge - minimal personal site generator with org-mode + Markdown support (Show HN Sep 2026). Write-once theme: one Markdown/org source -> Jorge builds a static personal website; md2rich converts the same source to rich text for LinkedIn/X/Medium. Contrast tool outputs: website (HTML you host) vs rich text (paste into closed platforms).",
     "candidates_evaluated": [
-      "markdown-ai-bots-publisher-debate-2026-en (selected: fresh Aug 6 Digiday debate signal, zero prior coverage of the for/against markdown-for-AI-bots debate; strong md2rich fit — write-once Markdown source for two audiences (AI + human rich text); distinguishes from existing llms.txt/AGENTS.md standards piece by being a news-analysis of the publisher debate)",
-      "google-keep-markdown-export-2026-en (rejected: Android Authority May 2026 — dated ~3 months, weaker news hook)",
-      "linkedin-creator-marketplace-markdown-2026-en (rejected: Digiday Jun 2026, older, narrower B2B angle)"
+      "jorge-org-mode-markdown-site-generator-2026-en (selected: fresh Show HN signal from today's brief; zero prior Jorge/org-mode coverage; strong write-once fit - static site vs rich-text output from same Markdown source; complements existing md2rich tool-comparison archive)",
+      "gsc-social-video-tracking-guide (rejected: already covered - google-search-console-social-video-tracking-2026-en exists 07-08)",
+      "tweet.md tool review (rejected: already covered 3x - tweet-md-x-threads-to-markdown-en, tweet-md-vs-md2rich-markdown-x-roundtrip-2026-en, markdown-archives-ai-2026-tweet-md-bluesky-en)"
     ],
-    "selected": "markdown-ai-bots-publisher-debate-2026-en",
+    "selected": "jorge-org-mode-markdown-site-generator-2026-en",
     "verbatim_news_signals": [
-      "Digiday Aug 6 2026: 'Media Briefing: The case for and against markdown for AI bots'",
-      "Digiday Aug 7 2026: 'Clients are hungry for AI visibility aids, but buyers are skeptical of specialized markdown ads'",
-      "ContentGrip Aug 8 2026: 'Can AI markdown ads earn buyer trust?'",
-      "Cloudflare Blog Feb 2026: 'Introducing Markdown for Agents'",
-      "visualstudiomagazine Feb 2026: 'In Agentic AI, It's All About the Markdown'"
+      "Show HN (2026-08-10 brief): 'Jorge - minimal site generator with Markdown and org-mode support' - https://github.com/facundoolano/jorge"
     ]
   },
   "last_published_slug": "vs-code-hybrid-markdown-editing-2026-en",
   "last_published_at": "2026-08-07T04:39:51Z",
   "drafts_count": 0,
   "published_count": 60,
-  "publish_notes": "2026-08-09 publish: markdown-ai-bots-publisher-debate-2026-en (news-analysis of Digiday markdown-for-AI-bots debate; title 47c / desc 155c / 1818 words / 5 FAQ / 6 internal + 5 external links; blog card + sitemap updated)",
+  "publish_notes": "2026-08-10 publish: jorge-org-mode-markdown-site-generator-2026-en (Show HN static site generator with org-mode + Markdown; title 54c / desc 140c / 1670 words / 5 FAQ / 7 internal + 6 external links; blog card + sitemap updated; commit H1 93e36b6)",
   "last_publish": {
-    "date": "2026-08-09",
-    "slug": "markdown-ai-bots-publisher-debate-2026-en",
+    "date": "2026-08-10",
+    "slug": "jorge-org-mode-markdown-site-generator-2026-en",
     "backlog_promoted": 0
   }
 }
