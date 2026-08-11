@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books as Code: Write and Publish Books with Markdown + Git</title>
+  <meta name="description" content="Books as code means authoring in Markdown, versioning with Git, and compiling to EPUB, PDF, or web. A practical write-once, publish-everywhere guide.">
+  <meta name="keywords" content="books as code, write a book in markdown, markdown to epub, git book publishing, mdbook, leanpub markdown, pandoc book, authoring markdown book, write once publish everywhere, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/books-as-code-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/books-as-code-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/books-as-code-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Books as Code: Write and Publish Books with Markdown + Git">
+  <meta property="og:description" content="Books as code means authoring in Markdown, versioning with Git, and compiling to EPUB, PDF, or web. A practical write-once, publish-everywhere guide.">
+  <meta property="og:url" content="https://md2rich.com/blog/books-as-code-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Books as Code: Write and Publish Books with Markdown + Git">
+  <meta name="twitter:description" content="Books as code means authoring in Markdown, versioning with Git, and compiling to EPUB, PDF, or web. A practical write-once, publish-everywhere guide.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Books as Code: Write and Publish Books with Markdown + Git",
+      "description": "Books as code means authoring in Markdown, versioning with Git, and compiling to EPUB, PDF, or web. A practical write-once, publish-everywhere guide.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-11",
+      "dateModified": "2026-08-11",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/books-as-code-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does books as code mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Books as code is the practice of authoring a book as plain-text Markdown files versioned in a Git repository, then compiling that single source into multiple formats, such as EPUB, PDF, HTML for the web, and MOBI. Chapters are files, headings and lists are just Markdown, and every change is tracked like software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools do I need to write a book in Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You only need a text editor and Git. To compile the book into finished formats you can use a free tool like Pandoc, mdBook, Quarto, or a service like Leanpub or GitBook. Each takes your Markdown source and produces EPUB, PDF, or web output, so you can pick the one that matches your workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I publish a Markdown book to Amazon or Apple Books?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most self-publishing platforms accept the EPUB format, which is the standard output of Markdown-to-book tools. You compile your Markdown source to a validated EPUB and upload it to Amazon KDP, Apple Books, or Kobo. Keeping the Markdown source means you can regenerate every store-specific build from one file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is books as code different from writing in a word processor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A word processor locks your manuscript in a proprietary binary where revisions live in a change log. Books as code keeps your writing as plain Markdown that any tool can read, gives you full version history and branching with Git, and lets you produce every output format from one source. You trade some visual layout control for portability and automation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does md2rich fit into a books-as-code workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "md2rich converts your Markdown source into formatted rich text you can paste directly into LinkedIn, X Articles, Medium, or Notion. The long-form book and the shorter promotional posts come from the same Markdown files: compile the book to EPUB or PDF, and use md2rich client-side to publish the launch posts without uploading your work anywhere."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 11, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Books as code: write and publish a book from Markdown + Git</h1>
+        <p class="text-lg text-gray-600">A book is the longest thing most writers will ever publish, which makes it the perfect candidate for the write-once, publish-everywhere approach. "Books as code" treats your manuscript like source code — plain Markdown files in a Git repository — and compiles that single source into EPUB, PDF, and web-ready HTML. Here is what the workflow looks like in 2026 and why it fits neatly alongside client-side Markdown conversion.</p>
+      </header>
+
+<p class="text-gray-700 mb-6">The phrase "books as code" has been circulating in the writing community for years, and a fresh <a href="https://hackernoon.com/" class="text-indigo-600 font-semibold">HackerNoon feature</a> repopularized it in August 2026 by walking through exactly how a manuscript becomes a Git repository of Markdown. The idea is simple and profound at the same time: instead of writing your book inside a word processor's proprietary file, you author each chapter as a <code class="bg-gray-100 px-1 rounded">.md</code> file in a folder, track every draft with Git, and let a compiler turn that plain-text source into whatever finished format your readers need. The <a href="/blog/write-once-publish-anywhere-2026-en" class="text-indigo-600 font-semibold">write-once, publish-everywhere philosophy</a> we keep returning to on this blog finds its most ambitious expression in a full-length book.</p>
+
+<p class="text-gray-700 mb-6">Why does this matter to a Markdown writer? Because a book is the case where the payoff is largest. When a 300-page manuscript lives as 12 clean Markdown files, you get version control, collaboration, automated builds, and the ability to ship to multiple stores from one source — things a word processor simply cannot give you. And the skills are the same ones you already use for a <a href="/blog/markdown-to-medium-2026-en" class="text-indigo-600 font-semibold">blog post on Medium</a> or a <a href="/blog/markdown-to-x-articles-en" class="text-indigo-600 font-semibold">long-form X Article</a>: write in Markdown, then convert at publish time.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What "books as code" actually means</h2>
+
+<p class="text-gray-700 mb-6">Books as code models a book the way developers model software. The manuscript is a directory of source files; the finished book is the compiled output. Practically, that means:</p>
+
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+<li><strong>Chapters are files.</strong> A folder like <code class="bg-gray-100 px-1 rounded">manuscript/</code> contains <code class="bg-gray-100 px-1 rounded">chapter-01.md</code>, <code class="bg-gray-100 px-1 rounded">chapter-02.md</code>, and so on, plus a front-matter file that defines the title page, metadata, and table of contents.</li>
+<li><strong>Structures are Markdown.</strong> Headings, paragraphs, lists, blockquotes, links, and footnotes are all just Markdown. No hidden styling layer — the text is the content.</li>
+<li><strong>History is Git.</strong> Every revision is committed, every branch is a rewrite experiment, and rolling back a bad chapter is as easy as <code class="bg-gray-100 px-1 rounded">git checkout</code>.</li>
+<li><strong>Formats are builds.</strong> A tool reads the source and produces EPUB, PDF, HTML for the web, and more. Change a chapter, rebuild, and every format updates.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">This is the same mental model we apply to <a href="/blog/markdown-to-rich-text-2026-en" class="text-indigo-600 font-semibold">Markdown-to-rich-text conversion</a> at a smaller scale. The file is the truth; any rendered output is just one view of it. A book just makes the stakes — and the payoff — bigger.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The toolchain: from Markdown source to finished book</h2>
+
+<p class="text-gray-700 mb-6">You do not need an expensive publishing suite to work books-as-code. A handful of free tools cover the full pipeline from a folder of Markdown to a store-ready EPUB or a hosted web book:</p>
+
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+<li><a href="https://pandoc.org/" class="text-indigo-600 font-semibold">Pandoc</a> — the universal document converter. It reads Markdown and emits EPUB, PDF (via LaTeX), HTML, and dozens of other formats. Pandoc is the Swiss-army knife of the books-as-code world and has been a reliable workhorse since 2006.</li>
+<li><a href="https://rust-lang.github.io/mdBook/" class="text-indigo-600 font-semibold">mdBook</a> — a Markdown-to-web-book compiler from the Rust community. Give it a <code class="bg-gray-100 px-1 rounded">SUMMARY.md</code> and chapter files, and it builds a polished, searchable online book with a table of contents — the tool behind the Rust Book.</li>
+<li><a href="https://quarto.org/" class="text-indigo-600 font-semibold">Quarto</a> — a scientific and technical publishing system that turns Markdown into books, papers, slides, and websites, right at home with code and data visualizations.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">For storefront publishing, <a href="https://leanpub.com/" class="text-indigo-600 font-semibold">Leanpub</a> has long accepted Markdown manuscripts and lets you sell in-progress "early access" books, while <a href="https://www.gitbook.com/" class="text-indigo-600 font-semibold">GitBook</a> is a hosted option that syncs your Git-backed Markdown to a web book automatically. The common denominator: your source stays plain Markdown, and the tooling handles the formats.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">A concrete books-as-code workflow</h2>
+
+<p class="text-gray-700 mb-6">Here is a realistic end-to-end workflow that mirrors the HackerNoon approach. Start with a Git repository and a source folder:</p>
+
+<pre class="bg-gray-100 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code># set up the manuscript repo
+$ mkdir my-book && cd my-book
+$ git init
+$ mkdir manuscript
+
+# a chapter is a Markdown file
+# manuscript/chapter-01.md
+# # Chapter 1: Why Plain Text Wins</code></pre>
+
+<p class="text-gray-700 mb-6">Author each chapter as a normal Markdown file. Keep all images in a folder (say <code class="bg-gray-100 px-1 rounded">manuscript/images/</code>) and reference them with relative paths. Then compile the whole book. With Pandoc, a complete build to EPUB looks like:</p>
+
+<pre class="bg-gray-100 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code># compile all chapters into one EPUB
+$ pandoc manuscript/*.md \
+    --metadata title="My Book" \
+    --metadata author="Your Name" \
+    --toc --toc-depth=2 \
+    -o my-book.epub
+
+# and a web-ready HTML version from the same source
+$ pandoc manuscript/*.md \
+    --standalone --toc \
+    -o my-book.html</code></pre>
+
+<p class="text-gray-700 mb-6">Because every run reads the same Markdown, you can wrap the build in a small script and regenerate EPUB, PDF, and HTML with one command. That is the "code" in books-as-code: your manuscript is a buildable project, and a fresh copy is one <code class="bg-gray-100 px-1 rounded">git clone</code> away.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">From manuscript to reader — and from manuscript to post</h2>
+
+<p class="text-gray-700 mb-6">The books-as-code workflow does not stop at EPUB and PDF. The exact same Markdown source that compiles into a book also becomes the shorter content you use to promote it — the LinkedIn announcement, the X Articles thread, the Medium excerpt. This is where the two halves of the pipeline come together, and it is the piece most books-as-code guides skip.</p>
+
+<p class="text-gray-700 mb-6">Consider this snippet lifted straight from a manuscript chapter:</p>
+
+<pre class="bg-gray-100 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code># What I Learned Writing a Book in Markdown
+
+**Your words should outlive the tools you use to write them.**
+
+- Plain text is never trapped in a dead format
+- Git gives every draft a recoverable history
+- One source builds EPUB, PDF, and the web
+- The same file becomes your launch posts</code></pre>
+
+<p class="text-gray-700 mb-6">That file compiles into a polished page, EPUB, or PDF through a book tool. But when you want to post the highlights to <a href="/blog/markdown-to-linkedin-en" class="text-indigo-600 font-semibold">LinkedIn</a> or <a href="/blog/markdown-to-x-articles-en" class="text-indigo-600 font-semibold">X Articles</a>, you run that same Markdown through <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> and get native rich text: a bold headline, an emphasized first line, and a clean bulleted list, formatted the way each platform expects.</p>
+
+<p class="text-gray-700 mb-6">Here is another example — a short "publishing pipeline" post built from the same chapter content:</p>
+
+<pre class="bg-gray-100 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code># My Publishing Pipeline in 2026
+
+Write chapters in **Markdown**.
+Compile with [Pandoc](https://pandoc.org/).
+Self-publish as **EPUB**.
+Promote with [md2rich](https://md2rich.com/).</code></pre>
+
+<p class="text-gray-700 mb-6">Like our example in the <a href="/blog/jorge-org-mode-markdown-site-generator-2026-en" class="text-indigo-600 font-semibold">Jorge walkthrough</a>, the pattern is identical whether the output is a book, a website, or a social post: write once in Markdown, let the right tool produce the format each destination needs. A book is just the largest single artifact in that family.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Books as code and privacy: keep the manuscript on your machine</h2>
+
+<p class="text-gray-700 mb-6">A manuscript is sensitive. Drafts, unpublished chapters, and even finished work you have not released should not live on a third-party server you do not control. The books-as-code approach is well suited to a privacy-first posture precisely because the heavy lifting — compiling and converting — happens on your own machine with local tools like Pandoc and mdBook. The only service you may need is Git hosting, and you can self-host or use a private repository.</p>
+
+<p class="text-gray-700 mb-6">This is the same reason we built md2rich the way we did: the converter runs entirely in your browser and <strong>uploads nothing</strong>. Your Markdown — whether it is a chapter or a two-line announcement — never leaves your device. When you move from a finished book to its promotion, converting the source to rich text client-side keeps the whole production chain local. For the wider picture on that philosophy, our <a href="/blog/client-side-vs-cloud-markdown-converters-2026-en" class="text-indigo-600 font-semibold">client-side vs cloud converters</a> comparison lays out the trade-offs.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Is books as code right for you?</h2>
+
+<p class="text-gray-700 mb-6">Books as code is not for every writer. If you need precise page layout, rich typography control, and a tightly designed interior, a dedicated typesetting tool still beats a Markdown pipeline. And if you are uncomfortable at a command line, the learning curve of Git and Pandoc may feel like a detour from writing.</p>
+
+<p class="text-gray-700 mb-6">But if you already live in Markdown — which, if you are reading this blog, you probably do — the step is smaller than it sounds. The chapter files are just longer versions of posts you already write. Git is a skill you may already have. And the payoff is real: a manuscript that is versioned, portable, and buildable into every format from a single source, plus launch posts generated from the same files. That is the write-once, publish-everywhere idea applied to the biggest project a writer can take on.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The bottom line</h2>
+
+<p class="text-gray-700 mb-6">Books as code turns the manuscript into source code: Markdown files in Git, compiled into EPUB, PDF, and web output by free tools like Pandoc, mdBook, and Quarto. It gives you version control, portability, and one source of truth for every format — and the same source feeds your launch posts through a <a href="/blog/markdown-to-rich-text-2026-en" class="text-indigo-600 font-semibold">Markdown-to-rich-text converter</a>. Whether your next project is a 300-page book or a one-page newsletter, the principle holds: keep your writing in plain Markdown, publish everywhere, and never let a tool hold your words hostage.</p>
+
+<h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+
+<div class="space-y-6">
+<div><h3 class="text-lg font-semibold mb-2">What does books as code mean?</h3><p class="text-gray-700">Books as code is the practice of authoring a book as plain-text Markdown files versioned in a Git repository, then compiling that single source into multiple formats such as EPUB, PDF, HTML for the web, and MOBI. Chapters are files, headings and lists are just Markdown, and every change is tracked like software.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">What tools do I need to write a book in Markdown?</h3><p class="text-gray-700">You only need a text editor and Git. To compile the book into finished formats you can use a free tool like Pandoc, mdBook, or Quarto, or a service like Leanpub or GitBook. Each takes your Markdown source and produces EPUB, PDF, or web output, so you can pick whichever matches your workflow.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Can I publish a Markdown book to Amazon or Apple Books?</h3><p class="text-gray-700">Yes. Most self-publishing platforms accept the EPUB format, which is the standard output of Markdown-to-book tools. You compile your Markdown source to a validated EPUB and upload it to Amazon KDP, Apple Books, or Kobo. Keeping the Markdown source means you can regenerate every store-specific build from one file.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">How is books as code different from writing in a word processor?</h3><p class="text-gray-700">A word processor locks your manuscript in a proprietary binary. Books as code keeps your writing as plain Markdown any tool can read, gives you full version history and branching with Git, and lets you produce every output format from one source. You trade some visual layout control for portability and automation.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">How does md2rich fit into a books-as-code workflow?</h3><p class="text-gray-700">md2rich converts your Markdown source into formatted rich text you can paste directly into LinkedIn, X Articles, Medium, or Notion. The long-form book and the shorter launch posts come from the same Markdown files: compile the book to EPUB or PDF, and use md2rich client-side to publish the promotions without uploading your work anywhere.</p></div>
+</div>
+
+<div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+<h2 class="text-xl font-bold mb-2">One Markdown source. Publish it anywhere.</h2>
+<p class="text-gray-700 mb-4">Write your book — or your next post — in Markdown, convert it to rich text locally with md2rich, and paste into LinkedIn, X Articles, or Medium with formatting intact. No upload, no account, no lock-in.</p>
+<a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich</a>
+</div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex justify-between">
+      <span>© 2026 md2rich — Markdown to rich text, client-side.</span>
+      <span><a href="/privacy" class="hover:text-indigo-600">Privacy</a> · <a href="/about" class="hover:text-indigo-600">About</a></span>
+    </div>
+  </footer>
+</body>
+</html>
