@@ -1531,40 +1531,61 @@
       "article_commit": "ec6192c",
       "published_at": "2026-08-11T00:00:00Z",
       "deployed_url_en": "https://md2rich.com/blog/books-as-code-2026-en"
+    },
+    {
+      "slug": "agent-readable-markdown-cloudflare-mcp-2026-en",
+      "date": "2026-08-12",
+      "type": "blog_article",
+      "lang": "en-US",
+      "file": "blog/agent-readable-markdown-cloudflare-mcp-2026-en.html",
+      "url": "https://md2rich.com/blog/agent-readable-markdown-cloudflare-mcp-2026-en",
+      "title": "Agent-Readable Markdown: Cloudflare MCP & Agentic Content",
+      "description": "Cloudflare's stateless MCP spec and Agent Readiness tools make Markdown what AI agents read. Publish one Markdown source for agents and humans alike.",
+      "heat_source": "Fresh Cloudflare Agents Week (2026-08-04 to 08-10) coverage, led by the MCP 2026-07-28 stateless spec rewrite and the Agentic Internet / Agent Readiness (AEO) announcements. Verified from Cloudflare blog bodies: stateless MCP spec + TypeScript/Python/Go/C# SDKs; 'fewer than half of all HTML page requests now come from a human'; Agent Readiness diagnostics scan for 'a Markdown version of your content'; four primitives (readable, discoverable, callable, payable). Zero prior md2rich coverage of Agents Week 2026 (grep confirmed vs cloudflare-markdown-for-agents + llms-txt-agents + content-independence-day, which cover adjacent but distinct topics). Strong agent-layer + human-layer (md2rich rich-text) fit.",
+      "status": "published",
+      "primary_keyword": "agent-readable markdown",
+      "secondary_keywords": [
+        "stateless MCP spec",
+        "Model Context Protocol 2026",
+        "Cloudflare agentic internet",
+        "AEO answer engine optimization",
+        "llms.txt",
+        "markdown for AI agents"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "providers_featured": [],
+      "external_links": [
+        "https://blog.cloudflare.com/mcp-v2/",
+        "https://blog.cloudflare.com/aeo/",
+        "https://blog.cloudflare.com/the-agentic-internet/",
+        "https://blog.cloudflare.com/agents-week-review-august-2026/"
+      ],
+      "meta_title_chars": 57,
+      "meta_desc_chars": 143,
+      "word_count": 1751,
+      "faq_count": 5,
+      "internal_links": 8,
+      "git_commit": "8d25c7c",
+      "article_commit": "8d25c7c",
+      "published_at": "2026-08-12T00:00:00Z",
+      "deployed_url_en": "https://md2rich.com/blog/agent-readable-markdown-cloudflare-mcp-2026-en"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "agent-readable-markdown-cloudflare-mcp-2026-en",
     "Books as code 2026 (HackerNoon 08-10: author a book as Markdown files in Git, compile to EPUB/PDF/web via Pandoc/mdBook/Quarto; same source -> launch posts via md2rich)",
     "Jorge 2026 org-mode + Markdown static site generator (Show HN: one Markdown/org source -> Jorge builds a site you host, md2rich converts same source to rich text for LinkedIn/X/Medium)",
     "Markdown for AI bots 2026 publisher debate (Digiday Aug 6 for/against: token economy + Time markdown ads vs free-scraping risk + Promptwatch no-citation-lift; one-source publish for AI + humans via md2rich)",
-    "Apple Notes Markdown export 2026 (iOS 26 import/export + iOS 27 copy-paste, write-once-publish-anywhere to LinkedIn/X/Medium)",
-    "VS Code hybrid Markdown editor 2026 (1.131 + 1.132, Markdown diffs + dictation, client-side conversion to LinkedIn/X)"
+    "Apple Notes Markdown export 2026 (iOS 26 import/export + iOS 27 copy-paste, write-once-publish-anywhere to LinkedIn/X/Medium)"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
-  "last_run": {
-    "date": "2026-08-11T00:00:00Z",
-    "topic_direction": "Books as code - writing and publishing a book from Markdown + Git (HackerNoon feature 08-10). Write-once theme: one Markdown manuscript compiles to EPUB/PDF/web via Pandoc/mdBook/Quarto, and the same source converts via md2rich to rich-text launch posts for LinkedIn/X/Medium. Books = the largest single write-once artifact.",
-    "candidates_evaluated": [
-      "books-as-code-2026-en (selected: fresh HackerNoon story 08-10; zero prior md2rich coverage; strongest write-once fit - one Markdown source builds a book (EPUB/PDF/web) + launch posts via md2rich; privacy-first angle since compilation is local)",
-      "google-open-knowledge-format-okf (rejected: 2 months old, June 16; md2rich covered markdown-llms-txt-agents-md-standards-2026-en on 08-03 which overlaps AI-agents-markdown-spec space)",
-      "notion-markdown-workflow (rejected: Notion coverage exists - notion-to-markdown-migration-2026-en + markdown-to-notion-workflow-en)"
-    ],
-    "selected": "books-as-code-2026-en",
-    "verbatim_news_signals": [
-      "HackerNoon (2026-08-10): 'Books as Code: Writing and Publishing Books with Markdown and Git'",
-      "HackerNoon Newsletter (2026-08-10): HTLCs / books-as-code feature in circulation"
-    ]
-  },
+  "last_run": "2026-08-12",
   "last_published_slug": "books-as-code-2026-en",
   "last_published_at": "2026-08-11T00:00:00Z",
   "drafts_count": 0,
   "published_count": 64,
-  "publish_notes": "2026-08-11 publish: books-as-code-2026-en (HackerNoon 08-10 books-as-code; title 58c / desc 149c / 1873 words / 5 FAQ / 7 internal + 6 external links; blog card + sitemap updated; article commit ec6192c, index+sitemap commit a4a001a)",
-  "last_publish": {
-    "date": "2026-08-11",
-    "slug": "books-as-code-2026-en",
-    "backlog_promoted": 0
-  }
+  "publish_notes": "2026-08-12: published 'Agent-Readable Markdown: Cloudflare MCP & Agentic Content' \u2014 Cloudflare Agents Week 2026 news-analysis (stateless MCP 2026-07-28 spec + Agentic Internet/AEO diagnostics), links to llms.txt+AGENTS.md guide and md2rich rich-text conversion. en-US only.",
+  "last_publish": "2026-08-12"
 }
