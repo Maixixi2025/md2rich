@@ -1606,23 +1606,59 @@
       "article_commit": "68f8b50",
       "published_at": "2026-08-13T00:00:00Z",
       "deployed_url_en": "https://md2rich.com/blog/claude-ai-text-watermark-markdown-writers-2026-en"
+    },
+    {
+      "slug": "ai-detection-false-economy-markdown-2026-en",
+      "date": "2026-08-14",
+      "type": "blog_article",
+      "lang": "en-US",
+      "file": "blog/ai-detection-false-economy-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/ai-detection-false-economy-markdown-2026-en",
+      "title": "AI Detection False Economy: Write Markdown, Skip Detectors",
+      "description": "AI detectors give wildly different scores for the same human writing. Skip the FOW (fear of writing) — own a clean Markdown source you can prove.",
+      "heat_source": "Fresh news-analysis (Aug 11-14, 2026): 'The AI Detection False Economy: Fueling FOW (Fear of Writing)' by SEJ VIP contributor Andy Betts (Aug 11) — ran his own human articles from 2014/2019/2021/2026 through leading AI detectors and got opposite verdicts (100% AI vs 78% vs 42% vs 100% human; a 2019 pre-ChatGPT piece 'found traces of GPT'). Verified from the SEJ article body: false positives on human newspaper op-eds; Stanford found worse false-flagging for non-native English speakers; 2026 ScienceDirect study — small human edits let AI content bypass detection; the humanizer upsell (a detector scored a fully human 2014 article 100% human then offered paid humanize); FOW = fear of writing; Kelley School of Business bans detectors outright; Google's helpful-content guidance ignores per-sentence authorship; LinkedIn's Dan Roth: 'anyone claiming they do is selling a detection tool.' Plus editor Mary Kole on Jane Friedman's site (Aug 13) rewriting her client agreement after accepting two undisclosed AI-assisted novels. FOR side: NYT Aug 13 'felt empowering'; social platforms adopting detection. Zero prior md2rich coverage of the detection false-economy/FOW debate (best-ai-text-detectors Jul 13 = tool roundup; linkedin-ai-slop articles = platform crackdown, distinct). md2rich fit: own a clean versioned Markdown source instead of gaming detectors.",
+      "status": "published",
+      "primary_keyword": "AI detection false economy",
+      "secondary_keywords": [
+        "FOW fear of writing",
+        "AI detector false positive",
+        "AI detection backlash",
+        "humanizer upsell",
+        "write in markdown publish anywhere",
+        "clean provenance Markdown"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "providers_featured": [],
+      "external_links": [
+        "https://www.searchenginejournal.com/the-ai-detection-false-economy-fueling-fear-of-writing/584967/",
+        "https://janefriedman.com/after-editing-two-ai-assisted-manuscripts-i-rewrote-my-client-agreement/"
+      ],
+      "meta_title_chars": 58,
+      "meta_desc_chars": 145,
+      "word_count": 2336,
+      "faq_count": 5,
+      "internal_links": 6,
+      "git_commit": "8f00a7c",
+      "article_commit": "8f00a7c",
+      "published_at": "2026-08-14T00:00:00Z",
+      "deployed_url_en": "https://md2rich.com/blog/ai-detection-false-economy-markdown-2026-en"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "ai-detection-false-economy-markdown-2026-en",
     "claude-ai-text-watermark-markdown-writers-2026-en",
     "agent-readable-markdown-cloudflare-mcp-2026-en",
     "Books as code 2026 (HackerNoon 08-10: author a book as Markdown files in Git, compile to EPUB/PDF/web via Pandoc/mdBook/Quarto; same source -> launch posts via md2rich)",
-    "Jorge 2026 org-mode + Markdown static site generator (Show HN: one Markdown/org source -> Jorge builds a site you host, md2rich converts same source to rich text for LinkedIn/X/Medium)",
-    "Markdown for AI bots 2026 publisher debate (Digiday Aug 6 for/against: token economy + Time markdown ads vs free-scraping risk + Promptwatch no-citation-lift; one-source publish for AI + humans via md2rich)"
+    "Jorge 2026 org-mode + Markdown static site generator (Show HN: one Markdown/org source -> Jorge builds a site you host, md2rich converts same source to rich text for LinkedIn/X/Medium)"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
-  "last_run": "2026-08-13",
-  "last_published_slug": "claude-ai-text-watermark-markdown-writers-2026-en",
-  "last_published_at": "2026-08-13T00:00:00Z",
+  "last_run": "2026-08-14",
+  "last_published_slug": "ai-detection-false-economy-markdown-2026-en",
+  "last_published_at": "2026-08-14T00:00:00Z",
   "drafts_count": 0,
-  "published_count": 66,
-  "publish_notes": "2026-08-13: published 'Claude AI Text Watermarks 2026: A Markdown Writer's Guide' — news-analysis of Anthropic's model-level Claude text watermark (announced Aug 11, EU AI Act Transparency Code, effective Aug 2). Verified from TechCrunch body + 40+ outlet headlines; external links TechCrunch + artificialintelligenceact.eu + c2pa.org all 200. Angle: watermark = processing signal not authorship signal; human-written Markdown source is the clean-provenance answer; convert at publish time via md2rich (client-side, 0 upload).",
-  "last_publish": "2026-08-13"
+  "published_count": 67,
+  "publish_notes": "2026-08-14: published 'AI Detection False Economy: Write Markdown, Skip Detectors' — news-analysis of the AI detection false economy / FOW (fear of writing). SEJ Andy Betts (Aug 11) ran human articles 2014-2026 through detectors and got opposite verdicts; verified from SEJ body (false positives on op-eds, Stanford non-native bias, 2026 ScienceDirect bypass, humanizer upsell, Kelley School ban, Google helpful-content stance, LinkedIn Dan Roth quote) + Jane Friedman Mary Kole client-agreement rewrite (Aug 13). FOR side = NYT detector test 'felt empowering' + platform adoption. 2087-word-range debate article; external links SEJ + Jane Friedman both 200. Angle: own a clean versioned Markdown source instead of gaming detectors; convert to rich text at publish via md2rich (client-side, 0 upload).",
+  "last_publish": "2026-08-14"
 }
