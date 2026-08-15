@@ -1642,23 +1642,57 @@
       "article_commit": "8f00a7c",
       "published_at": "2026-08-14T00:00:00Z",
       "deployed_url_en": "https://md2rich.com/blog/ai-detection-false-economy-markdown-2026-en"
+    },
+    {
+      "slug": "markdown-context-files-ai-prompts-2026-en",
+      "date": "2026-08-15",
+      "type": "article",
+      "lang": "en-US",
+      "file": "blog/markdown-context-files-ai-prompts-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-context-files-ai-prompts-2026-en",
+      "title": "Markdown Context Files: Cut AI Prompts to One Sentence",
+      "description": "Write durable Markdown context files once and AI prompts collapse to one sentence. Feed agents the same source and publish it as rich text with md2rich.",
+      "heat_source": "Theo Browne interview (finance.biggo.com, Aug 11) + AGENTS.md/docs-first prompting wave + Warp Ben Holmes voice-notes-to-wiki",
+      "status": "published",
+      "published_at": "2026-08-15T04:40:14.923874+00:00",
+      "git_commit": "6338d785cde35ce2df46556bf18e1cd007069d24",
+      "primary_cta": "https://md2rich.com/",
+      "meta_title_chars": 54,
+      "meta_desc_chars": 152,
+      "faq_count": 5,
+      "word_count": 1757,
+      "primary_keyword": "Markdown context files AI prompts",
+      "secondary_keywords": [
+        "write once publish anywhere",
+        "prompts technical debt",
+        "AGENTS.md",
+        "publish Markdown to LinkedIn"
+      ],
+      "external_links": [
+        "https://md2rich.com/",
+        "https://about.me/jasonxmai"
+      ],
+      "internal_links": [
+        "/blog/markdown-llms-txt-agents-md-standards-2026-en",
+        "/blog/client-side-vs-cloud-markdown-converters-2026-en"
+      ]
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "markdown-context-files-ai-prompts-2026-en",
     "ai-detection-false-economy-markdown-2026-en",
     "claude-ai-text-watermark-markdown-writers-2026-en",
     "agent-readable-markdown-cloudflare-mcp-2026-en",
-    "Books as code 2026 (HackerNoon 08-10: author a book as Markdown files in Git, compile to EPUB/PDF/web via Pandoc/mdBook/Quarto; same source -> launch posts via md2rich)",
-    "Jorge 2026 org-mode + Markdown static site generator (Show HN: one Markdown/org source -> Jorge builds a site you host, md2rich converts same source to rich text for LinkedIn/X/Medium)"
+    "Books as code 2026 (HackerNoon 08-10: author a book as Markdown files in Git, compile to EPUB/PDF/web via Pandoc/mdBook/Quarto; same source -> launch posts via md2rich)"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
-  "last_run": "2026-08-14",
+  "last_run": "2026-08-15T04:40:14.923874+00:00",
   "last_published_slug": "ai-detection-false-economy-markdown-2026-en",
   "last_published_at": "2026-08-14T00:00:00Z",
   "drafts_count": 0,
-  "published_count": 67,
+  "published_count": 68,
   "publish_notes": "2026-08-14: published 'AI Detection False Economy: Write Markdown, Skip Detectors' — news-analysis of the AI detection false economy / FOW (fear of writing). SEJ Andy Betts (Aug 11) ran human articles 2014-2026 through detectors and got opposite verdicts; verified from SEJ body (false positives on op-eds, Stanford non-native bias, 2026 ScienceDirect bypass, humanizer upsell, Kelley School ban, Google helpful-content stance, LinkedIn Dan Roth quote) + Jane Friedman Mary Kole client-agreement rewrite (Aug 13). FOR side = NYT detector test 'felt empowering' + platform adoption. 2087-word-range debate article; external links SEJ + Jane Friedman both 200. Angle: own a clean versioned Markdown source instead of gaming detectors; convert to rich text at publish via md2rich (client-side, 0 upload).",
-  "last_publish": "2026-08-14"
+  "last_publish": "2026-08-15"
 }
