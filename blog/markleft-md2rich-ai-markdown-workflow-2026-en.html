@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markleft vs md2rich: The AI-Assisted Markdown Workflow</title>
+  <meta name="description" content="Markleft comments on your Markdown and AI proposes suggestions; md2rich turns it into rich text. Merge both into one AI-assisted writing pipeline.">
+  <meta name="keywords" content="Markleft, Markdown suggestion mode, review AI Markdown, Markdown footnotes annotations, AI Markdown quality control, append-only suggestions, markdown writing workflow, md2rich, publish Markdown to LinkedIn X Medium, client-side Markdown converter, AI document review">
+  <link rel="canonical" href="https://md2rich.com/blog/markleft-md2rich-ai-markdown-workflow-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markleft-md2rich-ai-markdown-workflow-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markleft-md2rich-ai-markdown-workflow-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markleft vs md2rich: The AI-Assisted Markdown Workflow">
+  <meta property="og:description" content="Markleft comments on your Markdown and AI proposes suggestions; md2rich turns it into rich text. Merge both into one AI-assisted writing pipeline.">
+  <meta property="og:url" content="https://md2rich.com/blog/markleft-md2rich-ai-markdown-workflow-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markleft vs md2rich: The AI-Assisted Markdown Workflow">
+  <meta name="twitter:description" content="Markleft comments on your Markdown and AI proposes suggestions; md2rich turns it into rich text. Merge both into one AI-assisted writing pipeline.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Markleft vs md2rich: The AI-Assisted Markdown Workflow",
+      "description": "Markleft comments on your Markdown and AI proposes suggestions; md2rich turns it into rich text. Merge both into one AI-assisted writing pipeline.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markleft-md2rich-ai-markdown-workflow-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Markleft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markleft is an open-source browser tool by Martin R. Lysk that adds suggestion mode to Markdown. It runs as a Chrome bookmarklet against local .md files: you comment directly on text, code, tables, images, or SVG diagrams, and Markleft compiles those annotations into a prompt that tells an AI to propose individual suggestions instead of rewriting the whole document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Markleft different from a normal AI chat rewrite?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Normal chat iteration gives the AI a prose description of what you want changed and gets back a completely rewritten document, with the original intent buried in the chat history. Markleft keeps your feedback in the document as comments anchored to the exact text or image, and the AI's changes arrive as individual, reviewable suggestions you can accept or reject — not an opaque rewrite you must diff by hand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Markleft work with any Markdown renderer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Markleft annotations are standard Markdown footnotes with reserved identifiers. A renderer that does not understand Markleft, like GitHub, simply shows them as readable footnotes. Only the Markleft editor and the AI use the encoded footnote IDs to locate a highlighted sentence, an image coordinate, or a code range. Suggestions are also append-only footnotes, so the AI can propose a change without ever altering the document being reviewed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit in an AI-assisted Markdown workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markleft handles the iterate-and-review half: turning AI feedback into reviewable suggestions inside your Markdown. md2rich handles the publish half: converting that same clean Markdown into formatted rich text for LinkedIn, X Articles, Medium, or Notion, entirely in your browser with nothing uploaded. The two tools bookend the same workflow — one Markdown source of truth, refined with Markleft, published with md2rich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Markleft compatible with md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, because both work on standard Markdown. Comments and suggestions Markleft writes into a .md file, including the appended suggestion footnotes, remain valid Markdown. Before publishing, you accept the suggestions you want in your editor; what is left is still clean Markdown that md2rich converts to rich text. They operate on the same file without conflict."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 16, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Markleft vs md2rich: the two halves of an AI-assisted Markdown workflow</h1>
+        <p class="text-lg text-gray-600">On August 9, 2026, developer Martin R. Lysk published an 11-minute essay on his blog describing Markleft — an open-source tool that gives Markdown a suggestion mode. Its core complaint is one most people who write with AI instantly recognize: when you tell a model "shorten the second sentence," the model rewrites the entire document, and you are left comparing two files by hand to find out whether it actually understood you. Markleft's answer is to keep comments inside the Markdown file, anchored to the exact text, and to make the AI propose individual, reviewable suggestions instead of one opaque rewrite. That is the iterate-and-review half of the job. The publish half is what md2rich does: convert the finished Markdown to polished rich text for LinkedIn, X Articles, Medium, or Notion. Together they bookend a complete AI-assisted writing pipeline on a single Markdown source of truth.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">This article walks through what Markleft is, why the "comments in the document, not instructions in the chat" idea is the right direction for working with AI, and how it pairs cleanly with a client-side converter like md2rich to take a draft from a rough AI pass to a published post — without ever letting your writing leave your machine.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why normal AI iteration feels broken</h2>
+
+      <p class="text-gray-700 mb-6">Lysk's argument starts with an analogy. Imagine emailing a colleague a five-page document and asking for feedback. They would never reply with a prose description of everything they dislike, then a completely rewritten document, and expect you to diff the two files yourself. That workflow — "Email me a description, I send you a rewrite, then you compare" — was solved decades ago by comments and tracked changes in Word, and by Suggesting mode in Google Docs.</p>
+
+      <p class="text-gray-700 mb-6">Yet that is exactly how most people iterate with AI. You paste a prompt describing a change, the model returns a new version of the whole document, and you are left with two problems: <strong>finding the change</strong> (diffing rendered Mermaid diagrams, tables, and SVGs by eye is genuinely hard) and <strong>recovering the intent</strong> (which part of your original instruction was this change meant to satisfy, and did it actually satisfy it?). The prompt that explained your intent lives and dies in the chat window; the document carries no trace of it.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The core problem: describing a location in prose is imprecise</h2>
+
+      <p class="text-gray-700 mb-6">Lysk demonstrates the precision problem with a tiny prompt asking Claude to write a Markdown story about a pelican on a bike plus an SVG illustration. A critique like "fix the pelican's head, put the left foot on a pedal, and make the bird look sportier" sounds specific but isn't. "The headline" only works because a toy document has one obvious headline; in a longer article you need to describe which headline. "The left foot" is worse — prose cannot point at the exact shape inside an SVG. That is why design tools like Figma let you comment directly on the design surface instead of describing coordinates in words.</p>
+
+      <p class="text-gray-700 mb-6">Now scale that to a multi-page document with repeated headings, nested tables, diagrams, and code, and a request like "move the backup server to the top right, next to the second database server, in read-only mode." There is also an attention problem: while reading paragraph one, you think "this doesn't make sense," but you do not want to stop reading and draft a prompt. You want to leave a mark and come back later. The document needs an annotation layer, not more chat.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What Markleft actually is</h2>
+
+      <p class="text-gray-700 mb-6"><a href="https://github.com/martin-lysk/markleft" class="text-indigo-600 font-semibold">Markleft</a> (MIT-licensed, on GitHub) is built from three components that work together:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>A WYSIWYG Markdown editor that runs as a Chrome bookmarklet.</strong> Open a local .md file in Chrome, click the bookmark, and a full editor loads that reads the file, parses its Markleft footnotes into comments and suggestions, and renders them.</li>
+        <li><strong>A Markdown-compatible annotation spec.</strong> Comments are ordinary Markdown footnotes with reserved identifiers. A text range uses an ID like <code class="bg-gray-100 px-1 rounded">range-prev-12-chars-14824-a1b2</code>; an image annotation uses <code class="bg-gray-100 px-1 rounded">image-X-Y-*</code> with normalized coordinates; code ranges use <code class="bg-gray-100 px-1 rounded">code-line-L-col-C-len-N-*</code>. Blocks get stable IDs injected as HTML comments, and replies to comments use <code class="bg-gray-100 px-1 rounded">comment-*</code>.</li>
+        <li><strong>A prompt that teaches the AI how to respond.</strong> When you save, the editor compiles the annotations into a prompt that explains Markleft to the model and tells it to address each comment by appending suggestions — not by rewriting the file.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">The key safety property is that <strong>suggestions are append-only footnotes</strong>. A suggestion ID looks like <code class="bg-gray-100 px-1 rounded">suggestion-s2-update-block-babf825b</code>, and its body is the proposed replacement Markdown. Because the AI only appends a footnote definition and never touches the document's actual content, it can propose a change without receiving permission to alter the file it is reviewing. You see every change as a reviewable suggestion, with text diffed inside corresponding rendered elements and image replacements shown as before-and-after sliders.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">A worked example: the annotation spec in action</h2>
+
+      <p class="text-gray-700 mb-6">Say your Markdown draft contains a bloated sentence you want tightened. With Markleft you select the sentence and comment on it. The editor injects a footnote anchor that encodes a fingerprint of the exact text, plus the comment body:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>This sentence needs less ceremony.[^range-prev-12-chars-14824-a1b2]
+
+[^range-prev-12-chars-14824-a1b2]: Make this more direct.</code></pre>
+
+      <p class="text-gray-700 mb-6">Here <code class="bg-gray-100 px-1 rounded">range-prev-12-chars</code> says the annotation covers the previous twelve visible, non-whitespace characters, and the rest of the ID is identity plus a content fingerprint so Markleft can detect when an anchor has gone stale. To a normal renderer — GitHub, for example — this is just a footnote. To the AI and the Markleft editor, it points at a specific sentence. The AI responds by appending a suggestion footnote rather than rewriting the paragraph:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>[^suggestion-s2-update-block-babf825b]: Trim the qualifying clause for a more direct opening.
+
+Replaces the selected block. Accepts with one click in the editor.</code></pre>
+
+      <p class="text-gray-700 mb-6">Because the suggestion stays a footnote at the end of the file, the rest of your document is untouched until you review and accept it. That is a radically better loop than "paste a rewrite, then spot the difference."</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Where md2rich fits: the publish half of the same workflow</h2>
+
+      <p class="text-gray-700 mb-6">The whole point of keeping a Markdown file as your source of truth is that the same file serves every stage — drafting, AI iteration, review, and <em>publishing</em>. Markleft covers the review stage. Once you have accepted the AI's suggestions and your document is clean, the remaining step is turning it into a formatted post for a rich-text platform. That is the job md2rich does best.</p>
+
+      <p class="text-gray-700 mb-6">Here is a small finished Markdown block after a Markleft review:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>## Better working with AI
+
+- Keep your feedback in the document, not the chat.
+- Ask the model to propose, then review each suggestion.
+- Publish the same Markdown as a formatted post.</code></pre>
+
+      <p class="text-gray-700 mb-6">Feed that through <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> and the same content becomes formatted rich text — real headings, bold, bullet lists — ready to paste into LinkedIn, X Articles, Medium, or Notion without losing formatting. You do not copy-and-paste raw Markdown and hope the target platform renders it; you get clean, styled output with the structure intact.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Markleft and md2rich side by side</h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
+          <thead>
+            <tr class="bg-gray-100 text-left">
+              <th class="px-4 py-2 font-semibold">Question</th>
+              <th class="px-4 py-2 font-semibold">Markleft</th>
+              <th class="px-4 py-2 font-semibold">md2rich</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">What it does</td>
+              <td class="px-4 py-2">Adds comments + AI suggestions inside Markdown</td>
+              <td class="px-4 py-2">Converts Markdown to rich text for publishing</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Stage in the workflow</td>
+              <td class="px-4 py-2">Drafting &amp; review (iterate)</td>
+              <td class="px-4 py-2">Publishing (output)</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Where it runs</td>
+              <td class="px-4 py-2">Chrome bookmarklet, local files</td>
+              <td class="px-4 py-2">Browser, client-side, nothing uploaded</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Mutation of your doc</td>
+              <td class="px-4 py-2">Append-only footnotes; you accept changes</td>
+              <td class="px-4 py-2">Reads only; output is a new rich-text copy</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Target output</td>
+              <td class="px-4 py-2">A reviewed .md file</td>
+              <td class="px-4 py-2">LinkedIn, X Articles, Medium, Notion</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">They operate on the same file without conflict: Markleft's footnotes are valid Markdown that any other tool, including md2rich, simply sees as footnotes. You accept the suggestions you want, and what remains is clean Markdown ready to convert.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why "Markdown stays the source of truth" is the through-line</h2>
+
+      <p class="text-gray-700 mb-6">Both tools rest on the same philosophy that has driven the recent <a href="https://md2rich.com/blog/markdown-context-files-ai-prompts-2026-en" class="text-indigo-600 font-semibold">Markdown-for-AI-agents movement</a>: the plain-text file, not the chat or the platform, is the durable asset. When your comments, your AI's suggestions, and your final prose all live in versioned Markdown, you get three things normal chat iteration cannot give you.</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Auditability.</strong> Git shows you how the document — and every suggestion you accepted or rejected — evolved, the same way code review does.</li>
+        <li><strong>Portability.</strong> The same file works with any AI tool, any editor, and any publishing platform. Nothing is locked into one vendor's chat history.</li>
+        <li><strong>Reusability.</strong> One source becomes your post, your newsletter, and your documentation — converted to rich text only at the moment you publish.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">This is the same loop behind our earlier guides on <a href="https://md2rich.com/blog/client-side-vs-cloud-markdown-converters-2026-en" class="text-indigo-600 font-semibold">why client-side conversion matters</a> and <a href="https://md2rich.com/blog/markdown-to-rich-text-2026-en" class="text-indigo-600 font-semibold">Markdown to rich text</a>. Write in plain text, keep the working draft close, and convert only when you ship.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The complete pipeline, end to end</h2>
+
+      <p class="text-gray-700 mb-6">Putting it together, a modern AI-assisted writing workflow looks like this:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Draft in Markdown.</strong> Open a local .md file, write in your editor of choice, commit it so the history is auditable.</li>
+        <li><strong>Get a first AI pass.</strong> Have a model expand, tighten, or structure your draft into a first full version.</li>
+        <li><strong>Review with Markleft.</strong> Open the file with the bookmarklet, comment on the sentences, blocks, or images you want changed, and let the AI propose append-only suggestions.</li>
+        <li><strong>Accept what works.</strong> Review each suggestion in context and accept or reject it — the document is never opaque-rewritten behind your back.</li>
+        <li><strong>Publish with md2rich.</strong> Convert the finished Markdown to rich text and paste it into LinkedIn, X Articles, Medium, or Notion.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">Every stage touches the same plain-text file. Your comments, the AI's proposals, and your final prose are all preserved in Markdown, and nothing is uploaded to a server you do not control.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+        <h2 class="text-xl font-bold mb-2">Your Markdown is a source of truth. Publish it that way.</h2>
+        <p class="text-gray-700 mb-4">Whether you iterate on AI drafts with Markleft or on your own, keep one Markdown version and convert it to rich text when you post. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">Try md2rich</a> — it runs entirely in your browser, uploads nothing, and turns Markdown into polished LinkedIn, X, Medium, or Notion posts in seconds.</p>
+        <a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-indigo-700">Try md2rich — it's free</a>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-4 mb-8">
+        <div>
+          <h3 class="font-semibold mb-1">What is Markleft?</h3>
+          <p class="text-gray-700">Markleft is an open-source browser tool by Martin R. Lysk that adds suggestion mode to Markdown. It runs as a Chrome bookmarklet against local .md files: you comment directly on text, code, tables, images, or SVG diagrams, and Markleft compiles those annotations into a prompt that tells an AI to propose individual suggestions instead of rewriting the whole document.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">How is Markleft different from a normal AI chat rewrite?</h3>
+          <p class="text-gray-700">Normal chat iteration gives the AI a prose description of what you want changed and gets back a completely rewritten document, with the original intent buried in the chat history. Markleft keeps your feedback in the document as comments anchored to the exact text or image, and the AI's changes arrive as individual, reviewable suggestions you can accept or reject — not an opaque rewrite you must diff by hand.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Does Markleft work with any Markdown renderer?</h3>
+          <p class="text-gray-700">Yes. Markleft annotations are standard Markdown footnotes with reserved identifiers. A renderer that does not understand Markleft, like GitHub, simply shows them as readable footnotes. Only the Markleft editor and the AI use the encoded footnote IDs to locate a highlighted sentence, an image coordinate, or a code range. Suggestions are also append-only footnotes, so the AI can propose a change without ever altering the document being reviewed.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Where does md2rich fit in an AI-assisted Markdown workflow?</h3>
+          <p class="text-gray-700">Markleft handles the iterate-and-review half: turning AI feedback into reviewable suggestions inside your Markdown. md2rich handles the publish half: converting that same clean Markdown into formatted rich text for LinkedIn, X Articles, Medium, or Notion, entirely in your browser with nothing uploaded. The two tools bookend the same workflow — one Markdown source of truth, refined with Markleft, published with md2rich.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Is Markleft compatible with md2rich?</h3>
+          <p class="text-gray-700">Yes, because both work on standard Markdown. Comments and suggestions Markleft writes into a .md file, including the appended suggestion footnotes, remain valid Markdown. Before publishing, you accept the suggestions you want in your editor; what is left is still clean Markdown that md2rich converts to rich text. They operate on the same file without conflict.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-sm mt-8">Published by <a href="https://about.me/jasonxmai" class="text-indigo-600">md2rich</a>. This article is for informational purposes; the workflow it describes is a general pattern, and the Markleft facts are sourced from the project's GitHub repository and the author's blog post. md2rich is referenced only for the conversion step.</p>
+    </article>
+  </main>
+</body>
+</html>
