@@ -1676,23 +1676,39 @@
         "/blog/markdown-llms-txt-agents-md-standards-2026-en",
         "/blog/client-side-vs-cloud-markdown-converters-2026-en"
       ]
+    },
+    {
+      "slug": "markleft-md2rich-ai-markdown-workflow-2026-en",
+      "date": "2026-08-16",
+      "type": "tool-comparison",
+      "lang": "en-US",
+      "file": "blog/markleft-md2rich-ai-markdown-workflow-2026-en.html",
+      "url": "https://md2rich.com/blog/markleft-md2rich-ai-markdown-workflow-2026-en",
+      "title": "Markleft vs md2rich: The AI-Assisted Markdown Workflow",
+      "description": "Markleft comments on your Markdown and AI proposes suggestions; md2rich turns it into rich text. Merge both into one AI-assisted writing pipeline.",
+      "heat_source": "hot-topic briefing 2026-08-16: Markleft (Aug 9, 2026) AI line-by-line Markdown review tool",
+      "status": "published",
+      "published_at": "2026-08-16T04:34:28.103205+00:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/",
+      "git_commit": "ed43885"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "markleft-md2rich-ai-markdown-workflow-2026-en",
     "markdown-context-files-ai-prompts-2026-en",
     "ai-detection-false-economy-markdown-2026-en",
     "claude-ai-text-watermark-markdown-writers-2026-en",
-    "agent-readable-markdown-cloudflare-mcp-2026-en",
-    "Books as code 2026 (HackerNoon 08-10: author a book as Markdown files in Git, compile to EPUB/PDF/web via Pandoc/mdBook/Quarto; same source -> launch posts via md2rich)"
+    "agent-readable-markdown-cloudflare-mcp-2026-en"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
-  "last_run": "2026-08-15T04:40:14.923874+00:00",
+  "last_run": "2026-08-16T04:34:28.103231+00:00",
   "last_published_slug": "ai-detection-false-economy-markdown-2026-en",
   "last_published_at": "2026-08-14T00:00:00Z",
   "drafts_count": 0,
-  "published_count": 68,
-  "publish_notes": "2026-08-14: published 'AI Detection False Economy: Write Markdown, Skip Detectors' — news-analysis of the AI detection false economy / FOW (fear of writing). SEJ Andy Betts (Aug 11) ran human articles 2014-2026 through detectors and got opposite verdicts; verified from SEJ body (false positives on op-eds, Stanford non-native bias, 2026 ScienceDirect bypass, humanizer upsell, Kelley School ban, Google helpful-content stance, LinkedIn Dan Roth quote) + Jane Friedman Mary Kole client-agreement rewrite (Aug 13). FOR side = NYT detector test 'felt empowering' + platform adoption. 2087-word-range debate article; external links SEJ + Jane Friedman both 200. Angle: own a clean versioned Markdown source instead of gaming detectors; convert to rich text at publish via md2rich (client-side, 0 upload).",
-  "last_publish": "2026-08-15"
+  "published_count": 69,
+  "publish_notes": "Markleft vs md2rich AI-assisted Markdown workflow (Markleft Aug 9 2026, appended suggestions, client-side publish)",
+  "last_publish": "2026-08-16"
 }
