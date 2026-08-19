@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zenfmt vs md2rich: Zig Markdown Converter Compared 2026</title>
+  <meta name="description" content="zenfmt is a Zig/WASM Markdown converter for DOCX, XLSX, PDF, EPUB in the browser. md2rich turns Markdown into rich text for publishing. How they fit.">
+  <meta name="keywords" content="zenfmt, zenfmt vs md2rich, Zig markdown converter, document to markdown, in-browser converter, client-side markdown, WASM markdown, pandoc alternative, md2rich, publish Markdown to LinkedIn X Articles Notion Medium Substack, privacy-first markdown">
+  <link rel="canonical" href="https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="zenfmt vs md2rich: Zig Markdown Converter Compared 2026">
+  <meta property="og:description" content="zenfmt is a Zig/WASM Markdown converter for DOCX, XLSX, PDF, EPUB in the browser. md2rich turns Markdown into rich text for publishing. How they fit.">
+  <meta property="og:url" content="https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="zenfmt vs md2rich: Zig Markdown Converter Compared 2026">
+  <meta name="twitter:description" content="zenfmt is a Zig/WASM Markdown converter for DOCX, XLSX, PDF, EPUB in the browser. md2rich turns Markdown into rich text for publishing. How they fit.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "zenfmt vs md2rich: Zig Markdown Converter Compared 2026",
+      "description": "zenfmt is a Zig/WASM Markdown converter for DOCX, XLSX, PDF, EPUB in the browser. md2rich turns Markdown into rich text for publishing. How they fit.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-19",
+      "dateModified": "2026-08-19",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "zenfmt vs md2rich: Zig Markdown Converter Compared 2026",
+          "item": "https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is zenfmt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "zenfmt is an open-source document-to-Markdown converter written in Zig and compiled to WebAssembly. It runs entirely in the browser with no file upload and supports 19 input formats including DOCX, XLSX, PPTX, ODT, EPUB, and PDF. It also ships as a CLI and a small HTTP server (zenfmt serve) for local workflows. Version 0.3.5 was published in mid-August 2026 and promoted on Hacker News as a small attempt to bring the pandoc idea into a faster, browser-native engine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does zenfmt compare to md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "zenfmt and md2rich are both client-side tools that never upload your content, but they solve different parts of the same writing pipeline. zenfmt takes files in DOCX, XLSX, PPTX, EPUB, PDF, and other formats and produces clean Markdown. md2rich takes Markdown drafts and produces the rich text that LinkedIn, X Articles, Notion, Medium, and Substack all accept on paste. zenfmt is the inbound converter; md2rich is the outbound publisher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is zenfmt faster than pandoc?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "zenfmt does not benchmark itself against pandoc directly. Its published reference numbers compare it against AnyDoc (a JavaScript-based universal converter) and Apache Tika Server. The native CLI is 6.9x faster in wall time and 7.9x more efficient in CPU time than AnyDoc on a 14-file shared corpus, and uses 10.1x less peak memory. Against a warm Apache Tika server, zenfmt is 31.1x faster on latency and 34.2x lower on peak memory, and processes 552.7 documents per second at one client versus Tika's 4.4."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can zenfmt replace md2rich for publishing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. zenfmt does not generate platform-tuned rich text for LinkedIn, X Articles, Notion, Medium, or Substack. It produces clean Markdown or clean HTML. md2rich is the publishing step that turns that Markdown into the specific HTML structure each platform's paste handler expects. The two tools handle opposite ends of the same pipeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does zenfmt require a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No for the browser path, optional for the CLI path. The web app at insanai.github.io/zenfmt runs the Zig engine as WebAssembly inside your tab. Nothing is uploaded. For local workflows, zenfmt serve exposes an HTTP endpoint on 127.0.0.1 by default, with an optional --secure mode that adds users, API keys, an audit log, and an admin interface. Neither mode ever sends your files to a third party."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use zenfmt, md2rich, or both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use zenfmt when your source is a file in DOCX, XLSX, PPTX, EPUB, PDF, or any of the other 14 formats it parses. Use md2rich when your source is a finished Markdown draft and your destination is a publishing platform. Use both in sequence when your pipeline starts with a non-Markdown file (inbound via zenfmt) and ends with a publishable social or long-form post (outbound via md2rich). Nothing in that combined pipeline touches a server."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 19, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">zenfmt vs md2rich: Zig Markdown Converter Compared 2026</h1>
+        <p class="text-lg text-gray-600">zenfmt turns DOCX, XLSX, PPTX, ODT, EPUB, and PDF into clean Markdown inside the browser. md2rich turns Markdown into the rich text that LinkedIn, X Articles, Notion, Medium, and Substack accept on paste. Same privacy-first architecture, opposite ends of the same pipeline.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">A new open-source converter landed on Hacker News on August 17, 2026. <strong>zenfmt</strong> (<a href="https://insanai.github.io/zenfmt/" class="text-indigo-600 hover:underline">insanai.github.io/zenfmt</a>) is a document-to-Markdown tool written in Zig and compiled to WebAssembly so the whole engine runs in your browser. It supports 19 input formats, ships a CLI and an HTTP server, and ships benchmark numbers that claim it is roughly 6.9x faster than AnyDoc and 31x faster than a warm Apache Tika server on the same corpus.</p>
+
+      <p class="text-gray-700 mb-6">The natural question for anyone already using <a href="/" class="text-indigo-600 font-semibold">md2rich</a> is whether zenfmt overlaps with the daily publishing workflow. It does not. zenfmt is the <em>inbound</em> step that turns messy office files into a Markdown draft. md2rich is the <em>outbound</em> step that turns a clean Markdown draft into the platform-specific rich text your destination accepts on paste. Together they form a closed-loop client-side publishing pipeline. This breakdown covers what each tool does, where they converge, and which one to reach for in August 2026.</p>
+
+      <h2 id="what-zenfmt-offers" class="text-2xl font-bold mt-10 mb-4">What zenfmt offers</h2>
+
+      <p class="text-gray-700 mb-6">zenfmt is the open-source project page at insanai.github.io/zenfmt, and the project's own description frames it as a small attempt to explore the pandoc idea with a faster, smaller engine. The headline stat from the homepage is the benchmark table: native CLI ratios of 6.9x faster than AnyDoc on wall time, 7.9x more efficient on CPU time, and 10.1x lower on peak memory, all geometric means across the 14 files AnyDoc and zenfmt both convert. Against a long-running Apache Tika Server, the ratios widen to 31.1x on latency and 34.2x on peak memory, with a throughput of 552.7 documents per second at a single client versus Tika's 4.4.</p>
+
+      <p class="text-gray-700 mb-6">The format list spans the formats a typical office worker actually touches: Word (.docx), Excel (.xlsx), PowerPoint (.pptx), OpenDocument (.odt, .ods, .odp), EPUB, RTF, and PDF, plus a handful of markup and data formats. The engine detects the source format from the file contents rather than the extension, which matters when a file has been renamed or downloaded without one. The browser UI exposes a drop zone, an Advanced options panel with three loss policies (Convert and report loss, Refuse content loss, Refuse structural loss, Refuse any known loss, Preserve facet details), and a read-only Markdown output area with Copy, Download, and Wrap lines actions.</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># zenfmt CLI (single binary, no Java or Python bundle)
+
+# Browser path - runs entirely in the tab
+zenfmt-web
+  drop DOCX, EPUB, PDF, or any of 19 formats
+  engine: Zig compiled to WebAssembly
+  output: clean Markdown (copy/download)
+  privacy: nothing uploaded
+
+# Local HTTP server (optional, loopback by default)
+zenfmt serve
+  opens on 127.0.0.1:8998
+  --secure mode adds users, keys, audit log
+  curl -s -T report.docx "http://127.0.0.1:8998/api/v1/convert?to=markdown"
+
+# Distribution
+  1 file CLI, 7 native targets (Linux/macOS/Windows)
+  no bundled Java, Python, OCR, VLM, or model assets</code></pre>
+
+      <h2 id="where-md2rich-specializes" class="text-2xl font-bold mt-10 mb-4">Where md2rich specializes</h2>
+
+      <p class="text-gray-700 mb-6"><a href="/" class="text-indigo-600 font-semibold">md2rich</a> is narrower by design. It accepts one input format — Markdown — and produces one family of output: the rich text that publishing platforms accept on paste. The reason for the narrow scope is that the conversion output matters more than the format list when your goal is to publish. A Markdown-to-LinkedIn conversion that drops bold formatting on paste is useless even if it handled 18 other format pairs correctly. md2rich has spent two years tuning its output against each platform's paste handler.</p>
+
+      <p class="text-gray-700 mb-6">The tuning list, learned through iterative testing: LinkedIn strips <code>&lt;span&gt;</code> tags with inline styles but respects <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> when they are direct children of <code>&lt;p&gt;</code>. X Articles collapses nested lists past two levels but keeps a clean trailing-paragraph structure. Notion converts pasted HTML to native blocks and reads <code>&lt;h1&gt;</code> through <code>&lt;h3&gt;</code> as headings, but ignores <code>&lt;h4&gt;</code> and below. Medium reinterprets <code>&lt;h2&gt;</code> as a full-width separator and ignores <code>&lt;h3&gt;</code>. Substack preserves inline <code>&lt;code&gt;</code> but strips classes on <code>&lt;pre&gt;</code> blocks unless they are coded as <code>&lt;pre&gt;&lt;code&gt;</code> with no class attribute.</p>
+
+      <p class="text-gray-700 mb-6">zenfmt produces clean HTML from Markdown, and that HTML works on most platforms most of the time. But zenfmt is not tuned for platform-specific paste behavior — its goal is fidelity to the source document, not fidelity to the destination platform. md2rich's output is tuned for the platforms where the edge cases waste your morning.</p>
+
+      <h2 id="head-to-head-comparison" class="text-2xl font-bold mt-10 mb-4">Head-to-head comparison</h2>
+
+      <table class="w-full text-left border-collapse mb-8 text-sm">
+        <thead>
+          <tr class="border-b border-gray-300">
+            <th class="py-2 pr-3 font-semibold">Dimension</th>
+            <th class="py-2 pr-3 font-semibold">zenfmt 0.3.5</th>
+            <th class="py-2 pr-3 font-semibold">md2rich</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Direction</td>
+            <td class="py-2 pr-3">Inbound (documents to Markdown)</td>
+            <td class="py-2 pr-3">Outbound (Markdown to rich text)</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Input formats</td>
+            <td class="py-2 pr-3">19 (DOCX, XLSX, PPTX, ODT, ODS, ODP, EPUB, RTF, PDF, and more)</td>
+            <td class="py-2 pr-3">1 (Markdown)</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Output format</td>
+            <td class="py-2 pr-3">Clean Markdown</td>
+            <td class="py-2 pr-3">Platform-optimized rich text (HTML + plain-text fallback)</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Engine</td>
+            <td class="py-2 pr-3">Zig compiled to WebAssembly (browser) + native CLI binary</td>
+            <td class="py-2 pr-3">Client-side JavaScript converter</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Architecture</td>
+            <td class="py-2 pr-3">Browser WASM module + optional local HTTP server (zenfmt serve)</td>
+            <td class="py-2 pr-3">Single-page web app, paste-and-convert flow</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Privacy</td>
+            <td class="py-2 pr-3">Zero upload; CLI runs locally; serve mode opens on 127.0.0.1</td>
+            <td class="py-2 pr-3">Zero upload; no telemetry; no account</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Distribution</td>
+            <td class="py-2 pr-3">Browser app + 7 native CLI releases (Linux, macOS, Windows)</td>
+            <td class="py-2 pr-3">Hosted at md2rich.com</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Notable benchmark</td>
+            <td class="py-2 pr-3">6.9x faster than AnyDoc; 31.1x faster than Apache Tika Server</td>
+            <td class="py-2 pr-3">Conversion tuned per platform paste handler</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 pr-3 font-semibold">Best use case</td>
+            <td class="py-2 pr-3">Converting DOCX/PDF/EPUB/PPTX briefs into Markdown drafts</td>
+            <td class="py-2 pr-3">Converting Markdown drafts into publishable social or long-form posts</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="the-combined-pipeline" class="text-2xl font-bold mt-10 mb-4">The combined pipeline</h2>
+
+      <p class="text-gray-700 mb-6">The pattern that fits zenfmt and md2rich together is the same pattern that worked for earlier client-side converters: a two-step pipeline where each tool handles the half it is designed for.</p>
+
+      <ol class="list-decimal pl-6 mb-6 text-gray-700">
+        <li class="mb-2"><strong>Step 1 — Inbound.</strong> You receive a client brief as a DOCX file, a meeting transcript as a PDF, or a competitor analysis as a PPTX export. Open zenfmt in the browser, drop the file in, and get clean Markdown out. zenfmt detects the source format from the bytes, runs the Zig engine in WASM, and renders the Markdown in the read-only output area. No upload, no server, no conversion fee.</li>
+        <li class="mb-2"><strong>Step 2 — Edit.</strong> Take the Markdown into your editor of choice (Obsidian, VS Code, iA Writer — all the tools covered in <a href="/blog/best-markdown-editors-2026-en" class="text-indigo-600 hover:underline">our 2026 editor roundup</a>). zenfmt does not edit; it converts. Spend three or four revision passes tightening the draft.</li>
+        <li class="mb-2"><strong>Step 3 — Outbound.</strong> When the draft is final, open <a href="/" class="text-indigo-600 font-semibold">md2rich</a>, paste the Markdown, and copy the platform-optimized rich text to your clipboard. md2rich converts Markdown into the specific HTML structure each platform's paste handler accepts.</li>
+        <li class="mb-2"><strong>Step 4 — Publish.</strong> Cmd/Ctrl-V into LinkedIn, X Articles, Notion, Medium, or Substack. Headings render correctly, bullets stay indented, code blocks survive the paste, links are clickable. The format travels intact because the conversion was tuned for that destination.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">The pipeline is fully client-side. zenfmt handles the inbound many-to-Markdown step with a Zig engine in your browser. md2rich handles the outbound Markdown-to-publish step with JavaScript in your browser. Nothing touches a server between the source file and the published post.</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded mb-4 overflow-x-auto text-sm"><code># Combined pipeline (one real example)
+
+# 1. Source is a 1.2MB DOCX client brief
+#    Open zenfmt in the browser, drop the file in
+#    zenfmt → 4.8KB clean Markdown (DOCX detected from bytes)
+
+# 2. Edit the draft in VS Code (3-4 revision passes)
+
+# 3. Open md2rich.com, paste final Markdown
+#    md2rich → platform-tuned rich text
+
+# 4. Cmd+V into LinkedIn post composer
+#    Headings render as LinkedIn H2, bullets stay indented,
+#    code blocks survive, links are clickable.</code></pre>
+
+      <h2 id="what-zenfmt-changes-in-2026" class="text-2xl font-bold mt-10 mb-4">What zenfmt changes in 2026</h2>
+
+      <p class="text-gray-700 mb-6">zenfmt's Show HN pitch is that the document-conversion space has been waiting for a smaller, faster engine than what Java and Python bundles ship. The project's release notes point out that zenfmt does not bundle Java, Python, OCR, VLM, or model assets — the binary is one file, and the same engine runs in the browser as WebAssembly and on the command line as a native binary. That combination was not practical in 2022 because the Zig toolchain and the WebAssembly ecosystem both needed another two years to mature.</p>
+
+      <p class="text-gray-700 mb-6">The benchmark against AnyDoc and Tika is what makes the project's claim concrete. AnyDoc is a JavaScript-based universal converter that runs in roughly the same form factor zenfmt targets — in a browser or Node.js — and zenfmt's reference run shows a 6.9x wall-time advantage across 14 shared files. Against Tika Server, which is the long-standing reference for batch office-document conversion on a JVM, zenfmt's 31.1x latency advantage and 552.7 documents-per-second throughput at one client make a strong case that the format-conversion bottleneck in many publishing pipelines has been the runtime, not the conversion logic.</p>
+
+      <p class="text-gray-700 mb-6">For md2rich's audience — multi-platform writers who edit in Markdown and publish on LinkedIn, X Articles, Notion, Medium, and Substack — the relevant change is that the inbound step is now faster and lighter. Converting a 1MB DOCX in the browser without uploading it to a third party used to mean a slow WebAssembly converter or a desktop pandoc install. zenfmt delivers both modes from one Zig codebase, which makes the inbound step portable across machines and operating systems.</p>
+
+      <h2 id="limitations-of-zenfmt" class="text-2xl font-bold mt-10 mb-4">Where zenfmt still lags</h2>
+
+      <p class="text-gray-700 mb-6">zenfmt is at version 0.3.5 and the project page is honest about the gaps. The browser engine needs JavaScript enabled because the conversion runs in the browser rather than on a server, and the converter rejects content that would lose structural information when round-tripped. The web app exposes four loss policies in the Advanced options panel — <em>Convert and report loss</em>, <em>Refuse content loss</em>, <em>Refuse structural loss</em>, <em>Refuse any known loss</em>, and <em>Preserve facet details</em> — but the strictest of those means some conversions will return a refusal instead of a partial output.</p>
+
+      <p class="text-gray-700 mb-6">DOCX-to-Markdown handles paragraphs, bold, italic, and headers cleanly. Tables are converted but complex merged-cell layouts are flattened. Images embedded in DOCX files are referenced but not extracted as inline media in all cases. PDF-to-Markdown is the weaker path — text extraction is reliable, but multi-column layouts are concatenated, inline images are dropped, and table positioning is approximated rather than reconstructed. For a PDF that was designed in a WYSIWYG tool, the Markdown output will need manual cleanup.</p>
+
+      <p class="text-gray-700 mb-6">The CLI/server path has its own caveats. zenfmt serve opens on 127.0.0.1 by default, which means the server is reachable only from the host machine. The <code>--secure</code> mode adds users, API keys, an audit log, and a small admin interface, but it does not turn the local server into a public endpoint. If your workflow needs a shared conversion service for a team, you would need to put zenfmt behind a reverse proxy with its own authentication layer — the project does not ship a hosted multi-user mode.</p>
+
+      <h2 id="which-tool-wins-when" class="text-2xl font-bold mt-10 mb-4">Which tool wins when</h2>
+
+      <p class="text-gray-700 mb-6">The decision matrix is straightforward:</p>
+
+      <ul class="list-disc pl-6 mb-6 text-gray-700">
+        <li class="mb-2"><strong>Use zenfmt when</strong> your source is a file in DOCX, XLSX, PPTX, ODT, EPUB, RTF, PDF, or any of the other formats zenfmt parses. It is the fastest way to bring an external document into the Markdown ecosystem without uploading it to a server.</li>
+        <li class="mb-2"><strong>Use md2rich when</strong> you have a finished Markdown draft and need to publish it on LinkedIn, X Articles, Notion, Medium, or Substack with full formatting preservation. md2rich produces output tuned for each platform's paste handler.</li>
+        <li class="mb-2"><strong>Use both in sequence</strong> when your workflow starts with a non-Markdown file and ends with a published social or long-form post. zenfmt handles the inbound DOCX/EPUB/PPTX-to-Markdown step; md2rich handles the outbound Markdown-to-publish step. Nothing touches a server.</li>
+        <li class="mb-2"><strong>Neither tool helps when</strong> you need server-side batch conversion of thousands of files per hour (run pandoc on a server instead), or when your destination platform does not accept HTML on paste (rare in 2026 but worth checking for new platforms).</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">There is no meaningful overlap. zenfmt brings content into the Markdown ecosystem. md2rich takes it out. The two tools handle opposite ends of the same one-person publishing pipeline, and neither replaces the other.</p>
+
+      <h2 id="the-2026-client-side-landscape" class="text-2xl font-bold mt-10 mb-4">The 2026 client-side conversion landscape</h2>
+
+      <p class="text-gray-700 mb-6">zenfmt is the fourth significant entrant in the privacy-first Markdown conversion category in 2026. <a href="/" class="text-indigo-600 font-semibold">md2rich</a> covers the publishing-specific outbound conversion. <a href="/blog/all2md-vs-md2rich-markdown-converter-2026-en" class="text-indigo-600 hover:underline">all2md</a> covers the Python/CLI/MCP path for developer workflows. <a href="/blog/privatemarkdown-vs-md2rich-markdown-converter-2026-en" class="text-indigo-600 hover:underline">PrivateMarkdown</a> covers the browser-based 135-format path for non-technical writers. zenfmt covers the Zig/WASM browser path for writers who want a single small engine that also runs locally as a CLI and an HTTP service.</p>
+
+      <p class="text-gray-700 mb-6">The broader trend in 2026 is that serverless conversion is becoming the default expectation. Users who would have uploaded a DOCX to a cloud converter in 2024 now search for browser-based alternatives. The WASM ecosystem matured enough in 2025-2026 to make format parsers in the browser practical, and zenfmt's 6.9x speed advantage over AnyDoc on the same WASM-style architecture suggests the gap between "works in the browser" and "fast in the browser" is closing quickly.</p>
+
+      <p class="text-gray-700 mb-6">For the writer whose workflow is: receive a file in DOCX/PDF/EPUB/PPTX, convert to Markdown, edit, publish to social platforms, the logical stack in mid-August 2026 is zenfmt + your editor of choice + md2rich. It runs entirely in your browser, requires no accounts, and does not expose your content to a server at any step in the chain. The combined pipeline is fully client-side and faster than the cloud converters it replaced.</p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What is zenfmt?</h3>
+          <p class="text-gray-700">zenfmt is an open-source document-to-Markdown converter written in Zig and compiled to WebAssembly. It runs entirely in the browser with no file upload and supports 19 input formats including DOCX, XLSX, PPTX, ODT, EPUB, and PDF. It also ships as a CLI and a small HTTP server (zenfmt serve) for local workflows. Version 0.3.5 was published in mid-August 2026 and promoted on Hacker News as a small attempt to bring the pandoc idea into a faster, browser-native engine.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">How does zenfmt compare to md2rich?</h3>
+          <p class="text-gray-700">zenfmt and md2rich are both client-side tools that never upload your content, but they solve different parts of the same writing pipeline. zenfmt takes files in DOCX, XLSX, PPTX, EPUB, PDF, and other formats and produces clean Markdown. md2rich takes Markdown drafts and produces the rich text that LinkedIn, X Articles, Notion, Medium, and Substack all accept on paste. zenfmt is the inbound converter; md2rich is the outbound publisher.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is zenfmt faster than pandoc?</h3>
+          <p class="text-gray-700">zenfmt does not benchmark itself against pandoc directly. Its published reference numbers compare it against AnyDoc (a JavaScript-based universal converter) and Apache Tika Server. The native CLI is 6.9x faster in wall time and 7.9x more efficient in CPU time than AnyDoc on a 14-file shared corpus, and uses 10.1x less peak memory. Against a warm Apache Tika server, zenfmt is 31.1x faster on latency and 34.2x lower on peak memory, and processes 552.7 documents per second at one client versus Tika's 4.4.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Can zenfmt replace md2rich for publishing?</h3>
+          <p class="text-gray-700">No. zenfmt does not generate platform-tuned rich text for LinkedIn, X Articles, Notion, Medium, or Substack. It produces clean Markdown or clean HTML. md2rich is the publishing step that turns that Markdown into the specific HTML structure each platform's paste handler expects. The two tools handle opposite ends of the same pipeline.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Does zenfmt require a server?</h3>
+          <p class="text-gray-700">No for the browser path, optional for the CLI path. The web app at insanai.github.io/zenfmt runs the Zig engine as WebAssembly inside your tab. Nothing is uploaded. For local workflows, zenfmt serve exposes an HTTP endpoint on 127.0.0.1 by default, with an optional --secure mode that adds users, API keys, an audit log, and an admin interface. Neither mode ever sends your files to a third party.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Should I use zenfmt, md2rich, or both?</h3>
+          <p class="text-gray-700">Use zenfmt when your source is a file in DOCX, XLSX, PPTX, EPUB, PDF, or any of the other 14 formats it parses. Use md2rich when your source is a finished Markdown draft and your destination is a publishing platform. Use both in sequence when your pipeline starts with a non-Markdown file (inbound via zenfmt) and ends with a publishable social or long-form post (outbound via md2rich). Nothing in that combined pipeline touches a server.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Convert your Markdown to rich text</h3>
+        <p class="text-gray-700 mb-4"><a href="/" class="text-indigo-600 font-semibold">md2rich</a> converts a Markdown draft into the rich text that LinkedIn, X Articles, Notion, Medium, and Substack all accept on paste. Client-side, zero upload, no metadata leak. Whether you start from scratch or bring in a DOCX converted via zenfmt, md2rich is the publishing step your workflow needs.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Open md2rich →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1692,15 +1692,33 @@
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/",
       "git_commit": "ed43885"
+    },
+    {
+      "slug": "zenfmt-vs-md2rich-client-side-markdown-converter-2026-en",
+      "date": "2026-08-19",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en.html",
+      "url": "https://md2rich.com/blog/zenfmt-vs-md2rich-client-side-markdown-converter-2026-en",
+      "title": "zenfmt vs md2rich: Zig Markdown Converter Compared 2026",
+      "description": "zenfmt is a Zig/WASM Markdown converter for DOCX, XLSX, PDF, EPUB in the browser. md2rich turns Markdown into rich text for publishing. How they fit.",
+      "heat_source": "briefing-2026-08-19: zenfmt Show HN launch (Aug 17) + Zig/WASM privacy-first converter comparison angle",
+      "status": "published",
+      "published_at": "2026-08-19T12:00:00Z",
+      "providers_featured": [
+        "zenfmt",
+        "md2rich"
+      ],
+      "primary_cta": "/"
     }
   ],
   "drafts": [],
   "recent_topics": [
-    "markleft-md2rich-ai-markdown-workflow-2026-en",
     "markdown-context-files-ai-prompts-2026-en",
     "ai-detection-false-economy-markdown-2026-en",
     "claude-ai-text-watermark-markdown-writers-2026-en",
-    "agent-readable-markdown-cloudflare-mcp-2026-en"
+    "agent-readable-markdown-cloudflare-mcp-2026-en",
+    "zenfmt-vs-md2rich-client-side-markdown-converter-2026-en"
   ],
   "current_index": 0,
   "last_topic_direction": "Markdown on privacy-first Fediverse publishing (client-side, no upload)",
@@ -1708,7 +1726,7 @@
   "last_published_slug": "ai-detection-false-economy-markdown-2026-en",
   "last_published_at": "2026-08-14T00:00:00Z",
   "drafts_count": 0,
-  "published_count": 69,
+  "published_count": 70,
   "publish_notes": "Markleft vs md2rich AI-assisted Markdown workflow (Markleft Aug 9 2026, appended suggestions, client-side publish)",
-  "last_publish": "2026-08-16"
+  "last_publish": "2026-08-19"
 }
