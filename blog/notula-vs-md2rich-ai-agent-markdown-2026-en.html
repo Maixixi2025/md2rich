@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notula vs md2rich: AI-Agent Markdown in 2026</title>
+  <meta name="description" content="Notula is a WYSIWYG editor for the docs in your git repo that AI agents read. md2rich turns finished Markdown into rich text for publishing.">
+  <meta name="keywords" content="Notula, docs as code, WYSIWYG Markdown editor, AI agents read Markdown, Markdown in git repo, comment on Markdown, notula-agents.md, Claude Code Markdown, md2rich, publish Markdown to LinkedIn X Medium, client-side Markdown converter, privacy-first Markdown, Markdown source of truth, Markdown round trip">
+  <link rel="canonical" href="https://md2rich.com/blog/notula-vs-md2rich-ai-agent-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/notula-vs-md2rich-ai-agent-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/notula-vs-md2rich-ai-agent-markdown-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Notula vs md2rich: AI-Agent Markdown in 2026">
+  <meta property="og:description" content="Notula is a WYSIWYG editor for the docs in your git repo that AI agents read. md2rich turns finished Markdown into rich text for publishing.">
+  <meta property="og:url" content="https://md2rich.com/blog/notula-vs-md2rich-ai-agent-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notula vs md2rich: AI-Agent Markdown in 2026">
+  <meta name="twitter:description" content="Notula is a WYSIWYG editor for the docs in your git repo that AI agents read. md2rich turns finished Markdown into rich text for publishing.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Notula vs md2rich: AI-Agent Markdown in 2026",
+      "description": "Notula is a WYSIWYG editor for the docs in your git repo that AI agents read. md2rich turns finished Markdown into rich text for publishing.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-20",
+      "dateModified": "2026-08-20",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/notula-vs-md2rich-ai-agent-markdown-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Notula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notula is a WYSIWYG Markdown editor for docs as code, launched as a Show HN on August 19, 2026. It is a macOS and Windows desktop app that edits the Markdown files of a repository checked out on your machine. It gives non-coders the Google Docs review layer — comments, replies, threads, a tree — on documents that never leave your git repo, and it writes a briefing that tells your AI agent how the workspace is organised."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Notula different from a normal Markdown editor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A normal Markdown editor like Typora or VS Code is a single-person writing tool. Notula is built around collaboration on a repository: you comment on a passage, reply, and resolve threads that are committed next to the document as an append-only log, so a conversation arrives with the clone and outlives every account. It is WYSIWYG, not live preview — no Markdown syntax on screen — yet what lands on disk is ordinary Markdown that reviews in a normal pull request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Notula work with AI coding agents like Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, that is a core selling point. Notula writes a briefing file, notula-agents.md, describing the document types, the layout, and the commands, and borrows three lines of your CLAUDE.md to point Claude Code at it. It never overwrites what you wrote there. When an agent rewrites a document you have open, the change lands in front of you instead of being clobbered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Notula safe to use on a shared repository?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notula is built to be a guest in someone else's worktree. Every git command carries an explicit pathspec, so it never stages the whole worktree, never stashes, and never rewrites history. It commits to the branch you are on and never creates or switches one, and if that branch is protected it says so before you edit. It stores no token of its own and is free, with no account and no server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit next to Notula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notula owns the collaborate-and-review half inside the repository: keeping documentation healthy where teams and AI agents both read it. md2rich owns the publish half: once your Markdown is finished, md2rich converts it to formatted rich text for LinkedIn, X Articles, Medium, or Notion entirely in your browser, with nothing uploaded. Both are privacy-first and client-side, but one is for working on the source and the other is for shipping it to a rich-text platform."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 20, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Notula vs md2rich: who owns the Markdown your AI agents read</h1>
+        <p class="text-lg text-gray-600">On August 19, 2026, a small team launched Notula on Hacker News with the tagline "where humans edit the Markdown your AI agents read." It is a WYSIWYG editor for docs as code: it edits the plain .md files in your git repository, gives non-coders a Google-Docs-style review layer, and writes a briefing that points Claude Code at the workspace. That is a genuinely different job from what md2rich does — which is converting finished Markdown into rich text for LinkedIn, X Articles, Medium, or Notion, entirely in your browser. This article unpacks Notula, then shows where each tool belongs in the same Markdown-first pipeline.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">The pitch behind Notula starts with a problem almost every technical team has already felt. Your Specs, PRDs, RFCs, and runbooks moved out of the wiki and landed next to the code, because the Markdown source of truth lives where your engineers review changes and where your AI agents can read and edit plain .md natively. That was the right call. But the people who are not fluent in git and code editors lost their tools: no comments, no threads, no way to browse, no way to edit a paragraph without first learning a diff and a rebase. Notula's answer is a desktop app that gives those documents the Google Docs experience — comment, reply, resolve, browse a tree — on files that never leave the repository.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What Notula actually is</h2>
+
+      <p class="text-gray-700 mb-6"><a href="https://notula.org/" class="text-indigo-600 font-semibold">Notula</a> ships for macOS (Apple Silicon and Intel) and Windows (x64 and arm64), with Linux not built yet, and it is deliberately free — "no account, no server." The app drives the git already installed on your machine, so the SSH key or credential helper you already use is the one it uses, and it never asks you for a password or stores a token of its own. Three properties define how it behaves:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>WYSIWYG, not live preview.</strong> There is no raw pane and no Markdown syntax on screen — no hashes in front of headings, no asterisks around bold, no pipes in tables, not even on the line your cursor is on. What lands on disk is still ordinary Markdown. Notula reports a byte-identical round trip on 6,000 real documents, with 96.4% of blocks surviving an edit untouched, and it writes back only what changed so a one-character edit stays a one-character diff.</li>
+        <li><strong>Threads that live in the repository.</strong> A comment is anchored by the quoted passage and its context, following the W3C Web Annotation model, and the thread is committed next to the document as an append-only log with a union merge driver. Two people commenting at once cannot conflict. The conversation arrives with the clone and outlives every account, and it is never written into the Markdown itself.</li>
+        <li><strong>Git safety by construction.</strong> Notula is a guest in someone else's worktree. Every git command carries an explicit pathspec, so it never stages the whole worktree, never stashes, and never rewrites history. It commits to the branch you are on, never creates or switches one, and says so if it is protected. Nobody on the team is ever shown a rebase, a stash, or the words "detached HEAD."</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The AI-agent angle is the interesting part</h2>
+
+      <p class="text-gray-700 mb-6">The headline of the Show HN post — "where humans edit the Markdown your AI agents read" — is not marketing. Notula's whole reason to exist is that your AI agents already read and write plain .md natively, and the docs live next to the code precisely so agents and engineers can review the same files. Notula extends that to the humans who were left out, and it builds a bridge from the agent back to the human reviewer.</p>
+
+      <p class="text-gray-700 mb-6">It writes a briefing file, <code class="bg-gray-100 px-1 rounded">notula-agents.md</code>, that describes the document types, the fields, the layout, and the commands, then borrows three lines of your existing <code class="bg-gray-100 px-1 rounded">CLAUDE.md</code> to point Claude Code at it:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>&lt;!-- notula:begin --&gt;
+This repository is edited with Notula.
+What it keeps here: @notula-agents.md
+&lt;!-- notula:end --&gt;</code></pre>
+
+      <p class="text-gray-700 mb-6">It never overwrites what you wrote in CLAUDE.md, and it carries the conventions that are invisible once broken — for example, renaming a document is <code class="bg-gray-100 px-1 rounded">notula docs move</code>, because the comment log is filed under the document's path and a plain <code class="bg-gray-100 px-1 rounded">mv</code> orphans every thread on it. There is also a command line behind the app that exposes documents, types, fields, and status with <code class="bg-gray-100 px-1 rounded">--json</code>, so an agent can operate the workspace instead of guessing at files. And when an agent rewrites a document you have open, the change lands in front of you instead of being clobbered.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why this is a different job from md2rich</h2>
+
+      <p class="text-gray-700 mb-6">Where Notula ends, md2rich begins. Notula keeps the Markdown source healthy inside the repository — the collaborate-and-review half. Once your document is finished and approved, the remaining job is turning it into a formatted post on a rich-text platform where your audience actually reads it. That is the publish half, and it is what md2rich does best: client-side Markdown to rich text for LinkedIn, X Articles, Medium, or Notion, with nothing uploaded.</p>
+
+      <p class="text-gray-700 mb-6">The two tools actually share the same philosophy, which is why they pair cleanly rather than competing. Both assume the plain-text file, not the platform and not the chat window, is the durable asset. Both are privacy-first and run on your machine. The difference is directional: Notula pulls collaborators and agents into the repository around a living document; md2rich pushes the finished document out to an audience in the format a platform wants. Concretely, a finished Markdown block from a reviewed doc like this:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>## Publishing the reviewed doc
+
+- Keep the source in the repo where review happens.
+- Convert the finished Markdown to rich text only when you ship.
+- Nothing is uploaded; the source stays the source.</code></pre>
+
+      <p class="text-gray-700 mb-6">becomes, through <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a>, rich text with real headings, bold, and bullet lists ready to paste into LinkedIn or X Articles — no raw Markdown left in the paste box, no formatting lost.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Notula and md2rich side by side</h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
+          <thead>
+            <tr class="bg-gray-100 text-left">
+              <th class="px-4 py-2 font-semibold">Question</th>
+              <th class="px-4 py-2 font-semibold">Notula</th>
+              <th class="px-4 py-2 font-semibold">md2rich</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">What it does</td>
+              <td class="px-4 py-2">WYSIWYG editing + review threads on repo docs</td>
+              <td class="px-4 py-2">Converts Markdown to rich text for publishing</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Stage in the workflow</td>
+              <td class="px-4 py-2">Collaborate &amp; review in the repo</td>
+              <td class="px-4 py-2">Publishing (output)</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Where it runs</td>
+              <td class="px-4 py-2">macOS / Windows desktop app</td>
+              <td class="px-4 py-2">Browser, client-side, nothing uploaded</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Who it serves</td>
+              <td class="px-4 py-2">Teams + AI agents on the same docs</td>
+              <td class="px-4 py-2">Anyone publishing Markdown to a rich-text platform</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">The audience</td>
+              <td class="px-4 py-2">Internal: reviewers and agents</td>
+              <td class="px-4 py-2">External: LinkedIn, X, Medium, Notion readers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">They do not overlap: Notula makes the source reviewable by humans and agents, and md2rich makes the approved source publishable. You could realistically use both on the same repository — Notula to keep the documentation accurate and agent-readable, md2rich to turn a finished doc into a public post without moving the source anywhere.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">When each one is the right tool</h2>
+
+      <p class="text-gray-700 mb-6">Notula earns its place when the document's life is a repository: multiple people have to comment and review, AI agents read and edit the same files, and you want the conversation to live with the clone and outlive every account. It is early — the builds are not signed yet (macOS needs a one-time quarantine command, Windows shows a SmartScreen prompt), the source is private, and Linux is not built — so treat it as a promising, fast-moving tool rather than a settled platform.</p>
+
+      <p class="text-gray-700 mb-6">md2rich earns its place the moment the document's destination is a rich-text platform. Your reviewer-approved Markdown is ready to publish; md2rich converts it in the browser with nothing uploaded, so private Specs and RFCs never need to leave your machine to become a LinkedIn or X post. For a solo writer or a content team, the conversion step is the one you hit on every single publish, and that is the job md2rich is built for.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+        <h2 class="text-xl font-bold mb-2">Keep one Markdown source. Publish it the way the platform expects.</h2>
+        <p class="text-gray-700 mb-4">Whether you collaborate on docs as code with Notula or keep a private Markdown draft, when it is time to post, convert it to rich text instead of pasting raw Markdown. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">Try md2rich</a> — it runs entirely in your browser, uploads nothing, and turns Markdown into polished LinkedIn, X, Medium, or Notion posts in seconds.</p>
+        <a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-indigo-700">Try md2rich — it's free</a>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-4 mb-8">
+        <div>
+          <h3 class="font-semibold mb-1">What is Notula?</h3>
+          <p class="text-gray-700">Notula is a WYSIWYG Markdown editor for docs as code, launched as a Show HN on August 19, 2026. It is a macOS and Windows desktop app that edits the Markdown files of a repository checked out on your machine. It gives non-coders the Google Docs review layer — comments, replies, threads, a tree — on documents that never leave your git repo, and it writes a briefing that tells your AI agent how the workspace is organised.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">How is Notula different from a normal Markdown editor?</h3>
+          <p class="text-gray-700">A normal Markdown editor like Typora or VS Code is a single-person writing tool. Notula is built around collaboration on a repository: you comment on a passage, reply, and resolve threads that are committed next to the document as an append-only log, so a conversation arrives with the clone and outlives every account. It is WYSIWYG, not live preview — no Markdown syntax on screen — yet what lands on disk is ordinary Markdown that reviews in a normal pull request.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Does Notula work with AI coding agents like Claude Code?</h3>
+          <p class="text-gray-700">Yes, that is a core selling point. Notula writes a briefing file, notula-agents.md, describing the document types, the layout, and the commands, and borrows three lines of your CLAUDE.md to point Claude Code at it. It never overwrites what you wrote there. When an agent rewrites a document you have open, the change lands in front of you instead of being clobbered.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Is Notula safe to use on a shared repository?</h3>
+          <p class="text-gray-700">Notula is built to be a guest in someone else's worktree. Every git command carries an explicit pathspec, so it never stages the whole worktree, never stashes, and never rewrites history. It commits to the branch you are on and never creates or switches one, and if that branch is protected it says so before you edit. It stores no token of its own and is free, with no account and no server.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Where does md2rich fit next to Notula?</h3>
+          <p class="text-gray-700">Notula owns the collaborate-and-review half inside the repository: keeping documentation healthy where teams and AI agents both read it. md2rich owns the publish half: once your Markdown is finished, md2rich converts it to formatted rich text for LinkedIn, X Articles, Medium, or Notion entirely in your browser, with nothing uploaded. Both are privacy-first and client-side, but one is for working on the source and the other is for shipping it to a rich-text platform.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-sm mt-8">Published by <a href="https://about.me/jasonxmai" class="text-indigo-600">md2rich</a>. This article is for informational purposes; the Notula facts are sourced from the project's official site (notula.org) and its Show HN launch on August 19, 2026, and md2rich is referenced only for the conversion step.</p>
+    </article>
+  </main>
+</body>
+</html>
