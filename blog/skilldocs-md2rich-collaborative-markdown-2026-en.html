@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillDocs &amp; md2rich: Collaborative Markdown Workflow 2026</title>
+  <meta name="description" content="SkillDocs is a collaboration layer for the Markdown your AI agents run on. md2rich turns the finished Markdown into rich text for publishing. How they fit.">
+  <meta name="keywords" content="SkillDocs, Figma for Markdown, collaboration layer Markdown, Markdown CRDT multiplayer, AI agents read Markdown, skilldocs MCP, skill docs review comments, collaborative Markdown editor, markdown source of truth, publish Markdown to LinkedIn X Medium, client-side Markdown converter, privacy-first Markdown, md2rich, Markdown round trip, markdown for AI agents">
+  <link rel="canonical" href="https://md2rich.com/blog/skilldocs-md2rich-collaborative-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/skilldocs-md2rich-collaborative-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/skilldocs-md2rich-collaborative-markdown-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SkillDocs &amp; md2rich: Collaborative Markdown Workflow 2026">
+  <meta property="og:description" content="SkillDocs is a collaboration layer for the Markdown your AI agents run on. md2rich turns the finished Markdown into rich text for publishing. How they fit.">
+  <meta property="og:url" content="https://md2rich.com/blog/skilldocs-md2rich-collaborative-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SkillDocs &amp; md2rich: Collaborative Markdown Workflow 2026">
+  <meta name="twitter:description" content="SkillDocs is a collaboration layer for the Markdown your AI agents run on. md2rich turns the finished Markdown into rich text for publishing. How they fit.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SkillDocs & md2rich: Collaborative Markdown Workflow 2026",
+      "description": "SkillDocs is a collaboration layer for the Markdown your AI agents run on. md2rich turns the finished Markdown into rich text for publishing. How they fit.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-21",
+      "dateModified": "2026-08-21",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/skilldocs-md2rich-collaborative-markdown-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SkillDocs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SkillDocs is a collaboration layer for the Markdown your AI agents run on, launched as a Show HN on August 20, 2026 by Rajiv Ayyangar. It is described as 'Figma for Markdown': a live multiplayer editor where real cursors, inline comments, and instant rendering sit on top of plain Markdown files, with an MCP server so an AI agent can push a skill up, read the team's edits and comments, and pull the revised document back over the local file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is SkillDocs different from a normal Markdown editor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A normal Markdown editor is a single-person writing tool. SkillDocs is built around presence and collaboration: the document is a CRDT, so concurrent edits merge character-by-character with no save button and no conflict dialog. You see everyone's cursor, selection, and name, can follow anyone's view like a screen share, and a text selection becomes a comment thread anchored to the words rather than to line numbers. The file on disk stays plain Markdown, character for character."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SkillDocs work with AI coding agents like Claude Code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, that is the point of the product. SkillDocs ships an MCP server that closes the loop: an agent pushes a local skill up with skilldocs_open, the team edits and comments in the browser, then the agent reads the diff and the open threads with skilldocs_diff and skilldocs_comments, replies with skilldocs_reply, and writes the revised document back over the local file with skilldocs_pull. Setup is one command and an API token, and the tools are scoped to your workspace."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 'collaboration layer for the Markdown your agents run on' mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agents have started to run on plain-text Markdown files: instruction files like CLAUDE.md or AGENTS.md, skills, specs, and runbooks that tell a coding agent how to work. SkillDocs is the layer where the humans who are not fluent in git and editors can still review and shape that Markdown together, in real time, before it is handed back to the agent. It borrows the parts of HackMD, Figma, and Google Docs that got this right, pointed at the files that teach agents how to behave."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit next to SkillDocs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SkillDocs owns the collaborate-and-refine half: getting a team and an agent aligned on a plain-text Markdown source in real time. md2rich owns the publish half: once the Markdown is finished and approved, md2rich converts it to formatted rich text for LinkedIn, X Articles, Medium, or Notion entirely in the browser, with nothing uploaded. Both rest on the same idea that the plain-text file, not the platform, is the durable asset."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 21, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">SkillDocs &amp; md2rich: the collaboration layer and the publish layer</h1>
+        <p class="text-lg text-gray-600">On August 20, 2026, Rajiv Ayyangar launched <a href="https://skilldocs.dev/tour" class="text-indigo-600 font-semibold">SkillDocs</a> on Hacker News with the line "Skills are writing. Write them together." SkillDocs is a collaboration layer for the Markdown your AI agents run on — a live, multiplayer editor with real cursors and anchored comments, plus an MCP server so a coding agent can push a skill up, watch the team edit it, and pull the revision back down. That is a genuinely different job from what md2rich does, which is converting finished Markdown into rich text for publishing on LinkedIn, X Articles, Medium, or Notion, entirely in the browser. This article unpacks SkillDocs, then shows where each tool belongs in the same Markdown-first pipeline.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">The pitch sits at a moment that was already building. Your AI agents run on plain text: instruction files, skills, specs, and runbooks are all just Markdown in a repository, and an agent reads and edits those files natively. But the humans who review that Markdown — the product folks, the designers, the non-git-native collaborators — kept losing their tools. The wiki became a codebase, and with it went comments, threads, presence, and the ability to shape a document without first learning a diff. SkillDocs is the answer that takes the good parts of <a href="https://hackmd.io/" class="text-indigo-600 font-semibold">HackMD</a>, <a href="https://www.figma.com/" class="text-indigo-600 font-semibold">Figma</a>, and Google Docs and points them at the files that actually teach your agents how to work.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What SkillDocs actually is</h2>
+
+      <p class="text-gray-700 mb-6">SkillDocs describes itself as "a collaboration layer for the markdown your agents run on," built explicitly in the lineage of the tools that got this right: HackMD's markdown-first writing, Figma's presence, and Google Docs' comment threads. Three properties define how it behaves:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Markdown you don't have to squint at.</strong> One surface, not a split screen. Headings, lists, tables, and diagrams render live, and the raw Markdown appears just-in-time around your cursor so you always know what you are actually editing — the asterisks around a bold phrase fade in only where you are working. Mermaid diagrams draw themselves in place as you type. Yet the file on disk stays plain Markdown, character for character.</li>
+        <li><strong>A document that is a CRDT.</strong> Concurrent edits merge character-by-character. There is no save button, no conflict dialog, and no way for two people to overwrite each other. You see their cursor, their selection, and their name, can follow anyone's view like a screen share, and can share your own view to the whole document.</li>
+        <li><strong>Comments that stay attached.</strong> Select any text and comment; the thread anchors to the words, not to line numbers, so it travels as the document changes underneath it. Threads are highlighted in place and resolvable in a rail — and you can export the document and its threads together as one Markdown blob and hand it straight to an agent, which reads the feedback with its quoted context attached.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">The multi-cursor and rendering details are where the "Figma for Markdown" marketing earns its keep: ⌘D and ⌥-click and column selection for multi-cursor edits, fold by heading to collapse a section and keep the shape, and follow mode that rides along with someone else's folds, not just their scroll position. It is the authoring experience of a modern collaborative tool applied to the plainest of formats.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The agent loop is the interesting part</h2>
+
+      <p class="text-gray-700 mb-6">The closer is the SkillDocs MCP server. The whole point is that the conversation does not stop when a human closes the tab. An agent pushes a local skill up, a team edits and comments on it in the browser, and the agent reads back the diff and the threads, replies to them, and writes the result back over the local file:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>you &gt; push a skill to SkillDocs (skilldocs_open)
+     → skilldocs.dev/?doc=release-notes-writer
+
+— the team edits and comments in SkillDocs —
+
+you &gt; read the diff and comments, apply, reply (skilldocs_*)
+     → skilldocs_diff    → 2 sections rewritten since the baseline
+     → skilldocs_comments→ 2 open threads from Maya and Sam
+     → skilldocs_reply   → answered both, applied the checklist reorder
+     → skilldocs_pull    → wrote the doc back over the local file</code></pre>
+
+      <p class="text-gray-700 mb-6">Setup is one command and an API token, and the tools are scoped to your workspace. That closes a real loop: instead of an agent editing a skill blind and the human discovering the changes later, the review happens in a live document with real cursors, and the agent operates the same loop as a human reviewer — read the diff, read the comments, reply, pull. The document, its threads, and the argument about it all export as one structured Markdown blob in three shapes: the clean document, the document with threads appended and anchored, or just the feedback.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why this is a different job from md2rich</h2>
+
+      <p class="text-gray-700 mb-6">Where SkillDocs begins to end, md2rich begins. SkillDocs keeps the Markdown source healthy and agreed-upon — the collaborate-and-refine half, aimed at the files that teach agents and teams how to work. Then the moment that document is finished, the job changes: turning it into a formatted post on the rich-text platform where your audience actually reads it. That is the publish half, and it is what md2rich does best — client-side Markdown to rich text for LinkedIn, X Articles, Medium, or Notion, with nothing uploaded.</p>
+
+      <p class="text-gray-700 mb-6">The two tools share the same philosophy, which is why they pair cleanly rather than compete. Both assume the plain-text file, not the platform and not the chat window, is the durable asset; both are privacy-first and can run without shipping your words to a third-party server. The difference is directional. SkillDocs pulls humans and agents together around a living document to shape it; md2rich pushes a finished document out to an audience, in the format a platform expects. Concretely, a reviewed block of Markdown like this:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>## Publishing the agreed skill
+
+- Keep the source in plain Markdown where review happens.
+- Once the doc and its threads are settled, convert to rich text only when you ship.
+- Nothing is uploaded; the source stays the source.</code></pre>
+
+      <p class="text-gray-700 mb-6">becomes, through <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a>, rich text with real headings, bold, and bullet lists ready to paste into LinkedIn or an X Article — no raw Markdown left in the paste box, no formatting lost.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">SkillDocs and md2rich side by side</h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
+          <thead>
+            <tr class="bg-gray-100 text-left">
+              <th class="px-4 py-2 font-semibold">Question</th>
+              <th class="px-4 py-2 font-semibold">SkillDocs</th>
+              <th class="px-4 py-2 font-semibold">md2rich</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">What it does</td>
+              <td class="px-4 py-2">Live multiplayer editing + comments + MCP loop on plain Markdown</td>
+              <td class="px-4 py-2">Converts Markdown to rich text for publishing</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Stage in the workflow</td>
+              <td class="px-4 py-2">Collaborate &amp; refine on the source</td>
+              <td class="px-4 py-2">Publishing (output)</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Where it runs</td>
+              <td class="px-4 py-2">Browser editor; local files stay Markdown</td>
+              <td class="px-4 py-2">Browser, client-side, nothing uploaded</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">Who it serves</td>
+              <td class="px-4 py-2">Teams + AI agents agreeing on the same Markdown</td>
+              <td class="px-4 py-2">Anyone publishing Markdown to a rich-text platform</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2">The audience</td>
+              <td class="px-4 py-2">Internal: reviewers and agents</td>
+              <td class="px-4 py-2">External: LinkedIn, X, Medium, Notion readers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">They do not overlap. SkillDocs makes the agent-facing Markdown reviewable by both humans and agents; md2rich makes the approved Markdown publishable to an external audience. You could realistically use both on the same file — SkillDocs to shape and agree the skill or spec in real time, md2rich to turn the finished Markdown into a public post without moving the source anywhere.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">When each one is the right tool</h2>
+
+      <p class="text-gray-700 mb-6">SkillDocs earns its place the moment a Markdown document lives where several people and an agent have to agree on it — a shared skill, an instruction file, a runbook, or a spec that an agent reads. Its value is presence and anchored feedback: real cursors, comment threads bound to the words, and an MCP loop that hands the whole conversation back to the agent. It is brand new (Show HN August 20, 2026), so treat it as a fast-moving early tool rather than a settled platform, but the collaboration-layer idea is exactly what the agent-Markdown world has been missing.</p>
+
+      <p class="text-gray-700 mb-6">md2rich earns its place the moment the document's destination is a rich-text platform. Your agreed Markdown is ready to publish; md2rich converts it in the browser with nothing uploaded, so a private skill, spec, or draft never needs to leave your machine to become a LinkedIn post or an X Article. For a solo writer or a content team, the conversion step is the one you hit on every single publish, and that is the job md2rich is built for.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+        <h2 class="text-xl font-bold mb-2">Keep one Markdown source. Publish it the way the platform expects.</h2>
+        <p class="text-gray-700 mb-4">Whether you collaborate on a skill with SkillDocs or keep a private Markdown draft, when it is time to post, convert it to rich text instead of pasting raw Markdown. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">Try md2rich</a> — it runs entirely in your browser, uploads nothing, and turns Markdown into polished LinkedIn, X, Medium, or Notion posts in seconds.</p>
+        <a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-indigo-700">Try md2rich — it's free</a>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-4 mb-8">
+        <div>
+          <h3 class="font-semibold mb-1">What is SkillDocs?</h3>
+          <p class="text-gray-700">SkillDocs is a collaboration layer for the Markdown your AI agents run on, launched as a Show HN on August 20, 2026 by Rajiv Ayyangar. It is described as "Figma for Markdown": a live multiplayer editor where real cursors, inline comments, and instant rendering sit on top of plain Markdown files, with an MCP server so an AI agent can push a skill up, read the team's edits and comments, and pull the revised document back over the local file.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">How is SkillDocs different from a normal Markdown editor?</h3>
+          <p class="text-gray-700">A normal Markdown editor is a single-person writing tool. SkillDocs is built around presence and collaboration: the document is a CRDT, so concurrent edits merge character-by-character with no save button and no conflict dialog. You see everyone's cursor, selection, and name, can follow anyone's view like a screen share, and a text selection becomes a comment thread anchored to the words rather than to line numbers. The file on disk stays plain Markdown, character for character.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Does SkillDocs work with AI coding agents like Claude Code?</h3>
+          <p class="text-gray-700">Yes, that is the point of the product. SkillDocs ships an MCP server that closes the loop: an agent pushes a local skill up with skilldocs_open, the team edits and comments in the browser, then the agent reads the diff and the open threads with skilldocs_diff and skilldocs_comments, replies with skilldocs_reply, and writes the revised document back over the local file with skilldocs_pull. Setup is one command and an API token, and the tools are scoped to your workspace.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">What does "collaboration layer for the Markdown your agents run on" mean?</h3>
+          <p class="text-gray-700">AI agents have started to run on plain-text Markdown files: instruction files like CLAUDE.md or AGENTS.md, skills, specs, and runbooks that tell a coding agent how to work. SkillDocs is the layer where the humans who are not fluent in git and editors can still review and shape that Markdown together, in real time, before it is handed back to the agent. It borrows the parts of HackMD, Figma, and Google Docs that got this right, pointed at the files that teach agents how to behave.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Where does md2rich fit next to SkillDocs?</h3>
+          <p class="text-gray-700">SkillDocs owns the collaborate-and-refine half: getting a team and an agent aligned on a plain-text Markdown source in real time. md2rich owns the publish half: once the Markdown is finished and approved, md2rich converts it to formatted rich text for LinkedIn, X Articles, Medium, or Notion entirely in the browser, with nothing uploaded. Both rest on the same idea that the plain-text file, not the platform, is the durable asset.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-sm mt-8">Published by <a href="https://about.me/jasonxmai" class="text-indigo-600">md2rich</a>. This article is for informational purposes; the SkillDocs facts are sourced from the project's official site (skilldocs.dev) and its Show HN launch on August 20, 2026, and md2rich is referenced only for the conversion step.</p>
+    </article>
+  </main>
+</body>
+</html>
