@@ -1767,23 +1767,62 @@
       "faq_count": 5,
       "internal_links": 0,
       "deploy_method": "git_push_auto_deploy"
+    },
+    {
+      "slug": "panache-md2rich-markdown-lint-workflow-2026-en",
+      "date": "2026-08-23",
+      "type": "tool-comparison",
+      "lang": "en-US",
+      "file": "blog/panache-md2rich-markdown-lint-workflow-2026-en.html",
+      "url": "https://md2rich.com/blog/panache-md2rich-markdown-lint-workflow-2026-en",
+      "title": "Panache & md2rich: lint Markdown, then publish rich text",
+      "description": "Panache lints and formats Markdown so the rich-text output is clean. md2rich converts it for LinkedIn, X, Medium, or Notion. A lint-then-publish workflow.",
+      "heat_source": "briefing-2026-08-23: Panache (HN 2026-08-22, github.com/jolars/panache, Rust Markdown/Quarto/R Markdown language server+formatter+linter, MIT, pushed 2026-08-21). Fresh tool extends covered priority #5 client-side-vs-cloud converter + publishing toolchain; lint-then-publish angle for md2rich (authoring quality gate before convert). Zero prior Panache coverage on disk.",
+      "status": "published",
+      "published_at": "2026-08-23T12:00:00Z",
+      "providers_featured": [
+        "panache",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich (https://md2rich.com/)",
+      "primary_keyword": "Panache Markdown linter publish workflow",
+      "secondary_keywords": [
+        "panache format check",
+        "Markdown formatter Rust",
+        "lint Markdown before publish",
+        "Markdown pre-commit",
+        "publish Markdown to LinkedIn",
+        "client-side Markdown converter"
+      ],
+      "external_links": [
+        "https://github.com/jolars/panache",
+        "https://panache.bz/",
+        "https://pre-commit.com/",
+        "https://about.me/jasonxmai"
+      ],
+      "meta_title_chars": 56,
+      "meta_desc_chars": 154,
+      "word_count": 1690,
+      "faq_count": 5,
+      "internal_links": 0,
+      "deploy_method": "git_push_auto_deploy"
     }
   ],
   "drafts": [],
   "recent_topics": [
-    "claude-ai-text-watermark-markdown-writers-2026-en",
     "agent-readable-markdown-cloudflare-mcp-2026-en",
     "zenfmt-vs-md2rich-client-side-markdown-converter-2026-en",
     "notula-vs-md2rich-ai-agent-markdown-2026-en",
-    "skilldocs-md2rich-collaborative-markdown-2026-en"
+    "skilldocs-md2rich-collaborative-markdown-2026-en",
+    "panache-md2rich-markdown-lint-workflow-2026-en"
   ],
   "current_index": 0,
-  "last_topic_direction": "AI-agent-readable Markdown: Notula (docs-as-code WYSIWYG editor) vs md2rich (client-side publish)",
-  "last_run": "2026-08-21T04:35:00.000000+00:00",
-  "last_published_slug": "skilldocs-md2rich-collaborative-markdown-2026-en",
-  "last_published_at": "2026-08-21T12:00:00Z",
+  "last_topic_direction": "Panache lint-then-publish Markdown workflow - lint Markdown source with Panache, convert to rich text with md2rich",
+  "last_run": "2026-08-23T04:00:00.000000+00:00",
+  "last_published_slug": "panache-md2rich-markdown-lint-workflow-2026-en",
+  "last_published_at": "2026-08-23T12:00:00Z",
   "drafts_count": 0,
-  "published_count": 72,
+  "published_count": 73,
   "publish_notes": "SkillDocs vs md2rich collaborative Markdown workflow 2026 (SkillDocs Show HN Aug 20 2026, Figma for Markdown, MCP agent loop, client-side publish)",
-  "last_publish": "2026-08-21"
+  "last_publish": "2026-08-23"
 }
