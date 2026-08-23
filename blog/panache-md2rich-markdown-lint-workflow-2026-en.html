@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panache &amp; md2rich: lint Markdown, then publish rich text</title>
+  <meta name="description" content="Panache lints and formats Markdown so the rich-text output is clean. md2rich converts it for LinkedIn, X, Medium, or Notion. A lint-then-publish workflow.">
+  <meta name="keywords" content="Panache Markdown linter, panache format check, Markdown formatter Rust, Markdown linter 2026, jolars panache, clean Markdown before publish, lint Markdown draft, Markdown quality workflow, Markdown pre-commit, publish clean Markdown, client-side Markdown converter, privacy-first Markdown, Markdown to LinkedIn X Medium Notion, md2rich, markdown CI workflow, panache action">
+  <link rel="canonical" href="https://md2rich.com/blog/panache-md2rich-markdown-lint-workflow-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/panache-md2rich-markdown-lint-workflow-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/panache-md2rich-markdown-lint-workflow-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Panache &amp; md2rich: lint Markdown, then publish rich text">
+  <meta property="og:description" content="Panache lints and formats Markdown so the rich-text output is clean. md2rich converts it for LinkedIn, X, Medium, or Notion. A lint-then-publish workflow.">
+  <meta property="og:url" content="https://md2rich.com/blog/panache-md2rich-markdown-lint-workflow-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panache &amp; md2rich: lint Markdown, then publish rich text">
+  <meta name="twitter:description" content="Panache lints and formats Markdown so the rich-text output is clean. md2rich converts it for LinkedIn, X, Medium, or Notion. A lint-then-publish workflow.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Panache & md2rich: lint Markdown, then publish rich text",
+      "description": "Panache lints and formats Markdown so the rich-text output is clean. md2rich converts it for LinkedIn, X, Medium, or Notion. A lint-then-publish workflow.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-23",
+      "dateModified": "2026-08-23",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/panache-md2rich-markdown-lint-workflow-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Panache?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Panache is an open-source language server, formatter, and linter for Markdown, Quarto, and R Markdown, written in Rust and published under the MIT license by jolars. It parses Markdown into a lossless concrete syntax tree, then rewrites it with consistent formatting: normalized line width, consistent heading and list style, removed trailing whitespace, and tidy fenced code blocks. It runs as a CLI (panache format, panache lint), as a language server inside an editor, or as a pre-commit hook or GitHub Action."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why lint Markdown before converting it to rich text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because how your Markdown is written determines how the converted rich text lands. Inconsistent line breaks, mixed list markers, a heading hierarchy with skipped levels, trailing whitespace, and ragged fenced code blocks all survive a Markdown-to-rich-text conversion and become messy output in LinkedIn, X Articles, Medium, or Notion. Linting and formatting the source first gives you predictable headings, unified lists, tidy code blocks, and clean paragraphs in the rich-text paste box."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Panache replace a Markdown-to-rich-text converter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, they do different jobs. Panache is a quality-control tool for the source: it formats, reflows, and lints the Markdown so it is consistent and valid. A converter like md2rich turns the finished Markdown into rich text that a platform understands (real headings, bold, lists, tables) for pasting into LinkedIn, X Articles, Medium, or Notion. You use Panache before you publish, and a converter at the moment you publish."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I run a Markdown lint check before publishing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Install Panache with cargo install --locked panache, brew install panache, or npm, then run panache format --check post.md. The --check flag reports files that need reformatting without changing them, and panache lint post.md flags issues. You can also add it as a pre-commit hook or a GitHub Action (jolars/panache-action@v1) so every draft is checked automatically. Once the draft is clean, convert it to rich text with md2rich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is running Panache and md2rich offline-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes on both sides. Panache is a local Rust CLI, so it formats and lints entirely on your machine with no network call. md2rich is a client-side converter, so the Markdown-to-rich-text conversion also runs entirely in your browser with nothing uploaded. That means a private, in-progress draft never has to leave your machine to be both linted and converted for publishing."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 23, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Panache &amp; md2rich: the Markdown lint-then-publish workflow</h1>
+        <p class="text-lg text-gray-600">Panache is a fresh Rust Markdown formatter and linter that went up on Hacker News on August 22, 2026 and started on GitHub the day before. It is a quality-control layer for your Markdown source: it reflows, reformats, and flags issues so the plain-text file is consistent and valid before it goes anywhere. md2rich is the layer that runs at the other end of the pipeline — converting that finished Markdown into rich text for LinkedIn, X Articles, Medium, or Notion, entirely in the browser. This article walks through a lint-then-publish workflow: clean the source with Panache, then convert it to rich text with md2rich.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">Most Markdown publishing advice stops at "write in Markdown, paste into the platform." What it skips is the quality of the source itself. If your draft has inconsistent line lengths, a mix of <code class="bg-gray-100 px-1 rounded">-</code> and <code class="bg-gray-100 px-1 rounded">*</code> list markers, headings that skip from <code class="bg-gray-100 px-1 rounded">##</code> to <code class="bg-gray-100 px-1 rounded">####</code>, or trailing whitespace at the end of lines, all of that noise is preserved as you convert to rich text. The result is a paste that looks a little off in the editor — and the fix, oddly, is to treat your Markdown as something with a quality bar, not just a scratch format.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What Panache actually is</h2>
+
+      <p class="text-gray-700 mb-6">Panache describes itself as a "language server, formatter, and linter for Markdown, Quarto, and R Markdown." It is written in Rust, MIT-licensed, and lives on GitHub at <a href="https://github.com/jolars/panache" class="text-indigo-600 font-semibold">jolars/panache</a>. The key engineering detail is that it does not just regex-match lines the way older Markdown tidy-uppers do. It parses your document into a lossless concrete syntax tree, then rewrites it from that tree, so it understands the structure — headings, lists, tables, code fences, links — rather than the literal characters.</p>
+
+      <p class="text-gray-700 mb-6">That structural understanding is what makes its formatting stable. Panache normalizes line width (reflowing paragraphs to a set column), unifies heading and list styles, strips trailing whitespace, and tidies fenced code blocks. Because the parse is lossless, it preserves your content exactly; only the formatting changes. And because it is a proper linter, it reports problems rather than silently guessing — which is what makes it safe to drop into an automated quality gate.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The Panache CLI, in practice</h2>
+
+      <p class="text-gray-700 mb-6">Panache is installed the usual ways for a modern Rust tool — <code class="bg-gray-100 px-1 rounded">cargo install --locked panache</code>, <code class="bg-gray-100 px-1 rounded">brew install panache</code>, or through npm — so it fits a laptop workflow or a CI pipeline. The two commands you reach for every day:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code># Format a single file in place
+panache format post.md
+
+# Check without changing anything — exits non-zero if files need formatting
+panache format --check post.md
+
+# Lint a glob of drafts
+panache lint **/*.md
+
+# Pipe stdin through the formatter
+cat post.md | panache format</code></pre>
+
+      <p class="text-gray-700 mb-6">The <code class="bg-gray-100 px-1 rounded">--check</code> flag is the heart of a quality gate: it reports which files need reformatting and exits non-zero if any do, without mutating them. That is exactly what you want in a pre-commit hook or a GitHub Action, because it fails the run loudly when a draft drifts off standard instead of quietly rewriting it. For anything stricter, Panache also has an LSP mode so your editor formats and lints as you type, plus a config file (<code class="bg-gray-100 px-1 rounded">.panache.toml</code> or <code class="bg-gray-100 px-1 rounded">panache.toml</code>) for project-wide rules. And because it plugs into <a href="https://pre-commit.com/" class="text-indigo-600 font-semibold">pre-commit</a> and ships a <code class="bg-gray-100 px-1 rounded">jolars/panache-action@v1</code> GitHub Action, "the draft must be clean before it is committed or merged" becomes a one-line rule instead of a habit you have to remember.</p>
+
+      <p class="text-gray-700 mb-6">Panache also extends beyond plain Markdown. Because it targets the Quarto and R Markdown ecosystems too, it can delegate formatting of fenced code blocks to external formatters configured in <code class="bg-gray-100 px-1 rounded">[formatters]</code> — for example <code class="bg-gray-100 px-1 rounded">python = ["isort", "black"]</code> or <code class="bg-gray-100 px-1 rounded">javascript = "prettier"</code> — moving further toward "one command keeps the whole project tidy." For a writer, that is neat; for a solo operator with a docs repo or a newsletter, it turns Markdown hygiene into something automatic.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why lint the source before you convert it</h2>
+
+      <p class="text-gray-700 mb-6">The reason a linter matters to a publishing workflow is that a Markdown-to-rich-text converter is faithful: it carries your formatting choices into the output. Feed it clean, well-formed Markdown and you get predictable headings, unified lists, tidy code blocks, and clean paragraphs. Feed it a draft with skipped heading levels and mixed list styles and the mess carries through to the rich text paste box, where it is much more annoying to dig out by hand.</p>
+
+      <p class="text-gray-700 mb-6">So a sensible pipeline puts a quality gate before the conversion step. A rough block that a linter would normalise:</p>
+
+      <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-6 overflow-x-auto"><code>## Why clean Markdown matters
+
+Long run-on paragraph line that goes on and on well past
+the preferred line width and makes the file hard to
+read and the converted output unpredictable.
+
+- an item with a dash
+* an item with a star
++ an item with a plus
+
+#### A heading that skipped a level</code></pre>
+
+      <p class="text-gray-700 mb-6">Panache's formatter reflows the long paragraph, normalizes all three list markers to one style, fixes the heading to the correct level, and strips any trailing whitespace — giving you a consistent source file where the structure reads correctly and the conversion behaves. It is the difference between fighting the paste box and pasting clean rich text the first time.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The full lint-then-publish loop</h2>
+
+      <p class="text-gray-700 mb-6">Pulling it together, a complete publish run is only a few steps, and the private draft never leaves your machine:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Draft in Markdown.</strong> Write your post in whatever editor you like; the source is a plain-text file.</li>
+        <li><strong>Lint and format with Panache.</strong> Run <code class="bg-gray-100 px-1 rounded">panache format --check post.md</code>, then <code class="bg-gray-100 px-1 rounded">panache format post.md</code> to apply it. Add a pre-commit hook or the GitHub Action if the draft lands in a repo.</li>
+        <li><strong>Convert to rich text with md2rich.</strong> Open <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a>, paste the clean Markdown, and get rich text with real headings, bold, lists, and tables.</li>
+        <li><strong>Paste and publish.</strong> Drop the rich text into LinkedIn, X Articles, Medium, or Notion. No raw Markdown left in the paste box, no formatting lost.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">That ordering matters. Panache runs on the source because it edits text; md2rich runs at the moment of publishing because it creates the final rich-text shape. They never overlap, and they both value the same thing — keeping your words as durable, private, plain-text files that can be turned into any output the platform expects.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Panache and md2rich in the same workflow</h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg text-sm">
+          <thead>
+            <tr class="bg-gray-100 text-left">
+              <th class="px-4 py-2 font-semibold"></th>
+              <th class="px-4 py-2 font-semibold">Panache</th>
+              <th class="px-4 py-2 font-semibold">md2rich</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2 font-semibold">What it does</td>
+              <td class="px-4 py-2">Formats, reflows, and lints the Markdown source</td>
+              <td class="px-4 py-2">Converts Markdown to rich text for publishing</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2 font-semibold">Stage in the workflow</td>
+              <td class="px-4 py-2">Quality gate on the source, before you ship</td>
+              <td class="px-4 py-2">The conversion step, at the moment you publish</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2 font-semibold">Where it runs</td>
+              <td class="px-4 py-2">Local Rust CLI, LSP, pre-commit, GitHub Action</td>
+              <td class="px-4 py-2">Browser, client-side, nothing uploaded</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2 font-semibold">Output</td>
+              <td class="px-4 py-2">Consistent, valid Markdown</td>
+              <td class="px-4 py-2">Rich text ready to paste into a platform</td>
+            </tr>
+            <tr class="border-t border-gray-200">
+              <td class="px-4 py-2 font-semibold">Why combine them</td>
+              <td class="px-4 py-2">Clean source makes the conversion predictable</td>
+              <td class="px-4 py-2">Takes the clean source and ships it as formatted output</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">Panache is brand new (the HN story and its heaviest activity landed August 21-22, 2026), so treat it as a fast-moving early tool rather than a settled standard. But the shape is already right: a lossless structural formatter that doubles as a CI-friendly linter is exactly the tool a Markdown-first publishing workflow has been missing on the authoring side.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+        <h2 class="text-xl font-bold mb-2">Write clean. Convert once. Publish everywhere.</h2>
+        <p class="text-gray-700 mb-4">Keep your drafts as plain Markdown, run Panache on them so the source is consistent, then paste into md2rich when it is time to post. It runs entirely in your browser, uploads nothing, and turns clean Markdown into polished LinkedIn, X, Medium, or Notion posts in seconds.</p>
+        <a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-indigo-700">Try md2rich — it's free</a>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-4 mb-8">
+        <div>
+          <h3 class="font-semibold mb-1">What is Panache?</h3>
+          <p class="text-gray-700">Panache is an open-source language server, formatter, and linter for Markdown, Quarto, and R Markdown, written in Rust and published under the MIT license by jolars. It parses Markdown into a lossless concrete syntax tree, then rewrites it with consistent formatting: normalized line width, consistent heading and list style, removed trailing whitespace, and tidy fenced code blocks. It runs as a CLI (panache format, panache lint), as a language server inside an editor, or as a pre-commit hook or GitHub Action.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Why lint Markdown before converting it to rich text?</h3>
+          <p class="text-gray-700">Because how your Markdown is written determines how the converted rich text lands. Inconsistent line breaks, mixed list markers, a heading hierarchy with skipped levels, trailing whitespace, and ragged fenced code blocks all survive a Markdown-to-rich-text conversion and become messy output in LinkedIn, X Articles, Medium, or Notion. Linting and formatting the source first gives you predictable headings, unified lists, tidy code blocks, and clean paragraphs in the rich-text paste box.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Does Panache replace a Markdown-to-rich-text converter?</h3>
+          <p class="text-gray-700">No, they do different jobs. Panache is a quality-control tool for the source: it formats, reflows, and lints the Markdown so it is consistent and valid. A converter like md2rich turns the finished Markdown into rich text that a platform understands (real headings, bold, lists, tables) for pasting into LinkedIn, X Articles, Medium, or Notion. You use Panache before you publish, and a converter at the moment you publish.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">How do I run a Markdown lint check before publishing?</h3>
+          <p class="text-gray-700">Install Panache with cargo install --locked panache, brew install panache, or npm, then run panache format --check post.md. The --check flag reports files that need reformatting without changing them, and panache lint post.md flags issues. You can also add it as a pre-commit hook or a GitHub Action (jolars/panache-action@v1) so every draft is checked automatically. Once the draft is clean, convert it to rich text with md2rich.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-1">Is running Panache and md2rich offline-friendly?</h3>
+          <p class="text-gray-700">Yes on both sides. Panache is a local Rust CLI, so it formats and lints entirely on your machine with no network call. md2rich is a client-side converter, so the Markdown-to-rich-text conversion also runs entirely in your browser with nothing uploaded. That means a private, in-progress draft never has to leave your machine to be both linted and converted for publishing.</p>
+        </div>
+      </div>
+
+      <p class="text-gray-500 text-sm mt-8">Published by <a href="https://about.me/jasonxmai" class="text-indigo-600">md2rich</a>. This article is for informational purposes; the Panache facts are sourced from the project's official GitHub repository (github.com/jolars/panache) and its site (panache.bz), and md2rich is referenced only for the conversion step.</p>
+    </article>
+  </main>
+</body>
+</html>
