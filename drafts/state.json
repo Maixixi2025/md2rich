@@ -1806,23 +1806,66 @@
       "faq_count": 5,
       "internal_links": 0,
       "deploy_method": "git_push_auto_deploy"
+    },
+    {
+      "slug": "ozbrain-md2rich-shared-agent-brain-2026-en",
+      "date": "2026-08-24",
+      "type": "tool-comparison",
+      "lang": "en-US",
+      "file": "blog/ozbrain-md2rich-shared-agent-brain-2026-en.html",
+      "url": "https://md2rich.com/blog/ozbrain-md2rich-shared-agent-brain-2026-en",
+      "title": "OzBrain & md2rich: shared agent brain, then publish",
+      "description": "Pair OzBrain (shared Markdown brain for AI agents) with md2rich (Markdown to rich text for LinkedIn, X, Medium, Notion) for a brain-then-publish workflow.",
+      "heat_source": "briefing-2026-08-24: OzBrain (HN Show HN 2026-08-21, 85 points / 50 comments, ozbrain.com, hosted Markdown knowledge base shared by Claude/ChatGPT/Cursor via MCP connector, built by Darius Monsef/Monsef Holdings). Fresh agent-brain angle for md2rich (source-of-truth markdown drafts held in OzBrain, polished draft converted to rich text by md2rich). Zero prior OzBrain coverage on disk; body-grep of adjacent agent-memory articles (milepost, x-hosted-mcp) for 'shared brain'/'Claude+ChatGPT+Cursor'/'MCP connector'/'Mem0/Supermemory'/'provenance' all = 0 hits.",
+      "status": "published",
+      "published_at": "2026-08-24T12:00:00Z",
+      "providers_featured": [
+        "ozbrain",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich (https://md2rich.com/)",
+      "primary_keyword": "OzBrain md2rich shared agent brain",
+      "secondary_keywords": [
+        "OzBrain shared brain",
+        "agent knowledge base",
+        "AI agent memory",
+        "shared markdown brain",
+        "OzBrain MCP connector",
+        "markdown source of truth",
+        "agent readable markdown",
+        "publish markdown to LinkedIn",
+        "cross-agent memory",
+        "Markdown for AI agents"
+      ],
+      "external_links": [
+        "https://ozbrain.com",
+        "https://ozbrain.com/start",
+        "https://ozbrain.com/docs.md",
+        "https://about.me/jasonxmai"
+      ],
+      "meta_title_chars": 51,
+      "meta_desc_chars": 154,
+      "word_count": 1921,
+      "faq_count": 5,
+      "internal_links": 4,
+      "deploy_method": "git_push_auto_deploy"
     }
   ],
   "drafts": [],
   "recent_topics": [
-    "agent-readable-markdown-cloudflare-mcp-2026-en",
     "zenfmt-vs-md2rich-client-side-markdown-converter-2026-en",
     "notula-vs-md2rich-ai-agent-markdown-2026-en",
     "skilldocs-md2rich-collaborative-markdown-2026-en",
-    "panache-md2rich-markdown-lint-workflow-2026-en"
+    "panache-md2rich-markdown-lint-workflow-2026-en",
+    "ozbrain-md2rich-shared-agent-brain-2026-en"
   ],
   "current_index": 0,
-  "last_topic_direction": "Panache lint-then-publish Markdown workflow - lint Markdown source with Panache, convert to rich text with md2rich",
-  "last_run": "2026-08-23T04:00:00.000000+00:00",
-  "last_published_slug": "panache-md2rich-markdown-lint-workflow-2026-en",
-  "last_published_at": "2026-08-23T12:00:00Z",
+  "last_topic_direction": "OzBrain + md2rich - hosted Markdown agent brain holds the canonical drafts, md2rich ships them as rich text for LinkedIn/X/Medium/Notion",
+  "last_run": "2026-08-24T12:00:00+00:00",
+  "last_published_slug": "ozbrain-md2rich-shared-agent-brain-2026-en",
+  "last_published_at": "2026-08-24T12:00:00Z",
   "drafts_count": 0,
-  "published_count": 73,
-  "publish_notes": "SkillDocs vs md2rich collaborative Markdown workflow 2026 (SkillDocs Show HN Aug 20 2026, Figma for Markdown, MCP agent loop, client-side publish)",
-  "last_publish": "2026-08-23"
+  "published_count": 74,
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).",
+  "last_publish": "2026-08-24"
 }
