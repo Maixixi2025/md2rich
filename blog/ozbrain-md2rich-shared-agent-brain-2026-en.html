@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OzBrain &amp; md2rich: shared agent brain, then publish</title>
+  <meta name="description" content="Pair OzBrain (shared Markdown brain for AI agents) with md2rich (Markdown to rich text for LinkedIn, X, Medium, Notion) for a brain-then-publish workflow.">
+  <meta name="keywords" content="OzBrain md2rich, OzBrain shared brain, agent knowledge base, AI agent memory, shared markdown brain, OzBrain MCP connector, markdown source of truth, agent readable markdown, publish markdown to LinkedIn, md2rich, cross-agent memory, Markdown for AI agents">
+  <link rel="canonical" href="https://md2rich.com/blog/ozbrain-md2rich-shared-agent-brain-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/ozbrain-md2rich-shared-agent-brain-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/ozbrain-md2rich-shared-agent-brain-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OzBrain &amp; md2rich: shared agent brain, then publish">
+  <meta property="og:description" content="Pair OzBrain (shared Markdown brain for AI agents) with md2rich (Markdown to rich text for LinkedIn, X, Medium, Notion) for a brain-then-publish workflow.">
+  <meta property="og:url" content="https://md2rich.com/blog/ozbrain-md2rich-shared-agent-brain-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OzBrain &amp; md2rich: shared agent brain, then publish">
+  <meta name="twitter:description" content="Pair OzBrain (shared Markdown brain for AI agents) with md2rich (Markdown to rich text for LinkedIn, X, Medium, Notion) for a brain-then-publish workflow.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "OzBrain & md2rich: shared agent brain, then publish",
+      "description": "Pair OzBrain (shared Markdown brain for AI agents) with md2rich (Markdown to rich text for LinkedIn, X, Medium, Notion) for a brain-then-publish workflow.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-24",
+      "dateModified": "2026-08-24",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/ozbrain-md2rich-shared-agent-brain-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is OzBrain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OzBrain is a hosted Markdown knowledge base shared by the AI agents you connect. Knowledge lives in linked Markdown articles with provenance, freshness, and a routing index that helps each agent find the right context. Connected agents read, write, and coordinate through one MCP-style connector at ozbrain.com/api/mcp, so Claude, ChatGPT, Cursor, and other compatible agents all see the same canonical version. The whole brain exports as Markdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why pair a shared agent brain with a Markdown-to-rich-text converter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because each tool solves a different half of the publishing problem. OzBrain holds the source-of-truth Markdown drafts, decisions, preferences, and research that every connected agent reads and writes. md2rich turns a finished Markdown article into the rich text a platform understands, real headings, bold, lists, tables, code blocks, for pasting into LinkedIn, X Articles, Medium, or Notion. Together they form a brain-then-publish pipeline: the brain holds the Markdown, the converter ships it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does OzBrain replace an AI agent's memory?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, it sits underneath them. ChatGPT memory, Claude memory, and Cursor's project context each build a partial version of what you know, and none of them talk to each other. OzBrain is the layer below those memories. A finished decision, a piece of research, or a recurring preference becomes an article in the brain so every connected agent reads the same canonical version instead of a private copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do agents connect to OzBrain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A person signs in at ozbrain.com/start, then adds OzBrain as a custom MCP connector in the agent or app they already use. The connector URL is https://ozbrain.com/api/mcp. Once connected, the agent can list the brains visible to its connection, open a routing index, read and write articles, stage a change before it becomes canonical, claim tasks, and export the whole brain as Markdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does OzBrain cost in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free is $0 forever and covers up to 50 articles. Pro is $20 per month for up to 300 articles. Max is $99 per month for up to 600 articles. Company is custom and includes org-owned brains that every seat's agents share. Reads, writes, connections, and brains are not metered on any plan."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 24, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">OzBrain &amp; md2rich: shared agent brain, then publish</h1>
+        <p class="text-lg text-gray-600">Pair OzBrain (shared Markdown brain for AI agents) with md2rich (Markdown to rich text for LinkedIn, X, Medium, Notion) for a brain-then-publish workflow. The hosted brain holds the canonical drafts; the client-side converter ships them as rich text in the platform editor.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">Every modern AI agent has some form of memory: ChatGPT memory, Claude memory, Cursor's project context, Gemini's saved info. The trouble is that none of these memories talk to each other. A decision you make with Claude lives in Claude's memory. A research note you assemble in ChatGPT lives in ChatGPT's memory. The two products each build a partial version of you, and when you switch agents you either re-explain yourself or lose the thread. The actual unit of work, the finished decision, the polished draft, the research summary, the recurring preference, lives nowhere durable.</p>
+
+      <p class="text-gray-700 mb-6">OzBrain is a Show HN from August 21, 2026 that addresses exactly that problem. It is a hosted knowledge base built on linked Markdown articles with provenance, freshness, and a routing index, and every AI agent you connect to it reads and writes through the same MCP-style connector. The Markdown article is the unit. The brain is the storage layer. The connector is the protocol. The whole brain exports as Markdown.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What OzBrain actually is</h2>
+
+      <p class="text-gray-700 mb-6">OzBrain describes itself as a "shared brain every AI agent you use can read and write." It is built by Darius Monsef's Monsef Holdings and lives at <a href="https://ozbrain.com" class="text-indigo-600 font-semibold">ozbrain.com</a>. The premise is simple. A finished decision, a plan, a piece of research, or a recurring preference belongs in an article, not in a single chat thread. Host memory keeps scraps. Files multiply across chats, repos, and docs until nobody can tell which copy is current. OzBrain holds one canonical version.</p>
+
+      <p class="text-gray-700 mb-6">The mechanics are what make it interesting. Knowledge lives in linked Markdown articles. Each article carries a freshness marker, so an agent can see whether the information is still current or aging. There is a routing index that helps each agent find the right context for the task at hand instead of pulling everything. Writes are staged before they become canonical, which means a concurrent edit cannot silently overwrite the current version. Claude, ChatGPT, Cursor, and other compatible agents share the same canonical version because they all read the same brain through the same connector.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The connector: one URL, many agents</h2>
+
+      <p class="text-gray-700 mb-6">Connection is the part that often gets glossed over with hosted tools. OzBrain puts it front and center. A person signs in at <a href="https://ozbrain.com/start" class="text-indigo-600 font-semibold">ozbrain.com/start</a>, then adds OzBrain as a custom MCP connector in the agent or app they already use. The connector URL is <code class="bg-gray-100 px-1 rounded">https://ozbrain.com/api/mcp</code>. Once connected, the agent can do everything that makes the brain useful:</p>
+
+      <ul class="list-disc pl-6 text-gray-700 mb-6">
+        <li class="mb-2"><strong class="text-gray-900">Read:</strong> list brains a connection can see, open a routing index, inspect recent activity, open an article with its provenance, search articles, export the brain as Markdown.</li>
+        <li class="mb-2"><strong class="text-gray-900">Write:</strong> create a brain, stage an article change, promote a staged write to the current version, verify an article, import a Markdown bundle, set links between articles.</li>
+        <li class="mb-2"><strong class="text-gray-900">Coordinate:</strong> create a task, claim the next task, keep a claim alive, release a claim, update task status, attach a link to a task, connect a task to an article.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">The whole brain exports as Markdown. That detail matters. It means the storage format is not a proprietary database you cannot get out of. It is plain Markdown with links, the same format you would draft in anyway. You can take the export, drop it into another tool, and keep going.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why Markdown is the right format</h2>
+
+      <p class="text-gray-700 mb-6">The choice of Markdown is not incidental. It is the same format agents already read and write fluently, the same format every static-site generator consumes, the same format you can paste into Notion or any rich-text editor with a Markdown importer. The articles in your OzBrain are not blobs; they are documents you can edit, link, diff, and reuse.</p>
+
+      <p class="text-gray-700 mb-6">A typical brain in 2026 holds a profile article, a "how I write" voice article, project status articles, client briefs, and decision logs. Each is a Markdown file with links between them. The routing index helps an agent pick the right articles for the task at hand instead of pasting the entire brain into context. The freshness marker tells the agent whether a piece of information is still current.</p>
+
+      <p class="text-gray-700 mb-6">This is the same shape as a good long-form content workflow. You have a source of truth, you have versioning, you have provenance, you have a way to slice it for different audiences. The only thing missing is the publish step, the part where the polished draft becomes a rich-text article you can paste into LinkedIn, X Articles, Medium, or Notion without losing the formatting you wrote.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Where md2rich fits in the pipeline</h2>
+
+      <p class="text-gray-700 mb-6">OzBrain is the brain; it holds the Markdown. md2rich is the publisher; it turns the Markdown into rich text. They do different jobs and they do not overlap.</p>
+
+      <p class="text-gray-700 mb-6">The workflow looks like this:</p>
+
+      <ol class="list-decimal pl-6 text-gray-700 mb-6">
+        <li class="mb-2"><strong class="text-gray-900">Capture the draft in OzBrain.</strong> When you finish a piece of research, a decision, or a long-form draft, save it as an article in the brain. The article is plain Markdown with links. Connected agents can pick it up.</li>
+        <li class="mb-2"><strong class="text-gray-900">Polish with the agent.</strong> In a connected Claude, ChatGPT, or Cursor session, ask the agent to read the article, refine it, and stage a new version. The brain holds the canonical version; the agent holds the working draft.</li>
+        <li class="mb-2"><strong class="text-gray-900">Promote and export.</strong> When the draft is ready, promote the staged write to the current version. Export the brain, or just the one article, as Markdown.</li>
+        <li class="mb-2"><strong class="text-gray-900">Convert with md2rich.</strong> Paste the Markdown into <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a>. The converter runs entirely in your browser and produces the rich text a platform understands: real headings, bold, italics, lists, tables, and code blocks.</li>
+        <li class="mb-2"><strong class="text-gray-900">Paste into LinkedIn, X Articles, Medium, or Notion.</strong> The pasted output keeps the formatting you wrote. No reformatting by hand, no missing list styles, no broken tables.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">The two tools live at different ends of the same pipeline. OzBrain is server-side, with a hosted knowledge base, a connector, and a routing index. md2rich is client-side, with no upload, no account, and no server round-trip. The Markdown passes from one to the other without leaving your browser at the conversion step.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">A worked example: shipping a thought-leadership post</h2>
+
+      <p class="text-gray-700 mb-6">You have been thinking about a positioning decision for your company. You have drafts in three different ChatGPT threads, a Claude conversation from last week, and a Notion page you wrote by hand. None of them are current. None of them are linked.</p>
+
+      <p class="text-gray-700 mb-6">Here is what the brain-then-publish workflow does:</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 1.</strong> Connect OzBrain to Claude and ChatGPT. Stage an article titled "Positioning Q3 2026" in the brain, with the current draft as the body. Set the freshness to current.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 2.</strong> In a fresh ChatGPT session, ask the agent to read the positioning article, pull the latest research note, and stage a refined draft. The agent reads the brain through the connector and writes back to the same article.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 3.</strong> When you are happy with the draft, promote the staged write. The brain now has one canonical version that any connected agent can read.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 4.</strong> Export the article as Markdown. Open <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a>, paste the Markdown into the editor on the left, and watch the rich-text preview build on the right.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 5.</strong> Copy the rich-text output from the right pane. Paste it into LinkedIn, X Articles, Medium, or Notion. The formatting survives because the conversion is real rich text, not a Markdown image or a copy that strips bold and links.</p>
+
+      <p class="text-gray-700 mb-6">The interesting part is what you do not have to do. You do not have to maintain three separate copies in three separate tools. You do not have to re-explain the positioning to a fresh agent. You do not have to retype the article into a Markdown editor and then reformat it by hand for the target platform. The brain holds the source of truth. The converter ships it.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Privacy and control on both sides</h2>
+
+      <p class="text-gray-700 mb-6">OzBrain is a hosted service, so it sits on someone else's infrastructure. Its privacy posture is documented on the site: removing your account removes your content, and OzBrain states plainly that it "never trains on your brain and never sells it." The brain is exportable as Markdown at any time, so you are not locked in.</p>
+
+      <p class="text-gray-700 mb-6">md2rich is the opposite shape. It is a client-side converter with zero upload. The Markdown you paste stays in the browser tab, and the rich text it produces never leaves your machine either. There is no account, no telemetry, and no server round-trip. The conversion is real DOM-to-rich-text, not an API call.</p>
+
+      <p class="text-gray-700 mb-6">That combination matters. The hosted brain holds the canonical drafts. The local converter ships them. Your in-progress work never has to leave your machine at the conversion step, and you can take the brain with you in plain Markdown if you ever decide to move.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">OzBrain vs ChatGPT memory vs Mem0</h2>
+
+      <p class="text-gray-700 mb-6">OzBrain's FAQ is direct about the difference. ChatGPT memory and Claude memory each build a partial version of you inside one product. Mem0 and Supermemory are memory APIs that sell add-and-search endpoints to developers building apps. OzBrain sits below both: a brain you connect to, not a service you code against or a memory locked inside one product.</p>
+
+      <p class="text-gray-700 mb-6">For a Markdown-first publishing workflow, that distinction is what makes OzBrain usable. A memory API needs you to write code to read and write the memory; a brain connector is a settings toggle in the agent you already use. A per-product memory is invisible to the next product; a brain is shared by every connected agent.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Pricing and limits in 2026</h2>
+
+      <p class="text-gray-700 mb-6">OzBrain's pricing is straightforward and listed on the docs page at <a href="https://ozbrain.com/docs.md" class="text-indigo-600 font-semibold">ozbrain.com/docs.md</a>:</p>
+
+      <ul class="list-disc pl-6 text-gray-700 mb-6">
+        <li class="mb-2"><strong class="text-gray-900">Free:</strong> $0 forever, up to 50 articles.</li>
+        <li class="mb-2"><strong class="text-gray-900">Pro:</strong> $20 per month, up to 300 articles.</li>
+        <li class="mb-2"><strong class="text-gray-900">Max:</strong> $99 per month, up to 600 articles.</li>
+        <li class="mb-2"><strong class="text-gray-900">Company:</strong> Custom pricing. Org-owned brains that every seat's agents share.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">Reads, writes, connections, and brains are not metered on any plan, so the only constraint is the article count. That is the right shape for a Markdown brain: the unit of work is the article, and the limit is the number of articles, not API calls.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Try the workflow</h2>
+
+      <p class="text-gray-700 mb-6">Start with the brain side. Sign in at <a href="https://ozbrain.com/start" class="text-indigo-600 font-semibold">ozbrain.com/start</a>, add the MCP connector at <code class="bg-gray-100 px-1 rounded">https://ozbrain.com/api/mcp</code> to the agent you use most, and stage one article. Profile, voice, current project, whatever feels most useful. Once that article is in the brain, ask a connected agent to read it back and verify it sees the same version you wrote.</p>
+
+      <p class="text-gray-700 mb-6">Then try the publisher side. Open <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a>, paste the Markdown of that same article, and copy the rich text into LinkedIn, X Articles, Medium, or Notion. Compare the formatting you wrote with what lands in the platform's editor. The conversion should keep your headings, lists, bold, italics, links, and code blocks intact, with no upload and no account.</p>
+
+      <p class="text-gray-700 mb-6">That is the brain-then-publish loop. OzBrain holds the Markdown source of truth across every connected agent. md2rich ships the polished draft as rich text the platform actually understands. Your drafts stop living in private agent memories and start living in a brain you can export, link, and reuse.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+        <p class="text-gray-800 mb-2"><strong class="text-gray-900">Try md2rich.</strong> Paste Markdown, copy rich text. Client-side, no upload, works in the browser.</p>
+        <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">Open the md2rich editor &rarr;</a>
+      </div>
+
+      <p class="text-gray-500 text-sm mt-10">Filed under: <a href="/blog/" class="text-indigo-600">md2rich Blog</a>. Written by the md2rich team (<a href="https://about.me/jasonxmai" class="text-indigo-600">about.me/jasonxmai</a>).</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p>&copy; 2026 md2rich. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
