@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>md2rich as a Claude Skill: Markdown to Rich Text 2026</title>
+  <meta name="description" content="Ship md2rich as a Skills API endpoint: a Claude agent loads the folder on demand and runs Markdown-to-rich-text conversion in the code execution sandbox.">
+  <meta name="keywords" content="Claude Skills API, Anthropic Skills API, md2rich skill, markdown to rich text, Skills API container.skills, code execution sandbox, Files API 1 TB, Claude agent skill, Claude Code skills, Markdown to LinkedIn, Markdown to X Articles, md2rich, Skills API GA 2026">
+  <link rel="canonical" href="https://md2rich.com/blog/md2rich-as-claude-skill-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/md2rich-as-claude-skill-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/md2rich-as-claude-skill-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="md2rich as a Claude Skill: Markdown to Rich Text 2026">
+  <meta property="og:description" content="Ship md2rich as a Skills API endpoint: a Claude agent loads the folder on demand and runs Markdown-to-rich-text conversion in the code execution sandbox.">
+  <meta property="og:url" content="https://md2rich.com/blog/md2rich-as-claude-skill-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="md2rich as a Claude Skill: Markdown to Rich Text 2026">
+  <meta name="twitter:description" content="Ship md2rich as a Skills API endpoint: a Claude agent loads the folder on demand and runs Markdown-to-rich-text conversion in the code execution sandbox.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "md2rich as a Claude Skill: Markdown to Rich Text 2026",
+      "description": "Ship md2rich as a Skills API endpoint: a Claude agent loads the folder on demand and runs Markdown-to-rich-text conversion in the code execution sandbox.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/md2rich-as-claude-skill-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Anthropic Skills API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Skills API is the Anthropic feature that went generally available on August 20, 2026 on the Claude Platform alongside the Files API and an updated computer use tool. A skill is a folder of instructions, scripts, and templates that Claude loads only when a task calls for it. You upload the folder once with the Skills API, version it, then attach the skill to any later request via container.skills on the Messages API. The skill code runs inside Claude's code execution sandbox, so there is nothing for you to host."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ship md2rich as a Skills API endpoint?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You publish md2rich as a Skills API endpoint by packaging the converter as a folder Claude can load on demand. The folder holds a SKILL.md with the trigger description, a Node or Python script that runs the same Markdown-to-rich-text pipeline md2rich.com runs in the browser, and a small README. Upload it with the Skills API, version it, and reference it in container.skills on the Messages API. When an agent decides the task needs rich text, Claude loads the folder, runs the script in its own sandbox, and returns the rich text to the agent loop without the agent calling a third-party API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why run md2rich in the Skills API sandbox instead of calling md2rich.com from a tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Running md2rich inside the Skills API sandbox removes the third-party hop. A tool call to md2rich.com from a Claude agent would expose the Markdown to a public converter, return rich text over the network, and force the agent to splice an external service into its loop. A skill runs the same conversion inside Claude's own code execution sandbox, so the Markdown never leaves Claude's run, the rich text comes back as a structured response, and there is no API key to manage for the converter itself. The skill is versioned, the conversion is reproducible, and the rich text is whatever the agent needs for the next step."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you use md2rich with the Files API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and the pairing is the right shape for long-form publishing. Upload a polished Markdown draft once with the Files API, get back a file_id, and reference that file_id in later Messages API requests. The Files API that shipped GA on August 20, 2026 offers automatic file expiration, 5x higher rate limits, and 1 TB of storage per organization. The agent reads the draft through the file_id, asks the md2rich skill to convert it, and writes the resulting rich-text payload back as a new file the agent can hand to LinkedIn, X Articles, Medium, or Notion via their own connectors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it cost to run md2rich as a Claude Skill in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no separate fee for the Skills API itself. Skills run inside Claude's existing code execution sandbox, and you pay for the sandbox time and the tokens the agent uses. The Files API gives 1 TB of storage per organization, automatic file expiration, and 5x higher rate limits at GA. A typical md2rich skill run on a 1,500-word article converts in well under a second of sandbox time, so the marginal cost is dominated by the agent's reasoning tokens rather than the conversion step. There is nothing to host and no API key to provision for the converter."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 25, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">md2rich as a Claude Skill: Markdown to Rich Text 2026</h1>
+        <p class="text-lg text-gray-600">The Anthropic Skills API went generally available on August 20, 2026. The right next step for md2rich is to ship as a Skills API endpoint: a folder a Claude agent loads on demand, runs in the code execution sandbox, and uses to return real rich text for LinkedIn, X Articles, Medium, and Notion.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">Anthropic shipped three pieces together on August 20, 2026: a Skills API for uploading and versioning your own skills, a Files API with 1 TB of storage per organization and 5x higher rate limits, and an updated computer use tool that takes several actions per turn. The Skills API lets you package a Markdown-to-rich-text converter as a folder a Claude agent loads only when the task calls for it, runs inside Claude's code execution sandbox, and references by id on every later request.</p>
+
+      <p class="text-gray-700 mb-6">md2rich has always been a Markdown-to-rich-text converter with one defining trait: the conversion happens in the browser, the Markdown never leaves the tab, and the rich text the platform understands comes out the other side. The Skills API matches that posture exactly. A Claude agent that needs to turn a Markdown draft into LinkedIn-ready rich text loads md2rich as a skill, runs it in the sandbox, and returns the result without calling a third-party converter. That is what a Skills API endpoint for md2rich looks like in 2026.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What the Skills API actually gives you</h2>
+
+      <p class="text-gray-700 mb-6">A skill in the Anthropic Skills API is a folder of instructions, scripts, and templates. You upload the folder once with the Skills API, version it like a package, and reference it on later Messages API requests through <code class="bg-gray-100 px-1 rounded">container.skills</code>. When the agent decides a request needs the skill, Claude loads the folder, follows the SKILL.md, runs the script in its code execution sandbox, and returns whatever the script produces as part of the agent's response. There is nothing for you to host, no API key for the converter, and no infrastructure to keep alive.</p>
+
+      <p class="text-gray-700 mb-6">The three pieces that landed GA together fit the workflow cleanly:</p>
+
+      <ul class="list-disc pl-6 text-gray-700 mb-6">
+        <li class="mb-2"><strong class="text-gray-900">Skills API:</strong> a simpler API for uploading and versioning your own skills. Attach a skill to any request via <code class="bg-gray-100 px-1 rounded">container.skills</code>; Claude loads the folder only when the task calls for it.</li>
+        <li class="mb-2"><strong class="text-gray-900">Files API:</strong> automatic file expiration, 5x higher rate limits, and 1 TB of storage per organization. Upload a Markdown draft once, reference it by file_id in later requests instead of re-sending it.</li>
+        <li class="mb-2"><strong class="text-gray-900">Computer use:</strong> the updated tool takes several actions per turn instead of one per model call. The new browser use tool reads the structure of the page and targets a specific field rather than a screen position, which makes it reliable for agents that paste into LinkedIn, X, Medium, or Notion.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">Box is already shipping this pattern. Matthew Midson, Managing Director of Banking at Box, described the production shape plainly: "The Skills API gave us a straightforward way to build specialized document creation into Box Agent. For a bank, a skill captures the firm's credit methodology and approved memo format; Box Agent applies it to the financial statements and deal documents already in Box and produces a source-grounded credit memo for analyst review." Same shape, different vertical: the skill holds the firm's formatting rules, the agent holds the working draft, the Files API holds the source documents.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why md2rich belongs inside the skill, not behind a tool call</h2>
+
+      <p class="text-gray-700 mb-6">The other obvious shape is a tool call. The Claude agent decides it needs rich text, calls md2rich.com as an HTTP tool, sends the Markdown, gets the rich text back, and pastes it into the target platform. That works, but it has three costs the skill shape avoids.</p>
+
+      <p class="text-gray-700 mb-6">First, a tool call exposes the Markdown to a public converter. The browser-side md2rich at <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a> never uploads anything, but a tool-call version would ship the Markdown over the network to a backend. That changes the privacy posture for anyone using the converter with drafts that are not yet public.</p>
+
+      <p class="text-gray-700 mb-6">Second, the tool call adds an API key. Every tool call needs credentials, every credential needs rotation, and every rotation needs wiring into the agent's runtime. A skill runs inside Claude's own code execution sandbox, so the converter itself has no separate API key, no rotation, no separate rate limit to monitor.</p>
+
+      <p class="text-gray-700 mb-6">Third, the rich text comes back as a structured response inside the same agent loop. The agent can iterate on it, hand it to another tool, or splice it into a larger workflow without buffering it through external state. The skill returns rich text the agent can act on; the tool call returns rich text the agent has to manage as an external resource.</p>
+
+      <p class="text-gray-700 mb-6">A skill is the right shape for a stateless, deterministic, well-defined converter like Markdown to rich text. Tools are right for stateful, network-dependent, externally arbitrated actions. md2rich is the former.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The folder you actually upload</h2>
+
+      <p class="text-gray-700 mb-6">The Skills API takes a folder. Here is what an md2rich skill folder looks like in practice. It is small, versioned, and runs the same Markdown-to-rich-text pipeline the browser version runs, just inside Claude's sandbox instead of a browser tab.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">SKILL.md.</strong> A short description of when the agent should load the skill, the inputs the converter expects, and the outputs it returns. The agent reads this before deciding to call the skill, so it has to be specific about the trigger ("convert Markdown to rich text for LinkedIn, X Articles, Medium, Notion"), the format it accepts (CommonMark plus GFM tables), and the format it returns (HTML plus a parallel Markdown comment block for accessibility).</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">scripts/convert.js.</strong> The Node script that does the actual conversion. The core of md2rich is the DOM-to-rich-text pipeline: parse the Markdown, build a DOM tree, serialize it as both clean HTML and a clipboard-ready rich text payload. The skill version runs the same script in the sandbox, with the same library choices, and writes the result to a file the agent can read back.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">scripts/convert.py.</strong> A Python mirror for agents that prefer Python in their sandbox. Same input shape, same output shape, same library choices as the browser pipeline. The two scripts give the agent a language choice without changing the contract.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">README.md.</strong> Version notes, the supported input dialect (CommonMark + GFM tables, fenced code, footnotes, task lists), the supported output targets (LinkedIn, X Articles, Medium, Notion), and the breaking-change policy. The README is what the agent reads when the version it has loaded is older than the latest and it is wondering whether to reload.</p>
+
+      <p class="text-gray-700 mb-6">The folder is uploaded with the Skills API and versioned. A request references the skill through <code class="bg-gray-100 px-1 rounded">container.skills</code> on the Messages API. When the agent decides the task needs rich text, Claude loads the folder, runs the right script in the sandbox, and returns the rich text as part of its response. The end result is a Skills API endpoint for md2rich that the agent can call without ever leaving Claude's run.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">A worked example: shipping a thought-leadership draft</h2>
+
+      <p class="text-gray-700 mb-6">The cleanest demonstration is a single agent loop that takes a polished Markdown draft from the Files API, converts it to rich text with the md2rich skill, and hands the result to LinkedIn.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 1. Upload the draft once.</strong> Push the polished Markdown draft to the Files API. You get back a <code class="bg-gray-100 px-1 rounded">file_id</code> you can reference in every later request. The Files API gives 1 TB of storage per organization and automatic file expiration, so the draft stays around exactly as long as the publishing window needs.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 2. Attach the md2rich skill.</strong> On the Messages API request, attach the md2rich skill through <code class="bg-gray-100 px-1 rounded">container.skills</code>. Reference the draft through its <code class="bg-gray-100 px-1 rounded">file_id</code>. Tell the agent what the publish target is.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 3. The agent runs the conversion in the sandbox.</strong> Claude decides the task needs rich text, loads the md2rich skill folder, runs <code class="bg-gray-100 px-1 rounded">scripts/convert.js</code> on the file_id, and produces a clean rich text payload. The conversion happens inside the sandbox, the Markdown never leaves Claude's run, and the rich text comes back as a structured response the agent can act on.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 4. Hand the rich text to the LinkedIn connector.</strong> The agent's LinkedIn connector takes the rich text payload, opens the post composer, and pastes the formatted version. The paste keeps the headings, bold, italics, lists, tables, and code blocks you wrote, because the conversion produced real rich text, not a Markdown image or a copy that strips formatting.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">Step 5. Verify and write back.</strong> The computer use tool, with the new browser use capability, can read the structure of the LinkedIn composer, confirm the right fields are filled, and let the agent post. The Files API can write the confirmation back as a new file so the same brain that holds the source-of-truth drafts also holds the shipping record.</p>
+
+      <p class="text-gray-700 mb-6">The interesting part is what the agent does not have to do. It does not maintain a separate md2rich.com API key. It does not chain through an HTTP tool call. It does not splice the rich text back into its working state. The skill is part of the loop, the conversion is reproducible, and the rich text comes out in the shape the next step needs.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Where this fits against the converter in the browser</h2>
+
+      <p class="text-gray-700 mb-6">The Skills API version does not replace the browser version at <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a>. They do different jobs for different people.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">The browser version.</strong> A person opens <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a>, pastes Markdown, copies rich text. There is no account, no upload, no server round-trip. The conversion runs in the browser tab on the person's machine. That is the right shape for a person drafting a post by hand, an editor reviewing a draft, or a developer pasting into a platform that does not have a Claude connector.</p>
+
+      <p class="text-gray-700 mb-6"><strong class="text-gray-900">The Skills API version.</strong> A Claude agent decides it needs rich text, loads the md2rich skill folder, runs the conversion in the sandbox, and uses the result inside its own loop. The skill runs on Anthropic's infrastructure, the conversion is part of the agent's reasoning, and there is nothing for the agent's user to host. That is the right shape for automated publishing workflows, agent-driven content pipelines, and any team that already has Claude in its toolchain.</p>
+
+      <p class="text-gray-700 mb-6">The two versions share the same conversion logic. The browser version is the reference implementation; the sandbox version is the same script running in a different process. If the script changes in the skill folder, the same change applies to both, because the conversion rules are the conversion rules regardless of where they run.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What ships with the Skills API GA on August 20, 2026</h2>
+
+      <p class="text-gray-700 mb-6">The full announcement is on the Anthropic blog at <a href="https://claude.com/blog/computer-use-skills-api-files-api" class="text-indigo-600 font-semibold">claude.com/blog/computer-use-skills-api-files-api</a>. The verified facts worth keeping in mind for any team shipping a skill in 2026:</p>
+
+      <ul class="list-disc pl-6 text-gray-700 mb-6">
+        <li class="mb-2"><strong class="text-gray-900">General availability.</strong> The Skills API, the Files API, the updated computer use tool, and the new browser use tool are generally available on the Claude Platform today. The Skills API and the Files API are also available through Microsoft Foundry. The updated computer use and browser use tools are coming soon to Google Cloud's Vertex AI. Existing beta integrations keep working while you migrate.</li>
+        <li class="mb-2"><strong class="text-gray-900">No hosting required.</strong> Skills run in Claude's code execution sandbox. There is nothing for the publisher to host and no separate API key for the converter.</li>
+        <li class="mb-2"><strong class="text-gray-900">Files API limits.</strong> 1 TB of storage per organization, automatic file expiration, 5x higher rate limits.</li>
+        <li class="mb-2"><strong class="text-gray-900">Computer use, multi-action turns.</strong> The updated tool takes several actions per turn rather than one per model call. Tasks finish in fewer calls and less time. Asteroid reported its longest claims workflow went from 32 minutes to 13, with cost per task down about 30% and completion at 100%.</li>
+        <li class="mb-2"><strong class="text-gray-900">HIPAA eligibility.</strong> Computer use is eligible for HIPAA-regulated workloads under Anthropic's BAA, which matters for any team publishing in healthcare, insurance, or financial services.</li>
+        <li class="mb-2"><strong class="text-gray-900">Documentation.</strong> The Skills API reference is at <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" class="text-indigo-600 font-semibold">platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a>, with companion docs for the Files API and the updated computer use and browser use tools.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Try the pattern in your own agent loop</h2>
+
+      <p class="text-gray-700 mb-6">Start by reading the Skills API overview in the docs. Pick a converter, formatter, or template that is currently a tool call in your agent loop and ask whether it could be a skill. If the answer is yes, package the converter as a folder, upload it with the Skills API, and reference it through <code class="bg-gray-100 px-1 rounded">container.skills</code> on the Messages API. The sandbox runs the code, the agent gets a structured response, and the loop is one tool-call shorter than it was.</p>
+
+      <p class="text-gray-700 mb-6">For Markdown publishers, the md2rich shape is the same pattern: a stateless converter that turns well-formed input into well-formed output. The browser version lives at <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich.com</a> for people who run the conversion themselves. The Skills API version belongs in any agent loop that ships Markdown to LinkedIn, X Articles, Medium, or Notion without exposing the draft to a third-party converter or carrying a separate API key.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-10">
+        <p class="text-gray-800 mb-2"><strong class="text-gray-900">Try md2rich.</strong> Paste Markdown, copy rich text. Client-side, no upload, works in the browser.</p>
+        <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">Open the md2rich editor &rarr;</a>
+      </div>
+
+      <p class="text-gray-500 text-sm mt-10">Filed under: <a href="/blog/" class="text-indigo-600">md2rich Blog</a>. Written by the md2rich team (<a href="https://about.me/jasonxmai" class="text-indigo-600">about.me/jasonxmai</a>).</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p>&copy; 2026 md2rich. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

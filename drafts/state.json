@@ -1849,23 +1849,40 @@
       "faq_count": 5,
       "internal_links": 4,
       "deploy_method": "git_push_auto_deploy"
+    },
+    {
+      "slug": "md2rich-as-claude-skill-2026-en",
+      "date": "2026-08-25",
+      "type": "tool-launch-deepening",
+      "lang": "en-US",
+      "file": "blog/md2rich-as-claude-skill-2026-en.html",
+      "url": "https://md2rich.com/blog/md2rich-as-claude-skill-2026-en",
+      "title": "md2rich as a Claude Skill: Markdown to Rich Text 2026",
+      "description": "Ship md2rich as a Skills API endpoint: a Claude agent loads the folder on demand and runs Markdown-to-rich-text conversion in the code execution sandbox.",
+      "heat_source": "Anthropic Skills API + Files API + Computer Use GA, Aug 20 2026 (verified via r.jina.ai mirror of claude.com/blog/computer-use-skills-api-files-api)",
+      "status": "published",
+      "published_at": "2026-08-25T12:00:00+00:00",
+      "providers_featured": [
+        "anthropic-claude-skills-api"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
   "recent_topics": [
-    "zenfmt-vs-md2rich-client-side-markdown-converter-2026-en",
-    "notula-vs-md2rich-ai-agent-markdown-2026-en",
-    "skilldocs-md2rich-collaborative-markdown-2026-en",
+    "md2rich-as-claude-skill-2026-en",
+    "ozbrain-md2rich-shared-agent-brain-2026-en",
     "panache-md2rich-markdown-lint-workflow-2026-en",
-    "ozbrain-md2rich-shared-agent-brain-2026-en"
+    "skilldocs-md2rich-collaborative-markdown-2026-en",
+    "notula-vs-md2rich-ai-agent-markdown-2026-en"
   ],
   "current_index": 0,
   "last_topic_direction": "OzBrain + md2rich - hosted Markdown agent brain holds the canonical drafts, md2rich ships them as rich text for LinkedIn/X/Medium/Notion",
-  "last_run": "2026-08-24T12:00:00+00:00",
+  "last_run": "2026-08-25T12:00:00+00:00",
   "last_published_slug": "ozbrain-md2rich-shared-agent-brain-2026-en",
   "last_published_at": "2026-08-24T12:00:00Z",
   "drafts_count": 0,
   "published_count": 74,
   "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).",
-  "last_publish": "2026-08-24"
+  "last_publish": "2026-08-25"
 }
