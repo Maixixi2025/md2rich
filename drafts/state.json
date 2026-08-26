@@ -1866,6 +1866,21 @@
         "anthropic-claude-skills-api"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "chatgpt-search-rebuilt-markdown-writers-2026-en",
+      "date": "2026-08-26",
+      "type": "news-deepening",
+      "lang": "en-US",
+      "file": "blog/chatgpt-search-rebuilt-markdown-writers-2026-en.html",
+      "url": "https://md2rich.com/blog/chatgpt-search-rebuilt-markdown-writers-2026-en",
+      "title": "ChatGPT Rebuilt Its Search: Markdown Writers' Guide 2026",
+      "description": "ChatGPT replaced its search fan-out JSON with a pipe-delimited query language. Write Markdown that survives the new freshness windows, domain slots, and excerpt pulls.",
+      "heat_source": "SEJ (Suganthan Mohanadasan) 2026-08-26: ChatGPT swapped fan-out JSON for pipe-delimited query language across 8 questions; freshness windows + domain slots + widgets",
+      "status": "published",
+      "published_at": "2026-08-26T12:00:00+00:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
