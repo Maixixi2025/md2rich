@@ -1881,6 +1881,21 @@
       "published_at": "2026-08-26T12:00:00+00:00",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "claude-in-chrome-browser-agent-markdown-2026-en",
+      "date": "2026-08-27",
+      "type": "news_analysis",
+      "lang": "en-US",
+      "file": "blog/claude-in-chrome-browser-agent-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/claude-in-chrome-browser-agent-markdown-2026-en",
+      "title": "Claude in Chrome 2026: Markdown Guide for Published Content",
+      "description": "Claude in Chrome is GA: a browser agent that reads, renders, and acts on your web pages. Keep Markdown as the source of truth behind the rich text it sees.",
+      "heat_source": "briefing: Claude in Chrome (GA 2026-08-26) - md2rich publish-end angle, 0 body-grep hits on Claude in Chrome/browser agent/side panel",
+      "status": "published",
+      "published_at": "2026-08-27",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
