@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+    <loc>https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
     <loc>https://md2rich.com/blog/headless-markdown-editors-2026-block-workflows-en</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>

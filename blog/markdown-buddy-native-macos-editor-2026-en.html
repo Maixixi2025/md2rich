@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Buddy 2026: A Native macOS Deep Dive</title>
+  <meta name="description" content="A 4.8 MB Swift + AppKit Markdown editor with Quick Look, Xcode integration, and a broken-link map. Where it fits in your publishing stack.">
+  <meta name="keywords" content="Markdown Buddy, native macOS Markdown editor, Swift AppKit Markdown, Quick Look Markdown, Xcode Markdown extension, macOS 14 Markdown app, link map Markdown, WKWebView preview, Markdown publishing workflow, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown Buddy 2026: A Native macOS Deep Dive">
+  <meta property="og:description" content="A 4.8 MB Swift + AppKit Markdown editor with Quick Look, Xcode integration, and a broken-link map. Where it fits in your publishing stack.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown Buddy 2026: A Native macOS Deep Dive">
+  <meta name="twitter:description" content="A 4.8 MB Swift + AppKit Markdown editor with Quick Look, Xcode integration, and a broken-link map. Where it fits in your publishing stack.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Markdown Buddy 2026: A Native macOS Deep Dive",
+      "description": "A 4.8 MB Swift + AppKit Markdown editor with Quick Look, Xcode integration, and a broken-link map. Where it fits in your publishing stack.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-08-30",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Markdown Buddy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown Buddy is a native macOS Markdown editor written in Swift and AppKit. Version 2.2.5 ships at 4.8 MB sandboxed, runs as a standalone app, a Finder Quick Look extension, and a Xcode Source Editor extension. The editor pane is NSTextView; the rendered preview uses WKWebView so the system engine handles Markdown rather than a bundled browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Markdown Buddy cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The current Mac App Store price is EUR 5.99 as a one-time purchase with no subscription and no in-app purchases. The original Show HN launch in August 2026 listed EUR 0.99 for the v1 release; v2.x moved to EUR 5.99 once the workspace tree, link map, and eight-language UI shipped. Nothing is collected, no telemetry, no account."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What macOS version does Markdown Buddy require?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown Buddy requires macOS 14 Sonoma or later. It is Mac App Store only, so there is no direct download or trial. The author occasionally hands out promo codes via the Show HN thread for feedback in exchange."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Markdown Buddy different from Obsidian or Typora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown Buddy is not a vault, not a plugin host, and does not maintain a backlink database. Obsidian treats every .md file as part of a vault you can extend with community plugins; Typora is a single-window WYSIWYG editor. Markdown Buddy is closer to a focused native file viewer and editor with Quick Look and Xcode integration, intended for project README files, technical documentation, and developer-facing writing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Markdown Buddy handle Asian language input correctly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The live preview restyles NSTextStorage as you type, but the restyle is gated by a hasMarkedText() guard so it never touches attributes while an input method is composing. This matters for Japanese, Chinese, and Korean input methods and for dead keys on accented Latin characters. The author called this out explicitly in the Show HN post because several competing editors have review complaints about exactly this regression."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Markdown Buddy fit into a Markdown publishing workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Write the canonical draft in Markdown Buddy using the workspace tree and link map to keep internal references consistent. When the draft is ready for distribution, copy the Markdown source and run it through md2rich to produce copy-ready rich text for LinkedIn, X Articles, Medium, and Notion. The conversion happens client-side, so the draft never has to be uploaded."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 30, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Markdown Buddy 2026: A Native macOS Deep Dive</h1>
+        <p class="text-lg text-gray-600">A 4.8 MB Swift + AppKit editor that fixes two macOS annoyances: Quick Look showing .md as raw text, and Xcode showing READMEs as plain source. Here's what it actually does and where it fits.</p>
+      </header>
+
+      <p class="mb-6">Most Markdown coverage in 2026 has drifted toward headless frameworks, browser-based editors, or large IDE suites. <strong>Markdown Buddy</strong> goes the other way: it is a single-purpose native macOS app from a solo developer, Show HN launched on August 20, 2026, and it makes a deliberate trade. It does not try to be a vault, a plugin host, or a backlink database. It tries to be the best possible native viewer and editor for the .md files you already have on disk.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Why a native macOS Markdown editor in 2026</h2>
+      <p class="mb-6">The Show HN post by JanParis identified two specific gaps that most cross-platform editors leave open on macOS: <strong>Finder Quick Look renders .md files as raw text</strong>, and <strong>Xcode shows a README as plain source</strong>. Both are daily annoyances for anyone whose documentation lives in Markdown next to the code it describes. Markdown Buddy ships two macOS extensions that close both gaps, and the same renderer powers all three surfaces.</p>
+      <p class="mb-6">The app itself is 4.8 MB, sandboxed, built in Swift and AppKit. The editor pane is a plain NSTextView. The rendered preview uses WKWebView, so the system engine handles Markdown rather than a bundled browser engine. That choice is the source of the size difference between Markdown Buddy and competing Electron-based editors.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">What Markdown Buddy 2.2.5 actually does</h2>
+      <p class="mb-6">The current Mac App Store release is version 2.2.5. The feature set splits into three groups:</p>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Workspace tools:</strong> open a folder as a workspace, browse every .md in a tree sidebar, run cross-folder search with regex, open tabs with session restore on launch.</li>
+        <li><strong>Link map:</strong> a graph view (Command-Shift-G) of links between every .md file in the workspace, with broken links flagged and listed. Click a node to open the document.</li>
+        <li><strong>Inline editing:</strong> clickable task lists that update the file when you tick the box, YAML front matter shown as a collapsible panel, tag filter in the sidebar, link autocompletion when you type the closing parenthesis of a link.</li>
+        <li><strong>Preview modes:</strong> Rendered, Source, or Side-by-side via Command-Shift-R. Synced scrolling, syntax-colored Markdown as you type, optional auto-save.</li>
+        <li><strong>Counters:</strong> a status bar under the editor counts characters, characters without spaces, words, and lines. Word splitting follows the language, so Japanese and Chinese count properly.</li>
+        <li><strong>Finder and Xcode:</strong> Quick Look extension renders any .md on Space-bar; thumbnails in Icons, Columns, and Gallery views. Xcode Source Editor extension opens the current file rendered, from the Editor menu.</li>
+      </ul>
+      <p class="mb-6">Eight interface languages ship out of the box: English, French, German, Spanish, Italian, Japanese, Simplified Chinese, and Korean. Menus, settings, and every screen follow the wording of each market.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">The Asian-language input detail that mattered</h2>
+      <p class="mb-6">One implementation choice deserves its own paragraph because it is the kind of bug that quietly ruins tools for a large part of the world. The live preview restyles NSTextStorage as you type. The hard rule is that it must never touch attributes while an input method is composing, or <strong>Japanese, Chinese, and Korean input methods break</strong>, and so do dead keys for accented Latin. The author calls this out as a single hasMarkedText() guard in three places, but notes that without it the app is unusable for a large part of the world and that several competing editors carry review complaints about exactly this regression.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Pricing, distribution, and the honest "I sold two copies" line</h2>
+      <p class="mb-6">The current Mac App Store price is <strong>EUR 5.99 as a one-time purchase</strong>, with no subscription, no in-app purchases, and nothing collected. The original Show HN launch in August 2026 listed EUR 0.99 for the v1 release; the move to EUR 5.99 happened once the workspace tree, link map, and the eight-language UI shipped. The distribution story is unusually candid: the author reported the product page gets about a hundred views annually and asked the Show HN thread for feedback on distribution rather than the code itself.</p>
+      <p class="mb-6">There is one operational caveat worth flagging for any team considering Markdown Buddy: it is <strong>Mac App Store only, so there is no trial</strong>. macOS 14 or later is required. Promo codes are occasionally handed out via the Show HN thread in exchange for feedback.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">How Markdown Buddy compares to the rest of the 2026 Markdown landscape</h2>
+      <p class="mb-6">Markdown Buddy is one slice of a much wider 2026 Markdown tool landscape. The short version of where each slice sits:</p>
+      <ul class="list-disc pl-6 mb-6 space-y-2">
+        <li><strong>Native single-purpose editors:</strong> Markdown Buddy. Focused on viewing and editing .md files on macOS with Quick Look and Xcode integration. No vault, no plugins, no backlink database.</li>
+        <li><strong>Vault-based knowledge tools:</strong> Obsidian, Logseq. Treat every .md file as part of a vault with community plugins, backlinks, and graph views across the file system.</li>
+        <li><strong>WYSIWYG single-window editors:</strong> Typora, iA Writer. A single window with rendered output as you type, optimized for distraction-free writing.</li>
+        <li><strong>Headless frameworks:</strong> CodeMirror 6, Milkdown, BlockNote, Tiptap, Lexical, Plate. Programmable editor cores that developers embed in their own apps.</li>
+        <li><strong>Browser-side converters:</strong> md2rich, Skilldocs. Not editors in the strict sense: they take Markdown as input and produce rich text for LinkedIn, X Articles, Medium, and Notion.</li>
+        <li><strong>Cloud collaboration:</strong> Skilldocs, Notion's Markdown import, HackMD. Multi-user editing of the same Markdown source.</li>
+        <li><strong>Capture tools:</strong> tweet.md, ThreadGrab, Markleft. Convert external content (X threads, web pages) into clean Markdown for editing.</li>
+      </ul>
+      <p class="mb-6">Markdown Buddy does not overlap with the headless frameworks or the vault-based tools. The closest match for a "what is this like" comparison is a fast, native file viewer with editor capabilities. If you have ever wanted Quick Look to render .md properly across an entire project folder, this is the closest thing to it in 2026.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Where Markdown Buddy fits in a publishing workflow</h2>
+      <p class="mb-6">The cleanest place for Markdown Buddy in a writer's stack is as the local editing surface. Open the project folder, browse the .md tree, fix broken links flagged by the link map, run cross-folder search to find every reference to a renamed API. When the draft is ready, copy the canonical Markdown source out of the editor and convert it into copy-ready rich text for the platform you are publishing to.</p>
+      <p class="mb-6">That conversion step is where <strong>md2rich</strong> enters. md2rich is a browser-side converter: paste Markdown, copy rich text. The conversion runs in the browser using the same HTML the WKWebView preview uses, which means the rendering you saw in the editor matches what gets pasted into LinkedIn, X Articles, Medium, or Notion. Nothing is uploaded, so the draft does not leave your machine.</p>
+      <p class="mb-6">A typical loop looks like this:</p>
+      <ol class="list-decimal pl-6 mb-6 space-y-2">
+        <li>Open the project workspace in Markdown Buddy.</li>
+        <li>Edit the README or documentation file in the Side-by-side preview so you see the rendered output as you type.</li>
+        <li>Run cross-folder search to verify every internal link still resolves.</li>
+        <li>Copy the Markdown source.</li>
+        <li>Paste the source into <a href="/" class="text-indigo-600 underline">md2rich</a> and copy the rendered rich text.</li>
+        <li>Paste into LinkedIn, X Articles, Medium, or Notion.</li>
+      </ol>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">The honest verdict</h2>
+      <p class="mb-6">Markdown Buddy is not the right tool if you want a vault, a plugin ecosystem, or backlinks. Obsidian and Logseq already cover that ground well. Markdown Buddy is the right tool if you want a fast native macOS surface for editing the .md files you already have, with Quick Look and Xcode integration that no cross-platform editor bothers to ship. At EUR 5.99 with no subscription and no telemetry, the price-to-utility ratio for a developer or technical writer who lives in READMEs is hard to beat.</p>
+      <p class="mb-6">The bigger story for 2026 is that the Markdown tool landscape has fragmented into well-defined slices: native single-purpose editors, vault tools, headless frameworks, browser-side converters, cloud collaboration, and capture tools. Each slice does one thing well. The writer's job is to pick the slice that matches the job and not chase a single tool that tries to do everything.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">FAQ</h2>
+      <h3 class="text-xl font-semibold mt-6 mb-3">What is Markdown Buddy?</h3>
+      <p class="mb-6">Markdown Buddy is a native macOS Markdown editor written in Swift and AppKit. Version 2.2.5 ships at 4.8 MB sandboxed, runs as a standalone app, a Finder Quick Look extension, and an Xcode Source Editor extension. The editor pane is NSTextView; the rendered preview uses WKWebView so the system engine handles Markdown rather than a bundled browser.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">How much does Markdown Buddy cost?</h3>
+      <p class="mb-6">The current Mac App Store price is EUR 5.99 as a one-time purchase with no subscription and no in-app purchases. The original Show HN launch in August 2026 listed EUR 0.99 for the v1 release; v2.x moved to EUR 5.99 once the workspace tree, link map, and eight-language UI shipped. Nothing is collected, no telemetry, no account.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">What macOS version does Markdown Buddy require?</h3>
+      <p class="mb-6">Markdown Buddy requires macOS 14 Sonoma or later. It is Mac App Store only, so there is no direct download or trial. The author occasionally hands out promo codes via the Show HN thread for feedback in exchange.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">How is Markdown Buddy different from Obsidian or Typora?</h3>
+      <p class="mb-6">Markdown Buddy is not a vault, not a plugin host, and does not maintain a backlink database. Obsidian treats every .md file as part of a vault you can extend with community plugins; Typora is a single-window WYSIWYG editor. Markdown Buddy is closer to a focused native file viewer and editor with Quick Look and Xcode integration, intended for project README files, technical documentation, and developer-facing writing.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">Does Markdown Buddy handle Asian language input correctly?</h3>
+      <p class="mb-6">Yes. The live preview restyles NSTextStorage as you type, but the restyle is gated by a hasMarkedText() guard so it never touches attributes while an input method is composing. This matters for Japanese, Chinese, and Korean input methods and for dead keys on accented Latin characters.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">How does Markdown Buddy fit into a Markdown publishing workflow?</h3>
+      <p class="mb-6">Write the canonical draft in Markdown Buddy using the workspace tree and link map to keep internal references consistent. When the draft is ready for distribution, copy the Markdown source and run it through md2rich to produce copy-ready rich text for LinkedIn, X Articles, Medium, and Notion. The conversion happens client-side, so the draft never has to be uploaded.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Conclusion: native editor, browser-side converter</h2>
+      <p class="mb-6">Markdown Buddy is the right answer to a narrow, real question: <em>how do I view and edit the .md files I already have on macOS without firing up a vault or an Electron app?</em> It does not try to be a publishing platform, and that is its strength. Pair it with a browser-side converter for distribution and you have a stack that respects the local-first ethos of plain text while still producing rich text where it matters.</p>
+      <p class="mb-6"><strong><a href="/" class="text-indigo-600 underline">Try md2rich</a></strong>. Paste Markdown, copy rich text. Client-side, no upload, works in the browser.</p>
+
+      <p class="text-gray-500 text-sm mt-10">Filed under: <a href="/blog/" class="text-indigo-600">md2rich Blog</a>. Written by the md2rich team (<a href="https://about.me/jasonxmai" class="text-indigo-600">about.me/jasonxmai</a>).</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p>&copy; 2026 md2rich. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

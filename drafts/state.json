@@ -1937,6 +1937,23 @@
         "Plate"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-buddy-native-macos-editor-2026-en",
+      "date": "2026-08-30",
+      "type": "tool-deep-dive",
+      "lang": "en-US",
+      "file": "blog/markdown-buddy-native-macos-editor-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-buddy-native-macos-editor-2026-en",
+      "title": "Markdown Buddy 2026: A Native macOS Deep Dive",
+      "description": "A 4.8 MB Swift + AppKit Markdown editor with Quick Look, Xcode integration, and a broken-link map. Where it fits in your publishing stack.",
+      "heat_source": "HN Show HN Aug 20 2026 (markdownbuddy.inawa.app) + briefing 3ea88f8bb2d0 'Markdown 协作工具 2026 生态盘点'",
+      "status": "published",
+      "published_at": "2026-08-30T09:30:00Z",
+      "providers_featured": [
+        "Markdown Buddy"
+      ],
+      "primary_cta": "Try md2rich → https://md2rich.com/"
     }
   ],
   "drafts": [],
