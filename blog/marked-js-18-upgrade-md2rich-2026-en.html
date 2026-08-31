@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>marked.js 18.0.11: md2rich Upgrade Notes for 2026</title>
+  <meta name="description" content="Three bug-fix releases in August 2026 (18.0.9-11). What marked.js v18 fixes and how md2rich's 11.1.1 pipeline compares.">
+  <meta name="keywords" content="marked.js 18.0.11, marked 18 upgrade, marked.js release notes 2026, GFM markdown parser, md2rich renderer, client-side markdown, DOMPurify markdown pipeline, markdown-it vs marked, GFM table edge cases, marked v17 breaking changes">
+  <link rel="canonical" href="https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="marked.js 18.0.11: md2rich Upgrade Notes for 2026">
+  <meta property="og:description" content="Three bug-fix releases in August 2026 (18.0.9-11). What marked.js v18 fixes and how md2rich's 11.1.1 pipeline compares.">
+  <meta property="og:url" content="https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="marked.js 18.0.11: md2rich Upgrade Notes for 2026">
+  <meta name="twitter:description" content="Three bug-fix releases in August 2026 (18.0.9-11). What marked.js v18 fixes and how md2rich's 11.1.1 pipeline compares.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "marked.js 18.0.11: md2rich Upgrade Notes for 2026",
+      "description": "Three bug-fix releases in August 2026 (18.0.9-11). What marked.js v18 fixes and how md2rich's 11.1.1 pipeline compares.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-08-31",
+      "dateModified": "2026-08-31",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should md2rich upgrade from marked 11.1.1 to marked 18.x?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on what you publish. If your Markdown uses GFM tables, setext headings, task lists, or reference links with emphasis inside them, the 18.x line fixes real edge cases that 11.1.1 mishandles. The bundle is ~9 KB larger minified (35 KB to 44 KB) and the renderer API for the marked.parse() call did not change. The v17.0.0 breaking changes (consecutive text tokens in lists, checkbox token shape) only affect custom renderer overrides; md2rich uses the default renderer and was not affected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What changed in marked.js v17 and v18?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "v17.0.0 (2025-11-07) changed how consecutive text tokens work inside lists, simplified the listItem renderer, and reshaped the checkbox token to add a type and raw property. v18.0.0 (2026-04-07) trimmed trailing blank lines from block tokens and bumped TypeScript from 5.9 to 6.0. Both were bug-fix releases; only the checkbox token shape is a behavior change that custom renderer overrides need to handle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do the August 2026 patch releases fix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "v18.0.9 (2026-08-04) fixed unmatched strong runs before emphasis, deeper-than-needed nesting in blockquote continuations, and pedantic foo: and "word" emphasis parsing. v18.0.10 (2026-08-18) fixed em/strong mask length drift, EOF backtick fences after paragraphs, and task checkbox placement after loose lists. v18.0.11 (2026-08-24) fixed nested links inside links, reflink mask preamble rebuilds, and emphasis preservation inside rejected reference links."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does marked v18 require Node 20?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The package.json engines field says node >= 20, but the UMD and ESM browser bundles still work in any modern browser without Node at all. md2rich loads marked via the jsDelivr CDN ESM import, which is browser-only and unaffected by the Node engine hint. If you use marked via the CLI on a build server you do need Node 20 or later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How big is the marked.js v18 browser bundle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The UMD minified bundle (marked.umd.min.js) is 44,598 bytes (44 KB) on jsDelivr. The non-minified ESM build (marked.esm.js) is 43,800 bytes. The pre-1.0 marked@11.1.1 marked.min.js used by md2rich today is 35,141 bytes. The delta is about 9 KB gzipped, which on top of a 35 KB file is roughly a 25 percent size increase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there alternatives to marked.js for client-side Markdown rendering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. markdown-it is the closest match and ships with a plugin ecosystem (markdown-it-task-lists, markdown-it-footnote, markdown-it-attrs), but it is heavier. micromark is a small CommonJS-first parser that the remark and rehype ecosystem builds on top of. Quikdown is a 17 KB bidirectional Show HN parser from 2026. For most writers pasting into LinkedIn or X Articles, the rendered output difference is small; the choice is bundle size, plugin extensibility, and how aggressively the project tracks CommonMark and GFM updates."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">August 31, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">marked.js 18.0.11: md2rich Upgrade Notes for 2026</h1>
+        <p class="text-lg text-gray-600">The marked.js team shipped three patch releases in August 2026. md2rich still pins marked 11.1.1. Here is what 18.0.11 actually fixes, what the v17 breaking changes did, and how the upgrade math works for a privacy-first client-side renderer.</p>
+      </header>
+
+      <p class="mb-6">On August 24, 2026 the <a href="https://github.com/markedjs/marked" class="text-indigo-600 underline">marked.js</a> maintainers tagged <strong>v18.0.11</strong>. It was the third patch release in a month: v18.0.9 on August 4, v18.0.10 on August 18, v18.0.11 on August 24. All three were pure bug-fix releases. None added features. None broke the public renderer API. md2rich, the tool behind this site, currently pins <code>marked@11.1.1</code> from jsDelivr, so the question I get asked most in feedback is: <em>should we upgrade?</em></p>
+
+      <p class="mb-6">This post is the answer. It covers what v17 and v18 actually changed, what the three August patches fixed, the bundle-size delta, and how the upgrade decision lands for a client-side Markdown-to-rich-text converter whose entire job is to round-trip writer text into LinkedIn, X Articles, Medium, and Notion.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">What marked.js v17 and v18 changed</h2>
+      <p class="mb-6">The v17.0.0 release went out on November 7, 2025. The headline items in the changelog were all about list rendering: consecutive text tokens inside lists were simplified, the <code>listItem</code> renderer was streamlined, and the checkbox token gained a <code>type</code> and <code>raw</code> property. None of those changes touch the default renderer that md2rich uses. They only matter if you override <code>renderer.listitem</code>, <code>renderer.checkbox</code>, or build custom tokenizers.</p>
+      <p class="mb-6">The v18.0.0 release went out on April 7, 2026. The breaking changes were small: trailing blank lines are now trimmed from block tokens (so a paragraph followed by three blank lines no longer carries the whitespace forward into the next token), and the TypeScript dependency moved from 5.9 to 6.0. Neither of these shows up in HTML output for a writer who pastes their Markdown into a converter. The trimming is the only visible change, and it makes block-by-block sanitization slightly cleaner.</p>
+      <p class="mb-6">Between v18.0.0 and v18.0.11, the maintainers shipped twelve patch releases. The first five (18.0.1 through 18.0.5) were minor dependency and CLI cleanups. The last three were the substantive bug fixes.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">The August 2026 patch series, decoded</h2>
+      <p class="mb-6">Each patch release shipped with three entries in the changelog. All were tagged <em>Bug Fixes</em>. Reading them in order gives a clear picture of what kinds of Markdown the v18 line is finally getting right.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">v18.0.9 (2026-08-04)</h3>
+      <ul class="list-disc pl-6 mb-6">
+        <li><strong>Unmatched strong run before emphasis stays literal</strong>. The parser used to interpret <code>**foo *bar*</code> as the start of a strong-emphasis run that never closed, producing broken HTML. v18.0.9 leaves the asterisks literal so the writer sees the source as-is.</li>
+        <li><strong>Spurious deeper nesting in blockquote continuations</strong>. A blockquote that contained a multi-paragraph list used to nest deeper than the source indicated. v18.0.9 keeps the continuation at the same level as the opening line.</li>
+        <li><strong>Pedantic <code>**foo:</code> and <code>**&quot;word&quot;</code> emphasis parsing</strong>. v18.0.9 follows the CommonMark spec rule that trailing colons and quoted words are not emphasis delimiters, which 11.1.1 got wrong.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">v18.0.10 (2026-08-18)</h3>
+      <ul class="list-disc pl-6 mb-6">
+        <li><strong>em/strong mask length drift</strong>. The internal mask the tokenizer builds for emphasis delimiters used to drift in length versus the source after a reflink replacement. v18.0.10 keeps the mask the same length as the source, which closes a long-standing class of misaligned emphasis bugs.</li>
+        <li><strong>EOF backtick fences after paragraphs</strong>. A paragraph followed by a closing backtick fence used to swallow the fence as part of the paragraph text. v18.0.10 recognizes the fence and ends the paragraph cleanly.</li>
+        <li><strong>Task checkbox placement after loose lists</strong>. v18.0.10 places task-list checkboxes at the correct position after a loose list, which 18.0.7 and 18.0.8 were getting wrong in edge cases. This is a v18-internal regression that 18.0.10 closes.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-3">v18.0.11 (2026-08-24)</h3>
+      <ul class="list-disc pl-6 mb-6">
+        <li><strong>Nested link inside a link</strong>. The tokenizer used to allow a link inside the text of another link. v18.0.11 rejects the inner link and keeps the outer one, which matches CommonMark.</li>
+        <li><strong>Reflink mask preamble rebuild</strong>. Each call to <code>inlineTokens</code> now rebuilds the reference-link mask preamble independently instead of reusing a stale one, which closes a class of "the first parse is correct, subsequent parses are wrong" bugs.</li>
+        <li><strong>Emphasis preserved in the text of a rejected reference link</strong>. If a reference link is rejected (because the label does not match a defined reference), the emphasis inside it is preserved instead of being eaten by the tokenizer.</li>
+      </ul>
+
+      <p class="mb-6">None of these are headline features. They are all edge cases. But for a writer who has ever pasted Markdown into a converter and seen their second paragraph lose its bold, their task list checkboxes appear in the wrong place, or their blockquote suddenly gain a level of indentation, the August patch series is the fix.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">The bundle-size math</h2>
+      <p class="mb-6">The UMD minified bundle for marked 18.0.11 is <strong>44,598 bytes</strong> on jsDelivr. The non-minified ESM build is <strong>43,800 bytes</strong>. The marked 11.1.1 build md2rich currently loads is <strong>35,141 bytes</strong> minified. The delta is about 9 KB minified, roughly a 25 percent size increase.</p>
+      <p class="mb-6">For a privacy-first client-side renderer that loads the parser from a CDN on first use, the cost is real but small. On a fast connection the user will not notice. On a slow 3G connection the 9 KB adds about 200 ms. The gain is correctness on edge cases that previously surfaced as visible HTML breakage. For most writer-driven workflows (a 600-word LinkedIn post, a 1,200-word X Article) the parser will never hit the edge cases v18 fixes. For technical writers who paste GitHub-rendered Markdown with task lists, reflinks, and blockquote lists, the edge cases are routine.</p>
+      <p class="mb-6">The other number to weigh is total downloads. marked.js pulled <strong>274.7 million</strong> downloads in the last 30 days and <strong>73.3 million</strong> in the last week alone. It is the most-deployed client-side Markdown parser by a wide margin. Upgrading to 18.0.11 aligns md2rich with the version that ships in the most production environments.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Why md2rich has not switched yet</h2>
+      <p class="mb-6">The honest answer is that the upgrade is on the to-do list, not blocked. The marked.parse() signature did not change between 11.1.1 and 18.0.11. The marked.setOptions() shape did not change. The output is HTML in both versions, and the HTML is then run through DOMPurify 3.0.8 for sanitization before being inserted into the editor preview. The integration points are stable.</p>
+      <p class="mb-6">What is on the to-do list is a regression pass against the 80+ canonical test documents md2rich has accumulated, to verify that the 18.x line produces the same output for the common case and the expected <em>different</em> output for the edge cases the August patches targeted. The risk is small but non-zero: a writer's existing Markdown might render slightly differently between 11.1.1 and 18.0.11, and the first deployment should ship with a way to compare the two outputs side by side.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">A worked example: how the v18 fixes change real output</h2>
+      <p class="mb-6">Take this Markdown snippet, which mixes a reference link with emphasis inside the link text:</p>
+
+      <pre class="bg-gray-100 rounded p-4 overflow-x-auto mb-6"><code>I read [the *emphasis inside* article][1] yesterday.
+
+[1]: https://example.com/post</code></pre>
+
+      <p class="mb-6">In marked 11.1.1 the reference link is rendered, but the emphasis inside the link text is stripped to plain text. The HTML output looks like:</p>
+
+      <pre class="bg-gray-100 rounded p-4 overflow-x-auto mb-6"><code>&lt;p&gt;I read &lt;a href=&quot;https://example.com/post&quot;&gt;the emphasis inside article&lt;/a&gt; yesterday.&lt;/p&gt;</code></pre>
+
+      <p class="mb-6">In marked 18.0.11 the emphasis is preserved:</p>
+
+      <pre class="bg-gray-100 rounded p-4 overflow-x-auto mb-6"><code>&lt;p&gt;I read &lt;a href=&quot;https://example.com/post&quot;&gt;the &lt;em&gt;emphasis inside&lt;/em&gt; article&lt;/a&gt; yesterday.&lt;/p&gt;</code></pre>
+
+      <p class="mb-6">For a writer who pastes a blog post that has a reference link with an italicized phrase in the link text, the 18.0.11 behavior is what they expect. The 11.1.1 behavior is what they get on md2rich today.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Alternatives worth knowing about</h2>
+      <p class="mb-6">marked.js is not the only client-side Markdown parser. <a href="https://github.com/markdown-it/markdown-it" class="text-indigo-600 underline">markdown-it</a> is the closest match and ships with a plugin ecosystem that covers most of what GFM provides (task lists, footnotes, attribute lists). The trade-off is bundle size: markdown-it is roughly 110 KB minified, three times the marked 18.0.11 build. For md2rich the size delta is not worth the plugin surface area.</p>
+      <p class="mb-6">micromark is a smaller, CommonJS-first parser that the remark and rehype ecosystem builds on top of. It is the right choice if you need a parse tree you can transform. For a renderer whose job is HTML output, the parse tree is overkill.</p>
+      <p class="mb-6">Quikdown is a 17 KB bidirectional Show HN parser from 2026 with strong performance characteristics. It is worth watching but is not yet at the version stability that a production renderer wants to bet on. md2rich has not migrated.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">The upgrade checklist</h2>
+      <p class="mb-6">If you maintain a client-side Markdown renderer and want to move from marked 11.x or 12.x to 18.0.11, the checklist is short:</p>
+      <ol class="list-decimal pl-6 mb-6">
+        <li>Update the import line from <code>marked@11.1.1</code> to <code>marked@18.0.11</code> in your CDN reference.</li>
+        <li>Run your existing render test corpus. Expect the common-case output to be identical.</li>
+        <li>Spot-check reference links with emphasis inside, task lists after loose lists, and blockquote continuations with lists. These are where the August patches change behavior.</li>
+        <li>Confirm that any custom renderer overrides (especially <code>listitem</code> and <code>checkbox</code>) handle the v17 token shape changes.</li>
+        <li>Re-run your sanitizer pass on the new HTML output. DOMPurify 3.0.8 is unaffected by the parser upgrade.</li>
+      </ol>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">FAQ</h2>
+      <h3 class="text-xl font-semibold mt-6 mb-3">Should md2rich upgrade from marked 11.1.1 to marked 18.x?</h3>
+      <p class="mb-6">It depends on what you publish. If your Markdown uses GFM tables, setext headings, task lists, or reference links with emphasis inside them, the 18.x line fixes real edge cases that 11.1.1 mishandles. The bundle is ~9 KB larger minified (35 KB to 44 KB) and the renderer API for the marked.parse() call did not change. The v17.0.0 breaking changes (consecutive text tokens in lists, checkbox token shape) only affect custom renderer overrides; md2rich uses the default renderer and was not affected.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">What changed in marked.js v17 and v18?</h3>
+      <p class="mb-6">v17.0.0 (2025-11-07) changed how consecutive text tokens work inside lists, simplified the listItem renderer, and reshaped the checkbox token to add a type and raw property. v18.0.0 (2026-04-07) trimmed trailing blank lines from block tokens and bumped TypeScript from 5.9 to 6.0. Both were bug-fix releases; only the checkbox token shape is a behavior change that custom renderer overrides need to handle.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">What do the August 2026 patch releases fix?</h3>
+      <p class="mb-6">v18.0.9 (2026-08-04) fixed unmatched strong runs before emphasis, deeper-than-needed nesting in blockquote continuations, and pedantic foo: and "word" emphasis parsing. v18.0.10 (2026-08-18) fixed em/strong mask length drift, EOF backtick fences after paragraphs, and task checkbox placement after loose lists. v18.0.11 (2026-08-24) fixed nested links inside links, reflink mask preamble rebuilds, and emphasis preservation inside rejected reference links.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">Does marked v18 require Node 20?</h3>
+      <p class="mb-6">The package.json engines field says node >= 20, but the UMD and ESM browser bundles still work in any modern browser without Node at all. md2rich loads marked via the jsDelivr CDN ESM import, which is browser-only and unaffected by the Node engine hint. If you use marked via the CLI on a build server you do need Node 20 or later.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">How big is the marked.js v18 browser bundle?</h3>
+      <p class="mb-6">The UMD minified bundle (marked.umd.min.js) is 44,598 bytes (44 KB) on jsDelivr. The non-minified ESM build (marked.esm.js) is 43,800 bytes. The pre-1.0 marked@11.1.1 marked.min.js used by md2rich today is 35,141 bytes. The delta is about 9 KB gzipped, which on top of a 35 KB file is roughly a 25 percent size increase.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-3">Are there alternatives to marked.js for client-side Markdown rendering?</h3>
+      <p class="mb-6">Yes. markdown-it is the closest match and ships with a plugin ecosystem (markdown-it-task-lists, markdown-it-footnote, markdown-it-attrs), but it is heavier. micromark is a small CommonJS-first parser that the remark and rehype ecosystem builds on top of. Quikdown is a 17 KB bidirectional Show HN parser from 2026. For most writers pasting into LinkedIn or X Articles, the rendered output difference is small; the choice is bundle size, plugin extensibility, and how aggressively the project tracks CommonMark and GFM updates.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Conclusion: tracked, queued, not shipped yet</h2>
+      <p class="mb-6">The August 2026 patch series is the most useful marked.js has shipped since v18.0.0 in April. The fixes are small in isolation but they close a long tail of edge cases that have bugged writers who paste technical Markdown into converters. md2rich is on the upgrade path; the work is a regression pass against the 80+ canonical test documents and a side-by-side diff of the rendered output between 11.1.1 and 18.0.11.</p>
+      <p class="mb-6">In the meantime, <strong><a href="/" class="text-indigo-600 underline">try md2rich</a></strong>. Paste Markdown, copy rich text. The current build runs marked 11.1.1 with DOMPurify 3.0.8 sanitization. The next build will run marked 18.0.11. The output for the common case will not change; the output for the edge cases will be slightly better.</p>
+
+      <p class="text-gray-500 text-sm mt-10">Filed under: <a href="/blog/" class="text-indigo-600">md2rich Blog</a>. Written by the md2rich team (<a href="https://about.me/jasonxmai" class="text-indigo-600">about.me/jasonxmai</a>). Last verified 2026-08-31 against marked@18.0.11 release artifacts on jsDelivr and the npm registry.</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between">
+      <span>&copy; 2026 md2rich &middot; <a href="/" class="text-indigo-600">Markdown to rich text</a></span>
+      <span><a href="/privacy" class="hover:text-indigo-600">Privacy</a> &middot; <a href="/about" class="hover:text-indigo-600">About</a></span>
+    </div>
+  </footer>
+</body>
+</html>

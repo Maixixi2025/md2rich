@@ -1954,6 +1954,41 @@
         "Markdown Buddy"
       ],
       "primary_cta": "Try md2rich → https://md2rich.com/"
+    },
+    {
+      "slug": "marked-js-18-upgrade-md2rich-2026-en",
+      "date": "2026-08-31",
+      "type": "news",
+      "lang": "en-US",
+      "file": "blog/marked-js-18-upgrade-md2rich-2026-en.html",
+      "url": "https://md2rich.com/blog/marked-js-18-upgrade-md2rich-2026-en",
+      "title": "marked.js 18.0.11: md2rich Upgrade Notes for 2026",
+      "description": "Three bug-fix releases in August 2026 (18.0.9-11). What marked.js v18 fixes and how md2rich's 11.1.1 pipeline compares.",
+      "heat_source": "briefing-2026-08-31 / marked.js v18.0.11 release",
+      "status": "published",
+      "published_at": "2026-08-31T04:32:53.960979+00:00",
+      "providers_featured": [
+        "marked.js",
+        "jsDelivr",
+        "markdown-it",
+        "micromark",
+        "Quikdown"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "marked@18.0.11 published 2026-08-24 (verified via GitHub API)",
+        "marked@18.0.10 published 2026-08-18",
+        "marked@18.0.9 published 2026-08-04",
+        "UMD minified bundle = 44,598 bytes (verified via jsdelivr HEAD)",
+        "ESM bundle = 43,800 bytes (verified via jsdelivr HEAD)",
+        "marked@11.1.1 marked.min.js = 35,141 bytes",
+        "marked.js weekly downloads = 73.3M (verified via npm API)",
+        "marked.js monthly downloads = 274.7M",
+        "md2rich imports marked@11.1.1 via jsdelivr (verified in /assets/app.js)",
+        "md2rich index.html loads marked@11.1.1/marked.min.js (verified)",
+        "GitHub stars: 37,105 (verified)",
+        "TypeScript 6.0 in v18.0.0 breaking changes"
+      ]
     }
   ],
   "drafts": [],
