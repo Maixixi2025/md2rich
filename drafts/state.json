@@ -1989,6 +1989,53 @@
         "GitHub stars: 37,105 (verified)",
         "TypeScript 6.0 in v18.0.0 breaking changes"
       ]
+    },
+    {
+      "slug": "free-md-viewer-vs-md2rich-md-workflow-2026-en",
+      "date": "2026-09-01",
+      "type": "news",
+      "lang": "en-US",
+      "file": "blog/free-md-viewer-vs-md2rich-md-workflow-2026-en.html",
+      "url": "https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en",
+      "title": "Free MD Viewer & md2rich: A Privacy-First Markdown Workflow",
+      "description": "Hattray's single-file Markdown viewer (Sep 1, 2026 HN) and md2rich pair: open .md files locally, edit, then convert to rich text for publishing.",
+      "heat_source": "briefing-2026-09-01 / HN Show HN 'Markdown Viewer and Editor' by beerglass (22p/11c); hattray/markdown-editor (MIT), launched 2026-08-29, no prior coverage in 81 articles",
+      "status": "published",
+      "published_at": "2026-09-01T04:35:46.563835+00:00",
+      "providers_featured": [
+        "Free MD Viewer",
+        "hattray/markdown-editor",
+        "marked",
+        "DOMPurify",
+        "highlight.js",
+        "KaTeX",
+        "Mermaid",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "HN objectID 49514729, Show HN by beerglass, posted 2026-08-31T20:55:03Z (Aug 31 20:55 UTC)",
+        "22 points, 11 comments by 2026-09-01",
+        "Repo created 2026-08-29T19:36:32Z, MIT license, 6 stars / 1 fork (as of 2026-09-01)",
+        "Live app: kingsbridge-consultancy.com/md-viewer (~3.6 MB self-contained index.html)",
+        "Bundled libraries verified via built HTML license banner: marked 14.1.4, DOMPurify 3.2.7, highlight.js 11.11.1, KaTeX 0.16.22, Mermaid 11.12.0",
+        "Supports File System Access API for save-back-to-original (Chromium desktop only)",
+        "Supports file_handlers + launchQueue in manifest.json for install-as-PWA (Chromium desktop only)",
+        "Exports .html / .png / PDF (all in-page, no upload)",
+        "Mermaid SVG downloads + table CSV downloads (per-block)",
+        "DOMPurify sanitizes rendered output",
+        "Draft auto-restore to localStorage",
+        "GFM: tables, task lists, strikethrough, fenced code, GitHub callouts",
+        "body word count: 2,564 (≥800 minimum)",
+        "title: 59 chars (≤60 decoded)",
+        "description: 144 chars (≤155)",
+        "hreflang set: exactly {en, en-US, x-default}",
+        "html lang: en-US",
+        "no Chinese characters in body (0)",
+        "JSON-LD types: Article + FAQPage + 6 Q/A pairs",
+        "Primary CTA: https://md2rich.com/",
+        "Last verified stamp present"
+      ]
     }
   ],
   "drafts": [],

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free MD Viewer &amp; md2rich: A Privacy-First Markdown Workflow</title>
+  <meta name="description" content="Hattray's single-file Markdown viewer (Sep 1, 2026 HN) and md2rich pair: open .md files locally, edit, then convert to rich text for publishing.">
+  <meta name="keywords" content="Free MD Viewer, hattray markdown editor, single-file markdown viewer, offline markdown editor, PWA markdown, file_handlers, File System Access API, client-side markdown, md2rich, markdown to rich text, LinkedIn paste, X Articles, Medium, Notion, privacy-first markdown, markdown publishing workflow 2026">
+  <link rel="canonical" href="https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Free MD Viewer &amp; md2rich: A Privacy-First Markdown Workflow">
+  <meta property="og:description" content="Hattray's single-file Markdown viewer (Sep 1, 2026 HN) and md2rich pair: open .md files locally, edit, then convert to rich text for publishing.">
+  <meta property="og:url" content="https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free MD Viewer &amp; md2rich: A Privacy-First Markdown Workflow">
+  <meta name="twitter:description" content="Hattray's single-file Markdown viewer (Sep 1, 2026 HN) and md2rich pair: open .md files locally, edit, then convert to rich text for publishing.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Free MD Viewer & md2rich: A Privacy-First Markdown Workflow",
+      "description": "Hattray's single-file Markdown viewer (Sep 1, 2026 HN) and md2rich pair: open .md files locally, edit, then convert to rich text for publishing.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/free-md-viewer-vs-md2rich-md-workflow-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Free MD Viewer and what problem does it solve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free MD Viewer is a single-file Markdown viewer and editor built by Hattray (Kingsbridge Consultancy) and open-sourced on GitHub at hattray/markdown-editor under MIT. Launched via Show HN on August 31, 2026 with 22 points and 11 comments by September 1, it runs entirely in the browser with no upload endpoint, no account, and no server-side rendering. Drop a .md file on the page and read it as a properly rendered document; open the same .md file from disk in Chrome or Edge and the editor saves back to the original file via the File System Access API. The unique selling point is that the entire app is one ~3.6 MB self-contained index.html with every library and font inlined, so you can save the page locally and run it from file:// offline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Free MD Viewer different from md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free MD Viewer solves the open-and-edit problem: turn the raw Markdown that an AI tool hands you into a readable document and edit it. md2rich solves the publish problem: turn your finished Markdown into rich text that LinkedIn, X Articles, Medium, and Notion accept on paste. Both are client-side and privacy-first; both work without an account and without uploading your document. The cleanest workflow uses Free MD Viewer to read and edit the .md files that AI agents write and md2rich to convert the same Markdown into rich text for publishing. They are complements, not competitors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Free MD Viewer upload my Markdown to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Free MD Viewer runs entirely client-side. The README states this is verifiable, not promised: every library and font is inlined into a single 3.6 MB index.html, so opening devtools and watching the network tab shows no upload endpoints hit during editing or export. The exported .html, .png, and PDF are generated in-page. The save-back-to-file feature uses the File System Access API, which is browser-to-disk only and never reaches a remote service. Like md2rich, the privacy claim is checkable: read the source with view-source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Free MD Viewer replace Obsidian or Typora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For read-and-edit a single .md file, yes. Free MD Viewer supports GFM tables and task lists, fenced code with syntax highlighting via highlight.js, Mermaid diagrams, LaTeX math via KaTeX, GitHub callouts (NOTE / TIP / IMPORTANT / WARNING / CAUTION), and a table of contents. It exports to .html, .png, and PDF. What it does not do is manage a vault of thousands of linked files, sync to a paid cloud, or run plugins like Obsidian does. It also does not have a WYSIWYG-into-Markdown round trip like Typora did before its paywall. For a single-file or per-chapter workflow, Free MD Viewer is excellent. For a vault with hundreds of linked notes, the trade-off is wrong."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Free MD Viewer work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The README documents that the entire app, all its libraries, and the KaTeX fonts are inlined into one ~3.6 MB self-contained index.html. You can save the page locally and run it from file:// without a network connection. The service worker registers when you install it as a Chrome or Edge app, and the File System Access API launch handle still works offline, so double-clicking a .md file from disk opens the viewer and Save writes straight back to the file. The vendor libraries bundled in the HTML are marked 14.1.4, DOMPurify 3.2.7, highlight.js 11.11.1, KaTeX 0.16.22, and Mermaid 11.12.0; their licenses travel with the file and are listed at the top of the built HTML as comments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install Free MD Viewer as a Chrome or Edge app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the live page at kingsbridge-consultancy.com/md-viewer in Chrome or Edge desktop and accept the install prompt. The manifest.json declares file_handlers so that double-clicking any .md or .markdown file on your machine opens it in the installed viewer. The launch handle is a real FileSystemFileHandle, so Save writes straight back to the file you opened (instead of forcing a download). On other browsers the install option is not offered, but the page still works as a regular web app; saving falls back to a download."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">September 1, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Free MD Viewer &amp; md2rich: A Privacy-First Markdown Workflow</h1>
+        <p class="text-lg text-gray-600">A Show HN on August 31, 2026 by user beerglass pointed at a single-file Markdown viewer and editor that runs entirely client-side. md2rich, the tool behind this site, is the publish-side complement: convert Markdown to rich text for LinkedIn, X Articles, Medium, and Notion. Together they form a complete offline-first writer stack.</p>
+      </header>
+
+      <p class="mb-6">On August 31, 2026 a <a href="https://news.ycombinator.com/item?id=49514729" class="text-indigo-600 underline">Show HN: Markdown Viewer and Editor</a> by user <em>beerglass</em> climbed to 22 points with 11 comments by September 1, 2026. The repo is <a href="https://github.com/hattray/markdown-editor" class="text-indigo-600 underline">hattray/markdown-editor</a> under MIT, by Kingsbridge Consultancy LLC; the live app runs at <a href="https://kingsbridge-consultancy.com/md-viewer/" class="text-indigo-600 underline">kingsbridge-consultancy.com/md-viewer</a>. It is one self-contained ~3.6 MB <code>index.html</code> with every library and font embedded. You can save the page and run it from <code>file://</code> with no network connection. The privacy claim is verifiable, not promised: open devtools, watch the network tab, and read the source with view-source.</p>
+
+      <p class="mb-6">md2rich, the tool behind this site, shares that privacy posture. Both run entirely in the browser. Both reject uploads. Both refuse accounts. The difference is where they sit in the writer's loop: <strong>Free MD Viewer</strong> handles the read-and-edit step, opening the .md files that AI tools hand you and saving them back to disk. <strong>md2rich</strong> handles the publish step, converting the same Markdown into the rich text that social platforms accept on paste. This post is the integration recipe: open the .md in Free MD Viewer, edit it locally, then load the same file into md2rich and paste the rich text into LinkedIn, X Articles, Medium, or Notion.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">What Free MD Viewer actually does</h2>
+
+      <p class="mb-6">The README and the built HTML's own license banner list the bundled libraries: <strong>marked 14.1.4</strong> (MIT), <strong>DOMPurify 3.2.7</strong> (Apache-2.0 / MPL-2.0), <strong>highlight.js 11.11.1</strong> (BSD-3-Clause), <strong>KaTeX 0.16.22</strong> (MIT), and <strong>Mermaid 11.12.0</strong> (MIT). KaTeX's embedded .woff2 fonts are under SIL OFL 1.1. The app's own code is MIT. Everything is inlined into one HTML file so the page bundle is the entire deliverable.</p>
+
+      <p class="mb-6">Features that matter for a writer workflow:</p>
+
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2"><strong>Open from disk, edit, save back to the original file.</strong> Chrome and Edge desktop expose the File System Access API, so dropping a <code>.md</code> on the page hands back a <code>FileSystemFileHandle</code>; Save writes straight to that handle instead of forcing a download. On other browsers Save falls back to a download, which still works.</li>
+        <li class="mb-2"><strong>Installable PWA that registers <code>file_handlers</code>.</strong> Once installed, double-clicking a <code>.md</code> file in Explorer or Finder opens it directly in the viewer. The launch handle is preserved across the install, so Save still writes back to the file you opened.</li>
+        <li class="mb-2"><strong>GFM Markdown: tables, task lists, strikethrough, fenced code with GitHub-style syntax highlighting.</strong> A Mermaid <code>```mermaid</code> block renders in place; the theme follows dark and light toggles. LaTeX runs through KaTeX for <code>$inline$</code>, <code>$$display$$</code>, <code>\(...\)</code>, and <code>\[...\]</code>; the README notes that math is extracted before Markdown parsing so underscores and asterisks inside TeX survive.</li>
+        <li class="mb-2"><strong>GitHub callouts</strong> render as colored panels: <code>&gt; [!NOTE]</code>, <code>&gt; [!TIP]</code>, <code>&gt; [!IMPORTANT]</code>, <code>&gt; [!WARNING]</code>, <code>&gt; [!CAUTION]</code>. This is the syntax GitHub uses for READMEs; if your AI tool generates Markdown with these markers it renders correctly here.</li>
+        <li class="mb-2"><strong>Export to .html, .png, and PDF.</strong> All three are generated in-page with no upload. <code>.html</code> is a self-contained document with styles and KaTeX fonts embedded. <code>.png</code> rasterizes the preview through an SVG <code>&lt;foreignObject&gt;</code> at up to 2× device scale. PDF routes through the browser's own print-to-PDF pipeline so text stays selectable, not baked into an image. <strong>Per-block downloads</strong> hover a Mermaid diagram for an <code>SVG</code> button (real dimensions from the viewBox) or a table for a <code>CSV</code> button (RFC-style quoting plus a UTF-8 BOM so Excel reads accents correctly).</li>
+        <li class="mb-2"><strong>DOMPurify sanitizes the rendered HTML.</strong> Even if a malicious source document tries to inject script, the rendered output is sanitized on the way to the preview. The README and the built license banner document this contract.</li>
+        <li class="mb-2"><strong>Draft auto-restore</strong> writes to <code>localStorage</code>, so refresh or crash loses nothing. Keyboard shortcuts include <kbd>⌘S</kbd> (save), <kbd>⌘⇧S</kbd> (save as), and <kbd>⌘O</kbd> (open). Reader controls let you tune text size and line width (the Aa button), persisted across sessions.</li>
+      </ul>
+
+      <p class="mb-6">Two features depend on Chromium-desktop-only APIs and degrade gracefully elsewhere. Save-back-to-original-file uses the File System Access API; on other browsers it falls back to a download. Double-clicking a <code>.md</code> file from disk to open it in the viewer uses <code>file_handlers</code> and <code>launchQueue</code> in the manifest; on other browsers that path is simply not offered. Everything else — rendering, editing, exports, per-block downloads — works in any current browser.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">What md2rich actually does</h2>
+
+      <p class="mb-6"><a href="/" class="text-indigo-600 underline">md2rich</a> is also a single-page browser app with no backend, no upload, and no account. It loads <code>marked@11.1.1</code> from jsDelivr, runs the same parser family as Free MD Viewer, and pipes the rendered HTML through a sanitizer, then paints the result into a contenteditable preview that mirrors how LinkedIn, X Articles, Medium, and Notion render the rich text you paste.</p>
+
+      <p class="mb-6">The publish-side problem is what Free MD Viewer does not solve: most social platforms do not accept raw Markdown pasted into their compose box. LinkedIn strips tables and task lists. X Articles strips anything not in its block grammar. Medium accepts Markdown in its editor mode but converts differently than its WYSIWYG paste expects. Notion loses headings on paste from an external source. Each platform has its own paste quirks, and md2rich encodes them as render modes so that what you see in the preview is what the platform will render after you paste.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Why these two tools belong together</h2>
+
+      <p class="mb-6">Both are privacy-first. Both are zero-install (you can save the page and run it offline). Both refuse accounts and refuse uploads. The split is functional:</p>
+
+      <table class="w-full mb-6 border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border border-gray-300 px-3 py-2 text-left">Step</th>
+            <th class="border border-gray-300 px-3 py-2 text-left">Best tool</th>
+            <th class="border border-gray-300 px-3 py-2 text-left">What it does</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-300 px-3 py-2">Read</td>
+            <td class="border border-gray-300 px-3 py-2">Free MD Viewer</td>
+            <td class="border border-gray-300 px-3 py-2">Open a .md from disk and render it as a readable document</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-3 py-2">Edit</td>
+            <td class="border border-gray-300 px-3 py-2">Free MD Viewer</td>
+            <td class="border border-gray-300 px-3 py-2">Edit the .md in place and save back to the original file</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-3 py-2">Convert to rich text</td>
+            <td class="border border-gray-300 px-3 py-2">md2rich</td>
+            <td class="border border-gray-300 px-3 py-2">Paste the polished Markdown in, copy the rendered HTML plus inline styles</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-3 py-2">Publish</td>
+            <td class="border border-gray-300 px-3 py-2">Your target platform</td>
+            <td class="border border-gray-300 px-3 py-2">Paste the rich text into LinkedIn, X Articles, Medium, Notion, or the WYSIWYG editor of your CMS</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="mb-6">The pattern looks like this for a typical post:</p>
+
+      <ol class="list-decimal pl-6 mb-6">
+        <li class="mb-2">An AI tool (Claude, ChatGPT, Cursor, OzBrain) hands you a <code>.md</code> file. Save it to disk.</li>
+        <li class="mb-2">Open it in Free MD Viewer. Read the output as a rendered document, not a wall of raw text. Edit the body, fix any platform-specific phrasing, and Save back to the original file.</li>
+        <li class="mb-2">Copy the polished Markdown into md2rich. Pick the target platform's render mode (LinkedIn / X Articles / Medium / Notion). Paste it into the compose box of the platform.</li>
+        <li class="mb-2">Files live on your machine the whole way. Nothing is uploaded.</li>
+      </ol>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Where Free MD Viewer falls short of an Obsidian or Typora</h2>
+
+      <p class="mb-6">Free MD Viewer is excellent for the open-edit-save loop on a single file, but it is intentionally not a vault manager. There is no graph view of linked files, no plugin marketplace, no JSON-exported metadata table for queries. There is no vault-at-folder level cache; the app loads the file you point it at and forgets it on close. For a thousand-note workflow where you want to find every file that mentions a given tag or back-link across a folder, Obsidian's local-only vault model still wins.</p>
+
+      <p class="mb-6">Typora was the WYSIWYG-into-Markdown app that everyone used until it switched to a paid license. Free MD Viewer is not that. The Free MD Viewer experience is split-pane editor on top with live preview below; there is no inline WYSIWYG mode where formatting tools look like a word processor and Markdown appears under the hood. If you want that, Typora's paid license, iA Writer, or Zettlr's typewriter mode cover the use case that Free MD Viewer deliberately does not.</p>
+
+      <p class="mb-6">The other thing Free MD Viewer does not have is desktop-not-just-browser. Saving the page as a local file is the official self-hosting recipe and it works, but it is not the same as a windowed native app with a dock icon, system-wide keyboard shortcuts, and an OS-native File menu. Native macOS tools like Markdown Buddy and iA Writer give you that. The trade-off is installation friction in exchange for tighter OS integration.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">A practical publish example</h2>
+
+      <p class="mb-6">Suppose the AI tool generates this Markdown about a release:</p>
+
+      <pre class="bg-gray-50 border border-gray-200 rounded p-4 mb-6 text-sm overflow-x-auto"><code># Q4 2026 Roadmap
+
+We shipped the **Privacy Dashboard** this quarter. Next up:
+
+- Webhook signing
+- Audit log export
+- SAML SSO for enterprise
+
+Read the full announcement: &lt;https://example.com/blog/privacy-dashboard&gt;
+</code></pre>
+
+      <p class="mb-6">Open that file in Free MD Viewer. The H2 renders as a heading, the bulleted list as a real list, the bold text as bold inline. You can scan the document as a rendered page, not as a wall of <code>#</code> and <code>-</code> characters. If a section needs a rewrite, edit in place and Save.</p>
+
+      <p class="mb-6">Then drop the same Markdown into md2rich. The preview shows exactly the rich text that LinkedIn or X Articles will render when you paste. The pipeline under the hood is the same as Free MD Viewer's: marked parses the Markdown, DOMPurify sanitizes it, the result becomes a contenteditable surface. But the surface is configured per-platform: LinkedIn mode optimizes for inline emphasis and bullet width, X Articles mode optimizes for the smaller character budgets, Medium mode keeps the rich-text metadata structure, Notion mode preserves headings as database-style blocks.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">Why this split is the durable answer for privacy-first writers</h2>
+
+      <p class="mb-6">For most of 2026 the privacy-first Markdown tool conversation has been about which editor or which renderer to choose, as if a single tool had to cover both jobs. The Free MD Viewer plus md2rich combination is the cleaner split: one open-and-edit tool that lives on your local disk and one publish-and-paste tool that lives in your browser tab. The Markdown source stays the only canonical artifact. Both tools refuse to upload it. Neither tool needs an account. Either tool works offline if you save the page locally first.</p>
+
+      <p class="mb-6">If you want to try the workflow, here is the order of operations:</p>
+
+      <ol class="list-decimal pl-6 mb-6">
+        <li class="mb-2">Open <a href="https://kingsbridge-consultancy.com/md-viewer/" class="text-indigo-600 underline">Free MD Viewer</a> in Chrome or Edge desktop and accept the install prompt. Double-clicking a <code>.md</code> file on your machine now opens it directly in the viewer.</li>
+        <li class="mb-2">Open <a href="https://github.com/hattray/markdown-editor" class="text-indigo-600 underline">hattray/markdown-editor</a> if you want to inspect the bundled libraries or self-host the page on your own domain. The entire app is one HTML file.</li>
+        <li class="mb-2">Open <a href="/" class="text-indigo-600 underline">md2rich</a> in the same or a different window. Paste the polished Markdown and pick a target render mode. Copy the rich text out and paste it into LinkedIn, X Articles, Medium, or Notion.</li>
+      </ol>
+
+      <p class="mb-6">Files never leave your machine. AI tools produce a <code>.md</code>; Free MD Viewer reads and edits it; md2rich renders it for the social platform. No tool in this pipeline has an upload endpoint, and the README for Free MD Viewer explicitly lists features that would need a server as out of scope by design. The same is true for md2rich's static page: no fetch, no telemetry, no analytics, no account. If your threat model cares about where the bytes go, this pipeline is checkable end-to-end from view-source.</p>
+
+      <p class="mb-6">Last verified 2026-09-01. Vendors and pricing subject to change.</p>
+
+      <h2 class="text-2xl font-semibold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-4">
+        <details class="bg-white border border-gray-200 rounded p-4">
+          <summary class="font-semibold cursor-pointer">What is Free MD Viewer and what problem does it solve?</summary>
+          <p class="mt-2">Free MD Viewer is a single-file Markdown viewer and editor built by Hattray (Kingsbridge Consultancy) and open-sourced on GitHub at hattray/markdown-editor under MIT. Launched via Show HN on August 31, 2026 with 22 points and 11 comments by September 1, it runs entirely in the browser with no upload endpoint, no account, and no server-side rendering. Drop a .md file on the page and read it as a properly rendered document; open the same .md file from disk in Chrome or Edge and the editor saves back to the original file via the File System Access API. The unique selling point is that the entire app is one ~3.6 MB self-contained index.html with every library and font inlined, so you can save the page locally and run it from file:// offline.</p>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded p-4">
+          <summary class="font-semibold cursor-pointer">How is Free MD Viewer different from md2rich?</summary>
+          <p class="mt-2">Free MD Viewer solves the open-and-edit problem: turn the raw Markdown that an AI tool hands you into a readable document and edit it. md2rich solves the publish problem: turn your finished Markdown into rich text that LinkedIn, X Articles, Medium, and Notion accept on paste. Both are client-side and privacy-first; both work without an account and without uploading your document. The cleanest workflow uses Free MD Viewer to read and edit the .md files that AI agents write and md2rich to convert the same Markdown into rich text for publishing. They are complements, not competitors.</p>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded p-4">
+          <summary class="font-semibold cursor-pointer">Does Free MD Viewer upload my Markdown to a server?</summary>
+          <p class="mt-2">No. Free MD Viewer runs entirely client-side. The README states this is verifiable, not promised: every library and font is inlined into a single 3.6 MB index.html, so opening devtools and watching the network tab shows no upload endpoints hit during editing or export. The exported .html, .png, and PDF are generated in-page. The save-back-to-file feature uses the File System Access API, which is browser-to-disk only and never reaches a remote service. Like md2rich, the privacy claim is checkable: read the source with view-source.</p>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded p-4">
+          <summary class="font-semibold cursor-pointer">Can Free MD Viewer replace Obsidian or Typora?</summary>
+          <p class="mt-2">For read-and-edit a single .md file, yes. Free MD Viewer supports GFM tables and task lists, fenced code with syntax highlighting via highlight.js, Mermaid diagrams, LaTeX math via KaTeX, GitHub callouts (NOTE / TIP / IMPORTANT / WARNING / CAUTION), and a table of contents. It exports to .html, .png, and PDF. What it does not do is manage a vault of thousands of linked files, sync to a paid cloud, or run plugins like Obsidian does. It also does not have a WYSIWYG-into-Markdown round trip like Typora did before its paywall. For a single-file or per-chapter workflow, Free MD Viewer is excellent. For a vault with hundreds of linked notes, the trade-off is wrong.</p>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded p-4">
+          <summary class="font-semibold cursor-pointer">Does Free MD Viewer work offline?</summary>
+          <p class="mt-2">Yes. The README documents that the entire app, all its libraries, and the KaTeX fonts are inlined into one ~3.6 MB self-contained index.html. You can save the page locally and run it from file:// without a network connection. The service worker registers when you install it as a Chrome or Edge app, and the File System Access API launch handle still works offline, so double-clicking a .md file from disk opens the viewer and Save writes straight back to the file. The vendor libraries bundled in the HTML are marked 14.1.4, DOMPurify 3.2.7, highlight.js 11.11.1, KaTeX 0.16.22, and Mermaid 11.12.0; their licenses travel with the file and are listed at the top of the built HTML as comments.</p>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded p-4">
+          <summary class="font-semibold cursor-pointer">How do I install Free MD Viewer as a Chrome or Edge app?</summary>
+          <p class="mt-2">Open the live page at kingsbridge-consultancy.com/md-viewer in Chrome or Edge desktop and accept the install prompt. The manifest.json declares file_handlers so that double-clicking any .md or .markdown file on your machine opens it in the installed viewer. The launch handle is a real FileSystemFileHandle, so Save writes straight back to the file you opened (instead of forcing a download). On other browsers the install option is not offered, but the page still works as a regular web app; saving falls back to a download.</p>
+        </details>
+      </div>
+
+      <p class="mb-6 mt-10">Want to try the publish step right now? <a href="/" class="text-indigo-600 underline">Try md2rich</a> — paste any Markdown, copy the rendered rich text, paste into LinkedIn, X Articles, Medium, or Notion.</p>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-12 py-6 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-sm text-gray-600">
+      <p>&copy; 2026 md2rich. Privacy-first client-side Markdown to rich text.</p>
+      <p class="mt-2"><a href="/" class="text-indigo-600 underline">Try the editor</a> &middot; <a href="/about" class="text-indigo-600 underline">About</a> &middot; <a href="/privacy" class="text-indigo-600 underline">Privacy</a> &middot; <a href="/blog/" class="text-indigo-600 underline">Blog</a></p>
+    </div>
+  </footer>
+</body>
+</html>
