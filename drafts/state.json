@@ -2036,6 +2036,44 @@
         "Primary CTA: https://md2rich.com/",
         "Last verified stamp present"
       ]
+    },
+    {
+      "slug": "notes-plus-markdown-apple-notes-alternative-2026-en",
+      "date": "2026-09-02",
+      "type": "news",
+      "lang": "en-US",
+      "file": "blog/notes-plus-markdown-apple-notes-alternative-2026-en.html",
+      "url": "https://md2rich.com/blog/notes-plus-markdown-apple-notes-alternative-2026-en",
+      "title": "Notes Plus: A Markdown Apple Notes Alternative in 2026",
+      "description": "Notes Plus (Sep 2026 alpha) is a Markdown-native Apple Notes clone for macOS — how it stacks against md2rich in a publish-anywhere workflow.",
+      "heat_source": "briefing-2026-09-02 / HN Show HN \"Notes Plus\" by sliqqq 2026-09-01T23:17:05Z (objectID 49529608, 3 points, 2 comments); notesplus.io v0.3.0 alpha, $19 lifetime post-beta; 0 prior coverage across 87 articles",
+      "status": "published",
+      "published_at": "2026-09-02T04:32:55+00:00",
+      "providers_featured": [
+        "Notes Plus",
+        "sliqqq/notesplus",
+        "Apple Notes",
+        "iOS 26",
+        "iOS 27",
+        "macOS Sequoia",
+        "Obsidian",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "HN objectID 49529608, Show HN by sliqqq, posted 2026-09-01T23:17:05Z (Sep 1 23:17 UTC)",
+        "3 points, 2 comments by 2026-09-02",
+        "Live app: notesplus.io (verified 2026-09-02, body len 22298B)",
+        "Current build v0.3.0 alpha, distributed as separate signed/notarized .dmg downloads for Apple Silicon (M1/M2/M3+) and Intel Macs",
+        "Requires macOS Sequoia or newer",
+        "Pricing: free during alpha and beta, $19 one-time lifetime license after stable release (NOT subscription per author)",
+        "Roadmap includes iOS, Windows, and most Linuxes (depends on demand)",
+        "12 features confirmed: local Markdown files, tags, priorities, favorites, Kanban/JIRA swimlane view, LaTeX/KaTeX/MathJax/AsciiMath, Mermaid/PlantUML/Graphviz/Vega-Lite/mhchem, footnotes/citations, split view, smart search, backlinks, syntax highlighting",
+        "Copy/paste from Apple Notes + ChatGPT with formatting preservation (work in progress for Apple Notes import)",
+        "Binaries signed/notarized by Apple; no App Store listing yet (author flagged uncertainty about Apple legal position)",
+        "Cross-referenced: existing 08-08 apple-notes-markdown-export article covers iOS 26/27 Markdown export, but body-grep on \"Notes Plus\"/\"notesplus.io\"/\"sliqqq\" = 0 hits across all 87 articles",
+        "Body word count 1832 (12-gate floor 800); title 54/60, desc 140/155, hreflang exact {en, en-US, x-default}"
+      ]
     }
   ],
   "drafts": [],
