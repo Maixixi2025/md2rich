@@ -2074,6 +2074,42 @@
         "Cross-referenced: existing 08-08 apple-notes-markdown-export article covers iOS 26/27 Markdown export, but body-grep on \"Notes Plus\"/\"notesplus.io\"/\"sliqqq\" = 0 hits across all 87 articles",
         "Body word count 1832 (12-gate floor 800); title 54/60, desc 140/155, hreflang exact {en, en-US, x-default}"
       ]
+    },
+    {
+      "slug": "linkedin-ai-slop-40-percent-views-2026-en",
+      "date": "2026-09-03",
+      "type": "news",
+      "lang": "en-US",
+      "file": "blog/linkedin-ai-slop-40-percent-views-2026-en.html",
+      "url": "https://md2rich.com/blog/linkedin-ai-slop-40-percent-views-2026-en",
+      "title": "LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026",
+      "description": "LinkedIn says content its classifiers tag as slop now gets roughly 40% fewer views. How the metric works, and how to edit Markdown before publishing.",
+      "heat_source": "briefing-2026-09-03 / Moneywise via Yahoo Finance 2026-08-25: Srinivasan (LinkedIn CPO) Aug-20 post = >1M members clicked 'Seems Like AI Slop' since Jul-30 launch + ~40% fewer views on slop-classified posts; Purvis confirmed 40% is classifier-specific (not member flags)",
+      "status": "published",
+      "published_at": "2026-09-03T04:33:41.912142+00:00",
+      "providers_featured": [
+        "LinkedIn",
+        "Moneywise",
+        "Yahoo Finance",
+        "Pangram Labs",
+        "Originality.ai",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "Moneywise-byline article 'Seems Like AI Slop button drops views by 40%', Godwin Oluponmile, dated 2026-08-25, republished on Yahoo Finance (finance.yahoo.com, body 919KB, fetched 2026-09-03)",
+        "Button 'Seems Like AI slop' under three-dot menu on posts/comments, launched 2026-07-30",
+        "By 2026-08-20 >1 million unique members clicked it (Hari Srinivasan, LinkedIn CPO, LinkedIn post); LinkedIn comms team told Moneywise it counts unique members (feedback flow), not total clicks",
+        "CRITICAL NUANCE: ~40% fewer views is specific to LinkedIn's content classifiers (detection software rolled out same day as button, Jul 30), NOT the member flags - Amanda Purvis (LinkedIn) told Moneywise; Srinivasan did not break out reader-flag share",
+        "Author-facing message rolling out: 'Some members told us this post seems like AI.' (rolling out over coming weeks per Purvis)",
+        "No single feedback determines distribution; many signals together; built-in safeguards against unfair targeting",
+        "Jul-30 also: LinkedIn catching hundreds of thousands of automated comment attempts daily; 'Enhance post' drafting tool replaced by proofreading tool that preserves member voice",
+        "Srinivasan: 'AI and slop aren't the same thing'; 'I know I'm increasingly conscious on how to not sound like AI'",
+        "Open questions LinkedIn hasn't answered: whether AI post VOLUME is falling (not just views), what separates slop from ordinary content, how much feedback before author message, second-language/formal-register protection",
+        "Detection context (prior-covered, referenced lightly): Pangram Labs Jul-9 >40% of >250-word LinkedIn posts fully AI; Originality.ai 81.2% of 5,000 posts",
+        "Body-grep discriminator: Srinivasan/Hari Srinivasan/Amanda Purvis/content classifier/fewer views = 0 hits across all 87 on-disk -en articles; prior 08-01 linkedin-ai-slop-report-button article (Writer's Guide) predates the Aug-20 metric + has 0 mentions of 40%/classifier/million-viewer metric",
+        "Body word count 1899 (>=800); title 59/60; desc 149/155; hreflang exact {en, x-default}; lang en-US; no Chinese; JSON-LD Article + HowTo + 5-step"
+      ]
     }
   ],
   "drafts": [],
@@ -2086,11 +2122,11 @@
   ],
   "current_index": 0,
   "last_topic_direction": "OzBrain + md2rich - hosted Markdown agent brain holds the canonical drafts, md2rich ships them as rich text for LinkedIn/X/Medium/Notion",
-  "last_run": "2026-08-29",
-  "last_published_slug": "ozbrain-md2rich-shared-agent-brain-2026-en",
-  "last_published_at": "2026-08-24T12:00:00Z",
+  "last_run": "2026-09-03",
+  "last_published_slug": "linkedin-ai-slop-40-percent-views-2026-en",
+  "last_published_at": "2026-09-03T04:33:41.912142+00:00",
   "drafts_count": 0,
-  "published_count": 74,
-  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).",
-  "last_publish": "2026-08-25"
+  "published_count": 84,
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.",
+  "last_publish": "2026-09-03"
 }
