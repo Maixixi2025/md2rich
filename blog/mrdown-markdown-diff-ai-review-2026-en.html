@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MRDown 2026: Diff What Your AI Just Rewrote in Markdown</title>
+  <meta name="description" content="MRDown is a free macOS Markdown viewer/editor that diffs what an AI agent just rewrote — read any two versions side by side, then publish with md2rich.">
+  <meta name="keywords" content="MRDown, MRDown markdown, markdown diff app mac, diff AI rewrite markdown, review AI rewrite, read the diff AI rewrote, Markdown git diff, macOS markdown editor, Tauri markdown app MRDown, MRDown vs md2rich, MD viewer, publish markdown rich text, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MRDown 2026: Diff What Your AI Just Rewrote in Markdown">
+  <meta property="og:description" content="MRDown is a free macOS Markdown viewer/editor that diffs what an AI agent just rewrote — read any two versions side by side, then publish with md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MRDown 2026: Diff What Your AI Just Rewrote in Markdown">
+  <meta name="twitter:description" content="MRDown is a free macOS Markdown viewer/editor that diffs what an AI agent just rewrote — read any two versions side by side, then publish with md2rich.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "MRDown 2026: Diff What Your AI Just Rewrote in Markdown",
+      "description": "MRDown is a free macOS Markdown viewer/editor that diffs what an AI agent just rewrote — read any two versions side by side, then publish with md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-09-05",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MRDown and what does it do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MRDown is a free, MIT-licensed macOS Markdown viewer and editor (MR-TABATA/MRDown on GitHub, first posted to Show HN September 4, 2026) built with Tauri. Its core idea is that every save — and every rewrite a coding or writing agent makes to a file you have open — quietly keeps a timestamped version, and a History panel puts any two versions side by side so you can read exactly what the AI changed instead of trusting a summary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is MRDown free, and is it really Mac-only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — MRDown is open source under the MIT license and free. Signed and notarized binaries for Apple Silicon and Intel ship from the GitHub Releases page (the latest release v1.14.0, September 2, 2026). The author built it with Tauri rather than Electron, so it shrinks to about a 7 MB download. Only macOS binaries are published; the author notes it should build on Windows but has never tested it there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why would a writer need to diff what an AI rewrote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When Claude Code, ChatGPT, or another agent rewrites a Markdown file, your only record of what changed used to be the agent's own summary. MRDown instead diffs the current file against any earlier saved version, showing only the words that differ and folding unchanged runs away, so you keep editorial control over the final draft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MRDown make AI API calls or upload content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. MRDown never calls an AI provider itself — it diffs whatever changed on disk regardless of which tool wrote it. AI-related features such as explaining a diff are planned as paid, separate add-ons. The DOCX-to-Markdown conversion also runs locally, so nothing is uploaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit next to MRDown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MRDown is the review gate before you commit to an AI rewrite; md2rich is the final conversion step afterward. Once you accept the clean Markdown, a client-side converter like md2rich turns it into rich text that pastes formatted into LinkedIn, X Articles, Medium, or Notion — no upload, no account, no re-formatting."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">September 5, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Your AI just rewrote your Markdown. Here is how to read the diff it left you.</h1>
+        <p class="text-lg text-gray-600">MRDown is a free, MIT-licensed macOS Markdown viewer and editor whose one job is to show you exactly what an AI agent changed in a file you had open. Review the diff, accept the rewrite, then publish the clean Markdown as rich text.</p>
+      </header>
+
+<p class="text-gray-700 mb-6">If you have handed a document to an AI assistant in the past year, you know the feeling at the end. The agent says it tightened your copy, added a subheading, or cut two redundant paragraphs. You want to trust it, but the file is a wall of text again and the only record you have of what changed is the agent's own summary. For a professional writer that is a trust problem, not a convenience problem — a summary is a claim, and a claim is not the same as seeing the words that actually moved.</p>
+
+<p class="text-gray-700 mb-6">A new Mac app called <strong>MRDown</strong> was posted to <a href="https://news.ycombinator.com/item?id=49563459" class="text-indigo-600 font-semibold">Show HN on September 4, 2026</a> with a one-line pitch that names the problem exactly: <em>"a Mac Markdown app that diffs what your AI just rewrote."</em> The author started it as a viewer for the <code class="text-sm bg-gray-100 px-1 rounded">.md</code> files that Claude Code generates, and only in version 0.1 realized what was actually needed: to read the diff of what the agent rewrote, rather than trust a summary of it. The project is open source at <a href="https://github.com/MR-TABATA/MRDown" class="text-indigo-600 font-semibold">MR-TABATA/MRDown</a>, licensed MIT, and free.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">What MRDown does</h2>
+
+<p class="text-gray-700 mb-6">The mental model is simple and different from every other Markdown editor. Most editors show you the file as it is now. MRDown's core feature is that it quietly keeps a <strong>timestamped version on every save</strong> — and on every rewrite that happens from outside the app, including an agent editing a file you have open. Its History panel then puts <strong>any two versions side by side</strong> so you can read what changed. Only the words that actually differ are marked; long unchanged runs are folded away so you are not re-reading whole pages to find one altered sentence.</p>
+
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+  <li><strong>Versioned history on every save.</strong> Nothing to configure — each save and each outside rewrite is snapshotted automatically.</li>
+  <li><strong>Side-by-side diff of any two versions.</strong> Read what the agent changed, not what it claims it changed.</li>
+  <li><strong>Git-aware when you want it.</strong> If the file is inside a Git repo, <code class="text-sm bg-gray-100 px-1 rounded">HEAD</code> joins the same list, so the diff against what is committed is right there. Git is optional.</li>
+  <li><strong>Conflict-safe concurrent edits.</strong> If something rewrites the file on disk while you have unsaved edits, MRDown neither overwrites you silently nor reloads over you — it snapshots the disk state and shows three columns: last save, what is on disk, and your edits, marking only the lines both of you changed differently as conflicts.</li>
+  <li><strong>Auto-reload.</strong> The file refreshes when it changes on disk, which is exactly when a coding agent is mid-rewrite.</li>
+  <li><strong>Clean Tech stack.</strong> Built with Tauri (Rust + TypeScript), not Electron — the download is roughly 7 MB, and on the first run there is none of Electron's per-app baggage.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">MRDown opens <code class="text-sm bg-gray-100 px-1 rounded">.md</code>, <code class="text-sm bg-gray-100 px-1 rounded">.markdown</code>, and <code class="text-sm bg-gray-100 px-1 rounded">.txt</code> files, plus whole folders for browsing a file tree, and it renders Mermaid diagrams, KaTeX math, and syntax-highlighted code in the preview. It can also open two <code class="text-sm bg-gray-100 px-1 rounded">.docx</code> files and diff them against each other after converting them locally — nothing uploaded. The current build is v1.14.0 (released September 2, 2026), signed and notarized, with separate Apple Silicon and Intel downloads from the GitHub Releases page. macOS 13 or newer is the stated floor from the author on the HN thread.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Why the diff is the real feature, not the editor</h2>
+
+<p class="text-gray-700 mb-6">The distinguishing detail is that MRDown makes <strong>no AI API calls of its own</strong>. It does not need to know which tool rewrote the file. It diffs whatever changed on disk, whether the writer behind the edit was Claude Code, ChatGPT, a text-expansion utility, or you on a second machine. That design is what makes it trustworthy: the diff is ground truth about the file, not a summary produced by the same model that made the change. AI explain-diff and project search features are explicitly planned as paid add-ons in a separate repository, so the core review loop stays in the MIT code.</p>
+
+<p class="text-gray-700 mb-6">For writers who publish, this closes a quiet hole in the modern writing stack. The Markdown-to-rich-text direction we have written about for LinkedIn and X Articles assumes a clean final draft. But when the final draft was partly produced by an AI rewrite, "clean" depends on a human having actually reviewed what changed. MRDown is that review step, sitting right before the publish step.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">The workflow: review the diff in MRDown, publish the clean draft with md2rich</h2>
+
+<p class="text-gray-700 mb-6">Here is the write-once pipeline with MRDown at the review gate. You keep a post draft as a Markdown file, hand it to an assistant, and then MRDown is where you decide whether the rewrite ships. First, the Markdown draft as an agent might return it to you:</p>
+
+<pre class="bg-gray-100 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code># Why plain text outlives every app
+
+The takeaway: write once, publish anywhere.
+
+- Draft in Markdown, keep the file yours
+- Review what your AI changed in MRDown
+- Convert the clean draft to rich text
+- Paste into LinkedIn or Medium, ready to go</code></pre>
+
+<p class="text-gray-700 mb-6">Suppose the agent quietly rewrote the opening line to "Plain text lives longer than any app you name." Instead of trusting that summary, you open MRDown's History panel, pick the pre-rewrite save and the current file side by side, and see that one sentence change highlighted while every other line stays folded. You decide it is an improvement, keep it, and move on. Now convert that accepted draft through <a href="/" class="text-indigo-600 font-semibold">md2rich</a>:</p>
+
+<pre class="bg-gray-100 border border-gray-200 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code># Shipping faster with plain text
+
+**The takeaway:** write once, format anywhere.
+
+- Keep the file in Markdown, outlive the app
+- Review AI rewrites as diffs in MRDown
+- Convert locally — nothing is uploaded
+- Paste rich text into LinkedIn or Medium</code></pre>
+
+<p class="text-gray-700 mb-6">md2rich turns that into a bold headline, an emphasized lead line, and a clean bullet list that LinkedIn and Medium render natively — all in your browser with no upload and no account. The two tools do not overlap: MRDown is the editorial-control gate at the front of the pipeline, and md2rich is the formatting gate at the end.</p>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">MRDown vs md2rich vs your Git workflow</h2>
+
+<p class="text-gray-700 mb-6">If you already live in Git, you might wonder why you need MRDown at all — <code class="text-sm bg-gray-100 px-1 rounded">git diff</code> exists. The honest answer is that Git diffs are great for developers and awkward for writers mid-draft. MRDown gives you versioned history without committing, a GUI diff that folds unchanged lines, three-way conflict handling when an agent edits a file you have open, and no requirement that the file ever touch a repo. For someone who is not a developer first, that is a materially lower barrier. For a writer who is also technical, MRDown complements Git rather than replacing it — the Git <code class="text-sm bg-gray-100 px-1 rounded">HEAD</code> join means the two views agree.</p>
+
+<ul class="list-disc list-inside text-gray-700 mb-6 space-y-1">
+  <li><strong>MRDown</strong> — best at reviewing and diffing AI/agent rewrites of Markdown on the Mac, with automatic version history and no setup. Free, MIT, macOS.</li>
+  <li><strong>Git diff</strong> — best when the file is already a committed repo and you want branch-level or commit-level history. Powerful, but it assumes a developer workflow.</li>
+  <li><strong>md2rich</strong> — best at the final conversion, turning clean Markdown into rich text for LinkedIn, X Articles, Medium, and Notion. Client-side, no upload, no account.</li>
+</ul>
+
+<h2 class="text-2xl font-bold mt-10 mb-4">Honest caveats</h2>
+
+<p class="text-gray-700 mb-6">MRDown is a young, single-author project. It has 1 star and 0 forks on GitHub as of writing, and the Show HN thread is essentially the author explaining the tool to a handful of commenters. The Mac-only distribution means it is not a choice for Windows or Linux writers today, and the planned AI-summarize features are paid and separate, so the "explain this diff to me" assist is not in the free MIT code yet. If you adopt it for anything you cannot lose, the same advice as any early tool applies: keep the source file somewhere it is backed up, because the app is a review surface, not a place to store your only copy.</p>
+
+<p class="text-gray-700 mb-6">For writers, though, the direction it points at matters more than the star count. The next few years of writing tools will be defined by who keeps control of the words when AI touches the file. MRDown's bet — a diff you can actually read, as ground truth — is one of the more honest answers to that question.</p>
+
+<h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+
+<div class="space-y-6">
+<div><h3 class="text-lg font-semibold mb-2">What is MRDown and what does it do?</h3><p class="text-gray-700">MRDown is a free, MIT-licensed macOS Markdown viewer and editor (MR-TABATA/MRDown on GitHub, first posted to Show HN September 4, 2026) built with Tauri. Its core idea is that every save — and every rewrite a coding or writing agent makes to a file you have open — quietly keeps a timestamped version, and a History panel puts any two versions side by side so you can read exactly what the AI changed.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Is MRDown free, and is it really Mac-only?</h3><p class="text-gray-700">Yes — MRDown is open source under the MIT license and free. Signed and notarized binaries for Apple Silicon and Intel ship from the GitHub Releases page (latest release v1.14.0, September 2, 2026), and because it uses Tauri rather than Electron the download is about 7 MB. Only macOS binaries are published; the author notes it should build on Windows but has never tested it there.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Why would a writer need to diff what an AI rewrote?</h3><p class="text-gray-700">When an agent rewrites a Markdown file, your record of what changed used to be the agent's summary. MRDown diffs the current file against any earlier saved version, showing only the words that differ and folding unchanged runs, so you keep editorial control over the final draft rather than trusting a summary.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Does MRDown make AI API calls or upload content?</h3><p class="text-gray-700">No. MRDown never calls an AI provider itself — it diffs whatever changed on disk regardless of which tool wrote it. AI features such as explaining a diff are planned as paid add-ons in a separate repo, and DOCX to Markdown conversion runs locally, so nothing is uploaded.</p></div>
+<div><h3 class="text-lg font-semibold mb-2">Where does md2rich fit next to MRDown?</h3><p class="text-gray-700">MRDown is the review gate before you accept an AI rewrite; md2rich is the final conversion step after. Once the Markdown is clean, a client-side converter like md2rich turns it into rich text that pastes formatted into LinkedIn, X Articles, Medium, or Notion — no upload, no account, no re-formatting.</p></div>
+</div>
+
+<div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+<h2 class="text-xl font-bold mb-2">Review the diff in MRDown. Publish from your browser.</h2>
+<p class="text-gray-700 mb-4">MRDown keeps editorial control when an AI touches your Markdown. For the final step — turning the accepted, clean Markdown into a formatted post on LinkedIn, X Articles, Medium, or Notion — use a converter that stays on your device. No upload, no account, no rewrite.</p>
+<a href="https://md2rich.com/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich</a>
+</div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex justify-between">
+      <span>© 2026 md2rich — Markdown to rich text, client-side.</span>
+      <span><a href="/privacy" class="hover:text-indigo-600">Privacy</a> · <a href="/about" class="hover:text-indigo-600">About</a></span>
+    </div>
+  </footer>
+</body>
+</html>

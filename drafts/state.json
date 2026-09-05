@@ -2110,6 +2110,65 @@
         "Body-grep discriminator: Srinivasan/Hari Srinivasan/Amanda Purvis/content classifier/fewer views = 0 hits across all 87 on-disk -en articles; prior 08-01 linkedin-ai-slop-report-button article (Writer's Guide) predates the Aug-20 metric + has 0 mentions of 40%/classifier/million-viewer metric",
         "Body word count 1899 (>=800); title 59/60; desc 149/155; hreflang exact {en, x-default}; lang en-US; no Chinese; JSON-LD Article + HowTo + 5-step"
       ]
+    },
+    {
+      "slug": "commerce-agents-x-threads-decomposition-2026-en",
+      "date": "2026-09-04",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/commerce-agents-x-threads-decomposition-2026-en.html",
+      "url": "https://md2rich.com/blog/commerce-agents-x-threads-decomposition-2026-en",
+      "title": "Publish Long Articles as X Threads: A Markdown Workflow 2026",
+      "description": "How Anthropic commerce agents split a long article into 10 native X posts — a Markdown draft-to-rich-text decomposition workflow + md2rich.",
+      "heat_source": "2026-09-04 daily-article run (reconciled orphan; prior run hit DeepSeek reasoning_content 400 at state-update stage — file written + gate-fixed this run). Anthropic commerce-agent long-form-to-X-thread decomposition pattern",
+      "status": "published",
+      "published_at": "2026-09-05T04:35:10.832305+00:00",
+      "providers_featured": [
+        "Anthropic",
+        "X",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "Reconciled orphan: file blog/commerce-agents-x-threads-decomposition-2026-en.html was written by the 2026-09-04 cron run but that run crashed (DeepSeek reasoning_content 400) before commit/sitemap/index/state; file was never live",
+        "This run gate-fixed: title 'From Commerce Agents to X Threads: A 10-Step Long-Form Decomposition Workflow 2026 | md2rich' (78+10) -> 'Publish Long Articles as X Threads: A Markdown Workflow 2026' (60/60); desc 159 -> 139/155; added hreflang=en-US so set = exactly {en,en-US,x-default}; aligned og/twitter image to https://md2rich.com/og-image.png; removed Cyrillic-less artifacts",
+        "Body word count 1653 (>=800); JSON-LD Article + FAQ; lang en-US; no Chinese",
+        "10-step commerce-agent long-form decomposition to native X posts; editorial anchor = draft in Markdown, human-validate chain, convert to rich text with md2rich (client-side no upload), publish to X with formatting; reuse threads for LinkedIn/Medium"
+      ]
+    },
+    {
+      "slug": "mrdown-markdown-diff-ai-review-2026-en",
+      "date": "2026-09-05",
+      "type": "news",
+      "lang": "en-US",
+      "file": "blog/mrdown-markdown-diff-ai-review-2026-en.html",
+      "url": "https://md2rich.com/blog/mrdown-markdown-diff-ai-review-2026-en",
+      "title": "MRDown 2026: Diff What Your AI Just Rewrote in Markdown",
+      "description": "MRDown is a free macOS Markdown viewer/editor that diffs what an AI agent just rewrote — read any two versions side by side, then publish with md2rich.",
+      "heat_source": "briefing-2026-09-05 / Show HN 2026-09-04 objectID 49563459 (hitoshi1964): 'Show HN: MRDown – a Mac Markdown app that diffs what your AI just rewrote'; repo github.com/MR-TABATA/MRDown",
+      "status": "published",
+      "published_at": "2026-09-05T04:35:10.832305+00:00",
+      "providers_featured": [
+        "MRDown",
+        "MR-TABATA",
+        "GitHub",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "Repo github.com/MR-TABATA/MRDown, owner MR-TABATA (TABATA Hitoshi, Tokorozawa); description 'Read the Markdown your AI just rewrote — by its diff. macOS-native Markdown viewer & editor. MIT, free.'",
+        "Created 2026-06-21, last push 2026-09-02, updated 2026-09-04; MIT license; 1 star/0 forks as of 2026-09-05; topics: diff, macos, markdown, markdown-editor, markdown-viewer, rust, tauri",
+        "Show HN 2026-09-04T12:05:34Z, objectID 49563459, author hitoshi1964, 2 points / 1 comment (author's own description comment 49563466)",
+        "Built Tauri (Rust + TypeScript), NOT Electron — ~7 MB download; signed + notarized; latest release v1.14.0 published 2026-09-02 (Apple Silicon aarch64 + Intel x64 .dmg and .app.tar.gz)",
+        "Core feature: every save + every outside rewrite quietly keeps a timestamped version; History panel puts any two versions side by side, only changed words marked, unchanged runs folded; Git HEAD joins the list when in a repo (Git optional)",
+        "Conflict-safe concurrent edits: snapshots disk state + shows three columns (last save / on disk / your edits), marking only lines changed differently as conflicts; auto-reloads file changed on disk",
+        "Opens .md/.markdown/.txt + folders (file tree); renders Mermaid, KaTeX, syntax-highlighted code; .docx converts to Markdown LOCALLY (nothing uploaded); two .docx diffable",
+        "Makes NO AI API calls itself -- diffs whatever changed on disk regardless of tool; AI explain-diff + project search planned as PAID add-ons in a separate repo (open-core, MIT core stays MIT)",
+        "macOS floor: author states macOS 13+ on HN (README says 10.15+ — contradiction, both author-stated); only macOS binaries published; author never built/tested Windows (Tauri should build but unverified); no brew cask found",
+        "Body-grep discriminator: mrdown/mr-down/MR-TABATA = 0 hits across all 89 on-disk -en articles; generic 'ai rewrite'/'rewritten' hit prior articles in other contexts and are NOT discriminators",
+        "Angle = fresh-tool-extends-covered-priority family (e): MRDown sits at the review/AI-diff gate (front) of the writing pipeline, md2rich at the rich-text publish gate (end); distinct primary intents: mrdown, markdown diff AI rewrite, read the diff ai rewrote",
+        "Body word count 1849 (>=800); title 55/60; desc 151/155; hreflang exact {en, en-US, x-default}; lang en-US; no Chinese/Cyrillic; JSON-LD Article + FAQPage (5 Q); canonical no-.html form"
+      ]
     }
   ],
   "drafts": [],
