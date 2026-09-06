@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>md2pdf 2026: Markdown to a Typeset CJK-Ready PDF</title>
+  <meta name="description" content="md2pdf turns Markdown into a cleanly typeset A4 PDF with proper CJK text. Also paste the same Markdown as rich text on LinkedIn or X with md2rich.">
+  <meta name="keywords" content="md2pdf, md2pdf-cjk, Markdown to PDF, markdown to typeset pdf, CJK markdown to pdf, pandoc typst markdown pdf, Chinese Japanese Korean PDF typesetting, markdown A4 PDF, typst md2pdf, PingFang markdown PDF, macOS markdown to pdf, write once publish pdf, md2rich, publish markdown rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="md2pdf 2026: Markdown to a Typeset CJK-Ready PDF">
+  <meta property="og:description" content="md2pdf turns Markdown into a cleanly typeset A4 PDF with proper CJK text. Also paste the same Markdown as rich text on LinkedIn or X with md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="md2pdf 2026: Markdown to a Typeset CJK-Ready PDF">
+  <meta name="twitter:description" content="md2pdf turns Markdown into a cleanly typeset A4 PDF with proper CJK text. Also paste the same Markdown as rich text on LinkedIn or X with md2rich.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "md2pdf 2026: Markdown to a Typeset CJK-Ready PDF",
+      "description": "md2pdf turns Markdown into a cleanly typeset A4 PDF with proper CJK text. Also paste the same Markdown as rich text on LinkedIn or X with md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-06",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is md2pdf and how is it different from other Markdown-to-PDF converters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "md2pdf is a fresh open-source CLI (openwhale-labs/md2pdf on GitHub, package md2pdf-cjk on PyPI, MIT license, launched September 5, 2026) that turns a Markdown file into a single cleanly typeset A4 PDF with Chinese, Japanese and Korean text treated as a first-class citizen. Most converters print HTML through a browser engine; that works for Latin text but produces tight line spacing, rivers in justified CJK text, tables pushed whole onto the next page, and fonts that differ from what you saw on screen. md2pdf instead routes Markdown through pandoc into the Typst typesetter (default engine) or a macOS CoreText/WebKit engine for the system PingFang font."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which typesetting engines does md2pdf use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two. The default is the Typst engine on every platform: pandoc converts the Markdown to Typst, which compiles it with a template tuned for mixed-script text. It is fast, produces small deterministic files, and needs pandoc 3.1.3 or newer. The second is the macOS-only CoreText engine (the --pingfang flag): pandoc converts the Markdown to HTML and a small WebKit program renders it with the real system PingFang font, cutting the output into A4 pages at paragraph, list-item and table-row boundaries. PingFang's glyphs live in Apple's hvgl table, which no third-party PDF engine can read, so this is the only way to get true PingFang embedded in a PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does md2pdf need Chinese, Japanese and Korean fonts installed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for the Typst engine you need CJK fonts on your system. The default preset uses Noto Sans CJK SC with Helvetica Neue for Latin. There are presets for Hiragino Sans GB and Songti SC (both ship with macOS), LXGW WenKai (brew install --cask font-lxgw-wenkai), and the PingFang preset that runs through the macOS CoreText engine. On Linux, install fonts-noto-cjk from apt or dnf and pass any family you have with --font Family Name; Typst substitutes a fallback for a missing Latin family and prints a warning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install and run md2pdf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "md2pdf is a Python package with no Python dependencies; it just calls pandoc and typst on your PATH. Install the binaries with brew install pandoc typst on macOS, then either uv tool install md2pdf-cjk or pipx install md2pdf-cjk. Run it with a single command: md2pdf report.md. Add --toc for a table of contents, --landscape for wide tables, --lang en for English hyphenation, or a font preset such as --pingfang or --wenkai. Output defaults to the input name with a .pdf extension, and YAML front matter sets the title block."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When would I use md2pdf instead of pasting rich text with md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They solve different output ends of the same write-once workflow. md2rich converts your Markdown into clean rich text you paste straight into LinkedIn, X Articles, Medium or Notion, so the post renders with headings, bold, lists and links on screen. md2pdf produces a pixel-stable, font-embedded A4 PDF for reports, handouts, print or archives that must look identical on any machine. If the same note will both ship as a platform post and become a client-facing report, write it once in Markdown, generate the PDF for the document, and paste rich text for the post."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+  <header class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-indigo-600">&gt;md2rich</a>
+      <nav class="space-x-5 text-sm text-gray-600">
+        <a href="/" class="hover:text-indigo-600">Home</a>
+        <a href="/blog" class="hover:text-indigo-600">Blog</a>
+        <a href="/about.html" class="hover:text-indigo-600">About</a>
+        <a href="/privacy.html" class="hover:text-indigo-600">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-8">
+      <p class="text-xs text-gray-500 mb-2">Published 2026-09-06 · Markdown tools</p>
+      <h1 class="text-3xl font-bold mb-4">md2pdf 2026: Markdown to a Typeset CJK-Ready PDF</h1>
+
+      <p class="mb-4 text-gray-800">Most Markdown-to-PDF pipelines quietly fall apart the moment you throw in Chinese, Japanese or Korean text: line spacing gets too tight, justified CJK opens ugly rivers, a wide table gets shoved onto its own page, and the font you picked on screen is not the font that ends up embedded in the file. On September 5, 2026 a tiny new open-source tool called <strong>md2pdf</strong> shipped specifically to fix that — and it treats CJK as a first-class citizen rather than an afterthought.</p>
+
+      <p class="mb-4 text-gray-800">I spent the weekend pulling it apart so I could tell you exactly what it does, why the CJK angle actually matters for writers, and how it slots alongside md2rich in a write-once, publish-anywhere workflow. Here is the honest, verified picture.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Why the browser-engine approach fails on CJK</h2>
+      <p class="mb-4 text-gray-800">A lot of Markdown-to-PDF converters are really "print this HTML" tools: they render your Markdown to HTML and push it through a browser engine into a PDF. That is fine for pure Latin text. It falls apart on CJK for three concrete reasons, all confirmed in the project's own write-up:</p>
+      <ul class="list-disc pl-6 mb-4 space-y-2 text-gray-800">
+        <li><strong>Leading is too tight.</strong> Browser defaults measure line height for Latin glyphs; CJK ideographs are taller and denser, so paragraphs look cramped.</li>
+        <li><strong>Justification opens rivers.</strong> Western text-justify logic on CJK punctuation creates ragged vertical gaps that read as streaks down the column.</li>
+        <li><strong>The font you see is not the font you get.</strong> On macOS the system font PingFang cannot be embedded by any third-party engine, because its glyphs live in Apple's proprietary <code class="bg-gray-100 px-1 rounded">hvgl</code> table that no third-party PDF engine reads. Your file opens elsewhere and silently swaps fonts.</li>
+      </ul>
+      <p class="mb-4 text-gray-800">md2pdf attacks all three with two rendering roads instead of one.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Two engines, one command</h2>
+      <p class="mb-4 text-gray-800">The default is the <strong>Typst engine</strong>, available on every platform. <code class="bg-gray-100 px-1 rounded">pandoc</code> converts the Markdown to <a href="https://typst.app" class="text-indigo-600 underline">Typst</a>, which compiles it with a template tuned for mixed-script text. The result is fast, small and deterministic, with every font subset-embedded so the file renders the same on any machine.</p>
+
+      <p class="mb-4 text-gray-800">The second road is the <strong>macOS CoreText engine</strong>, switched on with <code class="bg-gray-100 px-1 rounded">--pingfang</code>. Here pandoc converts the Markdown to HTML, and a small WebKit program renders it with the real system PingFang font, cutting the output into A4 pages at paragraph, list-item and table-row boundaries. This is the only way to get genuine PingFang into a PDF, because Typst and pandoc themselves cannot read <code class="bg-gray-100 px-1 rounded">hvgl</code> glyphs.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">A genuinely simple kickoff</h2>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto"><pre class="text-sm"><code># one Markdown file in, one clean A4 PDF out
+md2pdf report.md
+
+# table of contents, or landscape for a wide table
+md2pdf report.md --toc
+md2pdf report.md --landscape
+
+# English hyphenation, region and a "Contents" heading
+md2pdf report.md --lang en
+
+# a serif, aesthetic or system-font body
+md2pdf report.md --serif
+md2pdf report.md --wenkai
+md2pdf report.md --hiragino
+md2pdf report.md --pingfang</code></pre></div>
+
+      <p class="mb-4 text-gray-800">The output path defaults to the input name with a <code class="bg-gray-100 px-1 rounded">.pdf</code> extension, and <code class="bg-gray-100 px-1 rounded">--open</code> hands the finished file to your default viewer. When you give several font options, the last one wins. pandoc's Markdown dialect is used with citations off and task lists on, so tables, footnotes, definition lists and checkbox items all survive.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Font presets you can actually use</h2>
+      <p class="mb-4 text-gray-800">The Typst engine reads fonts installed on your system. The following presets are baked in (verified against the project README):</p>
+      <div class="overflow-x-auto mb-4"><table class="min-w-full text-sm text-left border border-gray-300">
+        <thead class="bg-gray-100"><tr><th class="px-3 py-2 border">Preset</th><th class="px-3 py-2 border">CJK font</th><th class="px-3 py-2 border">Latin font</th><th class="px-3 py-2 border">Install</th></tr></thead>
+        <tbody>
+          <tr><td class="px-3 py-2 border">noto (default)</td><td class="px-3 py-2 border">Noto Sans CJK SC</td><td class="px-3 py-2 border">Helvetica Neue</td><td class="px-3 py-2 border"><code class="bg-gray-100 px-1 rounded">brew install --cask font-noto-sans-cjk-sc</code></td></tr>
+          <tr><td class="px-3 py-2 border">hiragino</td><td class="px-3 py-2 border">Hiragino Sans GB</td><td class="px-3 py-2 border">Helvetica Neue</td><td class="px-3 py-2 border">ships with macOS</td></tr>
+          <tr><td class="px-3 py-2 border">songti</td><td class="px-3 py-2 border">Songti SC</td><td class="px-3 py-2 border">Libertinus Serif</td><td class="px-3 py-2 border">ships with macOS</td></tr>
+          <tr><td class="px-3 py-2 border">wenkai</td><td class="px-3 py-2 border">LXGW WenKai</td><td class="px-3 py-2 border">Libertinus Serif</td><td class="px-3 py-2 border"><code class="bg-gray-100 px-1 rounded">brew install --cask font-lxgw-wenkai</code></td></tr>
+          <tr><td class="px-3 py-2 border">pingfang</td><td class="px-3 py-2 border">PingFang SC (CoreText engine)</td><td class="px-3 py-2 border">PingFang SC</td><td class="px-3 py-2 border">ships with macOS</td></tr>
+        </tbody>
+      </table></div>
+
+      <p class="mb-4 text-gray-800">On Linux, install <code class="bg-gray-100 px-1 rounded">fonts-noto-cjk</code> from your distribution and pass any other family you have with <code class="bg-gray-100 px-1 rounded">--font "Sarasa UI SC"</code>. Two honest caveats from the README: the CoreText engine compiles its renderer from source on first use, so it needs the Xcode Command Line Tools, and because it renders through WebKit it requires a logged-in graphical session — it will not work over plain SSH or in headless CI.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Front matter drives the title block</h2>
+      <p class="mb-4 text-gray-800">Your YAML front matter flows straight into the typeset title block, which is the piece most browser-based converters mangle:</p>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto"><pre class="text-sm"><code>---
+title: Quarterly Report
+subtitle: 2026 Q3
+author: Jane Doe
+date: 2026-09-05
+---
+
+# 客户续约率概览
+
+本季度**续约率**回升至 92%……</code></pre></div>
+
+      <p class="mb-4 text-gray-800">Environment variables <code class="bg-gray-100 px-1 rounded">MD2PDF_FONT</code>, <code class="bg-gray-100 px-1 rounded">MD2PDF_TEMPLATE</code> and <code class="bg-gray-100 px-1 rounded">MD2PDF_MARGIN_PT</code> change the defaults for fonts, the template and the margin, so you can bake your team's style into a single alias instead of typing flags every time. Custom templates start from the bundled <code class="bg-gray-100 px-1 rounded">typst.typ</code>, with the CLI passing <code class="bg-gray-100 px-1 rounded">mainfont</code>, <code class="bg-gray-100 px-1 rounded">cjkfont</code>, <code class="bg-gray-100 px-1 rounded">sansfont</code>, <code class="bg-gray-100 px-1 rounded">cjksans</code> and <code class="bg-gray-100 px-1 rounded">monofont</code> over pandoc's standard ones.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Example: a Chinese-to-English FAQ document</h2>
+      <p class="mb-4 text-gray-800">Here is a working two-source example: I wrote the body once in Markdown with mixed Chinese and English, then produced both a clean document PDF and a rich-text post from the same source.</p>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto"><pre class="text-sm"><code># FAQ 常见问题
+
+**退款需要多久？**
+退款通常在 2–3 个工作日到账。如遇周末会顺延。Contact us for help.
+
+| 套餐 | 价格 | 有效期 |
+|------|------|--------|
+| Basic | $9 | 30 天 |
+| Pro   | $29 | 90 天 |</code></pre></div>
+      <p class="mb-4 text-gray-800">Run <code class="bg-gray-100 px-1 rounded">md2pdf faq.md</code> and the A4 PDF keeps the mixed Chinese/English line spacing comfortable, the table breaks cleanly, and the CJK font is embedded so the file survives email and print. Then convert the same source for a social post or a support portal:</p>
+
+      <h2 class="text-2xl font-bold mt-6 mb-3">From PDF to published — and the other way around</h2>
+      <p class="mb-4 text-gray-800">The beauty of keeping your source in Markdown is that the PDF is just one output. The day you want that same note as a LinkedIn article, an X post or a Notion page, you do not copy-paste the PDF — you run the Markdown through <a href="/" class="text-indigo-600 underline">md2rich</a>, the privacy-first (100% client-side, zero upload) converter that turns Markdown into clean rich text for LinkedIn, X, Medium and Notion.</p>
+      <div class="border-l-4 border-indigo-600 bg-indigo-50 rounded p-4 mb-4">
+        <p class="text-sm text-gray-800"><strong>The verdict:</strong> md2pdf and md2rich sit at opposite ends of the same writer's loop. md2pdf gives you a pixel-stable, font-embedded A4 PDF for reports, print and archives where CJK is properly set. md2rich gives you rich text that keeps its formatting when you paste into a live platform. Same Markdown file, two polished outputs — a document for the file drawer, a post for the feed.</p>
+      </div>
+
+      <p class="mb-4 text-gray-800">Quick comparison for writers deciding which tool matches which task:</p>
+      <div class="overflow-x-auto mb-6"><table class="min-w-full text-sm text-left border border-gray-300">
+        <thead class="bg-gray-100"><tr><th class="px-3 py-2 border">Target</th><th class="px-3 py-2 border">Reach for</th><th class="px-3 py-2 border">Why</th></tr></thead>
+        <tbody>
+          <tr><td class="px-3 py-2 border">LinkedIn / X / Medium / Notion post</td><td class="px-3 py-2 border">md2rich</td><td class="px-3 py-2 border">Keeps headings, bold, lists, links into the platform's rich-text editor</td></tr>
+          <tr><td class="px-3 py-2 border">Client report, handout, print</td><td class="px-3 py-2 border">md2pdf</td><td class="px-3 py-2 border">Typeset A4, font-embedded, identical on any machine, CJK proper</td></tr>
+          <tr><td class="px-3 py-2 border">Archive a long doc</td><td class="px-3 py-2 border">md2pdf</td><td class="px-3 py-2 border">Stable snapshot independent of platform markup churn</td></tr>
+          <tr><td class="px-3 py-2 border">Reuse a post as a report (or reverse)</td><td class="px-3 py-2 border">Both, from one source</td><td class="px-3 py-2 border">Write once in Markdown, render per destination</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">How to install md2pdf today</h2>
+      <div class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto"><pre class="text-sm"><code># macOS (binaries first, then the package)
+brew install pandoc typst
+uv tool install md2pdf-cjk
+# or: pipx install md2pdf-cjk
+
+# Linux: pandoc >= 3.1.3 from its releases, typst-cli, and CJK fonts
+sudo apt install fonts-noto-cjk
+
+# run it
+md2pdf report.md</code></pre></div>
+      <p class="mb-4 text-gray-800">The package is <code class="bg-gray-100 px-1 rounded">md2pdf-cjk</code> on PyPI (v0.1.0 as of this writing, uploaded 2026-09-05, requires Python 3.10+), MIT-licensed, with the source at <a href="https://github.com/openwhale-labs/md2pdf" class="text-indigo-600 underline">github.com/openwhale-labs/md2pdf</a>. It needs pandoc 3.1.3 or newer for the Typst engine — Linux distribution packages are often older, so grab the <code class="bg-gray-100 px-1 rounded">.deb</code> or tarball from pandoc's releases instead. On Windows, <code class="bg-gray-100 px-1 rounded">winget install JohnMacFarlane.Pandoc</code> and <code class="bg-gray-100 px-1 rounded">winget install Typst.Typst</code>.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Frequently asked questions</h2>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Do I need a macOS to get CJK typesetting?</h3>
+      <p class="mb-4 text-gray-800">No. The default Typst engine runs on any platform and handles CJK as long as you have CJK fonts installed (Noto Sans CJK on Linux, or the macOS presets). The PingFang CoreText engine is macOS-only, because it is the only road to embedding Apple's system font; on Windows or Linux you use Noto or another installed CJK family via <code class="bg-gray-100 px-1 rounded">--font</code>.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Is md2pdf private / does it upload my Markdown?</h3>
+      <p class="mb-4 text-gray-800">It runs entirely on your machine: pandoc and Typst compile locally, so your Markdown never leaves it unless you choose to paste it elsewhere. That matches the same privacy-first posture md2rich takes — md2rich converts 100% in the browser with zero upload, which is why it pairs so naturally with a local-first PDF tool.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Which is better, md2pdf or md-to-pdf?</h3>
+      <p class="mb-4 text-gray-800">The project's own note says it plainly: if you do not need CJK typesetting, <code class="bg-gray-100 px-1 rounded">md-to-pdf</code> or <code class="bg-gray-100 px-1 rounded">mdxport-cli</code> may fit you better. md2pdf's reason to exist is the CJK-first typesetting story — proper leading, justification and embedded fonts for Chinese, Japanese and Korean text. Pick md2pdf when your audience or documents are multilingual.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Does it work over SSH or in CI?</h3>
+      <p class="mb-4 text-gray-800">The Typst engine does — it is a pure CLI and needs no display. The CoreText PingFang engine does not, because WebKit needs a logged-in graphical session; the README is explicit that it will not work over plain SSH or headless CI. For automated server PDF generation, stick with the Typst engine.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Can I turn a PDF output back into a LinkedIn post?</h3>
+      <p class="mb-4 text-gray-800">Yes — but do not copy from the rendered PDF. Keep the Markdown source, and when you want the platform version run it through md2rich to get clean rich text that pastes with formatting intact. That is the whole write-once workflow: one file, a print document and a live post, no hand-reformatting.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Bottom line</h2>
+      <p class="mb-4 text-gray-800">md2pdf is one day old and tiny, but it solves a real gap that has annoyed anyone who has ever tried to produce a professional-looking PDF from Markdown containing CJK text. If your writing is English-only and your output is always a screen, it may be more tool than you need — point to <code class="bg-gray-100 px-1 rounded">md-to-pdf</code> and keep going. But if you localize documents, work with Chinese, Japanese or Korean colleagues, or ship multilingual reports, md2pdf's pandoc-plus-Typst engine and its macOS PingFang road are worth an afternoon.</p>
+      <p class="mb-2 text-gray-800">And whenever that same Markdown needs to become a LinkedIn article, an X post or a Notion page, <a href="/" class="text-indigo-600 underline font-semibold">Try md2rich</a> — free, client-side, and it keeps your formatting through the paste.</p>
+
+      <p class="text-xs text-gray-400 mt-8 pt-4 border-t">Last verified against github.com/openwhale-labs/md2pdf and pypi.org/project/md2pdf-cjk on 2026-09-06. Launch date, engines, font presets, commands and install steps are taken from the project README and the PyPI index as of that date.</p>
+    </article>
+
+    <div class="mt-6 text-center">
+      <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      <p class="text-xs text-gray-500 mt-3">Convert Markdown to rich text for LinkedIn, X, Medium &amp; Notion — 100% in your browser, nothing uploaded.</p>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500">
+      <a href="/" class="font-semibold text-indigo-600">&gt;md2rich</a>
+      <div class="space-x-4 mt-2 sm:mt-0">
+        <a href="/about.html" class="hover:text-indigo-600">About</a>
+        <a href="/privacy.html" class="hover:text-indigo-600">Privacy</a>
+        <a href="/blog" class="hover:text-indigo-600">Blog</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

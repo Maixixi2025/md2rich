@@ -2169,6 +2169,39 @@
         "Angle = fresh-tool-extends-covered-priority family (e): MRDown sits at the review/AI-diff gate (front) of the writing pipeline, md2rich at the rich-text publish gate (end); distinct primary intents: mrdown, markdown diff AI rewrite, read the diff ai rewrote",
         "Body word count 1849 (>=800); title 55/60; desc 151/155; hreflang exact {en, en-US, x-default}; lang en-US; no Chinese/Cyrillic; JSON-LD Article + FAQPage (5 Q); canonical no-.html form"
       ]
+    },
+    {
+      "slug": "md2pdf-markdown-typeset-pdf-cjk-2026-en",
+      "date": "2026-09-06",
+      "type": "tool-launch",
+      "lang": "en-US",
+      "file": "blog/md2pdf-markdown-typeset-pdf-cjk-2026-en.html",
+      "url": "https://md2rich.com/blog/md2pdf-markdown-typeset-pdf-cjk-2026-en",
+      "title": "md2pdf 2026: Markdown to a Typeset CJK-Ready PDF",
+      "description": "md2pdf turns Markdown into a cleanly typeset A4 PDF with proper CJK text. Also paste the same Markdown as rich text on LinkedIn or X with md2rich.",
+      "heat_source": "briefing-2026-09-06 (Md2pdf: Markdown→PDF with correct CJK typesetting via pandoc/Typst); repo github.com/openwhale-labs/md2pdf + PyPI md2pdf-cjk, launched 2026-09-05",
+      "status": "published",
+      "published_at": "2026-09-06T04:33:25.268561+00:00",
+      "providers_featured": [
+        "openwhale-labs",
+        "pandoc",
+        "Typst",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/",
+      "verified_facts": [
+        "Repo github.com/openwhale-labs/md2pdf, created 2026-09-05, pushed 2026-09-05, MIT license, Python, 1 star as of 2026-09-06; package md2pdf-cjk v0.1.0 on PyPI uploaded 2026-09-05T12:21:58Z, requires Python >=3.10",
+        "Description 'Markdown to a well-typeset PDF with CJK text as a first-class citizen. pandoc + Typst, plus a macOS CoreText engine for the system PingFang font'",
+        "Two engines: (1) Typst engine default, every platform -- pandoc converts MD to Typst, compiles with mixed-script template; needs pandoc 3.1.3+; (2) macOS CoreText engine via --pingfang -- pandoc to HTML, small WebKit program renders with system PingFang, cuts to A4 at paragraph/list-item/table-row boundaries; PingFang glyphs live in Apple hvgl table no third-party engine reads",
+        "Font presets table verified: noto (default, Noto Sans CJK SC + Helvetica Neue), hiragino (Hiragino Sans GB), songti (Songti SC + Libertinus Serif), wenkai (LXGW WenKai + Libertinus Serif), pingfang (PingFang SC via CoreText); Linux fonts-noto-cjk; --font Family Name for any installed CJK family",
+        "Install: brew install pandoc typst; uv tool install md2pdf-cjk (or pipx); Linux pandoc from releases (distro often <3.1.3); Windows winget install JohnMacFarlane.Pandoc + Typst.Typst",
+        "Commands verified: md2pdf input.md [output.pdf]; --toc; --landscape; --lang en; --open; --serif/--wenkai/--hiragino/--pingfang/--font; YAML front matter drives title block; env vars MD2PDF_FONT/MD2PDF_TEMPLATE/MD2PDF_MARGIN_PT; output defaults to input name + .pdf",
+        "CoreText engine caveats: compiles renderer from source on first use (needs Xcode CLT), renders via WebKit so needs logged-in graphical session -- NOT over plain SSH or headless CI",
+        "Body-grep discriminator: md2pdf/md-to-pdf/mdtopdf/pingfang/CJK = 0 hits across all 90 on-disk -en articles; 'typst' only appears in pandoc-20-years article as a format-list name, not as MD2PDF's engine -> angle genuinely fresh",
+        "Angle = fresh-tool-launch family (e) at the PDF/print output end of the write-once-publish-anywhere pipeline; md2pdf = typeset A4 PDF (paper/archive), md2rich = rich text paste (LinkedIn/X/Medium/Notion); complementary renderers from one Markdown source",
+        "Distinct primary intents: markdown to pdf, md to pdf, markdown to typeset pdf, cjk markdown pdf pandoc typst, pandoc typst markdown pdf",
+        "Body word count 1726 (>=800); title 48/60; desc 146/155; hreflang exact {en, en-US, x-default}; lang en-US; no zh-CN version/meta; JSON-LD Article + FAQPage (5 Q); canonical no-.html form; body CJK samples intentional typesetting demo (not zh-CN version)"
+      ]
     }
   ],
   "drafts": [],
@@ -2181,11 +2214,11 @@
   ],
   "current_index": 0,
   "last_topic_direction": "OzBrain + md2rich - hosted Markdown agent brain holds the canonical drafts, md2rich ships them as rich text for LinkedIn/X/Medium/Notion",
-  "last_run": "2026-09-03",
-  "last_published_slug": "linkedin-ai-slop-40-percent-views-2026-en",
-  "last_published_at": "2026-09-03T04:33:41.912142+00:00",
+  "last_run": "2026-09-06",
+  "last_published_slug": "md2pdf-markdown-typeset-pdf-cjk-2026-en",
+  "last_published_at": "2026-09-06T04:33:25.268561+00:00",
   "drafts_count": 0,
-  "published_count": 84,
-  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.",
-  "last_publish": "2026-09-03"
+  "published_count": 87,
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n",
+  "last_publish": "2026-09-06"
 }
