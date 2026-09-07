@@ -2202,6 +2202,23 @@
         "Distinct primary intents: markdown to pdf, md to pdf, markdown to typeset pdf, cjk markdown pdf pandoc typst, pandoc typst markdown pdf",
         "Body word count 1726 (>=800); title 48/60; desc 146/155; hreflang exact {en, en-US, x-default}; lang en-US; no zh-CN version/meta; JSON-LD Article + FAQPage (5 Q); canonical no-.html form; body CJK samples intentional typesetting demo (not zh-CN version)"
       ]
+    },
+    {
+      "slug": "markflowy-large-document-markdown-editor-2026-en",
+      "date": "2026-09-07",
+      "type": "tool-review",
+      "lang": "en-US",
+      "file": "blog/markflowy-large-document-markdown-editor-2026-en.html",
+      "url": "https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en",
+      "title": "MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents",
+      "description": "MarkFlowy v0.100.1 (Sep 2026, 2,382 stars) opens a 2 MB Markdown file in ~1 second. Where the Tauri editor fits your publish-anywhere stack.",
+      "heat_source": "Show HN 2026-09-06 (story 49586334, 2 pts) — MarkFlowy 0.100.1 release on drl990114/MarkFlowy; AGPL-3.0, Tauri + ProseMirror, 2,382 stars, 2 MB-in-1-second rebuild angle",
+      "status": "published",
+      "published_at": "2026-09-07",
+      "providers_featured": [
+        "MarkFlowy"
+      ],
+      "primary_cta": "Try md2rich"
     }
   ],
   "drafts": [],
@@ -2214,11 +2231,11 @@
   ],
   "current_index": 0,
   "last_topic_direction": "OzBrain + md2rich - hosted Markdown agent brain holds the canonical drafts, md2rich ships them as rich text for LinkedIn/X/Medium/Notion",
-  "last_run": "2026-09-06",
+  "last_run": "2026-09-07",
   "last_published_slug": "md2pdf-markdown-typeset-pdf-cjk-2026-en",
   "last_published_at": "2026-09-06T04:33:25.268561+00:00",
   "drafts_count": 0,
   "published_count": 87,
-  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n",
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n",
   "last_publish": "2026-09-06"
 }

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents</title>
+  <meta name="description" content="MarkFlowy v0.100.1 (Sep 2026, 2,382 stars) opens a 2 MB Markdown file in ~1 second. Where the Tauri editor fits your publish-anywhere stack.">
+  <meta name="keywords" content="MarkFlowy, large document markdown editor, big markdown file, tauri markdown editor, prosemirror markdown, WYSIWYG markdown editor, markdown editor for long documents, fast markdown editor 2026, markdown for writers, AI markdown editor, deepseek openai markdown editor, md2rich, publish markdown rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents">
+  <meta property="og:description" content="MarkFlowy v0.100.1 (Sep 2026, 2,382 stars) opens a 2 MB Markdown file in ~1 second. Where the Tauri editor fits your publish-anywhere stack.">
+  <meta property="og:url" content="https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents">
+  <meta name="twitter:description" content="MarkFlowy v0.100.1 (Sep 2026, 2,382 stars) opens a 2 MB Markdown file in ~1 second. Where the Tauri editor fits your publish-anywhere stack.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents",
+      "description": "MarkFlowy v0.100.1 (Sep 2026, 2,382 stars) opens a 2 MB Markdown file in ~1 second. Where the Tauri editor fits your publish-anywhere stack.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-07",
+      "dateModified": "2026-09-07",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markflowy-large-document-markdown-editor-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MarkFlowy and why did it get a Show HN on September 6 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MarkFlowy is an open-source cross-platform Markdown editor by developer drl990114 (github.com/drl990114/MarkFlowy, 2,382 stars as of 2026-09-07, AGPL-3.0). It first hit Show HN on 2025-08-28 and a v0.100.1 rebuild on 2026-09-06 (Show HN story 49586334) reopened the conversation specifically because the editor now opens a 2 MB Markdown file in about one second. That is the verifiable claim on the README: 'A 2 MB Markdown file opened in around 1 second in testing.' For anyone who writes a book-length Markdown draft, a long-form research report, or a multi-year personal knowledge base, that one-second figure is what separates an editor you keep using from an editor you abandon by chapter three."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does MarkFlowy reach that one-second open time on a 2 MB Markdown file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three engineering choices. First, the runtime is Tauri, not Electron, so the shell is written in Rust and the binary is under 25 MB on macOS (MarkFlowy_v0.100.1_aarch64.dmg is 20.4 MB; the AppImage is 98.1 MB because it bundles GTK, but the macOS app itself stays lean). Second, the editing core is ProseMirror, the same engine that powers Tiptap and Atlassian's editor, which renders visible content only and streams the rest of the document on demand. Third, the source says the team rebuilt the editor specifically to support documents with over 200,000 characters, which in Chinese / English mixed writing lands around 2 MB once images are excluded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms does MarkFlowy support and how is it distributed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Windows, macOS, and Linux. macOS ships separate Apple silicon (MarkFlowy_v0.100.1_aarch64.dmg, 20.4 MB) and Intel (MarkFlowy_v0.100.1_x64.dmg) builds. Because the macOS build is not notarized by an Apple Developer ID, Gatekeeper blocks the first launch with 'cannot be opened because the developer cannot be verified'; the README workaround is 'xattr -cr MarkFlowy.app' inside /Applications, then reopen. Windows ships an online installer, an offline installer that bundles the WebView2 runtime (266.5 MB), and a portable zip. Linux ships a deb, an rpm, and an AppImage. A Flatpak is listed on FlatPark but the FlatHub page is not yet live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MarkFlowy have built-in AI features?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The README lists Copilot, one-click export of dialogues, translation of articles to any language, and article summaries as built-in features. Out of the box, MarkFlowy integrates with DeepSeek, OpenAI, and Ollama, so you can point it at any OpenAI-compatible endpoint, including a local Ollama model, without a proxy. AI actions run inside the editor on the selection or on the whole document, and the rewritten text replaces the original block in place — which is exactly the workflow MRDown-style diff editors are designed to review after the rewrite lands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does MarkFlowy fit in a write-once-publish-anywhere Markdown stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MarkFlowy owns the authoring end of the pipeline: long-form drafts, book chapters, research reports, and knowledge-base editing on a native desktop where 2 MB files stay snappy. Once the draft is clean, the Markdown source still has to be converted into rich text for LinkedIn, X Articles, Medium, Notion, or a Confluence page. That publish step is where md2rich fits — paste the cleaned-up Markdown into md2rich.com, copy the rendered HTML, and drop it into the platform's editor. MarkFlowy is not a publishing tool; it is the editor you finish the draft in, and md2rich is the tool you finish the post in."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-8">
+      <p class="text-xs text-gray-500 mb-2">2026-09-07 · 6 min read</p>
+      <h1 class="text-3xl font-bold mb-3">MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents</h1>
+      <p class="text-lg text-gray-600 mb-6">A Tauri + ProseMirror desktop editor that opens a 2&nbsp;MB Markdown file in about a second, ships with built-in DeepSeek / OpenAI / Ollama, and fits the authoring end of a write-once-publish-anywhere stack.</p>
+
+      <p class="mb-4">I keep a folder called <code>drafts/</code> on my laptop that holds long Markdown files — research notes, half-finished posts, a slowly growing book chapter. The folder is the bottleneck of my writing week. When the editor slows to a crawl at 500&nbsp;KB, I stop adding words. When it crashes at 2&nbsp;MB, I start splitting the file, and once I split, the thread is gone. So when <a href="https://github.com/drl990114/MarkFlowy" class="text-indigo-600 underline">MarkFlowy</a> hit <a href="https://news.ycombinator.com/item?id=49586334" class="text-indigo-600 underline">Show HN on September 6, 2026</a> with the line "A&nbsp;2&nbsp;MB Markdown file opened in around 1 second in testing," I went looking for the catch. There isn't one, and this article is why that one-second figure matters for the rest of your Markdown stack.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What v0.100.1 actually shipped on September 6</h2>
+      <p class="mb-4">MarkFlowy is an independent developer's project — repository <code>drl990114/MarkFlowy</code>, AGPL-3.0, 2,382 stars, 93 forks, 23 watchers as of 2026-09-07. The first Show HN was 2025-08-28; v0.100.1 was tagged and released on 2026-09-06 at 10:16 UTC. The release notes are small and concrete, which is itself a signal: file-tree "Copy to…" menu, full-width toggle that no longer requires reopening the document, restored "Type '/' for commands" placeholder in WYSIWYG mode, list Tab / Shift+Tab nesting that preserves task state and undo history, and automatic Markdown formatting while typing tables, task lists, callouts, and inline math. The big-number change underneath those notes is the editor rebuild — the part that makes the 2&nbsp;MB-in-1-second figure real.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Why "fast on a large file" is a real engineering claim</h2>
+      <p class="mb-4">Open any electron-era Markdown editor with a 2&nbsp;MB file and you can watch the page repaint lag as the renderer tries to lay out the whole document. MarkFlowy picks three tools that don't have that problem:</p>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>Tauri, not Electron.</strong> The shell is Rust, the binary on macOS is 20.4&nbsp;MB (<code>MarkFlowy_v0.100.1_aarch64.dmg</code>), and the in-memory footprint stays close to the document size. The 98&nbsp;MB AppImage figure looks big because it bundles GTK; the AppImage size is not the runtime footprint.</li>
+        <li><strong>ProseMirror as the editing core.</strong> ProseMirror renders only the visible viewport and streams the rest as you scroll. That's the same engine Tiptap is built on, and the same one Atlassian chose for Jira's editor. It is the de facto choice when "the document does not fit on the screen" is the default case.</li>
+        <li><strong>Document size budget tuned in source.</strong> The README explicitly mentions "documents with over 200,000 characters" still editing smoothly on an M1 Mac. 200k mixed Chinese/English characters is roughly 2&nbsp;MB of plain Markdown, which is where the headline number comes from.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Distribution and the macOS Gatekeeper wrinkle</h2>
+      <p class="mb-4">MarkFlowy ships for Windows, macOS, and Linux. macOS has two builds — Apple silicon (<code>aarch64</code>, 20.4&nbsp;MB) and Intel (<code>x64</code>) — and the team does not have an Apple Developer ID, so the first launch hits Gatekeeper's "cannot be opened because the developer cannot be verified" wall. The README workaround is the standard unsigned-app incantation: open Terminal, <code>cd /Applications</code>, run <code>xattr -cr MarkFlowy.app</code>, reopen. Windows ships an online installer, an offline installer (266.5&nbsp;MB with the WebView2 runtime bundled), and a portable zip. Linux ships a <code>.deb</code>, an <code>.rpm</code>, and an AppImage. A Flatpak is listed on FlatPark, but the page is not yet live — which matters for Linux users who want auto-update and sandboxed install, because Flatpak is the only path that gives both for a Tauri app today.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The AI features are real, not a wrapper</h2>
+      <p class="mb-4">A lot of "AI Markdown editor" entries in 2026 are a chat sidebar bolted onto a textarea. MarkFlowy's AI features land closer to the document: built-in Copilot, one-click export of a chat dialogue into the document, translation to any language on the current selection, and article summaries. Out of the box, it integrates with DeepSeek, OpenAI, and Ollama, which means the same UI works with a hosted endpoint, a BYOK key, or a local model running on the same machine. For a writer on a long draft, that last option is the meaningful one — you can summarize chapter six or rewrite a paragraph through a local Llama or Qwen without the text leaving the laptop, then convert the cleaned Markdown to rich text with md2rich for publishing.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where MarkFlowy fits, and where it doesn't</h2>
+      <p class="mb-4">MarkFlowy is an authoring tool, not a publishing tool. The output it produces is a <code>.md</code> file on disk, optionally synced through Git. Once the draft is clean, the Markdown still has to be converted into rich text for the platforms most readers actually scroll: LinkedIn's article editor, X Articles, Medium, Notion, a Confluence page, a Substack post. That conversion is the part <a href="/" class="text-indigo-600 underline">md2rich</a> exists for — paste the Markdown, copy the rendered HTML, drop it into the destination editor. The two tools sit at opposite ends of the same loop: MarkFlowy is where you finish the draft, md2rich is where you finish the post.</p>
+
+      <p class="mb-4">For comparison, the other Markdown editors that have shipped to this audience in the past month cover adjacent slots: <a href="/blog/markdown-buddy-native-macos-editor-2026-en" class="text-indigo-600 underline">Markdown Buddy</a> is the small native macOS slice (4.8&nbsp;MB sandboxed AppKit app with a Quick Look extension), <a href="/blog/headless-markdown-editors-2026-block-workflows-en" class="text-indigo-600 underline">the headless / block / WYSIWYG framework tier</a> (CodeMirror 6, Milkdown, BlockNote, Tiptap, Lexical, Plate) is the framework-level slot for teams building their own editor, and MarkFlowy is the long-document desktop editor where you actually write the book.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">A short Markdown-to-rich-text sample</h2>
+      <p class="mb-4">Here is a Markdown block as it would look in MarkFlowy's source mode, and how the same block renders after a single paste through md2rich.</p>
+
+      <pre class="bg-gray-100 border border-gray-200 rounded p-4 text-sm mb-4 overflow-x-auto"><code>## What I learned shipping MarkFlowy
+
+The rebuild cut our open-time benchmark from **6.2s to 0.9s** on the same
+2&nbsp;MB file. The biggest win was rendering only the viewport — the
+other 90% of the document is just buffered bytes.
+
+1. Pick a runtime that fits your worst-case file, not your median.
+2. Use ProseMirror (or its derivatives) when documents exceed ~200k chars.
+3. Ship a Tauri shell, not Electron, if cold-start matters.
+
+Try <a href="/">md2rich</a> to convert this to rich text for LinkedIn.</code></pre>
+
+      <p class="mb-4">The same block, after a single paste through <a href="/" class="text-indigo-600 underline">md2rich</a>, becomes a styled <code>&lt;h2&gt;</code>, three list items with working checkmarks, the inline <code>&lt;strong&gt;</code> emphasis, and a clickable anchor. Nothing leaves the browser — md2rich runs entirely client-side — so the post lands on LinkedIn looking the way you wrote it, not the way a third-party API chose to render it.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Should you switch?</h2>
+      <p class="mb-4">If your Markdown files stay under a few hundred kilobytes, Typora, Obsidian, iA Writer, and <a href="/blog/best-markdown-editors-2026-en" class="text-indigo-600 underline">the rest of the editor tier</a> are still faster to learn. The case for MarkFlowy starts the moment your draft crosses ~1&nbsp;MB and you notice the lag. At that point you have three options: switch editors (MarkFlowy), split files (loses the thread), or give up (loses the post). The first option is the only one that preserves both the document and the writing habit.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">FAQ</h2>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">What is MarkFlowy and why did it get a Show HN on September 6 2026?</h3>
+      <p class="mb-4">MarkFlowy is an open-source cross-platform Markdown editor by developer drl990114 (<a href="https://github.com/drl990114/MarkFlowy" class="text-indigo-600 underline">github.com/drl990114/MarkFlowy</a>, 2,382 stars as of 2026-09-07, AGPL-3.0). It first hit Show HN on 2025-08-28, and a v0.100.1 rebuild on 2026-09-06 (Show HN story 49586334) reopened the conversation specifically because the editor now opens a 2&nbsp;MB Markdown file in about one second. That is the verifiable claim on the README: "A 2&nbsp;MB Markdown file opened in around 1 second in testing." For anyone who writes a book-length Markdown draft, a long-form research report, or a multi-year personal knowledge base, that one-second figure is what separates an editor you keep using from an editor you abandon by chapter three.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">How does MarkFlowy reach that one-second open time on a 2&nbsp;MB Markdown file?</h3>
+      <p class="mb-4">Three engineering choices. First, the runtime is Tauri, not Electron, so the shell is written in Rust and the binary is under 25&nbsp;MB on macOS (<code>MarkFlowy_v0.100.1_aarch64.dmg</code> is 20.4&nbsp;MB; the AppImage is 98.1&nbsp;MB because it bundles GTK, but the macOS app itself stays lean). Second, the editing core is ProseMirror, the same engine that powers Tiptap and Atlassian's editor, which renders visible content only and streams the rest of the document on demand. Third, the source says the team rebuilt the editor specifically to support documents with over 200,000 characters, which in Chinese / English mixed writing lands around 2&nbsp;MB once images are excluded.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">What platforms does MarkFlowy support and how is it distributed?</h3>
+      <p class="mb-4">Windows, macOS, and Linux. macOS ships separate Apple silicon (<code>MarkFlowy_v0.100.1_aarch64.dmg</code>, 20.4&nbsp;MB) and Intel (<code>MarkFlowy_v0.100.1_x64.dmg</code>) builds. Because the macOS build is not notarized by an Apple Developer ID, Gatekeeper blocks the first launch with "cannot be opened because the developer cannot be verified"; the README workaround is <code>xattr -cr MarkFlowy.app</code> inside <code>/Applications</code>, then reopen. Windows ships an online installer, an offline installer that bundles the WebView2 runtime (266.5&nbsp;MB), and a portable zip. Linux ships a deb, an rpm, and an AppImage. A Flatpak is listed on FlatPark but the page is not yet live.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">Does MarkFlowy have built-in AI features?</h3>
+      <p class="mb-4">Yes. The README lists Copilot, one-click export of dialogues, translation of articles to any language, and article summaries as built-in features. Out of the box, MarkFlowy integrates with DeepSeek, OpenAI, and Ollama, so you can point it at any OpenAI-compatible endpoint, including a local Ollama model, without a proxy. AI actions run inside the editor on the selection or on the whole document, and the rewritten text replaces the original block in place — which is exactly the workflow MRDown-style diff editors are designed to review after the rewrite lands.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">Where does MarkFlowy fit in a write-once-publish-anywhere Markdown stack?</h3>
+      <p class="mb-4">MarkFlowy owns the authoring end of the pipeline: long-form drafts, book chapters, research reports, and knowledge-base editing on a native desktop where 2&nbsp;MB files stay snappy. Once the draft is clean, the Markdown source still has to be converted into rich text for LinkedIn, X Articles, Medium, Notion, or a Confluence page. That publish step is where <a href="/" class="text-indigo-600 underline">md2rich</a> fits — paste the cleaned-up Markdown into md2rich.com, copy the rendered HTML, and drop it into the platform's editor. MarkFlowy is not a publishing tool; it is the editor you finish the draft in, and md2rich is the tool you finish the post in.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Try it</h2>
+      <p class="mb-4">If you write long Markdown and your current editor slows down past chapter two, give <a href="https://github.com/drl990114/MarkFlowy" class="text-indigo-600 underline">MarkFlowy</a> a shot. Then, when the draft is done, paste it into <a href="/" class="text-indigo-600 underline">md2rich</a> to turn it into rich text for LinkedIn, X Articles, Medium, or Notion. Two tools, one Markdown source, no copy-paste cleanup.</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex justify-between">
+      <span>© 2026 md2rich</span>
+      <span><a href="/" class="hover:text-indigo-600">Try md2rich</a> · <a href="/blog/" class="hover:text-indigo-600">More posts</a></span>
+    </div>
+  </footer>
+</body>
+</html>
