@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quire 2026: AI Agents Join Your Markdown Session as Peers</title>
+  <meta name="description" content="Quire beta: AI agents join your local Markdown as peers, with attribution and suggest mode. Publish the clean draft via md2rich.">
+  <meta name="keywords" content="Quire, quire markdown, AI agents write markdown together, local markdown collaboration, markdown CRDT, google docs for markdown, AI agent peer editing, suggest mode markdown, markdown attribution, MCP markdown editor, yjs markdown, self-hosted markdown collaboration, provenance markdown, human AI co-edit markdown, md2rich, publish markdown rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/quire-ai-agents-markdown-session-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/quire-ai-agents-markdown-session-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/quire-ai-agents-markdown-session-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/quire-ai-agents-markdown-session-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Quire 2026: AI Agents Join Your Markdown Session as Peers">
+  <meta property="og:description" content="Quire beta: AI agents join your local Markdown as peers, with attribution and suggest mode. Publish the clean draft via md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/quire-ai-agents-markdown-session-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quire 2026: AI Agents Join Your Markdown Session as Peers">
+  <meta name="twitter:description" content="Quire beta: AI agents join your local Markdown as peers, with attribution and suggest mode. Publish the clean draft via md2rich.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Quire 2026: AI Agents Join Your Markdown Session as Peers",
+      "description": "Quire beta: AI agents join your local Markdown as peers, with attribution and suggest mode. Publish the clean draft via md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/quire-ai-agents-markdown-session-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Quire and why did it appear on Hacker News on September 7 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quire (github.com/heetdalsania/quire, AGPL-3.0, TypeScript) is a local-first Markdown collaboration tool that point at a folder of plain .md files and turns them into a live multiplayer workspace. It hit Hacker News on 2026-09-07 (story 49603593) with the pitch 'humans and AI agents editing local Markdown together.' The npm beta package is quiredocs, at version 0.1.0-beta.3 as of 2026-08-30, and it requires Node.js 22 or newer. The core idea is that the original .md files stay the source of truth on disk while people, AI agents, external editors, and git all work on the same document at once."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is an AI agent a 'peer' in Quire rather than a background file-rewriter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quire's agent runs through a local MCP server (quire-mcp) and joins the same Yjs CRDT session you are typing in. That means you see its live cursor, every span carries its author identity, edits can be proposed in suggest mode and never touch the file until you accept them, and you can revert one agent's contributions without touching the paragraphs you wrote beside them. Because it is a CRDT session rather than a whole-file rewrite, you can keep typing straight through its edits without a conflict."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Quire let me publish my Markdown to LinkedIn, X Articles, Medium, or Notion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and that is by design. Quire returns a clean .md file on disk; the publish step that turns Markdown into platform rich text is a separate conversion. That is exactly where md2rich slots in: paste the finished Markdown into md2rich, copy the rendered HTML, and drop it into LinkedIn, X Articles, Medium, or Notion. Quire owns the write-and-review end of the pipeline and md2rich owns the publish end."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Quire actually private and local-first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Core editing is offline: no Quire account, no signup, no telemetry, no advertising SDK, and it binds 127.0.0.1 by default. The trade-off is that Quire has no authentication at all, so the README warns that --host 0.0.0.0 means anyone who can reach the port can read and edit the vault. Optional features widen the surface: --git makes local snapshots (commits only Markdown paths Quire changed), Discover contacts GitHub only after you search, and --allow-exec lets a selected fenced code block run as your own OS user."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Quire's Markdown fidelity compare to a Google Docs import-export round trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quire publishes a byte-fidelity test suite that runs a fixture containing YAML frontmatter, task lists, tables, fenced code, Mermaid, wiki-links, footnotes, raw HTML, and comments through an unchanged editing session and checks it stays byte-for-byte stable. The README also documents that the same fixture changed by 22 inserted and 30 deleted lines after an untouched Google Docs import/export round trip. The point is that Quire keeps syntax-rich Markdown as source text instead of converting it through a cloud renderer, which matters if you are going to hand that file to a converter afterward."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-8">
+      <p class="text-xs text-gray-500 mb-2">2026-09-08 · 7 min read</p>
+      <h1 class="text-3xl font-bold mb-3">Quire 2026: AI Agents Join Your Markdown Session as Peers</h1>
+      <p class="text-lg text-gray-600 mb-6">A local-first tool that turns a folder of plain Markdown into a live CRDT workspace where AI agents edit beside you with a visible cursor, per-line attribution, and suggest mode — and your files stay the source of truth the whole time.</p>
+
+      <p class="mb-4">The moment AI writing tools went from "chat that returns text you paste" to "an agent that edits your file," they hit a wall I hit almost weekly: the agent rewrites the whole document behind my back. It is not that the output is bad. It is that I cannot tell what it changed, I cannot accept half of it, and if I want to undo the agent's voice I am also undoing my own edits, because there is just one blob of text with no provenance. So when a small tool called <a href="https://github.com/heetdalsania/quire" class="text-indigo-600 underline">Quire</a> showed up on <a href="https://news.ycombinator.com/item?id=49603593" class="text-indigo-600 underline">Hacker News on September 7, 2026</a> with the line "humans and AI agents editing local Markdown together," the part I cared about was not another Markdown editor. It was the claim that the agent is a <em>peer in the same editing session</em>, not a process that rewrites your files. This article is about why that distinction matters, and where Quire sits in a write-once-publish-anywhere Markdown stack.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What Quire actually is</h2>
+      <p class="mb-4">Quire is an open-source project by developer <code>heetdalsania</code> — repository <code>heetdalsania/quire</code>, TypeScript, AGPL-3.0, published on npm as <code>quiredocs</code>. It is brand new: the first beta, <code>0.1.0-beta.1</code>, was released on 2026-08-28, followed by <code>beta.2</code> on 08-29 and <code>beta.3</code> on 08-30. The whole pitch fits on one line: point Quire at a folder of Markdown and the original <code>.md</code> files become a live multiplayer workspace, with no import step, no cloud copy, and no conversion round trip.</p>
+      <p class="mb-4">Quick start is genuinely quick. It needs Node.js 22 or newer, and there is no account, signup, or telemetry.</p>
+      <pre class="bg-gray-100 border border-gray-200 rounded p-4 text-sm mb-4 overflow-x-auto"><code># point Quire at a folder of Markdown, then open http://127.0.0.1:4321
+npx quiredocs ~/my-notes</code></pre>
+      <p class="mb-4">The editor binds <code>127.0.0.1</code> by default and core editing makes no outbound requests. A <code>--demo</code> flag starts a disposable three-document vault that is deleted when Quire stops, if you would rather try it on dummy files than on your own notes. Multiple browsers can open the same file, remote cursors show up, offline reconnects merge cleanly, and the filesystem stays authoritative: you can edit the same file in vim or <code>git pull</code> mid-session and Quire merges the change as a delta rather than overwriting you.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Why "the agent is a peer" is the real engineering claim</h2>
+      <p class="mb-4">Plenty of tools say they support AI. Quire's claim is narrower and more specific: the agent connects through a local MCP server (<code>quire-mcp</code>) and joins the <em>same Yjs CRDT session</em> you are typing in. Concretely, that gives you four things that a background file-rewriter cannot offer:</p>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>Suggest mode.</strong> Agent edits can be proposed rather than applied. They show inline in the document and never reach disk until you accept them.</li>
+        <li><strong>Attribution.</strong> Every span carries its author. Toggle <strong>Authors</strong> and the text is tinted by who wrote it — you versus Claude Code versus Cursor.</li>
+        <li><strong>Revert by author.</strong> Remove one agent's contributions without touching the paragraphs you wrote beside them. This is the undoing-my-own-edits problem, solved.</li>
+        <li><strong>Typing through edits.</strong> Because it is a CRDT, you can type straight through the agent's changes and nothing conflicts. The README's demo shows a person and an agent editing the same document at once with no reload and no conflict.</li>
+      </ul>
+      <p class="mb-4">The MCP endpoint is where the agent integration lives. You keep Quire running, add its local server to your client, and the agent gets a presence identity and a cursor. The setup commands are copy-paste one-liners for Claude Code, Codex, and Cursor:</p>
+      <pre class="bg-gray-100 border border-gray-200 rounded p-4 text-sm mb-4 overflow-x-auto"><code># Claude Code
+claude mcp add quire -- npx -y -p quiredocs@latest quire-mcp \
+  --url http://127.0.0.1:4321 --name "Claude Code"
+# Codex
+codex mcp add quire -- npx -y -p quiredocs@latest quire-mcp --url http://127.0.0.1:4321 --name Codex</code></pre>
+      <p class="mb-4">The tools the agent gets — <code>list_documents</code>, <code>read_document</code>, <code>edit_document</code> with a <code>suggest</code> option, <code>append_document</code>, <code>list_suggestions</code>, <code>list_comments</code>, <code>add_comment</code>, <code>search_vault</code> — are scoped to the folder you passed on the command line, and paths outside it are rejected. You are not giving the agent blanket filesystem access; you are giving it read and edit tools over one vault.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The three-way positioning nobody else fills</h2>
+      <p class="mb-4">Quire's README is honest about where it sits with a small table. Most tools do two of these three things; Quire claims all three:</p>
+      <div class="overflow-x-auto mb-4">
+        <table class="w-full text-sm border-collapse mb-2">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border border-gray-200 px-3 py-2 text-left">Tool</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Multiplayer</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Agent-native</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Plain files</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Notion · Outline · HedgeDoc</td>
+              <td class="border border-gray-200 px-3 py-2">Yes</td>
+              <td class="border border-gray-200 px-3 py-2">No</td>
+              <td class="border border-gray-200 px-3 py-2">No</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Obsidian · Logseq</td>
+              <td class="border border-gray-200 px-3 py-2">No</td>
+              <td class="border border-gray-200 px-3 py-2">Partial</td>
+              <td class="border border-gray-200 px-3 py-2">Yes</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">SoloMD · CollabMD</td>
+              <td class="border border-gray-200 px-3 py-2">One or the other</td>
+              <td class="border border-gray-200 px-3 py-2">—</td>
+              <td class="border border-gray-200 px-3 py-2">—</td>
+            </tr>
+            <tr class="bg-indigo-50">
+              <td class="border border-gray-200 px-3 py-2 font-semibold">Quire</td>
+              <td class="border border-gray-200 px-3 py-2 font-semibold">Yes</td>
+              <td class="border border-gray-200 px-3 py-2 font-semibold">Yes</td>
+              <td class="border border-gray-200 px-3 py-2 font-semibold">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mb-4">That last column is the one most collaboration tools give up. A cloud "Google Docs for Markdown" keeps a converted copy in its own database and treats your local file as an import/export boundary. Quire takes the opposite direction: the files in your local folder stay authoritative while people, agents, external editors, and git all work with them, and collaboration state lives separately in a <code>.quire/state/</code> directory you can delete if you only want the clean Markdown back.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Fidelity, provenance, and why they matter before you publish</h2>
+      <p class="mb-4">Quire ships two features that sound niche until you are the one who needs them. The first is a byte-fidelity guarantee: the release suite runs a fixture holding YAML frontmatter, task lists, tables, fenced code, Mermaid, wiki-links, footnotes, raw HTML, and comments through an unchanged editing session and asserts it stays byte-for-byte stable. The README highlights the contrast by documenting that the same fixture changed by <strong>22 inserted and 30 deleted lines</strong> after an untouched Google Docs import/export round trip. If you are going to hand that file to a converter later, you want the source to survive an editing session intact, not quietly normalized by a cloud renderer.</p>
+      <p class="mb-4">The second is the provenance receipt. One click turns a document into a shareable, self-contained HTML page that records how much a person wrote vs. how much an agent did, which suggestions were accepted, and a replay of the document being written. For anyone publishing AI-assisted work — and especially for a LinkedIn audience that has gotten savvier about AI slop — being able to point at exactly what an agent contributed (and what you accepted) is a genuinely differentiator. Review requests and share links are scoped with view/comment/edit capabilities enforced server-side, and reviewers can comment without any account.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">A short Markdown-to-rich-text sample</h2>
+      <p class="mb-4">Here is how a collaboratively-written draft might look in Quire's source panel, and what the same block becomes after a single paste through md2rich.</p>
+      <pre class="bg-gray-100 border border-gray-200 rounded p-4 text-sm mb-4 overflow-x-auto"><code>## What we changed this week
+
+The agent drafted a **release note** in suggest mode; I accepted two of its
+three edits and wrote the third myself.
+
+1. Attribution shows an <em>agent</em> wrote the first two sentences.
+2. Rows revert by author — no lost paragraphs.
+3. The plain <code>.md</code> file never left the folder.
+
+Publish with <a href="/">md2rich</a> once the review is closed.</code></pre>
+      <p class="mb-4">After a single paste through <a href="/" class="text-indigo-600 underline">md2rich</a>, the same block becomes a styled <code>&lt;h2&gt;</code>, three numbered list items, the inline <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> emphasis, and a working code span. Nothing leaves the browser — md2rich runs entirely client-side — so a draft that several humans and one agent shaped in Markdown lands on LinkedIn or X looking exactly the way you reviewed it, with no third-party renderer deciding what your formatting means.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where Quire fits your pipeline, and where it does not</h2>
+      <p class="mb-4">Quire is a write-and-review tool, not a publish tool. The output it produces is a <code>.md</code> file on disk, collaboration history in <code>.quire/state/</code>, and a provenance receipt if you want one. Once the review is closed, the Markdown still has to become rich text for the places your readers actually scroll — LinkedIn's article editor, X Articles, Medium, Notion, a Substack post. That conversion is the part <a href="/" class="text-indigo-600 underline">md2rich</a> exists for. The two tools sit back-to-back on the same loop: Quire is where you and your agents finish a draft you can defend, md2rich is where you finish the post.</p>
+      <p class="mb-4">The other Markdown tools covered on this site occupy neighboring slots in that same loop: <a href="/blog/notes-plus-markdown-apple-notes-alternative-2026-en" class="text-indigo-600 underline">Notes Plus</a> is the capture end (an Apple Notes-style scratch pad), <a href="/blog/markflowy-large-document-markdown-editor-2026-en" class="text-indigo-600 underline">MarkFlowy</a> is the long-document authoring end, <a href="/blog/skilldocs-md2rich-collaborative-markdown-2026-en" class="text-indigo-600 underline">SkillDocs</a> is cloud collaboration around the skill files your agents run on, and Quire is the part where the humans and the agents actually edit prose together in real time with full attribution. If your problem is "my agent rewrites the file and I cannot see or undo the changes," Quire is aimed directly at you.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The honesty check: what Quire does not promise</h2>
+      <p class="mb-4">For a day-one tool the README is unusually blunt about limitations. Quire has <strong>no authentication</strong>, so binding to <code>--host 0.0.0.0</code> genuinely means anyone who can reach the port can read and edit every document — the threat model lives in <code>SECURITY.md</code>. Code execution is off by default and only runs under <code>--allow-exec</code>, which refuses to run anything when Quire is bound beyond loopback. Git snapshots are off by default and committed only Markdown paths Quire changed. The package has no runtime dependency downloads and no <code>preinstall</code>/<code>install</code>/<code>postinstall</code> hooks, and there is no analytics, advertising SDK, auto-updater, background service, or payment integration. It is free to run and self-host, and the agent you connect to it is the one that pays under its own provider plan. At one star on GitHub as of this writing, it is a very fresh beta — read the docs, try the <code>--demo</code> vault before you point it at real files, and do not widen its network surface until you have read <code>SECURITY.md</code>.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">FAQ</h2>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">What is Quire and why did it appear on Hacker News on September 7 2026?</h3>
+      <p class="mb-4">Quire (<a href="https://github.com/heetdalsania/quire" class="text-indigo-600 underline">github.com/heetdalsania/quire</a>, AGPL-3.0, TypeScript) is a local-first Markdown collaboration tool. Point it at a folder of plain <code>.md</code> files and they become a live multiplayer workspace. It hit Hacker News on 2026-09-07 (story 49603593) with the pitch "humans and AI agents editing local Markdown together." The npm package is <code>quiredocs</code> at version <code>0.1.0-beta.3</code>, and it requires Node.js 22 or newer.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">How is an AI agent a "peer" instead of a background file-rewriter?</h3>
+      <p class="mb-4">The agent connects through a local MCP server and joins the same Yjs CRDT session you are typing in. You see its live cursor, every span carries an author identity, edits can be launched in suggest mode so they stay off disk until you accept them, and you can revert one agent's contributions without touching your own paragraphs. Because it is a CRDT session rather than a whole-file rewrite, you can keep typing through its edits and nothing conflicts.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">Does Quire publish my Markdown to LinkedIn, X Articles, Medium, or Notion?</h3>
+      <p class="mb-4">No, and that is by design. Quire produces a clean <code>.md</code> file (plus optional collaboration state and a provenance receipt). The conversion from Markdown into platform rich text is a separate step — that is where <a href="/" class="text-indigo-600 underline">md2rich</a> fits. Paste the finished Markdown into md2rich.com, copy the rendered HTML, and drop it into LinkedIn, X Articles, Medium, or Notion.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">Is Quire private and local-first?</h3>
+      <p class="mb-4">Core editing is offline: no Quire account, no signup, no telemetry, binds <code>127.0.0.1</code> by default. The catch is that there is no authentication, so <code>--host 0.0.0.0</code> means anyone who can reach that port can edit the vault. Optional flags widen the surface: <code>--git</code> makes opt-in local snapshots, Discover contacts GitHub only when you search, and <code>--allow-exec</code> runs a selected fenced block as your own OS user.</p>
+
+      <h3 class="text-xl font-semibold mt-4 mb-2">How does Quire's Markdown fidelity compare to a Google Docs round trip?</h3>
+      <p class="mb-4">Quire runs a byte-fidelity test suite on a fixture containing YAML frontmatter, task lists, tables, fenced code, Mermaid, wiki-links, footnotes, raw HTML, and comments, and checks it stays byte-for-byte stable through an unchanged session. The README documents that the same fixture changed by 22 inserted and 30 deleted lines after an untouched Google Docs import/export. Quire keeps syntax-rich Markdown as source text rather than normalizing it through a cloud renderer — which matters when you plan to hand that file to a converter next.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Try it</h2>
+      <p class="mb-4">If your AI workflow currently means "the agent rewrites my file and I hope for the best," give <a href="https://github.com/heetdalsania/quire" class="text-indigo-600 underline">Quire</a> a try on its <code>--demo</code> vault. When the collaboration is done and you have a clean Markdown draft you can defend, paste it into <a href="/" class="text-indigo-600 underline">md2rich</a> to turn it into rich text for LinkedIn, X Articles, Medium, or Notion. Same Markdown source, one tool to write it with your agents, one tool to publish it.</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500 flex justify-between">
+      <span>© 2026 md2rich</span>
+      <span><a href="/" class="hover:text-indigo-600">Try md2rich</a> · <a href="/blog/" class="hover:text-indigo-600">More posts</a></span>
+    </div>
+  </footer>
+</body>
+</html>
