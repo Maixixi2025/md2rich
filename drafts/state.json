@@ -2236,6 +2236,23 @@
         "Quire"
       ],
       "primary_cta": "Try md2rich"
+    },
+    {
+      "slug": "mdedit-no-telemetry-markdown-editor-2026-en",
+      "date": "2026-09-09",
+      "type": "tool-review",
+      "lang": "en-US",
+      "file": "blog/mdedit-no-telemetry-markdown-editor-2026-en.html",
+      "url": "https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en",
+      "title": "MDedit 2026: No-Telemetry Cross-Platform Markdown Editor",
+      "description": "MDedit: a no-telemetry, cross-platform Markdown editor. No account, no server; files stay local. Draft privately, publish the rich text with md2rich.",
+      "heat_source": "Show HN 2026-09-07 (story 49599445, 2 pts / 6 comments) — github.com/skanga/mdedit, MIT, created 2026-09-04, Tauri/Rust. Privacy architecture angle: 'no account, no telemetry, no document upload, no server-side rendering'; desktop save dialog grants write access only to the selected destination (no wildcard filesystem scope). Cross-platform: Windows NSIS/MSI/portable, macOS aarch64 dmg, Ubuntu/Debian deb. Exports HTML/PNG/PDF/CSV/SVG; Mermaid + KaTeX. Body-grep-0 on mdedit/skanga across 93 prior articles.",
+      "status": "published",
+      "published_at": "2026-09-09",
+      "providers_featured": [
+        "MDedit"
+      ],
+      "primary_cta": "Try md2rich"
     }
   ],
   "drafts": [],
