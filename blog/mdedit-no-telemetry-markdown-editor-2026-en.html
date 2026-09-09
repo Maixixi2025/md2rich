@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDedit 2026: No-Telemetry Cross-Platform Markdown Editor</title>
+  <meta name="description" content="MDedit: a no-telemetry, cross-platform Markdown editor. No account, no server; files stay local. Draft privately, publish the rich text with md2rich.">
+  <meta name="keywords" content="MDedit, no telemetry markdown editor, private markdown editor, cross platform markdown editor, tauri markdown editor, rust markdown editor, local markdown editor windows, offline markdown editor, mermaid markdown editor, katex markdown, md2rich, publish markdown rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MDedit 2026: No-Telemetry Cross-Platform Markdown Editor">
+  <meta property="og:description" content="MDedit: a no-telemetry, cross-platform Markdown editor. No account, no server; files stay local. Draft privately, publish the rich text with md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MDedit 2026: No-Telemetry Cross-Platform Markdown Editor">
+  <meta name="twitter:description" content="MDedit: a no-telemetry, cross-platform Markdown editor. No account, no server; files stay local. Draft privately, publish the rich text with md2rich.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "MDedit 2026: No-Telemetry Cross-Platform Markdown Editor",
+      "description": "MDedit: a no-telemetry, cross-platform Markdown editor. No account, no server; files stay local. Draft privately, publish the rich text with md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-09",
+      "dateModified": "2026-09-09",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/mdedit-no-telemetry-markdown-editor-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MDedit and when was it released?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MDedit is a fast, private, cross-platform Markdown editor built with Tauri/Rust, published by the developer behind github.com/skanga/mdedit. The repository was created on 2026-09-04 and posted to Show HN on September 7 2026 (HN item 49599445) under the title 'A fast, private, cross-platform Markdown editor built with Tauri/Rust'. It is MIT-licensed. As of 2026-09-09 the repo is brand new with a handful of stars, so treat it as an early, actively-developed release rather than a mature product."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does MDedit guarantee your documents stay private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The README is explicit: 'MDedit has no account, telemetry, document upload, or server-side rendering. Documents remain local. Remote transmission of documents is out of scope.' On the desktop, exports use Tauri's native save dialog, which dynamically grants write access only to the selected destination, and the README states MDedit has no wildcard filesystem scope: document saves and private recovery storage sit behind validated Rust commands. That is a stronger claim than most 'offline' editors make, because the privacy boundary is enforced at the filesystem permission layer rather than promised in marketing copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What file formats and features does MDedit support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MDedit is a GitHub-flavored Markdown editor with live preview in Edit, Split, and Preview modes and a tabbed workspace where every open document keeps independent state. It supports task lists, tables, footnotes, callouts, syntax highlighting, Mermaid diagrams, and KaTeX math. You can export to HTML, PNG, PDF, CSV, and SVG, import desktop images and attachments into an assets folder beside the file, and use per-document find-and-replace with match-case, whole-word, and regular-expression modes. Local recovery snapshots restore your session after an unexpected shutdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which platforms does MDedit run on and how do you install it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MDedit ships installers for Windows x64 (an NSIS setup, a managed MSI, and a portable executable), macOS Apple silicon (an aarch64 .dmg), and Ubuntu/Debian x64 (an amd64 .deb). The builds are unsigned, so the operating system may show an unknown-developer warning on first launch. The portable Windows build needs the Microsoft Edge WebView2 runtime. On Windows, app settings and recovery data are stored under %LOCALAPPDATA%\com.skanga.mdedit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does MDedit fit in a write-once-publish-anywhere Markdown stack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MDedit owns the quiet authoring end: a private, cross-platform editor with no account or telemetry where you finish long-form drafts, notes, and research on your own disk. It is deliberately the opposite of the AI-bolted-on editors — no DeepSeek, no OpenAI wrapper, no server-side rendering. Once a draft is clean, the Markdown source still has to be turned into rich text for LinkedIn, X Articles, Medium, or Notion, and that publish step is where md2rich fits: paste the Markdown into md2rich.com, copy the rendered HTML, and drop it into the platform editor. MDedit is where you write; md2rich is where you post."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-8">
+      <p class="text-xs text-gray-500 mb-2">2026-09-09 · 9 min read</p>
+      <h1 class="text-3xl font-bold mb-3">MDedit 2026: No-Telemetry Cross-Platform Markdown Editor</h1>
+      <p class="text-lg text-gray-600 mb-6">A small Tauri/Rust Markdown editor that draws its privacy line in the filesystem: no account, no telemetry, no upload, and writes scoped only to the file you save.</p>
+
+      <p class="mb-4">I have a rule about Markdown editors now. After testing a dozen of them this year, the split that actually matters is not split-pane versus WYSIWYG, and it is not open-source versus paid. It is whether the app can honestly say where your words go when you are not looking. Several popular editors can only gesture at an answer, and a couple quietly phone home with usage data by default. So when <a href="https://github.com/skanga/mdedit" class="text-indigo-600 underline">MDedit</a> landed on <a href="https://news.ycombinator.com/item?id=49599445" class="text-indigo-600 underline">Show HN on September 7, 2026</a> with a README line I had to read twice, I went to verify it myself.</p>
+
+      <p class="mb-4">The line was this: "MDedit has no account, telemetry, document upload, or server-side rendering. Documents remain local. Remote transmission of documents is out of scope." Most privacy pages soften that sentence with asterisks and marketing weasel words. MDedit wrote it as a hard guarantee, and then backed it up with an engineering detail in the same README that most editors would never admit to. This article is about why that detail matters, what MDedit actually does, and where it fits in a Markdown stack that ends with you publishing clean rich text.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Full disclosure before we go further</h2>
+      <p class="mb-4">I should be honest about the numbers, because a lot of the buzz around this one is overstated. MDedit is not a wildly popular release. The Show HN post carried 2 points and 6 comments at the time I checked, and the repository on GitHub had a handful of stars as of September 9, 2026. It is MIT-licensed, created September 4, and pushed as recently as September 9, so it is being actively maintained — by one developer, from the look of it. Do not install it expecting a mature, battle-tested product with a big community. Install it because the privacy architecture is genuinely interesting and different, and because watching a tiny project push a strong real claim is exactly how you learn what to demand from the big ones.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The privacy claim worth reading slowly</h2>
+      <p class="mb-4">Every "offline" editor can say it does not upload your files. Far fewer can say where the boundaries actually are at the operating-system level. MDedit's README makes two concrete engineering statements:</p>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li>Desktop exports use Tauri's native save dialog, which <strong>dynamically grants write access only to the selected destination</strong> — the app has <strong>no wildcard filesystem scope</strong>.</li>
+        <li>Document saves and private recovery storage remain behind <strong>validated Rust commands</strong>.</li>
+      </ul>
+      <p class="mb-4">What that means in practice on Windows: when MDedit needs to write, the operating system asks you where, and MDedit gets a narrow permission for exactly that location — not blanket access to your whole Documents folder, not an install-time confession that it may read anything on the drive, and not a renderer process with broad file privileges. In a <a href="https://v2.tauri.app/" class="text-indigo-600 underline">Tauri</a> app, the webview front-end runs with the least privilege, and every filesystem action that matters has to cross a validated Rust command boundary. The wildcard-scope statement is the kind of detail a privacy team writes when it has actually thought about the threat model, rather than when it is filling a compliance checkbox.</p>
+
+      <p class="mb-4">The rest of the README is consistent with that hardening. Recovery snapshots are stored locally so an unexpected shutdown restores your tabs, active document, and per-tab workspace state. A "Recent" menu remembers the last 20 files you opened or saved, and its history stays on the device. There is no account to log into, because there is no server. That is the entire privacy model, and it is coherent: MDedit is a local tool that does local things and nothing else.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What MDedit actually does</h2>
+      <p class="mb-4">Strip away the privacy positioning and MDedit is a capable, conventional Markdown editor. The tabbed workspace keeps independent editing state per document, and you switch between Edit, Split, and Preview modes. Features include GitHub-flavored Markdown with task lists, tables, footnotes, and callouts; syntax highlighting; <strong>Mermaid diagrams</strong> and <strong>KaTeX math</strong>; per-document find-and-replace with whole-word and regex modes; desktop image and attachment import that copies assets into an <code>assets</code> folder beside the file; a table of contents; light and dark themes; and exports to HTML, PNG, PDF, CSV, and SVG.</p>
+
+      <p class="mb-4">A few small details show the developer thought about writing workflows. External-change detection fires every three seconds while the window is visible and when it regains focus, so if another tool touches your file on disk, MDedit offers a side-by-side compare instead of silently clobbering your edits. Closing the app always asks first, and with dirty documents it offers <strong>Save All &amp; Quit</strong>, <strong>Quit and Restore Next Time</strong>, or <strong>Discard All &amp; Quit</strong>. Attachments are capped at 20&nbsp;MiB each, and HTML exports embed local images while PNG and PDF include them — which matters when you later want a self-contained document to publish.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># The part that wins me over is boring
+#
+# MDedit keeps a draft on disk with no account, no telemetry,
+# and writes scoped to the exact file you save. When the draft
+# is done, the publish step is separate:
+
+## 1. Write and save locally in MDedit      -> draft.md
+## 2. Open md2rich.com
+## 3. Paste the Markdown in, copy rich HTML
+## 4. Drop the HTML into LinkedIn / X / Medium / Notion
+
+Now the same paragraph you type:
+
+"MDedit keeps drafts **local**, renders *Mermaid* and KaTeX,
+and exports to HTML, PNG, PDF, CSV, and SVG."
+
+Paste that source through md2rich and it comes out as
+proper rich text: bold and italic preserved, list bullets
+kept, code blocks fenced — no &#92;n literals, no stray
+asterisks leaking into the published post.</code></pre>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where I put MDedit in my stack</h2>
+      <p class="mb-4">MDedit occupies a specific slot: the <strong>quiet, private authoring end</strong>. It is deliberately not an AI editor — no DeepSeek, no OpenAI wrapper, no Ollama hook, no server-side rendering at all. That is a real contrast with the editors I tested earlier this month, and it is the reason I reach for it on drafts I do not want a model (or a vendor) to see before I am ready. It is also cross-platform where some of its privacy-minded cousins are not: there is a Windows NSIS installer, an MSI, a portable <code>.exe</code>, a macOS Apple-silicon <code>.dmg</code>, and an Ubuntu/Debian <code>.deb</code>. Markdown Buddy, which I praised in August as the native-macOS single-purpose editor, only runs on macOS. MDedit is the closest thing to that philosophy that follows you to Windows and Linux.</p>
+
+      <p class="mb-4">That file-permission model is the cleanest part of the story to borrow, even if you never install MDedit. When you are choosing any writing or conversion tool, ask three questions the README answers outright: Does it have an account I am pressured to create? Does it send telemetry by default? And can it honestly describe the filesystem scope it requests? The tool that answers "no, no, and here is the exact boundary" is the one that treats your drafts as yours. The tool that hedges on any of the three is asking you to trust a marketing page over an architecture.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Two real Markdown-to-rich-text examples</h2>
+      <p class="mb-4">Since the whole point of writing in Markdown is shipping the result somewhere richer, here are two blocks you can drop into <a href="/" class="text-indigo-600 underline">md2rich</a> to see the pipeline end to end. The first is a short, mixed-format paragraph a newsletter author would paste into LinkedIn:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>Last week I moved my long-form drafting to a private,
+no-telemetry editor. **Why**: I finally stopped trusting
+apps that "store locally" but still phone home with usage
+data. My default is now an editor whose *save dialogs*
+grant write access to one file at a time — nothing more.
+
+- No account
+- No server-side rendering
+- Files stay on my disk
+
+The swap took an afternoon. Publishing still goes through
+md2rich so the rich text lands clean on LinkedIn.</code></pre>
+      <p class="mb-4">The second example shows a pattern I use for longer pieces that cross to X Articles or Medium: a short Markdown file with a heading, a task list, and a fenced code block. Converting it with md2rich keeps the heading as a heading and the code block fenced, instead of pasting a wall of raw text into the platform editor:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># My private-first writing checklist
+
+- [x] Draft in a no-telemetry local editor
+- [x] Keep the source file on disk, under version control
+- [ ] Convert to rich text with md2rich
+- [ ] Review the rendered HTML before publishing
+
+The command that never leaves your machine:
+
+    md2rich converts on the client, nothing uploads.</code></pre>
+      <p class="mb-4">Both examples convert through md2rich entirely client-side — the site is a pure front-end tool with zero upload, which is the same privacy-first philosophy MDedit applies on the editing side. Write local, convert local, paste the finished rich text. No cloud in the middle.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Caveats worth typing in red</h2>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>Very early.</strong> A few stars, one main developer, created four days before its Show HN. Expect rough edges and fast iteration.</li>
+        <li><strong>Unsigned builds.</strong> macOS will warn about an unidentified developer; Windows will show a SmartScreen prompt. That is a friction cost of no paid notarization, not malware.</li>
+        <li><strong>WSL filesystem limitation.</strong> Replacing existing files on non-Windows-ACL filesystems (including WSL) is not yet supported when native permissions must be preserved — the README suggests Save As to a new filename as the workaround.</li>
+        <li><strong>Portable Windows build needs WebView2.</strong> If the Microsoft Edge WebView2 runtime is missing, use the NSIS installer.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The bottom line</h2>
+      <p class="mb-4">MDedit is not going to replace your whole writing life, and it does not need to. It is a small, honest, cross-platform editor whose real contribution is that it states the local-only guarantee plainly and backs it with a no-wildcard-filesystem-scope design. For private drafting that travels between Windows, macOS, and Linux, that is a genuinely useful niche in 2026 — especially when so many "offline" editors quietly reserve the right to phone home.</p>
+      <p class="mb-6">When the draft is done, the publish step is separate and should stay that way. Keep your Markdown source local in an editor you trust, then turn it into rich text for LinkedIn, X Articles, Medium, or Notion with a converter that runs entirely in your browser. Try <a href="/" class="text-indigo-600 underline">md2rich</a> to convert your next finished draft.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Draft privately. Publish cleanly.</h3>
+        <p class="mb-3">MDedit keeps the words local; <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> turns the finished Markdown into rich text for LinkedIn, X Articles, Medium, and Notion — all in your browser, nothing uploaded.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>
