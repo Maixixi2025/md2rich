@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare AI Search vs Algolia 2026: Markdown Sites</title>
+  <meta name="description" content="Cloudflare AI Search is free in beta and indexes your own site. Here's how a Markdown publisher swaps Algolia for it, and what the limits really cost.">
+  <meta name="keywords" content="Cloudflare AI Search, Cloudflare AI Search vs Algolia, Algolia alternative 2026, site search for Markdown, MCP search endpoint, hybrid search Markdown, Workers AI Search, md2rich, publish markdown rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare AI Search vs Algolia 2026: Markdown Sites">
+  <meta property="og:description" content="Cloudflare AI Search is free in beta and indexes your own site. Here's how a Markdown publisher swaps Algolia for it, and what the limits really cost.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare AI Search vs Algolia 2026: Markdown Sites">
+  <meta name="twitter:description" content="Cloudflare AI Search is free in beta and indexes your own site. Here's how a Markdown publisher swaps Algolia for it, and what the limits really cost.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare AI Search vs Algolia 2026: Markdown Sites",
+      "description": "Cloudflare AI Search is free in beta and indexes your own site. Here's how a Markdown publisher swaps Algolia for it, and what the limits really cost.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-10",
+      "dateModified": "2026-09-10",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Cloudflare AI Search and is it free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cloudflare AI Search is a managed search service that indexes a website, an R2 bucket, or files you upload, then answers natural-language queries through a Workers binding, a REST API, a Python SDK, or a built-in MCP server. According to Cloudflare's Limits and pricing page (last updated 2026-08-26), it is free during the open beta within the plan limits, and pricing will be communicated at least 30 days before any billing begins. Storage, vector indexing, and the Browser Run usage that website crawling consumes are included; Workers AI and AI Gateway usage is billed separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the real limits of the free tier compared to Algolia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On the Workers Free plan, AI Search gives you 100 instances per account, 100,000 files per instance, 4 MB maximum file size, 20,000 queries per month, 10 instances per cross-instance search request, and a maximum of 500 pages crawled per day. Workers Paid raises instances to 5,000, files to 1M (500K for hybrid search), removes the monthly query cap and the daily crawl cap. The 500 pages per day crawl limit on Free is the binding constraint for most publishers, because website crawling is bounded by several limits at once and Cloudflare states the lowest applies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I point AI Search at a purely static Markdown site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with one condition. You can only crawl domains you have onboarded to your own Cloudflare account, or you can skip crawling entirely and upload files to built-in storage. For a static Markdown site, built-in storage is often the better path: you push your rendered HTML or Markdown files directly, which avoids the 500-pages-per-day Free crawl budget and gives you deterministic control over exactly what is indexed instead of letting a crawler discover pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AI Search replace my Markdown pipeline or just the search box?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It replaces the search box and the retrieval layer, not the authoring or conversion layer. AI Search handles indexing and retrieval over content you already published. Your Markdown source, your editor, and the step that turns Markdown into platform-ready rich text all stay where they are. The clean split is: write Markdown locally, convert it to rich text client-side for LinkedIn, X Articles, Medium, or Notion with md2rich, and let AI Search make the published page findable afterwards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI agents search my content without me writing any integration code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every AI Search instance can expose a built-in Model Context Protocol (MCP) endpoint that provides a single search tool over your indexed content. You enable the public endpoint and the MCP endpoint in Settings, copy the host, and the MCP URL is that host followed by /mcp. Any MCP client or agent can then call it as a remote MCP server with no custom code. You should also set the Tool Description field, because MCP clients read it to decide when your search tool is the right one to call."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-8">
+      <p class="text-xs text-gray-500 mb-2">2026-09-10 · 11 min read</p>
+      <h1 class="text-3xl font-bold mb-3">Cloudflare AI Search vs Algolia 2026: Markdown Sites</h1>
+      <p class="text-lg text-gray-600 mb-6">Cloudflare's managed RAG search is free during beta and it will index your own site. Here is what a Markdown publisher gives up by leaving Algolia, and the exact limits that decide it.</p>
+
+      <p class="mb-4">For most of the last decade, "add search to your site" meant one of two things: pay Algolia, or wire up a self-hosted index and babysit it forever. Static Markdown sites felt that choice most sharply, because the whole point of a static site is that there is no server to run a search backend on. So the search box either became a third-party paid dependency or it quietly did not exist.</p>
+
+      <p class="mb-4">In late August 2026, Cloudflare's <a href="https://developers.cloudflare.com/ai-search/" class="text-indigo-600 underline">AI Search</a> documentation went into open beta, and it reframes that trade. It is a managed search service that connects to a website, an R2 bucket, or files you upload directly, indexes the content, and answers natural-language queries from a Workers binding, a REST API, a Python SDK, or a built-in MCP server. If you publish Markdown, the interesting part is not the vector search. It is that the entire retrieval layer now sits inside infrastructure you may already be paying for, and it is free while the beta lasts.</p>
+
+      <p class="mb-4">I spent a morning reading the actual limits page rather than the announcement, because the limits are where "free" usually turns out to be a trial. Then I mapped out what a swap would look like for a static Markdown site — the kind of site md2rich is built around. This is that write-up.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What AI Search actually is</h2>
+      <p class="mb-4">Strip the marketing and AI Search is four things bolted together:</p>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>Ingestion.</strong> It pulls content from a website it crawls, from an R2 bucket, or from files you upload to built-in storage powered by R2 and Vectorize.</li>
+        <li><strong>Indexing.</strong> It chunks the content and supports vector search, BM25 keyword search, and hybrid search that combines both. You choose the embedding, generation, reranking, and query-rewriting models.</li>
+        <li><strong>Retrieval.</strong> You query it by natural language from a Worker binding, the REST API, a Python SDK, or the dashboard.</li>
+        <li><strong>Exposure.</strong> You can attach it to a website through pre-built web components, or expose it as a public MCP endpoint that any agent can call.</li>
+      </ul>
+      <p class="mb-4">That last piece is the one that makes this more than an Algolia clone. A traditional search product gives you an index and a query API. AI Search additionally hands you an MCP endpoint for free, which means the content you spent months writing becomes searchable by agents and IDE assistants without you writing an integration.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The limits page, read honestly</h2>
+      <p class="mb-4">Here is the table that decides whether this is real, pulled from Cloudflare's <a href="https://developers.cloudflare.com/ai-search/platform/limits-pricing/" class="text-indigo-600 underline">Limits and pricing</a> page last updated 2026-08-26:</p>
+
+      <div class="overflow-x-auto mb-4">
+        <table class="min-w-full text-sm border border-gray-200 rounded-lg">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="text-left px-3 py-2 font-semibold border-b border-gray-200">Limit</th>
+              <th class="text-left px-3 py-2 font-semibold border-b border-gray-200">Workers Free</th>
+              <th class="text-left px-3 py-2 font-semibold border-b border-gray-200">Workers Paid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-3 py-2 border-b border-gray-100">AI Search instances per account</td>
+              <td class="px-3 py-2 border-b border-gray-100">100</td>
+              <td class="px-3 py-2 border-b border-gray-100">5,000</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border-b border-gray-100">Files per instance</td>
+              <td class="px-3 py-2 border-b border-gray-100">100,000</td>
+              <td class="px-3 py-2 border-b border-gray-100">1M (500K for hybrid search)</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border-b border-gray-100">Max file size</td>
+              <td class="px-3 py-2 border-b border-gray-100">4 MB</td>
+              <td class="px-3 py-2 border-b border-gray-100">4 MB</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border-b border-gray-100">Queries per month</td>
+              <td class="px-3 py-2 border-b border-gray-100">20,000</td>
+              <td class="px-3 py-2 border-b border-gray-100">Unlimited</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border-b border-gray-100">Max pages crawled per day</td>
+              <td class="px-3 py-2 border-b border-gray-100">500</td>
+              <td class="px-3 py-2 border-b border-gray-100">Unlimited</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 border-b border-gray-100">Pages per crawl (discover type)</td>
+              <td class="px-3 py-2 border-b border-gray-100">100,000</td>
+              <td class="px-3 py-2 border-b border-gray-100">100,000</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">Max custom metadata fields</td>
+              <td class="px-3 py-2">5 per instance</td>
+              <td class="px-3 py-2">5 per instance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mb-4">Two lines in that table matter more than the rest. The first is <strong>20,000 queries per month</strong> on the free plan. For a small publishing site that is effectively unlimited — it is roughly 650 queries a day, and most Markdown blogs do not see that. The second is <strong>500 pages crawled per day</strong>, and this is the one that bites, because Cloudflare is explicit that website crawling is bounded by several limits at once and the lowest value wins:</p>
+
+      <blockquote class="border-l-4 border-indigo-200 pl-4 italic text-gray-600 mb-4">
+        A <code>discover</code> crawl accepts up to 100,000 pages, but the files per instance and maximum pages crawled per day limits also apply, so the number of pages you end up with is whichever of those values is lowest. On Workers Free, the daily limit of 500 pages is the binding one.
+      </blockquote>
+
+      <p class="mb-4">So on the free plan, a 3,000-page archive takes six days to fully index if you let it crawl. That is not a dealbreaker, but it changes the onboarding plan, and it is the kind of constraint the launch post conveniently skips. There is a <a href="https://forms.gle/wnizxrEUW33Y15CT8" class="text-indigo-600 underline">limit increase request form</a>, but the honest read is: under 500 pages, crawling is fine; over it, upload files instead.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Pricing, stated plainly</h2>
+      <p class="mb-4">The pricing section is short enough to quote directly. During the open beta, AI Search is free within the plan limits. Storage, vector indexing, and the Browser Run usage that website crawling consumes are <em>included</em>, not billed separately. Workers AI and AI Gateway usage is still billed separately. And the commitment on cost predictability is unusually specific: pricing details will be communicated at least 30 days before any billing begins.</p>
+
+      <p class="mb-4">That is a real improvement over the historical model. Cloudflare notes that instances created before the move to managed infrastructure ran on services in your own account, so older invoices carried separate R2, Vectorize, Workers AI, AI Gateway, and Browser Run charges. If you had an early instance, the dedicated R2 bucket it created is no longer written to and can be deleted — worth a look if you are still paying storage for objects nothing reads.</p>
+
+      <p class="mb-4">The comparison to Algolia is therefore not per-query pricing against per-query pricing. It is "free during beta, bundled with an account you probably already have" against a metered search SaaS with record and operation tiers. For a site of a few hundred Markdown posts, that gap is the entire argument.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What a swap actually takes</h2>
+      <p class="mb-4">Here is the concrete path, from Cloudflare's own docs, with the parts that matter for a static site. The CLI route creates an instance and starts indexing a domain you own:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>npx wrangler ai-search create docs-search --type web-crawler --source example.com
+npx wrangler ai-search stats docs-search</code></pre>
+
+      <p class="mb-4">The <code>stats</code> command is how you watch indexing progress. If you would rather not crawl — which is the right call for a static Markdown site, given the 500-pages-per-day ceiling — create the instance with built-in storage and upload files directly:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>npx wrangler ai-search create docs-search --type builtin</code></pre>
+
+      <p class="mb-4">Then bind a Worker to the instance. In <code>wrangler.jsonc</code> that is three fields:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>{
+  "ai_search_namespaces": [
+    {
+      "binding": "AI_SEARCH",
+      "namespace": "default",
+      "remote": true
+    }
+  ]
+}</code></pre>
+
+      <p class="mb-4">And the search call inside the Worker is a single method. Cloudflare's "create a simple search engine" recipe returns filenames matching a query, and its two tuning notes are the useful part: disable query rewriting so the original user query is matched directly, and use small chunks — 256 tokens is usually enough — because the raw-query pattern performs better with tight chunks.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The MCP endpoint is the sleeper feature</h2>
+      <p class="mb-4">This is where AI Search diverges from a pure Algolia replacement, and it is the reason a Markdown publisher should care. Every instance can expose a built-in MCP endpoint providing one <code>search</code> tool over your indexed content, so any MCP client or agent can search your knowledge base without custom code.</p>
+
+      <p class="mb-4">Enabling it is a dashboard switch: open the instance, go to Settings, then Public Endpoint, turn on Enable Public Endpoint, then turn on the MCP endpoint. Copy the host, and your MCP URL is that host plus <code>/mcp</code>:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>https://&lt;PUBLIC_ENDPOINT_ID&gt;.search.ai.cloudflare.com/mcp</code></pre>
+
+      <p class="mb-4">Connecting a client is a standard remote MCP server entry:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>{
+  "mcpServers": {
+    "ai-search": {
+      "url": "https://&lt;PUBLIC_ENDPOINT_ID&gt;.search.ai.cloudflare.com/mcp"
+    }
+  }
+}</code></pre>
+
+      <p class="mb-4">One detail in the docs is easy to skip and expensive to get wrong: set the <strong>Tool Description</strong> under Settings, Public Endpoint. MCP clients read that field to decide when to call your tool. A vague description means your search never fires; a specific one — "search this site for Markdown publishing workflows and rich-text formatting" — is what makes an agent reach for it at the right moment. You can also gate the public endpoint behind Cloudflare Access so only authenticated users and agents can query it.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Two real Markdown-to-rich-text examples</h2>
+      <p class="mb-4">The reason this matters for a Markdown writer specifically is the pipeline shape. AI Search indexes what you published. It does not help you get the draft out of your editor and into a platform's rich-text box. Those are separate problems, and keeping them separate is what makes the search swap low-risk.</p>
+
+      <p class="mb-4">Example one: a short post where the front matter and heading structure are what you want the index to see. Write it as plain Markdown on disk:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># Site search without a search backend
+
+Static sites skip search because a static site has no server.
+Cloudflare AI Search changes that: point it at your content,
+and retrieval becomes a binding call instead of a product.
+
+- [x] Write the post in Markdown
+- [x] Publish the rendered HTML
+- [ ] Index it with AI Search
+- [ ] Convert the announcement to rich text with md2rich</code></pre>
+
+      <p class="mb-4">The headings and list structure survive into the published page, which is what the crawler and the chunker both read. Convert the same source to rich text for the LinkedIn or X announcement with md2rich, and the task list and heading stay as a task list and a heading instead of collapsing into a paragraph of literal dashes.</p>
+
+      <p class="mb-4">Example two: the announcement post itself, which is the piece most people paste badly. A short Markdown file with a heading, a code block, and a link:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># We swapped Algolia for Cloudflare AI Search
+
+The beta is free within plan limits, and the retrieval layer
+now sits in the same account as the site.
+
+    Queries: 20,000/month on Free
+    Crawl budget: 500 pages/day on Free
+    File size cap: 4 MB
+
+Read the limits before you migrate.</code></pre>
+
+      <p class="mb-4">Both convert through md2rich entirely client-side — the site is a pure front-end tool with zero upload. That is the same principle AI Search applies on the retrieval side, except AI Search does run on Cloudflare's infrastructure once you opt in. Your drafts never have to. Write and convert locally; let the published, already-public page be the thing that gets indexed.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where this does not fit yet</h2>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>It is beta, and the pricing is a promise, not a contract.</strong> Cloudflare commits to 30 days' notice before billing starts. That is better than most, but it is still a future price you have not seen.</li>
+        <li><strong>You can only crawl domains you onboarded.</strong> You cannot point it at someone else's site. For a Markdown publisher that is fine, but it rules out the "index the whole web for me" mental model.</li>
+        <li><strong>500 pages per day on Free is the real ceiling.</strong> Under that, crawling just works. Over it, budget six days or switch to file uploads.</li>
+        <li><strong>Five custom metadata fields.</strong> If your filtering needs are elaborate — many facets, many fields — this is a hard cap, and metadata per vector is 10 KiB total including system overhead.</li>
+        <li><strong>Hybrid search halves your file ceiling.</strong> 1M files drops to 500K when you turn on hybrid search on Workers Paid. Worth knowing before you design around a number.</li>
+        <li><strong>Billing is split.</strong> AI Search itself is bundled, but Workers AI and AI Gateway are billed on their own meters. A busy generation workload is not free just because search is.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The bottom line</h2>
+      <p class="mb-4">If you run a static Markdown site of a few hundred posts and you have been paying for hosted search, this is the first genuinely credible reason in years to reconsider. Twenty thousand free queries a month, indexing included, no separate vector database to operate, and a public MCP endpoint that makes your archive queryable by agents — that is a different product from an index-as-a-service.</p>
+      <p class="mb-4">If you run thousands of pages, read the crawl limit before you commit, and plan to upload files rather than let a crawler work through your archive at 500 pages a day. And treat the beta pricing as a placeholder that will change; the 30-day notice is your window to re-evaluate.</p>
+      <p class="mb-6">What does not change is the writing side. Search is how people find what you published; it is not how the draft gets written or how it lands in a platform's rich-text editor. Keep your Markdown source local, keep the conversion step client-side, and let the published page be the thing you index. Try <a href="/" class="text-indigo-600 underline">md2rich</a> to convert your next finished draft into rich text for LinkedIn, X Articles, Medium, or Notion.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Make it findable, then make it readable.</h3>
+        <p class="mb-3">AI Search indexes the page you published; <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> turns the finished Markdown into rich text for LinkedIn, X Articles, Medium, and Notion — all in your browser, nothing uploaded.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -2253,6 +2253,26 @@
         "MDedit"
       ],
       "primary_cta": "Try md2rich"
+    },
+    {
+      "slug": "cloudflare-ai-search-vs-algolia-markdown-2026-en",
+      "date": "2026-09-10",
+      "type": "article",
+      "lang": "en-US",
+      "file": "blog/cloudflare-ai-search-vs-algolia-markdown-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-ai-search-vs-algolia-markdown-2026-en",
+      "title": "Cloudflare AI Search vs Algolia 2026: Markdown Sites",
+      "description": "Cloudflare AI Search is free in beta and indexes your own site. Here's how a Markdown publisher swaps Algolia for it, and what the limits really cost.",
+      "heat_source": "2026-09-10 每日热点简报 ⭐ Cloudflare AI Search 进入 Beta（8 月 30 日上线文档）— 用 Cloudflare AI Search 替代 Algolia：成本/SEO 影响实测（明确标注 threadgrab/md2rich 适用）。md2rich ⭐ 中 mdedit(09-09)/MarkFlowy(09-07) 均已覆盖 → 消费简报 ⭐ #11。Family (f) engine/platform-format-change，新 pipeline 位置 = 检索/发现端。",
+      "status": "published",
+      "published_at": "2026-09-10",
+      "providers_featured": [
+        "Cloudflare AI Search",
+        "Algolia",
+        "Workers AI",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
