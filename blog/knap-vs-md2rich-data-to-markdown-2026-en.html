@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knap vs md2rich 2026: Data to Markdown Two Ways</title>
+  <meta name="description" content="Knap is Obsidian's open-source template language that turns JSON and CSV into Markdown. Here is how it differs from pasting a draft into md2rich.">
+  <meta name="keywords" content="Knap, Knap vs md2rich, data to markdown, JSON to markdown, CSV to markdown, Obsidian knap, knap template language, markdown template language, md2rich, markdown to rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/knap-vs-md2rich-data-to-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/knap-vs-md2rich-data-to-markdown-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/knap-vs-md2rich-data-to-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/knap-vs-md2rich-data-to-markdown-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Knap vs md2rich 2026: Data to Markdown Two Ways">
+  <meta property="og:description" content="Knap is Obsidian's open-source template language that turns JSON and CSV into Markdown. Here is how it differs from pasting a draft into md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/knap-vs-md2rich-data-to-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Knap vs md2rich 2026: Data to Markdown Two Ways">
+  <meta name="twitter:description" content="Knap is Obsidian's open-source template language that turns JSON and CSV into Markdown. Here is how it differs from pasting a draft into md2rich.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Knap vs md2rich 2026: Data to Markdown Two Ways",
+      "description": "Knap is Obsidian's open-source template language that turns JSON and CSV into Markdown. Here is how it differs from pasting a draft into md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-11",
+      "dateModified": "2026-09-11",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/knap-vs-md2rich-data-to-markdown-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Knap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Knap is an open-source template language, maintained by Obsidian (github.com/obsidianmd/knap, MIT), that turns data into Markdown using logic, variables, and filters. You supply a template and a JSON object, and Knap renders Markdown output. It runs in the terminal via the knap CLI, in an app via the npm package's library API, and inside Obsidian's own tools: the Web Clipper uses Knap variables to standardize content from web pages, and the Importer plugin uses it to convert data from other apps into portable Markdown files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Knap the same kind of tool as md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, they sit on opposite sides of the Markdown file. Knap generates Markdown programmatically from structured data, so its output is a .md file you have not written yet. md2rich converts Markdown you have already written into rich text you paste into LinkedIn, X Articles, Medium, or Notion. Knap is an authoring-by-template tool that runs at build or import time; md2rich is a client-side conversion tool that runs at publish time, in your browser, with nothing uploaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Knap and md2rich together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and the handoff is clean. Render the Markdown with Knap from your JSON or CSV source, review the generated file as text, then paste it into md2rich when it is time to publish. Knap is good at the repetitive part, such as turning a table of records into hundreds of note files or a filterable Markdown table, and md2rich is good at the last mile, where that Markdown has to survive a platform's rich-text editor with headings, tables, task lists, and code blocks intact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Knap require a server or an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Knap is an npm package you install locally (npm install -g knap) and it requires Node.js 20 or later. The CLI includes the standard filters, and the library API adds DOM-dependent HTML filters and custom app integrations. There is no hosted service in the loop. md2rich matches that posture on the conversion side: it is a pure front-end tool, and nothing you paste into it leaves your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which one should I learn first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Learn the one that matches your bottleneck. If you find yourself manually writing the same Markdown structure over and over, or hand-maintaining hundreds of notes and tables from a spreadsheet, Knap's templates remove that work at the source. If your bottleneck is the publish step, where finished Markdown keeps arriving in platforms as broken plain text, md2rich removes that work at the end. Most people who publish a lot end up with both, because the problems are in different places."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+      <time class="text-xs text-gray-500" datetime="2026-09-11">2026-09-11</time>
+      <h1 class="text-3xl font-bold mb-3">Knap vs md2rich 2026: Data to Markdown Two Ways</h1>
+      <p class="text-gray-600 mb-6">Two tools, one phrase in common — "data into Markdown" — and almost nothing else. Knap is a template language that writes Markdown for you from JSON and CSV. md2rich converts Markdown you already wrote into rich text you can paste. Knowing which one you need depends entirely on which end of the file you are stuck at.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What Knap actually is</h2>
+      <p class="mb-4">Knap showed up on Hacker News on 2026-09-10 under the title "Knap – Turn Data into Markdown," and it is easy to file it next to the dozens of paste-and-convert tools that have appeared this year. That would be a mistake. Knap is not a converter with a text box. It is a small templating language, and its own documentation is careful about the wording: "Knap is a simple template language that turns data into Markdown using logic, variables, and filters."</p>
+      <p class="mb-4">The project is maintained by Obsidian — the repository is <code class="bg-gray-100 px-1 rounded">github.com/obsidianmd/knap</code>, MIT licensed, first created on 2026-08-21. It started as the templating language behind Obsidian's own tools and was then released for anyone to use. As of this writing the repo sits at 140 stars with the last push on 2026-09-10, so it is young and under active development rather than parked. The npm package is <code class="bg-gray-100 px-1 rounded">knap</code>, currently at 0.4.1, with a single dependency (<code class="bg-gray-100 px-1 rounded">dayjs</code>) and a stated requirement of Node.js 20 or later.</p>
+      <p class="mb-4">Where you have probably already met it without knowing: the Obsidian Web Clipper uses Knap variables to standardize the content it pulls off web pages, and the Obsidian Importer plugin uses it to convert data out of other apps and file formats into portable Markdown files. That is the clearest statement of what Knap is for. It is the machinery that turns a messy, structured input into a tidy Markdown file, repeatedly, without a human retyping the structure each time.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The core idea: a template plus a record</h2>
+      <p class="mb-4">Knap has three moving parts, and the documentation names them plainly: variables, filters, and logic.</p>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>Variables</strong> are written in double braces — <code class="bg-gray-100 px-1 rounded">{{ title }}</code> — and are replaced with values from your data when the template renders.</li>
+        <li><strong>Filters</strong> follow a pipe and run left to right, so <code class="bg-gray-100 px-1 rounded">{{ title | h2 | upper }}</code> produces <code class="bg-gray-100 px-1 rounded">## THE MACHINE STOPS</code>. There are dozens of them, and many are Markdown-aware: <code class="bg-gray-100 px-1 rounded">blockquote</code>, <code class="bg-gray-100 px-1 rounded">table</code>, <code class="bg-gray-100 px-1 rounded">list</code>, <code class="bg-gray-100 px-1 rounded">wikilink</code>, <code class="bg-gray-100 px-1 rounded">yaml_property</code>, <code class="bg-gray-100 px-1 rounded">code</code>, <code class="bg-gray-100 px-1 rounded">math</code>.</li>
+        <li><strong>Logic</strong> uses brace-percent tags for conditions and loops — <code class="bg-gray-100 px-1 rounded">{% if %}</code>, <code class="bg-gray-100 px-1 rounded">{% for %}</code>, plus comparison operators and a <code class="bg-gray-100 px-1 rounded">??</code> fallback.</li>
+      </ul>
+      <p class="mb-4">Here is the smallest useful example, straight from the docs. A template file, and the Markdown it produces:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># {{ title }}
+
+**Plot:**
+{{ plot | blockquote }}</code></pre>
+      <p class="mb-4">Given a data object where <code class="bg-gray-100 px-1 rounded">title</code> is "The Matrix" and <code class="bg-gray-100 px-1 rounded">plot</code> is a sentence about a hacker discovering a simulation, the output is:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># The Matrix
+
+**Plot:**
+> A hacker discovers that reality is a simulation and joins a rebellion against its machines.</code></pre>
+      <p class="mb-4">That is the whole pitch. The blockquote was never typed — the filter produced it. Scale that up to a hundred records and you have the reason this exists.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where the structural filters earn their keep</h2>
+      <p class="mb-4">The examples that make Knap worth a second look are the ones that would be tedious to do by hand. A list of cast members becomes a Markdown table when you pipe it through the <code class="bg-gray-100 px-1 rounded">table</code> filter, and the filter handles sorting on its own:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>{% if cast %}
+{{ cast | sort:"Actor" | table }}
+{% endif %}</code></pre>
+      <p class="mb-4">Which renders as a real, aligned Markdown table with an Actor and Role column — the header row included, the delimiters correct, the rows sorted. If you have ever hand-built a Markdown table inside a template string and gotten the pipe counts wrong on row nine, you understand why that is a feature and not a convenience.</p>
+      <p class="mb-4">Knap also understands the parts of Markdown that are not really Markdown — the YAML frontmatter and the app-specific extensions. It can emit frontmatter and Obsidian-style wikilinks directly:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>---
+year: {{ year }}
+{{ directors | wikilink | yaml_property:"directors" }}
+---</code></pre>
+      <p class="mb-4">That produces a frontmatter block with a <code class="bg-gray-100 px-1 rounded">directors</code> property whose values are wikilinks — the exact shape Obsidian expects, generated rather than remembered. For anyone maintaining a vault of imported notes, that is the difference between a script and a ritual.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">How you actually run it</h2>
+      <p class="mb-4">Knap runs in two places: the terminal and your app.</p>
+      <p class="mb-4">In the terminal, the CLI comes with the npm package. You can render an inline template with no files at all, or render a template against a JSON data file:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>npx knap render -t '# {{ title }}' --set title=Hello
+npx knap render template.md --data data.json --output note.md</code></pre>
+      <p class="mb-4">There is also a validation step, which is the detail that tells you this is meant for automation rather than a one-off paste. <code class="bg-gray-100 px-1 rounded">knap validate template.md</code> checks syntax, filter names, and statically checkable filter arguments, exits 0 on success and 1 on failure, and writes nothing. It does not render the template or check that your variables exist — the docs are explicit about that limit — but it catches the class of error you would otherwise only find at the end of a batch. For repeated generation from records, there is batch rendering, which produces one file per record from a single template and a data set.</p>
+      <p class="mb-4">In an app, you install the same package and build an engine:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>import { createEngine, standardFilters } from 'knap';
+
+const engine = createEngine({ filters: standardFilters });
+const result = await engine.render('# {{ title | trim }}', {
+  variables: { title: '  An imported note  ' },
+});</code></pre>
+      <p class="mb-4">The execution model is worth noting if you are considering it for anything shared: Knap parses templates into an AST and interprets them without using <code class="bg-gray-100 px-1 rounded">eval</code> or executing arbitrary JavaScript, and engines apply finite default limits on template length, output length, operations, and nesting depth. It is a template engine designed by people who expect it to be pointed at untrusted input.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The fork in the road: generating vs publishing</h2>
+      <p class="mb-4">This is where the briefing comparison and the honest comparison diverge. Putting Knap next to md2rich as two "data to Markdown" tools describes a competition that does not exist. They meet at a file, from opposite directions.</p>
+      <p class="mb-4"><strong>Knap writes Markdown.</strong> You give it structured data and a template; it gives you a <code class="bg-gray-100 px-1 rounded">.md</code> file. The file did not exist as prose before you ran the command. The tool's job is to make the repetitive parts of structure automatic.</p>
+      <p class="mb-4"><strong>md2rich reads Markdown you already wrote.</strong> You give it a finished draft; it gives you rich text you paste into LinkedIn, X Articles, Medium, or Notion. The prose existed; the tool's job is to make sure the platform does not destroy its structure on the way in.</p>
+      <p class="mb-4">Put another way: Knap is authoring by template, md2rich is publishing by conversion. One runs at build or import time on a developer's machine, the other runs at publish time in a browser. Those are different moments in the life of a document, and the tool that solves one does not solve the other.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Two real Markdown-to-rich-text examples</h2>
+      <p class="mb-4">The gap between generating Markdown and publishing Markdown is easiest to see when the generated Markdown gets pasted somewhere that cares about structure. Take a record rendered by a Knap-style template into a note with a heading, a task list, and a table:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># Q3 Release Notes
+
+## Shipped
+- [x] Search index rebuild
+- [x] Export to Notion
+- [ ] Mobile paste fix
+
+## API limits
+| Plan | Requests/day |
+| - | - |
+| Free | 1000 |
+| Pro | 50000 |</code></pre>
+      <p class="mb-4">Generated, that file is correct. Pasted raw into a rich-text editor, the task list can flatten into lines of literal <code class="bg-gray-100 px-1 rounded">- [x]</code>, and the table can collapse into a paragraph of pipes and dashes. That is the moment md2rich exists for: it converts the Markdown source client-side so the heading stays a heading, the task list stays a task list, and the table stays a table when it lands.</p>
+      <p class="mb-4">Second example, the announcement post itself — the piece people paste badly most often. A short file with a heading, a code block, and a link:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># We moved our notes to Markdown
+
+Templates generate the boring parts; humans write the sentences.
+
+    Plan: Free -> Pro
+    Records: 412
+
+Read the migration notes before you import.</code></pre>
+      <p class="mb-4">Both convert through md2rich entirely client-side — the site is a pure front-end tool with zero upload. That property matters more, not less, in a pipeline like this one. If your source data is internal — customer records, an internal CSV, a private vault — the generating step happens locally with Knap and the publishing step happens locally with md2rich. The only thing that ever becomes public is the page you deliberately published.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where Knap does not fit yet</h2>
+      <ul class="list-disc list-inside mb-4 space-y-1">
+        <li><strong>It is three weeks old and at 0.4.x.</strong> The repo was created 2026-08-21. The template syntax is stable enough to be worth learning, but expect the pre-1.0 churn that comes with a new language and do not treat the filter list as frozen.</li>
+        <li><strong>It is a language, so it has a learning curve.</strong> If you need to convert one document once, opening an editor and writing it is faster than writing a template to generate it. Knap pays off on repetition, and only on repetition.</li>
+        <li><strong>Validation is static, not semantic.</strong> <code class="bg-gray-100 px-1 rounded">knap validate</code> checks syntax and filter names but does not check whether your variables exist or inspect runtime values. A template that validates can still render empty. Render with real data before trusting a batch.</li>
+        <li><strong>Node.js 20 or later is required.</strong> Not a problem for most machines, but it is a hard floor if any part of your pipeline is pinned to an older runtime.</li>
+        <li><strong>The CLI is a subset of the API.</strong> DOM-dependent HTML filters and custom app integrations are available through the library API, not the command line. If your template needs those filters, you are writing code, not running a command.</li>
+        <li><strong>It does not solve the paste problem.</strong> Nothing about generating Markdown from a template tells a rich-text editor how to accept it. That is a different layer, and it is the one md2rich occupies.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The bottom line</h2>
+      <p class="mb-4">If you maintain hundreds of Markdown files that all share a structure, or you regularly turn spreadsheets and API responses into notes, tables, and frontmatter, Knap is worth the afternoon it takes to learn. It is MIT licensed, it is maintained by Obsidian, and it is confidently solving a problem that most "Markdown tools" ignore entirely — the generation of structure, not its conversion. Check whether your repetitive Markdown is repetitive enough to template; if it is, this removes the work at the source.</p>
+      <p class="mb-4">If your recurring pain is the last mile — a finished draft that arrives in LinkedIn or X Articles as an unformatted wall of text, tables collapsed into pipes, code blocks flattened into paragraphs — a template language will not help you. There is no data to template from, because you wrote the prose by hand. That is what md2rich does, and it does it in the browser with nothing uploaded.</p>
+      <p class="mb-6">Most people who publish a lot end up with both, because the two problems live at opposite ends of the file. Generate the draft with Knap when the structure is repetitive. Convert it with <a href="/" class="text-indigo-600 underline">md2rich</a> when it is time to paste it into LinkedIn, X Articles, Medium, or Notion. The Markdown between the two steps can stay on your machine the whole way.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Template the structure. Convert the draft.</h3>
+        <p class="mb-3">Knap generates Markdown from your data; <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> turns the finished Markdown into rich text for LinkedIn, X Articles, Medium, and Notion — all in your browser, nothing uploaded.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>
