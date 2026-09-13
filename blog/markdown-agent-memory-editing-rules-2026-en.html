@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown as agent memory 2026: the editing rules</title>
+  <meta name="description" content="A 382-dependency memory runtime lost to a folder of Markdown files. Here are the write rules and the read path that decide whether agent memory stays true.">
+  <meta name="keywords" content="markdown agent memory, agent memory markdown, markdown memory system, provenance tags, supersession markdown, MEMORY.md, AI agent memory 2026, md2rich, markdown to rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/markdown-agent-memory-editing-rules-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/markdown-agent-memory-editing-rules-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/markdown-agent-memory-editing-rules-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/markdown-agent-memory-editing-rules-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown as agent memory 2026: the editing rules">
+  <meta property="og:description" content="A 382-dependency memory runtime lost to a folder of Markdown files. Here are the write rules and the read path that decide whether agent memory stays true.">
+  <meta property="og:url" content="https://md2rich.com/blog/markdown-agent-memory-editing-rules-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markdown as agent memory 2026: the editing rules">
+  <meta name="twitter:description" content="A 382-dependency memory runtime lost to a folder of Markdown files. Here are the write rules and the read path that decide whether agent memory stays true.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Markdown as agent memory 2026: the editing rules",
+      "description": "A 382-dependency memory runtime lost to a folder of Markdown files. Here are the write rules and the read path that decide whether agent memory stays true.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/markdown-agent-memory-editing-rules-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is markdown agent memory?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Markdown agent memory is an approach where a long-running AI agent keeps everything it needs to remember as plain Markdown files in a Git repository, instead of an installed vector store, embedding service, or temporal graph. The files hold identity, an index, one file per person project and decision, and dated daily notes. Retrieval reads canonical lines rather than querying a ranking function, so the current fact and its superseded history both come back in reading order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the four write rules in the markdown memory system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One, every fact line carries a provenance tag: stated, observed, inferred, or suggested. Two, an inferred lesson needs three or more independent signals across two or more distinct sessions before it can become a standing rule, and signals older than thirty days count half. Three, supersession is an edit, not an append, so the old line is struck through with a date and the new line lands beside it. Four, store only what is not re-derivable, keeping fetched data, generated plans, and anything Git already records out of memory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did the markdown folder beat the memory runtime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the September 2026 test, three versions of one project decision were fed to a memory runtime with 382 dependencies. Asked what the current decision was, it returned the superseded one, because all three versions tied at a relevance score of 1.000 and nothing in the retrieval path ranked the temporal fields. The Markdown folder returned the current decision with its date and source because the editing rules require the struck-through history and the current line to sit in the same file. The reliability came from write discipline, not from the database."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do provenance tags survive into the model's context?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the markdown design they do, because the context handed to the model is the file itself, so a tag on a line travels with the line. The runtime tested in September 2026 stored source URIs faithfully and then stripped them from the search output and from the context block given to the model. Provenance that survives in storage but never reaches the agent is not provenance the agent can use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does markdown agent memory scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At 345 daily notes and a few dozen entity files, a routing index plus bounded search finds things reliably. The author states plainly that there is a scale ceiling somewhere past a few hundred daily notes, that it has not been hit, and that this is not a claim it does not exist. The system is also single-agent and single-operator, and a fifty-seat team would need real locking and merge discipline. It is an n=1 result over seven months."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-indigo-600">md2rich</a>
+      <nav class="text-sm text-gray-600 space-x-4">
+        <a href="/" class="hover:text-indigo-600">Home</a>
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">2026-09-13 · Markdown workflows</p>
+      <h1 class="text-3xl font-bold mb-4">Markdown as agent memory 2026: the editing rules</h1>
+
+      <p class="mb-4">On September 10, 2026, Wes Sander published a post titled <em>Markdown Is All You Need</em> on the Practical Systems blog with a claim that sounds like a joke and then stops being one. He had spent the week running a break-it test on a memory runtime with <strong>382 dependencies</strong> &mdash; the kind of product that sells reliability as something you install. He fed it three versions of a single project decision across eight months: REST in January, GraphQL in April, tRPC in August, each tagged with the meeting it came from. Then he asked it what the current public API decision was.</p>
+
+      <p class="mb-4">It said GraphQL. GraphQL is the superseded one.</p>
+
+      <p class="mb-4">The reason is more interesting than the failure. All three versions came back tied at a relevance score of 1.000, because nothing in the retrieval path actually read the temporal fields the pitch was built on. The supersession columns existed in the schema. Nothing wrote to them and nothing ranked by them. Three versions of a decision became three equal facts, and an agent asking for the best answer got a coin flip weighted toward wrong. He then asked his own agent the same class of question against its memory, which is a folder of Markdown files in a Git repository. It returned the current decision, dated, with the superseded versions preserved above it as struck-through history, each line carrying where it came from. Twelve days later, the design is worth reading closely &mdash; not because Markdown is a magic format, but because of what it makes impossible.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The claim underneath the headline</h2>
+      <p class="mb-4">The post&#39;s abstract states the argument precisely: a folder of Markdown files, one routing index, and a small set of editing rules outperforms an installed runtime on the property that matters for a long-running agent &mdash; returning the current truth with its source while preserving what used to be true. The architecture needs zero dependencies, is auditable by a human with a text editor, and, per the author, has run seven months in daily production across three frontier models from two vendors.</p>
+      <p class="mb-4">The conclusion he draws is the part that generalizes beyond his own setup: <strong>the hard part of agent memory was never storage or retrieval. It is editorial policy, which no memory product ships.</strong></p>
+      <p class="mb-4">That is a testable assertion, and the post tests it. He is explicit that the runtime is not a strawman &mdash; it is a serious open-source project with a genuinely correct data model on paper, with validity windows, append-only corrections, and supersession edges. He then says he has now looked closely at a hosted context server, a Go memory CLI that was two hours old, and this runtime, and that all three share the same gap: <em>the schema knows about time; the write path and the read path do not.</em> Supersession only happens if you call an internal API by hand or run an LLM consolidation job and trust it. Which means the property you installed the tool for is not a property of the tool &mdash; it is a property of how disciplined the writes are.</p>
+      <p class="mb-4">Follow that to its end and the database underneath becomes interchangeable. If the reliability comes from write discipline anyway, you should pick the store a human can read, grep, diff, and fix. That store is a text file.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The architecture, in numbers</h2>
+      <p class="mb-4">The system is open source at <code class="bg-gray-100 px-1 rounded">github.com/ucsandman/markdown-agent-memory</code> under MIT, created in February 2026 and describing itself as markdown-only hierarchical memory for long-running agents. The repository&#39;s README reports 125 stars and 14 forks as of mid-September 2026, with the last push on September 11. The measured contents of the agent&#39;s memory at the time of writing:</p>
+
+      <ul class="list-disc pl-6 mb-4 space-y-1">
+        <li><strong>An identity layer</strong> read on every boot &mdash; who it is, who the operator is, the rules it operates under, current standing decisions.</li>
+        <li><strong>One routing index</strong>, <code class="bg-gray-100 px-1 rounded">MEMORY.md</code>, at 10,079 characters against a hard cap of 15,000. It holds no facts, only pointers: which file owns which person, project, and decision, and what triggers reading each one.</li>
+        <li><strong>34 files</strong> for people and projects, one file per thing that has a history.</li>
+        <li><strong>5 decision records</strong> for choices that changed default behavior.</li>
+        <li><strong>345 dated daily notes</strong>, raw logs written the day things happened.</li>
+        <li><strong>A SQLite index and semantic search</strong> over all of it, for lookup only. The index is rebuilt from the files.</li>
+      </ul>
+
+      <p class="mb-4">That last line is the sharpest single sentence in the design. <em>The files are the truth. If the index and a file disagree, the index is wrong by definition.</em> The layering follows from it: boot reads only identity and the index, everything else is retrieved when a task asks for it, narrowest file first. The agent does not preload project history to answer a question about dinner. The README puts the saving at roughly 70% off a typical session start, because boot loads a ~1.5k-token index instead of a 5&ndash;10k flat file.</p>
+      <p class="mb-4">He is honest that the shape is not the innovation. Folders, entities, and an index is roughly what every memory tool looks like now. The shape was never the hard part.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The four write rules</h2>
+      <p class="mb-4">All the reliability comes from four constraints on writing. They are short enough to paste into any agent&#39;s instructions file, which is exactly the point.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">1. Every fact carries a provenance tag</h3>
+      <p class="mb-4">Each line in a people, project, or decision file gets one of four tags, and the set is deliberately small:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>[stated]    the operator said it directly
+[observed]  you saw it in a tool result, file, or log
+[inferred]  your conclusion
+[suggested] your idea the operator never committed to</code></pre>
+      <p class="mb-4">The rule that gives it teeth: never record that the operator decided something unless a human turn actually states it. The failure mode it kills is the agent laundering its own proposals into decisions. A proposal plus &quot;sounds good&quot; files the <em>shape</em> of what was approved as one decision, not ten separate facts nobody ever stated.</p>
+      <p class="mb-4">This is also a prompt-injection defense, and an unusually clean one. When lessons are stored as tagged data rather than as instructions, a hostile input can suggest a rule once &mdash; but once is never enough.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">2. Inferred lessons pass a recurrence gate</h3>
+      <p class="mb-4">A pattern the agent notices needs at least <strong>three independent signals across at least two distinct sessions</strong> before it can become standing behavior. Signals older than thirty days count half, so old one-offs decay out instead of accumulating. Explicit operator corrections skip the gate and take effect immediately.</p>
+      <p class="mb-4">The asymmetry is the design. Corrections are cheap and immediate; self-derived rules are expensive and slow. Failure lessons get stored as data in the form &quot;when X broke, Y fixed it&quot; &mdash; never as a command, so even a poisoned lesson cannot become an instruction the agent executes.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">3. Supersession is an edit, not an append</h3>
+      <p class="mb-4">When a decision changes, the old line gets struck through with a date and the new line lands next to it with its own provenance tag. The current truth and the full history live in the same place, in reading order, and both come back on any retrieval of that file. There is no query-time ranking step left to get wrong, because there is nothing to rank.</p>
+      <p class="mb-4">This is where the design buys its strongest property. The runtime&#39;s supersession edges lived in <code class="bg-gray-100 px-1 rounded">valid_from</code> and <code class="bg-gray-100 px-1 rounded">valid_until</code> columns that nothing populated. Git gives the folder those same semantics for free, as the author points out: <code class="bg-gray-100 px-1 rounded">log</code> is the validity window, <code class="bg-gray-100 px-1 rounded">blame</code> is per-line provenance, <code class="bg-gray-100 px-1 rounded">diff</code> is the supersession edge, and <code class="bg-gray-100 px-1 rounded">revert</code> is the restore path.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">4. Store only what is not re-derivable</h3>
+      <p class="mb-4">Fetched data, generated plans, and anything Git already records stays out. Current state gets verified live, never asserted from memory. Durable phrasing beats figures that go stale; where a figure matters, it carries an observed date. A file containing only things that cannot be recomputed stays small enough to stay honest.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The read path is a bounded evidence step</h2>
+      <p class="mb-4">Before answering anything about prior work, decisions, dates, people, or preferences, the agent must search memory. It returns a compact bundle capped at five sources by default, and each retained fact carries its file path and line, its provenance type, and its freshness. If freshness cannot be established, the claim gets labeled stale or unknown rather than silently promoted to current. If two sources conflict, the agent states the conflict and then fixes the canonical file, in that order.</p>
+      <p class="mb-4">Note what the semantic index does in this design: <em>it finds the file. It does not answer the question.</em> Answers come from reading the canonical lines, and the tags and dates travel with those lines. That is the difference the break-it test exposed. The runtime stored the source URIs faithfully and then stripped them from the search output and from the context block handed to the model. Provenance that survives in storage but never reaches the agent might as well not exist. In the folder, that failure is unrepresentable &mdash; the source tag is in the line, so if you read the line you got the source.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Tiers, because rules alone still drift</h2>
+      <p class="mb-4">Every file sits in one of four tiers, and the tier decides how it may change. The README credits the ROM / RAM / disk / tape framing to a Reddit commenter on r/ClaudeCode, which is itself a nice detail: the design is being edited in public.</p>
+
+      <table class="w-full text-sm mb-4 border border-gray-200">
+        <thead class="bg-gray-100">
+          <tr><th class="text-left p-2 border-b">Tier</th><th class="text-left p-2 border-b">Files</th><th class="text-left p-2 border-b">Rule</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2 border-b">ROM</td><td class="p-2 border-b">instructions file, identity files, MEMORY.md</td><td class="p-2 border-b">Loaded at boot, hard caps, because harnesses truncate big boot files without telling the agent</td></tr>
+          <tr><td class="p-2 border-b">RAM</td><td class="p-2 border-b">memory/context/, daily notes</td><td class="p-2 border-b">Rewritten freely but capped; durable facts get flushed to disk</td></tr>
+          <tr><td class="p-2 border-b">Disk</td><td class="p-2 border-b">memory/people/, memory/projects/, memory/decisions/</td><td class="p-2 border-b">Tagged fact lines; struck lines are history and never get deleted</td></tr>
+          <tr><td class="p-2 border-b">Tape</td><td class="p-2 border-b">memory/archive/</td><td class="p-2 border-b">Frozen; a document enters whole and is never edited after</td></tr>
+        </tbody>
+      </table>
+
+      <p class="mb-4">The admission buried in that table is the one worth taking seriously: <em>rules an LLM is only asked to follow drift.</em> So the design ships a machine check for the mechanical half. <code class="bg-gray-100 px-1 rounded">scripts/memory-lint.mjs</code> runs on Node 20+ with zero dependencies and fails on an over-cap boot file, an untagged new fact line, a deleted struck line, an edited archive file, or a dead path in the routing index. It runs as a pre-commit hook and in the agent&#39;s recurring health check.</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>node scripts/memory-lint.mjs --root path/to/workspace --staged
+
+# FAIL on any of:
+#   - boot file over its cap
+#   - new fact line without a provenance tag
+#   - a struck line was deleted
+#   - an archive file was edited
+#   - MEMORY.md points at a path that no longer exists</code></pre>
+      <p class="mb-4">The lint checks the mechanical failures. Whether a tag is honest is still on the writer, and the README says so rather than pretending otherwise. That boundary &mdash; automate what can be checked, name what cannot &mdash; is the part most memory products skip.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What the author admits does not work yet</h2>
+      <p class="mb-4">The limitations section is unusually direct, and it is the reason this is worth citing at all. It only works if the writer follows the policy, and the writer is an LLM. If your agent will not consistently apply editing discipline, a Markdown folder degrades just like every other store &mdash; only more legibly, and legibility is the safety net. It is single-agent and single-operator; a fifty-seat team needs real locking and merge discipline, which Git was arguably built for but this repository does not solve for you. There is a scale ceiling somewhere past a few hundred daily notes; he has not hit it, and states plainly that this is not a claim it does not exist. And it is n=1: seven months, one agent, one operator who cares.</p>
+      <p class="mb-4">His own framing of the evidence standard is the line to keep: that is weaker evidence than a benchmark suite and stronger evidence than a benchmark suite the vendor scored themselves &mdash; which, he notes, is what the memory tools ship.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What this means if you publish or write in Markdown</h2>
+      <p class="mb-4">Strip away the agent framing and the design is a set of rules about documents that accumulate: tag where each claim came from, require evidence before a pattern becomes policy, edit the line instead of appending a second version of the truth, and keep only what you cannot recompute. Those are the same rules that separate a notes folder you trust from one you open once and abandon.</p>
+      <p class="mb-4">Which is the reason this connects to publishing rather than only to agents. Agent memory and human publishing are two ends of the same document&#39;s life, and both fail for the same reason &mdash; a store that keeps everything and ranks nothing. A knowledge base that holds three un-struck versions of a decision is the same failure as a draft that has been pasted into four platforms with four different bodies. The fix in both cases is the same: keep one canonical source, keep the history visibly as history, and make the current version the one that travels.</p>
+      <p class="mb-4">Here is the shape of the problem in the form most writers hit first. You keep a canonical Markdown file with a struck-through decision, exactly as the system prescribes, and you want to publish the current version:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code># API decision record
+
+~~REST, chosen 2026-01-14, from the platform kickoff~~
+
+~~GraphQL, chosen 2026-04-22, from the client meeting~~
+
+**tRPC, chosen 2026-08-19, from the architecture review** [stated]
+
+## Consequences
+
+- One typed client, no schema drift
+- Streaming default for long jobs
+
+Paste the current line, not the record. The
+struck lines are history for the repo, not
+for the post.</code></pre>
+      <p class="mb-4">Paste that into LinkedIn or a newsletter editor and the strikethrough usually survives, the bold current line survives, and the code fence frequently does not &mdash; it arrives as a paragraph of literal backticks and dashes. The distinction the memory system draws between the canonical file and what gets read is the same distinction you need between the Markdown source and the platform-facing version of it.</p>
+      <p class="mb-4">md2rich handles that last step and runs entirely in your browser &mdash; no upload, no server-side rendering, nothing sent anywhere. For agent memory that property is merely nice. For a decision record, a postmortem, or an internal migration write-up, it is the whole argument: the document you are converting is usually the most internal prose you have, full of customer context and system names, and a converter that uploads it to format it is a bad trade. Convert it with <a href="/" class="text-indigo-600 underline">md2rich</a> and paste it into LinkedIn, X Articles, Medium, or Notion with the structure intact, having never left your machine.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Bottom line</h2>
+      <p class="mb-4">The honest read is that the headline oversells and the argument undersells. Markdown is not sufficient for agent memory in any sense a benchmark would recognize: it is n=1, single-operator, and past a few hundred daily notes the author himself will not claim it holds. What the September 2026 test actually demonstrates is narrower and more useful. A memory system fails the one question that matters &mdash; what changed, and how do you know &mdash; when its write path does not enforce supersession and its read path does not carry provenance, and the impressive schema is irrelevant if nothing populates it. A folder of files that enforces both, with a lint and a pre-commit hook, beats it on that question today.</p>
+      <p class="mb-6">The transferable part is not the format. It is that reliability in a store of accumulated prose is a property of the editing policy, not of the storage engine &mdash; and that you should therefore pick the storage a human can read, diff, and correct. That reasoning holds whether the reader at the end is an agent retrieving a decision or a person reading your post.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Keep one canonical source. Publish it properly.</h3>
+        <p class="mb-3">Rule three says the current truth and its history live in the same file. The same discipline applies to publishing: <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> turns your finished Markdown into rich text for LinkedIn, X Articles, Medium, and Notion &mdash; client-side in your browser, nothing uploaded.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>
