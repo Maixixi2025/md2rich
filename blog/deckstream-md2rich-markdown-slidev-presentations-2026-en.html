@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deckstream 2026: Markdown to Slidev, Live-Rendered</title>
+  <meta name="description" content="Deckstream renders Markdown as live Slidev decks in the browser. CodeMirror + slide/text toggle + one-click share link. Where it sits next to md2rich.">
+  <meta name="keywords" content="deckstream, deckstream slidev, markdown to slidev, markdown presentations, markdown to slides, live markdown preview, slidev browser, slide deck markdown, md2rich, markdown to rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Deckstream 2026: Markdown to Slidev, Live-Rendered">
+  <meta property="og:description" content="Deckstream renders Markdown as live Slidev decks in the browser. CodeMirror + slide/text toggle + one-click share link. Where it sits next to md2rich.">
+  <meta property="og:url" content="https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deckstream 2026: Markdown to Slidev, Live-Rendered">
+  <meta name="twitter:description" content="Deckstream renders Markdown as live Slidev decks in the browser. CodeMirror + slide/text toggle + one-click share link. Where it sits next to md2rich.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Deckstream 2026: Markdown to Slidev, Live-Rendered",
+      "description": "Deckstream renders Markdown as live Slidev decks in the browser. CodeMirror + slide/text toggle + one-click share link. Where it sits next to md2rich.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Deckstream?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deckstream is a browser-based editor at deckstream.org that lets you write a presentation as Markdown and watch it render live as a Slidev deck beside the editor. It was posted to Hacker News on September 12, 2026 as objectID 49672433 by user aspic, with one point and no comments at launch. The headline on the home page reads 'presentations, at the speed of thought' and the pitch is that you type Markdown and see the actual slide output update on every keystroke."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Deckstream relate to Slidev?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deckstream renders to Slidev rather than reimplementing slide rendering. The JavaScript bundle loads an iframe pointing at a Slidev build of the current document with the embedded=true query parameter so the preview pane stays navigable without leaving the editor. The home-page footer links out to sli.dev, which is the upstream open-source Slidev framework. A user writes Markdown with the same headings, dividers, and list structure that a Slidev deck would parse, and Deckstream handles the rest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Deckstream and md2rich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The two tools sit at opposite ends of a Markdown writer's pipeline. Deckstream converts Markdown into a rendered slide deck for live or recorded presentations. md2rich converts Markdown into rich text for paste-into-LinkedIn, X Articles, Medium, Notion, or Substack. Both run entirely client-side, neither sends the document to a server, and both keep the writer in Markdown as the canonical source. The choice between them is about destination: a slide deck on a screen, or rich text in a post."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Deckstream run in the browser without installing anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The home page loads a single-page React application with a CodeMirror editor on the left and an embedded Slidev iframe on the right. There is no installer, no extension, and no local Node toolchain. The home-page CTA reads 'Sign in to open your decks — nothing to install, nothing to configure.' Authentication uses WebAuthn passkeys through the underlying Auth0 integration, with a register, getLoginChallenge, and getTokenWithPasskey flow visible in the JavaScript bundle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you publish a Deckstream deck as a shareable link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The home page describes this as 'one click builds a static, shareable version of your deck and hands you a URL — done. No exporting, uploading, or separate hosting to think about.' The API surface visible in the JavaScript bundle includes PUT to update a deck, POST /publish to publish it, POST /unpublish to take it offline, and a publishedUrl field returned with each deck. The published version is a static Slidev build, which is what makes the share-link model work."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-indigo-600">md2rich</a>
+      <nav class="text-sm text-gray-600 space-x-4">
+        <a href="/" class="hover:text-indigo-600">Home</a>
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <p class="text-sm text-gray-500 mb-2">2026-09-14 · Markdown workflows</p>
+      <h1 class="text-3xl font-bold mb-4">Deckstream 2026: Markdown to Slidev, Live-Rendered</h1>
+
+      <p class="mb-4">On September 12, 2026, a user named <strong>aspic</strong> posted <em>Deckstream – write Markdown, get live-rendered Slidev presentations</em> to Hacker News as <a href="https://news.ycombinator.com/item?id=49672433" class="text-indigo-600 underline">objectID 49672433</a>. One point at the time of writing, no comments, a single self-replying link to <a href="https://deckstream.org" class="text-indigo-600 underline">deckstream.org</a>. That is a quiet launch by Hacker News standards. The product is also doing something the Markdown tool ecosystem has been circling for two years without quite landing: <strong>a real browser slide editor that updates as you type, with Slidev doing the actual rendering underneath</strong>.</p>
+
+      <p class="mb-4">The headline on the site is the line <em>Presentations, at the speed of thought.</em> Underneath that, three feature cards do the work of explaining what the product actually does: <em>See it as you type</em> (a CodeMirror editor on the left, an embedded Slidev iframe on the right, both panes live), <em>Markdown in, slides out</em> (the deck is structured as a document, with headings, dividers, and lists, not as a drag-and-drop canvas), and <em>Publish to a link, not a file</em> (one click builds a static shareable URL). A fourth card adds the toggle that makes the editor honest: <em>Slides or plain text — your call</em>, which lets you flip between a WYSIWYG slide view and the raw Markdown view of the same deck. The whole product is, in effect, a Markdown live-preview window bolted onto a hosted Slidev renderer, with publish and unpublish as the only output controls that matter.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What the JavaScript bundle tells you about the product</h2>
+
+      <p class="mb-4">The interesting confirmation is in the production JavaScript at <code>deckstream.org/assets/index-BLnIVnLd.js</code>, which is a 1.98 MB minified bundle. Inside it you can see the actual architecture, not just the marketing copy. The editor is CodeMirror — five matches for <code>codemirror</code> in the bundle, plus a reference to a Monaco-style plugin that is loaded but not the primary surface. The slide preview is an iframe whose source is built with a template literal: <code>${a}?embedded=true</code>, where <code>a</code> is the Slidev deployment URL for the current deck. The Slidev navigation messages — <code>{target: "slidev", type: "navigate", no: e+1}</code> — are posted between the editor window and the iframe via <code>postMessage</code>, which is how the cursor position drives slide number without the editor having to reimplement Slidev's own navigation.</p>
+
+      <p class="mb-4">The persistence and sharing layer is a small REST surface, also visible in the bundle: <code>GET /api/decks/${id}/preview</code> for a static read-only build, <code>PUT /api/decks/${id}</code> for autosave, <code>POST /api/decks/${id}/publish</code> for the share link, and <code>POST /api/decks/${id}/unpublish</code> to take a deck back to private. Each deck object carries a <code>publishedUrl</code> field and a <code>publishedAt</code> timestamp; the dashboard surfaces a <em>Recently published</em> section and a yellow badge that reads <em>Unpublished changes</em> when the saved version drifts from the live one. Authentication is WebAuthn passkeys, with explicit <code>getLoginChallenge</code> and <code>getTokenWithPasskey</code> helpers next to a standard Auth0 SPA integration. There is no password field anywhere on the site, and the home-page line <em>Sign in to open your decks — nothing to install, nothing to configure</em> is the entire pitch.</p>
+
+      <p class="mb-4">Themes are also pluggable. The deck settings object accepts a <code>theme</code> field, and the themes object maps plan names to allowed theme keys: <code>{free: ["deckstream"], pro: ["deckstream"]}</code>. At launch both plans include the same default theme; the surface area is there for paid themes later. The accent color picker accepts a hex value matching <code>#([0-9a-f]{3}|[0-9a-f]{6})</code>, and the date field uses the European format <code>dd.mm.yyyy</code>. None of this is shipping novelty — it is a presentation tool that picked sane defaults and then stopped.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Where Deckstream sits in the Markdown writer's pipeline</h2>
+
+      <p class="mb-4">The cleanest way to think about Deckstream is as one more pipeline position for someone whose canonical artifact is a Markdown file. Across the past months the Markdown tools that have shown up in the editor pipeline here — <a href="/blog/markdown-agent-memory-editing-rules-2026-en" class="text-indigo-600 underline">Markdown-as-agent-memory</a>, Marginal as the <a href="/blog/markdown-editor-for-coding-agents-2026-en" class="text-indigo-600 underline">agent-config authoring surface</a>, <a href="/blog/ozbrain-md2rich-shared-agent-brain-2026-en" class="text-indigo-600 underline">OzBrain</a> as the cross-agent brain, <a href="/blog/mdedit-no-telemetry-markdown-editor-2026-en" class="text-indigo-600 underline">MDedit</a> as the privacy-first cross-platform editor, the <a href="/blog/headless-markdown-editors-2026-block-workflows-en" class="text-indigo-600 underline">headless block frameworks</a> — have all been at the <em>source</em> end or the <em>editing</em> end of the writer's loop. Deckstream is the first one in a while at the <em>presentation output</em> end: it does not write the canonical document for you, and it does not publish it back as a long-form post. It takes a document and turns it into something you can stand in front of a room and click through.</p>
+
+      <p class="mb-4">That distinction is the one that justifies treating Deckstream as a complement to md2rich rather than a competitor. md2rich converts Markdown into rich text for paste-into-LinkedIn, X Articles, Medium, Notion, or Substack — destinations where the reader scrolls and the writer's job is to make the paragraph look right in a feed. Deckstream converts Markdown into slides for a room or a recorded talk — destinations where the reader watches and the writer's job is to make a sequence of one-idea-at-a-time screens. Both keep Markdown as the canonical artifact. Neither needs the other, and they do not overlap in what they actually output. The simplest way to put it: <strong>md2rich is the rich-text paste end, Deckstream is the slide-deck end</strong>, and a Markdown file is the only thing both of them need.</p>
+
+      <p class="mb-4">Both also share a property that has become more valuable than the feature lists suggest: the document never leaves the browser. md2rich is a static client-side converter — open the page, paste Markdown, copy rich text, close the tab; the server is never involved. Deckstream's preview pane is a Slidev iframe, the persistence is a small REST API, and the share-link build is a static export, but the editor itself runs in the page. For a presentation that contains unreleased product details, internal architecture, or customer context, that is the property that matters more than the Slidev integration underneath.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">A worked example: the same Markdown, three destinations</h2>
+
+      <p class="mb-4">The simplest demonstration is to take one Markdown source and walk it through the three places a writer might want it to land. Start with a short outline as you would write it in any editor:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>---
+theme: deckstream
+title: Q3 platform review
+date: 14.09.2026
+accent: '#2e62ea'
+---
+
+# Q3 platform review
+
+# Why we changed the API layer
+
+Three lines of context, one decision, one consequence.
+
+- REST shipped January, hit a tooling ceiling by May
+- GraphQL tried April, added a schema tax nobody wanted to own
+- tRPC shipped August, removed the schema step entirely
+
+# What changed for customers
+
+- One typed client, no schema drift
+- Streaming default for long-running jobs
+- Internal teams write procedures, not resolvers
+
+# What is still on the list
+
+- Migration of legacy REST endpoints, currently 41 percent done
+- Per-tenant rate limits, expected by end of September
+- Internal SDK that matches the public surface</code></pre>
+
+      <p class="mb-4">That file is the canonical artifact. Three things happen to it depending on where you want it to land.</p>
+
+      <p class="mb-4"><strong>As a slide deck in Deckstream:</strong> paste the Markdown into the left pane and the right pane renders it as a Slidev deck on every keystroke. Each <code>---</code> divider becomes a slide break, each <code>#</code> heading becomes a slide title, and the bullet lists inherit the theme's typography. The toggle to <em>Slides or plain text — your call</em> lets you flip into the Markdown view when you want to restructure without losing the visual reference. One click on <em>Publish to a link, not a file</em> returns a URL that any browser can open, and the link stays live until you click unpublish. The published version is static, which means it loads fast, it survives the company laptop being lost, and it does not require the recipient to sign in.</p>
+
+      <p class="mb-4"><strong>As a LinkedIn or X Articles post:</strong> this is where md2rich lives. Open <a href="/" class="text-indigo-600 underline">md2rich</a>, paste the same Markdown, copy the rich-text output, and paste it into the LinkedIn composer or the X Articles editor. The bullet lists land as actual bullets, the headings become real headings (LinkedIn does not render <code>#</code> as styled text, so the conversion matters), and the three short paragraphs survive intact. The deck's <code>---</code> dividers do not — they are a Slidev artifact, not a Markdown feature — so you would write a LinkedIn post that does not include them. The same canonical file is the starting point, with two or three lines removed for the destination.</p>
+
+      <p class="mb-4"><strong>As an internal Confluence or Notion page:</strong> most internal documentation tools now accept pasted Markdown reasonably well, and the same source file pastes into them without the rich-text conversion step. Where md2rich earns its keep is when the destination is one of the few remaining holdouts that strips structure on paste: the LinkedIn composer, the X Articles editor, the Substack post editor, the Medium draft view. For those four destinations, you need a converter that knows what each one accepts.</p>
+
+      <p class="mb-4">The point is not that Deckstream and md2rich are interchangeable. They are not. The point is that the Markdown file is the same in both cases, and that a writer who treats Markdown as the canonical artifact can route the same source to either destination without rewriting.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What Deckstream is not</h2>
+
+      <p class="mb-4">It is worth being explicit about the gaps, because the home-page copy is tight enough that it is easy to over-read. Deckstream is not a real-time collaboration tool. There is one editor and one published URL, with the <em>Unpublished changes</em> badge telling you that the saved version and the live version are not the same; there is no live cursor, no comment thread, no presence indicator. It is not a slide-template marketplace. There is one theme at launch on both plans; the architecture has room for more, but they are not shipping. It is not a desktop application. The site is a single-page React app; there is no Electron build, no <code>.dmg</code>, no VS Code extension. It is also not a serious competitor to PowerPoint or Keynote for design-driven decks — the entire product thesis is that for technical presentations, the deck is the document, and you do not want to drag boxes around to write it.</p>
+
+      <p class="mb-4">What it is, in one sentence: <strong>a hosted Markdown editor whose preview pane is a Slidev iframe, with one-click publish to a static share link and no installer in the way.</strong> The Hacker News launch was quiet because the product is small and the audience is specific — people who would rather write a presentation as a document than design it as a deck. That audience is real and has been waiting.</p>
+
+      <p class="mb-4">For comparison, this is what a Deckstream deck's frontmatter looks like, lifted from the documented format:</p>
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>---
+theme: deckstream
+title: My presentation
+date: today           # or dd.mm.yyyy
+info: |
+  ## Markdown + Slidev, in the browser
+  One-line summary that appears on the cover slide.
+---</code></pre>
+      <p class="mb-4">The <code>theme</code>, <code>title</code>, <code>date</code>, and <code>info</code> fields are exactly what a Slidev deck would parse; Deckstream accepts them as-is and forwards them through to the embedded renderer. That is the whole reason the preview pane can be a real Slidev iframe rather than a reimplementation: there is nothing to translate. If you already write Slidev decks in Markdown locally, the only thing Deckstream changes is where you point your browser.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Bottom line</h2>
+
+      <p class="mb-4">Deckstream is a useful addition to the Markdown writer's toolkit precisely because it does not try to be one. It takes a Markdown file, renders it as a Slidev deck in the browser, lets you publish it as a static link, and stays out of the way. The September 12, 2026 launch on Hacker News was quiet but the product itself is doing real work. If you write technical presentations and have been hand-converting Markdown to Slidev by running a local Slidev dev server, the in-browser version is the workflow most people were waiting for. If you write technical posts and have been converting Markdown to rich text by hand, <a href="/" class="text-indigo-600 underline">md2rich</a> is the same idea at the other end of the pipeline. The two together cover the two most common destinations for technical prose written in Markdown, and neither one sends the document to a server to do it.</p>
+
+      <p class="mb-6">The wider pattern is that Markdown is becoming the canonical intermediate format for more surfaces than it was designed for: agent memory, agent configuration, slide decks, rich-text posts, knowledge bases, headless editor frameworks. Each new surface adds a converter at one end and a renderer at the other. Deckstream is the newest renderer. md2rich is one of the oldest. The interesting question for the next year is how many more ends the same Markdown file can be routed to without losing structure, and how many of those renderers stay client-side.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Markdown in, slide deck or rich text out.</h3>
+        <p class="mb-3">Deckstream handles the slide end. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> handles the rich-text post end. Both run client-side in your browser — the Markdown source never leaves your machine. Write once, route to either destination.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>

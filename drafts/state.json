@@ -2327,6 +2327,25 @@
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "deckstream-md2rich-markdown-slidev-presentations-2026-en",
+      "date": "2026-09-14",
+      "type": "tool-review",
+      "lang": "en-US",
+      "file": "blog/deckstream-md2rich-markdown-slidev-presentations-2026-en.html",
+      "url": "https://md2rich.com/blog/deckstream-md2rich-markdown-slidev-presentations-2026-en",
+      "title": "Deckstream 2026: Markdown to Slidev, Live-Rendered",
+      "description": "Deckstream renders Markdown as live Slidev decks in the browser. CodeMirror + slide/text toggle + one-click share link. Where it sits next to md2rich.",
+      "heat_source": "每日热点简报 2026-09-14 ⭐ threadgrab / md2rich: Deckstream (HN Show HN 2026-09-12, objectID 49672433, deckstream.org, Markdown to live-rendered Slidev presentations)",
+      "status": "published",
+      "published_at": "2026-09-14",
+      "providers_featured": [
+        "Deckstream (deckstream.org)",
+        "Slidev (sli.dev)",
+        "md2rich"
+      ],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
@@ -2335,15 +2354,16 @@
     "ozbrain-md2rich-shared-agent-brain-2026-en",
     "panache-md2rich-markdown-lint-workflow-2026-en",
     "skilldocs-md2rich-collaborative-markdown-2026-en",
-    "notula-vs-md2rich-ai-agent-markdown-2026-en"
+    "notula-vs-md2rich-ai-agent-markdown-2026-en",
+    "deckstream-md2rich-markdown-slidev-presentations-2026-en"
   ],
   "current_index": 1,
   "last_topic_direction": "markdown-agent-memory-editing-rules",
-  "last_run": "2026-09-13",
-  "last_published_slug": "markdown-agent-memory-editing-rules-2026-en",
-  "last_published_at": "2026-09-13",
+  "last_run": "2026-09-14",
+  "last_published_slug": "deckstream-md2rich-markdown-slidev-presentations-2026-en",
+  "last_published_at": "2026-09-14",
   "drafts_count": 0,
-  "published_count": 94,
-  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n\n2026-09-08: Published 'Quire 2026: AI Agents Join Your Markdown Session as Peers' — Quire local Markdown collab w/ AI peers; blog/quire-ai-agents-markdown-session-2026-en.html (deployed ee22a87 via git push)\n\n2026-09-11: Published 'Knap vs md2rich 2026: Data to Markdown Two Ways' (knap-vs-md2rich-data-to-markdown-2026-en) — Knap (Obsidian 开源模板语言, obsidianmd/knap MIT, npm knap 0.4.1, 140 stars, create 2026-08-21) vs md2rich；family (e) 生成端 vs 发布端；47-char title / 145-char desc；1,886 words / 8 pre / 5 FAQ；deployed 192a4b1 via git push (md2rich auto-deploy ~60s)\n\n2026-09-12: Published 'Marginal 2026: A Markdown Editor Built for Coding Agents' (markdown-editor-for-coding-agents-2026-en) — 14/14 gates passed, 2462 words, 5 FAQ.\n2026-09-13 - Published Markdown as agent memory 2026: the editing rules (markdown-agent-memory-editing-rules-2026-en) - analysis of the Practical Systems markdown agent memory architecture; 4 write rules + bounded read path.",
+  "published_count": 95,
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n\n2026-09-08: Published 'Quire 2026: AI Agents Join Your Markdown Session as Peers' — Quire local Markdown collab w/ AI peers; blog/quire-ai-agents-markdown-session-2026-en.html (deployed ee22a87 via git push)\n\n2026-09-11: Published 'Knap vs md2rich 2026: Data to Markdown Two Ways' (knap-vs-md2rich-data-to-markdown-2026-en) — Knap (Obsidian 开源模板语言, obsidianmd/knap MIT, npm knap 0.4.1, 140 stars, create 2026-08-21) vs md2rich；family (e) 生成端 vs 发布端；47-char title / 145-char desc；1,886 words / 8 pre / 5 FAQ；deployed 192a4b1 via git push (md2rich auto-deploy ~60s)\n\n2026-09-12: Published 'Marginal 2026: A Markdown Editor Built for Coding Agents' (markdown-editor-for-coding-agents-2026-en) — 14/14 gates passed, 2462 words, 5 FAQ.\n2026-09-13 - Published Markdown as agent memory 2026: the editing rules (markdown-agent-memory-editing-rules-2026-en) - analysis of the Practical Systems markdown agent memory architecture; 4 write rules + bounded read path.\n2026-09-14 | Deckstream 2026: Markdown to Slidev, Live-Rendered (deckstream-md2rich-markdown-slidev-presentations-2026-en) - HN Show HN 2026-09-12 launch (objectID 49672433); browser CodeMirror editor with embedded Slidev iframe preview + one-click share link; new 'presentation output' pipeline position complementing md2rich's 'publish/convert' end.\n",
   "last_publish": "2026-09-11"
 }
