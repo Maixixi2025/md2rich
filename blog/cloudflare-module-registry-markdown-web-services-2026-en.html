@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Module Registry 2026: Markdown Sites Gain</title>
+  <meta name="description" content="Cloudflare rewrote the Workers module registry for Node.js compatibility. What new_module_registry changes for Markdown converters and SSG deploys.">
+  <meta name="keywords" content="cloudflare module registry, new_module_registry, workers nodejs compatibility, markdown conversion service, client-side markdown, workerd, esm import attributes, md2rich, markdown to rich text">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare Module Registry 2026: Markdown Sites Gain">
+  <meta property="og:description" content="Cloudflare rewrote the Workers module registry for Node.js compatibility. What new_module_registry changes for Markdown converters and SSG deploys.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Module Registry 2026: Markdown Sites Gain">
+  <meta name="twitter:description" content="Cloudflare rewrote the Workers module registry for Node.js compatibility. What new_module_registry changes for Markdown converters and SSG deploys.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare Module Registry 2026: Markdown Sites Gain",
+      "description": "Cloudflare rewrote the Workers module registry for Node.js compatibility. What new_module_registry changes for Markdown converters and SSG deploys.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-15",
+      "dateModified": "2026-09-15",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Cloudflare Workers module registry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The module registry is the part of workerd, the open-source core of the Workers runtime, that takes a module specifier, works out which code it points to, compiles it, and hands V8 a module object it can link and run. Cloudflare published a rewritten implementation on September 9, 2026. The old version resolved specifiers as filesystem-style paths; the new version starts from URLs as the specifier format and treats lazy compilation and cross-isolate cache sharing as design requirements rather than afterthoughts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I enable the new module registry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add the new_module_registry compatibility flag to your Worker's configuration: a compatibility_flags array containing the string new_module_registry. There is no default-on date, so it will not turn on automatically for any Worker, old or new, regardless of compatibility date. You must add the flag explicitly. Deployed Workers that do not set the flag continue to run on the existing registry implementation with no change in behavior."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this help Markdown conversion libraries run on Cloudflare Workers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Indirectly, and it is the most practical consequence for anyone maintaining a Markdown tool. Cloudflare states that the Workers runtime now supports every stable Node.js API useful in a serverless context, with those APIs enabled by default and the compressed bundle size limit removed (up to 64 MiB on all plans). The rewritten registry addresses the second half of the compatibility problem: not which APIs exist, but how the runtime resolves, loads, and caches the modules that call them. Node.js Markdown parsers and renderers that depend on import.meta.url, import attributes, or require() of an ES module now behave the way Node.js does."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are query strings and fragments significant in module specifiers now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and this is the change most likely to surprise people. A specifier with a different query string or fragment is a genuinely distinct module instance even when it points at the same underlying source file, following the same module-identity rules browsers use. Importing ./counter.js?a and ./counter.js?b gives you two separate instances with two separate copies of top-level state, each with its own import.meta.url. Importing the same specifier with the same query string again still returns the same instance, so this is not a way to force re-evaluation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to migrate anything to use the new registry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The existing registry implementation is not going away, and currently deployed Workers continue to work as they always have. The new implementation is opt-in through the compatibility flag. The practical reason to try it is that the new registry opens the door for bundlers like Rolldown to perform fewer transformations and rely more on the runtime to handle module resolution, which means less code rewriting between your source and what runs."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+      <time class="text-xs text-gray-500" datetime="2026-09-15">2026-09-15</time>
+      <h1 class="text-3xl font-bold mt-2 mb-4">Cloudflare Module Registry 2026: What Markdown Sites Gain</h1>
+
+      <p class="mb-4">On September 9, 2026, Cloudflare published <a href="https://blog.cloudflare.com/workers-module-registry-nodejs/" class="text-indigo-600 underline">a rewrite of the module registry inside workerd</a>, the open-source core of the Workers runtime. It is an infrastructure post about module resolution, which sounds several layers removed from the work of converting Markdown to rich text. It is not. The module registry is the piece that decides whether a Node.js Markdown library can run unmodified at the edge, and the rewrite removes a class of failure that has quietly shaped how every lightweight Markdown service gets built.</p>
+
+      <p class="mb-4">This is a walk through what actually changed, what it means if you maintain a Markdown converter or a static site generator, and why the answer for most client-side tools is still "keep it in the browser."</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What the module registry does</h2>
+
+      <p class="mb-4">When you deploy a Worker, <code>wrangler</code> or Vite bundles your code and dependencies into one or more modules. By default, Wrangler uses esbuild to inline relative imports and most npm dependencies into a single file, replacing <code>import</code> and <code>require()</code> statements with regular function calls. Cloudflare notes these bundled scripts have been seen growing to hundreds of thousands of lines.</p>
+
+      <p class="mb-4">Something still has to take a specifier — the string inside an <code>import</code> — work out what code it actually points to, compile it, and hand V8 a module object it can link and run. In workerd, that is the module registry's job. Cloudflare's summary of why the old implementation needed replacing is worth reading closely, because it describes a real constraint and not just an aesthetic preference:</p>
+
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li>The old registry resolved specifiers as <strong>filesystem-style paths, not URLs</strong>. That ruled out a clean implementation of <code>import.meta.url</code>, made relative imports resolve differently from <code>new URL()</code>, and forced protocols like <code>node:</code> and <code>cloudflare:</code> to be handled as special-cased string prefixes rather than protocols.</li>
+        <li>It compiled the <strong>entire Worker bundle up front</strong>, whether or not a given module was ever imported.</li>
+        <li>It kept a <strong>separate private copy of everything per V8 isolate</strong>. Cloudflare runs multiple isolate replicas of the same Worker across CPU cores, so the same source was compiled more than once with multiple copies held in memory.</li>
+      </ul>
+
+      <p class="mb-4">None of that was a bug in the sense of producing wrong output. It was a design that made the correct thing hard to express, which is the kind of constraint that eventually leaks into the libraries built on top of it.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Turning it on</h2>
+
+      <p class="mb-4">The new registry is opt-in. You add one compatibility flag to your Worker's configuration:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>{
+  "compatibility_flags": [ "new_module_registry" ]
+}</code></pre>
+
+      <p class="mb-4">There is no default-on date. Cloudflare is explicit that it will not turn on automatically for any Worker, old or new, no matter what compatibility date the Worker declares. You must add the flag. The existing registry is not going away, and Workers that do not set the flag keep running exactly as they do today.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The six behaviour changes that matter</h2>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">1. import.meta works</h3>
+
+      <p class="mb-4">The <code>import.meta</code> API now exposes the module's URL and whether it is the main entry point:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>export default {
+  async fetch(request) {
+    return new Response(`${import.meta.url}, main: ${import.meta.main}`);
+  },
+};</code></pre>
+
+      <p class="mb-4">That prints something like <code>file:///bundle/index.js, main: true</code>. <code>import.meta.main</code> is true only for the module configured as your Worker's entrypoint; every other module gets false. <code>import.meta.resolve()</code> resolves a specifier against the current module without importing it, and it recognises bare Node.js built-ins — <code>import.meta.resolve('fs')</code> returns <code>node:fs</code>.</p>
+
+      <p class="mb-4">There is one detail worth knowing if you ever inspect the output: resolution normalises percent-encoding the same way <code>new URL()</code> does, which collapses dot segments like <code>./a/../b.js</code>, but it does <em>not</em> decode characters that were already percent-encoded. <code>import.meta.resolve('%66oo.js')</code> resolves to <code>file:///bundle/%66oo.js</code>, not <code>file:///bundle/foo.js</code>.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">2. Specifiers are URLs, and query strings create distinct modules</h3>
+
+      <p class="mb-4">Relative imports now resolve the same way <code>new URL(specifier, base)</code> would, because that is literally what happens underneath. Full URLs work as specifiers too. The genuinely surprising consequence is what query strings and fragments now do, following the module-identity rules browsers already use:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>// counter.js
+let n = 0;
+export function increment() { return ++n; }
+
+import { increment as incA } from './counter.js?a';
+import { increment as incB } from './counter.js?b';
+
+incA(); // 1
+incA(); // 2
+incB(); // 1, a separate instance with its own copy of `n`</code></pre>
+
+      <p class="mb-4">The same source, evaluated twice, two separate copies of top-level state, each with its own <code>import.meta.url</code>. Importing the same specifier with the same query string again still returns the same instance, so this is not a mechanism for forcing re-evaluation. If you have ever wondered how bundlers implement hot module replacement and cache-busting across a module graph, this is the semantic that makes it possible.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">3. Import attributes are validated instead of ignored</h3>
+
+      <p class="mb-4">The old implementation silently ignored import attributes, which violates the specification. The new one throws. <code>json</code> is the only attribute type enabled, since it is the only relevant TC39 proposal at Stage 4. <code>text</code> and <code>bytes</code> are recognised but rejected with a specific error rather than silently ignored:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-4 overflow-x-auto text-sm"><code>import data from './config.json' with { type: 'json' };              // works
+import msg from './message.txt' with { type: 'text' };
+  // TypeError: Import attribute type "text" is not yet supported
+import d from './config.json' with { type: 'json', cache: 'no' };
+  // TypeError: Unsupported import attribute: "cache"</code></pre>
+
+      <p class="mb-4">The type has to match the module or you get <code>TypeError: Module "./utils.js" is not of type "json"</code>. Above all else, this is a correctness change: a build that appeared to work while quietly discarding a declared assumption now fails loudly.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">4. require() of an ES module follows Node.js rules</h3>
+
+      <p class="mb-4">If you <code>require()</code> something that turns out to be an ES module — directly, or through <code>createRequire()</code> — the registry follows Node.js <code>require(esm)</code> behaviour. If the module has a string-named export called <code>'module.exports'</code>, that value is returned. Otherwise you get the module's namespace object. The one exception is workerd's own <code>node:</code> built-ins, implemented as ES modules wrapping a CommonJS-style API in a default export, so <code>require('node:buffer').Buffer</code> behaves as expected without unwrapping.</p>
+
+      <p class="mb-4">Alongside it comes a restriction: if the module you are requiring, or anything in its module graph, has a top-level <code>await</code>, <code>require()</code> throws rather than blocking or returning a half-finished value. That matches Node.js' own <code>ERR_REQUIRE_ASYNC_MODULE</code>. Use <code>import()</code> for anything async. The check holds regardless of import order — a module does not become require-able just because something already imported and fully evaluated it.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">5. Errors use consistent classes</h3>
+
+      <p class="mb-4">Whether resolution fails through a static import, a dynamic <code>import()</code>, or <code>require()</code>, you get the same class of error with the same message shape. <code>Module not found</code> is a plain Error, since it is a failure to locate something rather than a problem with the value passed in. A specifier that cannot be parsed as a URL at all is a <code>TypeError</code>, matching Node.js' <code>ERR_INVALID_MODULE_SPECIFIER</code>. A circular dependency V8 cannot unwind is also a plain Error, never a <code>TypeError</code>.</p>
+
+      <p class="mb-4">This matters most if you are building on top of dynamic <code>import()</code> — a custom loader, a retry wrapper, a plugin host — because you can now branch on error class or message reliably regardless of which loading path triggered the failure.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">6. WebAssembly source phase imports</h3>
+
+      <p class="mb-4">You can now import the compiled-but-not-instantiated form of a WebAssembly module directly, either statically with <code>import source wasmModule from './add.wasm'</code> or dynamically with <code>await import.source('./add.wasm')</code>. Either way you get a <code>WebAssembly.Module</code> back rather than reaching into a default export. As source phase imports are new to the language, this works only for WebAssembly right now; using it on any other module type throws a <code>SyntaxError</code>, matching Node.js and other runtimes.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What this actually changes for a Markdown tool</h2>
+
+      <p class="mb-4">Cloudflare's own framing splits the compatibility problem in two. The first half is the API surface, and that work was largely done before this post: the runtime now supports every stable Node.js API useful in a serverless context, those APIs are enabled by default, and the compressed bundle size limit was removed — up to 64 MiB on all plans.</p>
+
+      <p class="mb-4">The second half is what this post addresses, and it is the half that breaks in practice. API compatibility alone is not enough, because Node.js applications also depend on <em>how the runtime resolves, loads, and caches modules</em>. A Markdown library that calls <code>import.meta.url</code> to locate a template, or uses <code>import</code> attributes to pull in a JSON config, or relies on <code>require()</code> interop with a CommonJS dependency, fails not because an API is missing but because module resolution behaved differently. That is a much harder failure to diagnose, because the error surfaces at a different layer from the cause.</p>
+
+      <p class="mb-4">Concretely, for anyone running or considering a server-side Markdown pipeline on Workers, the practical situation is now:</p>
+
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li><strong>Node.js Markdown libraries are more likely to run unmodified.</strong> <code>import.meta.url</code>, import attributes, and <code>require(esm)</code> are the three specific behaviours most likely to break a library ported from a Node.js build, and all three now follow Node.js semantics.</li>
+        <li><strong>Lazy compilation is designed in from day one.</strong> The old registry compiled the whole bundle up front; the new one compiles modules when first imported. For a service that pulls in a parser, a plugin set, and several renderers, that is startup cost you no longer pay for the code paths a given request does not touch.</li>
+        <li><strong>Bundlers can do less work.</strong> Cloudflare states directly that the new registry opens the door for bundlers like Rolldown to perform fewer transformations and rely more on the runtime to handle resolution, so the Workers runtime receives a smaller build-generated module graph rather than the application's original source graph.</li>
+        <li><strong>The migration cost is zero if you do not opt in.</strong> The flag is explicit, there is no auto-enable date, and existing Workers keep running as before.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Why the browser is still the right answer for conversion</h2>
+
+      <p class="mb-4">There is a version of this story that reads as an invitation: Node.js compatibility keeps improving at the edge, so more Markdown processing can move server-side. That conclusion does not follow, and it is worth being precise about why.</p>
+
+      <p class="mb-4">The constraint on client-side Markdown conversion was never that the runtime could not parse Markdown. It was that a server cannot be trusted with the document. Every argument in favour of uploading a draft to be converted — no bundle to download, consistent rendering across devices, no WASM payload — trades away the property that makes a client-side converter worth using in the first place: <strong>the file never leaves the machine.</strong></p>
+
+      <p class="mb-4">A Markdown converter that runs in the browser has no upload step, no retention window, no terms of service governing what happens to your draft, and no breach surface for documents that were never transmitted. Those are properties of the architecture, not features you can bolt onto a server-side implementation later. Better edge runtime compatibility makes server-side Markdown processing more feasible; it does not make it more private.</p>
+
+      <p class="mb-4">This is the same split that has run through every Markdown tool comparison on this blog, and the edge runtime story is another instance of it rather than an exception. The Cloudflare rewrite is genuinely good news for developers deploying Node.js applications to Workers — that is what it is for, and it does that job well. For the person who wants to paste a Markdown draft and get formatted rich text back for LinkedIn or Medium, the browser remains the correct place for the work to happen, because the browser is the only place where the document is never transmitted.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The pattern underneath</h2>
+
+      <p class="mb-4">Step back and the September 2026 Cloudflare post fits a trend this blog has been tracking across the Markdown ecosystem: the format keeps getting adopted by surfaces it was never designed for, and every new surface creates pressure at both ends of a pipeline.</p>
+
+      <p class="mb-4">Agent memory systems now store canonical state as Markdown files with editing policies. Coding agents read instruction files written in Markdown. Slide decks are authored in Markdown and rendered by Slidev. Retrieval systems are being handed Markdown sources so that both readers and agents can find a page. And conversion to rich text is the step that carries the same document into publishing destinations. Each of these adds a converter at one end and a renderer at the other, and each one raises the same question: where does the processing happen, and what does the document touch on the way through?</p>
+
+      <p class="mb-4">Module registry rewrites are the plumbing underneath that question. They determine which libraries can run where, and therefore which architectural choices remain available. The interesting part of the Cloudflare announcement is not the flag — it is that the runtime no longer forces a decision for you.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">FAQ</h2>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Is the new module registry on by default?</h3>
+      <p class="mb-4">No. It requires the <code>new_module_registry</code> compatibility flag, and Cloudflare states there is no default-on date — it will not enable automatically for any Worker regardless of compatibility date. Workers without the flag continue using the existing implementation unchanged.</p>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Will my existing Worker break if I enable it?</h3>
+      <p class="mb-4">Cloudflare does not present it as a breaking change, and describes the old implementation as remaining in place. That said, two behaviours become stricter rather than looser: import attributes are validated instead of silently ignored, and <code>require()</code> on a module with top-level <code>await</code> now throws. If your code relied on either being quietly tolerated, that reliance was an unstated assumption worth knowing about.</p>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Does this mean I should move my Markdown conversion server-side?</h3>
+      <p class="mb-4">No. It means server-side Markdown conversion is more technically feasible on Workers than it was. Those are different claims. Feasibility says nothing about whether uploading your draft is a good idea, and a client-side converter that never transmits the document keeps a property that a server-side one cannot have.</p>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Where can I read the full technical detail?</h3>
+      <p class="mb-4">Cloudflare's post is at <a href="https://blog.cloudflare.com/workers-module-registry-nodejs/" class="text-indigo-600 underline">blog.cloudflare.com/workers-module-registry-nodejs</a>, published September 9, 2026 by Logan Gatlin and James Snell. Cloudflare also added reference documentation to workerd breaking down how the new registry interacts with V8's module APIs, and workerd is open source if you want to file an issue.</p>
+
+      <style>pre code { white-space: pre; }</style>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Markdown in, rich text out — without the upload.</h3>
+        <p class="mb-3">Cloudflare made the edge runtime better at running Node.js. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> takes the other approach: the conversion runs client-side in your browser, so the Markdown source never leaves your machine. Paste a draft, get formatted rich text for LinkedIn, Medium, X, or Notion.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>

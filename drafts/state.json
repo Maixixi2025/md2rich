@@ -2346,6 +2346,25 @@
         "md2rich"
       ],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "cloudflare-module-registry-markdown-web-services-2026-en",
+      "date": "2026-09-15",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/cloudflare-module-registry-markdown-web-services-2026-en.html",
+      "url": "https://md2rich.com/blog/cloudflare-module-registry-markdown-web-services-2026-en",
+      "title": "Cloudflare Module Registry 2026: Markdown Sites Gain",
+      "description": "Cloudflare rewrote the Workers module registry for Node.js compatibility. What new_module_registry changes for Markdown converters and SSG deploys.",
+      "heat_source": "Cloudflare Blog 2026-09-09 'How we rebuilt Cloudflare Workers' module registry for Node.js compatibility' (blog.cloudflare.com/workers-module-registry-nodejs) — briefing ⭐ item 2026-09-15 (threadgrab/md2rich slot)",
+      "status": "published",
+      "published_at": "2026-09-15",
+      "providers_featured": [
+        "Cloudflare Workers",
+        "workerd",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich"
     }
   ],
   "drafts": [],
