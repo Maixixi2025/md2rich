@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare AI Crawl Control 2026 for Markdown Publishers</title>
+  <meta name="description" content="How Markdown publishers configure Cloudflare's new Search/Training/Agent controls, the Accountable vs non-Accountable distinction, and the migration table.">
+  <meta name="keywords" content="cloudflare ai crawl control, disallow ai training, accountable ai crawlers, cloudflare bot management, gptbot, claude bot, google-extended, applebot-extended, markdown publisher, robots.txt, ai training opt-out, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-ai-crawl-control-markdown-publishers-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-ai-crawl-control-markdown-publishers-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/cloudflare-ai-crawl-control-markdown-publishers-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-ai-crawl-control-markdown-publishers-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare AI Crawl Control 2026 for Markdown Publishers">
+  <meta property="og:description" content="How Markdown publishers configure Cloudflare's new Search/Training/Agent controls, the Accountable vs non-Accountable distinction, and the migration table.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-ai-crawl-control-markdown-publishers-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare AI Crawl Control 2026 for Markdown Publishers">
+  <meta name="twitter:description" content="How Markdown publishers configure Cloudflare's new Search/Training/Agent controls, the Accountable vs non-Accountable distinction, and the migration table.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare AI Crawl Control 2026 for Markdown Publishers",
+      "description": "How Markdown publishers configure Cloudflare's new Search/Training/Agent controls, the Accountable vs non-Accountable distinction, and the migration table.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-16",
+      "dateModified": "2026-09-16",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/cloudflare-ai-crawl-control-markdown-publishers-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Cloudflare's Accountable AI Crawlers designation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accountable is a designation Cloudflare introduced on September 15, 2026 for AI crawler operators that meet or commit to four requirements: a robots.txt-style mechanism for site owners to opt out of AI training; a mechanism to opt out of AI summaries (next year through Cloudflare, set once rather than with each operator); URL-level visibility into which pages were made available for training, with metrics showing how content appeared in search; and assurance that opting out of AI training does not affect traditional search rankings. Apple, Google, and Microsoft qualify today; Amazon, Anthropic, Meta, and OpenAI are designated Accountable on the basis of the separate Search and Training crawlers they run, not on the mixed-use ones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Disallow AI Training actually do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Disallow AI Training is a new Cloudflare setting, named for the Disallow: directive it publishes in your robots.txt. Bot Preference Sync writes the no-training preference there. Accountable mixed-use crawlers (Applebot, Bingbot, Googlebot) remain allowed for search because they will respect the directive. Every other training crawler is blocked, including the training-only crawlers run by Amazon, Anthropic, Meta, and OpenAI. Disallow AI Training is only available as a setting for Training, not for Search or Agent. The robots.txt is a publishable preference, not a wall: a crawler that ignores the directive will still be fetched and Cloudflare will block it at the network layer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this affect Markdown publishers specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three ways. First, Markdown-as-source pipelines that publish documentation and technical writing already favor visible-in-search, invisible-to-training as the default posture, and Disallow AI Training codifies that posture in a single switch rather than per-operator negotiation. Second, llms.txt already exists on Cloudflare sites; Accountable operators are encouraged to consume it, and the new training opt-out is a separate channel that does not compete with llms.txt for either publisher intent or crawler attention. Third, the migration of legacy Block AI Bots settings into the new Search/Training/Agent controls happens automatically on existing domains, so a site that already chose Block AI gets the granular semantics without re-configuration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my existing Cloudflare settings on September 15?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you used the legacy Block AI Bots toggle, the setting you chose maps to the new controls automatically. Disabled becomes Allow across Search, Training, and Agent; Block becomes Block on pages with ads plus Disallow AI Training; Block on pages with ads carries over. If you previously used the granular Search/Training/Agent controls, Cloudflare preserves the practical effect: a previous Training selection of Block or Block on pages with ads migrates to Disallow AI Training. New domains onboarding after September 15 get one of two presets based on whether the site earns money from advertising, and both presets turn on Preference Sync and set Training to Disallow AI Training, with Agent set to Block on pages with ads for ad-supported sites."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is there no Disallow setting for Agent crawlers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Agents do not create the same search-discoverability tradeoff as mixed-use crawlers, and the Internet does not yet have a well-established directive for expressing Disallow preferences to agents. Cloudflare's stated plan is to revisit this approach as standards such as ai-prefs mature. For now, Agent defaults vary by site monetization model: ad-supported sites onboard with Agent set to Block on pages with ads, non-ad-supported sites with Agent set to Allow. Operators can change either default at onboarding or afterward."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+      <time class="text-xs text-gray-500" datetime="2026-09-16">2026-09-16</time>
+      <h1 class="text-3xl font-bold mt-2 mb-4">Cloudflare AI Crawl Control 2026 for Markdown Publishers</h1>
+
+      <p class="mb-4">On September 15, 2026, Cloudflare published <a href="https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/" class="text-indigo-600 underline">Have it both ways: stay discoverable in search while disallowing AI training</a>, the most concrete announcement so far on the question of who gets to fetch a Markdown site and for what. The announcement is not a press release; it is an operational one. It renames the old Block AI Bots toggle into three distinct settings — Search, Training, and Agent — introduces a new Disallow AI Training option, retires Managed Robots.txt in favor of a system called Bot Preference Sync, and publishes a designation called Accountable for crawler operators that meet or commit to meeting four requirements. For a publisher whose site is built on Markdown, this changes what you can control with one click rather than a long round of per-operator emails.</p>
+
+      <p class="mb-4">The context is the same one this blog has been tracking for the last several months: AI crawlers have grown into a parallel ecosystem alongside search bots, and the site owner's ability to say yes to one and no to the other has been limited by how mixed-use the operators are. The September 15 post is the first time the network layer — Cloudflare sits in front of roughly 20% of the web — has tried to make that distinction programmable rather than negotiated.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The problem the announcement names</h2>
+
+      <p class="mb-4">The framing matters because it is not just about training. Cloudflare publishes two numbers from its own telemetry. Less than 1% of Cloudflare sites choose to block Search bots. 17% of sites choose to enable some mechanism to block training. That gap is the asymmetry the new controls are built to resolve: site owners want to be found, and they want to be paid, and the second property is the one training crawlers quietly threaten.</p>
+
+      <p class="mb-4">A robots.txt directive alone cannot solve this. Anyone can publish one, but it cannot identify who is crawling, determine why they are crawling, or stop a crawler that ignores it. Cloudflare's network can: it identifies the crawler, classifies the behavior, blocks the ones that ignore the preference, and publishes what each operator actually does on Radar. The September 15 post packages that capability under a clearer set of switches.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Three behaviors, four settings</h2>
+
+      <p class="mb-4">Cloudflare now classifies every bot it sees by behavior, and a single bot can exhibit more than one behavior. The three categories are:</p>
+
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li><strong>Search</strong> — crawling to build a search index.</li>
+        <li><strong>Training</strong> — crawling to train or fine-tune a model.</li>
+        <li><strong>Agent</strong> — user-directed agents visiting a page on behalf of a human, such as chat fetch bots and browser-use agents.</li>
+      </ul>
+
+      <p class="mb-4">A mixed-use crawler is one that does both Search and Training. Applebot, Bingbot, and Googlebot are the canonical examples. Without controls, blocking a mixed-use crawler means refusing both search and training — the site disappears from Google in the same gesture that takes it out of the next model's training set. The September 15 announcement introduces the new setting that breaks that tradeoff: <strong>Disallow AI Training</strong>.</p>
+
+      <p class="mb-4">The four available settings, applied at the domain level, are:</p>
+
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li><strong>Allow</strong> — all crawlers allowed, unless blocked by another setting or a WAF rule.</li>
+        <li><strong>Disallow AI Training</strong> — Bot Preference Sync publishes the applicable no-training preference in robots.txt. Accountable mixed-use crawlers remain allowed for search. Every other training crawler is blocked, including the training-only crawlers run by Amazon, Anthropic, Meta, and OpenAI. Disallow AI Training is only available as a setting for Training, not Search or Agent.</li>
+        <li><strong>Block on pages with ads</strong> — crawlers, including mixed-use crawlers, are blocked only on pages detected to be serving an ad.</li>
+        <li><strong>Block</strong> — all crawlers, including mixed-use crawlers, are blocked.</li>
+      </ul>
+
+      <p class="mb-4">A subtle but important point sits in the middle of that list. Disallow AI Training works by publishing a preference in robots.txt. An ads-only preference cannot be expressed that way, because the list of pages serving ads is too large and changes too frequently to enumerate in a static file. That is why there is no "Disallow AI Training on pages with ads" — the operating principle for ads is detection at request time, not enumeration at publish time.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The Accountable designation</h2>
+
+      <p class="mb-4">A network can block crawlers. It can also try to change how they behave. The Accountable designation is the second half: it names a standard operators can meet and a label publishers can rely on.</p>
+
+      <p class="mb-4">To qualify as Accountable, a bot operator must meet or commit to meeting four requirements:</p>
+
+      <ol class="list-decimal pl-6 mb-4 space-y-2">
+        <li>A mechanism for site owners to opt out of AI training, through robots.txt or a similar standard.</li>
+        <li>A mechanism for site owners to opt out of AI summaries, set with the operator directly now and next year through Cloudflare (set once on Cloudflare, rather than with each operator separately).</li>
+        <li>URL-level visibility into which pages were made available for training, along with metrics showing how content appeared in search.</li>
+        <li>Assurance that opting out of AI training will not affect traditional search results.</li>
+      </ol>
+
+      <p class="mb-4">Apple, Google, and Microsoft qualify today as Accountable. Each combines capabilities available today with time-bound commitments for those still in development. The post walks through each operator: Applebot allows opt-out via <code>Disallow: Applebot-Extended</code> in robots.txt and the <code>nosnippet</code> directive for AI Summaries, and is working on a URL-level inspection tool for next year. Googlebot allows opt-out via <code>Disallow: Google-Extended</code> and provides a webmaster portal toggle for generative search exclusion, plus existing metrics for search results and AI summaries. Bingbot uses the <code>NOARCHIVE</code> meta tag today and is targeting early 2027 for a domain-level no-training preference in robots.txt.</p>
+
+      <p class="mb-4">Amazon, Anthropic, Meta, and OpenAI are also categorized as Accountable, but on different grounds: they separate their Search and Training crawlers, which means Cloudflare can block the Training crawler without affecting search. That separation is the practical reason their training crawlers appear on the list of operators blocked when Disallow AI Training is selected.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What actually changes on September 15</h2>
+
+      <p class="mb-4">Three operational shifts ship in the announcement:</p>
+
+      <ul class="list-disc pl-6 mb-4 space-y-2">
+        <li><strong>Block now applies to mixed-use crawlers too.</strong> Block and Block on pages with ads now apply to Applebot, Bingbot, and Googlebot, so either setting affects search as well as training. To stop training and keep search, you have to use Disallow AI Training instead.</li>
+        <li><strong>Block AI Bots is deprecated.</strong> The legacy setting will be removed in favor of the granular Search/Training/Agent controls. The practical semantics migrate automatically.</li>
+        <li><strong>Managed Robots.txt is deprecated.</strong> Bot Preference Sync is the replacement. Customers who enabled Managed Robots.txt will be migrated to the new system without action.</li>
+      </ul>
+
+      <p class="mb-4">Disallow AI Training becomes part of the recommended configuration for new domains. Existing customers have their preferences migrated to the new controls. The migration is automatic, but the meaning of a setting can change: a previous Training selection of Block or Block on pages with ads migrates to Disallow AI Training, which preserves the practical effect (no training crawl reaches the site) while keeping search crawlers allowed.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">The migration table</h2>
+
+      <p class="mb-4">If you used the legacy Block AI Bots toggle, your old choice maps to the new controls like this:</p>
+
+      <pre><code>Legacy Block AI setting     → New Search   → New Training              → New Agent
+─────────────────────────────────────────────────────────────────────────────────────
+Disabled (unselected)       → Allow         → Allow                     → Allow
+Block                       → Allow         → Disallow AI Training      → Allow
+Block on pages with ads     → Allow         → Block on pages with ads   → Allow</code></pre>
+
+      <p class="mb-4">If you already used the granular Search/Training/Agent controls, the migration preserves your practical intent:</p>
+
+      <pre><code>Control    Legacy setting            New setting
+─────────────────────────────────────────────────────────────────
+Search     Allow                     Allow
+Search     Block                     Block
+Search     Block on pages with ads   Block on pages with ads
+Training   Allow                     Allow
+Training   Block                     Disallow AI Training
+Training   Block on pages with ads   Disallow AI Training
+Agent      Allow                     Allow
+Agent      Block                     Block
+Agent      Block on pages with ads   Block on pages with ads</code></pre>
+
+      <p class="mb-4">For new domains onboarding after September 15, Cloudflare offers one of two preset configurations based on whether the site earns money from advertising. Ad-supported sites get Training set to Disallow AI Training and Agent set to Block on pages with ads. Non-ad-supported sites get Training set to Disallow AI Training and Agent set to Allow. Both presets enable Bot Preference Sync, and either preset can be changed during onboarding or afterward.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">Why this is not the same as llms.txt</h2>
+
+      <p class="mb-4">Earlier coverage on this blog looked at <code>llms.txt</code> and AGENTS.md as the canonical way for a Markdown site to declare what AI agents should read. The September 15 announcement operates on a different axis. <code>llms.txt</code> is a publisher-to-reader file: it tells compliant agents what to read. The new Cloudflare controls are a publisher-to-network file: they tell the network what to do when an agent arrives, including agents that do not consult <code>llms.txt</code> at all.</p>
+
+      <p class="mb-4">The two mechanisms do not compete. <code>llms.txt</code> documents the surface; the Cloudflare controls gate the door. A Markdown publisher who wants to be visible to agents that read <code>llms.txt</code> and invisible to crawlers that ignore it can now express that with a single setting rather than a per-operator negotiation. That is the durable change in the announcement: the publisher's posture toward AI crawlers becomes a property of the site, not a property of each crawler.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">What this changes for a Markdown site</h2>
+
+      <p class="mb-4">Most of the practical advice that follows from this announcement is the same advice that has applied for the last year: keep Markdown content in the open, make the discovery surface clean, and treat any crawler you do not recognize as untrusted until it identifies itself. The September 15 change is at the network layer, not at the authoring layer. It does not change how to write a heading, structure a list, or compose a code block. It changes what happens after the page is published and the URL is requested.</p>
+
+      <p class="mb-4">For a Markdown publisher using a client-side tool like md2rich, the relevant shift is one step removed. The conversion to rich text is a step you take when the document is finished, on your machine, before pasting the result into LinkedIn or X or Medium. The new Cloudflare controls are a step you take at the network edge, deciding who gets to fetch the published version of that document and for what purpose. The two are complementary rather than competing, and the practical advice for a Markdown publisher is the same one that has held across this blog's coverage: the format stays portable, the publishing surface stays open, and the controls around access become more specific rather than more restrictive.</p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-3">FAQ</h2>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Is Disallow AI Training a setting or a robots.txt directive?</h3>
+      <p class="mb-4">It is a Cloudflare setting that causes a robots.txt directive to be published. Bot Preference Sync writes the applicable no-training preference into the file the crawler reads first. A crawler that ignores the directive will still be fetched and Cloudflare will block it at the network layer. The directive is the language; the network enforcement is the substance.</p>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Will opting out of AI training affect my Google search rankings?</h3>
+      <p class="mb-4">Google has stated that disallowing <code>Google-Extended</code> does not impact search ranking. Apple has stated the same for disallowing training through <code>Applebot-Extended</code>. Microsoft has stated that <code>NOARCHIVE</code> does not impact search ranking. These are commitments the operators have made to qualify as Accountable, and they are the reason Disallow AI Training can keep a Markdown site visible in search while keeping it out of model training.</p>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">What about Agent crawlers that fetch on behalf of users?</h3>
+      <p class="mb-4">For now, Cloudflare does not include a Disallow setting for Agents. The Internet does not yet have a well-established directive for expressing preferences to agents, and the standard expected to fill that gap is called <code>ai-prefs</code>. Cloudflare has committed to revisit the approach as <code>ai-prefs</code> matures. Ad-supported sites onboard with Agent set to Block on pages with ads by default; non-ad-supported sites with Agent set to Allow. Either default can be changed.</p>
+
+      <h3 class="text-lg font-semibold mt-5 mb-2">Where can I see how my site is being crawled?</h3>
+      <p class="mb-4">Cloudflare Radar publicly tracks the controls, transparency, and reporting provided by Accountable crawler operators. Radar is the place to see what each operator actually does, not what their press releases say. For per-site traffic, the Cloudflare dashboard's Bot Management and AI Crawl Control panels show the breakdown by Search, Training, and Agent classifications.</p>
+
+      <style>pre code { white-space: pre; }</style>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Markdown in, rich text out — without the upload.</h3>
+        <p class="mb-3">Cloudflare made the network smarter about who gets to crawl. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> takes the other approach: the conversion runs client-side in your browser, so the Markdown source never leaves your machine. Paste a draft, get formatted rich text for LinkedIn, Medium, X, or Notion.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> — Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>
