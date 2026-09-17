@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Six Markdown Editors for Math-Heavy Writing in 2026</title>
+  <meta name="description" content="Six 2026 Markdown editors for math-heavy writing: TeXposit, Madoko, MarkText, Obsidian, RStudio, Zettlr. Where md2rich fits.">
+  <meta name="keywords" content="markdown editor math, latex markdown, texposit, madoko, mathjax markdown, kaTeX markdown, markdown scientific writing, math-heavy markdown editor, markdown to rich text, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/six-markdown-editors-math-heavy-writing-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/six-markdown-editors-math-heavy-writing-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/six-markdown-editors-math-heavy-writing-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/six-markdown-editors-math-heavy-writing-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Six Markdown Editors for Math-Heavy Writing in 2026">
+  <meta property="og:description" content="Six 2026 Markdown editors for math-heavy writing: TeXposit, Madoko, MarkText, Obsidian, RStudio, Zettlr. Where md2rich fits.">
+  <meta property="og:url" content="https://md2rich.com/blog/six-markdown-editors-math-heavy-writing-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Six Markdown Editors for Math-Heavy Writing in 2026">
+  <meta name="twitter:description" content="Six 2026 Markdown editors for math-heavy writing: TeXposit, Madoko, MarkText, Obsidian, RStudio, Zettlr. Where md2rich fits.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Six Markdown Editors for Math-Heavy Writing in 2026",
+      "description": "Six 2026 Markdown editors for math-heavy writing: TeXposit, Madoko, MarkText, Obsidian, RStudio, Zettlr. Where md2rich fits.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-09-17",
+      "dateModified": "2026-09-17",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/six-markdown-editors-math-heavy-writing-2026-en"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is math-in-Markdown harder than text-in-Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plain Markdown is a single serialization format with a defined HTML render path. Math is not: it lives in three roughly parallel ecosystems (LaTeX source, MathML markup, and the MathJax or KaTeX renderers that turn LaTeX into HTML), and the editor has to decide which subset of LaTeX it accepts, whether to wrap the math in dollar signs or backslash brackets or HTML data-attributes, and whether to render client-side in the editor or hand the raw source to a downstream renderer. The result is that a 'math-friendly' Markdown editor is one that picks a coherent answer to those questions and stays consistent across edit, preview, export, and paste."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is TeXposit and what makes it notable in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TeXposit launched on Hacker News in September 2026 as a single-file editor that combines Markdown and LaTeX in one document, with live preview that compiles both grammars simultaneously. The notable thing is not any single feature, but the integration: a writer types standard LaTeX inside a Markdown document and gets a side-by-side preview that renders both, without switching modes. For technical writers who need a math block in a blog post or a slide deck, that removes the largest friction in the math-and-prose workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a dedicated math editor if I already use Obsidian?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Probably not for casual use. Obsidian renders MathJax inside Markdown notes by default, accepts LaTeX delimiters, and supports community plugins for KaTeX acceleration, equation numbering, and export to LaTeX-flavored HTML. The case for a dedicated math editor is when the bulk of your writing is mathematical, when you need equation-level cross-referencing, or when you need to author with collaborators who expect a single shared format (Madoko and TeXposit both lean into collaborative editing)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the math render survive the trip from Markdown to LinkedIn or X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LinkedIn and X do not render LaTeX or MathJax in post bodies; they accept a limited subset of HTML and Unicode. The reliable approach is to render the equation to a high-resolution image (PNG or SVG) inside the Markdown source and let the converter carry the image over. md2rich handles this when an equation is already a Markdown image; for inline LaTeX, the editor should be configured to render to image at export time so the destination platform sees only the rendered image, not the source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which of these editors is best for non-math technical writing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If math is incidental and most of the writing is prose with code, Zettlr or MarkText is a more comfortable fit. If math is the bulk of the work and you need equation cross-references, Madoko or TeXposit. If you already use R for analysis and want the report to live next to the code, RStudio's Visual Markdown Editor. If math is rare but occasionally required and the rest of the writing is research notes, Obsidian with MathJax is enough and you will not need a second tool."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+      <time class="text-xs text-gray-500" datetime="2026-09-17">2026-09-17</time>
+      <h1 class="text-3xl font-bold mt-2 mb-4">Six Markdown Editors for Math-Heavy Writing in 2026</h1>
+
+      <p class="mb-4">On September 15, 2026, a project called <a href="https://texposit.com" class="text-indigo-600 underline">TeXposit</a> hit the front page of Hacker News with a quiet claim: Markdown and LaTeX in the same document, side-by-side live preview, single file. The discussion was modest but pointed. The recurring question was not "does LaTeX in Markdown work?" (every editor that supports MathJax already answers that). The recurring question was "why does math-in-Markdown still feel like two editors duct-taped together?" TeXposit is the first 2026 entry to claim a single coherent answer to that question. Here is what that looks like against five other Markdown editors that handle math, what each one does well, and where md2rich fits in the pipeline when the destination is a social platform that does not render LaTeX.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">What math-in-Markdown actually requires</h2>
+
+      <p class="mb-4">Plain Markdown is one serialization format with one HTML render path. Math is three parallel ecosystems &mdash; LaTeX source, MathML markup, and the MathJax or KaTeX renderers that turn LaTeX into HTML &mdash; and the editor has to pick which subset of LaTeX it accepts, which delimiters to use, and whether to render in-editor or hand raw source to a downstream renderer. A "math-friendly" Markdown editor is one that picks a coherent answer to those questions and stays consistent across edit, preview, export, and paste.</p>
+
+      <p class="mb-4">In 2026 the realistic choices have narrowed. MathJax is the heaviest renderer with the broadest LaTeX coverage; KaTeX is faster but covers a smaller subset; the new CommonMark math extension is the standards-track attempt to formalize dollar-sign and backslash-bracket delimiters. Each editor below picks a position on that matrix. The list is ordered by how central math is to the editor's design, not by launch date.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">1. TeXposit &mdash; Markdown and LaTeX in one document</h2>
+
+      <p class="mb-4"><a href="https://texposit.com" class="text-indigo-600 underline">TeXposit</a> launched on Hacker News in September 2026 with a single-file editor that compiles Markdown and LaTeX simultaneously and shows a live preview of both. The integration is the point: there is no mode switch between prose and equations, no separate math block, and the LaTeX source stays editable in place. For a technical writer who needs to drop an equation into a blog post or a slide deck, that removes the largest friction in the math-and-prose workflow.</p>
+
+      <p class="mb-4">What it does well: live preview of mixed Markdown and LaTeX without a mode switch; consistent rendering between the editor preview and the exported HTML; a small footprint (single-file editor, no installer). What it does not yet do: collaborative editing, a plugin ecosystem, or deep integration with bibliography managers. If math is the bulk of your writing and you do not need co-authoring, this is the strongest 2026 entrant.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">2. Madoko &mdash; academic Markdown with full LaTeX</h2>
+
+      <p class="mb-4">Madoko is the academic-flavored Markdown editor that predates most of the 2026 contenders. It accepts full LaTeX inside a Markdown document, supports equation cross-references, citations, and bibliography files, and renders server-side to HTML, PDF, or slide formats. The trade-off is that Madoko runs as a hosted service or local server, not as a single-file editor, so it is heavier than TeXposit but more capable for collaborative technical papers.</p>
+
+      <p class="mb-4">For a single-author blog post or a slide deck, Madoko is more than you need. For a technical report that will be co-authored, reviewed, and exported to both HTML and PDF, Madoko is still the most coherent answer in 2026.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">3. RStudio Visual Markdown Editor &mdash; math next to the analysis</h2>
+
+      <p class="mb-4">RStudio's Visual Markdown Editor is the part of the R ecosystem that lets data analysts write a report in Markdown with embedded R code chunks, math via MathJax, and inline plots from the same session. The math coverage is full LaTeX, the equation rendering is MathJax, and the export targets are HTML, PDF, and Word. If your math-heavy writing is downstream of an R analysis and you want the report to live next to the code, this is the right tool.</p>
+
+      <p class="mb-4">The limitation is the audience: outside the R community, RStudio is not a general-purpose editor, and the visual mode does not match the polish of dedicated prose-focused Markdown editors. Inside the R community, it is the only editor that treats code, math, and prose as first-class peers in one document.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">4. Obsidian with MathJax &mdash; the everyday choice</h2>
+
+      <p class="mb-4">Obsidian renders MathJax inside Markdown notes by default, accepts LaTeX delimiters (both dollar-sign and backslash-bracket), and supports community plugins for KaTeX acceleration, equation numbering, and export to LaTeX-flavored HTML. For research notes where math is occasional and the rest of the writing is prose with internal links, Obsidian is enough and you do not need a second tool.</p>
+
+      <p class="mb-4">The case for a dedicated math editor over Obsidian is when the bulk of your writing is mathematical, when you need equation-level cross-referencing, or when you need to author with collaborators who expect a single shared format. Obsidian's collaboration story is plugin-dependent and weaker than Madoko's server-backed model or TeXposit's single-file portability.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">5. Zettlr &mdash; academic Markdown with citation focus</h2>
+
+      <p class="mb-4">Zettlr is an academic-flavored Markdown editor that emphasizes citations, bibliography integration, and Pandoc-based export. Math support is via KaTeX by default with a MathJax option; LaTeX delimiters are standard. The export story is strong: HTML, PDF, DOCX, and reveal.js slides all go through Pandoc, which preserves both the math and the citation metadata.</p>
+
+      <p class="mb-4">Zettlr's math handling is competent but not its main differentiator &mdash; if you choose Zettlr in 2026, you are usually choosing it for the citation workflow and accepting that math rendering is a feature, not the design center. For a thesis or a long paper with hundreds of citations and occasional math, this is the right balance.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">6. MarkText with KaTeX &mdash; lightweight and live</h2>
+
+      <p class="mb-4">MarkText is the lightweight live-preview Markdown editor that renders math via KaTeX with full LaTeX support. The editor is single-window, the preview is real-time, and the export targets are HTML and PDF. MarkText's strength is that it gets out of the way: there is no project file, no server, and the math rendering is fast enough that you do not think about it.</p>
+
+      <p class="mb-4">The trade-off is the same as it has been since 2022: MarkText does not have a plugin ecosystem, collaborative editing, or a citation workflow. If math is occasional and you want a fast in-and-out editor for blog posts and documentation, MarkText is the lightest of the six. If math is the bulk of the writing, Madoko or TeXposit.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">Where md2rich fits</h2>
+
+      <p class="mb-4">All six editors solve the authoring step. None of them solves the publishing step when the destination is a social platform. LinkedIn, X, Bluesky, and Substack do not render LaTeX or MathJax in post bodies; they accept a limited subset of HTML and Unicode. The reliable workflow is to render the equation to a high-resolution image (PNG or SVG) inside the Markdown source and let the converter carry the image over. <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> handles this when an equation is already a Markdown image, which means the writer's job in the editor is to render the LaTeX block to image at export time so the destination sees only the rendered image, not the source.</p>
+
+      <p class="mb-4">The conversion runs client-side in the browser: the Markdown source never leaves the writer's machine, and the rendered rich text goes directly to the clipboard for paste into LinkedIn, X Articles, Medium, or Notion. For a math-heavy post, the practical sequence is: edit in TeXposit (or whichever of the six fits your style), export to HTML with images baked in for each equation, paste that HTML into md2rich, and ship the resulting rich text to the social destination.</p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-3">The decision in one paragraph</h2>
+
+      <p class="mb-4">If math is the bulk of your writing and you need equation cross-references, Madoko or TeXposit. If math lives next to R analysis, RStudio. If math is occasional and the rest of the writing is research notes, Obsidian with MathJax is enough. If math is rare and you want a fast in-and-out editor for blog posts, MarkText or Zettlr. For the publishing step on platforms that do not render LaTeX, render equations to image in the editor and run the result through md2rich before paste.</p>
+
+      <style>pre code { white-space: pre; }</style>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mt-8">
+        <h3 class="text-xl font-bold mb-2">Six editors in, rich text out.</h3>
+        <p class="mb-3">Whichever Markdown editor you pick for math, the publishing step is the same: <a href="https://md2rich.com/" class="text-indigo-600 font-semibold">md2rich</a> runs the conversion client-side, so the source never leaves your browser. Paste an HTML export with baked-in equation images, get formatted rich text for LinkedIn, X, Medium, or Notion.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700">Try md2rich</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-10">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-500">
+      <p><a href="/" class="text-indigo-600 hover:underline">md2rich</a> &mdash; Markdown to rich text, client-side. Nothing you paste ever leaves your browser.</p>
+    </div>
+  </footer>
+</body>
+</html>
