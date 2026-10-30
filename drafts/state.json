@@ -2421,6 +2421,21 @@
       "published_at": "2026-10-29T12:37:40.896908",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-sqlite-agent-tokens-2026-en",
+      "date": "2026-10-30",
+      "type": "article",
+      "lang": "en-US",
+      "file": "blog/markdown-sqlite-agent-tokens-2026-en",
+      "url": "https://md2rich.com/blog/markdown-sqlite-agent-tokens-2026-en",
+      "title": "Markdown in SQLite: 40× Fewer Tokens for AI Agents (2026)",
+      "description": "Native's research shows wrapping Markdown in SQLite cuts agent token use 40× with 97% fewer failures. What it means for your Markdown publishing workflow.",
+      "heat_source": "Native research preview (withnative.ai) — Markdown-in-SQLite benchmark, 2026-10-30 hot brief",
+      "status": "published",
+      "published_at": "2026-10-30",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
