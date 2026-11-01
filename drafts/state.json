@@ -2451,6 +2451,21 @@
       "published_at": "2026-10-31",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "markdown-everywhere-2026-en",
+      "date": "2026-11-01",
+      "type": "daily-article",
+      "lang": "en-US",
+      "file": "blog/markdown-everywhere-2026-en.html",
+      "url": "https://md2rich.com/blog/markdown-everywhere-2026-en",
+      "title": "Markdown Everywhere 2026: One Draft for X, LinkedIn & Docs",
+      "description": "Google Docs now edits .md natively and X Articles wants rich text. Draft once in Markdown, paste formatted output everywhere with a client-side converter.",
+      "heat_source": "daily-briefing-2026-11-01",
+      "status": "published",
+      "published_at": "2026-11-01T11:15:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
