@@ -2466,6 +2466,21 @@
       "published_at": "2026-11-01T11:15:00+08:00",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "a2ui-express-markdown-publishing-2026-en",
+      "date": "2026-11-02",
+      "type": "daily-article",
+      "lang": "en-US",
+      "file": "blog/a2ui-express-markdown-publishing-2026-en.html",
+      "url": "https://md2rich.com/blog/a2ui-express-markdown-publishing-2026-en",
+      "title": "A2UI Express: 3× Fewer Tokens for Generative UI (2026)",
+      "description": "Google's A2UI Express cuts generative UI tokens 3× and latency 3×. Here's what it means for Markdown publishers and the future of formatted content.",
+      "heat_source": "3ea88f8bb2d0/2026-11-02_08-06-51.md",
+      "status": "published",
+      "published_at": "2026-11-02T12:00:00+08:00",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],
