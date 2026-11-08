@@ -2496,6 +2496,21 @@
       "published_at": "2026-11-03",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "bumpy-vs-changesets-markdown-versioning-2026-en",
+      "date": "2026-11-08",
+      "type": "blog",
+      "lang": "en-US",
+      "file": "blog/bumpy-vs-changesets-markdown-versioning-2026-en.html",
+      "url": "https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en",
+      "title": "Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested",
+      "description": "Bumpy is the Markdown-file-based versioning tool aiming to replace Changesets in 2026. We test the workflow and where it fits your release pipeline.",
+      "heat_source": "2026-11-08 briefing social section #3: Bumpy (InfoQ, @varlock/bumpy) — Markdown-driven version management as Changesets alternative",
+      "status": "published",
+      "published_at": "2026-11-08",
+      "providers_featured": [],
+      "primary_cta": "https://md2rich.com/"
     }
   ],
   "drafts": [],

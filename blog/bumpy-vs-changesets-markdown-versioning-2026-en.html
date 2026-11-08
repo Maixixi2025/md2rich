@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested</title>
+  <meta name="description" content="Bumpy is the Markdown-file-based versioning tool aiming to replace Changesets in 2026. We test the workflow and where it fits your release pipeline.">
+  <meta name="keywords" content="Bumpy vs Changesets, Markdown versioning, monorepo release tool, Bumpy version management, Changesets alternative 2026, @varlock/bumpy, file-based changelog, Markdown release workflow, md2rich">
+  <link rel="canonical" href="https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested">
+  <meta property="og:description" content="Bumpy is the Markdown-file-based versioning tool aiming to replace Changesets in 2026. We test the workflow and where it fits your release pipeline.">
+  <meta property="og:url" content="https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested">
+  <meta name="twitter:description" content="Bumpy is the Markdown-file-based versioning tool aiming to replace Changesets in 2026. We test the workflow and where it fits your release pipeline.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested",
+      "description": "Bumpy is the Markdown-file-based versioning tool aiming to replace Changesets in 2026. We test the workflow and where it fits your release pipeline.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested",
+          "item": "https://md2rich.com/blog/bumpy-vs-changesets-markdown-versioning-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Bumpy and how does it differ from Changesets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bumpy is an MIT-licensed, TypeScript-based version management and changelog tool for monorepos, created by the team behind Varlock and first announced in April 2026. It follows the same file-based workflow as Changesets — contributors drop Markdown bump files into a .bumpy/ directory declaring which packages to release and at what level — but adds workspace and catalog protocol support across npm, pnpm, Yarn, and Bun, per-package custom publish commands, a configurable three-phase dependency propagation algorithm, and branch-based prerelease channels. It claims to address more than 120 open issues from Changesets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Bumpy a drop-in replacement for Changesets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bumpy is designed as a successor rather than a drop-in replacement. Running bunx bumpy init on an existing Changesets project automatically migrates bump files and configuration. However, teams evaluating migration have flagged gaps such as Yarn 4.10 catalog detection. Additionally, Changesets v3 (released August 2026) closed many of the long-standing issues Bumpy originally targeted, so the calculus depends on which specific pain points matter most to your team."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are bump files in Bumpy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bump files are small Markdown files that Bumpy contributors drop into the .bumpy/ directory. Each file declares which packages should be released, at what semver level (major, minor, or patch), along with a changelog description. Because they are plain Markdown files stored in git, they are fully reviewable in pull request diffs, can be edited collaboratively, and consolidate into a release PR via CI when that PR merges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Bumpy handle prereleases?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bumpy version 1.14 added branch-based prerelease channels where prerelease versions are derived at publish time and never committed to git. This directly targets a documented pain point in Changesets, whose own prerelease documentation describes its pre mode as very complicated with states that are very hard to fix. By deriving prerelease versions from the branch at publish time rather than committing them, Bumpy avoids the state-management problems that have frustrated Changesets users."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a Markdown-based versioning tool matter for content workflows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bumpy illustrates a broader 2026 trend: Markdown is becoming the source format for an expanding range of technical workflows beyond documents — including release management, changelogs, and AI agent instructions. When your release notes, changelog entries, and documentation all live in Markdown, the same plain-text pipeline that powers content publishing (version control, collaborative editing, platform-agnostic output) applies. Tools like md2rich convert that Markdown into formatted rich text for publishing platforms without requiring platform-specific editors."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">November 8, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Bumpy vs Changesets 2026: Markdown-Driven Versioning Tested</h1>
+        <p class="text-lg text-gray-600">Bumpy, a new Markdown-file-based versioning tool from the team behind Varlock, claims to fix over 120 open Changesets issues. We ran the workflow to see where it delivers — and where Changesets v3 still wins.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">Every JavaScript monorepo eventually hits the same wall: <em>how do we version and release all these packages without losing our minds?</em> For years, the default answer has been <strong>Changesets</strong> — the file-based workflow where contributors drop a small Markdown file into <code>.changeset/</code> declaring which packages to bump and why. It's simple, reviewable, and integrated into thousands of CI pipelines. But it's also accumulated a long list of open issues — over 120 by one count — around workspace protocols, prerelease state machines, and publishing flexibility.</p>
+
+      <p class="text-gray-700 mb-6">Enter <strong>Bumpy</strong>. First unveiled in an April 2026 Show HN post by creator Theo Ephraim, and now shipping as <code>@varlock/bumpy</code> under an MIT license, Bumpy keeps the Markdown-file model that made Changesets popular and attacks the friction underneath it. The project describes itself as a successor, not just an alternative — and it's already being used to release Varlock alongside 25+ related libraries and plugins.</p>
+
+      <h2 id="how-bumpy-works" class="text-2xl font-bold mt-10 mb-4">How Bumpy works</h2>
+
+      <p class="text-gray-700 mb-6">If you know Changesets, the Bumpy workflow will feel immediately familiar. Contributors write a small Markdown "bump file" into <code>.bumpy/</code>:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code>---
+'@myorg/core': minor
+'@myorg/utils': patch
+---
+
+Added user lang prefs to core config.
+Fixed locale fallback logic in utils.</code></pre>
+
+      <p class="text-gray-700 mb-6">The frontmatter declares which packages get released and at what semver level. The body becomes the changelog entry. Because these are plain Markdown files stored in git, they show up in your PR diff for review, consolidate into a release PR via CI, and merge cleanly when that PR lands. Nothing about this surface changes from Changesets — and that's deliberate.</p>
+
+      <p class="text-gray-700 mb-6">Where Bumpy diverges is everything beneath that surface. The headline features:</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Workspace and catalog protocol support</strong> — <code>workspace:</code> and <code>catalog:</code> protocols work across npm, pnpm, Yarn, and Bun, without the platform-specific workarounds Changesets users have had to maintain</li>
+        <li><strong>Per-package custom publish commands</strong> — publish VS Code extensions, Docker images, or JSR targets from the same release pipeline, not just npm packages</li>
+        <li><strong>Configurable dependency propagation</strong> — a three-phase algorithm lets teams decide exactly how peer dependency bumps cascade through the package graph, rather than accepting Changesets' one-size-fits-all behavior</li>
+        <li><strong>Branch-based prerelease channels</strong> — prerelease versions are derived at publish time and never committed to git, sidestepping the state-machine complexity that Changesets' own docs call "very hard to fix"</li>
+        <li><strong>Lean CI</strong> — two commands, <code>bumpy ci check</code> and <code>bumpy ci release</code>, run in a standard GitHub Actions workflow with no GitHub App to install or separate action repo to trust</li>
+      </ul>
+
+      <h2 id="bumpy-vs-changesets-head-to-head" class="text-2xl font-bold mt-10 mb-4">Bumpy vs Changesets: head-to-head</h2>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-300 text-left">
+              <th class="py-2 pr-4 font-semibold">Feature</th>
+              <th class="py-2 pr-4 font-semibold">Changesets</th>
+              <th class="py-2 font-semibold">Bumpy</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b border-gray-200">
+              <td class="py-2 pr-4">File format</td>
+              <td class="py-2 pr-4">Markdown in <code>.changeset/</code></td>
+              <td class="py-2">Markdown in <code>.bumpy/</code></td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-2 pr-4">Package managers</td>
+              <td class="py-2 pr-4">npm, pnpm, Yarn (partial)</td>
+              <td class="py-2">npm, pnpm, Yarn, Bun + catalog protocols</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-2 pr-4">Custom publish targets</td>
+              <td class="py-2 pr-4">Limited</td>
+              <td class="py-2">VS Code extensions, Docker, JSR per-package</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-2 pr-4">Prereleases</td>
+              <td class="py-2 pr-4">pre mode; documented as "very complicated"</td>
+              <td class="py-2">Branch-based, derived at publish time</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-2 pr-4">CI integration</td>
+              <td class="py-2 pr-4">GitHub App or action repo</td>
+              <td class="py-2">Two CLI commands in plain Actions</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-2 pr-4">AI agent integration</td>
+              <td class="py-2 pr-4">None built-in</td>
+              <td class="py-2">Agent skill via Vercel Labs CLI / Claude Code plugin</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4">Maturity</td>
+              <td class="py-2 pr-4">Battle-tested, huge ecosystem</td>
+              <td class="py-2">v1.14; used by Varlock + 25+ libs; some gaps (Yarn 4.10 catalogs)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="the-ai-agent-angle" class="text-2xl font-bold mt-10 mb-4">The AI agent angle</h2>
+
+      <p class="text-gray-700 mb-6">One Bumpy feature that has no Changesets equivalent: an <strong>agent skill</strong> that teaches LLMs how to inspect git changes, identify affected packages, and generate bump files via <code>bumpy add</code>. It installs through the Vercel Labs skills CLI, the GitHub CLI, or as a Claude Code plugin.</p>
+
+      <p class="text-gray-700 mb-6">This matters because it points at where release management is heading. The Show HN thread was candid that Bumpy "was coded using AI, but carefully" — and the tool is designed to be operated by AI agents, not just humans. In a world where AI agents write code, review PRs, and triage issues, the release workflow is a natural next target. A Markdown-file-based versioning system is uniquely well-suited to this: the files are human-readable, diff-able, and LLM-friendly in a way that JSON config or database state never will be.</p>
+
+      <h2 id="should-you-migrate" class="text-2xl font-bold mt-10 mb-4">Should you migrate?</h2>
+
+      <p class="text-gray-700 mb-6">The honest answer in November 2026: <strong>it depends on which Changesets pain points you actually feel.</strong> Changesets v3 shipped in August 2026 and closed many of the long-standing issues Bumpy originally targeted. Bumpy's own differences doc now compares against v3 and credits it as "a substantial cleanup" — while pointing out remaining gaps around configurable propagation, catalogs, custom publish targets, and prerelease workflows.</p>
+
+      <p class="text-gray-700 mb-6">Migration is low-friction if you do decide to try it. Running <code>bunx bumpy init</code> on an existing Changesets project migrates bump files and config automatically. But be aware of the gaps the community has flagged — Yarn 4.10 catalog detection being the most commonly cited — and weigh them against the v3 improvements before committing a large monorepo.</p>
+
+      <p class="text-gray-700 mb-6">For new projects starting fresh, Bumpy is a credible default. The file-based model is proven (Changesets proved it), and Bumpy's workspace/catalog support plus lean CI story remove real friction. The MIT license and TypeScript implementation keep the risk profile low.</p>
+
+      <h2 id="the-bigger-markdown-trend" class="text-2xl font-bold mt-10 mb-4">The bigger Markdown trend</h2>
+
+      <p class="text-gray-700 mb-6">Bumpy is one more data point in a trend that has been building all year: <strong>Markdown is eating workflows that used to require specialized tools.</strong> Release notes. Changelogs. AI agent instructions. Documentation. Content drafts. The common thread is that plain-text Markdown files in git give you version control, collaborative editing, and platform-agnostic output for free — things that proprietary formats and database-backed tools charge you for, or lock you out of.</p>
+
+      <p class="text-gray-700 mb-6">The same logic applies to content publishing. When your articles, release notes, and documentation all live in Markdown, you can pipe them anywhere: your blog, X Articles, LinkedIn, Medium, Notion, Substack. A changelog entry written as a bump file body can become a LinkedIn product update with formatting intact — no re-writing, no re-formatting, no fighting with platform-specific editors.</p>
+
+      <p class="text-gray-700 mb-6">Here's what that looks like in practice. You draft your changelog entry in Markdown:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto text-sm mb-6"><code>---
+'@myorg/core': minor
+---
+
+Added user language preferences to core config.
+
+- Locale fallback now respects user preference
+- Settings panel auto-detects browser language</code></pre>
+
+      <p class="text-gray-700 mb-6">Paste that into <a href="/" class="text-indigo-600 hover:text-indigo-800">md2rich</a> and you get rich text output ready for any platform. On LinkedIn, it becomes a formatted product update. On X Articles, it becomes a formatted release announcement. The Markdown source stays in git. The formatted output goes wherever your audience is.</p>
+
+      <p class="text-gray-700 mb-6">For more on how Markdown fits into a multi-platform publishing pipeline, see our guide on <a href="/blog/markdown-everywhere-2026-en" class="text-indigo-600 hover:text-indigo-800">Markdown Everywhere 2026</a>. And if you're exploring the broader landscape of Markdown-native tooling, our article on <a href="/blog/google-docs-native-markdown-2026-en" class="text-indigo-600 hover:text-indigo-800">Google Docs' native Markdown support</a> covers another angle on why source formats matter.</p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What is Bumpy and how does it differ from Changesets?</h3>
+          <p class="text-gray-700">Bumpy is an MIT-licensed, TypeScript-based version management and changelog tool for monorepos, created by the team behind Varlock and first announced in April 2026. It follows the same file-based workflow as Changesets but adds workspace and catalog protocol support across npm, pnpm, Yarn, and Bun, per-package custom publish commands, a configurable three-phase dependency propagation algorithm, and branch-based prerelease channels. It claims to address more than 120 open issues from Changesets.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is Bumpy a drop-in replacement for Changesets?</h3>
+          <p class="text-gray-700">Bumpy is designed as a successor rather than a drop-in replacement. Running <code>bunx bumpy init</code> on an existing Changesets project automatically migrates bump files and configuration. However, teams evaluating migration have flagged gaps such as Yarn 4.10 catalog detection. Additionally, Changesets v3 (released August 2026) closed many of the long-standing issues Bumpy originally targeted, so the calculus depends on which specific pain points matter most to your team.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What are bump files in Bumpy?</h3>
+          <p class="text-gray-700">Bump files are small Markdown files that Bumpy contributors drop into the .bumpy/ directory. Each file declares which packages should be released, at what semver level (major, minor, or patch), along with a changelog description. Because they are plain Markdown files stored in git, they are fully reviewable in pull request diffs, can be edited collaboratively, and consolidate into a release PR via CI when that PR merges.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">How does Bumpy handle prereleases?</h3>
+          <p class="text-gray-700">Bumpy version 1.14 added branch-based prerelease channels where prerelease versions are derived at publish time and never committed to git. This directly targets a documented pain point in Changesets, whose own prerelease documentation describes its pre mode as very complicated with states that are very hard to fix. By deriving prerelease versions from the branch at publish time rather than committing them, Bumpy avoids the state-management problems that have frustrated Changesets users.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Why does a Markdown-based versioning tool matter for content workflows?</h3>
+          <p class="text-gray-700">Bumpy illustrates a broader 2026 trend: Markdown is becoming the source format for an expanding range of technical workflows beyond documents — including release management, changelogs, and AI agent instructions. When your release notes, changelog entries, and documentation all live in Markdown, the same plain-text pipeline that powers content publishing (version control, collaborative editing, platform-agnostic output) applies. Tools like md2rich convert that Markdown into formatted rich text for publishing platforms without requiring platform-specific editors.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Your release notes are already in Markdown. Publish them everywhere.</h3>
+        <p class="text-gray-700 mb-4"><a href="/" class="text-indigo-600 font-semibold">md2rich</a> is the free, client-side Markdown-to-rich-text converter that turns your changelog entries, release notes, and documentation into formatted, paste-ready output for LinkedIn, X Articles, Medium, Notion, and every platform that accepts rich text. No upload. No account. No server. Try it now and see why owning your source format is the smartest move in 2026.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Open md2rich &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>&copy; 2026 md2rich. Free, client-side Markdown to rich text.</p>
+      <div class="flex gap-4">
+        <a href="/" class="hover:text-indigo-600">Editor</a>
+        <a href="/about" class="hover:text-indigo-600">About</a>
+        <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+        <a href="/privacy" class="hover:text-indigo-600">Privacy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
