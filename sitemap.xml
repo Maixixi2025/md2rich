@@ -673,4 +673,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+<url>
+    <loc>https://md2rich.com/blog/chatgpt-brand-mentions-openai-analytics-2026-en</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
