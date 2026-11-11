@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDZ vs OKF 2026: Two New Markdown Formats Tested</title>
+  <meta name="description" content="MDZip .mdz packages Markdown, images and metadata into one archive; OKF standardizes Markdown for AI agents. What each solves and how to convert them.">
+  <meta name="keywords" content="mdz format, okf markdown, mdzip vs okf, markdown package format, markdown for ai agents, open knowledge format, markdown to rich text, md2rich, .mdz file, okf spec">
+  <link rel="canonical" href="https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MDZ vs OKF 2026: Two New Markdown Formats Tested">
+  <meta property="og:description" content="MDZip .mdz packages Markdown, images and metadata into one archive; OKF standardizes Markdown for AI agents. What each solves and how to convert them.">
+  <meta property="og:url" content="https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MDZ vs OKF 2026: Two New Markdown Formats Tested">
+  <meta name="twitter:description" content="MDZip .mdz packages Markdown, images and metadata into one archive; OKF standardizes Markdown for AI agents. What each solves and how to convert them.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "MDZ vs OKF 2026: Two New Markdown Formats Tested",
+      "description": "MDZip .mdz packages Markdown, images and metadata into one archive; OKF standardizes Markdown for AI agents. What each solves and how to convert them.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MDZ vs OKF 2026: Two New Markdown Formats Tested",
+          "item": "https://md2rich.com/blog/mdz-vs-okf-markdown-formats-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between MDZ and OKF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MDZ (.mdz) is a file format: a ZIP archive with a .mdz extension that packages one or more Markdown documents with their images, styles, and a manifest.json into a single portable file. OKF (Open Knowledge Format) is a directory convention: a folder of Markdown files with YAML frontmatter and three structural rules, designed so AI agents can navigate a knowledge bundle without bespoke tooling. In short, .mdz is a package you send; OKF is a folder you keep. They solve different problems and can be used together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is an .mdz file just a ZIP file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, by design. An .mdz is a standard ZIP archive with a .mdz extension and the proposed MIME type application/vnd.mdzip. You can rename it to .zip and open it in any archive manager. The .mdz extension signals intent: this is a Markdown document package, not a generic archive. MDZip adds a thin layer of agreed structure on top of ZIP: an entry-point convention (index.md by default), an optional manifest.json with metadata, and safety rules for tools that open it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who created OKF and where does it come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OKF was designed by Sam McVeety and Amir Hormati, Tech Leads in Data Analytics Engineering at Google Cloud, and announced via the Google Cloud Blog on June 12, 2026. It is published under an open license, with the canonical repository at GoogleCloudPlatform/open-knowledge-format. The current version is v0.2, published July 24, 2026, which adds trust signals (sources, generated, verified, status, stale_after) for provenance tracking. The format is vendor-neutral: no Google Cloud dependency is required to use it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert Markdown to rich text for LinkedIn or X Articles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste your Markdown into a client-side converter like md2rich, which turns it into clipboard-ready rich text entirely in your browser. Your draft never leaves your device. Then paste directly into LinkedIn, X Articles, Notion, Medium, or Substack, where the formatting - bold, headings, lists, links, code blocks - arrives intact. This works for .mdz contents you have extracted and for any OKF bundle file, since both store content as plain Markdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need special software to open .mdz files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Because .mdz is a ZIP archive, any archive manager can extract it, and the Markdown inside is plain UTF-8 text that any editor can read. Purpose-built tools - MDZip Studio (now on macOS as of November 10, 2026), VS Code extensions, Obsidian integration, and core libraries for Android, iOS, and Lua - add conveniences like entry-point discovery and manifest parsing, but they are optional, not required."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">November 11, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">MDZ vs OKF 2026: Two New Markdown Formats Tested</h1>
+        <p class="text-lg text-gray-600">Markdown spent twenty years as a render-me-now syntax. In November 2026 it is becoming something more: a package you can ship, and a corpus your AI agents can actually read. Two new specs - MDZip's .mdz and the Open Knowledge Format - define that future from opposite directions. Here is what each one actually is, what problem it solves, and where a Markdown-to-rich-text converter still fits.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">Two announcements landed in the same week this November, and they sound almost identical if you only read the headlines. MDZip Studio shipped for macOS on November 10, 2026, bringing a desktop app for a file format called <strong>.mdz</strong>. Days earlier, the <strong>Open Knowledge Format (OKF)</strong> - a spec from two Google Cloud tech leads for organizing Markdown so AI agents can consume it - crossed its second public revision.</p>
+
+      <p class="text-gray-700 mb-6">Both describe themselves with the same words: "portable," "Markdown-native," "for humans and AI agents." But they are not competitors. They operate on different layers of the stack, solve different failures, and - this is the part almost no coverage has stated clearly - they compose. An OKF knowledge bundle can be zipped into an .mdz and emailed. An .mdz can be extracted into an OKF bundle for an agent to index. The right question is not "which format wins" but "which failure mode are you trying to fix."</p>
+
+      <h2 id="the-problem" class="text-2xl font-bold mt-10 mb-4">The problem both formats are attacking</h2>
+
+      <p class="text-gray-700 mb-6">Markdown has a well-known portability gap: the text travels everywhere, but the <em>context</em> does not. A Markdown file that references <code class="bg-gray-100 px-1 rounded text-sm">images/cover.png</code> and depends on a companion <code class="bg-gray-100 px-1 rounded text-sm">AGENTS.md</code> for instructions is not a self-contained artifact. Send just the .md file and the recipient gets text with broken references. Zip the whole folder and the recipient gets an unstructured archive they have to interpret manually. Neither is a good handoff to a colleague, a publisher, or an AI agent that needs to know which file is the entry point.</p>
+
+      <p class="text-gray-700 mb-6">The 2026 twist is the agent. When the consumer of your Markdown is a language model doing knowledge work - summarizing your docs, answering questions against your playbook, drafting from your style guide - the failure modes multiply. Agents do not guess well. Give an agent a bare folder of 40 Markdown files with no index and no type metadata, and it will either hallucinate structure or burn tokens reading everything. OKF's documentation states the premise plainly: agents don't guess at structure, they read it. Both specs are, in different ways, attempts to make Markdown legible to machines without making it illegible to humans.</p>
+
+      <h2 id="mdz" class="text-2xl font-bold mt-10 mb-4">MDZip .mdz: Markdown as a shippable package</h2>
+
+      <p class="text-gray-700 mb-6">The .mdz format - spec version 1.2.1, status Final, dated October 25, 2026 - is deliberately unglamorous. The specification's own summary reads: <strong>"It's a ZIP file."</strong> An .mdz is a standard ZIP archive with a .mdz extension and the proposed MIME type <code class="bg-gray-100 px-1 rounded text-sm">application/vnd.mdzip</code>. Files inside are stored or DEFLATE-compressed, never encrypted. Rename it to .zip and any archive manager on earth opens it.</p>
+
+      <p class="text-gray-700 mb-6">What the extension adds is a thin layer of agreed-upon structure:</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Entry-point discovery.</strong> The manifest's <code class="bg-gray-100 px-1 rounded text-sm">entryPoint</code> field declares which document opens first; failing that, <code class="bg-gray-100 px-1 rounded text-sm">index.md</code>; failing that, the only Markdown file at the root. If it is still ambiguous, conforming apps must ask rather than guess.</li>
+        <li><strong>Two modes.</strong> The default <code class="bg-gray-100 px-1 rounded text-sm">document</code> mode holds one main document. A <code class="bg-gray-100 px-1 rounded text-sm">project</code> mode keeps several documents as a browsable set and requires a manifest declaring so.</li>
+        <li><strong>A manifest.json.</strong> Optional for hand-made archives, but every MDZip tool writes one with at least <code class="bg-gray-100 px-1 rounded text-sm">spec.version</code> and <code class="bg-gray-100 px-1 rounded text-sm">entryPoint</code>.</li>
+        <li><strong>Human and agent notes.</strong> Optional <code class="bg-gray-100 px-1 rounded text-sm">README.md</code> and <code class="bg-gray-100 px-1 rounded text-sm">AGENTS.md</code> at the root explain the archive to whoever - or whatever - opens it without MDZip tools.</li>
+        <li><strong>Safety rules.</strong> Apps must not run scripts from an .mdz while displaying it, or extract files outside the destination folder.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">The ecosystem has moved fast. The spec lists conformant core libraries across five languages - Kotlin/Java (Android), Swift (iOS), pure Lua, and two others passing the same shared conformance tests - plus MDZip Studio 1.7.0 for Windows, macOS, and Linux (Homebrew included, with Finder double-click handling on Mac), a VS Code extension, an Obsidian plugin, and a Google Voice exporter. An .mdz file you create on a Linux desktop can be opened by an iOS library and validated by a Lua script, and every one of them interprets the same entry point.</p>
+
+      <p class="text-gray-700 mb-6">The spec is also explicit about what .mdz is <em>not</em>. It is not a replacement for EPUB - the FAQ makes the contrast directly: EPUB is a ZIP-based container whose content is XHTML, built for publication and reading systems. .mdz is the same single-file packaging idea but Markdown-native, authoring-oriented, and far lighter in structure. If EPUB is for books, .mdz is for the document you are still editing.</p>
+
+      <p class="text-gray-700 mb-6">Example: a single-document .mdz as the spec describes it:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>document.mdz (ZIP archive)
+├── index.md          # Recommended entry point
+├── manifest.json     # Written by every MDZip tool
+├── README.md         # Optional: human usage notes
+├── AGENTS.md         # Optional: guidance for AI agents
+├── images/
+│   └── cover.png
+└── styles/
+    └── document.css</code></pre>
+
+      <h2 id="okf" class="text-2xl font-bold mt-10 mb-4">OKF: Markdown as a machine-legible knowledge corpus</h2>
+
+      <p class="text-gray-700 mb-6">The Open Knowledge Format approaches the same portability gap from the other side. Where .mdz packages a document for transit, OKF organizes a <em>living corpus</em> for use. Its own description is austere: a directory of Markdown files, YAML frontmatter, three rules. That's the entire format.</p>
+
+      <p class="text-gray-700 mb-6">The three rules, from the spec:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li>Every <code class="bg-gray-100 px-1 rounded text-sm">.md</code> file (except the reserved <code class="bg-gray-100 px-1 rounded text-sm">index.md</code> and <code class="bg-gray-100 px-1 rounded text-sm">log.md</code>) needs parseable YAML frontmatter.</li>
+        <li>Every frontmatter block needs a non-empty <code class="bg-gray-100 px-1 rounded text-sm">type</code> field (concept, howto, reference, decision, metric), so agents route each file to the right handler without heuristics.</li>
+        <li>The reserved files <code class="bg-gray-100 px-1 rounded text-sm">index.md</code> and <code class="bg-gray-100 px-1 rounded text-sm">log.md</code> follow a defined structure - the index lists what the bundle contains, the log tracks changes.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">Everything else is deliberately unstandardized. The spec's authors - Sam McVeety and Amir Hormati, Tech Leads in Data Analytics Engineering at Google Cloud, who announced OKF on June 12, 2026 - made a bet that knowledge-management standards die by over-specification. OKF "nails down the structural conventions needed for a knowledge corpus to be self-describing, and stops there."</p>
+
+      <p class="text-gray-700 mb-6">The current version, v0.2 (published July 24, 2026), adds the feature that makes OKF genuinely agent-ready: <strong>trust signals</strong>. Frontmatter fields named <code class="bg-gray-100 px-1 rounded text-sm">sources</code>, <code class="bg-gray-100 px-1 rounded text-sm">generated</code>, <code class="bg-gray-100 px-1 rounded text-sm">verified</code>, <code class="bg-gray-100 px-1 rounded text-sm">status</code>, and <code class="bg-gray-100 px-1 rounded text-sm">stale_after</code> let an agent distinguish a curated, human-verified page from one that was machine-generated and never checked. In a world where agents increasingly write the docs they also read, provenance is not a nice-to-have - it is the difference between a corpus you can trust and one you cannot.</p>
+
+      <p class="text-gray-700 mb-6">A minimal OKF bundle looks like this:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>my-knowledge-bundle/
+├── index.md
+├── what-is-okf.md
+└── validation-rules.md
+
+---
+type: concept
+title: What is OKF
+sources: https://example.com/spec
+verified: 2026-11-01
+status: current
+---
+# What is OKF
+
+The Open Knowledge Format is a spec for representing
+knowledge as markdown files.</code></pre>
+
+      <p class="text-gray-700 mb-6">The spec's FAQ connects OKF to a pattern that keeps reappearing under different names - what Andrej Karpathy called the "LLM Wiki" in a widely-circulated gist: <em>LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass</em>. The bookkeeping that causes humans to abandon personal wikis is exactly what LLMs are good at. OKF is the first attempt to standardize that pattern: an Obsidian-style vault, but with the structure an agent needs to navigate it deterministically.</p>
+
+      <h2 id="comparison" class="text-2xl font-bold mt-10 mb-4">MDZ vs OKF: the comparison that matters</h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm text-gray-700 border border-gray-200">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">Axis</th>
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">MDZip (.mdz)</th>
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">OKF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Unit</td>
+              <td class="p-3 border-b border-gray-200">A single file (ZIP archive)</td>
+              <td class="p-3 border-b border-gray-200">A directory of files</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Primary job</td>
+              <td class="p-3 border-b border-gray-200">Package Markdown + assets for transit</td>
+              <td class="p-3 border-b border-gray-200">Organize a knowledge corpus for use</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Structure source</td>
+              <td class="p-3 border-b border-gray-200">manifest.json + entry-point conventions</td>
+              <td class="p-3 border-b border-gray-200">YAML frontmatter + three rules</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Agent story</td>
+              <td class="p-3 border-b border-gray-200">AGENTS.md explains the archive</td>
+              <td class="p-3 border-b border-gray-200">Typed frontmatter routes content; trust signals convey provenance</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Git-native?</td>
+              <td class="p-3 border-b border-gray-200">Binary archive - diff-hostile</td>
+              <td class="p-3 border-b border-gray-200">Yes - diff, branch, review like code</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Version</td>
+              <td class="p-3 border-b border-gray-200">Spec 1.2.1 (Final, 2026-10-25)</td>
+              <td class="p-3 border-b border-gray-200">v0.2 (2026-07-24, trust signals)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">License</td>
+              <td class="p-3 border-b border-gray-200">Open, tool-agnostic spec</td>
+              <td class="p-3 border-b border-gray-200">MIT; based on the Google Cloud Markdown spec</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Tooling</td>
+              <td class="p-3">Studio, VS Code, Obsidian, 5 core libraries (Android/iOS/Lua/...)</td>
+              <td class="p-3">Validators, CLI, agents, converters</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">Read the table as a routing guide, not a scorecard. Shipping a finished whitepaper to a client who uses different tools? That is .mdz. Standing up a knowledge base that your team's agents query daily? That is OKF. Both? Zip the OKF bundle into an .mdz - the spec explicitly supports multi-document project archives with <code class="bg-gray-100 px-1 rounded text-sm">index.md</code> as a landing page, which is exactly what an OKF index.md already is.</p>
+
+      <h2 id="convert" class="text-2xl font-bold mt-10 mb-4">Where Markdown-to-rich-text conversion still fits</h2>
+
+      <p class="text-gray-700 mb-6">Both specs stop at the same boundary: they get your Markdown <em>organized and portable</em>, but neither one pastes a formatted post into LinkedIn. That last mile - from structured Markdown to the rich-text clipboard format that LinkedIn, X Articles, Notion, Medium, and Substack accept on paste - is still a conversion problem, and it is still solved by a different kind of tool.</p>
+
+      <p class="text-gray-700 mb-6">The workflow composes cleanly:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Author in Markdown</strong>, with whatever structure your project needs - a plain file, an OKF-typed bundle, or an .mdz archive.</li>
+        <li><strong>Extract the document</strong> you want to publish. From .mdz: open the archive and copy the entry-point .md. From OKF: pick the concept or howto file whose frontmatter type matches your intent.</li>
+        <li><strong>Convert to rich text</strong> with a client-side converter like md2rich - paste the Markdown, copy the formatted output. No upload, no account, no server in the middle.</li>
+        <li><strong>Paste into the platform</strong> and publish. Bold, headings, lists, links, and code blocks survive intact.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">Two concrete examples of what the Markdown looks like before conversion:</p>
+
+      <p class="text-gray-700 mb-4"><strong>Example 1: a LinkedIn-ready section from a whitepaper draft.</strong> Notice the bold lead-ins, the link syntax, and the numbered structure - all of this converts to real formatting on paste, instead of literal asterisks.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>## What changed in 2026
+
+1. **Markdown became a package.**
+   The .mdz format wraps a document,
+   its images, and its metadata into
+   one portable archive.
+2. **Markdown became a corpus.**
+   OKF adds typed frontmatter and trust
+   signals so AI agents can navigate a
+   knowledge bundle without guessing.
+3. **The last mile stayed the same.**
+   Publishing still means converting
+   Markdown to the rich text each
+   platform accepts on paste.
+
+Read more: [the md2rich blog](/blog/)</code></pre>
+
+      <p class="text-gray-700 mb-4"><strong>Example 2: an X Articles pull-quote with a reference link.</strong> The blockquote marker and the inline link are exactly the constructs that get lost when you paste raw Markdown text into a rich-text field.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>&gt; OKF nails down the structural conventions
+&gt; needed for a knowledge corpus to be
+&gt; self-describing, and stops there.
+
+The bet: standards that try to do too much
+get adopted by nobody. Source:
+[OKF Spec v0.2](https://okf.md/spec/)</code></pre>
+
+      <p class="text-gray-700 mb-6">In both cases, pasting the raw Markdown into LinkedIn or X Articles renders the literal characters - <code class="bg-gray-100 px-1 rounded text-sm">**bold**</code>, <code class="bg-gray-100 px-1 rounded text-sm">&gt; quote</code>, <code class="bg-gray-100 px-1 rounded text-sm">[text](url)</code>. Converting first is the difference between a draft that looks like code and a post that looks like a post.</p>
+
+      <p class="text-gray-700 mb-6">The privacy angle matters here too, and it is worth stating precisely because both new formats make it sharper. When your Markdown lives in an .mdz or an OKF bundle, it often contains things you do not want on a third-party server: internal playbooks, client names, unreleased pricing. A client-side converter keeps the whole pipeline on your device - the same property that makes .mdz "safe to open" and OKF "git-native" is the property you want in the conversion step too. No upload means no server to trust.</p>
+
+      <h2 id="verdict" class="text-2xl font-bold mt-10 mb-4">The verdict</h2>
+
+      <p class="text-gray-700 mb-6">MDZ and OKF are the two halves of a trend that will define Markdown's next decade: the format is growing up from a render-me-now syntax into infrastructure. .mdz answers "how do I ship a Markdown document without it falling apart in transit." OKF answers "how do I keep a Markdown corpus that an AI agent can actually use." Neither answer is complete without the last mile - converting your structured Markdown into the rich text that publishing platforms accept - and that last mile is where a privacy-first, client-side converter earns its place in the pipeline.</p>
+
+      <p class="text-gray-700 mb-6">If you write in Markdown and publish anywhere in 2026, the stack writes itself: <strong>author in Markdown, structure with OKF or package with .mdz, convert with md2rich, paste everywhere.</strong></p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What is the difference between MDZ and OKF?</h3>
+          <p class="text-gray-700">MDZ (.mdz) is a file format: a ZIP archive with a .mdz extension that packages one or more Markdown documents with their images, styles, and a manifest.json into a single portable file. OKF (Open Knowledge Format) is a directory convention: a folder of Markdown files with YAML frontmatter and three structural rules, designed so AI agents can navigate a knowledge bundle without bespoke tooling. In short, .mdz is a package you send; OKF is a folder you keep. They solve different problems and can be used together.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is an .mdz file just a ZIP file?</h3>
+          <p class="text-gray-700">Yes, by design. An .mdz is a standard ZIP archive with a .mdz extension and the proposed MIME type application/vnd.mdzip. You can rename it to .zip and open it in any archive manager. The .mdz extension signals intent: this is a Markdown document package, not a generic archive. MDZip adds a thin layer of agreed structure on top of ZIP: an entry-point convention (index.md by default), an optional manifest.json with metadata, and safety rules for tools that open it.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Who created OKF and where does it come from?</h3>
+          <p class="text-gray-700">OKF was designed by Sam McVeety and Amir Hormati, Tech Leads in Data Analytics Engineering at Google Cloud, and announced via the Google Cloud Blog on June 12, 2026. It is published under an open license, with the canonical repository at GoogleCloudPlatform/open-knowledge-format. The current version is v0.2, published July 24, 2026, which adds trust signals (sources, generated, verified, status, stale_after) for provenance tracking. The format is vendor-neutral: no Google Cloud dependency is required to use it.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">How do I convert Markdown to rich text for LinkedIn or X Articles?</h3>
+          <p class="text-gray-700">Paste your Markdown into a client-side converter like md2rich, which turns it into clipboard-ready rich text entirely in your browser. Your draft never leaves your device. Then paste directly into LinkedIn, X Articles, Notion, Medium, or Substack, where the formatting - bold, headings, lists, links, code blocks - arrives intact. This works for .mdz contents you have extracted and for any OKF bundle file, since both store content as plain Markdown.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Do I need special software to open .mdz files?</h3>
+          <p class="text-gray-700">No. Because .mdz is a ZIP archive, any archive manager can extract it, and the Markdown inside is plain UTF-8 text that any editor can read. Purpose-built tools - MDZip Studio (now on macOS as of November 10, 2026), VS Code extensions, Obsidian integration, and core libraries for Android, iOS, and Lua - add conveniences like entry-point discovery and manifest parsing, but they are optional, not required.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Structure it. Ship it. Publish it.</h3>
+        <p class="text-gray-700 mb-4">Try <a href="/" class="text-indigo-600 font-semibold">md2rich</a> — the free, client-side Markdown-to-rich-text converter. Paste Markdown from any .mdz archive or OKF bundle, get clipboard-ready rich text for LinkedIn, X Articles, Notion, Medium, and Substack. No upload. No account. No server.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>
