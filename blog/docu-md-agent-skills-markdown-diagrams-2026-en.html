@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>docu.md Agent Skills 2026: Markdown Diagrams as Text</title>
+  <meta name="description" content="docu.md's Agent Skills pack ships 242 verified Markdown diagram examples across 5 engines and 31 goal domains. How to draft charts that render live.">
+  <meta name="keywords" content="docu.md, agent skills, markdown diagrams, plantuml in markdown, vega-lite markdown, echarts, ai agent markdown, markdown to rich text, md2rich, fenced code diagrams">
+  <link rel="canonical" href="https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="docu.md Agent Skills 2026: Markdown Diagrams as Text">
+  <meta property="og:description" content="docu.md's Agent Skills pack ships 242 verified Markdown diagram examples across 5 engines and 31 goal domains. How to draft charts that render live.">
+  <meta property="og:url" content="https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="docu.md Agent Skills 2026: Markdown Diagrams as Text">
+  <meta name="twitter:description" content="docu.md's Agent Skills pack ships 242 verified Markdown diagram examples across 5 engines and 31 goal domains. How to draft charts that render live.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "docu.md Agent Skills 2026: Markdown Diagrams as Text",
+      "description": "docu.md's Agent Skills pack ships 242 verified Markdown diagram examples across 5 engines and 31 goal domains. How to draft charts that render live.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "docu.md Agent Skills 2026: Markdown Diagrams as Text",
+          "item": "https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is docu.md's Agent Skills package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a single skill package called documd-visuals, published in the markdown-viewer/skills repository on GitHub and installable with npx skills add markdown-viewer/skills. It teaches an AI coding agent how to create charts, diagrams, cards and page layouts directly inside Markdown, using fenced blocks that the docu.md viewer renders live. The repository has about 3,400 stars and the package contains 242 verified examples, 183 scenarios, 31 goal domains and 5 rendering engines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which rendering engines does the skill support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Five. PlantUML (fenced as plantuml or puml) for UML, ArchiMate, BPMN and cloud architecture, with roughly 9,500 stencil icons. Vega and Vega-Lite for charts that need data transforms, faceting and statistics. ECharts for report-grade charts, dashboards and gauges. Infographic, from AntV, for template-driven roadmaps, sequences and comparisons. And bare HTML for system architecture diagrams, cards and page-level layouts. The skill treats any other engine as a bug rather than a second-tier option, and explicitly does not recommend Mermaid, canvas, drawio or dot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install anything to use the skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, not for writing figures. The skill copies or symlinks files into your agent's skills directory, and the viewer renders the fenced blocks live, so nothing is pre-rendered or built. The optional export CLI is separate and must be installed on demand: npx @markdown-viewer/documd report.md report.docx. The CLI needs Node 18 or newer and a Chrome or Chromium install. Note the scope, because the bare name documd on npm is an unrelated package called markdown object notation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export a Markdown document with diagrams to PDF, DOCX or EPUB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The documd CLI renders a whole Markdown document, figures included, to html, epub, docx or pdf, with the format inferred from the output extension. A document input of .md, .markdown, .mdown, .mkd or .txt produces those four formats. A SUMMARY.md file with the --book flag exports a whole book following the GitBook summary structure. A single diagram source such as a .puml, .vl or .vega file can be rendered on its own to svg or png."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I publish a Markdown document with diagrams to LinkedIn or X Articles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Export the document to HTML first so the figures become images, then paste the result into a rich-text converter such as md2rich, which runs entirely in your browser and turns the Markdown into clipboard-ready rich text for LinkedIn, X Articles, Notion, Medium and Substack. Your draft and any internal content never leaves your device because the conversion happens client-side. Note that LinkedIn and X do not render fenced diagram blocks themselves, so the export step is what turns a text figure into a visible chart."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What license applies to the skill package and the CLI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are two separate works with two different licenses. The skill package, the documd-visuals directory, is CC-BY-4.0, which lets you copy, adapt and redistribute it including commercially, with attribution, and it covers the whole repository including the repo-only tooling. The CLI and the rendering engines, published as @markdown-viewer/documd, @markdown-viewer/draw-uml and @markdown-viewer/drawio2svg, are GPL-3.0-only and are not covered by that grant. Installing the skill does not license them."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">November 17, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">docu.md Agent Skills 2026: Markdown Diagrams as Text</h1>
+        <p class="text-lg text-gray-600">Every diagram in a document is usually a PNG. That is why every diagram in a document is also stale the moment the numbers change. A GitHub repository called <strong>markdown-viewer/skills</strong> takes the opposite bet: the figure <em>is</em> the text. It ships 242 verified examples across five rendering engines, and an AI agent can pick the right one by describing what the reader wants to know. Here is how the package is built, what it actually does, and where it fits in a Markdown publishing workflow.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">The repository behind docu.md - a cross-platform Markdown viewer with rich diagram support, available as a Chrome, Edge, Firefox, Obsidian and VS Code extension - carries about <strong>3,400 GitHub stars</strong> and 193 forks. Inside it sits a single directory, <code class="bg-gray-100 px-1 rounded text-sm">documd-visuals</code>, packaged in the Agent Skills format. The README states the headline figure plainly: <strong>242 verified examples, 183 scenarios, 31 goal domains, 5 engines</strong>. Every one of those numbers is generated from a source table and gated by a script that checks theme drift, contrast, block rendering and block coverage.</p>
+
+      <p class="text-gray-700 mb-6">That last detail matters more than it sounds. A skills package is usually a pile of prose an agent reads and tries to follow. This one is a package whose content is machine-checked: the scripts fail the build if a rendered example drifts from its theme, if contrast regresses, or if a documented file becomes unreachable from the router. That is the difference between a prompt and a specification.</p>
+
+      <h2 id="model" class="text-2xl font-bold mt-10 mb-4">The core idea: figures are text, in place</h2>
+
+      <p class="text-gray-700 mb-6">The package's central claim is in its SKILL.md router, and it is short enough to quote: <strong>"Figures are text, in place."</strong> A fenced block written into the Markdown <em>is</em> the figure. The viewer draws it live, the block stays editable, and nothing is pre-rendered, built or exported first. There is no build step and no binary artifact to regenerate.</p>
+
+      <p class="text-gray-700 mb-6">The contrast with the conventional workflow is worth spelling out, because it is the whole argument. Normally a chart in a Markdown document is an image you exported from a spreadsheet, committed to the repository, and now has to be regenerated by hand every time the underlying data moves. The prose and the picture drift apart. The picture is also a binary, so a diff shows nothing about what changed. And an AI agent cannot reason about it at all - it sees pixels.</p>
+
+      <p class="text-gray-700 mb-6">Under this model the same agent that wrote the sentence describing a latency regression can also edit the block that draws it, because both are text in the same file. The example format makes that concrete - every scenario file follows the same shape, and it ends with a traceability line:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code># Dumbbell - Latency Before and After a Fix (Vega-Lite)
+
+**Best for**: two measurements per category, where the
+*gap* between them is the argument
+**Avoid when**: the two values are not comparable
+**Answers**: how much each endpoint improved
+
+```vega-lite
+{
+  "data": {
+    "values": [
+      {"endpoint": "Checkout", "before": 412, "after": 268},
+      {"endpoint": "Cart",     "before": 366, "after": 210},
+      {"endpoint": "Search",   "before": 298, "after": 224}
+    ]
+  },
+  "mark": "point"
+}
+```
+
+*Data Shape / Key Options / Pitfalls / Alternatives*
+
+&lt;!-- source: engines/vega.md --&gt;</code></pre>
+
+      <p class="text-gray-700 mb-6">Notice the shape: a recommendation for when to use the figure, a warning about when not to, the question it answers, the block itself, and a pointer back to the engine documentation. An agent reading only the example can decide whether it fits the reader's question, and can trace any claim to the source that justifies it.</p>
+
+      <h2 id="routing" class="text-2xl font-bold mt-10 mb-4">Routing by goal, not by engine</h2>
+
+      <p class="text-gray-700 mb-6">The package is organised by <strong>what the reader wants</strong>, not by what the renderer is. Requests route through 31 goal domains, grouped into four meta-clusters:</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>A - data &amp; metrics:</strong> service-reliability, ops-monitoring, delivery-throughput, goal-and-status-reporting, product-metrics, business-reporting, go-to-market, cost-and-budget, data-exploration.</li>
+        <li><strong>B - process &amp; systems:</strong> engineering-operations, incident-management, process-and-workflow, software-design, software-behaviour, dependencies-and-relations, system-architecture.</li>
+        <li><strong>C - infrastructure &amp; governance:</strong> cloud-architecture, data-platform, network-topology, security-and-compliance, enterprise-architecture, organization-and-roles, people-and-hiring.</li>
+        <li><strong>D - knowledge &amp; expression:</strong> knowledge-and-outline, planning-and-roadmap, migration-and-rollout, comparison-and-selection, internal-documents, catalogues-and-inventories, customer-and-partner-comms.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">Each domain lists its scenarios with the example files that implement them, and each scenario names its engine. The path through the package is three hops: match the reader's intent to a goal domain, read that domain's guide, then open the engine reference for the limits and anti-patterns of the renderer you landed on. Engines are suggestions; the guide and the examples are authoritative.</p>
+
+      <p class="text-gray-700 mb-6">The distribution of the 242 examples across the five engines is not arbitrary, and it hints at where the package thinks its real strength is:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm text-gray-700 border border-gray-200">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">Engine</th>
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">Fence</th>
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">Examples</th>
+              <th class="text-left p-3 border-b border-gray-200 font-semibold">Used for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Infographic (AntV)</td>
+              <td class="p-3 border-b border-gray-200">infographic</td>
+              <td class="p-3 border-b border-gray-200">92</td>
+              <td class="p-3 border-b border-gray-200">Template-driven roadmaps, sequences, comparisons</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">Vega / Vega-Lite</td>
+              <td class="p-3 border-b border-gray-200">vega, vega-lite</td>
+              <td class="p-3 border-b border-gray-200">46</td>
+              <td class="p-3 border-b border-gray-200">Charts with data transforms, faceting, statistics</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">PlantUML (draw-uml)</td>
+              <td class="p-3 border-b border-gray-200">plantuml, puml</td>
+              <td class="p-3 border-b border-gray-200">41</td>
+              <td class="p-3 border-b border-gray-200">UML, ArchiMate, BPMN, cloud and network architecture</td>
+            </tr>
+            <tr>
+              <td class="p-3 border-b border-gray-200 font-semibold">ECharts</td>
+              <td class="p-3 border-b border-gray-200">echarts</td>
+              <td class="p-3 border-b border-gray-200">39</td>
+              <td class="p-3 border-b border-gray-200">Report-grade charts, dashboards, gauges</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">Bare HTML</td>
+              <td class="p-3">no fence</td>
+              <td class="p-3">24</td>
+              <td class="p-3">System architecture layouts, cards, page skeletons</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">Infographic is the largest single group, which tells you what this package is actually for: business documents, status reports, roadmaps and comparison material - not scientific plotting. The heaviest domain is delivery-throughput with 19 examples; the lightest are enterprise-architecture, data-platform and catalogues-and-inventories with 3 each.</p>
+
+      <h2 id="engines" class="text-2xl font-bold mt-10 mb-4">The five engines and their hard edges</h2>
+
+      <p class="text-gray-700 mb-6">The package is opinionated to a degree that is unusual for documentation. Seven iron rules govern it, and the second one is the striking one: <strong>"Nothing outside that list. A fence the list does not name is a bug, not a lesser option - there is no second-tier engine."</strong> The single place the excluded names appear is the SKILL.md description itself - mermaid, canvas, drawio, dot - so an agent recognises the request when a user makes it and can say no.</p>
+
+      <p class="text-gray-700 mb-6">Other rules matter for anyone writing against it. HTML must be bare, never fenced: <code class="bg-gray-100 px-1 rounded text-sm">```html</code> turns the block into an image. One diagram per fence, and never nested fences. Chart engines must inline their own data - <code class="bg-gray-100 px-1 rounded text-sm">vega</code>, <code class="bg-gray-100 px-1 rounded text-sm">vega-lite</code> and <code class="bg-gray-100 px-1 rounded text-sm">echarts</code> carry their own <code class="bg-gray-100 px-1 rounded text-sm">values</code> and <code class="bg-gray-100 px-1 rounded text-sm">series</code>, because external URLs are unreliable on the export path. And colours come from one of nine named themes - accessible, contrast, default, editorial, nord, pastel, print, slate, vivid - with a hand-picked hex treated as a bug.</p>
+
+      <p class="text-gray-700 mb-6">The theme system is the part most likely to surprise you, because it is not decoration. Each theme is a block of values per engine, and the gates check for off-theme literals in strict mode. The instruction to pick a theme and take every value from it is what keeps 242 examples visually coherent - and it is why the repo tells contributors to edit <code class="bg-gray-100 px-1 rounded text-sm">scripts/themes.json</code> rather than the generated theme files.</p>
+
+      <p class="text-gray-700 mb-6">PlantUML support comes with a detail worth knowing about: the <code class="bg-gray-100 px-1 rounded text-sm">draw-uml</code> path converts PlantUML text into DrawIO XML, and the bundle ships roughly <strong>9,500 stencil icons</strong> for architecture diagrams. The companion packages are published separately - <code class="bg-gray-100 px-1 rounded text-sm">@markdown-viewer/draw-uml</code> at version 1.5.2 and <code class="bg-gray-100 px-1 rounded text-sm">@markdown-viewer/drawio2svg</code> at 1.5.5.</p>
+
+      <h2 id="install" class="text-2xl font-bold mt-10 mb-4">Installation, and the one trap that catches everyone</h2>
+
+      <p class="text-gray-700 mb-6">Installation is a single command, and it works across Claude Code, Codex, Cursor and anything else that understands the Agent Skills format:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>npx skills add markdown-viewer/skills</code></pre>
+
+      <p class="text-gray-700 mb-6">For Claude Code the manual route is copying <code class="bg-gray-100 px-1 rounded text-sm">skills/documd-visuals</code> into <code class="bg-gray-100 px-1 rounded text-sm">~/.claude/skills/</code>. For GitHub Copilot and VS Code, dropping the package into <code class="bg-gray-100 px-1 rounded text-sm">.github/skills/</code> is enough. For claude.ai, you can add the package as project knowledge or paste the SKILL.md contents into the conversation.</p>
+
+      <p class="text-gray-700 mb-6">The trap is the npm scope, and the package warns about it twice. The bare name <code class="bg-gray-100 px-1 rounded text-sm">documd</code> on npm belongs to an unrelated package called "markdown object notation". If you type <code class="bg-gray-100 px-1 rounded text-sm">npx documd</code>, you fetch that one, and it fails in a way that looks like a bug in your document rather than a wrong package name. Always write the full scope:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>npx @markdown-viewer/documd report.md report.docx
+npx @markdown-viewer/documd notes.md book.epub
+npx @markdown-viewer/documd architecture.puml architecture.svg
+
+# install once if the command repeats:
+npm install -g @markdown-viewer/documd</code></pre>
+
+      <p class="text-gray-700 mb-6">There is a second subtlety that trips people up. Installing the skill does not install the CLI, and no installer could make it. <code class="bg-gray-100 px-1 rounded text-sm">npx skills add</code> copies or symlinks files into a skills directory; the Agent Skills format has no install-hook field, and the CLI runs no scripts of its own during <code class="bg-gray-100 px-1 rounded text-sm">add</code>. The CLI is a separate tool the skill points at. The export path also needs Node 18 or newer plus a Chrome or Chromium install - it bundles <code class="bg-gray-100 px-1 rounded text-sm">playwright-core</code>, and if Chrome is not on the default path you pass <code class="bg-gray-100 px-1 rounded text-sm">--chrome &lt;path&gt;</code>.</p>
+
+      <h2 id="export" class="text-2xl font-bold mt-10 mb-4">The export half: from live figures to files</h2>
+
+      <p class="text-gray-700 mb-6">The CLI splits cleanly by input type. A Markdown document goes out to a finished file - html, epub, docx or pdf, with the format inferred from the output extension. A <code class="bg-gray-100 px-1 rounded text-sm">SUMMARY.md</code> with the <code class="bg-gray-100 px-1 rounded text-sm">--book</code> flag exports a whole book following the GitBook summary structure. A single diagram source - a <code class="bg-gray-100 px-1 rounded text-sm">.puml</code>, <code class="bg-gray-100 px-1 rounded text-sm">.vl</code> or <code class="bg-gray-100 px-1 rounded text-sm">.vega</code> file - renders on its own to svg or png.</p>
+
+      <p class="text-gray-700 mb-6">The <code class="bg-gray-100 px-1 rounded text-sm">--assets</code> flag is the one to know about for publishing: it exports a document's figures and images into a directory instead of producing a document. That is the bridge from "live in the viewer" to "an image that a social platform will actually display".</p>
+
+      <p class="text-gray-700 mb-6">The CLI is at version <strong>6.0.0</strong> on npm, published under a GPL-3.0-only license, last modified at the end of October 2026.</p>
+
+      <h2 id="licence" class="text-2xl font-bold mt-10 mb-4">Two licenses, and why the split is deliberate</h2>
+
+      <p class="text-gray-700 mb-6">The repository is covered by <strong>CC-BY-4.0</strong>. That grant includes the whole repository - the skill package, the repo-only tooling in <code class="bg-gray-100 px-1 rounded text-sm">scripts/</code> and the engine dossiers in <code class="bg-gray-100 px-1 rounded text-sm">research/</code>, none of which are shipped or discovered as skills. You may copy, adapt and redistribute it, including commercially, with attribution. Attribution is asked for only when you share the package, and then a credit line in your notices satisfies it. Writing documents with the skill, and documents that stay inside your organisation, require nothing at all.</p>
+
+      <p class="text-gray-700 mb-6">The CLI and the rendering engines are a different work under <strong>GPL-3.0-only</strong>. Installing the skill does not license them. This split is the kind of detail that is easy to miss and awkward to discover later, so it is worth reading the licence section before you vendor any of it into a product.</p>
+
+      <p class="text-gray-700 mb-6">One more piece of housekeeping: the repository used to ship 14 separate engine-named and domain-named skills. They were consolidated into the single <code class="bg-gray-100 px-1 rounded text-sm">documd-visuals</code> package and rewritten rather than copied - there are no compatibility stubs, because the CLI discovers a skill by locating a <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code> and a stub directory would be ignored anyway. If you installed one of the old skills, reinstall to get the new package.</p>
+
+      <h2 id="publish" class="text-2xl font-bold mt-10 mb-4">Where this fits in a publishing workflow</h2>
+
+      <p class="text-gray-700 mb-6">Here is the honest limitation, and it is worth being precise about it. LinkedIn, X Articles, Notion, Medium and Substack do not render a fenced <code class="bg-gray-100 px-1 rounded text-sm">plantuml</code> or <code class="bg-gray-100 px-1 rounded text-sm">vega-lite</code> block. Paste one into a rich-text editor and you get the literal characters - backticks, braces, the whole JSON payload - because a fenced block is only meaningful to something that knows the fence. The same is true of Mermaid, of course, but the point is more general: <strong>text figures need a renderer, and social platforms are not renderers.</strong></p>
+
+      <p class="text-gray-700 mb-6">So the workflow has an export step in the middle, and it looks like this:</p>
+
+      <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Draft in Markdown</strong>, with the figure as a fenced block inline where it belongs in the prose.</li>
+        <li><strong>Export</strong> with <code class="bg-gray-100 px-1 rounded text-sm">npx @markdown-viewer/documd</code> - or <code class="bg-gray-100 px-1 rounded text-sm">--assets</code> if you want the figures as separate image files.</li>
+        <li><strong>Convert to rich text</strong> with a client-side converter like md2rich, which turns the Markdown into clipboard-ready rich text entirely in your browser.</li>
+        <li><strong>Paste and publish.</strong> Bold, headings, lists and links arrive intact, and the exported images ride along.</li>
+      </ol>
+
+      <p class="text-gray-700 mb-6">Two examples of the Markdown before that conversion - this is the material most publishers get wrong, because pasting it raw shows the reader a wall of asterisks:</p>
+
+      <p class="text-gray-700 mb-4"><strong>Example 1: a LinkedIn-ready summary of a latency fix.</strong> The bold lead-ins, the inline code and the numbered structure all become real formatting on paste, instead of literal <code class="bg-gray-100 px-1 rounded text-sm">**</code> characters.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>## p95 latency, before and after the cache fix
+
+1. **Checkout** moved from 412 ms to 268 ms.
+2. **Cart** moved from 366 ms to 210 ms.
+3. **Search** moved from 298 ms to 224 ms.
+
+The chart above is a Vega-Lite dumbbell: the
+*gap* is the argument, not the absolute values.
+
+Figure source: `documd-visuals/examples/service-reliability/`</code></pre>
+
+      <p class="text-gray-700 mb-4"><strong>Example 2: an X Articles pull-quote with a reference link.</strong> The blockquote marker and the inline link are exactly the constructs that get lost when raw Markdown is pasted into a rich-text field.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>&gt; Figures are text, in place. The fenced block is
+&gt; the figure: the viewer draws it live, the block
+&gt; stays editable, and nothing is pre-rendered.
+
+Read more: [the md2rich blog](/blog/)</code></pre>
+
+      <p class="text-gray-700 mb-6">The privacy angle is sharper for this particular workflow than for most, because the documents people put diagrams in are often the ones they least want on a third-party server - internal architecture, incident retros, roadmap reviews, unreleased pricing. A client-side converter keeps that whole pipeline on your device. No upload means no server to trust, which is the same property that makes the exported archive safe to open and the source tree git-friendly.</p>
+
+      <h2 id="verdict" class="text-2xl font-bold mt-10 mb-4">The verdict</h2>
+
+      <p class="text-gray-700 mb-6">docu.md's Agent Skills package is a genuinely different bet from the usual "here is a prompt you can paste into your agent". The figures are text, so they diff, so they stay editable, so an agent can author them. The 31 goal domains mean routing is by reader intent instead of by renderer, which is the part a human author gets wrong most often. And the gates - theme drift, contrast, block coverage, catalog consistency - mean the package holds its own quality bar rather than asking readers to trust it.</p>
+
+      <p class="text-gray-700 mb-6">The limitation is real and it is not small: it targets a workflow where you control the renderer. For a document you publish to LinkedIn or X, the fenced block has to become an image before anyone else can see it, which means the export CLI is not optional in practice. But that is a solvable step, it is one command, and the alternative - a PNG that goes stale the next time a number changes - is the problem most Markdown documentation has been living with for a decade.</p>
+
+      <p class="text-gray-700 mb-6">If you write in Markdown and publish anywhere in 2026, the stack writes itself: <strong>draft in Markdown, draw figures as text, export with documd, convert with md2rich, paste everywhere.</strong></p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What is docu.md's Agent Skills package?</h3>
+          <p class="text-gray-700">It is a single skill package called documd-visuals, published in the markdown-viewer/skills repository on GitHub and installable with npx skills add markdown-viewer/skills. It teaches an AI coding agent how to create charts, diagrams, cards and page layouts directly inside Markdown, using fenced blocks that the docu.md viewer renders live. The repository has about 3,400 stars and the package contains 242 verified examples, 183 scenarios, 31 goal domains and 5 rendering engines.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Which rendering engines does the skill support?</h3>
+          <p class="text-gray-700">Five. PlantUML (fenced as plantuml or puml) for UML, ArchiMate, BPMN and cloud architecture, with roughly 9,500 stencil icons. Vega and Vega-Lite for charts that need data transforms, faceting and statistics. ECharts for report-grade charts, dashboards and gauges. Infographic, from AntV, for template-driven roadmaps, sequences and comparisons. And bare HTML for system architecture diagrams, cards and page-level layouts. The skill treats any other engine as a bug rather than a second-tier option, and explicitly does not recommend Mermaid, canvas, drawio or dot.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Do I need to install anything to use the skill?</h3>
+          <p class="text-gray-700">No, not for writing figures. The skill copies or symlinks files into your agent's skills directory, and the viewer renders the fenced blocks live, so nothing is pre-rendered or built. The optional export CLI is separate and must be installed on demand: npx @markdown-viewer/documd report.md report.docx. The CLI needs Node 18 or newer and a Chrome or Chromium install. Note the scope, because the bare name documd on npm is an unrelated package called markdown object notation.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Can I export a Markdown document with diagrams to PDF, DOCX or EPUB?</h3>
+          <p class="text-gray-700">Yes. The documd CLI renders a whole Markdown document, figures included, to html, epub, docx or pdf, with the format inferred from the output extension. A document input of .md, .markdown, .mdown, .mkd or .txt produces those four formats. A SUMMARY.md file with the --book flag exports a whole book following the GitBook summary structure. A single diagram source such as a .puml, .vl or .vega file can be rendered on its own to svg or png.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">How do I publish a Markdown document with diagrams to LinkedIn or X Articles?</h3>
+          <p class="text-gray-700">Export the document to HTML first so the figures become images, then paste the result into a rich-text converter such as md2rich, which runs entirely in your browser and turns the Markdown into clipboard-ready rich text for LinkedIn, X Articles, Notion, Medium and Substack. Your draft and any internal content never leaves your device because the conversion happens client-side. Note that LinkedIn and X do not render fenced diagram blocks themselves, so the export step is what turns a text figure into a visible chart.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What license applies to the skill package and the CLI?</h3>
+          <p class="text-gray-700">They are two separate works with two different licenses. The skill package, the documd-visuals directory, is CC-BY-4.0, which lets you copy, adapt and redistribute it including commercially, with attribution, and it covers the whole repository including the repo-only tooling. The CLI and the rendering engines, published as @markdown-viewer/documd, @markdown-viewer/draw-uml and @markdown-viewer/drawio2svg, are GPL-3.0-only and are not covered by that grant. Installing the skill does not license them.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Draw it in text. Publish it in rich text.</h3>
+        <p class="text-gray-700 mb-4">Try <a href="/">md2rich</a> — the free, client-side Markdown-to-rich-text converter. Paste the Markdown from any exported docu.md document, get clipboard-ready rich text for LinkedIn, X Articles, Notion, Medium, and Substack. No upload. No account. No server.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>© 2026 md2rich · <a href="/" class="hover:text-indigo-600">Editor</a> · <a href="/about" class="hover:text-indigo-600">About</a> · <a href="/blog/" class="hover:text-indigo-600">Blog</a> · <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown → rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>
