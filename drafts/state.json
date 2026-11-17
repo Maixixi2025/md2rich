@@ -2541,6 +2541,29 @@
       "published_at": "2026-11-11",
       "providers_featured": [],
       "primary_cta": "https://md2rich.com/"
+    },
+    {
+      "slug": "docu-md-agent-skills-markdown-diagrams-2026-en",
+      "date": "2026-11-17",
+      "type": "news-analysis",
+      "lang": "en-US",
+      "file": "blog/docu-md-agent-skills-markdown-diagrams-2026-en.html",
+      "url": "https://md2rich.com/blog/docu-md-agent-skills-markdown-diagrams-2026-en",
+      "title": "docu.md Agent Skills 2026: Markdown Diagrams as Text",
+      "description": "docu.md's Agent Skills pack ships 242 verified Markdown diagram examples across 5 engines and 31 goal domains. How to draft charts that render live.",
+      "heat_source": "⭐ 2026-11-17 daily briefing — md2rich pick: docu.md Agent Skills package (markdown-viewer/skills, 3.4k stars); 242 verified examples / 183 scenarios / 31 goal domains / 5 engines verified against primary repo",
+      "status": "published",
+      "published_at": "2026-11-17T13:40:00+08:00",
+      "providers_featured": [
+        "docu.md",
+        "markdown-viewer/skills",
+        "PlantUML",
+        "Vega-Lite",
+        "ECharts",
+        "AntV Infographic",
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich — paste Markdown from any exported docu.md document, get clipboard-ready rich text for LinkedIn, X Articles, Notion, Medium, and Substack"
     }
   ],
   "drafts": [],
@@ -2552,15 +2575,16 @@
     "notula-vs-md2rich-ai-agent-markdown-2026-en",
     "deckstream-md2rich-markdown-slidev-presentations-2026-en",
     "six-markdown-editors-math-heavy-writing-2026-en",
-    "google-docs-native-markdown-2026-en"
+    "google-docs-native-markdown-2026-en",
+    "docu-md-agent-skills-markdown-diagrams-2026-en"
   ],
-  "current_index": 3,
-  "last_topic_direction": "AI answer measurement (brand mentions / first-party analytics)",
-  "last_run": "2026-11-10",
-  "last_published_slug": "chatgpt-brand-mentions-openai-analytics-2026-en",
-  "last_published_at": "2026-11-10T12:30:00",
+  "current_index": 4,
+  "last_topic_direction": "X Articles Writing Workflow",
+  "last_run": "2026-11-17",
+  "last_published_slug": "docu-md-agent-skills-markdown-diagrams-2026-en",
+  "last_published_at": "2026-11-17T13:40:00+08:00",
   "drafts_count": 0,
-  "published_count": 107,
-  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n\n2026-09-08: Published 'Quire 2026: AI Agents Join Your Markdown Session as Peers' — Quire local Markdown collab w/ AI peers; blog/quire-ai-agents-markdown-session-2026-en.html (deployed ee22a87 via git push)\n\n2026-09-11: Published 'Knap vs md2rich 2026: Data to Markdown Two Ways' (knap-vs-md2rich-data-to-markdown-2026-en) — Knap (Obsidian 开源模板语言, obsidianmd/knap MIT, npm knap 0.4.1, 140 stars, create 2026-08-21) vs md2rich；family (e) 生成端 vs 发布端；47-char title / 145-char desc；1,886 words / 8 pre / 5 FAQ；deployed 192a4b1 via git push (md2rich auto-deploy ~60s)\n\n2026-09-12: Published 'Marginal 2026: A Markdown Editor Built for Coding Agents' (markdown-editor-for-coding-agents-2026-en) — 14/14 gates passed, 2462 words, 5 FAQ.\n2026-09-13 - Published Markdown as agent memory 2026: the editing rules (markdown-agent-memory-editing-rules-2026-en) - analysis of the Practical Systems markdown agent memory architecture; 4 write rules + bounded read path.\n2026-09-14 | Deckstream 2026: Markdown to Slidev, Live-Rendered (deckstream-md2rich-markdown-slidev-presentations-2026-en) - HN Show HN 2026-09-12 launch (objectID 49672433); browser CodeMirror editor with embedded Slidev iframe preview + one-click share link; new 'presentation output' pipeline position complementing md2rich's 'publish/convert' end.\n\n2026-09-16 cloudflare-ai-crawl-control-markdown-publishers-2026-en (97)\n[2026-09-17] six-markdown-editors-math-heavy-writing-2026-en: TeXposit (Show HN) anchor + 5 alternatives for math-heavy Markdown writing; md2rich sits in publishing step for non-LaTeX-rendering social destinations. (Heat source: 3ea88f8bb2d0 2026-09-17)",
-  "last_publish": "2026-09-17|six-markdown-editors-math-heavy-writing-2026-en|Six Markdown Editors for Math-Heavy Writing in 202|en-US"
+  "published_count": 108,
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n\n2026-09-08: Published 'Quire 2026: AI Agents Join Your Markdown Session as Peers' — Quire local Markdown collab w/ AI peers; blog/quire-ai-agents-markdown-session-2026-en.html (deployed ee22a87 via git push)\n\n2026-09-11: Published 'Knap vs md2rich 2026: Data to Markdown Two Ways' (knap-vs-md2rich-data-to-markdown-2026-en) — Knap (Obsidian 开源模板语言, obsidianmd/knap MIT, npm knap 0.4.1, 140 stars, create 2026-08-21) vs md2rich；family (e) 生成端 vs 发布端；47-char title / 145-char desc；1,886 words / 8 pre / 5 FAQ；deployed 192a4b1 via git push (md2rich auto-deploy ~60s)\n\n2026-09-12: Published 'Marginal 2026: A Markdown Editor Built for Coding Agents' (markdown-editor-for-coding-agents-2026-en) — 14/14 gates passed, 2462 words, 5 FAQ.\n2026-09-13 - Published Markdown as agent memory 2026: the editing rules (markdown-agent-memory-editing-rules-2026-en) - analysis of the Practical Systems markdown agent memory architecture; 4 write rules + bounded read path.\n2026-09-14 | Deckstream 2026: Markdown to Slidev, Live-Rendered (deckstream-md2rich-markdown-slidev-presentations-2026-en) - HN Show HN 2026-09-12 launch (objectID 49672433); browser CodeMirror editor with embedded Slidev iframe preview + one-click share link; new 'presentation output' pipeline position complementing md2rich's 'publish/convert' end.\n\n2026-09-16 cloudflare-ai-crawl-control-markdown-publishers-2026-en (97)\n[2026-09-17] six-markdown-editors-math-heavy-writing-2026-en: TeXposit (Show HN) anchor + 5 alternatives for math-heavy Markdown writing; md2rich sits in publishing step for non-LaTeX-rendering social destinations. (Heat source: 3ea88f8bb2d0 2026-09-17)\n\n2026-11-17 | docu-md-agent-skills-markdown-diagrams-2026-en | docu.md Agent Skills package (markdown-viewer/skills, 3,422 stars). Figures-as-text model; 242 examples / 183 scenarios / 31 goal domains / 5 engines / 9 themes verified against primary repo + npm. CC-BY-4.0 skill vs GPL-3.0-only CLI. Title 52c / desc 148c. 12-gate validator rc=0. Wrangler deploy 3 files; live verified (title, desc, CTA, Article+FAQPage JSON-LD, canonical, hreflang {en,en-US,x-default}, no zh-CN, sitemap 120 loc, blog index newest-first). 5 untracked sibling articles skipped (defensive git add).",
+  "last_publish": "2026-11-17|docu-md-agent-skills-markdown-diagrams-2026-en|docu.md Agent Skills 2026: Markdown Diagrams as Text|en-US"
 }
