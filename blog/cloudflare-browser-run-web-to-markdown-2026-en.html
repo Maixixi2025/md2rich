@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Browser Run 2026: Web to Markdown in One Call</title>
+  <meta name="description" content="Cloudflare's /snapshot endpoint returns Markdown, PDF, links, scraped elements and AI-extracted JSON from one page load. The cost, and where md2rich fits.">
+  <meta name="keywords" content="Cloudflare Browser Run, Browser Rendering, snapshot endpoint, web to Markdown, html to markdown, scrape webpage to markdown, markdown to rich text, md2rich, linkedin markdown, x articles markdown">
+  <link rel="canonical" href="https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cloudflare Browser Run 2026: Web to Markdown in One Call">
+  <meta property="og:description" content="Cloudflare's /snapshot endpoint returns Markdown, PDF, links, scraped elements and AI-extracted JSON from one page load. The cost, and where md2rich fits.">
+  <meta property="og:url" content="https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloudflare Browser Run 2026: Web to Markdown in One Call">
+  <meta name="twitter:description" content="Cloudflare's /snapshot endpoint returns Markdown, PDF, links, scraped elements and AI-extracted JSON from one page load. The cost, and where md2rich fits.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cloudflare Browser Run 2026: Web to Markdown in One Call",
+      "description": "Cloudflare's /snapshot endpoint returns Markdown, PDF, links, scraped elements and AI-extracted JSON from one page load. The cost, and where md2rich fits.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-20",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cloudflare Browser Run 2026: Web to Markdown in One Call",
+          "item": "https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need /snapshot if I only want Markdown?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. /snapshot requires at least two distinct formats. If Markdown is the only thing you want, use the standalone /markdown endpoint, which is a single-format call and returns the Markdown string directly. /snapshot only earns its place when you need two or more representations of the same page from a single load."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Cloudflare Browser Run free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partly. On the Workers Free plan you get 10 browser minutes per day. On Workers Paid you get 10 browser hours per month, then $0.09 per additional hour. The json format is separate from browser hours: it runs a Workers AI model and consumes your Workers AI usage on top of the browser time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when one format fails?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The whole request fails. Formats are captured in a fixed order rather than the order you list them in, a live page can change between captures, and any format that fails fails the whole request. For a JSON snapshot, a single actionTimeout budget (60 seconds by default, 120 maximum) covers navigation, captures, retries and the AI request together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set a user agent to get past bot protection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The userAgent parameter does not bypass bot protection. Requests from Browser Run are always identified as a bot, and because the User-Agent string is configurable, destination servers that want to detect or block Browser Run should use its non-configurable request headers instead of the User-Agent string."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does md2rich fit in this pipeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Browser Run gets the page in; md2rich sends your draft out. Cloudflare's endpoint turns a live URL into Markdown plus optional PDF, links and structured data. md2rich then converts your Markdown into clipboard-ready rich text for the platform you are publishing to. The two cover opposite ends of the same job."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">November 20, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Cloudflare Browser Run 2026: Web to Markdown in One Call</h1>
+        <p class="text-lg text-gray-600">Cloudflare's Browser Run /snapshot endpoint can now return Markdown, PDF, links, scraped elements and AI-extracted JSON from a single page load. We read the changelog, the endpoint docs and the pricing page, then checked the whole pipeline against md2rich's own converter — including the parts that do not work the way the UI implies.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">On November 19, 2026, Cloudflare shipped a quiet but genuinely useful update to its <code class="bg-gray-100 px-1 rounded text-sm">/snapshot</code> endpoint. Before it, a workflow that wanted a page's Markdown <em>and</em> a PDF of that same page had to ask twice — two page loads, two sets of rate limits, and a real chance the page had changed between the two requests. Now a single request returns HTML, screenshots, Markdown, the accessibility tree, PDFs, links, scraped elements and AI-extracted JSON, all captured from one page load.</p>
+
+      <p class="text-gray-700 mb-6">For anyone whose job involves pulling a web page apart and turning it into something publishable, that is a small change with a large effect. It is also the kind of change that is easy to over-hype, so this article is mostly about the limits: what the endpoint actually guarantees, what it charges, and where it genuinely does not help.</p>
+
+      <p class="text-gray-700 mb-6">We read the changelog entry, the endpoint documentation and the pricing page, and we checked md2rich's own conversion pipeline against the same problem. What follows is what we found.</p>
+
+      <h2 id="what-shipped" class="text-2xl font-bold mt-10 mb-4">What actually shipped</h2>
+
+      <p class="text-gray-700 mb-6">The four new formats are <code class="bg-gray-100 px-1 rounded text-sm">pdf</code>, <code class="bg-gray-100 px-1 rounded text-sm">links</code>, <code class="bg-gray-100 px-1 rounded text-sm">scrape</code> and <code class="bg-gray-100 px-1 rounded text-sm">json</code>. Each one reuses the options of the standalone endpoint it replaces, so you are not learning a second API:</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm bg-white border border-gray-200 rounded-lg">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="text-left px-4 py-2 font-semibold border-b border-gray-200">Format</th>
+              <th class="text-left px-4 py-2 font-semibold border-b border-gray-200">Result field</th>
+              <th class="text-left px-4 py-2 font-semibold border-b border-gray-200">Required options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>content</code></td><td class="px-4 py-2 border-b border-gray-100">result.content</td><td class="px-4 py-2 border-b border-gray-100">—</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>screenshot</code></td><td class="px-4 py-2 border-b border-gray-100">result.screenshot</td><td class="px-4 py-2 border-b border-gray-100">—</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>markdown</code></td><td class="px-4 py-2 border-b border-gray-100">result.markdown</td><td class="px-4 py-2 border-b border-gray-100">—</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>accessibilityTree</code></td><td class="px-4 py-2 border-b border-gray-100">result.accessibilityTree</td><td class="px-4 py-2 border-b border-gray-100">—</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>pdf</code> <span class="text-green-600 font-medium">new</span></td><td class="px-4 py-2 border-b border-gray-100">result.pdf</td><td class="px-4 py-2 border-b border-gray-100">—</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>links</code> <span class="text-green-600 font-medium">new</span></td><td class="px-4 py-2 border-b border-gray-100">result.links</td><td class="px-4 py-2 border-b border-gray-100">—</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>scrape</code> <span class="text-green-600 font-medium">new</span></td><td class="px-4 py-2 border-b border-gray-100">result.scrape</td><td class="px-4 py-2 border-b border-gray-100">elements</td></tr>
+            <tr><td class="px-4 py-2 border-b border-gray-100"><code>json</code> <span class="text-green-600 font-medium">new</span></td><td class="px-4 py-2 border-b border-gray-100">result.json</td><td class="px-4 py-2 border-b border-gray-100">prompt or response_format</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 mb-6">Two details in that table decide whether a request succeeds at all. The <code class="bg-gray-100 px-1 rounded text-sm">scrape</code> format is unusable without an <code class="bg-gray-100 px-1 rounded text-sm">elements</code> array of CSS selectors, and the <code class="bg-gray-100 px-1 rounded text-sm">json</code> format is unusable without a <code class="bg-gray-100 px-1 rounded text-sm">prompt</code> or a <code class="bg-gray-100 px-1 rounded text-sm">response_format</code>. Omit either and the request does not degrade gracefully — it fails.</p>
+
+      <p class="text-gray-700 mb-6">One naming note, because it will trip you up when you go looking for the docs: Cloudflare's browser products now live under <strong>Browser Run</strong> in the documentation, and the REST path reflects that. The endpoint is <code class="bg-gray-100 px-1 rounded text-sm">/accounts/&lt;accountId&gt;/browser-run/snapshot</code> even though older tutorials and blog posts call the product "Browser Rendering".</p>
+
+      <h2 id="one-request" class="text-2xl font-bold mt-10 mb-4">The real win: one load instead of two</h2>
+
+      <p class="text-gray-700 mb-6">Here is the workflow this endpoint was built for, in the shape you would actually write it. Grab the page as Markdown, pull its links so you can cite sources, and produce a PDF so the draft has a printable reference — all from the same load.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>curl -X POST 'https://api.cloudflare.com/client/v4/accounts/&lt;accountId&gt;/browser-run/snapshot' \
+  -H 'Authorization: Bearer *** \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "url": "https://example.com/article",
+    "formats": ["markdown", "links", "pdf"],
+    "pdfOptions": { "format": "a4" }
+  }'</code></pre>
+
+      <p class="text-gray-700 mb-6">The response carries three result fields — <code class="bg-gray-100 px-1 rounded text-sm">markdown</code>, <code class="bg-gray-100 px-1 rounded text-sm">links</code> and a base64 <code class="bg-gray-100 px-1 rounded text-sm">pdf</code> — plus a <code class="bg-gray-100 px-1 rounded text-sm">meta</code> block with the HTTP status and page title. The PDF is printed last on purpose, because print handlers can change the page.</p>
+
+      <p class="text-gray-700 mb-6">Now compare that with the old way, where <code class="bg-gray-100 px-1 rounded text-sm">/markdown</code> and <code class="bg-gray-100 px-1 rounded text-sm">/pdf</code> were two separate calls. Two calls means two browser sessions, two page loads, twice the browser minutes, and — this is the part that actually bites — <strong>two chances to get different content</strong>. On a page with rotating banners, a live vote count or a "related articles" block, the PDF and the Markdown would not match. One load makes that class of bug disappear.</p>
+
+      <h2 id="capture-to-publish" class="text-2xl font-bold mt-10 mb-4">From captured page to published draft</h2>
+
+      <p class="text-gray-700 mb-6">Capturing is only half the job. The Markdown you get back still has to survive contact with a social platform's editor, and that is where the formats disagree with each other in ways that are not obvious until you paste.</p>
+
+      <p class="text-gray-700 mb-6">A typical capture of a documentation page or a long-form article produces Markdown like this:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code># Why writers are moving back to plain text
+
+Long-form posts still lose their structure when pasted
+into a social editor. The headings collapse, lists flatten,
+and code blocks lose their monospace formatting.
+
+- Headings above `h3` are stripped by most editors
+- Tables rarely survive a paste
+- Images are the first thing to disappear
+
+The fix is not a better editor. It is a conversion step
+that knows what the target editor will accept.</code></pre>
+
+      <p class="text-gray-700 mb-6"><strong>Example one — publishing to Medium.</strong> Medium's editor accepts a rich paste and re-uploads images itself, so the Medium mode in md2rich keeps <code class="bg-gray-100 px-1 rounded text-sm">&lt;h1&gt;</code> through <code class="bg-gray-100 px-1 rounded text-sm">&lt;h6&gt;</code>, lists, blockquotes, code and images, and strips tables (which Medium does not support natively). The clipboard receives an HTML fragment plus a plain-text fallback, and pasting it into the Medium editor keeps the heading hierarchy intact.</p>
+
+      <p class="text-gray-700 mb-6"><strong>Example two — publishing to X Articles.</strong> X Articles is stricter. Its mode allows <code class="bg-gray-100 px-1 rounded text-sm">h2</code>, <code class="bg-gray-100 px-1 rounded text-sm">h3</code> and <code class="bg-gray-100 px-1 rounded text-sm">h4</code> but strips <code class="bg-gray-100 px-1 rounded text-sm">h1</code> — the document title becomes the X Articles title field instead — and it drops tables entirely. Images are supposed to become <code class="bg-gray-100 px-1 rounded text-sm">[Image]</code> placeholders.</p>
+
+      <p class="text-gray-700 mb-6">That last one deserves a correction, because it is the sort of detail that quietly breaks a workflow. In md2rich's current implementation, the X Articles image placeholder <strong>does not appear</strong>. The tag whitelist removes <code class="bg-gray-100 px-1 rounded text-sm">&lt;img&gt;</code> elements before the placeholder substitution runs, so an image reference is dropped from the output entirely rather than being replaced with a marker. If you publish screenshots to X Articles, upload them separately and leave the Markdown image syntax out of the draft. We are reporting the behaviour as implemented, not the behaviour the UI note implies.</p>
+
+      <p class="text-gray-700 mb-6">One more accuracy note on LinkedIn: md2rich's LinkedIn mode deliberately returns <strong>plain text</strong>, not rich HTML, with a Markdown-hint header prepended. That is not a limitation being hidden — it is a design decision, because LinkedIn's composer does not accept rich HTML paste reliably and silently flattens it. The hint line the tool prepends is currently written in Chinese, so if you publish from an English-language account you will want to delete that line before posting.</p>
+
+      <h2 id="cost" class="text-2xl font-bold mt-10 mb-4">What it costs</h2>
+
+      <p class="text-gray-700 mb-6">Cloudflare bills Browser Run by browser time, and Quick Actions — which is what <code class="bg-gray-100 px-1 rounded text-sm">/snapshot</code> is — are charged for browser hours only, with no concurrent-browser surcharge.</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+          <li><strong>Workers Free:</strong> 10 browser minutes per day.</li>
+          <li><strong>Workers Paid:</strong> 10 browser hours per month, then $0.09 per additional hour.</li>
+          <li><strong>JSON format:</strong> consumes Workers AI usage on top of the browser time.</li>
+        </ul>
+      </div>
+
+      <p class="text-gray-700 mb-6">Ten minutes a day on the free plan is genuinely enough for a personal publishing workflow — a few dozen article captures a day will not touch it. It is not enough for a crawler, and it is not enough for anything that fans out across many pages. Every Quick Actions response also returns an <code class="bg-gray-100 px-1 rounded text-sm">X-Browser-Ms-Used</code> header reporting the browser time that request actually consumed, so you can meter your own usage per call rather than guessing.</p>
+
+      <p class="text-gray-700 mb-6">The <code class="bg-gray-100 px-1 rounded text-sm">json</code> format is the one to watch, because it bills twice: browser hours plus a Workers AI model invocation. For a page you only want the prose from, <code class="bg-gray-100 px-1 rounded text-sm">/markdown</code> plus a second <code class="bg-gray-100 px-1 rounded text-sm">/scrape</code> call is often cheaper than asking for AI-extracted JSON. Reserve <code class="bg-gray-100 px-1 rounded text-sm">json</code> for when you genuinely need structured fields out of prose.</p>
+
+      <h2 id="limits" class="text-2xl font-bold mt-10 mb-4">The limits that will surprise you</h2>
+
+      <p class="text-gray-700 mb-6">Four constraints are documented but easy to miss:</p>
+
+      <p class="text-gray-700 mb-6"><strong>1. You must request at least two distinct formats.</strong> This is the rule most likely to waste an afternoon. Asking for only <code class="bg-gray-100 px-1 rounded text-sm">["markdown"]</code> is not a cheaper single-format request — it is an error. If you want one format, use that format's standalone endpoint.</p>
+
+      <p class="text-gray-700 mb-6"><strong>2. Failure is all-or-nothing.</strong> If any requested format fails, the whole request fails. There is no partial response where the Markdown comes back and the PDF times out. On a page with one broken element selector, that means re-running the entire capture.</p>
+
+      <p class="text-gray-700 mb-6"><strong>3. Capture order is fixed, and pages move.</strong> Formats are captured in a fixed order rather than the order you list them in, and a live page can change between captures. If you need the PDF and the Markdown to describe the same instant of a page, that is a real limitation of the design, not a bug in your request.</p>
+
+      <p class="text-gray-700 mb-6"><strong>4. Browser Run is always identifiable as a bot.</strong> You can set a custom <code class="bg-gray-100 px-1 rounded text-sm">userAgent</code>, but the documentation is explicit that this does not bypass bot protection, because the User-Agent string is configurable and therefore untrustworthy as a signal. Sites that want to block Browser Run should use its non-configurable request headers.</p>
+
+      <p class="text-gray-700 mb-6">One practical tip for JavaScript-heavy pages: the default load behaviour can return an empty or half-rendered result because the browser considers the page loaded before the client-side rendering finishes. Setting <code class="bg-gray-100 px-1 rounded text-sm">gotoOptions.waitUntil</code> to <code class="bg-gray-100 px-1 rounded text-sm">networkidle0</code> fixes it, at the cost of waiting for network activity to settle.</p>
+
+      <h2 id="md2rich" class="text-2xl font-bold mt-10 mb-4">Where md2rich fits</h2>
+
+      <p class="text-gray-700 mb-6">Cloudflare's endpoint solves the <em>inbound</em> problem: getting a live web page into structured text. md2rich solves the <em>outbound</em> problem: getting your finished Markdown into a platform's editor with its formatting intact. They are complements, not competitors, and the seam between them is one copy-paste.</p>
+
+      <p class="text-gray-700 mb-6">There is also a privacy difference worth being explicit about, because it decides which tool you reach for on a sensitive draft. Browser Run is a <strong>server-side</strong> product: the page is fetched, rendered and converted on Cloudflare's infrastructure, which means your source URL travels to Cloudflare and the rendered content exists on their side of the wire. md2rich is <strong>100% client-side</strong> — the Markdown never leaves your browser, there is no backend, no upload and no tracking, and you can confirm it in the DevTools Network tab. If you are converting a draft you wrote, or a page you need to keep private, that distinction matters. If you are archiving public pages at volume, Cloudflare's endpoint is the better tool and the privacy question does not arise.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mb-8">
+        <h3 class="text-lg font-semibold mb-2 text-indigo-900">Draft in Markdown, publish as rich text</h3>
+        <p class="text-gray-700 mb-4">Paste your Markdown into md2rich, pick the target platform, and copy ready-to-publish rich text for LinkedIn, Medium, Notion, Substack, X Articles or any rich-text editor. Everything runs in your browser — no signup, no upload, no server storage.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Try md2rich &rarr;</a>
+      </div>
+
+      <h2 id="faq" class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Do I need /snapshot if I only want Markdown?</h3>
+          <p class="text-gray-700">No. /snapshot requires at least two distinct formats. If Markdown is the only thing you want, use the standalone /markdown endpoint, which is a single-format call and returns the Markdown string directly. /snapshot only earns its place when you need two or more representations of the same page from a single load.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is Cloudflare Browser Run free?</h3>
+          <p class="text-gray-700">Partly. On the Workers Free plan you get 10 browser minutes per day. On Workers Paid you get 10 browser hours per month, then $0.09 per additional hour. The json format is separate from browser hours: it runs a Workers AI model and consumes your Workers AI usage on top of the browser time.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What happens when one format fails?</h3>
+          <p class="text-gray-700">The whole request fails. Formats are captured in a fixed order rather than the order you list them in, a live page can change between captures, and any format that fails fails the whole request. For a JSON snapshot, a single actionTimeout budget (60 seconds by default, 120 maximum) covers navigation, captures, retries and the AI request together.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Can I set a user agent to get past bot protection?</h3>
+          <p class="text-gray-700">No. The userAgent parameter does not bypass bot protection. Requests from Browser Run are always identified as a bot, and because the User-Agent string is configurable, destination servers that want to detect or block Browser Run should use its non-configurable request headers instead of the User-Agent string.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Where does md2rich fit in this pipeline?</h3>
+          <p class="text-gray-700">Browser Run gets the page in; md2rich sends your draft out. Cloudflare's endpoint turns a live URL into Markdown plus optional PDF, links and structured data. md2rich then converts your Markdown into clipboard-ready rich text for the platform you are publishing to. The two cover opposite ends of the same job.</p>
+        </div>
+      </div>
+
+      <h2 id="verdict" class="text-2xl font-bold mt-10 mb-4">The verdict</h2>
+
+      <p class="text-gray-700 mb-6">The /snapshot update is a real efficiency win for one specific shape of work: capturing a live page once and needing several representations of it. If you need Markdown and a PDF, or Markdown and a set of scraped elements, you now pay for one page load instead of two, and you get a consistent snapshot instead of two slightly different ones.</p>
+
+      <p class="text-gray-700 mb-6">It is not a general-purpose Markdown converter, and it is not free at scale. The two-format minimum, the all-or-nothing failure mode and the fixed capture order are real constraints, and the JSON format quietly bills twice. If you want one format, use the single-format endpoint — that is what it is for.</p>
+
+      <p class="text-gray-700 mb-6">And once you have the Markdown in your editor, the last mile is the one that decides whether the post looks professional or like a broken paste. That step is what <a href="/">md2rich</a> is for.</p>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8 text-sm text-gray-600">
+      <p class="mb-2"><a href="/" class="text-indigo-600 hover:underline">md2rich</a> &mdash; convert Markdown to rich text for LinkedIn, Medium, Notion, Substack and X Articles. 100% client-side.</p>
+      <p><a href="/blog/" class="hover:underline">Blog</a> &middot; <a href="/about" class="hover:underline">About</a> &middot; <a href="/faq" class="hover:underline">FAQ</a> &middot; <a href="/contact" class="hover:underline">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>
