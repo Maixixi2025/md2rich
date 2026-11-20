@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Skills 2026: Inside the Open Standard for AI Agents</title>
+  <meta name="description" content="Anthropic donated Agent Skills to the AAIF. We read the spec, ran its validator against 22 test cases, and documented the rules that break new skills.">
+  <meta name="keywords" content="Agent Skills, agent skills standard, SKILL.md, agentskills.io, Anthropic, AAIF, Linux Foundation, markdown to rich text, md2rich, ai agent skills, skill md frontmatter">
+  <link rel="canonical" href="https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Agent Skills 2026: Inside the Open Standard for AI Agents">
+  <meta property="og:description" content="Anthropic donated Agent Skills to the AAIF. We read the spec, ran its validator against 22 test cases, and documented the rules that break new skills.">
+  <meta property="og:url" content="https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agent Skills 2026: Inside the Open Standard for AI Agents">
+  <meta name="twitter:description" content="Anthropic donated Agent Skills to the AAIF. We read the spec, ran its validator against 22 test cases, and documented the rules that break new skills.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Agent Skills 2026: Inside the Open Standard for AI Agents",
+      "description": "Anthropic donated Agent Skills to the AAIF. We read the spec, ran its validator against 22 test cases, and documented the rules that break new skills.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Agent Skills 2026: Inside the Open Standard for AI Agents",
+          "item": "https://md2rich.com/blog/agent-skills-open-standard-validator-2026-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happened to Agent Skills in October 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anthropic donated the Agent Skills open standard to the Agentic AI Foundation, which sits under the Linux Foundation. Anthropic handed over the Agent Skills name and logo, the GitHub organization and the agentskills.io domain. The two lead maintainers are Mahesh Murag and David Soria Parra, and the project now sits at Impact Stage on the AAIF Technical Committee's project list, alongside ten other AAIF projects such as Model Context Protocol, AGENTS.MD and OpenSandbox."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many AI tools support Agent Skills?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The specification repository's client showcase lists 46 agent products that support the format, including ChatGPT and Codex, Claude Code, Cursor, GitHub Copilot, VS Code, Gemini CLI, Goose, OpenHands, Hermes Agent and OpenClaw. Anthropic's own announcement puts the adoption figure at more than 70 agent platforms, 1 million published skills and nearly 280 million installs as of October 22, 2026. The showcase is the verifiable list; the announcement numbers are the vendor's own."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the exact rules for a SKILL.md file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The name field is required, must be 1 to 64 characters, may contain only lowercase letters, digits and hyphens, cannot start or end with a hyphen, cannot contain consecutive hyphens, and must match the parent directory name. The description field is required and may run up to 1024 characters. The optional compatibility field is capped at 500 characters. The optional license, metadata and allowed-tools fields have no length cap. No other top-level field is allowed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I put a version field in my skill's frontmatter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not at the top level. The reference validator rejects any frontmatter field outside name, description, license, compatibility, metadata and allowed-tools, so a top-level version field fails with an unexpected-fields error. The fix is to nest it inside metadata, where the specification's own example puts it. We confirmed this by running both forms against the validator: the top-level form was rejected and the nested form was accepted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Agent Skills do for a Markdown writer who publishes to LinkedIn and X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It gives an agent a durable, version-controlled folder of instructions for converting Markdown into the rich text each platform actually accepts. The instructions are the same Markdown you already write, so they diff, review and version like everything else. A skill can encode the tag allowlists and image policies for Medium, X Articles and LinkedIn so the agent stops guessing at them on every draft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Agent Skills safe to install from an unknown author?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The specification does not cover it. The format documentation contains no security guidance at all, and the words malicious, supply chain and prompt injection do not appear anywhere in the specification or the skill-creation guides. The governance document routes security issues to the core maintainers and mentions security implications as something a spec proposal must state, but that is a reporting path, not a review process for the skills themselves. Treat a skill folder with the same caution you would apply to any script you are about to run."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article>
+      <header class="mb-8">
+        <time class="text-sm text-gray-500">November 19, 2026</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">Agent Skills 2026: Inside the Open Standard for AI Agents</h1>
+        <p class="text-lg text-gray-600">Anthropic handed Agent Skills to the Linux Foundation's Agentic AI Foundation, and the format is now an Apache-2.0 open standard maintained by named individuals across competing companies. We installed the reference validator and ran 22 deliberately broken skills through it, then ran md2rich's own converter against a test draft to see what those platforms really accept. Here is what the standard requires, what the validator catches, what it quietly lets through, and the one frontmatter mistake that gets your whole skill rejected.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">On October 22, 2026, Anthropic donated Agent Skills - the open standard it has used to teach agents how to do specific jobs - to the Agentic AI Foundation under the Linux Foundation. Anthropic handed over the name and logo, the GitHub organization and the agentskills.io domain, and said engineers from Anthropic, Google and OpenAI would maintain the standard as individuals. Two lead maintainers were named: Mahesh Murag and David Soria Parra.</p>
+
+      <p class="text-gray-700 mb-6">That is the headline, and it is the part every outlet wrote. But the interesting question for anyone building on this format is narrower: <strong>what does the standard actually require, and what does it let you get away with?</strong> The specification is short - the whole format is a folder with a <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code> file in it - and it ships with a reference validator called <code class="bg-gray-100 px-1 rounded text-sm">skills-ref</code>. So we did something more useful than reading the rules: we cloned the specification repository, installed the reference library, and ran <strong>22 test cases</strong> through the validator to find out which rules it enforces, which it only mentions in prose, and which it will happily let you get wrong.</p>
+
+      <p class="text-gray-700 mb-6">Several of the results surprised us, and one of them is a rule that breaks a very natural instinct. We also ran md2rich's own conversion pipeline against the same drafts, because a skill that tells an agent how to publish to LinkedIn or X Articles is only worth writing if you know what those platforms actually accept.</p>
+
+      <h2 id="what-changed" class="text-2xl font-bold mt-10 mb-4">What actually changed in October</h2>
+
+      <p class="text-gray-700 mb-6">The donation did not change the format. It changed who owns it. The specification repository is still <code class="bg-gray-100 px-1 rounded text-sm">agentskills/agentskills</code>, still Apache-2.0 for code and specification files, still CC-BY-4.0 for documentation. What moved is the governance, and the governance document is dated <strong>November 4, 2026</strong> - two weeks after the announcement - which tells you the paperwork was not ready on publication day.</p>
+
+      <p class="text-gray-700 mb-6">The governance adopts a hierarchical structure borrowed from MCP and Python. Lead Maintainers hold final decision authority, Core Maintainers set the specification's direction, Maintainers own the documentation and the reference library, and Contributors handle issues and pull requests. The Lead and Core Maintainers together form a Technical Steering Committee. Membership belongs to the individual rather than the employer, no seats are reserved for particular companies, and Core Maintainers are explicitly required to be drawn from more than one organization.</p>
+
+      <p class="text-gray-700 mb-6">On the AAIF side, Agent Skills appears on the Technical Committee's project list at <strong>Impact Stage</strong>, alongside nine other projects: Agent Router, Agent2Agent, agentgateway, AGENTS.MD, goose, Model Context Protocol, Open Responses, OpenEnv and OpenSandbox. The Technical Committee's own membership list names eight people, with David Soria Parra as chair and Caitlin McCaffrey of Microsoft as co-chair. The Foundation is real, the project is real, and the standard is still free to use without joining anything.</p>
+
+      <p class="text-gray-700 mb-6">For a sense of scale, the specification repository carries about <strong>27,400 stars</strong> and 2,046 forks, with 127 open issues, and the reference library it ships is published on PyPI as <code class="bg-gray-100 px-1 rounded text-sm">skills-ref</code>, currently at version 0.1.1, requiring Python 3.11 or newer.</p>
+
+      <h2 id="rules" class="text-2xl font-bold mt-10 mb-4">The rules, and the ones the validator actually checks</h2>
+
+      <p class="text-gray-700 mb-6">A skill is a directory. At minimum it contains a file named exactly <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code> holding YAML frontmatter followed by Markdown instructions. Optional siblings are <code class="bg-gray-100 px-1 rounded text-sm">scripts/</code>, <code class="bg-gray-100 px-1 rounded text-sm">references/</code> and <code class="bg-gray-100 px-1 rounded text-sm">assets/</code>, plus anything else you want to ship.</p>
+
+      <p class="text-gray-700 mb-6">The frontmatter has exactly two required fields and four optional ones. Here is a complete, valid example - this one passes the reference validator:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>---
+name: md2rich-publish
+description: Convert a Markdown draft into clipboard-ready rich text for
+  LinkedIn, X Articles, Medium, Notion and Substack. Use when publishing or
+  reformatting Markdown to a rich-text platform, when a pasted post loses its
+  headings or lists, or when the user mentions Markdown-to-rich-text, rich
+  paste, X Articles formatting or LinkedIn formatting.
+license: Apache-2.0
+metadata:
+  author: md2rich
+  version: "1.0"
+---
+
+# Publishing Markdown as rich text
+
+## Steps
+
+1. Read the draft.
+2. Pick the target platform.
+3. Convert the Markdown to that platform's allowed HTML.
+4. Put the result on the clipboard as `text/html`, with a `text/plain`
+   fallback in the same ClipboardItem.
+5. Tell the user to press Cmd+V in the target editor.</code></pre>
+
+      <p class="text-gray-700 mb-6">The field rules, straight from the specification:</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>name</strong> (required): 1-64 characters, lowercase letters, digits and hyphens only. Cannot start or end with a hyphen. Cannot contain consecutive hyphens. Must match the parent directory name.</li>
+        <li><strong>description</strong> (required): 1-1024 characters. Should describe both what the skill does and when to use it, and should carry the keywords an agent matches against.</li>
+        <li><strong>license</strong> (optional): a licence name or a reference to a bundled licence file.</li>
+        <li><strong>compatibility</strong> (optional): max 500 characters. Environment requirements - required packages, network access, intended product.</li>
+        <li><strong>metadata</strong> (optional): an arbitrary map of string keys to string values for anything the spec does not define.</li>
+        <li><strong>allowed-tools</strong> (optional): space-separated pre-approved tools. Marked experimental, and support varies between clients.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">The most important design idea is <strong>progressive disclosure</strong>, and it is the reason the format is cheap enough to have 46 clients. Agents load skills in three tiers. At session start they read only the name and description of every available skill, roughly 50 to 100 tokens each. When a task matches a description, the full <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code> body loads, with under 5,000 tokens recommended. Scripts, references and assets load only when the instructions reference them. An agent with twenty skills installed does not pay for twenty instruction sets upfront.</p>
+
+      <h2 id="tested" class="text-2xl font-bold mt-10 mb-4">What the validator enforces, tested against 22 cases</h2>
+
+      <p class="text-gray-700 mb-6">The specification ships its own reference library, so there is no need to take the rules on faith. Clone the repository, install the library, and you have a real gate:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>git clone https://github.com/agentskills/agentskills.git
+cd agentskills
+
+uv venv --python 3.11 .venv
+uv pip install --python .venv/bin/python ./skills-ref
+
+.venv/bin/skills-ref validate ./my-skill
+# Valid skill: my-skill</code></pre>
+
+      <p class="text-gray-700 mb-6">We then built 22 skills that each break exactly one rule, ran them all through that validator, and recorded what came back. Ten were accepted and twelve were rejected. The results:</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>Rejected:</strong> a top-level <code class="bg-gray-100 px-1 rounded text-sm">version</code> field, an uppercase name, a leading hyphen, a trailing hyphen, consecutive hyphens, a directory name that does not match the skill name, a missing description, a 65-character name, a 1,025-character description, a 501-character compatibility string, a file with no frontmatter at all, and a duplicate <code class="bg-gray-100 px-1 rounded text-sm">description</code> key.</li>
+        <li><strong>Accepted:</strong> a 64-character name, a 1,024-character description, a 500-character compatibility string, a lowercase <code class="bg-gray-100 px-1 rounded text-sm">skill.md</code> filename, an entirely empty body, and a 601-line body.</li>
+      </ul>
+
+      <h3 id="version-trap" class="text-xl font-semibold mt-8 mb-3">The version trap</h3>
+
+      <p class="text-gray-700 mb-6">Here is the finding that will bite the most people. The specification's own frontmatter example puts a version field inside <code class="bg-gray-100 px-1 rounded text-sm">metadata</code>, which reads like it is the sanctioned way to version a skill. But the validator maintains a closed list of permitted top-level fields, and <code class="bg-gray-100 px-1 rounded text-sm">version</code> is not on it. Put it at the top level and the skill is rejected outright:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code># REJECTED
+---
+name: skill-a
+description: A description of what this skill does and when to use it.
+version: "1.0"
+---
+
+# Unexpected fields in frontmatter: version. Only
+# ['allowed-tools', 'compatibility', 'description', 'license',
+#  'metadata', 'name'] are allowed.
+
+
+# ACCEPTED
+---
+name: skill-b
+description: A description of what this skill does and when to use it.
+metadata:
+  author: example-org
+  version: "1.0"
+---</code></pre>
+
+      <p class="text-gray-700 mb-6">The rule is not obvious and the failure is total: the whole skill is refused because of one unexpected key. The fix is one line - move <code class="bg-gray-100 px-1 rounded text-sm">version</code> inside <code class="bg-gray-100 px-1 rounded text-sm">metadata</code>. If you write skills by hand, this is worth knowing before you write your first one.</p>
+
+      <h3 id="lenient" class="text-xl font-semibold mt-8 mb-3">Where the validator is lenient</h3>
+
+      <p class="text-gray-700 mb-6">The same run surfaced the other side of the coin. Several rules the specification states in prose are not enforced by the tool, which matters if you plan to trust <code class="bg-gray-100 px-1 rounded text-sm">skills-ref validate</code> as your only gate.</p>
+
+      <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+        <li><strong>An empty body passes.</strong> A <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code> with valid frontmatter and no instructions at all validates cleanly. The validator checks the metadata; it does not check that the skill teaches anything.</li>
+        <li><strong>The 500-line guidance is not enforced.</strong> The specification says to keep your main <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code> under 500 lines. We built a 601-line skill and it validated without complaint. The same goes for the "under 5,000 tokens" guidance.</li>
+        <li><strong>Non-ASCII names pass.</strong> A skill named with Chinese characters validates, because the implementation accepts any alphanumeric character rather than only <code class="bg-gray-100 px-1 rounded text-sm">a-z</code> and <code class="bg-gray-100 px-1 rounded text-sm">0-9</code> as the prose says. The directory name must match, and the match is a Unicode-normalised comparison.</li>
+        <li><strong>Metadata values are coerced to strings.</strong> Write <code class="bg-gray-100 px-1 rounded text-sm">version: 1.0</code> inside <code class="bg-gray-100 px-1 rounded text-sm">metadata</code> and it comes back as the string <code class="bg-gray-100 px-1 rounded text-sm">"1.0"</code>. A number <code class="bg-gray-100 px-1 rounded text-sm">42</code> comes back as <code class="bg-gray-100 px-1 rounded text-sm">"42"</code>, a boolean as <code class="bg-gray-100 px-1 rounded text-sm">"true"</code>, and a nested mapping as a Python dict rendered as text.</li>
+      </ul>
+
+      <p class="text-gray-700 mb-6">The library also ships two other commands that are worth knowing about: <code class="bg-gray-100 px-1 rounded text-sm">skills-ref read-properties</code>, which prints a skill's metadata as JSON, and <code class="bg-gray-100 px-1 rounded text-sm">skills-ref to-prompt</code>, which generates the <code class="bg-gray-100 px-1 rounded text-sm">&lt;available_skills&gt;</code> XML block for an agent's system prompt. That second one is how a client tells the model which skills exist and where to find them.</p>
+
+      <p class="text-gray-700 mb-6">One more caveat about the library itself: its README says it "is intended for demonstration purposes only" and "is not meant to be used in production". The project is also not accepting code contributions to the reference library yet - bug reports and discussion are welcome, patches are not. Treat it as a teaching tool, which is exactly what it is.</p>
+
+      <h2 id="publishing" class="text-2xl font-bold mt-10 mb-4">Why this matters for a Markdown writer</h2>
+
+      <p class="text-gray-700 mb-6">Here is where the format earns its keep for this site specifically. If you draft in Markdown and publish to LinkedIn, X Articles, Medium, Notion or Substack, the hard part is not the Markdown - it is that every one of those platforms accepts a different subset of HTML, and the differences are not documented in one place.</p>
+
+      <p class="text-gray-700 mb-6">That is exactly the kind of procedural knowledge a skill is for. A folder of plain Markdown instructions that says "for X Articles keep h2 through h4 and drop h1; for Medium strip the table family; for LinkedIn do not attempt a rich paste at all" is version-controlled, diffable, and reviewable. It stops the agent from re-deriving the rules on every draft.</p>
+
+      <p class="text-gray-700 mb-6">To check what those rules actually are, we ran md2rich's own conversion code - the same <code class="bg-gray-100 px-1 rounded text-sm">marked</code> parser and platform filter the site uses - against a test draft, and captured the real output.</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code># Shipping a Markdown draft to X Articles
+
+Every week I write the post in **Markdown**, then paste it somewhere
+that wants rich text.
+
+## The three-part checklist
+
+- Keep `h2` and `h3`, drop the `h1` title
+- Images become placeholders
+- Code blocks survive
+
+```python
+print("hello")
+```
+
+| Column | Value |
+| --- | --- |
+| Rows | 12 |
+
+Read [the guide](https://example.com/guide) for details.</code></pre>
+
+      <p class="text-gray-700 mb-6">Pasted into X Articles, that draft comes out with the title unwrapped into plain text, the <code class="bg-gray-100 px-1 rounded text-sm">h2</code> intact, the bullet list intact, the code block intact - and the table reduced to four orphaned words:</p>
+
+      <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 mb-6 overflow-x-auto text-sm"><code>Shipping a Markdown draft to X Articles
+&lt;p&gt;Every week I write the post in &lt;strong&gt;Markdown&lt;/strong&gt;, then paste it
+somewhere that wants rich text.&lt;/p&gt;
+&lt;h2&gt;The three-part checklist&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep &lt;code&gt;h2&lt;/code&gt; and &lt;code&gt;h3&lt;/code&gt;, drop the &lt;code&gt;h1&lt;/code&gt; title&lt;/li&gt;
+&lt;li&gt;Images become placeholders&lt;/li&gt;
+&lt;li&gt;Code blocks survive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;print("hello")
+&lt;/code&gt;&lt;/pre&gt;
+
+Column
+Value
+
+Rows
+12
+
+&lt;p&gt;Read &lt;a href="https://example.com/guide"&gt;the guide&lt;/a&gt; for details.&lt;/p&gt;</code></pre>
+
+      <p class="text-gray-700 mb-6">The same draft pasted into Medium keeps the <code class="bg-gray-100 px-1 rounded text-sm">h1</code> and loses the table the same way. Pasting into a generic rich-text target keeps everything, table included.</p>
+
+      <p class="text-gray-700 mb-6">Two behaviours here are worth encoding in a skill, because both surprise people. First, <strong>tables are silently destroyed</strong> on Medium and X Articles: the markup is stripped but the cell text survives as unformatted words, which reads like a rendering glitch rather than a conversion rule. A skill should tell the agent to rewrite a table as a bullet list <em>before</em> converting, not after. Second, <strong>LinkedIn is a special case entirely</strong>: md2rich does not attempt rich HTML paste for it at all, because LinkedIn's composer does not reliably accept it. The output is plain text that keeps the Markdown syntax visible, with a note that a browser extension is needed to render it.</p>
+
+      <h2 id="gap" class="text-2xl font-bold mt-10 mb-4">The gap the standard has not closed</h2>
+
+      <p class="text-gray-700 mb-6">The honest caveat, and the thing to weigh before you install skills from strangers: <strong>the specification contains no security guidance.</strong> We checked the whole format documentation and the skill-creation guides - the words "malicious", "supply chain" and "prompt injection" do not appear in any of them, and "security" appears only in the governance document, where it describes how to route a security report and requires a spec proposal to state its security implications.</p>
+
+      <p class="text-gray-700 mb-6">That is a reporting path, not a review process. There is no signature, no permission manifest enforced by the format, no manifest of what a skill's scripts will touch. A skill can bundle arbitrary scripts, and the agent that loads it may run them with whatever permissions your client grants.</p>
+
+      <p class="text-gray-700 mb-6">Anthropic's own roadmap proposal, mentioned in the donation announcement, includes "security guidance for people who write and install skills" - so this is a known gap with a known owner. Until it lands, the practical rule is the old one: <strong>read the scripts before you install the folder</strong>, and treat a skill the way you would treat a Makefile you found on the internet. The format's own contribution guide is refreshingly candid about the culture around it: it requires that any AI assistance used in a pull request be disclosed, down to trivial spacing and typo fixes being the only exception.</p>
+
+      <h2 id="verdict" class="text-2xl font-bold mt-10 mb-4">The verdict</h2>
+
+      <p class="text-gray-700 mb-6">Agent Skills has become the closest thing 2026 has to a shared packaging format for agent instructions, and the move to the Linux Foundation is a genuine maturation: an Apache-2.0 specification, a neutral home, a governance model where membership belongs to the person rather than the employer, and a technical committee with an explicit "high bar for additions" philosophy that reads like it was written by someone who has watched specifications get bloated.</p>
+
+      <p class="text-gray-700 mb-6">The format is also small enough to learn in an afternoon, which is the point. A folder, a <code class="bg-gray-100 px-1 rounded text-sm">SKILL.md</code>, and a description good enough that an agent knows when to reach for it. Everything else is a convention the spec recommends rather than enforces.</p>
+
+      <p class="text-gray-700 mb-6">For a Markdown writer, the practical version is simple. If you publish the same way to several platforms, the platform rules are procedural knowledge and procedural knowledge is exactly what a skill holds. Write the tag allowlists, the image policies and the table rule down once, in Markdown, in your repository. And if you write a <code class="bg-gray-100 px-1 rounded text-sm">version</code> field, put it inside <code class="bg-gray-100 px-1 rounded text-sm">metadata</code>.</p>
+
+      <h2 id="faq" class="text-2xl font-bold mt-12 mb-6">FAQ</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What happened to Agent Skills in October 2026?</h3>
+          <p class="text-gray-700">Anthropic donated the Agent Skills open standard to the Agentic AI Foundation, which sits under the Linux Foundation. Anthropic handed over the Agent Skills name and logo, the GitHub organization and the agentskills.io domain. The two lead maintainers are Mahesh Murag and David Soria Parra, and the project now sits at Impact Stage on the AAIF Technical Committee's project list, alongside ten other AAIF projects such as Model Context Protocol, AGENTS.MD and OpenSandbox.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">How many AI tools support Agent Skills?</h3>
+          <p class="text-gray-700">The specification repository's client showcase lists 46 agent products that support the format, including ChatGPT and Codex, Claude Code, Cursor, GitHub Copilot, VS Code, Gemini CLI, Goose, OpenHands, Hermes Agent and OpenClaw. Anthropic's own announcement puts the adoption figure at more than 70 agent platforms, 1 million published skills and nearly 280 million installs as of October 22, 2026. The showcase is the verifiable list; the announcement numbers are the vendor's own.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What are the exact rules for a SKILL.md file?</h3>
+          <p class="text-gray-700">The name field is required, must be 1 to 64 characters, may contain only lowercase letters, digits and hyphens, cannot start or end with a hyphen, cannot contain consecutive hyphens, and must match the parent directory name. The description field is required and may run up to 1024 characters. The optional compatibility field is capped at 500 characters. The optional license, metadata and allowed-tools fields have no length cap. No other top-level field is allowed.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Can I put a version field in my skill's frontmatter?</h3>
+          <p class="text-gray-700">Not at the top level. The reference validator rejects any frontmatter field outside name, description, license, compatibility, metadata and allowed-tools, so a top-level version field fails with an unexpected-fields error. The fix is to nest it inside metadata, where the specification's own example puts it. We confirmed this by running both forms against the validator: the top-level form was rejected and the nested form was accepted.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">What does Agent Skills do for a Markdown writer who publishes to LinkedIn and X?</h3>
+          <p class="text-gray-700">It gives an agent a durable, version-controlled folder of instructions for converting Markdown into the rich text each platform actually accepts. The instructions are the same Markdown you already write, so they diff, review and version like everything else. A skill can encode the tag allowlists and image policies for Medium, X Articles and LinkedIn so the agent stops guessing at them on every draft.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is Agent Skills safe to install from an unknown author?</h3>
+          <p class="text-gray-700">The specification does not cover it. The format documentation contains no security guidance at all, and the words malicious, supply chain and prompt injection do not appear anywhere in the specification or the skill-creation guides. The governance document routes security issues to the core maintainers and mentions security implications as something a spec proposal must state, but that is a reporting path, not a review process for the skills themselves. Treat a skill folder with the same caution you would apply to any script you are about to run.</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6 mt-12">
+        <h3 class="text-xl font-bold mb-2">Draft in Markdown. Paste as rich text. Nothing uploaded.</h3>
+        <p class="text-gray-700 mb-4">Try <a href="/">md2rich</a> — the free, client-side Markdown-to-rich-text converter. Write your draft, pick the target platform, and get clipboard-ready rich text for Medium, X Articles, Notion, and any other rich-text editor. The conversion runs in your browser, so your draft never touches a server.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded font-semibold hover:bg-indigo-700">Try md2rich &rarr;</a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-gray-50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-sm text-gray-600 flex flex-wrap gap-4 justify-between">
+      <div>&copy; 2026 md2rich &middot; <a href="/" class="hover:text-indigo-600">Editor</a> &middot; <a href="/about" class="hover:text-indigo-600">About</a> &middot; <a href="/blog/" class="hover:text-indigo-600">Blog</a> &middot; <a href="/privacy" class="hover:text-indigo-600">Privacy</a></div>
+      <div>Markdown &rarr; rich text, client-side.</div>
+    </div>
+  </footer>
+</body>
+</html>
