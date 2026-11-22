@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10703RWNHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-10703RWNHK');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>llms.txt and MCP Barely Helped: What Agents Use</title>
+  <meta name="description" content="A measured look at why llms.txt and docs-only MCP servers rarely get used by AI agents, and what actually works instead.">
+  <meta name="keywords" content="llms.txt, llms.txt for developers, MCP server, model context protocol, AI agent documentation, agent readable content, AGENTS.md, Laravel Boost, markdown to rich text, md2rich, markdown agent context">
+  <link rel="canonical" href="https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en">
+  <link rel="alternate" hreflang="en" href="https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en">
+  <link rel="alternate" hreflang="en-US" href="https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en">
+  <link rel="alternate" hreflang="x-default" href="https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="llms.txt and MCP Barely Helped: What Agents Use">
+  <meta property="og:description" content="A measured look at why llms.txt and docs-only MCP servers rarely get used by AI agents, and what actually works instead.">
+  <meta property="og:url" content="https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en">
+  <meta property="og:site_name" content="md2rich Blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://md2rich.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="llms.txt and MCP Barely Helped: What Agents Use">
+  <meta name="twitter:description" content="A measured look at why llms.txt and docs-only MCP servers rarely get used by AI agents, and what actually works instead.">
+  <meta name="twitter:image" content="https://md2rich.com/og-image.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "llms.txt and MCP Barely Helped: What Agents Use",
+      "description": "A measured look at why llms.txt and docs-only MCP servers rarely get used by AI agents, and what actually works instead.",
+      "author": {
+        "@type": "Person",
+        "name": "md2rich",
+        "url": "https://about.me/jasonxmai"
+      },
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "md2rich",
+        "url": "https://md2rich.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://md2rich.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://md2rich.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "llms.txt and MCP Barely Helped: What Agents Use",
+          "item": "https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should I delete my llms.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and we are not telling you to delete ours. It is cheap, it is harmless, and there is a small chance an agent has been explicitly told to look for it. But stop treating it as a distribution channel or an SEO lever, and stop measuring it as one. Its maintenance cost is near zero and its measured effect on agent behaviour is near zero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you saying MCP servers are useless?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We are saying a docs-only MCP server is a poor fit for static documentation. MCP is excellent for live data the agent cannot otherwise reach and for tool use: model routing, search APIs, write actions, account state. If your documentation is static, plain HTTP plus a Markdown representation is the better transport."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Then why does Laravel Boost work when a docs MCP server did not?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because Boost is not fetched. php artisan boost:install writes guideline and skill files into the project, and the agent loads them at session start or when a matching skill activates. There is no decision to make and no token of query to get wrong. The mechanism is the whole difference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Did Cloudflare Agents Week 2026 really make llms.txt essential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. That was our own framing in August 2026 and it was too strong. Agents Week made Markdown consumption a first-class concern, and Cloudflare shipped the edge conversion that makes serving Markdown cheap. But an agent has to already be looking for your content before any of that matters. We have corrected our position in this article rather than quietly changing it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is serving Markdown to agents worth it if it does not bring traffic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, on cost grounds rather than traffic grounds. Cloudflare measures its own blog post at 16,180 tokens as HTML and 3,150 tokens as Markdown, an 80% reduction, and reports that Claude Code and OpenCode already send the Accept: text/markdown header on their own. If you pay per token for agent traffic, that is a real saving. If you are hoping for citations, it is not a discovery mechanism."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If I keep one Markdown source, how do I publish it to LinkedIn and Medium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is the conversion half of the job, and it is the half md2rich does. The source stays as a Markdown file on your machine or your server; the rich text for each platform is generated from it. The source never changes, so the outputs never drift."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-lg text-indigo-600">md2rich</a>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/" class="text-gray-600 hover:text-indigo-600">Editor</a>
+        <a href="/about" class="text-gray-600 hover:text-indigo-600">About</a>
+        <a href="/blog/" class="text-gray-600 hover:text-indigo-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <article class="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+      <header class="mb-8">
+        <time class="text-sm text-gray-500" datetime="2026-11-22">2026-11-22</time>
+        <h1 class="text-3xl font-bold mt-2 mb-4">llms.txt and MCP Barely Helped: What Agents Use</h1>
+        <p class="text-lg text-gray-600">One practitioner shipped an llms.txt and an MCP server, measured both, and watched neither change anything. The useful part is not that llms.txt and MCP are useless &mdash; it is the mechanism, and the eight things that did work.</p>
+      </header>
+
+      <p class="text-gray-700 mb-6">In October 2026, Cristian Tabacitu published a post with a deliberately unsatisfying title: <em>&ldquo;llms.txt and MCP didn&rsquo;t move the needle for us. Here&rsquo;s what did.&rdquo;</em> He maintains Backpack for Laravel, a Laravel admin panel package with a decade of GitHub history. His team had done all the things that &ldquo;make your package AI-ready&rdquo; advice tells you to do. They shipped an <code class="bg-gray-100 px-1 rounded text-sm">llms.txt</code>. They built an MCP server so agents could query their documentation. Then they measured what actually changed.</p>
+
+      <p class="text-gray-700 mb-6">The result was: <em>&ldquo;Two of the things everyone tells you to add, llms.txt and an MCP server, barely helped us at all.&rdquo;</em></p>
+
+      <p class="text-gray-700 mb-6">This is one practitioner&rsquo;s report, not a controlled study. But it is a careful one, it is reproducible (the package, the codebase and the docs are all public), and it landed on Hacker News with 31 points and 21 comments in which several people reported the same thing independently from unrelated projects.</p>
+
+      <p class="text-gray-700 mb-6">It is also the correct correction to something we published on this site.</p>
+
+      <h2 id="what-we-got-wrong" class="text-2xl font-bold mt-10 mb-4">What md2rich got wrong in August</h2>
+
+      <p class="text-gray-700 mb-6">On August 3, 2026 we published <a href="/blog/markdown-llms-txt-agents-md-standards-2026-en" class="text-indigo-600 hover:underline">Markdown for AI Agents 2026: llms.txt + AGENTS.md Guide</a> on this blog. Its decisive claim was: <em>&ldquo;Cloudflare Agents Week 2026 just made the llms.txt + AGENTS.md pair essential.&rdquo;</em></p>
+
+      <p class="text-gray-700 mb-6">That was too strong, and this article is the correction. We had the direction right &mdash; AGENTS.md and in-project instruction files are the strongest part of the story &mdash; but we bundled llms.txt in with it and called the pair essential. Sixteen weeks of measurement from a practitioner who shipped both and watched neither move is worth more than our enthusiasm.</p>
+
+      <p class="text-gray-700 mb-6">The rest of this article is what we should have written then: what actually happened, why it happened, and what to build instead.</p>
+
+      <h2 id="what-the-measurement-said" class="text-2xl font-bold mt-10 mb-4">What the measurement actually said</h2>
+
+      <p class="text-gray-700 mb-6">Tabacitu&rsquo;s summary of the two failures is blunt:</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 mb-3"><strong>llms.txt.</strong> &ldquo;We shipped one. I don&rsquo;t think it does much. Agents rarely go looking for it. When they do, they find a table of contents for docs they could already read.&rdquo;</p>
+        <p class="text-gray-700 mb-0"><strong>An MCP server.</strong> &ldquo;We built one so agents could query our docs. The results were mixed at best. The agent has to <em>decide</em> to call it, and it usually doesn&rsquo;t.&rdquo;</p>
+      </div>
+
+      <p class="text-gray-700 mb-6">And the generalisable lesson, which is the spine of this whole article:</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 mb-0"><em>&ldquo;Anything the agent has to remember to go fetch is weak. What works is what&rsquo;s already in front of it, or already in its head.&rdquo;</em></p>
+      </div>
+
+      <h2 id="why-llms-txt-underperforms" class="text-2xl font-bold mt-10 mb-4">Why llms.txt underperforms</h2>
+
+      <p class="text-gray-700 mb-6">Three reasons, and they compound rather than add.</p>
+
+      <p class="text-gray-700 mb-6"><strong>It is a table of contents for something the agent can already reach.</strong> An llms.txt lists documentation URLs. If the agent has web access at all, it can find those URLs on its own; the file saves it a search, not a fetch. That is a token optimisation dressed up as a discovery mechanism.</p>
+
+      <p class="text-gray-700 mb-6"><strong>Nothing standard points the agent at it.</strong> There is no rule anywhere that says a crawler or an agent must check for <code class="bg-gray-100 px-1 rounded text-sm">/llms.txt</code>. The agent has to already know the convention exists. A convention you have to know about is not a discovery mechanism &mdash; it is a club for people who are already in the room.</p>
+
+      <p class="text-gray-700 mb-6"><strong>When it does get read, it is a list, not content.</strong> Even in the best case the agent reads an index and then has to make a second decision about which entry to fetch. That is a second decision tax stacked on top of the first.</p>
+
+      <p class="text-gray-700 mb-6">The Hacker News thread is direct about it: <em>&ldquo;It&rsquo;s just a token saving mechanism&hellip; AFAIK Claude doesn&rsquo;t look for this file, it needs to be explicitly instructed to.&rdquo;</em> And a newsletter operator in the same thread, who had put his own submission rules into his llms.txt, reported that he had <em>&ldquo;not seen a single one follow the rules in llms.txt yet.&rdquo;</em></p>
+
+      <h2 id="why-docs-mcp-underperforms" class="text-2xl font-bold mt-10 mb-4">Why a docs-only MCP server underperforms</h2>
+
+      <p class="text-gray-700 mb-6">An MCP server is a tool. Tool use is a <em>decision</em> the model makes, weighed against every other tool in its context and against the cost of the call. When an agent already has general web retrieval available, adding a narrow documentation tool does not obviously win &mdash; it competes.</p>
+
+      <p class="text-gray-700 mb-6">The specific failure Tabacitu describes is query quality: <em>&ldquo;the queries some of the AIs make are&hellip; laughable. Of course our MCP doesn&rsquo;t return anything useful, your AI just typed two words.&rdquo;</em></p>
+
+      <p class="text-gray-700 mb-6">Tabacitu draws the dividing line himself, and it is the sentence that decides the whole question:</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 mb-0"><em>&ldquo;An MCP server is a great fit for live data the agent can&rsquo;t get any other way &mdash; or tool use. Static documentation isn&rsquo;t that.&rdquo;</em></p>
+      </div>
+
+      <p class="text-gray-700 mb-6">That is the whole distinction. <strong>MCP is for live data and tool use. Static documentation is neither.</strong> If the docs are static, an MCP server is a worse front-end to them than plain HTTP, because it adds a decision gate in front of the same bytes.</p>
+
+      <p class="text-gray-700 mb-6">Several people in the thread also noted that when they wanted documentation inside an agent, they reached for a general documentation index service rather than a vendor-run MCP server, and one put the diagnosis bluntly: <em>&ldquo;Absolutely no one should be using MCP for what should be a ripgrep across a corpus.&rdquo;</em></p>
+
+      <h2 id="token-savings-are-real" class="text-2xl font-bold mt-10 mb-4">The counter-case: token savings are real</h2>
+
+      <p class="text-gray-700 mb-6">Here is where the story gets more useful, because there <em>is</em> a measurable win in this area. It just is not discovery.</p>
+
+      <p class="text-gray-700 mb-6">Cloudflare&rsquo;s Markdown for Agents feature does real-time HTML-to-Markdown conversion at the edge when a request arrives with an <code class="bg-gray-100 px-1 rounded text-sm">Accept: text/markdown</code> header. Cloudflare&rsquo;s own blog post measured itself:</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 mb-0"><em>&ldquo;This blog post you&rsquo;re reading takes 16,180 tokens in HTML and 3,150 tokens when converted to markdown. That&rsquo;s a 80% reduction in token usage.&rdquo;</em></p>
+      </div>
+
+      <p class="text-gray-700 mb-6">And Cloudflare reports that agents are already doing this on their own:</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 mb-0"><em>&ldquo;We already see some of the most popular coding agents today &ndash; like Claude Code and OpenCode &ndash; send these accept headers with their requests for content.&rdquo;</em></p>
+      </div>
+
+      <p class="text-gray-700 mb-6">We verified this independently rather than taking the blog post&rsquo;s word for it. Requesting Cloudflare&rsquo;s own documentation page with an <code class="bg-gray-100 px-1 rounded text-sm">Accept: text/markdown</code> header returns:</p>
+
+      <pre><code>Content-Type: text/markdown; charset=utf-8
+Vary: accept-encoding, accept
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+CF-Cache-Status: HIT</code></pre>
+
+      <p class="text-gray-700 mb-6">The body comes back as YAML frontmatter plus Markdown rather than HTML, with navigation, scripts and styles stripped and JSON-LD preserved as a fenced block at the end.</p>
+
+      <p class="text-gray-700 mb-6">So Markdown for Agents is worth enabling &mdash; we covered the header and caching mechanics in <a href="/blog/cloudflare-markdown-for-agents-headers-seo-2026-en" class="text-indigo-600 hover:underline">Cloudflare Markdown for Agents: Headers &amp; SEO 2026</a>. But read carefully what it does: it makes an <strong>already-decided fetch cheaper</strong>. It does nothing whatsoever to make the agent decide to fetch you. An 80% token discount on a page nobody requested is worth zero.</p>
+
+      <p class="text-gray-700 mb-6">That is the thesis of this article in one sentence: <strong>efficiency multipliers and discovery levers are different things, and only one of them was ever going to move the needle.</strong></p>
+
+      <h2 id="what-actually-worked" class="text-2xl font-bold mt-10 mb-4">What actually worked</h2>
+
+      <p class="text-gray-700 mb-6">Here is Tabacitu&rsquo;s list, and it is worth reading closely because almost none of it is AI-specific. A stable API is now training data: Backpack&rsquo;s core API &ldquo;has barely changed in the last four years&rdquo;, and the side effect is that years of correct code sits in the model&rsquo;s weights, so when an agent writes <code class="bg-gray-100 px-1 rounded text-sm">CRUD::column('name')</code> it is &ldquo;not searching or guessing. It already knows.&rdquo; Open source means lots of examples, because ten years of issues, pull requests, tutorials and Stack Overflow answers are all training data and all searchable when an agent does go looking. Paid code shipped readable, with no obfuscation and no remote API, so an agent can read the actual source of a paid feature without being told to. Low ceremony, easy escape hatches: need a computed column is one line, small changes stay in one file, and that means less context for the agent to load and fewer places for it to get wrong. In-project agent instruction files, which was the biggest win. Generators the agent can run, because a command &ldquo;gives the same correct result every time&rdquo; while boilerplate the agent writes by hand is &ldquo;a fresh chance to make a small mistake in every file.&rdquo; Predictable naming, so agents guess right. And serving Markdown to agents, which he calls &ldquo;a small win, and a free one if you&rsquo;re already on Cloudflare.&rdquo;</p>
+
+      <p class="text-gray-700 mb-6">Eight items. llms.txt is not on the list, and a docs-only MCP server is explicitly argued against. We have covered the in-project instruction-file lever separately in <a href="/blog/markdown-context-files-ai-prompts-2026-en" class="text-indigo-600 hover:underline">Markdown Context Files: Cut AI Prompts to One Sentence</a>, and the agent-readable-content question in <a href="/blog/agent-readable-markdown-cloudflare-mcp-2026-en" class="text-indigo-600 hover:underline">Agent-Readable Markdown</a>. This article is about the two things that did <em>not</em> work.</p>
+
+      <h2 id="laravel-boost-in-numbers" class="text-2xl font-bold mt-10 mb-4">Laravel Boost, in numbers</h2>
+
+      <p class="text-gray-700 mb-6">The instruction-file lever deserves specifics, because it is the strongest positive result in the thread and it happens to be measurable.</p>
+
+      <p class="text-gray-700 mb-6">Laravel&rsquo;s official documentation describes Boost as providing &ldquo;the essential guidelines and agent skills that help AI agents write high-quality Laravel applications.&rdquo; The architectural detail that matters is that guidelines and skills load differently:</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 mb-0"><em>&ldquo;Guidelines are loaded upfront when the AI agent starts, providing essential context about Laravel conventions and best practices that apply broadly across your codebase. Skills are activated on-demand when working on specific tasks, containing detailed patterns&hellip;&rdquo;</em></p>
+      </div>
+
+      <p class="text-gray-700 mb-6">Laravel reports a knowledge base of &ldquo;over 17,000 pieces of Laravel-specific information.&rdquo; Installation is two commands:</p>
+
+      <pre><code>composer require laravel/boost --dev
+php artisan boost:install</code></pre>
+
+      <p class="text-gray-700 mb-6">And <code class="bg-gray-100 px-1 rounded text-sm">boost:install</code> &ldquo;will generate the relevant agent guideline and skill files for the coding agents you selected during the installation process&rdquo; &mdash; files that land inside the project and match the version actually installed.</p>
+
+      <p class="text-gray-700 mb-6">The scale, from the Packagist API for <code class="bg-gray-100 px-1 rounded text-sm">laravel/boost</code> as we read it on November 22, 2026:</p>
+
+      <table class="w-full border-collapse mb-6">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="text-left p-2 border border-gray-200">Metric</th>
+            <th class="text-left p-2 border border-gray-200">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2 border border-gray-200">Total installs</td><td class="p-2 border border-gray-200">54,901,469</td></tr>
+          <tr><td class="p-2 border border-gray-200">Installs, last month</td><td class="p-2 border border-gray-200">10,266,064</td></tr>
+          <tr><td class="p-2 border border-gray-200">Installs, last day</td><td class="p-2 border border-gray-200">222,059</td></tr>
+          <tr><td class="p-2 border border-gray-200">GitHub stars</td><td class="p-2 border border-gray-200">3,690</td></tr>
+          <tr><td class="p-2 border border-gray-200">Dependents</td><td class="p-2 border border-gray-200">615</td></tr>
+          <tr><td class="p-2 border border-gray-200">Latest release</td><td class="p-2 border border-gray-200">v2.10.4 (October 29, 2026)</td></tr>
+          <tr><td class="p-2 border border-gray-200">First published</td><td class="p-2 border border-gray-200">August 13, 2025</td></tr>
+        </tbody>
+      </table>
+
+      <p class="text-gray-700 mb-6">These are Composer install counters, not user counts, and they move every time you load the page.</p>
+
+      <p class="text-gray-700 mb-6">This is a real counterweight to the idea that AI-specific additions never help. Boost is an AI-specific addition, and it is the single thing that worked best. The difference is precisely Tabacitu&rsquo;s mechanism: <strong>it does not have to be fetched.</strong></p>
+
+      <h2 id="for-writers" class="text-2xl font-bold mt-10 mb-4">Translating this to a writing workflow</h2>
+
+      <p class="text-gray-700 mb-6">Tabacitu&rsquo;s advice is aimed at package authors. If your job is publishing Markdown rather than shipping a library, the same levers translate fairly directly.</p>
+
+      <table class="w-full border-collapse mb-6">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="text-left p-2 border border-gray-200">Package lever</th>
+            <th class="text-left p-2 border border-gray-200">Writing equivalent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-2 border border-gray-200">Stable API</td><td class="p-2 border border-gray-200">Stable canonical URLs and stable structure. Renaming or relocating a post breaks every external reference and every agent&rsquo;s memory of it. Treat your URL as an API.</td></tr>
+          <tr><td class="p-2 border border-gray-200">Open source</td><td class="p-2 border border-gray-200">Publish the source. A Markdown file on a public URL is greppable, indexable and readable by any agent with fetch access &mdash; no tool call required.</td></tr>
+          <tr><td class="p-2 border border-gray-200">Readable paid code</td><td class="p-2 border border-gray-200">Readable HTML. If your published page is a wall of scripts, an agent gets nothing. Server-rendered text gets everything.</td></tr>
+          <tr><td class="p-2 border border-gray-200">Low ceremony</td><td class="p-2 border border-gray-200">One source file per post, not a build pipeline that emits twelve derived variants nobody maintains.</td></tr>
+          <tr><td class="p-2 border border-gray-200">In-project instruction files</td><td class="p-2 border border-gray-200">A house-style file your agent reads before it writes for you, instead of rules buried in a page it has to discover.</td></tr>
+          <tr><td class="p-2 border border-gray-200">Generators</td><td class="p-2 border border-gray-200">A template the agent fills in, rather than a blank page it has to structure from scratch every time.</td></tr>
+          <tr><td class="p-2 border border-gray-200">Predictable naming</td><td class="p-2 border border-gray-200">Consistent headings, slug format and dates, so the same concept always looks the same.</td></tr>
+          <tr><td class="p-2 border border-gray-200">Serve Markdown</td><td class="p-2 border border-gray-200">Publish the Markdown alongside the HTML &mdash; the one lever a content site can pull immediately and cheaply.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="our-own-audit" class="text-2xl font-bold mt-10 mb-4">Our own audit, in public</h2>
+
+      <p class="text-gray-700 mb-6">We would rather apply the checklist to our own site than tell you to apply it to yours.</p>
+
+      <p class="text-gray-700 mb-6"><strong>We ship an llms.txt.</strong> It is live at <code class="bg-gray-100 px-1 rounded text-sm">https://md2rich.com/llms.txt</code> and returns 200 with about 1.5 KB of Markdown describing the tool. We are keeping it. It costs one file and an afternoon to maintain, and it is the polite thing to do for any agent that has been told to look. But we no longer describe it as a lever, and we would not spend an hour creating one if we did not already have it.</p>
+
+      <p class="text-gray-700 mb-6"><strong>We do not currently serve Markdown to agents.</strong> We requested <code class="bg-gray-100 px-1 rounded text-sm">https://md2rich.com/</code> with an <code class="bg-gray-100 px-1 rounded text-sm">Accept: text/markdown</code> header and got back <code class="bg-gray-100 px-1 rounded text-sm">Content-Type: text/html; charset=utf-8</code>. The Markdown for Agents conversion is not enabled on our zone. We can enable it: it is free on Pro, Business and Enterprise plans, and it takes one toggle in the dashboard under Agent Readiness, or one API call to the content converter setting.</p>
+
+      <p class="text-gray-700 mb-6">We are telling you that here rather than quietly switching it on, because by this article&rsquo;s own logic the value is conditional: it makes our pages cheaper for agents that already found us, and does nothing for agents that did not.</p>
+
+      <p class="text-gray-700 mb-6"><strong>We keep one canonical Markdown source per post</strong> and convert it client-side. That is the &ldquo;stable API&rdquo; lever applied to publishing: the Markdown file is the source of truth, and every rich-text output is a rendering of it rather than a separate document that has to be kept in sync.</p>
+
+      <p class="text-gray-700 mb-6">Here is what that source file looks like, and what md2rich turns it into for a LinkedIn post:</p>
+
+      <pre><code># Weekly Markdown Notes
+
+Ship the draft, then publish it everywhere.
+
+- LinkedIn post
+- Medium article
+- X Article</code></pre>
+
+      <pre><code>&lt;h1&gt;Weekly Markdown Notes&lt;/h1&gt;
+&lt;p&gt;Ship the draft, then publish it everywhere.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;LinkedIn post&lt;/li&gt;
+  &lt;li&gt;Medium article&lt;/li&gt;
+  &lt;li&gt;X Article&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+      <p class="text-gray-700 mb-6">Same source, same output, every time &mdash; and the conversion runs in your browser, so the draft never has to be uploaded to be published anywhere.</p>
+
+      <h2 id="checklist" class="text-2xl font-bold mt-10 mb-4">The checklist</h2>
+
+      <p class="text-gray-700 mb-6">If you are responsible for how agents experience your content:</p>
+
+      <ol class="list-decimal ml-6 mb-6">
+        <li class="mb-2"><strong>Keep your Markdown source canonical and public.</strong> It is the thing agents can read without a tool call.</li>
+        <li class="mb-2"><strong>Never move a published URL.</strong> Treat it as an API. It is the cheapest stability you can offer.</li>
+        <li class="mb-2"><strong>Serve the Markdown, not just the HTML,</strong> if your host makes it a toggle. Verify with a real <code class="bg-gray-100 px-1 rounded text-sm">Accept: text/markdown</code> request rather than trusting the dashboard.</li>
+        <li class="mb-2"><strong>Put your house rules in a file the agent reads by default,</strong> not on a page it has to find.</li>
+        <li class="mb-2"><strong>Do not build a docs MCP server for static content.</strong> If you need an MCP server, it should expose live data or an action.</li>
+        <li class="mb-2"><strong>Keep an llms.txt if you have one,</strong> and stop counting it as a growth channel.</li>
+        <li class="mb-2"><strong>Make your names guessable</strong> &mdash; same concept, same name, same order, every time.</li>
+        <li class="mb-2"><strong>Reduce ceremony.</strong> If a change requires three files to customise, the agent has to load three files to make a small edit, and it will get something wrong.</li>
+      </ol>
+
+      <h2 id="faq" class="text-2xl font-bold mt-10 mb-4">FAQ</h2>
+
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Should I delete my llms.txt?</h3>
+          <p class="text-gray-700">No, and we are not telling you to delete ours. It is cheap, it is harmless, and there is a small chance an agent has been explicitly told to look for it. But stop treating it as a distribution channel or an SEO lever, and stop measuring it as one. Its maintenance cost is near zero and its measured effect on agent behaviour is near zero.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Are you saying MCP servers are useless?</h3>
+          <p class="text-gray-700">No. We are saying a <em>docs-only</em> MCP server is a poor fit for static documentation. MCP is excellent for live data the agent cannot otherwise reach and for tool use: model routing, search APIs, write actions, account state. If your documentation is static, plain HTTP plus a Markdown representation is the better transport.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Then why does Laravel Boost work when a docs MCP server did not?</h3>
+          <p class="text-gray-700">Because Boost is not fetched. <code class="bg-gray-100 px-1 rounded text-sm">php artisan boost:install</code> writes guideline and skill files into the project, and the agent loads them at session start or when a matching skill activates. There is no decision to make and no token of query to get wrong. The mechanism is the whole difference.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Did Cloudflare Agents Week 2026 really make llms.txt essential?</h3>
+          <p class="text-gray-700">No. That was our own framing in August 2026 and it was too strong. Agents Week made Markdown consumption a first-class concern, and Cloudflare shipped the edge conversion that makes serving Markdown cheap. But an agent has to already be looking for your content before any of that matters. We have corrected our position in this article rather than quietly changing it.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Is serving Markdown to agents worth it if it does not bring traffic?</h3>
+          <p class="text-gray-700">Yes, on cost grounds rather than traffic grounds. Cloudflare measures its own blog post at 16,180 tokens as HTML and 3,150 tokens as Markdown &mdash; an 80% reduction &mdash; and reports that Claude Code and OpenCode already send the <code class="bg-gray-100 px-1 rounded text-sm">Accept: text/markdown</code> header on their own. If you pay per token for agent traffic, that is a real saving. If you are hoping for citations, it is not a discovery mechanism.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">If I keep one Markdown source, how do I publish it to LinkedIn and Medium?</h3>
+          <p class="text-gray-700">That is the conversion half of the job, and it is the half md2rich does. The source stays as a Markdown file on your machine or your server; the rich text for each platform is generated from it. The source never changes, so the outputs never drift.</p>
+        </div>
+      </div>
+
+      <h2 id="bottom-line" class="text-2xl font-bold mt-10 mb-4">Bottom line</h2>
+
+      <p class="text-gray-700 mb-6">The strongest claim in Tabacitu&rsquo;s post is not that llms.txt and MCP are useless. It is that they are <strong>weak levers</strong>: they work only if the agent has already decided to come, and they add a decision in front of content that did not need one.</p>
+
+      <p class="text-gray-700 mb-6">What worked was not clever and not AI-specific. It was stable, readable, predictable, and already in the agent&rsquo;s context. The AI-specific additions only helped when they put the right information in front of the agent without it having to ask.</p>
+
+      <p class="text-gray-700 mb-6">There is a comfortable reading of all this for anyone publishing on the open web: the era of &ldquo;make your site agent-friendly and traffic will follow&rdquo; was mostly a list of things that felt like infrastructure. The lever that actually works is unglamorous. Publish the source. Keep the URL. Name things predictably. Leave the Markdown where a machine can find it.</p>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 mb-8">
+        <h3 class="text-lg font-semibold mb-2 text-indigo-900">Convert Markdown to rich text without uploading it</h3>
+        <p class="text-gray-700 mb-4">md2rich runs entirely in your browser. Your Markdown never leaves your device, there is no backend and no tracking. Pick a platform and copy ready-to-paste rich text for LinkedIn, Medium, Notion, Substack or X Articles.</p>
+        <a href="/" class="inline-block bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700">Try md2rich &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8 text-sm text-gray-600">
+      <p class="mb-2"><a href="/" class="text-indigo-600 hover:underline">md2rich</a> &mdash; convert Markdown to rich text for LinkedIn, Medium, Notion, Substack and X Articles. 100% client-side.</p>
+      <p><a href="/blog/" class="hover:underline">Blog</a> &middot; <a href="/about" class="hover:underline">About</a> &middot; <a href="/faq" class="hover:underline">FAQ</a> &middot; <a href="/contact" class="hover:underline">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>

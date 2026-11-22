@@ -375,12 +375,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://md2rich.com/blog/notula-vs-md2rich-ai-agent-markdown-2026-en</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://md2rich.com/blog/all2md-vs-md2rich-markdown-converter-2026-en</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -632,7 +627,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://md2rich.com/blog/offline-first-markdown-writing-stack-2026-en.html</loc>
+    <loc>https://md2rich.com/blog/offline-first-markdown-writing-stack-2026-en</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -700,6 +695,24 @@
 <url>
     <loc>https://md2rich.com/blog/cloudflare-browser-run-web-to-markdown-2026-en</loc>
     <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://md2rich.com/blog/linkedin-post-vs-article-vs-newsletter-2026-en</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://md2rich.com/blog/seo-core-web-vitals-markdown-publishing-2026-en</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
