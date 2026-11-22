@@ -468,7 +468,9 @@
       "deployed_url_en": "https://md2rich.com/blog/notion-to-markdown-migration-2026-en",
       "build_verified": false,
       "build_pages_added": 1,
-      "publish_notes": "Re-publish: file was on disk and in blog/index.html but never git-committed (Pattern B orphan), now pushing"
+      "publish_notes": "Re-publish: file was on disk and in blog/index.html but never git-committed (Pattern B orphan), now pushing",
+      "file": "blog/notion-to-markdown-migration-2026-en.html",
+      "url": "https://md2rich.com/blog/notion-to-markdown-migration-2026-en"
     },
     {
       "slug": "x-hosted-mcp-markdown-2026-en",
@@ -952,7 +954,7 @@
       "date": "2026-07-25",
       "type": "guide",
       "lang": "en-US",
-      "file": "blog/search-traffic-decline-markdown-multi-platform-2026-en",
+      "file": "blog/search-traffic-decline-markdown-multi-platform-2026-en.html",
       "url": "https://md2rich.com/blog/search-traffic-decline-markdown-multi-platform-2026-en",
       "title": "Search Decline 2026: Multi-Platform Markdown Publishing",
       "description": "Google search traffic is declining. Diversify to social platforms with Markdown. Use md2rich to publish on LinkedIn, X, Bluesky, Medium and Substack.",
@@ -2607,10 +2609,182 @@
         "md2rich"
       ],
       "primary_cta": "Try md2rich — paste the captured Markdown, pick LinkedIn, Medium, Notion, Substack or X Articles, and copy clipboard-ready rich text entirely client-side"
+    },
+    {
+      "slug": "markitdown-plus-md2rich-en",
+      "date": "2026-06-19",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/markitdown-plus-md2rich-en.html",
+      "url": "https://md2rich.com/blog/markitdown-plus-md2rich-en",
+      "title": "markitdown + md2rich: Office to Rich Text Pipeline (2026)",
+      "description": "Microsoft markitdown converts DOCX, PPTX, XLSX, and PDF to Markdown. Pair it with md2rich for a complete Office-to-publishing pipeline. Tested workflow.",
+      "heat_source": "Backfilled 2026-11-22: git-tracked, live on the site, but never recorded in state.json['published'].",
+      "status": "published",
+      "published_at": "2026-06-19T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "meadow-notes-markdown-microsite-en",
+      "date": "2026-06-12",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/meadow-notes-markdown-microsite-en.html",
+      "url": "https://md2rich.com/blog/meadow-notes-markdown-microsite-en",
+      "title": "Meadow Notes: Turn Markdown into a Microsite — Hands-On 2026",
+      "description": "Meadow Notes is a new Markdown-to-microsite publishing tool. Hands-on review vs md2rich and plain Markdown workflows for content creators in 2026.",
+      "heat_source": "Backfilled 2026-11-22: git-tracked, live on the site, but never recorded in state.json['published'].",
+      "status": "published",
+      "published_at": "2026-06-12T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "mkdnsite-dual-channel-markdown-en",
+      "date": "2026-06-14",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/mkdnsite-dual-channel-markdown-en.html",
+      "url": "https://md2rich.com/blog/mkdnsite-dual-channel-markdown-en",
+      "title": "mkdnsite: Dual-Channel Markdown Publishing for Humans and AI",
+      "description": "mkdnsite serves HTML for human readers and raw Markdown for AI crawlers from the same source. How it works and why it matters in 2026.",
+      "heat_source": "Backfilled 2026-11-22: git-tracked, live on the site, but never recorded in state.json['published'].",
+      "status": "published",
+      "published_at": "2026-06-14T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "write-once-publish-anywhere-2026-en",
+      "date": "2026-06-22",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/write-once-publish-anywhere-2026-en.html",
+      "url": "https://md2rich.com/blog/write-once-publish-anywhere-2026-en",
+      "title": "Write Once, Publish Anywhere: Markdown Syndication Tools for 2026",
+      "description": "Syndicate Markdown content across X Articles, LinkedIn, Medium, Substack, and Bluesky. Tools and workflow for cross-platform publishing in 2026 with md2rich.",
+      "heat_source": "Backfilled 2026-11-22: git-tracked, live on the site, but never recorded in state.json['published'].",
+      "status": "published",
+      "published_at": "2026-06-22T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "linkedin-post-vs-article-vs-newsletter-2026-en",
+      "date": "2026-09-25",
+      "type": "comparison",
+      "lang": "en-US",
+      "file": "blog/linkedin-post-vs-article-vs-newsletter-2026-en.html",
+      "url": "https://md2rich.com/blog/linkedin-post-vs-article-vs-newsletter-2026-en",
+      "title": "LinkedIn's Format Wars 2026: Post vs. Article vs. Newsletter",
+      "description": "Confused about LinkedIn's content formats? Compare Post vs. Article vs. Newsletter in 2026 - reach, engagement, and which format wins your goals.",
+      "heat_source": "Repaired 2026-11-22: was live on md2rich.com but untracked in git and absent from state.json, sitemap and blog index. Repaired to pass all 12 md2rich gates (description/title length, 2+ code examples, scoped CSS for undefined classes).",
+      "status": "published",
+      "published_at": "2026-09-25T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "faq_count": 4,
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "offline-first-markdown-writing-stack-2026-en",
+      "date": "2026-10-10",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/offline-first-markdown-writing-stack-2026-en.html",
+      "url": "https://md2rich.com/blog/offline-first-markdown-writing-stack-2026-en",
+      "title": "Offline-First Markdown Stack 2026: A Privacy Workflow",
+      "description": "Build a privacy-first, offline-capable Markdown writing stack for X Articles, LinkedIn, and long-form publishing in 2026. No uploads, no telemetry.",
+      "heat_source": "Repaired 2026-11-22: was live on md2rich.com but untracked in git and absent from state.json, sitemap and blog index. Repaired to pass all 12 md2rich gates (description/title length, 2+ code examples, scoped CSS for undefined classes).",
+      "status": "published",
+      "published_at": "2026-10-10T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "faq_count": 4,
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "seo-core-web-vitals-markdown-publishing-2026-en",
+      "date": "2026-10-06",
+      "type": "guide",
+      "lang": "en-US",
+      "file": "blog/seo-core-web-vitals-markdown-publishing-2026-en.html",
+      "url": "https://md2rich.com/blog/seo-core-web-vitals-markdown-publishing-2026-en",
+      "title": "GSC Core Web Vitals Checklist for Markdown Publishers 2026",
+      "description": "GSC CWV diagnostics help markdown publishers fix performance. 5 essential pre-publish checks for LinkedIn, Medium and X content.",
+      "heat_source": "Repaired 2026-11-22: was live on md2rich.com but untracked in git and absent from state.json, sitemap and blog index. Repaired to pass all 12 md2rich gates (description/title length, 2+ code examples, scoped CSS for undefined classes).",
+      "status": "published",
+      "published_at": "2026-10-06T00:00:00+08:00",
+      "providers_featured": [
+        "md2rich"
+      ],
+      "faq_count": 4,
+      "primary_cta": "Try md2rich - paste your Markdown, pick the platform, copy ready-to-paste rich text, entirely client-side"
+    },
+    {
+      "slug": "llms-txt-and-mcp-what-agents-actually-use-en",
+      "date": "2026-11-22",
+      "type": "analysis+fact-check",
+      "lang": "en-US",
+      "file": "blog/llms-txt-and-mcp-what-agents-actually-use-en.html",
+      "url": "https://md2rich.com/blog/llms-txt-and-mcp-what-agents-actually-use-en",
+      "title": "llms.txt and MCP Barely Helped: What Agents Use",
+      "description": "A measured look at why llms.txt and docs-only MCP servers rarely get used by AI agents, and what actually works instead.",
+      "heat_source": "⭐ 2026-11-22 daily briefing - md2rich pick: 'llms.txt and MCP didn't move the needle for us' (Backpack for Laravel, 2026-10-20) + HN thread (31 points / 21 comments). Primary sources fetched and verified: the Tabacitu post, the HN thread, Cloudflare's Markdown for Agents blog (2026-02-12) and dev docs, Laravel Boost docs, and the Packagist API for laravel/boost. Live header test confirmed Content-Type: text/markdown on a Cloudflare docs URL. Also corrects md2rich's own 2026-08-03 claim that the llms.txt + AGENTS.md pair is 'essential'. Dupe check: 0 prior md2rich article argues this; cross-site check found no same-argument article on threadgrab, vpstier or apirank (threadgrab argues the opposite on llms.txt as a handshake layer).",
+      "status": "published",
+      "published_at": "2026-11-22T15:20:00+08:00",
+      "providers_featured": [
+        "Cloudflare",
+        "Laravel Boost",
+        "Backpack for Laravel",
+        "Markdown for Agents",
+        "md2rich"
+      ],
+      "faq_count": 6,
+      "word_count": 2994,
+      "code_blocks": 4,
+      "meta_title_chars": 47,
+      "meta_desc_chars": 120,
+      "primary_keyword": "llms.txt and MCP for AI agents",
+      "secondary_keywords": [
+        "llms.txt for developers",
+        "MCP server documentation",
+        "agent readable content",
+        "AGENTS.md",
+        "Laravel Boost"
+      ],
+      "verified_sources": [
+        "https://backpackforlaravel.com/articles/opinions/llms-txt-and-mcp-didn-t-move-the-needle-for-us-here-s-what-did",
+        "https://news.ycombinator.com/item?id=50574772",
+        "https://blog.cloudflare.com/markdown-for-agents/",
+        "https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/",
+        "https://laravel.com/docs/boost",
+        "https://packagist.org/packages/laravel/boost.json",
+        "https://md2rich.com/llms.txt"
+      ],
+      "internal_links": [
+        "/blog/markdown-llms-txt-agents-md-standards-2026-en",
+        "/blog/cloudflare-markdown-for-agents-headers-seo-2026-en",
+        "/blog/markdown-context-files-ai-prompts-2026-en",
+        "/blog/agent-readable-markdown-cloudflare-mcp-2026-en"
+      ],
+      "primary_cta": "Try md2rich - paste your Markdown, pick LinkedIn, Medium, Notion, Substack or X Articles, and copy clipboard-ready rich text entirely client-side"
     }
   ],
   "drafts": [],
   "recent_topics": [
+    "llms-txt-and-mcp-what-agents-actually-use-en",
     "md2rich-as-claude-skill-2026-en",
     "ozbrain-md2rich-shared-agent-brain-2026-en",
     "panache-md2rich-markdown-lint-workflow-2026-en",
@@ -2625,11 +2799,11 @@
   ],
   "current_index": 5,
   "last_topic_direction": "Rich Text Editor Comparison",
-  "last_run": "2026-11-20",
-  "last_published_slug": "cloudflare-browser-run-web-to-markdown-2026-en",
-  "last_published_at": "2026-11-20T14:20:00+08:00",
+  "last_run": "2026-11-22",
+  "last_published_slug": "llms-txt-and-mcp-what-agents-actually-use-en",
+  "last_published_at": "2026-11-22T15:20:00+08:00",
   "drafts_count": 0,
-  "published_count": 110,
-  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n\n2026-09-08: Published 'Quire 2026: AI Agents Join Your Markdown Session as Peers' — Quire local Markdown collab w/ AI peers; blog/quire-ai-agents-markdown-session-2026-en.html (deployed ee22a87 via git push)\n\n2026-09-11: Published 'Knap vs md2rich 2026: Data to Markdown Two Ways' (knap-vs-md2rich-data-to-markdown-2026-en) — Knap (Obsidian 开源模板语言, obsidianmd/knap MIT, npm knap 0.4.1, 140 stars, create 2026-08-21) vs md2rich；family (e) 生成端 vs 发布端；47-char title / 145-char desc；1,886 words / 8 pre / 5 FAQ；deployed 192a4b1 via git push (md2rich auto-deploy ~60s)\n\n2026-09-12: Published 'Marginal 2026: A Markdown Editor Built for Coding Agents' (markdown-editor-for-coding-agents-2026-en) — 14/14 gates passed, 2462 words, 5 FAQ.\n2026-09-13 - Published Markdown as agent memory 2026: the editing rules (markdown-agent-memory-editing-rules-2026-en) - analysis of the Practical Systems markdown agent memory architecture; 4 write rules + bounded read path.\n2026-09-14 | Deckstream 2026: Markdown to Slidev, Live-Rendered (deckstream-md2rich-markdown-slidev-presentations-2026-en) - HN Show HN 2026-09-12 launch (objectID 49672433); browser CodeMirror editor with embedded Slidev iframe preview + one-click share link; new 'presentation output' pipeline position complementing md2rich's 'publish/convert' end.\n\n2026-09-16 cloudflare-ai-crawl-control-markdown-publishers-2026-en (97)\n[2026-09-17] six-markdown-editors-math-heavy-writing-2026-en: TeXposit (Show HN) anchor + 5 alternatives for math-heavy Markdown writing; md2rich sits in publishing step for non-LaTeX-rendering social destinations. (Heat source: 3ea88f8bb2d0 2026-09-17)\n\n2026-11-17 | docu-md-agent-skills-markdown-diagrams-2026-en | docu.md Agent Skills package (markdown-viewer/skills, 3,422 stars). Figures-as-text model; 242 examples / 183 scenarios / 31 goal domains / 5 engines / 9 themes verified against primary repo + npm. CC-BY-4.0 skill vs GPL-3.0-only CLI. Title 52c / desc 148c. 12-gate validator rc=0. Wrangler deploy 3 files; live verified (title, desc, CTA, Article+FAQPage JSON-LD, canonical, hreflang {en,en-US,x-default}, no zh-CN, sitemap 120 loc, blog index newest-first). 5 untracked sibling articles skipped (defensive git add).\n\n2026-11-19: published agent-skills-open-standard-validator-2026-en (en-US). wrangler deploy OK, live verified 200 + 3070 words, sitemap loc 121.\n\n2026-11-20: published cloudflare-browser-run-web-to-markdown-2026-en (en-US). Cloudflare Browser Run /snapshot gained pdf/links/scrape/json formats on 2026-11-19; verified against changelog + /snapshot docs + /markdown docs + pricing page. Documented limits: two-format minimum, all-or-nothing failure, fixed capture order, browser-identifiable UA. Corrected md2rich's own X Articles [Image] placeholder behaviour (stripped before replace) and the Chinese LinkedIn hint line. 12-gate validator rc=0; title 56c / desc 154c; hreflang {en,en-US,x-default}; no zh-CN; sitemap 121->122 loc; blog index newest-first.",
-  "last_publish": "2026-11-20|cloudflare-browser-run-web-to-markdown-2026-en|Cloudflare Browser Run 2026: Web to Markdown in One Call|en-US"
+  "published_count": 118,
+  "publish_notes": "Article + index + sitemap committed in single commit 677e5df. State.json appended post-deploy per two-commit pattern. Disk ⊆ sitemap coverage check passed (78 articles, 78 in sitemap; root pages +6 = 85 total locs).\n2026-09-03: Published 'LinkedIn AI Slop: 40% Fewer Views for Flagged Posts in 2026' (linkedin-ai-slop-40-percent-views-2026-en) - LinkedIn classifier 40%-fewer-views deepening on 08-01 slop-button guide; body-grep-0 on 40%/Srinivasan/classifier; article + index + sitemap local edits prepared for git push deploy.\n2026-09-06: Published 'md2pdf 2026: Markdown to a Typeset CJK-Ready PDF' (md2pdf-markdown-typeset-pdf-cjk-2026-en) - md2pdf fresh-tool-launch; CJK-typeset-A4-PDF output end of write-once pipeline; body-grep-0 on md2pdf/pingfang/CJK across 90 -en articles; engine default pandoc+Typst, macOS --pingfang CoreText road; article + index + sitemap(97->98) local edits ready for git push deploy.\n2026-09-07: Published 'MarkFlowy 2026: Markdown Editor Rebuilt for Large Documents' (markflowy-large-document-markdown-editor-2026-en) — Show HN 9-06, Tauri+ProseMirror, 2,382 stars, 2MB-in-1s rebuild angle; native desktop AUTHORING end, md2rich owns the publish end.\n\n2026-09-08: Published 'Quire 2026: AI Agents Join Your Markdown Session as Peers' — Quire local Markdown collab w/ AI peers; blog/quire-ai-agents-markdown-session-2026-en.html (deployed ee22a87 via git push)\n\n2026-09-11: Published 'Knap vs md2rich 2026: Data to Markdown Two Ways' (knap-vs-md2rich-data-to-markdown-2026-en) — Knap (Obsidian 开源模板语言, obsidianmd/knap MIT, npm knap 0.4.1, 140 stars, create 2026-08-21) vs md2rich；family (e) 生成端 vs 发布端；47-char title / 145-char desc；1,886 words / 8 pre / 5 FAQ；deployed 192a4b1 via git push (md2rich auto-deploy ~60s)\n\n2026-09-12: Published 'Marginal 2026: A Markdown Editor Built for Coding Agents' (markdown-editor-for-coding-agents-2026-en) — 14/14 gates passed, 2462 words, 5 FAQ.\n2026-09-13 - Published Markdown as agent memory 2026: the editing rules (markdown-agent-memory-editing-rules-2026-en) - analysis of the Practical Systems markdown agent memory architecture; 4 write rules + bounded read path.\n2026-09-14 | Deckstream 2026: Markdown to Slidev, Live-Rendered (deckstream-md2rich-markdown-slidev-presentations-2026-en) - HN Show HN 2026-09-12 launch (objectID 49672433); browser CodeMirror editor with embedded Slidev iframe preview + one-click share link; new 'presentation output' pipeline position complementing md2rich's 'publish/convert' end.\n\n2026-09-16 cloudflare-ai-crawl-control-markdown-publishers-2026-en (97)\n[2026-09-17] six-markdown-editors-math-heavy-writing-2026-en: TeXposit (Show HN) anchor + 5 alternatives for math-heavy Markdown writing; md2rich sits in publishing step for non-LaTeX-rendering social destinations. (Heat source: 3ea88f8bb2d0 2026-09-17)\n\n2026-11-17 | docu-md-agent-skills-markdown-diagrams-2026-en | docu.md Agent Skills package (markdown-viewer/skills, 3,422 stars). Figures-as-text model; 242 examples / 183 scenarios / 31 goal domains / 5 engines / 9 themes verified against primary repo + npm. CC-BY-4.0 skill vs GPL-3.0-only CLI. Title 52c / desc 148c. 12-gate validator rc=0. Wrangler deploy 3 files; live verified (title, desc, CTA, Article+FAQPage JSON-LD, canonical, hreflang {en,en-US,x-default}, no zh-CN, sitemap 120 loc, blog index newest-first). 5 untracked sibling articles skipped (defensive git add).\n\n2026-11-19: published agent-skills-open-standard-validator-2026-en (en-US). wrangler deploy OK, live verified 200 + 3070 words, sitemap loc 121.\n\n2026-11-20: published cloudflare-browser-run-web-to-markdown-2026-en (en-US). Cloudflare Browser Run /snapshot gained pdf/links/scrape/json formats on 2026-11-19; verified against changelog + /snapshot docs + /markdown docs + pricing page. Documented limits: two-format minimum, all-or-nothing failure, fixed capture order, browser-identifiable UA. Corrected md2rich's own X Articles [Image] placeholder behaviour (stripped before replace) and the Chinese LinkedIn hint line. 12-gate validator rc=0; title 56c / desc 154c; hreflang {en,en-US,x-default}; no zh-CN; sitemap 121->122 loc; blog index newest-first.\n2026-11-22: Published 'llms.txt and MCP Barely Helped: What Agents Use' (llms-txt-and-mcp-what-agents-actually-use-en). Preflight cleared a 2-day backlog: 5 untracked orphans triaged (3 unique -> repaired to 12/12 gates + committed; 2 topic-dupes -> left uncommitted, reported to user). Repaired 3 orphans (desc 164->145c; title 62->53c; CWV article: added 2 real Markdown->rich-text code examples + scoped CSS for undefined classes .cta-box/.warning-box/.checklist-item - the cta-box had color:#fff with NO background defined, i.e. invisible white-on-white CTA text). state.json backfilled 4 tracked-but-missing articles + 2 wrong 'file' fields fixed. sitemap: fixed a stale .html loc (404) for offline-first, removed a pre-existing duplicate notula loc, added 3 repaired orphans + 1 new article (122 -> 124 locs, zero duplicates, XML well-formed).",
+  "last_publish": "2026-11-22|llms-txt-and-mcp-what-agents-actually-use-en|llms.txt and MCP Barely Helped: What Agents Use|en-US"
 }
